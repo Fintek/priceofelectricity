@@ -1,0 +1,255 @@
+import type { ChildProcess } from "node:child_process";
+import { buildContentRegistry } from "../src/lib/contentRegistry";
+import {
+  PREFERRED_TEST_PORT,
+  resolveTestPort,
+  startNextServer,
+  stopServer,
+  fetchWithTimeout,
+  waitForServerReady,
+} from "./_server";
+
+type RegistryError = {
+  kind: string;
+  detail: string;
+};
+
+type HttpFailure = {
+  source: "registry" | "sitemap" | "hub-links";
+  path: string;
+  status?: number;
+  detail?: string;
+};
+
+function toLocalPath(url: string): string | null {
+  if (url.startsWith("/")) return url;
+  if (url.startsWith("http://") || url.startsWith("https://")) {
+    const parsed = new URL(url);
+    return `${parsed.pathname}${parsed.search}`;
+  }
+  return null;
+}
+
+function validateRegistry(): {
+  errors: RegistryError[];
+  internalPaths: string[];
+} {
+  const errors: RegistryError[] = [];
+  const nodes = buildContentRegistry();
+
+  const idSet = new Set<string>();
+  const urlSet = new Set<string>();
+
+  for (const node of nodes) {
+    if (idSet.has(node.id)) {
+      errors.push({ kind: "duplicate-id", detail: node.id });
+    } else {
+      idSet.add(node.id);
+    }
+
+    if (urlSet.has(node.url)) {
+      errors.push({ kind: "duplicate-url", detail: node.url });
+    } else {
+      urlSet.add(node.url);
+    }
+
+    if (
+      !(
+        node.url.startsWith("/") ||
+        node.url.startsWith("https://") ||
+        node.url.startsWith("http://")
+      )
+    ) {
+      errors.push({ kind: "invalid-url", detail: `${node.id}: ${node.url}` });
+    }
+  }
+
+  for (const node of nodes) {
+    if (node.parent && !idSet.has(node.parent)) {
+      errors.push({
+        kind: "missing-parent",
+        detail: `${node.id} -> ${node.parent}`,
+      });
+    }
+    if (node.related) {
+      for (const relatedId of node.related) {
+        if (!idSet.has(relatedId)) {
+          errors.push({
+            kind: "missing-related",
+            detail: `${node.id} -> ${relatedId}`,
+          });
+        }
+      }
+    }
+  }
+
+  const internalPathSet = new Set<string>();
+  for (const node of nodes) {
+    const localPath = toLocalPath(node.url);
+    if (localPath) internalPathSet.add(localPath);
+  }
+
+  return {
+    errors,
+    internalPaths: [...internalPathSet].sort((a, b) => a.localeCompare(b)),
+  };
+}
+
+async function fetchLocalPath(
+  baseUrl: string,
+  path: string
+): Promise<{ ok: true } | { ok: false; status?: number; detail: string }> {
+  try {
+    const res = await fetchWithTimeout(`${baseUrl}${path}`);
+    if (res.status >= 500) {
+      return { ok: false, status: res.status, detail: "server error" };
+    }
+    if (res.status === 404) {
+      return { ok: false, status: res.status, detail: "not found" };
+    }
+    if (res.status === 200) {
+      return { ok: true };
+    }
+    return { ok: false, status: res.status, detail: "non-success status" };
+  } catch (error: unknown) {
+    return {
+      ok: false,
+      detail: error instanceof Error ? error.message : String(error),
+    };
+  }
+}
+
+async function collectSitemapPaths(baseUrl: string): Promise<string[]> {
+  const res = await fetchWithTimeout(`${baseUrl}/sitemap.xml`);
+  if (res.status !== 200) {
+    throw new Error(`Failed to fetch sitemap.xml (status ${res.status})`);
+  }
+  const xml = await res.text();
+  const locRegex = /<loc>(.*?)<\/loc>/g;
+  const paths = new Set<string>();
+  let match: RegExpExecArray | null;
+  while ((match = locRegex.exec(xml)) !== null) {
+    const raw = match[1]?.trim();
+    if (!raw) continue;
+    const local = toLocalPath(raw);
+    if (local) paths.add(local);
+  }
+  return [...paths].sort((a, b) => a.localeCompare(b));
+}
+
+async function collectInternalLinksFromHubs(baseUrl: string): Promise<string[]> {
+  const hubs = ["/", "/guides", "/research", "/topics", "/offers", "/methodology"];
+  const hrefRegex = /href="(\/[^"#?][^"]*)"/g;
+  const links = new Set<string>();
+
+  for (const hub of hubs) {
+    const res = await fetchWithTimeout(`${baseUrl}${hub}`);
+    if (res.status !== 200) continue;
+    const html = await res.text();
+    let match: RegExpExecArray | null;
+    while ((match = hrefRegex.exec(html)) !== null) {
+      const href = match[1];
+      if (!href) continue;
+      if (href.startsWith("/out/")) continue;
+      links.add(href);
+    }
+  }
+
+  return [...links].sort((a, b) => a.localeCompare(b));
+}
+
+async function main(): Promise<void> {
+  const registryValidation = validateRegistry();
+
+  console.log(`Registry nodes: ${registryValidation.internalPaths.length} internal URLs`);
+  if (registryValidation.errors.length > 0) {
+    console.error("Registry validation failed:");
+    for (const err of registryValidation.errors) {
+      console.error(`  - ${err.kind}: ${err.detail}`);
+    }
+    process.exit(1);
+  }
+  console.log("Registry structure checks passed.");
+
+  const port = await resolveTestPort(PREFERRED_TEST_PORT);
+  const baseUrl = `http://127.0.0.1:${port}`;
+  let serverProc: ChildProcess | undefined;
+
+  const failures: HttpFailure[] = [];
+  let passCount = 0;
+
+  try {
+    console.log(`Starting production server on ${baseUrl}`);
+    serverProc = startNextServer(port);
+    await waitForServerReady(baseUrl);
+    console.log("Server ready. Running integrity checks...");
+
+    for (const path of registryValidation.internalPaths) {
+      const result = await fetchLocalPath(baseUrl, path);
+      if (result.ok) {
+        passCount++;
+      } else {
+        failures.push({
+          source: "registry",
+          path,
+          status: result.status,
+          detail: result.detail,
+        });
+      }
+    }
+
+    const sitemapPaths = await collectSitemapPaths(baseUrl);
+    console.log(`Sitemap URLs: ${sitemapPaths.length}`);
+    for (const path of sitemapPaths) {
+      const result = await fetchLocalPath(baseUrl, path);
+      if (result.ok) {
+        passCount++;
+      } else {
+        failures.push({
+          source: "sitemap",
+          path,
+          status: result.status,
+          detail: result.detail,
+        });
+      }
+    }
+
+    // Optional hub-link sanity check for obvious broken internal hrefs.
+    const hubLinks = await collectInternalLinksFromHubs(baseUrl);
+    console.log(`Hub internal links checked: ${hubLinks.length}`);
+    for (const path of hubLinks) {
+      const result = await fetchLocalPath(baseUrl, path);
+      if (result.ok) {
+        passCount++;
+      } else {
+        failures.push({
+          source: "hub-links",
+          path,
+          status: result.status,
+          detail: result.detail,
+        });
+      }
+    }
+
+    console.log("");
+    console.log(
+      `Integrity summary: ${passCount} passed, ${failures.length} failed`
+    );
+
+    if (failures.length > 0) {
+      console.error("Integrity failures:");
+      for (const f of failures) {
+        const statusPart = f.status ? ` status=${f.status}` : "";
+        const detailPart = f.detail ? ` ${f.detail}` : "";
+        console.error(`  - [${f.source}] ${f.path}${statusPart}${detailPart}`);
+      }
+      process.exit(1);
+    }
+  } finally {
+    if (serverProc) {
+      await stopServer(serverProc);
+    }
+  }
+}
+
+void main();

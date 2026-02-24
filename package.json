@@ -4,9 +4,25 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "dev:reset": "tsx scripts/dev-reset.ts",
+    "predeploy": "tsx scripts/predeploy-check.ts",
+    "release:gen": "tsx scripts/release-generate.ts",
+    "build": "npm run release:gen && next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
+    "smoke": "tsx scripts/smoke-test.ts",
+    "integrity": "tsx scripts/integrity-check.ts",
+    "lhci": "lhci autorun",
+    "canonical:check": "tsx scripts/canonical-check.ts",
+    "api:contract": "tsx scripts/api-contract-check.ts",
+    "indexing:check": "tsx scripts/indexing-readiness.ts",
+    "readiness:audit": "tsx scripts/readiness-audit.ts",
+    "seo:check": "tsx scripts/seo-check.ts",
+    "verify": "npm run data:validate && npm run lint && npm run typecheck && npm run build && npm run canonical:check && npm run smoke && npm run integrity && npm run api:contract && npm run indexing:check && npm run readiness:audit && npm run seo:check && npm run lhci",
+    "data:validate": "tsx scripts/data-validate.ts",
+    "data:build": "tsx scripts/data-build.ts",
+    "data:diff": "tsx scripts/data-diff.ts"
   },
   "dependencies": {
     "next": "16.1.6",
@@ -14,6 +30,7 @@
     "react-dom": "19.2.3"
   },
   "devDependencies": {
+    "@lhci/cli": "^0.15.1",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",
@@ -21,6 +38,7 @@
     "eslint": "^9",
     "eslint-config-next": "16.1.6",
     "tailwindcss": "^4",
+    "tsx": "^4.21.0",
     "typescript": "^5"
   }
 }

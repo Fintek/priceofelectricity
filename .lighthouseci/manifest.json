@@ -1,0 +1,98 @@
+[
+  {
+    "url": "http://127.0.0.1:4173/",
+    "isRepresentativeRun": true,
+    "htmlPath": "C:\\Users\\thoma\\Documents\\Projects\\priceofelectricity\\.lighthouseci\\127_0_0_1--2026_02_24_22_07_29.report.html",
+    "jsonPath": "C:\\Users\\thoma\\Documents\\Projects\\priceofelectricity\\.lighthouseci\\127_0_0_1--2026_02_24_22_07_29.report.json",
+    "summary": {
+      "performance": 0.89,
+      "accessibility": 0.96,
+      "best-practices": 1,
+      "seo": 1
+    }
+  },
+  {
+    "url": "http://127.0.0.1:4173/texas",
+    "isRepresentativeRun": true,
+    "htmlPath": "C:\\Users\\thoma\\Documents\\Projects\\priceofelectricity\\.lighthouseci\\127_0_0_1-texas-2026_02_24_22_07_47.report.html",
+    "jsonPath": "C:\\Users\\thoma\\Documents\\Projects\\priceofelectricity\\.lighthouseci\\127_0_0_1-texas-2026_02_24_22_07_47.report.json",
+    "summary": {
+      "performance": 0.89,
+      "accessibility": 0.92,
+      "best-practices": 1,
+      "seo": 1
+    }
+  },
+  {
+    "url": "http://127.0.0.1:4173/national",
+    "isRepresentativeRun": true,
+    "htmlPath": "C:\\Users\\thoma\\Documents\\Projects\\priceofelectricity\\.lighthouseci\\127_0_0_1-national-2026_02_24_22_08_05.report.html",
+    "jsonPath": "C:\\Users\\thoma\\Documents\\Projects\\priceofelectricity\\.lighthouseci\\127_0_0_1-national-2026_02_24_22_08_05.report.json",
+    "summary": {
+      "performance": 0.97,
+      "accessibility": 0.96,
+      "best-practices": 1,
+      "seo": 1
+    }
+  },
+  {
+    "url": "http://127.0.0.1:4173/drivers",
+    "isRepresentativeRun": true,
+    "htmlPath": "C:\\Users\\thoma\\Documents\\Projects\\priceofelectricity\\.lighthouseci\\127_0_0_1-drivers-2026_02_24_22_08_21.report.html",
+    "jsonPath": "C:\\Users\\thoma\\Documents\\Projects\\priceofelectricity\\.lighthouseci\\127_0_0_1-drivers-2026_02_24_22_08_21.report.json",
+    "summary": {
+      "performance": 0.98,
+      "accessibility": 0.96,
+      "best-practices": 1,
+      "seo": 1
+    }
+  },
+  {
+    "url": "http://127.0.0.1:4173/regulatory",
+    "isRepresentativeRun": true,
+    "htmlPath": "C:\\Users\\thoma\\Documents\\Projects\\priceofelectricity\\.lighthouseci\\127_0_0_1-regulatory-2026_02_24_22_08_39.report.html",
+    "jsonPath": "C:\\Users\\thoma\\Documents\\Projects\\priceofelectricity\\.lighthouseci\\127_0_0_1-regulatory-2026_02_24_22_08_39.report.json",
+    "summary": {
+      "performance": 0.91,
+      "accessibility": 0.96,
+      "best-practices": 1,
+      "seo": 1
+    }
+  },
+  {
+    "url": "http://127.0.0.1:4173/offers",
+    "isRepresentativeRun": true,
+    "htmlPath": "C:\\Users\\thoma\\Documents\\Projects\\priceofelectricity\\.lighthouseci\\127_0_0_1-offers-2026_02_24_22_08_55.report.html",
+    "jsonPath": "C:\\Users\\thoma\\Documents\\Projects\\priceofelectricity\\.lighthouseci\\127_0_0_1-offers-2026_02_24_22_08_55.report.json",
+    "summary": {
+      "performance": 0.82,
+      "accessibility": 0.96,
+      "best-practices": 1,
+      "seo": 1
+    }
+  },
+  {
+    "url": "http://127.0.0.1:4173/alerts",
+    "isRepresentativeRun": true,
+    "htmlPath": "C:\\Users\\thoma\\Documents\\Projects\\priceofelectricity\\.lighthouseci\\127_0_0_1-alerts-2026_02_24_22_09_13.report.html",
+    "jsonPath": "C:\\Users\\thoma\\Documents\\Projects\\priceofelectricity\\.lighthouseci\\127_0_0_1-alerts-2026_02_24_22_09_13.report.json",
+    "summary": {
+      "performance": 0.93,
+      "accessibility": 0.96,
+      "best-practices": 1,
+      "seo": 1
+    }
+  },
+  {
+    "url": "http://127.0.0.1:4173/knowledge",
+    "isRepresentativeRun": true,
+    "htmlPath": "C:\\Users\\thoma\\Documents\\Projects\\priceofelectricity\\.lighthouseci\\127_0_0_1-knowledge-2026_02_24_22_09_44.report.html",
+    "jsonPath": "C:\\Users\\thoma\\Documents\\Projects\\priceofelectricity\\.lighthouseci\\127_0_0_1-knowledge-2026_02_24_22_09_44.report.json",
+    "summary": {
+      "performance": 0.93,
+      "accessibility": 0.96,
+      "best-practices": 1,
+      "seo": 1
+    }
+  }
+]

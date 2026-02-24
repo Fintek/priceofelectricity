@@ -1,0 +1,160 @@
+export type PlanRecord = {
+  id: string;
+  stateSlug: string;
+  providerName: string;
+  planName: string;
+  priceCentsPerKwh: number;
+  termMonths?: number;
+  rateType?: "fixed" | "variable";
+  website?: string;
+  notes?: string;
+  updated: string;
+};
+
+export const PLANS: PlanRecord[] = [
+  {
+    id: "tx-lone-star-fixed-12",
+    stateSlug: "texas",
+    providerName: "Lone Star Energy",
+    planName: "Simple Fixed 12",
+    priceCentsPerKwh: 11.2,
+    termMonths: 12,
+    rateType: "fixed",
+    website: "https://example.com/lone-star-simple-fixed-12",
+    notes: "Example pricing (manual MVP)",
+    updated: "February 2026",
+  },
+  {
+    id: "tx-lone-star-fixed-24",
+    stateSlug: "texas",
+    providerName: "Lone Star Energy",
+    planName: "Simple Fixed 24",
+    priceCentsPerKwh: 11.8,
+    termMonths: 24,
+    rateType: "fixed",
+    website: "https://example.com/lone-star-simple-fixed-24",
+    notes: "Example pricing (manual MVP)",
+    updated: "February 2026",
+  },
+  {
+    id: "tx-gulf-power-variable-flex",
+    stateSlug: "texas",
+    providerName: "Gulf Power Choice",
+    planName: "Variable Flex",
+    priceCentsPerKwh: 12.5,
+    rateType: "variable",
+    website: "https://example.com/gulf-variable-flex",
+    notes: "Example pricing (manual MVP)",
+    updated: "February 2026",
+  },
+  {
+    id: "tx-gulf-power-fixed-6",
+    stateSlug: "texas",
+    providerName: "Gulf Power Choice",
+    planName: "Starter Fixed 6",
+    priceCentsPerKwh: 10.9,
+    termMonths: 6,
+    rateType: "fixed",
+    website: "https://example.com/gulf-starter-fixed-6",
+    notes: "Example pricing (manual MVP)",
+    updated: "February 2026",
+  },
+  {
+    id: "tx-metro-electric-fixed-12",
+    stateSlug: "texas",
+    providerName: "Metro Electric TX",
+    planName: "ClearRate 12",
+    priceCentsPerKwh: 12.1,
+    termMonths: 12,
+    rateType: "fixed",
+    website: "https://example.com/metro-clearrate-12",
+    notes: "Example pricing (manual MVP)",
+    updated: "February 2026",
+  },
+  {
+    id: "tx-metro-electric-fixed-36",
+    stateSlug: "texas",
+    providerName: "Metro Electric TX",
+    planName: "ClearRate 36",
+    priceCentsPerKwh: 13.4,
+    termMonths: 36,
+    rateType: "fixed",
+    website: "https://example.com/metro-clearrate-36",
+    notes: "Example pricing (manual MVP)",
+    updated: "February 2026",
+  },
+  {
+    id: "tx-bluebonnet-variable-monthly",
+    stateSlug: "texas",
+    providerName: "Bluebonnet Power",
+    planName: "Month-to-Month Saver",
+    priceCentsPerKwh: 14.6,
+    rateType: "variable",
+    website: "https://example.com/bluebonnet-monthly-saver",
+    notes: "Example pricing (manual MVP)",
+    updated: "February 2026",
+  },
+  {
+    id: "tx-bluebonnet-fixed-18",
+    stateSlug: "texas",
+    providerName: "Bluebonnet Power",
+    planName: "Secure 18",
+    priceCentsPerKwh: 12.9,
+    termMonths: 18,
+    rateType: "fixed",
+    website: "https://example.com/bluebonnet-secure-18",
+    notes: "Example pricing (manual MVP)",
+    updated: "February 2026",
+  },
+  {
+    id: "tx-prairie-energy-fixed-9",
+    stateSlug: "texas",
+    providerName: "Prairie Energy Co.",
+    planName: "Value 9",
+    priceCentsPerKwh: 11.6,
+    termMonths: 9,
+    rateType: "fixed",
+    website: "https://example.com/prairie-value-9",
+    notes: "Example pricing (manual MVP)",
+    updated: "February 2026",
+  },
+  {
+    id: "tx-prairie-energy-variable-green",
+    stateSlug: "texas",
+    providerName: "Prairie Energy Co.",
+    planName: "Green Variable",
+    priceCentsPerKwh: 13.8,
+    rateType: "variable",
+    website: "https://example.com/prairie-green-variable",
+    notes: "Example pricing (manual MVP)",
+    updated: "February 2026",
+  },
+  {
+    id: "tx-red-river-fixed-12",
+    stateSlug: "texas",
+    providerName: "Red River Electric",
+    planName: "Everyday Fixed 12",
+    priceCentsPerKwh: 12.4,
+    termMonths: 12,
+    rateType: "fixed",
+    website: "https://example.com/red-river-everyday-fixed-12",
+    notes: "Example pricing (manual MVP)",
+    updated: "February 2026",
+  },
+  {
+    id: "tx-red-river-fixed-24",
+    stateSlug: "texas",
+    providerName: "Red River Electric",
+    planName: "Everyday Fixed 24",
+    priceCentsPerKwh: 13.1,
+    termMonths: 24,
+    rateType: "fixed",
+    website: "https://example.com/red-river-everyday-fixed-24",
+    notes: "Example pricing (manual MVP)",
+    updated: "February 2026",
+  },
+];
+
+export function getPlansByState(stateSlug: string): PlanRecord[] {
+  return PLANS.filter((plan) => plan.stateSlug === stateSlug);
+}

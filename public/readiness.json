@@ -1,0 +1,109 @@
+{
+  "generatedAt": "2026-02-24T22:06:40.397Z",
+  "commit": "7a2917a",
+  "summary": {
+    "total": 23,
+    "passed": 23,
+    "failed": 0
+  },
+  "checks": [
+    {
+      "name": "/ returns 200",
+      "passed": true
+    },
+    {
+      "name": "/texas returns 200",
+      "passed": true
+    },
+    {
+      "name": "/national returns 200",
+      "passed": true
+    },
+    {
+      "name": "/drivers returns 200",
+      "passed": true
+    },
+    {
+      "name": "/regulatory returns 200",
+      "passed": true
+    },
+    {
+      "name": "/offers returns 200",
+      "passed": true
+    },
+    {
+      "name": "/alerts returns 200",
+      "passed": true
+    },
+    {
+      "name": "/api/v1/states returns 200",
+      "passed": true
+    },
+    {
+      "name": "home canonical correct",
+      "passed": true,
+      "details": "https://priceofelectricity.com"
+    },
+    {
+      "name": "robots.txt allows crawling",
+      "passed": true
+    },
+    {
+      "name": "robots.txt references sitemap",
+      "passed": true
+    },
+    {
+      "name": "sitemap.xml reachable",
+      "passed": true
+    },
+    {
+      "name": "sitemap contains /texas",
+      "passed": true
+    },
+    {
+      "name": "sitemap contains /national",
+      "passed": true
+    },
+    {
+      "name": "sitemap contains /offers",
+      "passed": true
+    },
+    {
+      "name": "sitemap contains /drivers",
+      "passed": true
+    },
+    {
+      "name": "header x-content-type-options",
+      "passed": true,
+      "details": "nosniff"
+    },
+    {
+      "name": "header x-frame-options",
+      "passed": true,
+      "details": "DENY"
+    },
+    {
+      "name": "header referrer-policy",
+      "passed": true,
+      "details": "strict-origin-when-cross-origin"
+    },
+    {
+      "name": "api/v1/states version is v1",
+      "passed": true
+    },
+    {
+      "name": "api/v1/states has states",
+      "passed": true,
+      "details": "count: 50"
+    },
+    {
+      "name": "/status shows release metadata",
+      "passed": true
+    },
+    {
+      "name": "/health returns release fields",
+      "passed": true,
+      "details": "commit=7a2917a data=v20260222"
+    }
+  ]
+}
