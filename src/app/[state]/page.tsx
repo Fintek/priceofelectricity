@@ -6,6 +6,7 @@ import BillEstimator from "../components/BillEstimator";
 import SetPreferredStateButton from "../components/SetPreferredStateButton";
 import TrackedOutboundLink from "../components/TrackedOutboundLink";
 import { STATES } from "@/data/states";
+import { HISTORY_BY_STATE } from "@/data/history";
 import { getUtilitiesByState } from "@/data/utilities";
 import { getCitiesByState } from "@/data/cities";
 import { getRegionByStateSlug } from "@/data/regions";
@@ -168,6 +169,17 @@ export default function StatePage({
   }
 
   const ns = buildNormalizedState(slug);
+  const history = HISTORY_BY_STATE[slug];
+  const latestSeries = history?.series.at(-1);
+  const previousSeries = history && history.series.length >= 2 ? history.series.at(-2) : undefined;
+  const momDeltaCents =
+    latestSeries && previousSeries
+      ? latestSeries.avgRateCentsPerKwh - previousSeries.avgRateCentsPerKwh
+      : null;
+  const momDeltaPct =
+    momDeltaCents !== null && previousSeries && previousSeries.avgRateCentsPerKwh !== 0
+      ? (momDeltaCents / previousSeries.avgRateCentsPerKwh) * 100
+      : null;
 
   if (!Number.isFinite(ns.avgRateCentsPerKwh)) {
     notFound();
@@ -242,6 +254,22 @@ export default function StatePage({
       </p>
 
       <p className="muted">Last updated: {ns.updated}</p>
+      <p className="muted" style={{ marginTop: 6 }}>
+        Previous month:{" "}
+        {previousSeries ? (
+          <>
+            {previousSeries.ym} ({previousSeries.avgRateCentsPerKwh.toFixed(2)}¢/kWh) {"•"}{" "}
+            MoM: {momDeltaCents !== null ? (momDeltaCents >= 0 ? "+" : "") : ""}
+            {momDeltaCents !== null ? `${momDeltaCents.toFixed(2)}¢` : "N/A"} (
+            {momDeltaPct !== null
+              ? `${momDeltaPct >= 0 ? "+" : ""}${momDeltaPct.toFixed(2)}%`
+              : "N/A"}
+            )
+          </>
+        ) : (
+          "N/A"
+        )}
+      </p>
       <p className="muted" style={{ marginTop: 6, display: "flex", alignItems: "center", gap: 8 }}>
         <span
           aria-hidden

@@ -11,20 +11,65 @@ const BASE_URL = SITE_URL;
 const FLAT_THRESHOLD_CENTS = 0.5;
 const SPARK_CHARS = ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"];
 
-export const dynamic = "force-static";
+export const dynamic = "force-dynamic";
 export const revalidate = 2592000;
 
 type HistoryParams = Promise<{ state: string }>;
+type HistorySearchParams = Promise<{ range?: string | string[] }>;
+const RECENT_MONTHS = 24;
 
 export function generateStaticParams() {
   return Object.keys(STATES).map((state) => ({ state }));
 }
 
 function resolveState(rawState: string) {
-  const stateSlug = normalizeSlug(rawState);
+  const raw = rawState.trim();
+  if (/^[A-Za-z]{2}$/.test(raw)) {
+    const postal = raw.toUpperCase();
+    const state = Object.values(STATES).find((s) => s.postal.toUpperCase() === postal);
+    if (!state) return null;
+    return { stateSlug: state.slug, state };
+  }
+
+  const stateSlug = normalizeSlug(raw);
   if (!isValidStateSlug(stateSlug)) return null;
   const state = STATES[stateSlug];
   return { stateSlug, state };
+}
+
+function buildHistoryKeyCandidates(stateParam: string): string[] {
+  const candidates: string[] = [];
+  const pushCandidate = (value: string | null | undefined) => {
+    if (!value) return;
+    if (!candidates.includes(value)) candidates.push(value);
+  };
+
+  pushCandidate(stateParam);
+  pushCandidate(stateParam.toUpperCase());
+  pushCandidate(stateParam.toLowerCase());
+
+  const normalized = normalizeSlug(stateParam);
+  const stateRecord = Object.values(STATES).find(
+    (s) => s.slug === normalized || s.name.toLowerCase() === stateParam.toLowerCase(),
+  );
+
+  if (stateRecord) {
+    const code = stateRecord.postal;
+    const name = stateRecord.name;
+    const slug = stateRecord.slug;
+
+    pushCandidate(code);
+    pushCandidate(code.toUpperCase());
+    pushCandidate(code.toLowerCase());
+    pushCandidate(name);
+    pushCandidate(name.toUpperCase());
+    pushCandidate(name.toLowerCase());
+    pushCandidate(slug);
+    pushCandidate(slug.toUpperCase());
+    pushCandidate(slug.toLowerCase());
+  }
+
+  return candidates;
 }
 
 function getTrend(first: number, last: number): "Up" | "Down" | "Flat" {
@@ -97,17 +142,24 @@ export async function generateMetadata({
 
 export default async function StateHistoryPage({
   params,
+  searchParams,
 }: {
   params: HistoryParams;
+  searchParams: HistorySearchParams;
 }) {
   const { state } = await params;
-  const resolved = resolveState(state);
+  const resolvedSearchParams = await searchParams;
+  const stateParam = state;
+  const resolved = resolveState(stateParam);
   if (!resolved) {
     notFound();
   }
 
   const { stateSlug, state: stateInfo } = resolved;
-  const history = HISTORY_BY_STATE[stateSlug];
+  const historyKey = buildHistoryKeyCandidates(stateParam).find(
+    (key) => HISTORY_BY_STATE[key] !== undefined,
+  );
+  const history = historyKey ? HISTORY_BY_STATE[historyKey] : undefined;
   const description = `Monthly average residential electricity price trend in ${stateInfo.name} (¢/kWh).`;
   const webPageStructuredData = {
     "@context": "https://schema.org",
@@ -137,10 +189,26 @@ export default async function StateHistoryPage({
     );
   }
 
-  const firstValue = history.series[0].avgRateCentsPerKwh;
-  const lastValue = history.series[history.series.length - 1].avgRateCentsPerKwh;
+  const rangeValue = Array.isArray(resolvedSearchParams?.range)
+    ? resolvedSearchParams.range[0]
+    : resolvedSearchParams?.range;
+  const range = typeof rangeValue === "string" && rangeValue.trim().toLowerCase() === "all"
+    ? "all"
+    : "24";
+  const fullSeries = history.series;
+  const displayedSeries =
+    range === "all"
+      ? fullSeries
+      : fullSeries.slice(-24);
+  if (range === "all" && displayedSeries.length < fullSeries.length) {
+    throw new Error(`History range bug: all=${displayedSeries.length} full=${fullSeries.length}`);
+  }
+  const firstValue = displayedSeries[0].avgRateCentsPerKwh;
+  const lastValue = displayedSeries[displayedSeries.length - 1].avgRateCentsPerKwh;
   const trend = getTrend(firstValue, lastValue);
-  const sparkline = getSparkline(history.series.map((point) => point.avgRateCentsPerKwh));
+  const sparkline = getSparkline(
+    displayedSeries.map((point) => point.avgRateCentsPerKwh),
+  );
 
   return (
     <main className="container">
@@ -173,6 +241,14 @@ export default async function StateHistoryPage({
         )}{" "}
         (updated {history.updated})
       </p>
+      <p className="muted" style={{ marginTop: 6 }}>
+        Showing {displayedSeries.length} of {history.series.length} months.{" "}
+        {range === "all" ? (
+          <Link href={`/${stateSlug}/history?range=24`}>Last {RECENT_MONTHS} months</Link>
+        ) : (
+          <Link href={`/${stateSlug}/history?range=all`}>All history</Link>
+        )}
+      </p>
 
       <div className="data-table-wrap">
         <table className="data-table">
@@ -183,7 +259,7 @@ export default async function StateHistoryPage({
             </tr>
           </thead>
           <tbody>
-            {history.series.map((point) => (
+            {displayedSeries.map((point) => (
               <tr key={point.ym}>
                 <td>{point.ym}</td>
                 <td>{point.avgRateCentsPerKwh.toFixed(2)}</td>

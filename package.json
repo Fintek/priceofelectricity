@@ -23,9 +23,12 @@
     "verify:vercel": "npm run data:validate && npm run lint && npm run typecheck && npm run build && npm run canonical:check && npm run smoke && npm run integrity && npm run api:contract && npm run indexing:check && npm run readiness:audit && npm run seo:check",
     "data:validate": "tsx scripts/data-validate.ts",
     "data:build": "tsx scripts/data-build.ts",
-    "data:diff": "tsx scripts/data-diff.ts"
+    "data:diff": "tsx scripts/data-diff.ts",
+    "data:backfill:eia:res": "tsx scripts/eia/backfill_residential_monthly.ts",
+    "data:build:snapshots:eia": "tsx scripts/eia/generate_snapshots_from_eia_csv.ts"
   },
   "dependencies": {
+    "dotenv": "^17.3.1",
     "next": "16.1.6",
     "react": "19.2.3",
     "react-dom": "19.2.3"
