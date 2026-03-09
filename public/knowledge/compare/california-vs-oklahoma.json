@@ -1,0 +1,16 @@
+{
+  "schemaVersion": "1.0",
+  "generatedAt": "2026-03-09T17:50:09.701Z",
+  "sourceVersion": "v2",
+  "contractVersion": "1.0.0",
+  "stateA": "california",
+  "stateB": "oklahoma",
+  "nameA": "California",
+  "nameB": "Oklahoma",
+  "rateA": 31.14,
+  "rateB": 13.05,
+  "differenceCents": 18.09,
+  "differencePercent": 138.6,
+  "higherCostState": "California",
+  "lowerCostState": "Oklahoma"
+}

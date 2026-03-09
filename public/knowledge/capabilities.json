@@ -1,0 +1,40 @@
+{
+  "schemaVersion": "1.0",
+  "generatedAt": "2026-03-09T17:50:09.701Z",
+  "sourceVersion": "v2",
+  "contractVersion": "1.0.0",
+  "capabilities": {
+    "knowledgePages": true,
+    "searchIndex": true,
+    "entityIndex": true,
+    "schemaMap": true,
+    "provenance": true,
+    "methodologies": true,
+    "rankings": true,
+    "compareStates": true,
+    "bundles": true,
+    "historySnapshots": true,
+    "leaderboards": true,
+    "coverageMap": false,
+    "glossary": true,
+    "labels": true,
+    "docs": true,
+    "dataHub": true,
+    "ingestStarterPack": true,
+    "integrityManifest": true,
+    "deprecationPolicy": true,
+    "disclaimersPolicy": true,
+    "offersPolicy": true,
+    "offersEnabled": false,
+    "buildProfile": true,
+    "typeChecks": true,
+    "ciGuardrails": true
+  },
+  "urls": {
+    "publicEndpointsUrl": "/knowledge/public-endpoints.json",
+    "indexUrl": "/knowledge/index.json",
+    "contractUrl": "/knowledge/contract.json",
+    "docsUrl": "/knowledge/docs",
+    "dataHubUrl": "/data"
+  }
+}

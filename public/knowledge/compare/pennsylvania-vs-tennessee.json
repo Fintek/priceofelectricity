@@ -1,0 +1,16 @@
+{
+  "schemaVersion": "1.0",
+  "generatedAt": "2026-03-09T17:50:09.701Z",
+  "sourceVersion": "v2",
+  "contractVersion": "1.0.0",
+  "stateA": "pennsylvania",
+  "stateB": "tennessee",
+  "nameA": "Pennsylvania",
+  "nameB": "Tennessee",
+  "rateA": 17.78,
+  "rateB": 13.28,
+  "differenceCents": 4.5,
+  "differencePercent": 33.9,
+  "higherCostState": "Pennsylvania",
+  "lowerCostState": "Tennessee"
+}

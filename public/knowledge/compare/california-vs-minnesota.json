@@ -1,0 +1,16 @@
+{
+  "schemaVersion": "1.0",
+  "generatedAt": "2026-03-09T17:50:09.701Z",
+  "sourceVersion": "v2",
+  "contractVersion": "1.0.0",
+  "stateA": "california",
+  "stateB": "minnesota",
+  "nameA": "California",
+  "nameB": "Minnesota",
+  "rateA": 31.14,
+  "rateB": 16.04,
+  "differenceCents": 15.1,
+  "differencePercent": 94.1,
+  "higherCostState": "California",
+  "lowerCostState": "Minnesota"
+}

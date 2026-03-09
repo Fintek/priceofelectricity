@@ -1,0 +1,642 @@
+{
+  "meta": {
+    "schemaVersion": "1.0",
+    "id": "knowledge:rankings:electricity-affordability",
+    "type": "rankings",
+    "slug": "electricity-affordability",
+    "title": "Most Affordable Electricity by State",
+    "description": "States ranked by estimated monthly electricity bill at 900 kWh. Lower bill = more affordable.",
+    "canonicalUrl": "http://localhost:3000/knowledge/rankings/electricity-affordability",
+    "jsonUrl": "http://localhost:3000/knowledge/rankings/electricity-affordability.json",
+    "updatedAt": "2026-03-09T17:50:09.701Z",
+    "sourceVersion": "v2",
+    "temporalContext": {
+      "sourceVersion": "v2",
+      "isLatest": true
+    },
+    "provenance": [
+      {
+        "id": "eia-retail-sales-923",
+        "sourceName": "U.S. Energy Information Administration (EIA) Retail Sales of Electricity",
+        "sourceUrl": "https://api.eia.gov/v2/electricity/retail-sales/data/",
+        "publisher": "U.S. Energy Information Administration",
+        "license": "U.S. Government work (public domain)",
+        "notes": "Primary source for state residential electricity rate series used by snapshots.",
+        "retrievedAt": "2026-03-09T17:50:09.701Z"
+      },
+      {
+        "id": "poe-dataset-affordability-csv",
+        "sourceName": "PriceOfElectricity.com dataset endpoint: affordability.csv",
+        "sourceUrl": "http://localhost:3000/api/datasets/affordability.csv",
+        "publisher": "PriceOfElectricity.com",
+        "license": "Site content license",
+        "retrievedAt": "2026-03-09T17:50:09.701Z"
+      },
+      {
+        "id": "poe-dataset-states-json",
+        "sourceName": "PriceOfElectricity.com dataset endpoint: states.json",
+        "sourceUrl": "http://localhost:3000/api/datasets/states.json",
+        "publisher": "PriceOfElectricity.com",
+        "license": "Site content license",
+        "retrievedAt": "2026-03-09T17:50:09.701Z"
+      },
+      {
+        "id": "poe-dataset-value-ranking-csv",
+        "sourceName": "PriceOfElectricity.com dataset endpoint: value-ranking.csv",
+        "sourceUrl": "http://localhost:3000/api/datasets/value-ranking.csv",
+        "publisher": "PriceOfElectricity.com",
+        "license": "Site content license",
+        "retrievedAt": "2026-03-09T17:50:09.701Z"
+      },
+      {
+        "id": "poe-methodology-epi",
+        "sourceName": "PriceOfElectricity.com methodology: Electricity Price Index",
+        "sourceUrl": "http://localhost:3000/methodology/electricity-price-index",
+        "publisher": "PriceOfElectricity.com",
+        "license": "Site content license",
+        "retrievedAt": "2026-03-09T17:50:09.701Z"
+      },
+      {
+        "id": "poe-methodology-value-score",
+        "sourceName": "PriceOfElectricity.com methodology: Value Score",
+        "sourceUrl": "http://localhost:3000/methodology/value-score",
+        "publisher": "PriceOfElectricity.com",
+        "license": "Site content license",
+        "retrievedAt": "2026-03-09T17:50:09.701Z"
+      }
+    ],
+    "fieldProvenance": [
+      {
+        "field": "data.rankingType",
+        "provenanceIds": [
+          "poe-methodology-epi",
+          "poe-methodology-value-score"
+        ]
+      },
+      {
+        "field": "data.sortedStates",
+        "provenanceIds": [
+          "eia-retail-sales-923",
+          "poe-dataset-states-json",
+          "poe-dataset-affordability-csv",
+          "poe-dataset-value-ranking-csv"
+        ]
+      },
+      {
+        "field": "data.generatedAt",
+        "provenanceIds": [
+          "poe-dataset-states-json"
+        ]
+      }
+    ],
+    "citations": [
+      {
+        "sourceName": "U.S. Energy Information Administration (EIA) Retail Sales of Electricity",
+        "sourceUrl": "https://api.eia.gov/v2/electricity/retail-sales/data/",
+        "retrievedAt": "2026-03-09T17:50:09.701Z",
+        "notes": "Primary source for state residential electricity rate series used by snapshots."
+      },
+      {
+        "sourceName": "PriceOfElectricity.com dataset endpoint: affordability.csv",
+        "sourceUrl": "http://localhost:3000/api/datasets/affordability.csv",
+        "retrievedAt": "2026-03-09T17:50:09.701Z"
+      },
+      {
+        "sourceName": "PriceOfElectricity.com dataset endpoint: states.json",
+        "sourceUrl": "http://localhost:3000/api/datasets/states.json",
+        "retrievedAt": "2026-03-09T17:50:09.701Z"
+      },
+      {
+        "sourceName": "PriceOfElectricity.com dataset endpoint: value-ranking.csv",
+        "sourceUrl": "http://localhost:3000/api/datasets/value-ranking.csv",
+        "retrievedAt": "2026-03-09T17:50:09.701Z"
+      },
+      {
+        "sourceName": "PriceOfElectricity.com methodology: Electricity Price Index",
+        "sourceUrl": "http://localhost:3000/methodology/electricity-price-index",
+        "retrievedAt": "2026-03-09T17:50:09.701Z"
+      },
+      {
+        "sourceName": "PriceOfElectricity.com methodology: Value Score",
+        "sourceUrl": "http://localhost:3000/methodology/value-score",
+        "retrievedAt": "2026-03-09T17:50:09.701Z"
+      }
+    ],
+    "llmHints": {
+      "priority": "medium",
+      "entityType": "rankings",
+      "semanticTopics": [
+        "state comparison",
+        "electricity rates",
+        "affordability",
+        "ranking methodology"
+      ],
+      "semanticCluster": "comparative-analysis"
+    },
+    "freshness": {
+      "datasetUpdatedAt": "2025-12-15T00:00:00.000Z",
+      "computedAt": "2026-03-09T17:50:09.701Z",
+      "status": "aging",
+      "ageDays": 84,
+      "methodology": {
+        "id": "freshness",
+        "version": "1.0",
+        "url": "http://localhost:3000/knowledge/methodology/freshness.json",
+        "canonicalUrl": "http://localhost:3000/knowledge/methodology/freshness"
+      }
+    },
+    "excerpt": "Most Affordable Electricity by State. Ranks states by est. monthly bill (900 kWh) (asc). Top 1: Idaho.",
+    "disclaimerRefs": [
+      "rankings"
+    ],
+    "qualityScore": 90,
+    "contentHash": "2088ec003c36807c1f1d3dfbdbb6754ffbafac8ec821551498ae4fa406f4e955",
+    "integrity": {
+      "contentHash": "2088ec003c36807c1f1d3dfbdbb6754ffbafac8ec821551498ae4fa406f4e955",
+      "integrityAlgorithm": "sha256",
+      "signedAtBuild": "2026-03-09T17:50:09.701Z"
+    }
+  },
+  "data": {
+    "rankingType": "electricity-affordability",
+    "sortedStates": [
+      {
+        "rank": 1,
+        "slug": "idaho",
+        "name": "Idaho",
+        "metricValue": 105.66,
+        "value": 105.66,
+        "displayValue": "$105.66"
+      },
+      {
+        "rank": 2,
+        "slug": "north-dakota",
+        "name": "North Dakota",
+        "metricValue": 107.28,
+        "value": 107.28,
+        "displayValue": "$107.28"
+      },
+      {
+        "rank": 3,
+        "slug": "nebraska",
+        "name": "Nebraska",
+        "metricValue": 109.71,
+        "value": 109.71,
+        "displayValue": "$109.71"
+      },
+      {
+        "rank": 4,
+        "slug": "louisiana",
+        "name": "Louisiana",
+        "metricValue": 111.06,
+        "value": 111.06,
+        "displayValue": "$111.06"
+      },
+      {
+        "rank": 5,
+        "slug": "arkansas",
+        "name": "Arkansas",
+        "metricValue": 115.47,
+        "value": 115.47,
+        "displayValue": "$115.47"
+      },
+      {
+        "rank": 6,
+        "slug": "washington",
+        "name": "Washington",
+        "metricValue": 115.74,
+        "value": 115.74,
+        "displayValue": "$115.74"
+      },
+      {
+        "rank": 7,
+        "slug": "utah",
+        "name": "Utah",
+        "metricValue": 116.73,
+        "value": 116.73,
+        "displayValue": "$116.73"
+      },
+      {
+        "rank": 8,
+        "slug": "oklahoma",
+        "name": "Oklahoma",
+        "metricValue": 117.45,
+        "value": 117.45,
+        "displayValue": "$117.45"
+      },
+      {
+        "rank": 9,
+        "slug": "montana",
+        "name": "Montana",
+        "metricValue": 118.08,
+        "value": 118.08,
+        "displayValue": "$118.08"
+      },
+      {
+        "rank": 10,
+        "slug": "south-dakota",
+        "name": "South Dakota",
+        "metricValue": 118.26,
+        "value": 118.26,
+        "displayValue": "$118.26"
+      },
+      {
+        "rank": 11,
+        "slug": "nevada",
+        "name": "Nevada",
+        "metricValue": 118.44,
+        "value": 118.44,
+        "displayValue": "$118.44"
+      },
+      {
+        "rank": 12,
+        "slug": "iowa",
+        "name": "Iowa",
+        "metricValue": 118.62,
+        "value": 118.62,
+        "displayValue": "$118.62"
+      },
+      {
+        "rank": 13,
+        "slug": "kentucky",
+        "name": "Kentucky",
+        "metricValue": 118.8,
+        "value": 118.8,
+        "displayValue": "$118.80"
+      },
+      {
+        "rank": 14,
+        "slug": "tennessee",
+        "name": "Tennessee",
+        "metricValue": 119.52,
+        "value": 119.52,
+        "displayValue": "$119.52"
+      },
+      {
+        "rank": 15,
+        "slug": "missouri",
+        "name": "Missouri",
+        "metricValue": 120.33,
+        "value": 120.33,
+        "displayValue": "$120.33"
+      },
+      {
+        "rank": 16,
+        "slug": "mississippi",
+        "name": "Mississippi",
+        "metricValue": 125.19,
+        "value": 125.19,
+        "displayValue": "$125.19"
+      },
+      {
+        "rank": 17,
+        "slug": "wyoming",
+        "name": "Wyoming",
+        "metricValue": 126.18,
+        "value": 126.18,
+        "displayValue": "$126.18"
+      },
+      {
+        "rank": 18,
+        "slug": "north-carolina",
+        "name": "North Carolina",
+        "metricValue": 126.72,
+        "value": 126.72,
+        "displayValue": "$126.72"
+      },
+      {
+        "rank": 19,
+        "slug": "kansas",
+        "name": "Kansas",
+        "metricValue": 130.32,
+        "value": 130.32,
+        "displayValue": "$130.32"
+      },
+      {
+        "rank": 20,
+        "slug": "south-carolina",
+        "name": "South Carolina",
+        "metricValue": 132.48,
+        "value": 132.48,
+        "displayValue": "$132.48"
+      },
+      {
+        "rank": 21,
+        "slug": "oregon",
+        "name": "Oregon",
+        "metricValue": 135,
+        "value": 135,
+        "displayValue": "$135.00"
+      },
+      {
+        "rank": 22,
+        "slug": "georgia",
+        "name": "Georgia",
+        "metricValue": 136.98,
+        "value": 136.98,
+        "displayValue": "$136.98"
+      },
+      {
+        "rank": 23,
+        "slug": "virginia",
+        "name": "Virginia",
+        "metricValue": 137.34,
+        "value": 137.34,
+        "displayValue": "$137.34"
+      },
+      {
+        "rank": 24,
+        "slug": "florida",
+        "name": "Florida",
+        "metricValue": 137.43,
+        "value": 137.43,
+        "displayValue": "$137.43"
+      },
+      {
+        "rank": 25,
+        "slug": "new-mexico",
+        "name": "New Mexico",
+        "metricValue": 137.61,
+        "value": 137.61,
+        "displayValue": "$137.61"
+      },
+      {
+        "rank": 26,
+        "slug": "west-virginia",
+        "name": "West Virginia",
+        "metricValue": 138.51,
+        "value": 138.51,
+        "displayValue": "$138.51"
+      },
+      {
+        "rank": 27,
+        "slug": "arizona",
+        "name": "Arizona",
+        "metricValue": 141.3,
+        "value": 141.3,
+        "displayValue": "$141.30"
+      },
+      {
+        "rank": 28,
+        "slug": "colorado",
+        "name": "Colorado",
+        "metricValue": 142.11,
+        "value": 142.11,
+        "displayValue": "$142.11"
+      },
+      {
+        "rank": 29,
+        "slug": "texas",
+        "name": "Texas",
+        "metricValue": 142.47,
+        "value": 142.47,
+        "displayValue": "$142.47"
+      },
+      {
+        "rank": 30,
+        "slug": "minnesota",
+        "name": "Minnesota",
+        "metricValue": 144.36,
+        "value": 144.36,
+        "displayValue": "$144.36"
+      },
+      {
+        "rank": 31,
+        "slug": "indiana",
+        "name": "Indiana",
+        "metricValue": 145.08,
+        "value": 145.08,
+        "displayValue": "$145.08"
+      },
+      {
+        "rank": 32,
+        "slug": "alabama",
+        "name": "Alabama",
+        "metricValue": 148.95,
+        "value": 148.95,
+        "displayValue": "$148.95"
+      },
+      {
+        "rank": 33,
+        "slug": "ohio",
+        "name": "Ohio",
+        "metricValue": 152.1,
+        "value": 152.1,
+        "displayValue": "$152.10"
+      },
+      {
+        "rank": 34,
+        "slug": "illinois",
+        "name": "Illinois",
+        "metricValue": 152.64,
+        "value": 152.64,
+        "displayValue": "$152.64"
+      },
+      {
+        "rank": 35,
+        "slug": "delaware",
+        "name": "Delaware",
+        "metricValue": 154.62,
+        "value": 154.62,
+        "displayValue": "$154.62"
+      },
+      {
+        "rank": 36,
+        "slug": "pennsylvania",
+        "name": "Pennsylvania",
+        "metricValue": 160.02,
+        "value": 160.02,
+        "displayValue": "$160.02"
+      },
+      {
+        "rank": 37,
+        "slug": "wisconsin",
+        "name": "Wisconsin",
+        "metricValue": 162.36,
+        "value": 162.36,
+        "displayValue": "$162.36"
+      },
+      {
+        "rank": 38,
+        "slug": "maryland",
+        "name": "Maryland",
+        "metricValue": 173.61,
+        "value": 173.61,
+        "displayValue": "$173.61"
+      },
+      {
+        "rank": 39,
+        "slug": "michigan",
+        "name": "Michigan",
+        "metricValue": 179.19,
+        "value": 179.19,
+        "displayValue": "$179.19"
+      },
+      {
+        "rank": 40,
+        "slug": "new-jersey",
+        "name": "New Jersey",
+        "metricValue": 199.35,
+        "value": 199.35,
+        "displayValue": "$199.35"
+      },
+      {
+        "rank": 41,
+        "slug": "vermont",
+        "name": "Vermont",
+        "metricValue": 203.22,
+        "value": 203.22,
+        "displayValue": "$203.22"
+      },
+      {
+        "rank": 42,
+        "slug": "new-hampshire",
+        "name": "New Hampshire",
+        "metricValue": 210.15,
+        "value": 210.15,
+        "displayValue": "$210.15"
+      },
+      {
+        "rank": 43,
+        "slug": "new-york",
+        "name": "New York",
+        "metricValue": 214.83,
+        "value": 214.83,
+        "displayValue": "$214.83"
+      },
+      {
+        "rank": 44,
+        "slug": "alaska",
+        "name": "Alaska",
+        "metricValue": 225.09,
+        "value": 225.09,
+        "displayValue": "$225.09"
+      },
+      {
+        "rank": 45,
+        "slug": "massachusetts",
+        "name": "Massachusetts",
+        "metricValue": 234.09,
+        "value": 234.09,
+        "displayValue": "$234.09"
+      },
+      {
+        "rank": 46,
+        "slug": "maine",
+        "name": "Maine",
+        "metricValue": 245.16,
+        "value": 245.16,
+        "displayValue": "$245.16"
+      },
+      {
+        "rank": 47,
+        "slug": "rhode-island",
+        "name": "Rhode Island",
+        "metricValue": 255.78,
+        "value": 255.78,
+        "displayValue": "$255.78"
+      },
+      {
+        "rank": 48,
+        "slug": "connecticut",
+        "name": "Connecticut",
+        "metricValue": 273.15,
+        "value": 273.15,
+        "displayValue": "$273.15"
+      },
+      {
+        "rank": 49,
+        "slug": "california",
+        "name": "California",
+        "metricValue": 280.26,
+        "value": 280.26,
+        "displayValue": "$280.26"
+      },
+      {
+        "rank": 50,
+        "slug": "hawaii",
+        "name": "Hawaii",
+        "metricValue": 371.7,
+        "value": 371.7,
+        "displayValue": "$371.70"
+      }
+    ],
+    "generatedAt": "2026-03-09T17:50:09.701Z",
+    "derivedMeta": {
+      "methodologiesUsed": [
+        {
+          "id": "epi",
+          "version": "1.0",
+          "url": "http://localhost:3000/knowledge/methodology/epi.json",
+          "appliesToFields": [
+            "data.sortedStates"
+          ]
+        }
+      ]
+    },
+    "relatedEntities": {
+      "methodologies": [
+        "epi"
+      ],
+      "states": [
+        "alaska",
+        "arkansas",
+        "california",
+        "connecticut",
+        "hawaii",
+        "idaho",
+        "louisiana",
+        "maine",
+        "massachusetts",
+        "montana",
+        "nebraska",
+        "new-hampshire",
+        "new-york",
+        "north-dakota",
+        "oklahoma",
+        "rhode-island",
+        "south-dakota",
+        "utah",
+        "vermont",
+        "washington"
+      ]
+    },
+    "facts": [
+      {
+        "label": "Bottom metric value",
+        "value": 371.7,
+        "sourceField": "data.sortedStates"
+      },
+      {
+        "label": "Bottom state",
+        "value": "Hawaii",
+        "sourceField": "data.sortedStates"
+      },
+      {
+        "label": "Generated at",
+        "value": "2026-03-09T17:50:09.701Z",
+        "sourceField": "data.generatedAt"
+      },
+      {
+        "label": "Ranking type",
+        "value": "electricity-affordability",
+        "sourceField": "data.rankingType"
+      },
+      {
+        "label": "Top metric value",
+        "value": 105.66,
+        "sourceField": "data.sortedStates"
+      },
+      {
+        "label": "Top state",
+        "value": "Idaho",
+        "sourceField": "data.sortedStates"
+      },
+      {
+        "label": "Total ranked",
+        "value": 50,
+        "sourceField": "data.sortedStates"
+      }
+    ]
+  }
+}

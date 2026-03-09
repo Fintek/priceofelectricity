@@ -1,0 +1,876 @@
+{
+  "schemaVersion": "1.0",
+  "generatedAt": "2026-03-09T17:50:09.701Z",
+  "sourceVersion": "v2",
+  "enabled": false,
+  "disclaimer": "Offers shown on this site may be informational. Availability and terms may vary by location.",
+  "states": [
+    {
+      "slug": "alabama",
+      "name": "Alabama",
+      "offers": [
+        {
+          "id": "electricity-plans-placeholder",
+          "title": "Compare electricity plans",
+          "description": "Find electricity plan options and compare rates.",
+          "url": null,
+          "enabled": false,
+          "partner": {
+            "name": "TBD",
+            "type": "affiliate"
+          }
+        }
+      ]
+    },
+    {
+      "slug": "alaska",
+      "name": "Alaska",
+      "offers": [
+        {
+          "id": "electricity-plans-placeholder",
+          "title": "Compare electricity plans",
+          "description": "Find electricity plan options and compare rates.",
+          "url": null,
+          "enabled": false,
+          "partner": {
+            "name": "TBD",
+            "type": "affiliate"
+          }
+        }
+      ]
+    },
+    {
+      "slug": "arizona",
+      "name": "Arizona",
+      "offers": [
+        {
+          "id": "electricity-plans-placeholder",
+          "title": "Compare electricity plans",
+          "description": "Find electricity plan options and compare rates.",
+          "url": null,
+          "enabled": false,
+          "partner": {
+            "name": "TBD",
+            "type": "affiliate"
+          }
+        }
+      ]
+    },
+    {
+      "slug": "arkansas",
+      "name": "Arkansas",
+      "offers": [
+        {
+          "id": "electricity-plans-placeholder",
+          "title": "Compare electricity plans",
+          "description": "Find electricity plan options and compare rates.",
+          "url": null,
+          "enabled": false,
+          "partner": {
+            "name": "TBD",
+            "type": "affiliate"
+          }
+        }
+      ]
+    },
+    {
+      "slug": "california",
+      "name": "California",
+      "offers": [
+        {
+          "id": "electricity-plans-placeholder",
+          "title": "Compare electricity plans",
+          "description": "Find electricity plan options and compare rates.",
+          "url": null,
+          "enabled": false,
+          "partner": {
+            "name": "TBD",
+            "type": "affiliate"
+          }
+        }
+      ]
+    },
+    {
+      "slug": "colorado",
+      "name": "Colorado",
+      "offers": [
+        {
+          "id": "electricity-plans-placeholder",
+          "title": "Compare electricity plans",
+          "description": "Find electricity plan options and compare rates.",
+          "url": null,
+          "enabled": false,
+          "partner": {
+            "name": "TBD",
+            "type": "affiliate"
+          }
+        }
+      ]
+    },
+    {
+      "slug": "connecticut",
+      "name": "Connecticut",
+      "offers": [
+        {
+          "id": "electricity-plans-placeholder",
+          "title": "Compare electricity plans",
+          "description": "Find electricity plan options and compare rates.",
+          "url": null,
+          "enabled": false,
+          "partner": {
+            "name": "TBD",
+            "type": "affiliate"
+          }
+        }
+      ]
+    },
+    {
+      "slug": "delaware",
+      "name": "Delaware",
+      "offers": [
+        {
+          "id": "electricity-plans-placeholder",
+          "title": "Compare electricity plans",
+          "description": "Find electricity plan options and compare rates.",
+          "url": null,
+          "enabled": false,
+          "partner": {
+            "name": "TBD",
+            "type": "affiliate"
+          }
+        }
+      ]
+    },
+    {
+      "slug": "district-of-columbia",
+      "name": "District of Columbia",
+      "offers": [
+        {
+          "id": "electricity-plans-placeholder",
+          "title": "Compare electricity plans",
+          "description": "Find electricity plan options and compare rates.",
+          "url": null,
+          "enabled": false,
+          "partner": {
+            "name": "TBD",
+            "type": "affiliate"
+          }
+        }
+      ]
+    },
+    {
+      "slug": "florida",
+      "name": "Florida",
+      "offers": [
+        {
+          "id": "electricity-plans-placeholder",
+          "title": "Compare electricity plans",
+          "description": "Find electricity plan options and compare rates.",
+          "url": null,
+          "enabled": false,
+          "partner": {
+            "name": "TBD",
+            "type": "affiliate"
+          }
+        }
+      ]
+    },
+    {
+      "slug": "georgia",
+      "name": "Georgia",
+      "offers": [
+        {
+          "id": "electricity-plans-placeholder",
+          "title": "Compare electricity plans",
+          "description": "Find electricity plan options and compare rates.",
+          "url": null,
+          "enabled": false,
+          "partner": {
+            "name": "TBD",
+            "type": "affiliate"
+          }
+        }
+      ]
+    },
+    {
+      "slug": "hawaii",
+      "name": "Hawaii",
+      "offers": [
+        {
+          "id": "electricity-plans-placeholder",
+          "title": "Compare electricity plans",
+          "description": "Find electricity plan options and compare rates.",
+          "url": null,
+          "enabled": false,
+          "partner": {
+            "name": "TBD",
+            "type": "affiliate"
+          }
+        }
+      ]
+    },
+    {
+      "slug": "idaho",
+      "name": "Idaho",
+      "offers": [
+        {
+          "id": "electricity-plans-placeholder",
+          "title": "Compare electricity plans",
+          "description": "Find electricity plan options and compare rates.",
+          "url": null,
+          "enabled": false,
+          "partner": {
+            "name": "TBD",
+            "type": "affiliate"
+          }
+        }
+      ]
+    },
+    {
+      "slug": "illinois",
+      "name": "Illinois",
+      "offers": [
+        {
+          "id": "electricity-plans-placeholder",
+          "title": "Compare electricity plans",
+          "description": "Find electricity plan options and compare rates.",
+          "url": null,
+          "enabled": false,
+          "partner": {
+            "name": "TBD",
+            "type": "affiliate"
+          }
+        }
+      ]
+    },
+    {
+      "slug": "indiana",
+      "name": "Indiana",
+      "offers": [
+        {
+          "id": "electricity-plans-placeholder",
+          "title": "Compare electricity plans",
+          "description": "Find electricity plan options and compare rates.",
+          "url": null,
+          "enabled": false,
+          "partner": {
+            "name": "TBD",
+            "type": "affiliate"
+          }
+        }
+      ]
+    },
+    {
+      "slug": "iowa",
+      "name": "Iowa",
+      "offers": [
+        {
+          "id": "electricity-plans-placeholder",
+          "title": "Compare electricity plans",
+          "description": "Find electricity plan options and compare rates.",
+          "url": null,
+          "enabled": false,
+          "partner": {
+            "name": "TBD",
+            "type": "affiliate"
+          }
+        }
+      ]
+    },
+    {
+      "slug": "kansas",
+      "name": "Kansas",
+      "offers": [
+        {
+          "id": "electricity-plans-placeholder",
+          "title": "Compare electricity plans",
+          "description": "Find electricity plan options and compare rates.",
+          "url": null,
+          "enabled": false,
+          "partner": {
+            "name": "TBD",
+            "type": "affiliate"
+          }
+        }
+      ]
+    },
+    {
+      "slug": "kentucky",
+      "name": "Kentucky",
+      "offers": [
+        {
+          "id": "electricity-plans-placeholder",
+          "title": "Compare electricity plans",
+          "description": "Find electricity plan options and compare rates.",
+          "url": null,
+          "enabled": false,
+          "partner": {
+            "name": "TBD",
+            "type": "affiliate"
+          }
+        }
+      ]
+    },
+    {
+      "slug": "louisiana",
+      "name": "Louisiana",
+      "offers": [
+        {
+          "id": "electricity-plans-placeholder",
+          "title": "Compare electricity plans",
+          "description": "Find electricity plan options and compare rates.",
+          "url": null,
+          "enabled": false,
+          "partner": {
+            "name": "TBD",
+            "type": "affiliate"
+          }
+        }
+      ]
+    },
+    {
+      "slug": "maine",
+      "name": "Maine",
+      "offers": [
+        {
+          "id": "electricity-plans-placeholder",
+          "title": "Compare electricity plans",
+          "description": "Find electricity plan options and compare rates.",
+          "url": null,
+          "enabled": false,
+          "partner": {
+            "name": "TBD",
+            "type": "affiliate"
+          }
+        }
+      ]
+    },
+    {
+      "slug": "maryland",
+      "name": "Maryland",
+      "offers": [
+        {
+          "id": "electricity-plans-placeholder",
+          "title": "Compare electricity plans",
+          "description": "Find electricity plan options and compare rates.",
+          "url": null,
+          "enabled": false,
+          "partner": {
+            "name": "TBD",
+            "type": "affiliate"
+          }
+        }
+      ]
+    },
+    {
+      "slug": "massachusetts",
+      "name": "Massachusetts",
+      "offers": [
+        {
+          "id": "electricity-plans-placeholder",
+          "title": "Compare electricity plans",
+          "description": "Find electricity plan options and compare rates.",
+          "url": null,
+          "enabled": false,
+          "partner": {
+            "name": "TBD",
+            "type": "affiliate"
+          }
+        }
+      ]
+    },
+    {
+      "slug": "michigan",
+      "name": "Michigan",
+      "offers": [
+        {
+          "id": "electricity-plans-placeholder",
+          "title": "Compare electricity plans",
+          "description": "Find electricity plan options and compare rates.",
+          "url": null,
+          "enabled": false,
+          "partner": {
+            "name": "TBD",
+            "type": "affiliate"
+          }
+        }
+      ]
+    },
+    {
+      "slug": "minnesota",
+      "name": "Minnesota",
+      "offers": [
+        {
+          "id": "electricity-plans-placeholder",
+          "title": "Compare electricity plans",
+          "description": "Find electricity plan options and compare rates.",
+          "url": null,
+          "enabled": false,
+          "partner": {
+            "name": "TBD",
+            "type": "affiliate"
+          }
+        }
+      ]
+    },
+    {
+      "slug": "mississippi",
+      "name": "Mississippi",
+      "offers": [
+        {
+          "id": "electricity-plans-placeholder",
+          "title": "Compare electricity plans",
+          "description": "Find electricity plan options and compare rates.",
+          "url": null,
+          "enabled": false,
+          "partner": {
+            "name": "TBD",
+            "type": "affiliate"
+          }
+        }
+      ]
+    },
+    {
+      "slug": "missouri",
+      "name": "Missouri",
+      "offers": [
+        {
+          "id": "electricity-plans-placeholder",
+          "title": "Compare electricity plans",
+          "description": "Find electricity plan options and compare rates.",
+          "url": null,
+          "enabled": false,
+          "partner": {
+            "name": "TBD",
+            "type": "affiliate"
+          }
+        }
+      ]
+    },
+    {
+      "slug": "montana",
+      "name": "Montana",
+      "offers": [
+        {
+          "id": "electricity-plans-placeholder",
+          "title": "Compare electricity plans",
+          "description": "Find electricity plan options and compare rates.",
+          "url": null,
+          "enabled": false,
+          "partner": {
+            "name": "TBD",
+            "type": "affiliate"
+          }
+        }
+      ]
+    },
+    {
+      "slug": "nebraska",
+      "name": "Nebraska",
+      "offers": [
+        {
+          "id": "electricity-plans-placeholder",
+          "title": "Compare electricity plans",
+          "description": "Find electricity plan options and compare rates.",
+          "url": null,
+          "enabled": false,
+          "partner": {
+            "name": "TBD",
+            "type": "affiliate"
+          }
+        }
+      ]
+    },
+    {
+      "slug": "nevada",
+      "name": "Nevada",
+      "offers": [
+        {
+          "id": "electricity-plans-placeholder",
+          "title": "Compare electricity plans",
+          "description": "Find electricity plan options and compare rates.",
+          "url": null,
+          "enabled": false,
+          "partner": {
+            "name": "TBD",
+            "type": "affiliate"
+          }
+        }
+      ]
+    },
+    {
+      "slug": "new-hampshire",
+      "name": "New Hampshire",
+      "offers": [
+        {
+          "id": "electricity-plans-placeholder",
+          "title": "Compare electricity plans",
+          "description": "Find electricity plan options and compare rates.",
+          "url": null,
+          "enabled": false,
+          "partner": {
+            "name": "TBD",
+            "type": "affiliate"
+          }
+        }
+      ]
+    },
+    {
+      "slug": "new-jersey",
+      "name": "New Jersey",
+      "offers": [
+        {
+          "id": "electricity-plans-placeholder",
+          "title": "Compare electricity plans",
+          "description": "Find electricity plan options and compare rates.",
+          "url": null,
+          "enabled": false,
+          "partner": {
+            "name": "TBD",
+            "type": "affiliate"
+          }
+        }
+      ]
+    },
+    {
+      "slug": "new-mexico",
+      "name": "New Mexico",
+      "offers": [
+        {
+          "id": "electricity-plans-placeholder",
+          "title": "Compare electricity plans",
+          "description": "Find electricity plan options and compare rates.",
+          "url": null,
+          "enabled": false,
+          "partner": {
+            "name": "TBD",
+            "type": "affiliate"
+          }
+        }
+      ]
+    },
+    {
+      "slug": "new-york",
+      "name": "New York",
+      "offers": [
+        {
+          "id": "electricity-plans-placeholder",
+          "title": "Compare electricity plans",
+          "description": "Find electricity plan options and compare rates.",
+          "url": null,
+          "enabled": false,
+          "partner": {
+            "name": "TBD",
+            "type": "affiliate"
+          }
+        }
+      ]
+    },
+    {
+      "slug": "north-carolina",
+      "name": "North Carolina",
+      "offers": [
+        {
+          "id": "electricity-plans-placeholder",
+          "title": "Compare electricity plans",
+          "description": "Find electricity plan options and compare rates.",
+          "url": null,
+          "enabled": false,
+          "partner": {
+            "name": "TBD",
+            "type": "affiliate"
+          }
+        }
+      ]
+    },
+    {
+      "slug": "north-dakota",
+      "name": "North Dakota",
+      "offers": [
+        {
+          "id": "electricity-plans-placeholder",
+          "title": "Compare electricity plans",
+          "description": "Find electricity plan options and compare rates.",
+          "url": null,
+          "enabled": false,
+          "partner": {
+            "name": "TBD",
+            "type": "affiliate"
+          }
+        }
+      ]
+    },
+    {
+      "slug": "ohio",
+      "name": "Ohio",
+      "offers": [
+        {
+          "id": "electricity-plans-placeholder",
+          "title": "Compare electricity plans",
+          "description": "Find electricity plan options and compare rates.",
+          "url": null,
+          "enabled": false,
+          "partner": {
+            "name": "TBD",
+            "type": "affiliate"
+          }
+        }
+      ]
+    },
+    {
+      "slug": "oklahoma",
+      "name": "Oklahoma",
+      "offers": [
+        {
+          "id": "electricity-plans-placeholder",
+          "title": "Compare electricity plans",
+          "description": "Find electricity plan options and compare rates.",
+          "url": null,
+          "enabled": false,
+          "partner": {
+            "name": "TBD",
+            "type": "affiliate"
+          }
+        }
+      ]
+    },
+    {
+      "slug": "oregon",
+      "name": "Oregon",
+      "offers": [
+        {
+          "id": "electricity-plans-placeholder",
+          "title": "Compare electricity plans",
+          "description": "Find electricity plan options and compare rates.",
+          "url": null,
+          "enabled": false,
+          "partner": {
+            "name": "TBD",
+            "type": "affiliate"
+          }
+        }
+      ]
+    },
+    {
+      "slug": "pennsylvania",
+      "name": "Pennsylvania",
+      "offers": [
+        {
+          "id": "electricity-plans-placeholder",
+          "title": "Compare electricity plans",
+          "description": "Find electricity plan options and compare rates.",
+          "url": null,
+          "enabled": false,
+          "partner": {
+            "name": "TBD",
+            "type": "affiliate"
+          }
+        }
+      ]
+    },
+    {
+      "slug": "rhode-island",
+      "name": "Rhode Island",
+      "offers": [
+        {
+          "id": "electricity-plans-placeholder",
+          "title": "Compare electricity plans",
+          "description": "Find electricity plan options and compare rates.",
+          "url": null,
+          "enabled": false,
+          "partner": {
+            "name": "TBD",
+            "type": "affiliate"
+          }
+        }
+      ]
+    },
+    {
+      "slug": "south-carolina",
+      "name": "South Carolina",
+      "offers": [
+        {
+          "id": "electricity-plans-placeholder",
+          "title": "Compare electricity plans",
+          "description": "Find electricity plan options and compare rates.",
+          "url": null,
+          "enabled": false,
+          "partner": {
+            "name": "TBD",
+            "type": "affiliate"
+          }
+        }
+      ]
+    },
+    {
+      "slug": "south-dakota",
+      "name": "South Dakota",
+      "offers": [
+        {
+          "id": "electricity-plans-placeholder",
+          "title": "Compare electricity plans",
+          "description": "Find electricity plan options and compare rates.",
+          "url": null,
+          "enabled": false,
+          "partner": {
+            "name": "TBD",
+            "type": "affiliate"
+          }
+        }
+      ]
+    },
+    {
+      "slug": "tennessee",
+      "name": "Tennessee",
+      "offers": [
+        {
+          "id": "electricity-plans-placeholder",
+          "title": "Compare electricity plans",
+          "description": "Find electricity plan options and compare rates.",
+          "url": null,
+          "enabled": false,
+          "partner": {
+            "name": "TBD",
+            "type": "affiliate"
+          }
+        }
+      ]
+    },
+    {
+      "slug": "texas",
+      "name": "Texas",
+      "offers": [
+        {
+          "id": "electricity-plans-placeholder",
+          "title": "Compare electricity plans",
+          "description": "Find electricity plan options and compare rates.",
+          "url": null,
+          "enabled": false,
+          "partner": {
+            "name": "TBD",
+            "type": "affiliate"
+          }
+        }
+      ]
+    },
+    {
+      "slug": "utah",
+      "name": "Utah",
+      "offers": [
+        {
+          "id": "electricity-plans-placeholder",
+          "title": "Compare electricity plans",
+          "description": "Find electricity plan options and compare rates.",
+          "url": null,
+          "enabled": false,
+          "partner": {
+            "name": "TBD",
+            "type": "affiliate"
+          }
+        }
+      ]
+    },
+    {
+      "slug": "vermont",
+      "name": "Vermont",
+      "offers": [
+        {
+          "id": "electricity-plans-placeholder",
+          "title": "Compare electricity plans",
+          "description": "Find electricity plan options and compare rates.",
+          "url": null,
+          "enabled": false,
+          "partner": {
+            "name": "TBD",
+            "type": "affiliate"
+          }
+        }
+      ]
+    },
+    {
+      "slug": "virginia",
+      "name": "Virginia",
+      "offers": [
+        {
+          "id": "electricity-plans-placeholder",
+          "title": "Compare electricity plans",
+          "description": "Find electricity plan options and compare rates.",
+          "url": null,
+          "enabled": false,
+          "partner": {
+            "name": "TBD",
+            "type": "affiliate"
+          }
+        }
+      ]
+    },
+    {
+      "slug": "washington",
+      "name": "Washington",
+      "offers": [
+        {
+          "id": "electricity-plans-placeholder",
+          "title": "Compare electricity plans",
+          "description": "Find electricity plan options and compare rates.",
+          "url": null,
+          "enabled": false,
+          "partner": {
+            "name": "TBD",
+            "type": "affiliate"
+          }
+        }
+      ]
+    },
+    {
+      "slug": "west-virginia",
+      "name": "West Virginia",
+      "offers": [
+        {
+          "id": "electricity-plans-placeholder",
+          "title": "Compare electricity plans",
+          "description": "Find electricity plan options and compare rates.",
+          "url": null,
+          "enabled": false,
+          "partner": {
+            "name": "TBD",
+            "type": "affiliate"
+          }
+        }
+      ]
+    },
+    {
+      "slug": "wisconsin",
+      "name": "Wisconsin",
+      "offers": [
+        {
+          "id": "electricity-plans-placeholder",
+          "title": "Compare electricity plans",
+          "description": "Find electricity plan options and compare rates.",
+          "url": null,
+          "enabled": false,
+          "partner": {
+            "name": "TBD",
+            "type": "affiliate"
+          }
+        }
+      ]
+    },
+    {
+      "slug": "wyoming",
+      "name": "Wyoming",
+      "offers": [
+        {
+          "id": "electricity-plans-placeholder",
+          "title": "Compare electricity plans",
+          "description": "Find electricity plan options and compare rates.",
+          "url": null,
+          "enabled": false,
+          "partner": {
+            "name": "TBD",
+            "type": "affiliate"
+          }
+        }
+      ]
+    }
+  ]
+}

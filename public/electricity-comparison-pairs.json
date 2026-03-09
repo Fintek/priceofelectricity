@@ -1,0 +1,1402 @@
+{
+  "schemaVersion": "1.0",
+  "generatedAt": "2026-03-09T17:50:09.701Z",
+  "sourceVersion": "v2",
+  "pairs": [
+    {
+      "pair": "alabama-vs-california",
+      "stateA": "alabama",
+      "stateB": "california"
+    },
+    {
+      "pair": "alabama-vs-florida",
+      "stateA": "alabama",
+      "stateB": "florida"
+    },
+    {
+      "pair": "alabama-vs-new-york",
+      "stateA": "alabama",
+      "stateB": "new-york"
+    },
+    {
+      "pair": "alabama-vs-ohio",
+      "stateA": "alabama",
+      "stateB": "ohio"
+    },
+    {
+      "pair": "alabama-vs-pennsylvania",
+      "stateA": "alabama",
+      "stateB": "pennsylvania"
+    },
+    {
+      "pair": "alabama-vs-texas",
+      "stateA": "alabama",
+      "stateB": "texas"
+    },
+    {
+      "pair": "alaska-vs-california",
+      "stateA": "alaska",
+      "stateB": "california"
+    },
+    {
+      "pair": "alaska-vs-florida",
+      "stateA": "alaska",
+      "stateB": "florida"
+    },
+    {
+      "pair": "alaska-vs-new-york",
+      "stateA": "alaska",
+      "stateB": "new-york"
+    },
+    {
+      "pair": "alaska-vs-ohio",
+      "stateA": "alaska",
+      "stateB": "ohio"
+    },
+    {
+      "pair": "alaska-vs-pennsylvania",
+      "stateA": "alaska",
+      "stateB": "pennsylvania"
+    },
+    {
+      "pair": "alaska-vs-texas",
+      "stateA": "alaska",
+      "stateB": "texas"
+    },
+    {
+      "pair": "arizona-vs-california",
+      "stateA": "arizona",
+      "stateB": "california"
+    },
+    {
+      "pair": "arizona-vs-florida",
+      "stateA": "arizona",
+      "stateB": "florida"
+    },
+    {
+      "pair": "arizona-vs-new-york",
+      "stateA": "arizona",
+      "stateB": "new-york"
+    },
+    {
+      "pair": "arizona-vs-ohio",
+      "stateA": "arizona",
+      "stateB": "ohio"
+    },
+    {
+      "pair": "arizona-vs-pennsylvania",
+      "stateA": "arizona",
+      "stateB": "pennsylvania"
+    },
+    {
+      "pair": "arizona-vs-texas",
+      "stateA": "arizona",
+      "stateB": "texas"
+    },
+    {
+      "pair": "arkansas-vs-california",
+      "stateA": "arkansas",
+      "stateB": "california"
+    },
+    {
+      "pair": "arkansas-vs-florida",
+      "stateA": "arkansas",
+      "stateB": "florida"
+    },
+    {
+      "pair": "arkansas-vs-new-york",
+      "stateA": "arkansas",
+      "stateB": "new-york"
+    },
+    {
+      "pair": "arkansas-vs-ohio",
+      "stateA": "arkansas",
+      "stateB": "ohio"
+    },
+    {
+      "pair": "arkansas-vs-pennsylvania",
+      "stateA": "arkansas",
+      "stateB": "pennsylvania"
+    },
+    {
+      "pair": "arkansas-vs-texas",
+      "stateA": "arkansas",
+      "stateB": "texas"
+    },
+    {
+      "pair": "california-vs-colorado",
+      "stateA": "california",
+      "stateB": "colorado"
+    },
+    {
+      "pair": "california-vs-connecticut",
+      "stateA": "california",
+      "stateB": "connecticut"
+    },
+    {
+      "pair": "california-vs-delaware",
+      "stateA": "california",
+      "stateB": "delaware"
+    },
+    {
+      "pair": "california-vs-florida",
+      "stateA": "california",
+      "stateB": "florida"
+    },
+    {
+      "pair": "california-vs-georgia",
+      "stateA": "california",
+      "stateB": "georgia"
+    },
+    {
+      "pair": "california-vs-hawaii",
+      "stateA": "california",
+      "stateB": "hawaii"
+    },
+    {
+      "pair": "california-vs-idaho",
+      "stateA": "california",
+      "stateB": "idaho"
+    },
+    {
+      "pair": "california-vs-illinois",
+      "stateA": "california",
+      "stateB": "illinois"
+    },
+    {
+      "pair": "california-vs-indiana",
+      "stateA": "california",
+      "stateB": "indiana"
+    },
+    {
+      "pair": "california-vs-iowa",
+      "stateA": "california",
+      "stateB": "iowa"
+    },
+    {
+      "pair": "california-vs-kansas",
+      "stateA": "california",
+      "stateB": "kansas"
+    },
+    {
+      "pair": "california-vs-kentucky",
+      "stateA": "california",
+      "stateB": "kentucky"
+    },
+    {
+      "pair": "california-vs-louisiana",
+      "stateA": "california",
+      "stateB": "louisiana"
+    },
+    {
+      "pair": "california-vs-maine",
+      "stateA": "california",
+      "stateB": "maine"
+    },
+    {
+      "pair": "california-vs-maryland",
+      "stateA": "california",
+      "stateB": "maryland"
+    },
+    {
+      "pair": "california-vs-massachusetts",
+      "stateA": "california",
+      "stateB": "massachusetts"
+    },
+    {
+      "pair": "california-vs-michigan",
+      "stateA": "california",
+      "stateB": "michigan"
+    },
+    {
+      "pair": "california-vs-minnesota",
+      "stateA": "california",
+      "stateB": "minnesota"
+    },
+    {
+      "pair": "california-vs-mississippi",
+      "stateA": "california",
+      "stateB": "mississippi"
+    },
+    {
+      "pair": "california-vs-missouri",
+      "stateA": "california",
+      "stateB": "missouri"
+    },
+    {
+      "pair": "california-vs-montana",
+      "stateA": "california",
+      "stateB": "montana"
+    },
+    {
+      "pair": "california-vs-nebraska",
+      "stateA": "california",
+      "stateB": "nebraska"
+    },
+    {
+      "pair": "california-vs-nevada",
+      "stateA": "california",
+      "stateB": "nevada"
+    },
+    {
+      "pair": "california-vs-new-hampshire",
+      "stateA": "california",
+      "stateB": "new-hampshire"
+    },
+    {
+      "pair": "california-vs-new-jersey",
+      "stateA": "california",
+      "stateB": "new-jersey"
+    },
+    {
+      "pair": "california-vs-new-mexico",
+      "stateA": "california",
+      "stateB": "new-mexico"
+    },
+    {
+      "pair": "california-vs-new-york",
+      "stateA": "california",
+      "stateB": "new-york"
+    },
+    {
+      "pair": "california-vs-north-carolina",
+      "stateA": "california",
+      "stateB": "north-carolina"
+    },
+    {
+      "pair": "california-vs-north-dakota",
+      "stateA": "california",
+      "stateB": "north-dakota"
+    },
+    {
+      "pair": "california-vs-ohio",
+      "stateA": "california",
+      "stateB": "ohio"
+    },
+    {
+      "pair": "california-vs-oklahoma",
+      "stateA": "california",
+      "stateB": "oklahoma"
+    },
+    {
+      "pair": "california-vs-oregon",
+      "stateA": "california",
+      "stateB": "oregon"
+    },
+    {
+      "pair": "california-vs-pennsylvania",
+      "stateA": "california",
+      "stateB": "pennsylvania"
+    },
+    {
+      "pair": "california-vs-rhode-island",
+      "stateA": "california",
+      "stateB": "rhode-island"
+    },
+    {
+      "pair": "california-vs-south-carolina",
+      "stateA": "california",
+      "stateB": "south-carolina"
+    },
+    {
+      "pair": "california-vs-south-dakota",
+      "stateA": "california",
+      "stateB": "south-dakota"
+    },
+    {
+      "pair": "california-vs-tennessee",
+      "stateA": "california",
+      "stateB": "tennessee"
+    },
+    {
+      "pair": "california-vs-texas",
+      "stateA": "california",
+      "stateB": "texas"
+    },
+    {
+      "pair": "california-vs-utah",
+      "stateA": "california",
+      "stateB": "utah"
+    },
+    {
+      "pair": "california-vs-vermont",
+      "stateA": "california",
+      "stateB": "vermont"
+    },
+    {
+      "pair": "california-vs-virginia",
+      "stateA": "california",
+      "stateB": "virginia"
+    },
+    {
+      "pair": "california-vs-washington",
+      "stateA": "california",
+      "stateB": "washington"
+    },
+    {
+      "pair": "california-vs-west-virginia",
+      "stateA": "california",
+      "stateB": "west-virginia"
+    },
+    {
+      "pair": "california-vs-wisconsin",
+      "stateA": "california",
+      "stateB": "wisconsin"
+    },
+    {
+      "pair": "california-vs-wyoming",
+      "stateA": "california",
+      "stateB": "wyoming"
+    },
+    {
+      "pair": "colorado-vs-florida",
+      "stateA": "colorado",
+      "stateB": "florida"
+    },
+    {
+      "pair": "colorado-vs-new-york",
+      "stateA": "colorado",
+      "stateB": "new-york"
+    },
+    {
+      "pair": "colorado-vs-ohio",
+      "stateA": "colorado",
+      "stateB": "ohio"
+    },
+    {
+      "pair": "colorado-vs-pennsylvania",
+      "stateA": "colorado",
+      "stateB": "pennsylvania"
+    },
+    {
+      "pair": "colorado-vs-texas",
+      "stateA": "colorado",
+      "stateB": "texas"
+    },
+    {
+      "pair": "connecticut-vs-florida",
+      "stateA": "connecticut",
+      "stateB": "florida"
+    },
+    {
+      "pair": "connecticut-vs-new-york",
+      "stateA": "connecticut",
+      "stateB": "new-york"
+    },
+    {
+      "pair": "connecticut-vs-ohio",
+      "stateA": "connecticut",
+      "stateB": "ohio"
+    },
+    {
+      "pair": "connecticut-vs-pennsylvania",
+      "stateA": "connecticut",
+      "stateB": "pennsylvania"
+    },
+    {
+      "pair": "connecticut-vs-texas",
+      "stateA": "connecticut",
+      "stateB": "texas"
+    },
+    {
+      "pair": "delaware-vs-florida",
+      "stateA": "delaware",
+      "stateB": "florida"
+    },
+    {
+      "pair": "delaware-vs-new-york",
+      "stateA": "delaware",
+      "stateB": "new-york"
+    },
+    {
+      "pair": "delaware-vs-ohio",
+      "stateA": "delaware",
+      "stateB": "ohio"
+    },
+    {
+      "pair": "delaware-vs-pennsylvania",
+      "stateA": "delaware",
+      "stateB": "pennsylvania"
+    },
+    {
+      "pair": "delaware-vs-texas",
+      "stateA": "delaware",
+      "stateB": "texas"
+    },
+    {
+      "pair": "florida-vs-georgia",
+      "stateA": "florida",
+      "stateB": "georgia"
+    },
+    {
+      "pair": "florida-vs-hawaii",
+      "stateA": "florida",
+      "stateB": "hawaii"
+    },
+    {
+      "pair": "florida-vs-idaho",
+      "stateA": "florida",
+      "stateB": "idaho"
+    },
+    {
+      "pair": "florida-vs-illinois",
+      "stateA": "florida",
+      "stateB": "illinois"
+    },
+    {
+      "pair": "florida-vs-indiana",
+      "stateA": "florida",
+      "stateB": "indiana"
+    },
+    {
+      "pair": "florida-vs-iowa",
+      "stateA": "florida",
+      "stateB": "iowa"
+    },
+    {
+      "pair": "florida-vs-kansas",
+      "stateA": "florida",
+      "stateB": "kansas"
+    },
+    {
+      "pair": "florida-vs-kentucky",
+      "stateA": "florida",
+      "stateB": "kentucky"
+    },
+    {
+      "pair": "florida-vs-louisiana",
+      "stateA": "florida",
+      "stateB": "louisiana"
+    },
+    {
+      "pair": "florida-vs-maine",
+      "stateA": "florida",
+      "stateB": "maine"
+    },
+    {
+      "pair": "florida-vs-maryland",
+      "stateA": "florida",
+      "stateB": "maryland"
+    },
+    {
+      "pair": "florida-vs-massachusetts",
+      "stateA": "florida",
+      "stateB": "massachusetts"
+    },
+    {
+      "pair": "florida-vs-michigan",
+      "stateA": "florida",
+      "stateB": "michigan"
+    },
+    {
+      "pair": "florida-vs-minnesota",
+      "stateA": "florida",
+      "stateB": "minnesota"
+    },
+    {
+      "pair": "florida-vs-mississippi",
+      "stateA": "florida",
+      "stateB": "mississippi"
+    },
+    {
+      "pair": "florida-vs-missouri",
+      "stateA": "florida",
+      "stateB": "missouri"
+    },
+    {
+      "pair": "florida-vs-montana",
+      "stateA": "florida",
+      "stateB": "montana"
+    },
+    {
+      "pair": "florida-vs-nebraska",
+      "stateA": "florida",
+      "stateB": "nebraska"
+    },
+    {
+      "pair": "florida-vs-nevada",
+      "stateA": "florida",
+      "stateB": "nevada"
+    },
+    {
+      "pair": "florida-vs-new-hampshire",
+      "stateA": "florida",
+      "stateB": "new-hampshire"
+    },
+    {
+      "pair": "florida-vs-new-jersey",
+      "stateA": "florida",
+      "stateB": "new-jersey"
+    },
+    {
+      "pair": "florida-vs-new-mexico",
+      "stateA": "florida",
+      "stateB": "new-mexico"
+    },
+    {
+      "pair": "florida-vs-new-york",
+      "stateA": "florida",
+      "stateB": "new-york"
+    },
+    {
+      "pair": "florida-vs-north-carolina",
+      "stateA": "florida",
+      "stateB": "north-carolina"
+    },
+    {
+      "pair": "florida-vs-north-dakota",
+      "stateA": "florida",
+      "stateB": "north-dakota"
+    },
+    {
+      "pair": "florida-vs-ohio",
+      "stateA": "florida",
+      "stateB": "ohio"
+    },
+    {
+      "pair": "florida-vs-oklahoma",
+      "stateA": "florida",
+      "stateB": "oklahoma"
+    },
+    {
+      "pair": "florida-vs-oregon",
+      "stateA": "florida",
+      "stateB": "oregon"
+    },
+    {
+      "pair": "florida-vs-pennsylvania",
+      "stateA": "florida",
+      "stateB": "pennsylvania"
+    },
+    {
+      "pair": "florida-vs-rhode-island",
+      "stateA": "florida",
+      "stateB": "rhode-island"
+    },
+    {
+      "pair": "florida-vs-south-carolina",
+      "stateA": "florida",
+      "stateB": "south-carolina"
+    },
+    {
+      "pair": "florida-vs-south-dakota",
+      "stateA": "florida",
+      "stateB": "south-dakota"
+    },
+    {
+      "pair": "florida-vs-tennessee",
+      "stateA": "florida",
+      "stateB": "tennessee"
+    },
+    {
+      "pair": "florida-vs-texas",
+      "stateA": "florida",
+      "stateB": "texas"
+    },
+    {
+      "pair": "florida-vs-utah",
+      "stateA": "florida",
+      "stateB": "utah"
+    },
+    {
+      "pair": "florida-vs-vermont",
+      "stateA": "florida",
+      "stateB": "vermont"
+    },
+    {
+      "pair": "florida-vs-virginia",
+      "stateA": "florida",
+      "stateB": "virginia"
+    },
+    {
+      "pair": "florida-vs-washington",
+      "stateA": "florida",
+      "stateB": "washington"
+    },
+    {
+      "pair": "florida-vs-west-virginia",
+      "stateA": "florida",
+      "stateB": "west-virginia"
+    },
+    {
+      "pair": "florida-vs-wisconsin",
+      "stateA": "florida",
+      "stateB": "wisconsin"
+    },
+    {
+      "pair": "florida-vs-wyoming",
+      "stateA": "florida",
+      "stateB": "wyoming"
+    },
+    {
+      "pair": "georgia-vs-new-york",
+      "stateA": "georgia",
+      "stateB": "new-york"
+    },
+    {
+      "pair": "georgia-vs-ohio",
+      "stateA": "georgia",
+      "stateB": "ohio"
+    },
+    {
+      "pair": "georgia-vs-pennsylvania",
+      "stateA": "georgia",
+      "stateB": "pennsylvania"
+    },
+    {
+      "pair": "georgia-vs-texas",
+      "stateA": "georgia",
+      "stateB": "texas"
+    },
+    {
+      "pair": "hawaii-vs-new-york",
+      "stateA": "hawaii",
+      "stateB": "new-york"
+    },
+    {
+      "pair": "hawaii-vs-ohio",
+      "stateA": "hawaii",
+      "stateB": "ohio"
+    },
+    {
+      "pair": "hawaii-vs-pennsylvania",
+      "stateA": "hawaii",
+      "stateB": "pennsylvania"
+    },
+    {
+      "pair": "hawaii-vs-texas",
+      "stateA": "hawaii",
+      "stateB": "texas"
+    },
+    {
+      "pair": "idaho-vs-new-york",
+      "stateA": "idaho",
+      "stateB": "new-york"
+    },
+    {
+      "pair": "idaho-vs-ohio",
+      "stateA": "idaho",
+      "stateB": "ohio"
+    },
+    {
+      "pair": "idaho-vs-pennsylvania",
+      "stateA": "idaho",
+      "stateB": "pennsylvania"
+    },
+    {
+      "pair": "idaho-vs-texas",
+      "stateA": "idaho",
+      "stateB": "texas"
+    },
+    {
+      "pair": "illinois-vs-new-york",
+      "stateA": "illinois",
+      "stateB": "new-york"
+    },
+    {
+      "pair": "illinois-vs-ohio",
+      "stateA": "illinois",
+      "stateB": "ohio"
+    },
+    {
+      "pair": "illinois-vs-pennsylvania",
+      "stateA": "illinois",
+      "stateB": "pennsylvania"
+    },
+    {
+      "pair": "illinois-vs-texas",
+      "stateA": "illinois",
+      "stateB": "texas"
+    },
+    {
+      "pair": "indiana-vs-new-york",
+      "stateA": "indiana",
+      "stateB": "new-york"
+    },
+    {
+      "pair": "indiana-vs-ohio",
+      "stateA": "indiana",
+      "stateB": "ohio"
+    },
+    {
+      "pair": "indiana-vs-pennsylvania",
+      "stateA": "indiana",
+      "stateB": "pennsylvania"
+    },
+    {
+      "pair": "indiana-vs-texas",
+      "stateA": "indiana",
+      "stateB": "texas"
+    },
+    {
+      "pair": "iowa-vs-new-york",
+      "stateA": "iowa",
+      "stateB": "new-york"
+    },
+    {
+      "pair": "iowa-vs-ohio",
+      "stateA": "iowa",
+      "stateB": "ohio"
+    },
+    {
+      "pair": "iowa-vs-pennsylvania",
+      "stateA": "iowa",
+      "stateB": "pennsylvania"
+    },
+    {
+      "pair": "iowa-vs-texas",
+      "stateA": "iowa",
+      "stateB": "texas"
+    },
+    {
+      "pair": "kansas-vs-new-york",
+      "stateA": "kansas",
+      "stateB": "new-york"
+    },
+    {
+      "pair": "kansas-vs-ohio",
+      "stateA": "kansas",
+      "stateB": "ohio"
+    },
+    {
+      "pair": "kansas-vs-pennsylvania",
+      "stateA": "kansas",
+      "stateB": "pennsylvania"
+    },
+    {
+      "pair": "kansas-vs-texas",
+      "stateA": "kansas",
+      "stateB": "texas"
+    },
+    {
+      "pair": "kentucky-vs-new-york",
+      "stateA": "kentucky",
+      "stateB": "new-york"
+    },
+    {
+      "pair": "kentucky-vs-ohio",
+      "stateA": "kentucky",
+      "stateB": "ohio"
+    },
+    {
+      "pair": "kentucky-vs-pennsylvania",
+      "stateA": "kentucky",
+      "stateB": "pennsylvania"
+    },
+    {
+      "pair": "kentucky-vs-texas",
+      "stateA": "kentucky",
+      "stateB": "texas"
+    },
+    {
+      "pair": "louisiana-vs-new-york",
+      "stateA": "louisiana",
+      "stateB": "new-york"
+    },
+    {
+      "pair": "louisiana-vs-ohio",
+      "stateA": "louisiana",
+      "stateB": "ohio"
+    },
+    {
+      "pair": "louisiana-vs-pennsylvania",
+      "stateA": "louisiana",
+      "stateB": "pennsylvania"
+    },
+    {
+      "pair": "louisiana-vs-texas",
+      "stateA": "louisiana",
+      "stateB": "texas"
+    },
+    {
+      "pair": "maine-vs-new-york",
+      "stateA": "maine",
+      "stateB": "new-york"
+    },
+    {
+      "pair": "maine-vs-ohio",
+      "stateA": "maine",
+      "stateB": "ohio"
+    },
+    {
+      "pair": "maine-vs-pennsylvania",
+      "stateA": "maine",
+      "stateB": "pennsylvania"
+    },
+    {
+      "pair": "maine-vs-texas",
+      "stateA": "maine",
+      "stateB": "texas"
+    },
+    {
+      "pair": "maryland-vs-new-york",
+      "stateA": "maryland",
+      "stateB": "new-york"
+    },
+    {
+      "pair": "maryland-vs-ohio",
+      "stateA": "maryland",
+      "stateB": "ohio"
+    },
+    {
+      "pair": "maryland-vs-pennsylvania",
+      "stateA": "maryland",
+      "stateB": "pennsylvania"
+    },
+    {
+      "pair": "maryland-vs-texas",
+      "stateA": "maryland",
+      "stateB": "texas"
+    },
+    {
+      "pair": "massachusetts-vs-new-york",
+      "stateA": "massachusetts",
+      "stateB": "new-york"
+    },
+    {
+      "pair": "massachusetts-vs-ohio",
+      "stateA": "massachusetts",
+      "stateB": "ohio"
+    },
+    {
+      "pair": "massachusetts-vs-pennsylvania",
+      "stateA": "massachusetts",
+      "stateB": "pennsylvania"
+    },
+    {
+      "pair": "massachusetts-vs-texas",
+      "stateA": "massachusetts",
+      "stateB": "texas"
+    },
+    {
+      "pair": "michigan-vs-new-york",
+      "stateA": "michigan",
+      "stateB": "new-york"
+    },
+    {
+      "pair": "michigan-vs-ohio",
+      "stateA": "michigan",
+      "stateB": "ohio"
+    },
+    {
+      "pair": "michigan-vs-pennsylvania",
+      "stateA": "michigan",
+      "stateB": "pennsylvania"
+    },
+    {
+      "pair": "michigan-vs-texas",
+      "stateA": "michigan",
+      "stateB": "texas"
+    },
+    {
+      "pair": "minnesota-vs-new-york",
+      "stateA": "minnesota",
+      "stateB": "new-york"
+    },
+    {
+      "pair": "minnesota-vs-ohio",
+      "stateA": "minnesota",
+      "stateB": "ohio"
+    },
+    {
+      "pair": "minnesota-vs-pennsylvania",
+      "stateA": "minnesota",
+      "stateB": "pennsylvania"
+    },
+    {
+      "pair": "minnesota-vs-texas",
+      "stateA": "minnesota",
+      "stateB": "texas"
+    },
+    {
+      "pair": "mississippi-vs-new-york",
+      "stateA": "mississippi",
+      "stateB": "new-york"
+    },
+    {
+      "pair": "mississippi-vs-ohio",
+      "stateA": "mississippi",
+      "stateB": "ohio"
+    },
+    {
+      "pair": "mississippi-vs-pennsylvania",
+      "stateA": "mississippi",
+      "stateB": "pennsylvania"
+    },
+    {
+      "pair": "mississippi-vs-texas",
+      "stateA": "mississippi",
+      "stateB": "texas"
+    },
+    {
+      "pair": "missouri-vs-new-york",
+      "stateA": "missouri",
+      "stateB": "new-york"
+    },
+    {
+      "pair": "missouri-vs-ohio",
+      "stateA": "missouri",
+      "stateB": "ohio"
+    },
+    {
+      "pair": "missouri-vs-pennsylvania",
+      "stateA": "missouri",
+      "stateB": "pennsylvania"
+    },
+    {
+      "pair": "missouri-vs-texas",
+      "stateA": "missouri",
+      "stateB": "texas"
+    },
+    {
+      "pair": "montana-vs-new-york",
+      "stateA": "montana",
+      "stateB": "new-york"
+    },
+    {
+      "pair": "montana-vs-ohio",
+      "stateA": "montana",
+      "stateB": "ohio"
+    },
+    {
+      "pair": "montana-vs-pennsylvania",
+      "stateA": "montana",
+      "stateB": "pennsylvania"
+    },
+    {
+      "pair": "montana-vs-texas",
+      "stateA": "montana",
+      "stateB": "texas"
+    },
+    {
+      "pair": "nebraska-vs-new-york",
+      "stateA": "nebraska",
+      "stateB": "new-york"
+    },
+    {
+      "pair": "nebraska-vs-ohio",
+      "stateA": "nebraska",
+      "stateB": "ohio"
+    },
+    {
+      "pair": "nebraska-vs-pennsylvania",
+      "stateA": "nebraska",
+      "stateB": "pennsylvania"
+    },
+    {
+      "pair": "nebraska-vs-texas",
+      "stateA": "nebraska",
+      "stateB": "texas"
+    },
+    {
+      "pair": "nevada-vs-new-york",
+      "stateA": "nevada",
+      "stateB": "new-york"
+    },
+    {
+      "pair": "nevada-vs-ohio",
+      "stateA": "nevada",
+      "stateB": "ohio"
+    },
+    {
+      "pair": "nevada-vs-pennsylvania",
+      "stateA": "nevada",
+      "stateB": "pennsylvania"
+    },
+    {
+      "pair": "nevada-vs-texas",
+      "stateA": "nevada",
+      "stateB": "texas"
+    },
+    {
+      "pair": "new-hampshire-vs-new-york",
+      "stateA": "new-hampshire",
+      "stateB": "new-york"
+    },
+    {
+      "pair": "new-hampshire-vs-ohio",
+      "stateA": "new-hampshire",
+      "stateB": "ohio"
+    },
+    {
+      "pair": "new-hampshire-vs-pennsylvania",
+      "stateA": "new-hampshire",
+      "stateB": "pennsylvania"
+    },
+    {
+      "pair": "new-hampshire-vs-texas",
+      "stateA": "new-hampshire",
+      "stateB": "texas"
+    },
+    {
+      "pair": "new-jersey-vs-new-york",
+      "stateA": "new-jersey",
+      "stateB": "new-york"
+    },
+    {
+      "pair": "new-jersey-vs-ohio",
+      "stateA": "new-jersey",
+      "stateB": "ohio"
+    },
+    {
+      "pair": "new-jersey-vs-pennsylvania",
+      "stateA": "new-jersey",
+      "stateB": "pennsylvania"
+    },
+    {
+      "pair": "new-jersey-vs-texas",
+      "stateA": "new-jersey",
+      "stateB": "texas"
+    },
+    {
+      "pair": "new-mexico-vs-new-york",
+      "stateA": "new-mexico",
+      "stateB": "new-york"
+    },
+    {
+      "pair": "new-mexico-vs-ohio",
+      "stateA": "new-mexico",
+      "stateB": "ohio"
+    },
+    {
+      "pair": "new-mexico-vs-pennsylvania",
+      "stateA": "new-mexico",
+      "stateB": "pennsylvania"
+    },
+    {
+      "pair": "new-mexico-vs-texas",
+      "stateA": "new-mexico",
+      "stateB": "texas"
+    },
+    {
+      "pair": "new-york-vs-north-carolina",
+      "stateA": "new-york",
+      "stateB": "north-carolina"
+    },
+    {
+      "pair": "new-york-vs-north-dakota",
+      "stateA": "new-york",
+      "stateB": "north-dakota"
+    },
+    {
+      "pair": "new-york-vs-ohio",
+      "stateA": "new-york",
+      "stateB": "ohio"
+    },
+    {
+      "pair": "new-york-vs-oklahoma",
+      "stateA": "new-york",
+      "stateB": "oklahoma"
+    },
+    {
+      "pair": "new-york-vs-oregon",
+      "stateA": "new-york",
+      "stateB": "oregon"
+    },
+    {
+      "pair": "new-york-vs-pennsylvania",
+      "stateA": "new-york",
+      "stateB": "pennsylvania"
+    },
+    {
+      "pair": "new-york-vs-rhode-island",
+      "stateA": "new-york",
+      "stateB": "rhode-island"
+    },
+    {
+      "pair": "new-york-vs-south-carolina",
+      "stateA": "new-york",
+      "stateB": "south-carolina"
+    },
+    {
+      "pair": "new-york-vs-south-dakota",
+      "stateA": "new-york",
+      "stateB": "south-dakota"
+    },
+    {
+      "pair": "new-york-vs-tennessee",
+      "stateA": "new-york",
+      "stateB": "tennessee"
+    },
+    {
+      "pair": "new-york-vs-texas",
+      "stateA": "new-york",
+      "stateB": "texas"
+    },
+    {
+      "pair": "new-york-vs-utah",
+      "stateA": "new-york",
+      "stateB": "utah"
+    },
+    {
+      "pair": "new-york-vs-vermont",
+      "stateA": "new-york",
+      "stateB": "vermont"
+    },
+    {
+      "pair": "new-york-vs-virginia",
+      "stateA": "new-york",
+      "stateB": "virginia"
+    },
+    {
+      "pair": "new-york-vs-washington",
+      "stateA": "new-york",
+      "stateB": "washington"
+    },
+    {
+      "pair": "new-york-vs-west-virginia",
+      "stateA": "new-york",
+      "stateB": "west-virginia"
+    },
+    {
+      "pair": "new-york-vs-wisconsin",
+      "stateA": "new-york",
+      "stateB": "wisconsin"
+    },
+    {
+      "pair": "new-york-vs-wyoming",
+      "stateA": "new-york",
+      "stateB": "wyoming"
+    },
+    {
+      "pair": "north-carolina-vs-ohio",
+      "stateA": "north-carolina",
+      "stateB": "ohio"
+    },
+    {
+      "pair": "north-carolina-vs-pennsylvania",
+      "stateA": "north-carolina",
+      "stateB": "pennsylvania"
+    },
+    {
+      "pair": "north-carolina-vs-texas",
+      "stateA": "north-carolina",
+      "stateB": "texas"
+    },
+    {
+      "pair": "north-dakota-vs-ohio",
+      "stateA": "north-dakota",
+      "stateB": "ohio"
+    },
+    {
+      "pair": "north-dakota-vs-pennsylvania",
+      "stateA": "north-dakota",
+      "stateB": "pennsylvania"
+    },
+    {
+      "pair": "north-dakota-vs-texas",
+      "stateA": "north-dakota",
+      "stateB": "texas"
+    },
+    {
+      "pair": "ohio-vs-oklahoma",
+      "stateA": "ohio",
+      "stateB": "oklahoma"
+    },
+    {
+      "pair": "ohio-vs-oregon",
+      "stateA": "ohio",
+      "stateB": "oregon"
+    },
+    {
+      "pair": "ohio-vs-pennsylvania",
+      "stateA": "ohio",
+      "stateB": "pennsylvania"
+    },
+    {
+      "pair": "ohio-vs-rhode-island",
+      "stateA": "ohio",
+      "stateB": "rhode-island"
+    },
+    {
+      "pair": "ohio-vs-south-carolina",
+      "stateA": "ohio",
+      "stateB": "south-carolina"
+    },
+    {
+      "pair": "ohio-vs-south-dakota",
+      "stateA": "ohio",
+      "stateB": "south-dakota"
+    },
+    {
+      "pair": "ohio-vs-tennessee",
+      "stateA": "ohio",
+      "stateB": "tennessee"
+    },
+    {
+      "pair": "ohio-vs-texas",
+      "stateA": "ohio",
+      "stateB": "texas"
+    },
+    {
+      "pair": "ohio-vs-utah",
+      "stateA": "ohio",
+      "stateB": "utah"
+    },
+    {
+      "pair": "ohio-vs-vermont",
+      "stateA": "ohio",
+      "stateB": "vermont"
+    },
+    {
+      "pair": "ohio-vs-virginia",
+      "stateA": "ohio",
+      "stateB": "virginia"
+    },
+    {
+      "pair": "ohio-vs-washington",
+      "stateA": "ohio",
+      "stateB": "washington"
+    },
+    {
+      "pair": "ohio-vs-west-virginia",
+      "stateA": "ohio",
+      "stateB": "west-virginia"
+    },
+    {
+      "pair": "ohio-vs-wisconsin",
+      "stateA": "ohio",
+      "stateB": "wisconsin"
+    },
+    {
+      "pair": "ohio-vs-wyoming",
+      "stateA": "ohio",
+      "stateB": "wyoming"
+    },
+    {
+      "pair": "oklahoma-vs-pennsylvania",
+      "stateA": "oklahoma",
+      "stateB": "pennsylvania"
+    },
+    {
+      "pair": "oklahoma-vs-texas",
+      "stateA": "oklahoma",
+      "stateB": "texas"
+    },
+    {
+      "pair": "oregon-vs-pennsylvania",
+      "stateA": "oregon",
+      "stateB": "pennsylvania"
+    },
+    {
+      "pair": "oregon-vs-texas",
+      "stateA": "oregon",
+      "stateB": "texas"
+    },
+    {
+      "pair": "pennsylvania-vs-rhode-island",
+      "stateA": "pennsylvania",
+      "stateB": "rhode-island"
+    },
+    {
+      "pair": "pennsylvania-vs-south-carolina",
+      "stateA": "pennsylvania",
+      "stateB": "south-carolina"
+    },
+    {
+      "pair": "pennsylvania-vs-south-dakota",
+      "stateA": "pennsylvania",
+      "stateB": "south-dakota"
+    },
+    {
+      "pair": "pennsylvania-vs-tennessee",
+      "stateA": "pennsylvania",
+      "stateB": "tennessee"
+    },
+    {
+      "pair": "pennsylvania-vs-texas",
+      "stateA": "pennsylvania",
+      "stateB": "texas"
+    },
+    {
+      "pair": "pennsylvania-vs-utah",
+      "stateA": "pennsylvania",
+      "stateB": "utah"
+    },
+    {
+      "pair": "pennsylvania-vs-vermont",
+      "stateA": "pennsylvania",
+      "stateB": "vermont"
+    },
+    {
+      "pair": "pennsylvania-vs-virginia",
+      "stateA": "pennsylvania",
+      "stateB": "virginia"
+    },
+    {
+      "pair": "pennsylvania-vs-washington",
+      "stateA": "pennsylvania",
+      "stateB": "washington"
+    },
+    {
+      "pair": "pennsylvania-vs-west-virginia",
+      "stateA": "pennsylvania",
+      "stateB": "west-virginia"
+    },
+    {
+      "pair": "pennsylvania-vs-wisconsin",
+      "stateA": "pennsylvania",
+      "stateB": "wisconsin"
+    },
+    {
+      "pair": "pennsylvania-vs-wyoming",
+      "stateA": "pennsylvania",
+      "stateB": "wyoming"
+    },
+    {
+      "pair": "rhode-island-vs-texas",
+      "stateA": "rhode-island",
+      "stateB": "texas"
+    },
+    {
+      "pair": "south-carolina-vs-texas",
+      "stateA": "south-carolina",
+      "stateB": "texas"
+    },
+    {
+      "pair": "south-dakota-vs-texas",
+      "stateA": "south-dakota",
+      "stateB": "texas"
+    },
+    {
+      "pair": "tennessee-vs-texas",
+      "stateA": "tennessee",
+      "stateB": "texas"
+    },
+    {
+      "pair": "texas-vs-utah",
+      "stateA": "texas",
+      "stateB": "utah"
+    },
+    {
+      "pair": "texas-vs-vermont",
+      "stateA": "texas",
+      "stateB": "vermont"
+    },
+    {
+      "pair": "texas-vs-virginia",
+      "stateA": "texas",
+      "stateB": "virginia"
+    },
+    {
+      "pair": "texas-vs-washington",
+      "stateA": "texas",
+      "stateB": "washington"
+    },
+    {
+      "pair": "texas-vs-west-virginia",
+      "stateA": "texas",
+      "stateB": "west-virginia"
+    },
+    {
+      "pair": "texas-vs-wisconsin",
+      "stateA": "texas",
+      "stateB": "wisconsin"
+    },
+    {
+      "pair": "texas-vs-wyoming",
+      "stateA": "texas",
+      "stateB": "wyoming"
+    }
+  ]
+}

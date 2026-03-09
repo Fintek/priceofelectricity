@@ -1,0 +1,589 @@
+{
+  "meta": {
+    "schemaVersion": "1.0",
+    "id": "knowledge:state:georgia",
+    "type": "state",
+    "slug": "georgia",
+    "title": "Georgia Electricity Price Knowledge",
+    "description": "Machine-readable summary for Georgia electricity rates and ranking metrics.",
+    "canonicalUrl": "http://localhost:3000/knowledge/state/georgia",
+    "jsonUrl": "http://localhost:3000/knowledge/history/v2/state/georgia.json",
+    "updatedAt": "2026-03-09T17:50:09.701Z",
+    "sourceVersion": "v2",
+    "temporalContext": {
+      "sourceVersion": "v2",
+      "isLatest": false
+    },
+    "provenance": [
+      {
+        "id": "eia-retail-sales-923",
+        "sourceName": "U.S. Energy Information Administration (EIA) Retail Sales of Electricity",
+        "sourceUrl": "https://api.eia.gov/v2/electricity/retail-sales/data/",
+        "publisher": "U.S. Energy Information Administration",
+        "license": "U.S. Government work (public domain)",
+        "notes": "Primary source for state residential electricity rate series used by snapshots.",
+        "retrievedAt": "2026-03-09T17:50:09.701Z"
+      },
+      {
+        "id": "poe-dataset-affordability-csv",
+        "sourceName": "PriceOfElectricity.com dataset endpoint: affordability.csv",
+        "sourceUrl": "http://localhost:3000/api/datasets/affordability.csv",
+        "publisher": "PriceOfElectricity.com",
+        "license": "Site content license",
+        "retrievedAt": "2026-03-09T17:50:09.701Z"
+      },
+      {
+        "id": "poe-dataset-states-csv",
+        "sourceName": "PriceOfElectricity.com dataset endpoint: states.csv",
+        "sourceUrl": "http://localhost:3000/api/datasets/states.csv",
+        "publisher": "PriceOfElectricity.com",
+        "license": "Site content license",
+        "retrievedAt": "2026-03-09T17:50:09.701Z"
+      },
+      {
+        "id": "poe-dataset-states-json",
+        "sourceName": "PriceOfElectricity.com dataset endpoint: states.json",
+        "sourceUrl": "http://localhost:3000/api/datasets/states.json",
+        "publisher": "PriceOfElectricity.com",
+        "license": "Site content license",
+        "retrievedAt": "2026-03-09T17:50:09.701Z"
+      },
+      {
+        "id": "poe-dataset-value-ranking-csv",
+        "sourceName": "PriceOfElectricity.com dataset endpoint: value-ranking.csv",
+        "sourceUrl": "http://localhost:3000/api/datasets/value-ranking.csv",
+        "publisher": "PriceOfElectricity.com",
+        "license": "Site content license",
+        "retrievedAt": "2026-03-09T17:50:09.701Z"
+      },
+      {
+        "id": "poe-methodology-epi",
+        "sourceName": "PriceOfElectricity.com methodology: Electricity Price Index",
+        "sourceUrl": "http://localhost:3000/methodology/electricity-price-index",
+        "publisher": "PriceOfElectricity.com",
+        "license": "Site content license",
+        "retrievedAt": "2026-03-09T17:50:09.701Z"
+      },
+      {
+        "id": "poe-methodology-freshness",
+        "sourceName": "PriceOfElectricity.com methodology: Freshness Scoring",
+        "sourceUrl": "http://localhost:3000/methodology/freshness-scoring",
+        "publisher": "PriceOfElectricity.com",
+        "license": "Site content license",
+        "retrievedAt": "2026-03-09T17:50:09.701Z"
+      },
+      {
+        "id": "poe-methodology-value-score",
+        "sourceName": "PriceOfElectricity.com methodology: Value Score",
+        "sourceUrl": "http://localhost:3000/methodology/value-score",
+        "publisher": "PriceOfElectricity.com",
+        "license": "Site content license",
+        "retrievedAt": "2026-03-09T17:50:09.701Z"
+      }
+    ],
+    "fieldProvenance": [
+      {
+        "field": "data.raw.avgRateCentsPerKwh",
+        "provenanceIds": [
+          "eia-retail-sales-923",
+          "poe-dataset-states-json"
+        ],
+        "isDerived": false
+      },
+      {
+        "field": "data.raw.updated",
+        "provenanceIds": [
+          "eia-retail-sales-923",
+          "poe-dataset-states-json"
+        ],
+        "isDerived": false
+      },
+      {
+        "field": "data.derived.exampleBills",
+        "provenanceIds": [
+          "eia-retail-sales-923",
+          "poe-dataset-states-json"
+        ],
+        "isDerived": true,
+        "derivedFromFields": [
+          "data.raw.avgRateCentsPerKwh"
+        ]
+      },
+      {
+        "field": "data.derived.affordabilityIndex",
+        "provenanceIds": [
+          "poe-dataset-affordability-csv",
+          "eia-retail-sales-923"
+        ],
+        "isDerived": true,
+        "derivedFromFields": [
+          "data.raw.avgRateCentsPerKwh"
+        ]
+      },
+      {
+        "field": "data.derived.valueScore",
+        "provenanceIds": [
+          "poe-methodology-value-score",
+          "poe-dataset-value-ranking-csv"
+        ],
+        "isDerived": true,
+        "derivedFromFields": [
+          "data.raw.avgRateCentsPerKwh",
+          "data.derived.affordabilityIndex"
+        ]
+      },
+      {
+        "field": "data.derived.freshnessStatus",
+        "provenanceIds": [
+          "poe-methodology-freshness",
+          "poe-dataset-states-json"
+        ],
+        "isDerived": true,
+        "derivedFromFields": [
+          "data.raw.updated"
+        ]
+      },
+      {
+        "field": "data.derived.percentileRankings",
+        "provenanceIds": [
+          "eia-retail-sales-923",
+          "poe-dataset-states-json",
+          "poe-dataset-affordability-csv",
+          "poe-dataset-value-ranking-csv"
+        ],
+        "isDerived": true,
+        "derivedFromFields": [
+          "data.raw.avgRateCentsPerKwh",
+          "data.derived.valueScore",
+          "data.derived.affordabilityIndex"
+        ]
+      },
+      {
+        "field": "data.derived.comparison",
+        "provenanceIds": [
+          "eia-retail-sales-923",
+          "poe-dataset-states-json",
+          "poe-methodology-epi"
+        ],
+        "isDerived": true,
+        "derivedFromFields": [
+          "data.raw.avgRateCentsPerKwh"
+        ]
+      },
+      {
+        "field": "data.derived.relatedUrls",
+        "provenanceIds": [
+          "poe-methodology-epi",
+          "poe-methodology-value-score",
+          "poe-methodology-freshness"
+        ],
+        "isDerived": true,
+        "derivedFromFields": []
+      }
+    ],
+    "citations": [
+      {
+        "sourceName": "U.S. Energy Information Administration (EIA) Retail Sales of Electricity",
+        "sourceUrl": "https://api.eia.gov/v2/electricity/retail-sales/data/",
+        "retrievedAt": "2026-03-09T17:50:09.701Z",
+        "notes": "Primary source for state residential electricity rate series used by snapshots."
+      },
+      {
+        "sourceName": "PriceOfElectricity.com dataset endpoint: affordability.csv",
+        "sourceUrl": "http://localhost:3000/api/datasets/affordability.csv",
+        "retrievedAt": "2026-03-09T17:50:09.701Z"
+      },
+      {
+        "sourceName": "PriceOfElectricity.com dataset endpoint: states.csv",
+        "sourceUrl": "http://localhost:3000/api/datasets/states.csv",
+        "retrievedAt": "2026-03-09T17:50:09.701Z"
+      },
+      {
+        "sourceName": "PriceOfElectricity.com dataset endpoint: states.json",
+        "sourceUrl": "http://localhost:3000/api/datasets/states.json",
+        "retrievedAt": "2026-03-09T17:50:09.701Z"
+      },
+      {
+        "sourceName": "PriceOfElectricity.com dataset endpoint: value-ranking.csv",
+        "sourceUrl": "http://localhost:3000/api/datasets/value-ranking.csv",
+        "retrievedAt": "2026-03-09T17:50:09.701Z"
+      },
+      {
+        "sourceName": "PriceOfElectricity.com methodology: Electricity Price Index",
+        "sourceUrl": "http://localhost:3000/methodology/electricity-price-index",
+        "retrievedAt": "2026-03-09T17:50:09.701Z"
+      },
+      {
+        "sourceName": "PriceOfElectricity.com methodology: Freshness Scoring",
+        "sourceUrl": "http://localhost:3000/methodology/freshness-scoring",
+        "retrievedAt": "2026-03-09T17:50:09.701Z"
+      },
+      {
+        "sourceName": "PriceOfElectricity.com methodology: Value Score",
+        "sourceUrl": "http://localhost:3000/methodology/value-score",
+        "retrievedAt": "2026-03-09T17:50:09.701Z"
+      }
+    ],
+    "llmHints": {
+      "priority": "high",
+      "entityType": "state",
+      "semanticTopics": [
+        "electricity rates",
+        "kwh pricing",
+        "energy affordability",
+        "state comparison"
+      ],
+      "semanticCluster": "geographic-state"
+    },
+    "freshness": {
+      "datasetUpdatedAt": "2025-12-15T00:00:00.000Z",
+      "computedAt": "2026-03-09T17:50:09.701Z",
+      "status": "aging",
+      "ageDays": 84,
+      "methodology": {
+        "id": "freshness",
+        "version": "1.0",
+        "url": "http://localhost:3000/knowledge/methodology/freshness.json",
+        "canonicalUrl": "http://localhost:3000/knowledge/methodology/freshness"
+      }
+    },
+    "excerpt": "Georgia residential electricity snapshot. Avg 15.22¢/kWh Value score 89 Affordability 88 Data freshness: fresh.",
+    "disclaimerRefs": [
+      "general-site",
+      "offers-disabled"
+    ],
+    "qualityScore": 90,
+    "contentHash": "f3cf7414ddab25613d0b33a2c50eb804a8130fb89c44e38dd54caf1a6f0551a2",
+    "integrity": {
+      "contentHash": "f3cf7414ddab25613d0b33a2c50eb804a8130fb89c44e38dd54caf1a6f0551a2",
+      "integrityAlgorithm": "sha256",
+      "signedAtBuild": "2026-03-09T17:50:09.701Z"
+    }
+  },
+  "data": {
+    "raw": {
+      "slug": "georgia",
+      "name": "Georgia",
+      "postal": null,
+      "avgRateCentsPerKwh": 15.22,
+      "updated": "February 2026"
+    },
+    "derived": {
+      "valueScore": 89,
+      "affordabilityIndex": 88,
+      "freshnessStatus": "fresh",
+      "exampleBills": {
+        "kwh500": 76.1,
+        "kwh1000": 152.2,
+        "kwh1500": 228.3
+      },
+      "relatedUrls": {
+        "statePage": "http://localhost:3000/georgia",
+        "utilitiesPage": "http://localhost:3000/georgia/utilities",
+        "plansPage": "http://localhost:3000/georgia/plans",
+        "methodology": [
+          "http://localhost:3000/knowledge/methodology/epi",
+          "http://localhost:3000/knowledge/methodology/value-score",
+          "http://localhost:3000/knowledge/methodology/freshness"
+        ]
+      },
+      "percentileRankings": {
+        "ratePercentile": 42.86,
+        "valueScorePercentile": 51.02,
+        "affordabilityPercentile": 51.02
+      },
+      "trends": {
+        "avgRateCentsPerKwh": {
+          "values": [
+            14.42,
+            13.67
+          ],
+          "min": 13.67,
+          "max": 14.42
+        }
+      },
+      "momentum": {
+        "enabled": true,
+        "signal": "rising",
+        "score": 2.56,
+        "shortWindowChangePercent": 1.56,
+        "longWindowChangePercent": 7.47,
+        "windowPointsUsed": 300
+      },
+      "comparison": {
+        "nationalAverage": 17.57,
+        "differenceCents": -2.35,
+        "differencePercent": -13.4,
+        "category": "lower than national average"
+      },
+      "priceHistory": {
+        "rateSeries": {
+          "periods": [
+            "2021-01",
+            "2021-02",
+            "2021-03",
+            "2021-04",
+            "2021-05",
+            "2021-06",
+            "2021-07",
+            "2021-08",
+            "2021-09",
+            "2021-10",
+            "2021-11",
+            "2021-12",
+            "2022-01",
+            "2022-02",
+            "2022-03",
+            "2022-04",
+            "2022-05",
+            "2022-06",
+            "2022-07",
+            "2022-08",
+            "2022-09",
+            "2022-10",
+            "2022-11",
+            "2022-12",
+            "2023-01",
+            "2023-02",
+            "2023-03",
+            "2023-04",
+            "2023-05",
+            "2023-06",
+            "2023-07",
+            "2023-08",
+            "2023-09",
+            "2023-10",
+            "2023-11",
+            "2023-12",
+            "2024-01",
+            "2024-02",
+            "2024-03",
+            "2024-04",
+            "2024-05",
+            "2024-06",
+            "2024-07",
+            "2024-08",
+            "2024-09",
+            "2024-10",
+            "2024-11",
+            "2024-12",
+            "2025-01",
+            "2025-02",
+            "2025-03",
+            "2025-04",
+            "2025-05",
+            "2025-06",
+            "2025-07",
+            "2025-08",
+            "2025-09",
+            "2025-10",
+            "2025-11",
+            "2025-12"
+          ],
+          "values": [
+            10.77,
+            11.57,
+            11.72,
+            12.13,
+            13.16,
+            13.52,
+            13.47,
+            13.23,
+            12.87,
+            12.86,
+            12.27,
+            12.07,
+            11.44,
+            11.67,
+            12.66,
+            13.23,
+            14.19,
+            15.07,
+            15.81,
+            15.97,
+            14.87,
+            14.06,
+            13.29,
+            11.76,
+            12.81,
+            13.53,
+            13.49,
+            13.25,
+            13.96,
+            14.59,
+            14.33,
+            14.12,
+            13.97,
+            13.69,
+            13.16,
+            12.72,
+            12.27,
+            12.92,
+            13.49,
+            14.04,
+            14.86,
+            15.48,
+            15.16,
+            14.83,
+            13.63,
+            13.92,
+            14.23,
+            13.46,
+            13.5,
+            13.56,
+            14.69,
+            14.82,
+            14.98,
+            15.96,
+            15.56,
+            15.43,
+            15.3,
+            14.53,
+            14.42,
+            13.67
+          ]
+        },
+        "rate1YearAgo": 13.46,
+        "rate5YearsAgo": 10.98,
+        "increase1YearPercent": 1.6,
+        "increase5YearPercent": 24.5,
+        "annualizedIncrease5Year": 4.5
+      }
+    },
+    "compareLinks": [
+      {
+        "pairSlug": "florida-vs-georgia",
+        "title": "Georgia vs Florida",
+        "url": "/electricity-cost-comparison/florida-vs-georgia"
+      },
+      {
+        "pairSlug": "georgia-vs-texas",
+        "title": "Georgia vs Texas",
+        "url": "/electricity-cost-comparison/georgia-vs-texas"
+      },
+      {
+        "pairSlug": "georgia-vs-ohio",
+        "title": "Georgia vs Ohio",
+        "url": "/electricity-cost-comparison/georgia-vs-ohio"
+      }
+    ],
+    "regionRef": {
+      "id": "south",
+      "name": "South",
+      "href": "/knowledge/regions/south"
+    },
+    "derivedMeta": {
+      "methodologiesUsed": [
+        {
+          "id": "epi",
+          "version": "1.0",
+          "url": "http://localhost:3000/knowledge/methodology/epi.json",
+          "appliesToFields": [
+            "data.derived.exampleBills",
+            "data.derived.percentileRankings.ratePercentile",
+            "data.derived.relatedUrls",
+            "data.derived.trends",
+            "data.derived.comparison"
+          ]
+        },
+        {
+          "id": "value-score",
+          "version": "1.0",
+          "url": "http://localhost:3000/knowledge/methodology/value-score.json",
+          "appliesToFields": [
+            "data.derived.valueScore",
+            "data.derived.affordabilityIndex",
+            "data.derived.percentileRankings.valueScorePercentile",
+            "data.derived.percentileRankings.affordabilityPercentile"
+          ]
+        },
+        {
+          "id": "freshness",
+          "version": "1.0",
+          "url": "http://localhost:3000/knowledge/methodology/freshness.json",
+          "appliesToFields": [
+            "data.derived.freshnessStatus"
+          ]
+        },
+        {
+          "id": "momentum-signal",
+          "version": "1.0",
+          "url": "http://localhost:3000/knowledge/methodology/momentum-signal.json",
+          "appliesToFields": [
+            "data.derived.momentum"
+          ]
+        },
+        {
+          "id": "price-trend",
+          "version": "1.0",
+          "url": "http://localhost:3000/knowledge/methodology/price-trend.json",
+          "appliesToFields": [
+            "data.derived.priceHistory"
+          ]
+        }
+      ]
+    },
+    "relatedEntities": {
+      "methodologies": [
+        "epi",
+        "value-score",
+        "freshness",
+        "momentum-signal",
+        "price-trend"
+      ],
+      "rankings": [
+        "rate-low-to-high",
+        "rate-high-to-low",
+        "affordability",
+        "value-score",
+        "momentum-signal"
+      ],
+      "national": true
+    },
+    "offersRef": {
+      "offersIndexUrl": "/knowledge/offers/index.json",
+      "offersConfigUrl": "/knowledge/policy/offers-config.json",
+      "enabled": false
+    },
+    "facts": [
+      {
+        "label": "Affordability index",
+        "value": 88,
+        "sourceField": "data.derived.affordabilityIndex"
+      },
+      {
+        "label": "Average rate",
+        "value": 15.22,
+        "unit": "¢/kWh",
+        "sourceField": "data.raw.avgRateCentsPerKwh"
+      },
+      {
+        "label": "Data age",
+        "value": 84,
+        "unit": "days",
+        "sourceField": "meta.freshness.ageDays"
+      },
+      {
+        "label": "Example bill 1000 kWh",
+        "value": 152.2,
+        "unit": "$",
+        "sourceField": "data.derived.exampleBills.kwh1000"
+      },
+      {
+        "label": "Freshness status",
+        "value": "fresh",
+        "sourceField": "data.derived.freshnessStatus"
+      },
+      {
+        "label": "Rate percentile",
+        "value": 42.86,
+        "sourceField": "data.derived.percentileRankings.ratePercentile"
+      },
+      {
+        "label": "Value score",
+        "value": 89,
+        "sourceField": "data.derived.valueScore"
+      }
+    ]
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "schemaVersion": "1.0",
+  "generatedAt": "2026-03-09T17:50:09.701Z",
+  "sourceVersion": "v2",
+  "contractVersion": "1.0.0",
+  "stateA": "north-dakota",
+  "stateB": "ohio",
+  "nameA": "North Dakota",
+  "nameB": "Ohio",
+  "rateA": 11.92,
+  "rateB": 16.9,
+  "differenceCents": -4.98,
+  "differencePercent": -29.5,
+  "higherCostState": "Ohio",
+  "lowerCostState": "North Dakota"
+}

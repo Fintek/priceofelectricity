@@ -1,0 +1,16 @@
+{
+  "schemaVersion": "1.0",
+  "generatedAt": "2026-03-09T17:50:09.701Z",
+  "sourceVersion": "v2",
+  "contractVersion": "1.0.0",
+  "stateA": "maine",
+  "stateB": "ohio",
+  "nameA": "Maine",
+  "nameB": "Ohio",
+  "rateA": 27.24,
+  "rateB": 16.9,
+  "differenceCents": 10.34,
+  "differencePercent": 61.2,
+  "higherCostState": "Maine",
+  "lowerCostState": "Ohio"
+}

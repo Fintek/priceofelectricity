@@ -1,0 +1,116 @@
+{
+  "schemaVersion": "1.0",
+  "generatedAt": "2026-03-09T17:50:09.701Z",
+  "sourceVersion": "v2",
+  "fields": [
+    {
+      "id": "affordabilityIndex",
+      "label": "Affordability",
+      "unit": "index",
+      "description": "Index reflecting electricity cost burden relative to typical usage assumptions used by the site.",
+      "sourcePathExamples": [
+        "data.derived.affordabilityIndex"
+      ],
+      "methodologies": [
+        {
+          "id": "epi",
+          "version": "1.0"
+        },
+        {
+          "id": "freshness",
+          "version": "1.0"
+        }
+      ],
+      "provenanceIds": [
+        "poe-methodology-value-score",
+        "poe-dataset-affordability-csv"
+      ]
+    },
+    {
+      "id": "avgRateCentsPerKwh",
+      "label": "Avg rate (¢/kWh)",
+      "unit": "centsPerKwh",
+      "description": "Average residential electricity price in cents per kilowatt-hour for the state.",
+      "sourcePathExamples": [
+        "data.raw.avgRateCentsPerKwh",
+        "data.facts[*].sourceField"
+      ],
+      "methodologies": [],
+      "provenanceIds": [
+        "eia-retail-sales-923",
+        "poe-dataset-states-json"
+      ]
+    },
+    {
+      "id": "exampleBill1000kwh",
+      "label": "Example bill (1000 kWh)",
+      "unit": "usd",
+      "description": "Estimated monthly bill at 1000 kWh using the state's average rate, excluding certain fees/taxes depending on dataset limits.",
+      "sourcePathExamples": [
+        "data.derived.exampleBills.bill1000kwh"
+      ],
+      "methodologies": [
+        {
+          "id": "epi",
+          "version": "1.0"
+        }
+      ],
+      "provenanceIds": [
+        "poe-methodology-epi",
+        "poe-dataset-states-json"
+      ]
+    },
+    {
+      "id": "freshnessStatus",
+      "label": "Freshness",
+      "unit": "status",
+      "description": "Indicates how recent the underlying dataset is relative to build time.",
+      "sourcePathExamples": [
+        "meta.freshness.status",
+        "data.derived.freshnessStatus"
+      ],
+      "methodologies": [
+        {
+          "id": "freshness",
+          "version": "1.0"
+        }
+      ],
+      "provenanceIds": [
+        "poe-methodology-freshness",
+        "eia-retail-sales-923"
+      ]
+    },
+    {
+      "id": "qualityScore",
+      "label": "Quality",
+      "unit": "score",
+      "description": "Rule-based quality score (0–100) reflecting freshness and metadata completeness.",
+      "sourcePathExamples": [
+        "meta.qualityScore"
+      ],
+      "methodologies": [],
+      "provenanceIds": [
+        "poe-methodology-freshness"
+      ]
+    },
+    {
+      "id": "valueScore",
+      "label": "Value score",
+      "unit": "index",
+      "description": "Composite score used to compare states based on price and stability. See methodology for calculation details.",
+      "sourcePathExamples": [
+        "data.derived.valueScore"
+      ],
+      "methodologies": [
+        {
+          "id": "value-score",
+          "version": "1.0"
+        }
+      ],
+      "provenanceIds": [
+        "poe-methodology-value-score",
+        "poe-dataset-value-ranking-csv"
+      ]
+    }
+  ]
+}

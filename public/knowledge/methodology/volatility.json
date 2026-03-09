@@ -1,0 +1,134 @@
+{
+  "meta": {
+    "schemaVersion": "1.0",
+    "id": "knowledge:methodology:volatility",
+    "type": "methodology",
+    "slug": "volatility",
+    "title": "Volatility Index Methodology",
+    "description": "Coefficient of variation methodology for rate volatility over a window.",
+    "canonicalUrl": "http://localhost:3000/knowledge/methodology/volatility",
+    "jsonUrl": "http://localhost:3000/knowledge/methodology/volatility.json",
+    "updatedAt": "2026-03-09T17:50:09.701Z",
+    "sourceVersion": "v2",
+    "temporalContext": {
+      "sourceVersion": "v2",
+      "isLatest": true
+    },
+    "provenance": [
+      {
+        "id": "poe-methodology-volatility",
+        "sourceName": "PriceOfElectricity.com methodology: Volatility",
+        "sourceUrl": "http://localhost:3000/knowledge/methodology/volatility",
+        "publisher": "PriceOfElectricity.com",
+        "license": "Site content license",
+        "retrievedAt": "2026-03-09T17:50:09.701Z"
+      }
+    ],
+    "fieldProvenance": [
+      {
+        "field": "data.definition",
+        "provenanceIds": [
+          "poe-methodology-volatility"
+        ]
+      },
+      {
+        "field": "data.inputs",
+        "provenanceIds": [
+          "poe-methodology-volatility"
+        ]
+      },
+      {
+        "field": "data.steps",
+        "provenanceIds": [
+          "poe-methodology-volatility"
+        ]
+      },
+      {
+        "field": "data.limitations",
+        "provenanceIds": [
+          "poe-methodology-volatility"
+        ]
+      },
+      {
+        "field": "data.relatedInternalUrls",
+        "provenanceIds": [
+          "poe-methodology-volatility"
+        ]
+      }
+    ],
+    "citations": [
+      {
+        "sourceName": "PriceOfElectricity.com methodology: Volatility",
+        "sourceUrl": "http://localhost:3000/knowledge/methodology/volatility",
+        "retrievedAt": "2026-03-09T17:50:09.701Z"
+      }
+    ],
+    "llmHints": {
+      "priority": "high",
+      "entityType": "methodology",
+      "semanticTopics": [
+        "methodology",
+        "electricity rates",
+        "index calculation",
+        "data freshness"
+      ],
+      "semanticCluster": "calculation-framework"
+    },
+    "freshness": {
+      "datasetUpdatedAt": "2025-12-15T00:00:00.000Z",
+      "computedAt": "2026-03-09T17:50:09.701Z",
+      "status": "aging",
+      "ageDays": 84,
+      "methodology": {
+        "id": "freshness",
+        "version": "1.0",
+        "url": "http://localhost:3000/knowledge/methodology/freshness.json",
+        "canonicalUrl": "http://localhost:3000/knowledge/methodology/freshness"
+      }
+    },
+    "excerpt": "Volatility Index Methodology. Defines how volatility index is computed from inputs and produces derived fields used across state and ranking pages.",
+    "disclaimerRefs": [
+      "methodology"
+    ],
+    "methodology": {
+      "id": "volatility",
+      "version": "1.0",
+      "lastReviewedAt": "2026-03-09",
+      "relatedDerivedFields": [
+        "data.sortedStates"
+      ]
+    },
+    "qualityScore": 90,
+    "contentHash": "01f5d86d598d3a9fe558d99dedcfb819f476d59fe223aa190ef30244a5b075f0",
+    "integrity": {
+      "contentHash": "01f5d86d598d3a9fe558d99dedcfb819f476d59fe223aa190ef30244a5b075f0",
+      "integrityAlgorithm": "sha256",
+      "signedAtBuild": "2026-03-09T17:50:09.701Z"
+    }
+  },
+  "data": {
+    "definition": "Volatility index uses coefficient of variation (stdev/mean) of monthly rates over a consistent window.",
+    "inputs": [
+      "Historical monthly avgRateCentsPerKwh",
+      "Window (e.g. last 5 years)"
+    ],
+    "steps": [
+      "Filter to window (e.g. last 5 years monthly).",
+      "Compute mean and standard deviation.",
+      "volatilityPct = (stdev / mean) * 100."
+    ],
+    "limitations": [
+      "Requires historical time-series data. Rankings are disabled when history is unavailable.",
+      "Window choice affects comparability."
+    ],
+    "relatedInternalUrls": [
+      "http://localhost:3000/knowledge/rankings/volatility-5y"
+    ],
+    "relatedEntities": {
+      "national": true,
+      "rankings": [
+        "volatility-5y"
+      ]
+    }
+  }
+}

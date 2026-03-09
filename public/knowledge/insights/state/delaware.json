@@ -1,0 +1,18 @@
+{
+  "schemaVersion": "1.0",
+  "generatedAt": "2026-03-09T17:50:09.701Z",
+  "subject": "state",
+  "id": "delaware",
+  "insights": [
+    {
+      "type": "ranking",
+      "statement": "Delaware ranks #16 among U.S. states for electricity prices.",
+      "confidence": "high"
+    },
+    {
+      "type": "trend",
+      "statement": "Delaware shows a rising electricity price trend based on recent historical data.",
+      "confidence": "medium"
+    }
+  ]
+}

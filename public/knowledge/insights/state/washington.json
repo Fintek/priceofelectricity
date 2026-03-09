@@ -1,0 +1,33 @@
+{
+  "schemaVersion": "1.0",
+  "generatedAt": "2026-03-09T17:50:09.701Z",
+  "subject": "state",
+  "id": "washington",
+  "insights": [
+    {
+      "type": "price",
+      "statement": "Electricity in Washington costs 27% less than the national average.",
+      "confidence": "high"
+    },
+    {
+      "type": "ranking",
+      "statement": "Washington ranks #45 among U.S. states for electricity prices.",
+      "confidence": "high"
+    },
+    {
+      "type": "ranking",
+      "statement": "Electricity in Washington is among the 10 least expensive states.",
+      "confidence": "medium"
+    },
+    {
+      "type": "value",
+      "statement": "Washington has a value score of 96, indicating strong affordability and freshness.",
+      "confidence": "medium"
+    },
+    {
+      "type": "trend",
+      "statement": "Washington shows an accelerating electricity price trend based on recent historical data.",
+      "confidence": "medium"
+    }
+  ]
+}

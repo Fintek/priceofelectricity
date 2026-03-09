@@ -1,0 +1,140 @@
+{
+  "meta": {
+    "schemaVersion": "1.0",
+    "id": "knowledge:methodology:value-score",
+    "type": "methodology",
+    "slug": "value-score",
+    "title": "Value Score Methodology",
+    "description": "Methodology for Value Score composition and tier assignment.",
+    "canonicalUrl": "http://localhost:3000/knowledge/methodology/value-score",
+    "jsonUrl": "http://localhost:3000/knowledge/methodology/value-score.json",
+    "updatedAt": "2026-03-09T17:50:09.701Z",
+    "sourceVersion": "v2",
+    "temporalContext": {
+      "sourceVersion": "v2",
+      "isLatest": true
+    },
+    "provenance": [
+      {
+        "id": "poe-methodology-value-score",
+        "sourceName": "PriceOfElectricity.com methodology: Value Score",
+        "sourceUrl": "http://localhost:3000/methodology/value-score",
+        "publisher": "PriceOfElectricity.com",
+        "license": "Site content license",
+        "retrievedAt": "2026-03-09T17:50:09.701Z"
+      }
+    ],
+    "fieldProvenance": [
+      {
+        "field": "data.definition",
+        "provenanceIds": [
+          "poe-methodology-value-score"
+        ]
+      },
+      {
+        "field": "data.inputs",
+        "provenanceIds": [
+          "poe-methodology-value-score"
+        ]
+      },
+      {
+        "field": "data.steps",
+        "provenanceIds": [
+          "poe-methodology-value-score"
+        ]
+      },
+      {
+        "field": "data.limitations",
+        "provenanceIds": [
+          "poe-methodology-value-score"
+        ]
+      },
+      {
+        "field": "data.relatedInternalUrls",
+        "provenanceIds": [
+          "poe-methodology-value-score"
+        ]
+      }
+    ],
+    "citations": [
+      {
+        "sourceName": "PriceOfElectricity.com methodology: Value Score",
+        "sourceUrl": "http://localhost:3000/methodology/value-score",
+        "retrievedAt": "2026-03-09T17:50:09.701Z"
+      }
+    ],
+    "llmHints": {
+      "priority": "high",
+      "entityType": "methodology",
+      "semanticTopics": [
+        "methodology",
+        "electricity rates",
+        "index calculation",
+        "data freshness"
+      ],
+      "semanticCluster": "calculation-framework"
+    },
+    "freshness": {
+      "datasetUpdatedAt": "2025-12-15T00:00:00.000Z",
+      "computedAt": "2026-03-09T17:50:09.701Z",
+      "status": "aging",
+      "ageDays": 84,
+      "methodology": {
+        "id": "freshness",
+        "version": "1.0",
+        "url": "http://localhost:3000/knowledge/methodology/freshness.json",
+        "canonicalUrl": "http://localhost:3000/knowledge/methodology/freshness"
+      }
+    },
+    "excerpt": "Value Score Methodology. Defines how value score is computed from inputs and produces derived fields used across state and ranking pages.",
+    "disclaimerRefs": [
+      "methodology"
+    ],
+    "methodology": {
+      "id": "value-score",
+      "version": "1.0",
+      "lastReviewedAt": "2026-03-09",
+      "relatedDerivedFields": [
+        "data.derived.valueScore",
+        "data.derived.affordabilityIndex",
+        "data.derived.percentileRankings.valueScorePercentile",
+        "data.derived.percentileRankings.affordabilityPercentile",
+        "data.sortedStates"
+      ]
+    },
+    "qualityScore": 90,
+    "contentHash": "e13150b72d57a551d27b126684f92f90f1d19ea5e0ee4f044621d267502f9fd5",
+    "integrity": {
+      "contentHash": "e13150b72d57a551d27b126684f92f90f1d19ea5e0ee4f044621d267502f9fd5",
+      "integrityAlgorithm": "sha256",
+      "signedAtBuild": "2026-03-09T17:50:09.701Z"
+    }
+  },
+  "data": {
+    "definition": "Value Score combines affordability and freshness signals into a single ranking score.",
+    "inputs": [
+      "Affordability index",
+      "Freshness status",
+      "Normalized state rates"
+    ],
+    "steps": [
+      "Compute affordability records from normalized states.",
+      "Apply Value Score weighting.",
+      "Assign value tier labels."
+    ],
+    "limitations": [
+      "Score is a comparative heuristic, not a utility bill forecast.",
+      "Dependent on monthly cadence of source updates."
+    ],
+    "relatedInternalUrls": [
+      "http://localhost:3000/knowledge/methodology/value-score",
+      "http://localhost:3000/value-ranking"
+    ],
+    "relatedEntities": {
+      "national": true,
+      "rankings": [
+        "value-score"
+      ]
+    }
+  }
+}

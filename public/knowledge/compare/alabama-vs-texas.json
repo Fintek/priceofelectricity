@@ -1,0 +1,16 @@
+{
+  "schemaVersion": "1.0",
+  "generatedAt": "2026-03-09T17:50:09.701Z",
+  "sourceVersion": "v2",
+  "contractVersion": "1.0.0",
+  "stateA": "alabama",
+  "stateB": "texas",
+  "nameA": "Alabama",
+  "nameB": "Texas",
+  "rateA": 16.55,
+  "rateB": 15.83,
+  "differenceCents": 0.72,
+  "differencePercent": 4.5,
+  "higherCostState": "Alabama",
+  "lowerCostState": "Texas"
+}

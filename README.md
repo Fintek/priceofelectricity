@@ -35,7 +35,18 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
 
-## Vercel Deploy Notes
-Vercel build runs `npm run verify`.
-`lhci` is skipped on Vercel because Chrome is not available there.
-Run LHCI in GitHub Actions instead.
+## Deployment Readiness
+
+**PriceOfElectricity.com** — Electricity price data and insights.
+
+### Before Deploy
+
+1. Run validation: `npm run knowledge:build && npm run knowledge:verify && npm run build && npm run lint && npm run verify`
+2. Configure env vars in Vercel: `NEXT_PUBLIC_SITE_URL`, `EMAIL_SINK`, `ALERT_EXPORT_TOKEN` (see `.env.example`)
+3. GitHub commit and Vercel deploy happen after validation passes
+
+See `docs/DEPLOYMENT_READINESS.md` for full details.
+
+### Vercel Build
+
+Vercel runs `npm run verify:vercel` (full validation without LHCI). LHCI requires Chrome; run it in GitHub Actions.

@@ -7,7 +7,7 @@
     "dev:reset": "tsx scripts/dev-reset.ts",
     "predeploy": "tsx scripts/predeploy-check.ts",
     "release:gen": "tsx scripts/release-generate.ts",
-    "build": "npm run release:gen && next build",
+    "build": "npm run release:gen && npm run knowledge:build && npm run knowledge:verify && next build",
     "start": "next start",
     "lint": "eslint .",
     "typecheck": "tsc --noEmit",
@@ -25,7 +25,13 @@
     "data:build": "tsx scripts/data-build.ts",
     "data:diff": "tsx scripts/data-diff.ts",
     "data:backfill:eia:res": "tsx scripts/eia/backfill_residential_monthly.ts",
-    "data:build:snapshots:eia": "tsx scripts/eia/generate_snapshots_from_eia_csv.ts"
+    "data:build:snapshots:eia": "tsx scripts/eia/generate_snapshots_from_eia_csv.ts",
+    "knowledge:build": "tsx scripts/knowledge-build.ts",
+    "knowledge:verify": "node scripts/verify-knowledge.js",
+    "knowledge:integrity": "node scripts/verify-knowledge.js --integrity-only",
+    "knowledge:types": "node scripts/knowledge-types.js",
+    "knowledge:check": "node scripts/knowledge-check.js",
+    "launch:check": "npm run build"
   },
   "dependencies": {
     "dotenv": "^17.3.1",

@@ -1,0 +1,5471 @@
+{
+  "schemaVersion": "1.0",
+  "generatedAt": "2026-03-09T17:50:09.701Z",
+  "sourceVersion": "v2",
+  "rowCount": 606,
+  "columns": [
+    "rankingId",
+    "rankingTitle",
+    "state",
+    "value",
+    "displayValue",
+    "direction",
+    "metricId"
+  ],
+  "data": [
+    {
+      "rankingId": "affordability",
+      "rankingTitle": "Affordability Rankings",
+      "state": "Idaho",
+      "value": 100,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "affordabilityIndex"
+    },
+    {
+      "rankingId": "affordability",
+      "rankingTitle": "Affordability Rankings",
+      "state": "North Dakota",
+      "value": 99,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "affordabilityIndex"
+    },
+    {
+      "rankingId": "affordability",
+      "rankingTitle": "Affordability Rankings",
+      "state": "Louisiana",
+      "value": 98,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "affordabilityIndex"
+    },
+    {
+      "rankingId": "affordability",
+      "rankingTitle": "Affordability Rankings",
+      "state": "Nebraska",
+      "value": 98,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "affordabilityIndex"
+    },
+    {
+      "rankingId": "affordability",
+      "rankingTitle": "Affordability Rankings",
+      "state": "Arkansas",
+      "value": 96,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "affordabilityIndex"
+    },
+    {
+      "rankingId": "affordability",
+      "rankingTitle": "Affordability Rankings",
+      "state": "Oklahoma",
+      "value": 96,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "affordabilityIndex"
+    },
+    {
+      "rankingId": "affordability",
+      "rankingTitle": "Affordability Rankings",
+      "state": "Utah",
+      "value": 96,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "affordabilityIndex"
+    },
+    {
+      "rankingId": "affordability",
+      "rankingTitle": "Affordability Rankings",
+      "state": "Washington",
+      "value": 96,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "affordabilityIndex"
+    },
+    {
+      "rankingId": "affordability",
+      "rankingTitle": "Affordability Rankings",
+      "state": "Iowa",
+      "value": 95,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "affordabilityIndex"
+    },
+    {
+      "rankingId": "affordability",
+      "rankingTitle": "Affordability Rankings",
+      "state": "Kentucky",
+      "value": 95,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "affordabilityIndex"
+    },
+    {
+      "rankingId": "affordability",
+      "rankingTitle": "Affordability Rankings",
+      "state": "Montana",
+      "value": 95,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "affordabilityIndex"
+    },
+    {
+      "rankingId": "affordability",
+      "rankingTitle": "Affordability Rankings",
+      "state": "Nevada",
+      "value": 95,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "affordabilityIndex"
+    },
+    {
+      "rankingId": "affordability",
+      "rankingTitle": "Affordability Rankings",
+      "state": "South Dakota",
+      "value": 95,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "affordabilityIndex"
+    },
+    {
+      "rankingId": "affordability",
+      "rankingTitle": "Affordability Rankings",
+      "state": "Tennessee",
+      "value": 95,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "affordabilityIndex"
+    },
+    {
+      "rankingId": "affordability",
+      "rankingTitle": "Affordability Rankings",
+      "state": "Missouri",
+      "value": 94,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "affordabilityIndex"
+    },
+    {
+      "rankingId": "affordability",
+      "rankingTitle": "Affordability Rankings",
+      "state": "Mississippi",
+      "value": 93,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "affordabilityIndex"
+    },
+    {
+      "rankingId": "affordability",
+      "rankingTitle": "Affordability Rankings",
+      "state": "North Carolina",
+      "value": 92,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "affordabilityIndex"
+    },
+    {
+      "rankingId": "affordability",
+      "rankingTitle": "Affordability Rankings",
+      "state": "Wyoming",
+      "value": 92,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "affordabilityIndex"
+    },
+    {
+      "rankingId": "affordability",
+      "rankingTitle": "Affordability Rankings",
+      "state": "Kansas",
+      "value": 91,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "affordabilityIndex"
+    },
+    {
+      "rankingId": "affordability",
+      "rankingTitle": "Affordability Rankings",
+      "state": "South Carolina",
+      "value": 90,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "affordabilityIndex"
+    },
+    {
+      "rankingId": "affordability",
+      "rankingTitle": "Affordability Rankings",
+      "state": "Oregon",
+      "value": 89,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "affordabilityIndex"
+    },
+    {
+      "rankingId": "affordability",
+      "rankingTitle": "Affordability Rankings",
+      "state": "Florida",
+      "value": 88,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "affordabilityIndex"
+    },
+    {
+      "rankingId": "affordability",
+      "rankingTitle": "Affordability Rankings",
+      "state": "Georgia",
+      "value": 88,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "affordabilityIndex"
+    },
+    {
+      "rankingId": "affordability",
+      "rankingTitle": "Affordability Rankings",
+      "state": "New Mexico",
+      "value": 88,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "affordabilityIndex"
+    },
+    {
+      "rankingId": "affordability",
+      "rankingTitle": "Affordability Rankings",
+      "state": "Virginia",
+      "value": 88,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "affordabilityIndex"
+    },
+    {
+      "rankingId": "affordability",
+      "rankingTitle": "Affordability Rankings",
+      "state": "West Virginia",
+      "value": 88,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "affordabilityIndex"
+    },
+    {
+      "rankingId": "affordability",
+      "rankingTitle": "Affordability Rankings",
+      "state": "Arizona",
+      "value": 87,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "affordabilityIndex"
+    },
+    {
+      "rankingId": "affordability",
+      "rankingTitle": "Affordability Rankings",
+      "state": "Colorado",
+      "value": 86,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "affordabilityIndex"
+    },
+    {
+      "rankingId": "affordability",
+      "rankingTitle": "Affordability Rankings",
+      "state": "Texas",
+      "value": 86,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "affordabilityIndex"
+    },
+    {
+      "rankingId": "affordability",
+      "rankingTitle": "Affordability Rankings",
+      "state": "Indiana",
+      "value": 85,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "affordabilityIndex"
+    },
+    {
+      "rankingId": "affordability",
+      "rankingTitle": "Affordability Rankings",
+      "state": "Minnesota",
+      "value": 85,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "affordabilityIndex"
+    },
+    {
+      "rankingId": "affordability",
+      "rankingTitle": "Affordability Rankings",
+      "state": "Alabama",
+      "value": 84,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "affordabilityIndex"
+    },
+    {
+      "rankingId": "affordability",
+      "rankingTitle": "Affordability Rankings",
+      "state": "Ohio",
+      "value": 83,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "affordabilityIndex"
+    },
+    {
+      "rankingId": "affordability",
+      "rankingTitle": "Affordability Rankings",
+      "state": "Delaware",
+      "value": 82,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "affordabilityIndex"
+    },
+    {
+      "rankingId": "affordability",
+      "rankingTitle": "Affordability Rankings",
+      "state": "Illinois",
+      "value": 82,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "affordabilityIndex"
+    },
+    {
+      "rankingId": "affordability",
+      "rankingTitle": "Affordability Rankings",
+      "state": "Pennsylvania",
+      "value": 80,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "affordabilityIndex"
+    },
+    {
+      "rankingId": "affordability",
+      "rankingTitle": "Affordability Rankings",
+      "state": "Wisconsin",
+      "value": 79,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "affordabilityIndex"
+    },
+    {
+      "rankingId": "affordability",
+      "rankingTitle": "Affordability Rankings",
+      "state": "Maryland",
+      "value": 74,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "affordabilityIndex"
+    },
+    {
+      "rankingId": "affordability",
+      "rankingTitle": "Affordability Rankings",
+      "state": "Michigan",
+      "value": 72,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "affordabilityIndex"
+    },
+    {
+      "rankingId": "affordability",
+      "rankingTitle": "Affordability Rankings",
+      "state": "New Jersey",
+      "value": 65,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "affordabilityIndex"
+    },
+    {
+      "rankingId": "affordability",
+      "rankingTitle": "Affordability Rankings",
+      "state": "Vermont",
+      "value": 63,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "affordabilityIndex"
+    },
+    {
+      "rankingId": "affordability",
+      "rankingTitle": "Affordability Rankings",
+      "state": "New Hampshire",
+      "value": 61,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "affordabilityIndex"
+    },
+    {
+      "rankingId": "affordability",
+      "rankingTitle": "Affordability Rankings",
+      "state": "New York",
+      "value": 59,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "affordabilityIndex"
+    },
+    {
+      "rankingId": "affordability",
+      "rankingTitle": "Affordability Rankings",
+      "state": "Alaska",
+      "value": 55,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "affordabilityIndex"
+    },
+    {
+      "rankingId": "affordability",
+      "rankingTitle": "Affordability Rankings",
+      "state": "Massachusetts",
+      "value": 52,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "affordabilityIndex"
+    },
+    {
+      "rankingId": "affordability",
+      "rankingTitle": "Affordability Rankings",
+      "state": "Maine",
+      "value": 48,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "affordabilityIndex"
+    },
+    {
+      "rankingId": "affordability",
+      "rankingTitle": "Affordability Rankings",
+      "state": "Rhode Island",
+      "value": 44,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "affordabilityIndex"
+    },
+    {
+      "rankingId": "affordability",
+      "rankingTitle": "Affordability Rankings",
+      "state": "Connecticut",
+      "value": 37,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "affordabilityIndex"
+    },
+    {
+      "rankingId": "affordability",
+      "rankingTitle": "Affordability Rankings",
+      "state": "California",
+      "value": 34,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "affordabilityIndex"
+    },
+    {
+      "rankingId": "affordability",
+      "rankingTitle": "Affordability Rankings",
+      "state": "Hawaii",
+      "value": 0,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "affordabilityIndex"
+    },
+    {
+      "rankingId": "value-score",
+      "rankingTitle": "Value Score Rankings",
+      "state": "Idaho",
+      "value": 100,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "valueScore"
+    },
+    {
+      "rankingId": "value-score",
+      "rankingTitle": "Value Score Rankings",
+      "state": "North Dakota",
+      "value": 99,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "valueScore"
+    },
+    {
+      "rankingId": "value-score",
+      "rankingTitle": "Value Score Rankings",
+      "state": "Louisiana",
+      "value": 98,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "valueScore"
+    },
+    {
+      "rankingId": "value-score",
+      "rankingTitle": "Value Score Rankings",
+      "state": "Nebraska",
+      "value": 98,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "valueScore"
+    },
+    {
+      "rankingId": "value-score",
+      "rankingTitle": "Value Score Rankings",
+      "state": "Arkansas",
+      "value": 96,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "valueScore"
+    },
+    {
+      "rankingId": "value-score",
+      "rankingTitle": "Value Score Rankings",
+      "state": "Oklahoma",
+      "value": 96,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "valueScore"
+    },
+    {
+      "rankingId": "value-score",
+      "rankingTitle": "Value Score Rankings",
+      "state": "Utah",
+      "value": 96,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "valueScore"
+    },
+    {
+      "rankingId": "value-score",
+      "rankingTitle": "Value Score Rankings",
+      "state": "Washington",
+      "value": 96,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "valueScore"
+    },
+    {
+      "rankingId": "value-score",
+      "rankingTitle": "Value Score Rankings",
+      "state": "Iowa",
+      "value": 95,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "valueScore"
+    },
+    {
+      "rankingId": "value-score",
+      "rankingTitle": "Value Score Rankings",
+      "state": "Kentucky",
+      "value": 95,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "valueScore"
+    },
+    {
+      "rankingId": "value-score",
+      "rankingTitle": "Value Score Rankings",
+      "state": "Montana",
+      "value": 95,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "valueScore"
+    },
+    {
+      "rankingId": "value-score",
+      "rankingTitle": "Value Score Rankings",
+      "state": "Nevada",
+      "value": 95,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "valueScore"
+    },
+    {
+      "rankingId": "value-score",
+      "rankingTitle": "Value Score Rankings",
+      "state": "South Dakota",
+      "value": 95,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "valueScore"
+    },
+    {
+      "rankingId": "value-score",
+      "rankingTitle": "Value Score Rankings",
+      "state": "Tennessee",
+      "value": 95,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "valueScore"
+    },
+    {
+      "rankingId": "value-score",
+      "rankingTitle": "Value Score Rankings",
+      "state": "Missouri",
+      "value": 94,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "valueScore"
+    },
+    {
+      "rankingId": "value-score",
+      "rankingTitle": "Value Score Rankings",
+      "state": "Mississippi",
+      "value": 93,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "valueScore"
+    },
+    {
+      "rankingId": "value-score",
+      "rankingTitle": "Value Score Rankings",
+      "state": "Wyoming",
+      "value": 93,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "valueScore"
+    },
+    {
+      "rankingId": "value-score",
+      "rankingTitle": "Value Score Rankings",
+      "state": "North Carolina",
+      "value": 92,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "valueScore"
+    },
+    {
+      "rankingId": "value-score",
+      "rankingTitle": "Value Score Rankings",
+      "state": "Kansas",
+      "value": 91,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "valueScore"
+    },
+    {
+      "rankingId": "value-score",
+      "rankingTitle": "Value Score Rankings",
+      "state": "South Carolina",
+      "value": 91,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "valueScore"
+    },
+    {
+      "rankingId": "value-score",
+      "rankingTitle": "Value Score Rankings",
+      "state": "Oregon",
+      "value": 90,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "valueScore"
+    },
+    {
+      "rankingId": "value-score",
+      "rankingTitle": "Value Score Rankings",
+      "state": "Florida",
+      "value": 89,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "valueScore"
+    },
+    {
+      "rankingId": "value-score",
+      "rankingTitle": "Value Score Rankings",
+      "state": "Georgia",
+      "value": 89,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "valueScore"
+    },
+    {
+      "rankingId": "value-score",
+      "rankingTitle": "Value Score Rankings",
+      "state": "New Mexico",
+      "value": 89,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "valueScore"
+    },
+    {
+      "rankingId": "value-score",
+      "rankingTitle": "Value Score Rankings",
+      "state": "Virginia",
+      "value": 89,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "valueScore"
+    },
+    {
+      "rankingId": "value-score",
+      "rankingTitle": "Value Score Rankings",
+      "state": "West Virginia",
+      "value": 89,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "valueScore"
+    },
+    {
+      "rankingId": "value-score",
+      "rankingTitle": "Value Score Rankings",
+      "state": "Arizona",
+      "value": 88,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "valueScore"
+    },
+    {
+      "rankingId": "value-score",
+      "rankingTitle": "Value Score Rankings",
+      "state": "Colorado",
+      "value": 87,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "valueScore"
+    },
+    {
+      "rankingId": "value-score",
+      "rankingTitle": "Value Score Rankings",
+      "state": "Texas",
+      "value": 87,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "valueScore"
+    },
+    {
+      "rankingId": "value-score",
+      "rankingTitle": "Value Score Rankings",
+      "state": "Indiana",
+      "value": 86,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "valueScore"
+    },
+    {
+      "rankingId": "value-score",
+      "rankingTitle": "Value Score Rankings",
+      "state": "Minnesota",
+      "value": 86,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "valueScore"
+    },
+    {
+      "rankingId": "value-score",
+      "rankingTitle": "Value Score Rankings",
+      "state": "Alabama",
+      "value": 85,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "valueScore"
+    },
+    {
+      "rankingId": "value-score",
+      "rankingTitle": "Value Score Rankings",
+      "state": "Ohio",
+      "value": 84,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "valueScore"
+    },
+    {
+      "rankingId": "value-score",
+      "rankingTitle": "Value Score Rankings",
+      "state": "Delaware",
+      "value": 83,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "valueScore"
+    },
+    {
+      "rankingId": "value-score",
+      "rankingTitle": "Value Score Rankings",
+      "state": "Illinois",
+      "value": 83,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "valueScore"
+    },
+    {
+      "rankingId": "value-score",
+      "rankingTitle": "Value Score Rankings",
+      "state": "Pennsylvania",
+      "value": 81,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "valueScore"
+    },
+    {
+      "rankingId": "value-score",
+      "rankingTitle": "Value Score Rankings",
+      "state": "Wisconsin",
+      "value": 80,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "valueScore"
+    },
+    {
+      "rankingId": "value-score",
+      "rankingTitle": "Value Score Rankings",
+      "state": "Maryland",
+      "value": 76,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "valueScore"
+    },
+    {
+      "rankingId": "value-score",
+      "rankingTitle": "Value Score Rankings",
+      "state": "Michigan",
+      "value": 74,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "valueScore"
+    },
+    {
+      "rankingId": "value-score",
+      "rankingTitle": "Value Score Rankings",
+      "state": "New Jersey",
+      "value": 67,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "valueScore"
+    },
+    {
+      "rankingId": "value-score",
+      "rankingTitle": "Value Score Rankings",
+      "state": "Vermont",
+      "value": 65,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "valueScore"
+    },
+    {
+      "rankingId": "value-score",
+      "rankingTitle": "Value Score Rankings",
+      "state": "New Hampshire",
+      "value": 63,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "valueScore"
+    },
+    {
+      "rankingId": "value-score",
+      "rankingTitle": "Value Score Rankings",
+      "state": "New York",
+      "value": 61,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "valueScore"
+    },
+    {
+      "rankingId": "value-score",
+      "rankingTitle": "Value Score Rankings",
+      "state": "Alaska",
+      "value": 57,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "valueScore"
+    },
+    {
+      "rankingId": "value-score",
+      "rankingTitle": "Value Score Rankings",
+      "state": "Massachusetts",
+      "value": 54,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "valueScore"
+    },
+    {
+      "rankingId": "value-score",
+      "rankingTitle": "Value Score Rankings",
+      "state": "Maine",
+      "value": 51,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "valueScore"
+    },
+    {
+      "rankingId": "value-score",
+      "rankingTitle": "Value Score Rankings",
+      "state": "Rhode Island",
+      "value": 47,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "valueScore"
+    },
+    {
+      "rankingId": "value-score",
+      "rankingTitle": "Value Score Rankings",
+      "state": "Connecticut",
+      "value": 40,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "valueScore"
+    },
+    {
+      "rankingId": "value-score",
+      "rankingTitle": "Value Score Rankings",
+      "state": "California",
+      "value": 38,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "valueScore"
+    },
+    {
+      "rankingId": "value-score",
+      "rankingTitle": "Value Score Rankings",
+      "state": "Hawaii",
+      "value": 5,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "valueScore"
+    },
+    {
+      "rankingId": "rate-low-to-high",
+      "rankingTitle": "Rate Rankings (Low to High)",
+      "state": "Idaho",
+      "value": 11.74,
+      "displayValue": null,
+      "direction": "asc",
+      "metricId": "avgRateCentsPerKwh"
+    },
+    {
+      "rankingId": "rate-low-to-high",
+      "rankingTitle": "Rate Rankings (Low to High)",
+      "state": "North Dakota",
+      "value": 11.92,
+      "displayValue": null,
+      "direction": "asc",
+      "metricId": "avgRateCentsPerKwh"
+    },
+    {
+      "rankingId": "rate-low-to-high",
+      "rankingTitle": "Rate Rankings (Low to High)",
+      "state": "Nebraska",
+      "value": 12.19,
+      "displayValue": null,
+      "direction": "asc",
+      "metricId": "avgRateCentsPerKwh"
+    },
+    {
+      "rankingId": "rate-low-to-high",
+      "rankingTitle": "Rate Rankings (Low to High)",
+      "state": "Louisiana",
+      "value": 12.34,
+      "displayValue": null,
+      "direction": "asc",
+      "metricId": "avgRateCentsPerKwh"
+    },
+    {
+      "rankingId": "rate-low-to-high",
+      "rankingTitle": "Rate Rankings (Low to High)",
+      "state": "Arkansas",
+      "value": 12.83,
+      "displayValue": null,
+      "direction": "asc",
+      "metricId": "avgRateCentsPerKwh"
+    },
+    {
+      "rankingId": "rate-low-to-high",
+      "rankingTitle": "Rate Rankings (Low to High)",
+      "state": "Washington",
+      "value": 12.86,
+      "displayValue": null,
+      "direction": "asc",
+      "metricId": "avgRateCentsPerKwh"
+    },
+    {
+      "rankingId": "rate-low-to-high",
+      "rankingTitle": "Rate Rankings (Low to High)",
+      "state": "Utah",
+      "value": 12.97,
+      "displayValue": null,
+      "direction": "asc",
+      "metricId": "avgRateCentsPerKwh"
+    },
+    {
+      "rankingId": "rate-low-to-high",
+      "rankingTitle": "Rate Rankings (Low to High)",
+      "state": "Oklahoma",
+      "value": 13.05,
+      "displayValue": null,
+      "direction": "asc",
+      "metricId": "avgRateCentsPerKwh"
+    },
+    {
+      "rankingId": "rate-low-to-high",
+      "rankingTitle": "Rate Rankings (Low to High)",
+      "state": "Montana",
+      "value": 13.12,
+      "displayValue": null,
+      "direction": "asc",
+      "metricId": "avgRateCentsPerKwh"
+    },
+    {
+      "rankingId": "rate-low-to-high",
+      "rankingTitle": "Rate Rankings (Low to High)",
+      "state": "South Dakota",
+      "value": 13.14,
+      "displayValue": null,
+      "direction": "asc",
+      "metricId": "avgRateCentsPerKwh"
+    },
+    {
+      "rankingId": "rate-low-to-high",
+      "rankingTitle": "Rate Rankings (Low to High)",
+      "state": "Nevada",
+      "value": 13.16,
+      "displayValue": null,
+      "direction": "asc",
+      "metricId": "avgRateCentsPerKwh"
+    },
+    {
+      "rankingId": "rate-low-to-high",
+      "rankingTitle": "Rate Rankings (Low to High)",
+      "state": "Iowa",
+      "value": 13.18,
+      "displayValue": null,
+      "direction": "asc",
+      "metricId": "avgRateCentsPerKwh"
+    },
+    {
+      "rankingId": "rate-low-to-high",
+      "rankingTitle": "Rate Rankings (Low to High)",
+      "state": "Kentucky",
+      "value": 13.2,
+      "displayValue": null,
+      "direction": "asc",
+      "metricId": "avgRateCentsPerKwh"
+    },
+    {
+      "rankingId": "rate-low-to-high",
+      "rankingTitle": "Rate Rankings (Low to High)",
+      "state": "Tennessee",
+      "value": 13.28,
+      "displayValue": null,
+      "direction": "asc",
+      "metricId": "avgRateCentsPerKwh"
+    },
+    {
+      "rankingId": "rate-low-to-high",
+      "rankingTitle": "Rate Rankings (Low to High)",
+      "state": "Missouri",
+      "value": 13.37,
+      "displayValue": null,
+      "direction": "asc",
+      "metricId": "avgRateCentsPerKwh"
+    },
+    {
+      "rankingId": "rate-low-to-high",
+      "rankingTitle": "Rate Rankings (Low to High)",
+      "state": "Mississippi",
+      "value": 13.91,
+      "displayValue": null,
+      "direction": "asc",
+      "metricId": "avgRateCentsPerKwh"
+    },
+    {
+      "rankingId": "rate-low-to-high",
+      "rankingTitle": "Rate Rankings (Low to High)",
+      "state": "Wyoming",
+      "value": 14.02,
+      "displayValue": null,
+      "direction": "asc",
+      "metricId": "avgRateCentsPerKwh"
+    },
+    {
+      "rankingId": "rate-low-to-high",
+      "rankingTitle": "Rate Rankings (Low to High)",
+      "state": "North Carolina",
+      "value": 14.08,
+      "displayValue": null,
+      "direction": "asc",
+      "metricId": "avgRateCentsPerKwh"
+    },
+    {
+      "rankingId": "rate-low-to-high",
+      "rankingTitle": "Rate Rankings (Low to High)",
+      "state": "Kansas",
+      "value": 14.48,
+      "displayValue": null,
+      "direction": "asc",
+      "metricId": "avgRateCentsPerKwh"
+    },
+    {
+      "rankingId": "rate-low-to-high",
+      "rankingTitle": "Rate Rankings (Low to High)",
+      "state": "South Carolina",
+      "value": 14.72,
+      "displayValue": null,
+      "direction": "asc",
+      "metricId": "avgRateCentsPerKwh"
+    },
+    {
+      "rankingId": "rate-low-to-high",
+      "rankingTitle": "Rate Rankings (Low to High)",
+      "state": "Oregon",
+      "value": 15,
+      "displayValue": null,
+      "direction": "asc",
+      "metricId": "avgRateCentsPerKwh"
+    },
+    {
+      "rankingId": "rate-low-to-high",
+      "rankingTitle": "Rate Rankings (Low to High)",
+      "state": "Georgia",
+      "value": 15.22,
+      "displayValue": null,
+      "direction": "asc",
+      "metricId": "avgRateCentsPerKwh"
+    },
+    {
+      "rankingId": "rate-low-to-high",
+      "rankingTitle": "Rate Rankings (Low to High)",
+      "state": "Virginia",
+      "value": 15.26,
+      "displayValue": null,
+      "direction": "asc",
+      "metricId": "avgRateCentsPerKwh"
+    },
+    {
+      "rankingId": "rate-low-to-high",
+      "rankingTitle": "Rate Rankings (Low to High)",
+      "state": "Florida",
+      "value": 15.27,
+      "displayValue": null,
+      "direction": "asc",
+      "metricId": "avgRateCentsPerKwh"
+    },
+    {
+      "rankingId": "rate-low-to-high",
+      "rankingTitle": "Rate Rankings (Low to High)",
+      "state": "New Mexico",
+      "value": 15.29,
+      "displayValue": null,
+      "direction": "asc",
+      "metricId": "avgRateCentsPerKwh"
+    },
+    {
+      "rankingId": "rate-low-to-high",
+      "rankingTitle": "Rate Rankings (Low to High)",
+      "state": "West Virginia",
+      "value": 15.39,
+      "displayValue": null,
+      "direction": "asc",
+      "metricId": "avgRateCentsPerKwh"
+    },
+    {
+      "rankingId": "rate-low-to-high",
+      "rankingTitle": "Rate Rankings (Low to High)",
+      "state": "Arizona",
+      "value": 15.7,
+      "displayValue": null,
+      "direction": "asc",
+      "metricId": "avgRateCentsPerKwh"
+    },
+    {
+      "rankingId": "rate-low-to-high",
+      "rankingTitle": "Rate Rankings (Low to High)",
+      "state": "Colorado",
+      "value": 15.79,
+      "displayValue": null,
+      "direction": "asc",
+      "metricId": "avgRateCentsPerKwh"
+    },
+    {
+      "rankingId": "rate-low-to-high",
+      "rankingTitle": "Rate Rankings (Low to High)",
+      "state": "Texas",
+      "value": 15.83,
+      "displayValue": null,
+      "direction": "asc",
+      "metricId": "avgRateCentsPerKwh"
+    },
+    {
+      "rankingId": "rate-low-to-high",
+      "rankingTitle": "Rate Rankings (Low to High)",
+      "state": "Minnesota",
+      "value": 16.04,
+      "displayValue": null,
+      "direction": "asc",
+      "metricId": "avgRateCentsPerKwh"
+    },
+    {
+      "rankingId": "rate-low-to-high",
+      "rankingTitle": "Rate Rankings (Low to High)",
+      "state": "Indiana",
+      "value": 16.12,
+      "displayValue": null,
+      "direction": "asc",
+      "metricId": "avgRateCentsPerKwh"
+    },
+    {
+      "rankingId": "rate-low-to-high",
+      "rankingTitle": "Rate Rankings (Low to High)",
+      "state": "Alabama",
+      "value": 16.55,
+      "displayValue": null,
+      "direction": "asc",
+      "metricId": "avgRateCentsPerKwh"
+    },
+    {
+      "rankingId": "rate-low-to-high",
+      "rankingTitle": "Rate Rankings (Low to High)",
+      "state": "Ohio",
+      "value": 16.9,
+      "displayValue": null,
+      "direction": "asc",
+      "metricId": "avgRateCentsPerKwh"
+    },
+    {
+      "rankingId": "rate-low-to-high",
+      "rankingTitle": "Rate Rankings (Low to High)",
+      "state": "Illinois",
+      "value": 16.96,
+      "displayValue": null,
+      "direction": "asc",
+      "metricId": "avgRateCentsPerKwh"
+    },
+    {
+      "rankingId": "rate-low-to-high",
+      "rankingTitle": "Rate Rankings (Low to High)",
+      "state": "Delaware",
+      "value": 17.18,
+      "displayValue": null,
+      "direction": "asc",
+      "metricId": "avgRateCentsPerKwh"
+    },
+    {
+      "rankingId": "rate-low-to-high",
+      "rankingTitle": "Rate Rankings (Low to High)",
+      "state": "Pennsylvania",
+      "value": 17.78,
+      "displayValue": null,
+      "direction": "asc",
+      "metricId": "avgRateCentsPerKwh"
+    },
+    {
+      "rankingId": "rate-low-to-high",
+      "rankingTitle": "Rate Rankings (Low to High)",
+      "state": "Wisconsin",
+      "value": 18.04,
+      "displayValue": null,
+      "direction": "asc",
+      "metricId": "avgRateCentsPerKwh"
+    },
+    {
+      "rankingId": "rate-low-to-high",
+      "rankingTitle": "Rate Rankings (Low to High)",
+      "state": "Maryland",
+      "value": 19.29,
+      "displayValue": null,
+      "direction": "asc",
+      "metricId": "avgRateCentsPerKwh"
+    },
+    {
+      "rankingId": "rate-low-to-high",
+      "rankingTitle": "Rate Rankings (Low to High)",
+      "state": "Michigan",
+      "value": 19.91,
+      "displayValue": null,
+      "direction": "asc",
+      "metricId": "avgRateCentsPerKwh"
+    },
+    {
+      "rankingId": "rate-low-to-high",
+      "rankingTitle": "Rate Rankings (Low to High)",
+      "state": "New Jersey",
+      "value": 22.15,
+      "displayValue": null,
+      "direction": "asc",
+      "metricId": "avgRateCentsPerKwh"
+    },
+    {
+      "rankingId": "rate-low-to-high",
+      "rankingTitle": "Rate Rankings (Low to High)",
+      "state": "Vermont",
+      "value": 22.58,
+      "displayValue": null,
+      "direction": "asc",
+      "metricId": "avgRateCentsPerKwh"
+    },
+    {
+      "rankingId": "rate-low-to-high",
+      "rankingTitle": "Rate Rankings (Low to High)",
+      "state": "New Hampshire",
+      "value": 23.35,
+      "displayValue": null,
+      "direction": "asc",
+      "metricId": "avgRateCentsPerKwh"
+    },
+    {
+      "rankingId": "rate-low-to-high",
+      "rankingTitle": "Rate Rankings (Low to High)",
+      "state": "New York",
+      "value": 23.87,
+      "displayValue": null,
+      "direction": "asc",
+      "metricId": "avgRateCentsPerKwh"
+    },
+    {
+      "rankingId": "rate-low-to-high",
+      "rankingTitle": "Rate Rankings (Low to High)",
+      "state": "Alaska",
+      "value": 25.01,
+      "displayValue": null,
+      "direction": "asc",
+      "metricId": "avgRateCentsPerKwh"
+    },
+    {
+      "rankingId": "rate-low-to-high",
+      "rankingTitle": "Rate Rankings (Low to High)",
+      "state": "Massachusetts",
+      "value": 26.01,
+      "displayValue": null,
+      "direction": "asc",
+      "metricId": "avgRateCentsPerKwh"
+    },
+    {
+      "rankingId": "rate-low-to-high",
+      "rankingTitle": "Rate Rankings (Low to High)",
+      "state": "Maine",
+      "value": 27.24,
+      "displayValue": null,
+      "direction": "asc",
+      "metricId": "avgRateCentsPerKwh"
+    },
+    {
+      "rankingId": "rate-low-to-high",
+      "rankingTitle": "Rate Rankings (Low to High)",
+      "state": "Rhode Island",
+      "value": 28.42,
+      "displayValue": null,
+      "direction": "asc",
+      "metricId": "avgRateCentsPerKwh"
+    },
+    {
+      "rankingId": "rate-low-to-high",
+      "rankingTitle": "Rate Rankings (Low to High)",
+      "state": "Connecticut",
+      "value": 30.35,
+      "displayValue": null,
+      "direction": "asc",
+      "metricId": "avgRateCentsPerKwh"
+    },
+    {
+      "rankingId": "rate-low-to-high",
+      "rankingTitle": "Rate Rankings (Low to High)",
+      "state": "California",
+      "value": 31.14,
+      "displayValue": null,
+      "direction": "asc",
+      "metricId": "avgRateCentsPerKwh"
+    },
+    {
+      "rankingId": "rate-low-to-high",
+      "rankingTitle": "Rate Rankings (Low to High)",
+      "state": "Hawaii",
+      "value": 41.3,
+      "displayValue": null,
+      "direction": "asc",
+      "metricId": "avgRateCentsPerKwh"
+    },
+    {
+      "rankingId": "rate-high-to-low",
+      "rankingTitle": "Rate Rankings (High to Low)",
+      "state": "Hawaii",
+      "value": 41.3,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "avgRateCentsPerKwh"
+    },
+    {
+      "rankingId": "rate-high-to-low",
+      "rankingTitle": "Rate Rankings (High to Low)",
+      "state": "California",
+      "value": 31.14,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "avgRateCentsPerKwh"
+    },
+    {
+      "rankingId": "rate-high-to-low",
+      "rankingTitle": "Rate Rankings (High to Low)",
+      "state": "Connecticut",
+      "value": 30.35,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "avgRateCentsPerKwh"
+    },
+    {
+      "rankingId": "rate-high-to-low",
+      "rankingTitle": "Rate Rankings (High to Low)",
+      "state": "Rhode Island",
+      "value": 28.42,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "avgRateCentsPerKwh"
+    },
+    {
+      "rankingId": "rate-high-to-low",
+      "rankingTitle": "Rate Rankings (High to Low)",
+      "state": "Maine",
+      "value": 27.24,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "avgRateCentsPerKwh"
+    },
+    {
+      "rankingId": "rate-high-to-low",
+      "rankingTitle": "Rate Rankings (High to Low)",
+      "state": "Massachusetts",
+      "value": 26.01,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "avgRateCentsPerKwh"
+    },
+    {
+      "rankingId": "rate-high-to-low",
+      "rankingTitle": "Rate Rankings (High to Low)",
+      "state": "Alaska",
+      "value": 25.01,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "avgRateCentsPerKwh"
+    },
+    {
+      "rankingId": "rate-high-to-low",
+      "rankingTitle": "Rate Rankings (High to Low)",
+      "state": "New York",
+      "value": 23.87,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "avgRateCentsPerKwh"
+    },
+    {
+      "rankingId": "rate-high-to-low",
+      "rankingTitle": "Rate Rankings (High to Low)",
+      "state": "New Hampshire",
+      "value": 23.35,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "avgRateCentsPerKwh"
+    },
+    {
+      "rankingId": "rate-high-to-low",
+      "rankingTitle": "Rate Rankings (High to Low)",
+      "state": "Vermont",
+      "value": 22.58,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "avgRateCentsPerKwh"
+    },
+    {
+      "rankingId": "rate-high-to-low",
+      "rankingTitle": "Rate Rankings (High to Low)",
+      "state": "New Jersey",
+      "value": 22.15,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "avgRateCentsPerKwh"
+    },
+    {
+      "rankingId": "rate-high-to-low",
+      "rankingTitle": "Rate Rankings (High to Low)",
+      "state": "Michigan",
+      "value": 19.91,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "avgRateCentsPerKwh"
+    },
+    {
+      "rankingId": "rate-high-to-low",
+      "rankingTitle": "Rate Rankings (High to Low)",
+      "state": "Maryland",
+      "value": 19.29,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "avgRateCentsPerKwh"
+    },
+    {
+      "rankingId": "rate-high-to-low",
+      "rankingTitle": "Rate Rankings (High to Low)",
+      "state": "Wisconsin",
+      "value": 18.04,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "avgRateCentsPerKwh"
+    },
+    {
+      "rankingId": "rate-high-to-low",
+      "rankingTitle": "Rate Rankings (High to Low)",
+      "state": "Pennsylvania",
+      "value": 17.78,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "avgRateCentsPerKwh"
+    },
+    {
+      "rankingId": "rate-high-to-low",
+      "rankingTitle": "Rate Rankings (High to Low)",
+      "state": "Delaware",
+      "value": 17.18,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "avgRateCentsPerKwh"
+    },
+    {
+      "rankingId": "rate-high-to-low",
+      "rankingTitle": "Rate Rankings (High to Low)",
+      "state": "Illinois",
+      "value": 16.96,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "avgRateCentsPerKwh"
+    },
+    {
+      "rankingId": "rate-high-to-low",
+      "rankingTitle": "Rate Rankings (High to Low)",
+      "state": "Ohio",
+      "value": 16.9,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "avgRateCentsPerKwh"
+    },
+    {
+      "rankingId": "rate-high-to-low",
+      "rankingTitle": "Rate Rankings (High to Low)",
+      "state": "Alabama",
+      "value": 16.55,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "avgRateCentsPerKwh"
+    },
+    {
+      "rankingId": "rate-high-to-low",
+      "rankingTitle": "Rate Rankings (High to Low)",
+      "state": "Indiana",
+      "value": 16.12,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "avgRateCentsPerKwh"
+    },
+    {
+      "rankingId": "rate-high-to-low",
+      "rankingTitle": "Rate Rankings (High to Low)",
+      "state": "Minnesota",
+      "value": 16.04,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "avgRateCentsPerKwh"
+    },
+    {
+      "rankingId": "rate-high-to-low",
+      "rankingTitle": "Rate Rankings (High to Low)",
+      "state": "Texas",
+      "value": 15.83,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "avgRateCentsPerKwh"
+    },
+    {
+      "rankingId": "rate-high-to-low",
+      "rankingTitle": "Rate Rankings (High to Low)",
+      "state": "Colorado",
+      "value": 15.79,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "avgRateCentsPerKwh"
+    },
+    {
+      "rankingId": "rate-high-to-low",
+      "rankingTitle": "Rate Rankings (High to Low)",
+      "state": "Arizona",
+      "value": 15.7,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "avgRateCentsPerKwh"
+    },
+    {
+      "rankingId": "rate-high-to-low",
+      "rankingTitle": "Rate Rankings (High to Low)",
+      "state": "West Virginia",
+      "value": 15.39,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "avgRateCentsPerKwh"
+    },
+    {
+      "rankingId": "rate-high-to-low",
+      "rankingTitle": "Rate Rankings (High to Low)",
+      "state": "New Mexico",
+      "value": 15.29,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "avgRateCentsPerKwh"
+    },
+    {
+      "rankingId": "rate-high-to-low",
+      "rankingTitle": "Rate Rankings (High to Low)",
+      "state": "Florida",
+      "value": 15.27,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "avgRateCentsPerKwh"
+    },
+    {
+      "rankingId": "rate-high-to-low",
+      "rankingTitle": "Rate Rankings (High to Low)",
+      "state": "Virginia",
+      "value": 15.26,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "avgRateCentsPerKwh"
+    },
+    {
+      "rankingId": "rate-high-to-low",
+      "rankingTitle": "Rate Rankings (High to Low)",
+      "state": "Georgia",
+      "value": 15.22,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "avgRateCentsPerKwh"
+    },
+    {
+      "rankingId": "rate-high-to-low",
+      "rankingTitle": "Rate Rankings (High to Low)",
+      "state": "Oregon",
+      "value": 15,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "avgRateCentsPerKwh"
+    },
+    {
+      "rankingId": "rate-high-to-low",
+      "rankingTitle": "Rate Rankings (High to Low)",
+      "state": "South Carolina",
+      "value": 14.72,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "avgRateCentsPerKwh"
+    },
+    {
+      "rankingId": "rate-high-to-low",
+      "rankingTitle": "Rate Rankings (High to Low)",
+      "state": "Kansas",
+      "value": 14.48,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "avgRateCentsPerKwh"
+    },
+    {
+      "rankingId": "rate-high-to-low",
+      "rankingTitle": "Rate Rankings (High to Low)",
+      "state": "North Carolina",
+      "value": 14.08,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "avgRateCentsPerKwh"
+    },
+    {
+      "rankingId": "rate-high-to-low",
+      "rankingTitle": "Rate Rankings (High to Low)",
+      "state": "Wyoming",
+      "value": 14.02,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "avgRateCentsPerKwh"
+    },
+    {
+      "rankingId": "rate-high-to-low",
+      "rankingTitle": "Rate Rankings (High to Low)",
+      "state": "Mississippi",
+      "value": 13.91,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "avgRateCentsPerKwh"
+    },
+    {
+      "rankingId": "rate-high-to-low",
+      "rankingTitle": "Rate Rankings (High to Low)",
+      "state": "Missouri",
+      "value": 13.37,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "avgRateCentsPerKwh"
+    },
+    {
+      "rankingId": "rate-high-to-low",
+      "rankingTitle": "Rate Rankings (High to Low)",
+      "state": "Tennessee",
+      "value": 13.28,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "avgRateCentsPerKwh"
+    },
+    {
+      "rankingId": "rate-high-to-low",
+      "rankingTitle": "Rate Rankings (High to Low)",
+      "state": "Kentucky",
+      "value": 13.2,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "avgRateCentsPerKwh"
+    },
+    {
+      "rankingId": "rate-high-to-low",
+      "rankingTitle": "Rate Rankings (High to Low)",
+      "state": "Iowa",
+      "value": 13.18,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "avgRateCentsPerKwh"
+    },
+    {
+      "rankingId": "rate-high-to-low",
+      "rankingTitle": "Rate Rankings (High to Low)",
+      "state": "Nevada",
+      "value": 13.16,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "avgRateCentsPerKwh"
+    },
+    {
+      "rankingId": "rate-high-to-low",
+      "rankingTitle": "Rate Rankings (High to Low)",
+      "state": "South Dakota",
+      "value": 13.14,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "avgRateCentsPerKwh"
+    },
+    {
+      "rankingId": "rate-high-to-low",
+      "rankingTitle": "Rate Rankings (High to Low)",
+      "state": "Montana",
+      "value": 13.12,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "avgRateCentsPerKwh"
+    },
+    {
+      "rankingId": "rate-high-to-low",
+      "rankingTitle": "Rate Rankings (High to Low)",
+      "state": "Oklahoma",
+      "value": 13.05,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "avgRateCentsPerKwh"
+    },
+    {
+      "rankingId": "rate-high-to-low",
+      "rankingTitle": "Rate Rankings (High to Low)",
+      "state": "Utah",
+      "value": 12.97,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "avgRateCentsPerKwh"
+    },
+    {
+      "rankingId": "rate-high-to-low",
+      "rankingTitle": "Rate Rankings (High to Low)",
+      "state": "Washington",
+      "value": 12.86,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "avgRateCentsPerKwh"
+    },
+    {
+      "rankingId": "rate-high-to-low",
+      "rankingTitle": "Rate Rankings (High to Low)",
+      "state": "Arkansas",
+      "value": 12.83,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "avgRateCentsPerKwh"
+    },
+    {
+      "rankingId": "rate-high-to-low",
+      "rankingTitle": "Rate Rankings (High to Low)",
+      "state": "Louisiana",
+      "value": 12.34,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "avgRateCentsPerKwh"
+    },
+    {
+      "rankingId": "rate-high-to-low",
+      "rankingTitle": "Rate Rankings (High to Low)",
+      "state": "Nebraska",
+      "value": 12.19,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "avgRateCentsPerKwh"
+    },
+    {
+      "rankingId": "rate-high-to-low",
+      "rankingTitle": "Rate Rankings (High to Low)",
+      "state": "North Dakota",
+      "value": 11.92,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "avgRateCentsPerKwh"
+    },
+    {
+      "rankingId": "rate-high-to-low",
+      "rankingTitle": "Rate Rankings (High to Low)",
+      "state": "Idaho",
+      "value": 11.74,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "avgRateCentsPerKwh"
+    },
+    {
+      "rankingId": "electricity-affordability",
+      "rankingTitle": "Most Affordable Electricity by State",
+      "state": "Idaho",
+      "value": 105.66,
+      "displayValue": "$105.66",
+      "direction": "asc",
+      "metricId": "metricValue"
+    },
+    {
+      "rankingId": "electricity-affordability",
+      "rankingTitle": "Most Affordable Electricity by State",
+      "state": "North Dakota",
+      "value": 107.28,
+      "displayValue": "$107.28",
+      "direction": "asc",
+      "metricId": "metricValue"
+    },
+    {
+      "rankingId": "electricity-affordability",
+      "rankingTitle": "Most Affordable Electricity by State",
+      "state": "Nebraska",
+      "value": 109.71,
+      "displayValue": "$109.71",
+      "direction": "asc",
+      "metricId": "metricValue"
+    },
+    {
+      "rankingId": "electricity-affordability",
+      "rankingTitle": "Most Affordable Electricity by State",
+      "state": "Louisiana",
+      "value": 111.06,
+      "displayValue": "$111.06",
+      "direction": "asc",
+      "metricId": "metricValue"
+    },
+    {
+      "rankingId": "electricity-affordability",
+      "rankingTitle": "Most Affordable Electricity by State",
+      "state": "Arkansas",
+      "value": 115.47,
+      "displayValue": "$115.47",
+      "direction": "asc",
+      "metricId": "metricValue"
+    },
+    {
+      "rankingId": "electricity-affordability",
+      "rankingTitle": "Most Affordable Electricity by State",
+      "state": "Washington",
+      "value": 115.74,
+      "displayValue": "$115.74",
+      "direction": "asc",
+      "metricId": "metricValue"
+    },
+    {
+      "rankingId": "electricity-affordability",
+      "rankingTitle": "Most Affordable Electricity by State",
+      "state": "Utah",
+      "value": 116.73,
+      "displayValue": "$116.73",
+      "direction": "asc",
+      "metricId": "metricValue"
+    },
+    {
+      "rankingId": "electricity-affordability",
+      "rankingTitle": "Most Affordable Electricity by State",
+      "state": "Oklahoma",
+      "value": 117.45,
+      "displayValue": "$117.45",
+      "direction": "asc",
+      "metricId": "metricValue"
+    },
+    {
+      "rankingId": "electricity-affordability",
+      "rankingTitle": "Most Affordable Electricity by State",
+      "state": "Montana",
+      "value": 118.08,
+      "displayValue": "$118.08",
+      "direction": "asc",
+      "metricId": "metricValue"
+    },
+    {
+      "rankingId": "electricity-affordability",
+      "rankingTitle": "Most Affordable Electricity by State",
+      "state": "South Dakota",
+      "value": 118.26,
+      "displayValue": "$118.26",
+      "direction": "asc",
+      "metricId": "metricValue"
+    },
+    {
+      "rankingId": "electricity-affordability",
+      "rankingTitle": "Most Affordable Electricity by State",
+      "state": "Nevada",
+      "value": 118.44,
+      "displayValue": "$118.44",
+      "direction": "asc",
+      "metricId": "metricValue"
+    },
+    {
+      "rankingId": "electricity-affordability",
+      "rankingTitle": "Most Affordable Electricity by State",
+      "state": "Iowa",
+      "value": 118.62,
+      "displayValue": "$118.62",
+      "direction": "asc",
+      "metricId": "metricValue"
+    },
+    {
+      "rankingId": "electricity-affordability",
+      "rankingTitle": "Most Affordable Electricity by State",
+      "state": "Kentucky",
+      "value": 118.8,
+      "displayValue": "$118.80",
+      "direction": "asc",
+      "metricId": "metricValue"
+    },
+    {
+      "rankingId": "electricity-affordability",
+      "rankingTitle": "Most Affordable Electricity by State",
+      "state": "Tennessee",
+      "value": 119.52,
+      "displayValue": "$119.52",
+      "direction": "asc",
+      "metricId": "metricValue"
+    },
+    {
+      "rankingId": "electricity-affordability",
+      "rankingTitle": "Most Affordable Electricity by State",
+      "state": "Missouri",
+      "value": 120.33,
+      "displayValue": "$120.33",
+      "direction": "asc",
+      "metricId": "metricValue"
+    },
+    {
+      "rankingId": "electricity-affordability",
+      "rankingTitle": "Most Affordable Electricity by State",
+      "state": "Mississippi",
+      "value": 125.19,
+      "displayValue": "$125.19",
+      "direction": "asc",
+      "metricId": "metricValue"
+    },
+    {
+      "rankingId": "electricity-affordability",
+      "rankingTitle": "Most Affordable Electricity by State",
+      "state": "Wyoming",
+      "value": 126.18,
+      "displayValue": "$126.18",
+      "direction": "asc",
+      "metricId": "metricValue"
+    },
+    {
+      "rankingId": "electricity-affordability",
+      "rankingTitle": "Most Affordable Electricity by State",
+      "state": "North Carolina",
+      "value": 126.72,
+      "displayValue": "$126.72",
+      "direction": "asc",
+      "metricId": "metricValue"
+    },
+    {
+      "rankingId": "electricity-affordability",
+      "rankingTitle": "Most Affordable Electricity by State",
+      "state": "Kansas",
+      "value": 130.32,
+      "displayValue": "$130.32",
+      "direction": "asc",
+      "metricId": "metricValue"
+    },
+    {
+      "rankingId": "electricity-affordability",
+      "rankingTitle": "Most Affordable Electricity by State",
+      "state": "South Carolina",
+      "value": 132.48,
+      "displayValue": "$132.48",
+      "direction": "asc",
+      "metricId": "metricValue"
+    },
+    {
+      "rankingId": "electricity-affordability",
+      "rankingTitle": "Most Affordable Electricity by State",
+      "state": "Oregon",
+      "value": 135,
+      "displayValue": "$135.00",
+      "direction": "asc",
+      "metricId": "metricValue"
+    },
+    {
+      "rankingId": "electricity-affordability",
+      "rankingTitle": "Most Affordable Electricity by State",
+      "state": "Georgia",
+      "value": 136.98,
+      "displayValue": "$136.98",
+      "direction": "asc",
+      "metricId": "metricValue"
+    },
+    {
+      "rankingId": "electricity-affordability",
+      "rankingTitle": "Most Affordable Electricity by State",
+      "state": "Virginia",
+      "value": 137.34,
+      "displayValue": "$137.34",
+      "direction": "asc",
+      "metricId": "metricValue"
+    },
+    {
+      "rankingId": "electricity-affordability",
+      "rankingTitle": "Most Affordable Electricity by State",
+      "state": "Florida",
+      "value": 137.43,
+      "displayValue": "$137.43",
+      "direction": "asc",
+      "metricId": "metricValue"
+    },
+    {
+      "rankingId": "electricity-affordability",
+      "rankingTitle": "Most Affordable Electricity by State",
+      "state": "New Mexico",
+      "value": 137.61,
+      "displayValue": "$137.61",
+      "direction": "asc",
+      "metricId": "metricValue"
+    },
+    {
+      "rankingId": "electricity-affordability",
+      "rankingTitle": "Most Affordable Electricity by State",
+      "state": "West Virginia",
+      "value": 138.51,
+      "displayValue": "$138.51",
+      "direction": "asc",
+      "metricId": "metricValue"
+    },
+    {
+      "rankingId": "electricity-affordability",
+      "rankingTitle": "Most Affordable Electricity by State",
+      "state": "Arizona",
+      "value": 141.3,
+      "displayValue": "$141.30",
+      "direction": "asc",
+      "metricId": "metricValue"
+    },
+    {
+      "rankingId": "electricity-affordability",
+      "rankingTitle": "Most Affordable Electricity by State",
+      "state": "Colorado",
+      "value": 142.11,
+      "displayValue": "$142.11",
+      "direction": "asc",
+      "metricId": "metricValue"
+    },
+    {
+      "rankingId": "electricity-affordability",
+      "rankingTitle": "Most Affordable Electricity by State",
+      "state": "Texas",
+      "value": 142.47,
+      "displayValue": "$142.47",
+      "direction": "asc",
+      "metricId": "metricValue"
+    },
+    {
+      "rankingId": "electricity-affordability",
+      "rankingTitle": "Most Affordable Electricity by State",
+      "state": "Minnesota",
+      "value": 144.36,
+      "displayValue": "$144.36",
+      "direction": "asc",
+      "metricId": "metricValue"
+    },
+    {
+      "rankingId": "electricity-affordability",
+      "rankingTitle": "Most Affordable Electricity by State",
+      "state": "Indiana",
+      "value": 145.08,
+      "displayValue": "$145.08",
+      "direction": "asc",
+      "metricId": "metricValue"
+    },
+    {
+      "rankingId": "electricity-affordability",
+      "rankingTitle": "Most Affordable Electricity by State",
+      "state": "Alabama",
+      "value": 148.95,
+      "displayValue": "$148.95",
+      "direction": "asc",
+      "metricId": "metricValue"
+    },
+    {
+      "rankingId": "electricity-affordability",
+      "rankingTitle": "Most Affordable Electricity by State",
+      "state": "Ohio",
+      "value": 152.1,
+      "displayValue": "$152.10",
+      "direction": "asc",
+      "metricId": "metricValue"
+    },
+    {
+      "rankingId": "electricity-affordability",
+      "rankingTitle": "Most Affordable Electricity by State",
+      "state": "Illinois",
+      "value": 152.64,
+      "displayValue": "$152.64",
+      "direction": "asc",
+      "metricId": "metricValue"
+    },
+    {
+      "rankingId": "electricity-affordability",
+      "rankingTitle": "Most Affordable Electricity by State",
+      "state": "Delaware",
+      "value": 154.62,
+      "displayValue": "$154.62",
+      "direction": "asc",
+      "metricId": "metricValue"
+    },
+    {
+      "rankingId": "electricity-affordability",
+      "rankingTitle": "Most Affordable Electricity by State",
+      "state": "Pennsylvania",
+      "value": 160.02,
+      "displayValue": "$160.02",
+      "direction": "asc",
+      "metricId": "metricValue"
+    },
+    {
+      "rankingId": "electricity-affordability",
+      "rankingTitle": "Most Affordable Electricity by State",
+      "state": "Wisconsin",
+      "value": 162.36,
+      "displayValue": "$162.36",
+      "direction": "asc",
+      "metricId": "metricValue"
+    },
+    {
+      "rankingId": "electricity-affordability",
+      "rankingTitle": "Most Affordable Electricity by State",
+      "state": "Maryland",
+      "value": 173.61,
+      "displayValue": "$173.61",
+      "direction": "asc",
+      "metricId": "metricValue"
+    },
+    {
+      "rankingId": "electricity-affordability",
+      "rankingTitle": "Most Affordable Electricity by State",
+      "state": "Michigan",
+      "value": 179.19,
+      "displayValue": "$179.19",
+      "direction": "asc",
+      "metricId": "metricValue"
+    },
+    {
+      "rankingId": "electricity-affordability",
+      "rankingTitle": "Most Affordable Electricity by State",
+      "state": "New Jersey",
+      "value": 199.35,
+      "displayValue": "$199.35",
+      "direction": "asc",
+      "metricId": "metricValue"
+    },
+    {
+      "rankingId": "electricity-affordability",
+      "rankingTitle": "Most Affordable Electricity by State",
+      "state": "Vermont",
+      "value": 203.22,
+      "displayValue": "$203.22",
+      "direction": "asc",
+      "metricId": "metricValue"
+    },
+    {
+      "rankingId": "electricity-affordability",
+      "rankingTitle": "Most Affordable Electricity by State",
+      "state": "New Hampshire",
+      "value": 210.15,
+      "displayValue": "$210.15",
+      "direction": "asc",
+      "metricId": "metricValue"
+    },
+    {
+      "rankingId": "electricity-affordability",
+      "rankingTitle": "Most Affordable Electricity by State",
+      "state": "New York",
+      "value": 214.83,
+      "displayValue": "$214.83",
+      "direction": "asc",
+      "metricId": "metricValue"
+    },
+    {
+      "rankingId": "electricity-affordability",
+      "rankingTitle": "Most Affordable Electricity by State",
+      "state": "Alaska",
+      "value": 225.09,
+      "displayValue": "$225.09",
+      "direction": "asc",
+      "metricId": "metricValue"
+    },
+    {
+      "rankingId": "electricity-affordability",
+      "rankingTitle": "Most Affordable Electricity by State",
+      "state": "Massachusetts",
+      "value": 234.09,
+      "displayValue": "$234.09",
+      "direction": "asc",
+      "metricId": "metricValue"
+    },
+    {
+      "rankingId": "electricity-affordability",
+      "rankingTitle": "Most Affordable Electricity by State",
+      "state": "Maine",
+      "value": 245.16,
+      "displayValue": "$245.16",
+      "direction": "asc",
+      "metricId": "metricValue"
+    },
+    {
+      "rankingId": "electricity-affordability",
+      "rankingTitle": "Most Affordable Electricity by State",
+      "state": "Rhode Island",
+      "value": 255.78,
+      "displayValue": "$255.78",
+      "direction": "asc",
+      "metricId": "metricValue"
+    },
+    {
+      "rankingId": "electricity-affordability",
+      "rankingTitle": "Most Affordable Electricity by State",
+      "state": "Connecticut",
+      "value": 273.15,
+      "displayValue": "$273.15",
+      "direction": "asc",
+      "metricId": "metricValue"
+    },
+    {
+      "rankingId": "electricity-affordability",
+      "rankingTitle": "Most Affordable Electricity by State",
+      "state": "California",
+      "value": 280.26,
+      "displayValue": "$280.26",
+      "direction": "asc",
+      "metricId": "metricValue"
+    },
+    {
+      "rankingId": "electricity-affordability",
+      "rankingTitle": "Most Affordable Electricity by State",
+      "state": "Hawaii",
+      "value": 371.7,
+      "displayValue": "$371.70",
+      "direction": "asc",
+      "metricId": "metricValue"
+    },
+    {
+      "rankingId": "most-expensive-electricity",
+      "rankingTitle": "Least Affordable Electricity by State",
+      "state": "Hawaii",
+      "value": 371.7,
+      "displayValue": "$371.70",
+      "direction": "desc",
+      "metricId": "metricValue"
+    },
+    {
+      "rankingId": "most-expensive-electricity",
+      "rankingTitle": "Least Affordable Electricity by State",
+      "state": "California",
+      "value": 280.26,
+      "displayValue": "$280.26",
+      "direction": "desc",
+      "metricId": "metricValue"
+    },
+    {
+      "rankingId": "most-expensive-electricity",
+      "rankingTitle": "Least Affordable Electricity by State",
+      "state": "Connecticut",
+      "value": 273.15,
+      "displayValue": "$273.15",
+      "direction": "desc",
+      "metricId": "metricValue"
+    },
+    {
+      "rankingId": "most-expensive-electricity",
+      "rankingTitle": "Least Affordable Electricity by State",
+      "state": "Rhode Island",
+      "value": 255.78,
+      "displayValue": "$255.78",
+      "direction": "desc",
+      "metricId": "metricValue"
+    },
+    {
+      "rankingId": "most-expensive-electricity",
+      "rankingTitle": "Least Affordable Electricity by State",
+      "state": "Maine",
+      "value": 245.16,
+      "displayValue": "$245.16",
+      "direction": "desc",
+      "metricId": "metricValue"
+    },
+    {
+      "rankingId": "most-expensive-electricity",
+      "rankingTitle": "Least Affordable Electricity by State",
+      "state": "Massachusetts",
+      "value": 234.09,
+      "displayValue": "$234.09",
+      "direction": "desc",
+      "metricId": "metricValue"
+    },
+    {
+      "rankingId": "most-expensive-electricity",
+      "rankingTitle": "Least Affordable Electricity by State",
+      "state": "Alaska",
+      "value": 225.09,
+      "displayValue": "$225.09",
+      "direction": "desc",
+      "metricId": "metricValue"
+    },
+    {
+      "rankingId": "most-expensive-electricity",
+      "rankingTitle": "Least Affordable Electricity by State",
+      "state": "New York",
+      "value": 214.83,
+      "displayValue": "$214.83",
+      "direction": "desc",
+      "metricId": "metricValue"
+    },
+    {
+      "rankingId": "most-expensive-electricity",
+      "rankingTitle": "Least Affordable Electricity by State",
+      "state": "New Hampshire",
+      "value": 210.15,
+      "displayValue": "$210.15",
+      "direction": "desc",
+      "metricId": "metricValue"
+    },
+    {
+      "rankingId": "most-expensive-electricity",
+      "rankingTitle": "Least Affordable Electricity by State",
+      "state": "Vermont",
+      "value": 203.22,
+      "displayValue": "$203.22",
+      "direction": "desc",
+      "metricId": "metricValue"
+    },
+    {
+      "rankingId": "most-expensive-electricity",
+      "rankingTitle": "Least Affordable Electricity by State",
+      "state": "New Jersey",
+      "value": 199.35,
+      "displayValue": "$199.35",
+      "direction": "desc",
+      "metricId": "metricValue"
+    },
+    {
+      "rankingId": "most-expensive-electricity",
+      "rankingTitle": "Least Affordable Electricity by State",
+      "state": "Michigan",
+      "value": 179.19,
+      "displayValue": "$179.19",
+      "direction": "desc",
+      "metricId": "metricValue"
+    },
+    {
+      "rankingId": "most-expensive-electricity",
+      "rankingTitle": "Least Affordable Electricity by State",
+      "state": "Maryland",
+      "value": 173.61,
+      "displayValue": "$173.61",
+      "direction": "desc",
+      "metricId": "metricValue"
+    },
+    {
+      "rankingId": "most-expensive-electricity",
+      "rankingTitle": "Least Affordable Electricity by State",
+      "state": "Wisconsin",
+      "value": 162.36,
+      "displayValue": "$162.36",
+      "direction": "desc",
+      "metricId": "metricValue"
+    },
+    {
+      "rankingId": "most-expensive-electricity",
+      "rankingTitle": "Least Affordable Electricity by State",
+      "state": "Pennsylvania",
+      "value": 160.02,
+      "displayValue": "$160.02",
+      "direction": "desc",
+      "metricId": "metricValue"
+    },
+    {
+      "rankingId": "most-expensive-electricity",
+      "rankingTitle": "Least Affordable Electricity by State",
+      "state": "Delaware",
+      "value": 154.62,
+      "displayValue": "$154.62",
+      "direction": "desc",
+      "metricId": "metricValue"
+    },
+    {
+      "rankingId": "most-expensive-electricity",
+      "rankingTitle": "Least Affordable Electricity by State",
+      "state": "Illinois",
+      "value": 152.64,
+      "displayValue": "$152.64",
+      "direction": "desc",
+      "metricId": "metricValue"
+    },
+    {
+      "rankingId": "most-expensive-electricity",
+      "rankingTitle": "Least Affordable Electricity by State",
+      "state": "Ohio",
+      "value": 152.1,
+      "displayValue": "$152.10",
+      "direction": "desc",
+      "metricId": "metricValue"
+    },
+    {
+      "rankingId": "most-expensive-electricity",
+      "rankingTitle": "Least Affordable Electricity by State",
+      "state": "Alabama",
+      "value": 148.95,
+      "displayValue": "$148.95",
+      "direction": "desc",
+      "metricId": "metricValue"
+    },
+    {
+      "rankingId": "most-expensive-electricity",
+      "rankingTitle": "Least Affordable Electricity by State",
+      "state": "Indiana",
+      "value": 145.08,
+      "displayValue": "$145.08",
+      "direction": "desc",
+      "metricId": "metricValue"
+    },
+    {
+      "rankingId": "most-expensive-electricity",
+      "rankingTitle": "Least Affordable Electricity by State",
+      "state": "Minnesota",
+      "value": 144.36,
+      "displayValue": "$144.36",
+      "direction": "desc",
+      "metricId": "metricValue"
+    },
+    {
+      "rankingId": "most-expensive-electricity",
+      "rankingTitle": "Least Affordable Electricity by State",
+      "state": "Texas",
+      "value": 142.47,
+      "displayValue": "$142.47",
+      "direction": "desc",
+      "metricId": "metricValue"
+    },
+    {
+      "rankingId": "most-expensive-electricity",
+      "rankingTitle": "Least Affordable Electricity by State",
+      "state": "Colorado",
+      "value": 142.11,
+      "displayValue": "$142.11",
+      "direction": "desc",
+      "metricId": "metricValue"
+    },
+    {
+      "rankingId": "most-expensive-electricity",
+      "rankingTitle": "Least Affordable Electricity by State",
+      "state": "Arizona",
+      "value": 141.3,
+      "displayValue": "$141.30",
+      "direction": "desc",
+      "metricId": "metricValue"
+    },
+    {
+      "rankingId": "most-expensive-electricity",
+      "rankingTitle": "Least Affordable Electricity by State",
+      "state": "West Virginia",
+      "value": 138.51,
+      "displayValue": "$138.51",
+      "direction": "desc",
+      "metricId": "metricValue"
+    },
+    {
+      "rankingId": "most-expensive-electricity",
+      "rankingTitle": "Least Affordable Electricity by State",
+      "state": "New Mexico",
+      "value": 137.61,
+      "displayValue": "$137.61",
+      "direction": "desc",
+      "metricId": "metricValue"
+    },
+    {
+      "rankingId": "most-expensive-electricity",
+      "rankingTitle": "Least Affordable Electricity by State",
+      "state": "Florida",
+      "value": 137.43,
+      "displayValue": "$137.43",
+      "direction": "desc",
+      "metricId": "metricValue"
+    },
+    {
+      "rankingId": "most-expensive-electricity",
+      "rankingTitle": "Least Affordable Electricity by State",
+      "state": "Virginia",
+      "value": 137.34,
+      "displayValue": "$137.34",
+      "direction": "desc",
+      "metricId": "metricValue"
+    },
+    {
+      "rankingId": "most-expensive-electricity",
+      "rankingTitle": "Least Affordable Electricity by State",
+      "state": "Georgia",
+      "value": 136.98,
+      "displayValue": "$136.98",
+      "direction": "desc",
+      "metricId": "metricValue"
+    },
+    {
+      "rankingId": "most-expensive-electricity",
+      "rankingTitle": "Least Affordable Electricity by State",
+      "state": "Oregon",
+      "value": 135,
+      "displayValue": "$135.00",
+      "direction": "desc",
+      "metricId": "metricValue"
+    },
+    {
+      "rankingId": "most-expensive-electricity",
+      "rankingTitle": "Least Affordable Electricity by State",
+      "state": "South Carolina",
+      "value": 132.48,
+      "displayValue": "$132.48",
+      "direction": "desc",
+      "metricId": "metricValue"
+    },
+    {
+      "rankingId": "most-expensive-electricity",
+      "rankingTitle": "Least Affordable Electricity by State",
+      "state": "Kansas",
+      "value": 130.32,
+      "displayValue": "$130.32",
+      "direction": "desc",
+      "metricId": "metricValue"
+    },
+    {
+      "rankingId": "most-expensive-electricity",
+      "rankingTitle": "Least Affordable Electricity by State",
+      "state": "North Carolina",
+      "value": 126.72,
+      "displayValue": "$126.72",
+      "direction": "desc",
+      "metricId": "metricValue"
+    },
+    {
+      "rankingId": "most-expensive-electricity",
+      "rankingTitle": "Least Affordable Electricity by State",
+      "state": "Wyoming",
+      "value": 126.18,
+      "displayValue": "$126.18",
+      "direction": "desc",
+      "metricId": "metricValue"
+    },
+    {
+      "rankingId": "most-expensive-electricity",
+      "rankingTitle": "Least Affordable Electricity by State",
+      "state": "Mississippi",
+      "value": 125.19,
+      "displayValue": "$125.19",
+      "direction": "desc",
+      "metricId": "metricValue"
+    },
+    {
+      "rankingId": "most-expensive-electricity",
+      "rankingTitle": "Least Affordable Electricity by State",
+      "state": "Missouri",
+      "value": 120.33,
+      "displayValue": "$120.33",
+      "direction": "desc",
+      "metricId": "metricValue"
+    },
+    {
+      "rankingId": "most-expensive-electricity",
+      "rankingTitle": "Least Affordable Electricity by State",
+      "state": "Tennessee",
+      "value": 119.52,
+      "displayValue": "$119.52",
+      "direction": "desc",
+      "metricId": "metricValue"
+    },
+    {
+      "rankingId": "most-expensive-electricity",
+      "rankingTitle": "Least Affordable Electricity by State",
+      "state": "Kentucky",
+      "value": 118.8,
+      "displayValue": "$118.80",
+      "direction": "desc",
+      "metricId": "metricValue"
+    },
+    {
+      "rankingId": "most-expensive-electricity",
+      "rankingTitle": "Least Affordable Electricity by State",
+      "state": "Iowa",
+      "value": 118.62,
+      "displayValue": "$118.62",
+      "direction": "desc",
+      "metricId": "metricValue"
+    },
+    {
+      "rankingId": "most-expensive-electricity",
+      "rankingTitle": "Least Affordable Electricity by State",
+      "state": "Nevada",
+      "value": 118.44,
+      "displayValue": "$118.44",
+      "direction": "desc",
+      "metricId": "metricValue"
+    },
+    {
+      "rankingId": "most-expensive-electricity",
+      "rankingTitle": "Least Affordable Electricity by State",
+      "state": "South Dakota",
+      "value": 118.26,
+      "displayValue": "$118.26",
+      "direction": "desc",
+      "metricId": "metricValue"
+    },
+    {
+      "rankingId": "most-expensive-electricity",
+      "rankingTitle": "Least Affordable Electricity by State",
+      "state": "Montana",
+      "value": 118.08,
+      "displayValue": "$118.08",
+      "direction": "desc",
+      "metricId": "metricValue"
+    },
+    {
+      "rankingId": "most-expensive-electricity",
+      "rankingTitle": "Least Affordable Electricity by State",
+      "state": "Oklahoma",
+      "value": 117.45,
+      "displayValue": "$117.45",
+      "direction": "desc",
+      "metricId": "metricValue"
+    },
+    {
+      "rankingId": "most-expensive-electricity",
+      "rankingTitle": "Least Affordable Electricity by State",
+      "state": "Utah",
+      "value": 116.73,
+      "displayValue": "$116.73",
+      "direction": "desc",
+      "metricId": "metricValue"
+    },
+    {
+      "rankingId": "most-expensive-electricity",
+      "rankingTitle": "Least Affordable Electricity by State",
+      "state": "Washington",
+      "value": 115.74,
+      "displayValue": "$115.74",
+      "direction": "desc",
+      "metricId": "metricValue"
+    },
+    {
+      "rankingId": "most-expensive-electricity",
+      "rankingTitle": "Least Affordable Electricity by State",
+      "state": "Arkansas",
+      "value": 115.47,
+      "displayValue": "$115.47",
+      "direction": "desc",
+      "metricId": "metricValue"
+    },
+    {
+      "rankingId": "most-expensive-electricity",
+      "rankingTitle": "Least Affordable Electricity by State",
+      "state": "Louisiana",
+      "value": 111.06,
+      "displayValue": "$111.06",
+      "direction": "desc",
+      "metricId": "metricValue"
+    },
+    {
+      "rankingId": "most-expensive-electricity",
+      "rankingTitle": "Least Affordable Electricity by State",
+      "state": "Nebraska",
+      "value": 109.71,
+      "displayValue": "$109.71",
+      "direction": "desc",
+      "metricId": "metricValue"
+    },
+    {
+      "rankingId": "most-expensive-electricity",
+      "rankingTitle": "Least Affordable Electricity by State",
+      "state": "North Dakota",
+      "value": 107.28,
+      "displayValue": "$107.28",
+      "direction": "desc",
+      "metricId": "metricValue"
+    },
+    {
+      "rankingId": "most-expensive-electricity",
+      "rankingTitle": "Least Affordable Electricity by State",
+      "state": "Idaho",
+      "value": 105.66,
+      "displayValue": "$105.66",
+      "direction": "desc",
+      "metricId": "metricValue"
+    },
+    {
+      "rankingId": "cagr-25y",
+      "rankingTitle": "25-Year Rate Growth (CAGR)",
+      "state": "District of Columbia",
+      "value": 5.3,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "cagr25y"
+    },
+    {
+      "rankingId": "cagr-25y",
+      "rankingTitle": "25-Year Rate Growth (CAGR)",
+      "state": "California",
+      "value": 4.64,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "cagr25y"
+    },
+    {
+      "rankingId": "cagr-25y",
+      "rankingTitle": "25-Year Rate Growth (CAGR)",
+      "state": "Maryland",
+      "value": 4.25,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "cagr25y"
+    },
+    {
+      "rankingId": "cagr-25y",
+      "rankingTitle": "25-Year Rate Growth (CAGR)",
+      "state": "Rhode Island",
+      "value": 3.92,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "cagr25y"
+    },
+    {
+      "rankingId": "cagr-25y",
+      "rankingTitle": "25-Year Rate Growth (CAGR)",
+      "state": "Massachusetts",
+      "value": 3.86,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "cagr25y"
+    },
+    {
+      "rankingId": "cagr-25y",
+      "rankingTitle": "25-Year Rate Growth (CAGR)",
+      "state": "Oregon",
+      "value": 3.82,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "cagr25y"
+    },
+    {
+      "rankingId": "cagr-25y",
+      "rankingTitle": "25-Year Rate Growth (CAGR)",
+      "state": "Hawaii",
+      "value": 3.79,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "cagr25y"
+    },
+    {
+      "rankingId": "cagr-25y",
+      "rankingTitle": "25-Year Rate Growth (CAGR)",
+      "state": "Michigan",
+      "value": 3.63,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "cagr25y"
+    },
+    {
+      "rankingId": "cagr-25y",
+      "rankingTitle": "25-Year Rate Growth (CAGR)",
+      "state": "Kentucky",
+      "value": 3.61,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "cagr25y"
+    },
+    {
+      "rankingId": "cagr-25y",
+      "rankingTitle": "25-Year Rate Growth (CAGR)",
+      "state": "Maine",
+      "value": 3.61,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "cagr25y"
+    },
+    {
+      "rankingId": "cagr-25y",
+      "rankingTitle": "25-Year Rate Growth (CAGR)",
+      "state": "Connecticut",
+      "value": 3.58,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "cagr25y"
+    },
+    {
+      "rankingId": "cagr-25y",
+      "rankingTitle": "25-Year Rate Growth (CAGR)",
+      "state": "Indiana",
+      "value": 3.54,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "cagr25y"
+    },
+    {
+      "rankingId": "cagr-25y",
+      "rankingTitle": "25-Year Rate Growth (CAGR)",
+      "state": "West Virginia",
+      "value": 3.52,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "cagr25y"
+    },
+    {
+      "rankingId": "cagr-25y",
+      "rankingTitle": "25-Year Rate Growth (CAGR)",
+      "state": "New Jersey",
+      "value": 3.51,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "cagr25y"
+    },
+    {
+      "rankingId": "cagr-25y",
+      "rankingTitle": "25-Year Rate Growth (CAGR)",
+      "state": "Washington",
+      "value": 3.48,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "cagr25y"
+    },
+    {
+      "rankingId": "cagr-25y",
+      "rankingTitle": "25-Year Rate Growth (CAGR)",
+      "state": "Colorado",
+      "value": 3.41,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "cagr25y"
+    },
+    {
+      "rankingId": "cagr-25y",
+      "rankingTitle": "25-Year Rate Growth (CAGR)",
+      "state": "Wisconsin",
+      "value": 3.41,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "cagr25y"
+    },
+    {
+      "rankingId": "cagr-25y",
+      "rankingTitle": "25-Year Rate Growth (CAGR)",
+      "state": "Idaho",
+      "value": 3.23,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "cagr25y"
+    },
+    {
+      "rankingId": "cagr-25y",
+      "rankingTitle": "25-Year Rate Growth (CAGR)",
+      "state": "Alabama",
+      "value": 3.18,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "cagr25y"
+    },
+    {
+      "rankingId": "cagr-25y",
+      "rankingTitle": "25-Year Rate Growth (CAGR)",
+      "state": "Ohio",
+      "value": 3.17,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "cagr25y"
+    },
+    {
+      "rankingId": "cagr-25y",
+      "rankingTitle": "25-Year Rate Growth (CAGR)",
+      "state": "Delaware",
+      "value": 3.16,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "cagr25y"
+    },
+    {
+      "rankingId": "cagr-25y",
+      "rankingTitle": "25-Year Rate Growth (CAGR)",
+      "state": "Pennsylvania",
+      "value": 3.16,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "cagr25y"
+    },
+    {
+      "rankingId": "cagr-25y",
+      "rankingTitle": "25-Year Rate Growth (CAGR)",
+      "state": "Alaska",
+      "value": 3.03,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "cagr25y"
+    },
+    {
+      "rankingId": "cagr-25y",
+      "rankingTitle": "25-Year Rate Growth (CAGR)",
+      "state": "Arizona",
+      "value": 3.02,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "cagr25y"
+    },
+    {
+      "rankingId": "cagr-25y",
+      "rankingTitle": "25-Year Rate Growth (CAGR)",
+      "state": "Wyoming",
+      "value": 2.98,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "cagr25y"
+    },
+    {
+      "rankingId": "cagr-25y",
+      "rankingTitle": "25-Year Rate Growth (CAGR)",
+      "state": "Illinois",
+      "value": 2.94,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "cagr25y"
+    },
+    {
+      "rankingId": "cagr-25y",
+      "rankingTitle": "25-Year Rate Growth (CAGR)",
+      "state": "Minnesota",
+      "value": 2.94,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "cagr25y"
+    },
+    {
+      "rankingId": "cagr-25y",
+      "rankingTitle": "25-Year Rate Growth (CAGR)",
+      "state": "Tennessee",
+      "value": 2.92,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "cagr25y"
+    },
+    {
+      "rankingId": "cagr-25y",
+      "rankingTitle": "25-Year Rate Growth (CAGR)",
+      "state": "Virginia",
+      "value": 2.92,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "cagr25y"
+    },
+    {
+      "rankingId": "cagr-25y",
+      "rankingTitle": "25-Year Rate Growth (CAGR)",
+      "state": "Nebraska",
+      "value": 2.9,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "cagr25y"
+    },
+    {
+      "rankingId": "cagr-25y",
+      "rankingTitle": "25-Year Rate Growth (CAGR)",
+      "state": "New York",
+      "value": 2.88,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "cagr25y"
+    },
+    {
+      "rankingId": "cagr-25y",
+      "rankingTitle": "25-Year Rate Growth (CAGR)",
+      "state": "Montana",
+      "value": 2.86,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "cagr25y"
+    },
+    {
+      "rankingId": "cagr-25y",
+      "rankingTitle": "25-Year Rate Growth (CAGR)",
+      "state": "New Hampshire",
+      "value": 2.86,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "cagr25y"
+    },
+    {
+      "rankingId": "cagr-25y",
+      "rankingTitle": "25-Year Rate Growth (CAGR)",
+      "state": "Mississippi",
+      "value": 2.81,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "cagr25y"
+    },
+    {
+      "rankingId": "cagr-25y",
+      "rankingTitle": "25-Year Rate Growth (CAGR)",
+      "state": "Utah",
+      "value": 2.79,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "cagr25y"
+    },
+    {
+      "rankingId": "cagr-25y",
+      "rankingTitle": "25-Year Rate Growth (CAGR)",
+      "state": "Kansas",
+      "value": 2.71,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "cagr25y"
+    },
+    {
+      "rankingId": "cagr-25y",
+      "rankingTitle": "25-Year Rate Growth (CAGR)",
+      "state": "South Carolina",
+      "value": 2.65,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "cagr25y"
+    },
+    {
+      "rankingId": "cagr-25y",
+      "rankingTitle": "25-Year Rate Growth (CAGR)",
+      "state": "Texas",
+      "value": 2.61,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "cagr25y"
+    },
+    {
+      "rankingId": "cagr-25y",
+      "rankingTitle": "25-Year Rate Growth (CAGR)",
+      "state": "North Dakota",
+      "value": 2.58,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "cagr25y"
+    },
+    {
+      "rankingId": "cagr-25y",
+      "rankingTitle": "25-Year Rate Growth (CAGR)",
+      "state": "Vermont",
+      "value": 2.57,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "cagr25y"
+    },
+    {
+      "rankingId": "cagr-25y",
+      "rankingTitle": "25-Year Rate Growth (CAGR)",
+      "state": "Missouri",
+      "value": 2.53,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "cagr25y"
+    },
+    {
+      "rankingId": "cagr-25y",
+      "rankingTitle": "25-Year Rate Growth (CAGR)",
+      "state": "Georgia",
+      "value": 2.47,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "cagr25y"
+    },
+    {
+      "rankingId": "cagr-25y",
+      "rankingTitle": "25-Year Rate Growth (CAGR)",
+      "state": "South Dakota",
+      "value": 2.44,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "cagr25y"
+    },
+    {
+      "rankingId": "cagr-25y",
+      "rankingTitle": "25-Year Rate Growth (CAGR)",
+      "state": "New Mexico",
+      "value": 2.36,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "cagr25y"
+    },
+    {
+      "rankingId": "cagr-25y",
+      "rankingTitle": "25-Year Rate Growth (CAGR)",
+      "state": "Florida",
+      "value": 2.32,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "cagr25y"
+    },
+    {
+      "rankingId": "cagr-25y",
+      "rankingTitle": "25-Year Rate Growth (CAGR)",
+      "state": "North Carolina",
+      "value": 2.12,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "cagr25y"
+    },
+    {
+      "rankingId": "cagr-25y",
+      "rankingTitle": "25-Year Rate Growth (CAGR)",
+      "state": "Arkansas",
+      "value": 2.07,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "cagr25y"
+    },
+    {
+      "rankingId": "cagr-25y",
+      "rankingTitle": "25-Year Rate Growth (CAGR)",
+      "state": "Oklahoma",
+      "value": 2.03,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "cagr25y"
+    },
+    {
+      "rankingId": "cagr-25y",
+      "rankingTitle": "25-Year Rate Growth (CAGR)",
+      "state": "Iowa",
+      "value": 1.82,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "cagr25y"
+    },
+    {
+      "rankingId": "cagr-25y",
+      "rankingTitle": "25-Year Rate Growth (CAGR)",
+      "state": "Nevada",
+      "value": 1.47,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "cagr25y"
+    },
+    {
+      "rankingId": "cagr-25y",
+      "rankingTitle": "25-Year Rate Growth (CAGR)",
+      "state": "Louisiana",
+      "value": 1.28,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "cagr25y"
+    },
+    {
+      "rankingId": "volatility-5y",
+      "rankingTitle": "5-Year Rate Volatility",
+      "state": "District Of Columbia",
+      "value": 19.56,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "volatility5y"
+    },
+    {
+      "rankingId": "volatility-5y",
+      "rankingTitle": "5-Year Rate Volatility",
+      "state": "Maine",
+      "value": 17.82,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "volatility5y"
+    },
+    {
+      "rankingId": "volatility-5y",
+      "rankingTitle": "5-Year Rate Volatility",
+      "state": "Maryland",
+      "value": 15.08,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "volatility5y"
+    },
+    {
+      "rankingId": "volatility-5y",
+      "rankingTitle": "5-Year Rate Volatility",
+      "state": "New Hampshire",
+      "value": 15.06,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "volatility5y"
+    },
+    {
+      "rankingId": "volatility-5y",
+      "rankingTitle": "5-Year Rate Volatility",
+      "state": "Rhode Island",
+      "value": 14.39,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "volatility5y"
+    },
+    {
+      "rankingId": "volatility-5y",
+      "rankingTitle": "5-Year Rate Volatility",
+      "state": "Connecticut",
+      "value": 14.18,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "volatility5y"
+    },
+    {
+      "rankingId": "volatility-5y",
+      "rankingTitle": "5-Year Rate Volatility",
+      "state": "California",
+      "value": 13.99,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "volatility5y"
+    },
+    {
+      "rankingId": "volatility-5y",
+      "rankingTitle": "5-Year Rate Volatility",
+      "state": "Nevada",
+      "value": 13.53,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "volatility5y"
+    },
+    {
+      "rankingId": "volatility-5y",
+      "rankingTitle": "5-Year Rate Volatility",
+      "state": "Missouri",
+      "value": 13.45,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "volatility5y"
+    },
+    {
+      "rankingId": "volatility-5y",
+      "rankingTitle": "5-Year Rate Volatility",
+      "state": "Delaware",
+      "value": 13.35,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "volatility5y"
+    },
+    {
+      "rankingId": "volatility-5y",
+      "rankingTitle": "5-Year Rate Volatility",
+      "state": "New Jersey",
+      "value": 13.25,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "volatility5y"
+    },
+    {
+      "rankingId": "volatility-5y",
+      "rankingTitle": "5-Year Rate Volatility",
+      "state": "Oregon",
+      "value": 13.12,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "volatility5y"
+    },
+    {
+      "rankingId": "volatility-5y",
+      "rankingTitle": "5-Year Rate Volatility",
+      "state": "Pennsylvania",
+      "value": 12.38,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "volatility5y"
+    },
+    {
+      "rankingId": "volatility-5y",
+      "rankingTitle": "5-Year Rate Volatility",
+      "state": "Massachusetts",
+      "value": 11.44,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "volatility5y"
+    },
+    {
+      "rankingId": "volatility-5y",
+      "rankingTitle": "5-Year Rate Volatility",
+      "state": "North Dakota",
+      "value": 11.38,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "volatility5y"
+    },
+    {
+      "rankingId": "volatility-5y",
+      "rankingTitle": "5-Year Rate Volatility",
+      "state": "Illinois",
+      "value": 11.27,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "volatility5y"
+    },
+    {
+      "rankingId": "volatility-5y",
+      "rankingTitle": "5-Year Rate Volatility",
+      "state": "Ohio",
+      "value": 11.05,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "volatility5y"
+    },
+    {
+      "rankingId": "volatility-5y",
+      "rankingTitle": "5-Year Rate Volatility",
+      "state": "New York",
+      "value": 11.03,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "volatility5y"
+    },
+    {
+      "rankingId": "volatility-5y",
+      "rankingTitle": "5-Year Rate Volatility",
+      "state": "Oklahoma",
+      "value": 10.8,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "volatility5y"
+    },
+    {
+      "rankingId": "volatility-5y",
+      "rankingTitle": "5-Year Rate Volatility",
+      "state": "Washington",
+      "value": 10.73,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "volatility5y"
+    },
+    {
+      "rankingId": "volatility-5y",
+      "rankingTitle": "5-Year Rate Volatility",
+      "state": "North Carolina",
+      "value": 10.72,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "volatility5y"
+    },
+    {
+      "rankingId": "volatility-5y",
+      "rankingTitle": "5-Year Rate Volatility",
+      "state": "Wyoming",
+      "value": 10.66,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "volatility5y"
+    },
+    {
+      "rankingId": "volatility-5y",
+      "rankingTitle": "5-Year Rate Volatility",
+      "state": "Iowa",
+      "value": 10.34,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "volatility5y"
+    },
+    {
+      "rankingId": "volatility-5y",
+      "rankingTitle": "5-Year Rate Volatility",
+      "state": "Hawaii",
+      "value": 10.02,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "volatility5y"
+    },
+    {
+      "rankingId": "volatility-5y",
+      "rankingTitle": "5-Year Rate Volatility",
+      "state": "West Virginia",
+      "value": 9.9,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "volatility5y"
+    },
+    {
+      "rankingId": "volatility-5y",
+      "rankingTitle": "5-Year Rate Volatility",
+      "state": "Nebraska",
+      "value": 9.79,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "volatility5y"
+    },
+    {
+      "rankingId": "volatility-5y",
+      "rankingTitle": "5-Year Rate Volatility",
+      "state": "Virginia",
+      "value": 9.64,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "volatility5y"
+    },
+    {
+      "rankingId": "volatility-5y",
+      "rankingTitle": "5-Year Rate Volatility",
+      "state": "Utah",
+      "value": 9.59,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "volatility5y"
+    },
+    {
+      "rankingId": "volatility-5y",
+      "rankingTitle": "5-Year Rate Volatility",
+      "state": "Florida",
+      "value": 9.14,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "volatility5y"
+    },
+    {
+      "rankingId": "volatility-5y",
+      "rankingTitle": "5-Year Rate Volatility",
+      "state": "Texas",
+      "value": 9.05,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "volatility5y"
+    },
+    {
+      "rankingId": "volatility-5y",
+      "rankingTitle": "5-Year Rate Volatility",
+      "state": "Georgia",
+      "value": 8.92,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "volatility5y"
+    },
+    {
+      "rankingId": "volatility-5y",
+      "rankingTitle": "5-Year Rate Volatility",
+      "state": "Alabama",
+      "value": 8.77,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "volatility5y"
+    },
+    {
+      "rankingId": "volatility-5y",
+      "rankingTitle": "5-Year Rate Volatility",
+      "state": "Montana",
+      "value": 8.59,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "volatility5y"
+    },
+    {
+      "rankingId": "volatility-5y",
+      "rankingTitle": "5-Year Rate Volatility",
+      "state": "Louisiana",
+      "value": 8.44,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "volatility5y"
+    },
+    {
+      "rankingId": "volatility-5y",
+      "rankingTitle": "5-Year Rate Volatility",
+      "state": "Arizona",
+      "value": 8.37,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "volatility5y"
+    },
+    {
+      "rankingId": "volatility-5y",
+      "rankingTitle": "5-Year Rate Volatility",
+      "state": "Indiana",
+      "value": 8.27,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "volatility5y"
+    },
+    {
+      "rankingId": "volatility-5y",
+      "rankingTitle": "5-Year Rate Volatility",
+      "state": "Wisconsin",
+      "value": 8.19,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "volatility5y"
+    },
+    {
+      "rankingId": "volatility-5y",
+      "rankingTitle": "5-Year Rate Volatility",
+      "state": "Mississippi",
+      "value": 8.12,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "volatility5y"
+    },
+    {
+      "rankingId": "volatility-5y",
+      "rankingTitle": "5-Year Rate Volatility",
+      "state": "Minnesota",
+      "value": 8.09,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "volatility5y"
+    },
+    {
+      "rankingId": "volatility-5y",
+      "rankingTitle": "5-Year Rate Volatility",
+      "state": "Idaho",
+      "value": 7.79,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "volatility5y"
+    },
+    {
+      "rankingId": "volatility-5y",
+      "rankingTitle": "5-Year Rate Volatility",
+      "state": "South Dakota",
+      "value": 7.72,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "volatility5y"
+    },
+    {
+      "rankingId": "volatility-5y",
+      "rankingTitle": "5-Year Rate Volatility",
+      "state": "Vermont",
+      "value": 7.47,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "volatility5y"
+    },
+    {
+      "rankingId": "volatility-5y",
+      "rankingTitle": "5-Year Rate Volatility",
+      "state": "Colorado",
+      "value": 7.29,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "volatility5y"
+    },
+    {
+      "rankingId": "volatility-5y",
+      "rankingTitle": "5-Year Rate Volatility",
+      "state": "Arkansas",
+      "value": 7.13,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "volatility5y"
+    },
+    {
+      "rankingId": "volatility-5y",
+      "rankingTitle": "5-Year Rate Volatility",
+      "state": "Tennessee",
+      "value": 7.02,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "volatility5y"
+    },
+    {
+      "rankingId": "volatility-5y",
+      "rankingTitle": "5-Year Rate Volatility",
+      "state": "South Carolina",
+      "value": 6.53,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "volatility5y"
+    },
+    {
+      "rankingId": "volatility-5y",
+      "rankingTitle": "5-Year Rate Volatility",
+      "state": "Alaska",
+      "value": 6.4,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "volatility5y"
+    },
+    {
+      "rankingId": "volatility-5y",
+      "rankingTitle": "5-Year Rate Volatility",
+      "state": "New Mexico",
+      "value": 6.29,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "volatility5y"
+    },
+    {
+      "rankingId": "volatility-5y",
+      "rankingTitle": "5-Year Rate Volatility",
+      "state": "Kentucky",
+      "value": 6.28,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "volatility5y"
+    },
+    {
+      "rankingId": "volatility-5y",
+      "rankingTitle": "5-Year Rate Volatility",
+      "state": "Kansas",
+      "value": 5.95,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "volatility5y"
+    },
+    {
+      "rankingId": "volatility-5y",
+      "rankingTitle": "5-Year Rate Volatility",
+      "state": "Michigan",
+      "value": 5.72,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "volatility5y"
+    },
+    {
+      "rankingId": "price-trend",
+      "rankingTitle": "Electricity Price Trend Ranking",
+      "state": "District of Columbia",
+      "value": 18.01,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "annualizedTrend"
+    },
+    {
+      "rankingId": "price-trend",
+      "rankingTitle": "Electricity Price Trend Ranking",
+      "state": "Maine",
+      "value": 17.94,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "annualizedTrend"
+    },
+    {
+      "rankingId": "price-trend",
+      "rankingTitle": "Electricity Price Trend Ranking",
+      "state": "California",
+      "value": 12.1,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "annualizedTrend"
+    },
+    {
+      "rankingId": "price-trend",
+      "rankingTitle": "Electricity Price Trend Ranking",
+      "state": "Maryland",
+      "value": 11.19,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "annualizedTrend"
+    },
+    {
+      "rankingId": "price-trend",
+      "rankingTitle": "Electricity Price Trend Ranking",
+      "state": "Pennsylvania",
+      "value": 10.92,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "annualizedTrend"
+    },
+    {
+      "rankingId": "price-trend",
+      "rankingTitle": "Electricity Price Trend Ranking",
+      "state": "New York",
+      "value": 10.91,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "annualizedTrend"
+    },
+    {
+      "rankingId": "price-trend",
+      "rankingTitle": "Electricity Price Trend Ranking",
+      "state": "New Jersey",
+      "value": 9.28,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "annualizedTrend"
+    },
+    {
+      "rankingId": "price-trend",
+      "rankingTitle": "Electricity Price Trend Ranking",
+      "state": "Delaware",
+      "value": 8.83,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "annualizedTrend"
+    },
+    {
+      "rankingId": "price-trend",
+      "rankingTitle": "Electricity Price Trend Ranking",
+      "state": "Ohio",
+      "value": 8.38,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "annualizedTrend"
+    },
+    {
+      "rankingId": "price-trend",
+      "rankingTitle": "Electricity Price Trend Ranking",
+      "state": "Oklahoma",
+      "value": 8.09,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "annualizedTrend"
+    },
+    {
+      "rankingId": "price-trend",
+      "rankingTitle": "Electricity Price Trend Ranking",
+      "state": "New Hampshire",
+      "value": 7.73,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "annualizedTrend"
+    },
+    {
+      "rankingId": "price-trend",
+      "rankingTitle": "Electricity Price Trend Ranking",
+      "state": "Texas",
+      "value": 7.5,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "annualizedTrend"
+    },
+    {
+      "rankingId": "price-trend",
+      "rankingTitle": "Electricity Price Trend Ranking",
+      "state": "Oregon",
+      "value": 7.18,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "annualizedTrend"
+    },
+    {
+      "rankingId": "price-trend",
+      "rankingTitle": "Electricity Price Trend Ranking",
+      "state": "Massachusetts",
+      "value": 7.11,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "annualizedTrend"
+    },
+    {
+      "rankingId": "price-trend",
+      "rankingTitle": "Electricity Price Trend Ranking",
+      "state": "Washington",
+      "value": 7.09,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "annualizedTrend"
+    },
+    {
+      "rankingId": "price-trend",
+      "rankingTitle": "Electricity Price Trend Ranking",
+      "state": "Rhode Island",
+      "value": 7.04,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "annualizedTrend"
+    },
+    {
+      "rankingId": "price-trend",
+      "rankingTitle": "Electricity Price Trend Ranking",
+      "state": "Virginia",
+      "value": 6.78,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "annualizedTrend"
+    },
+    {
+      "rankingId": "price-trend",
+      "rankingTitle": "Electricity Price Trend Ranking",
+      "state": "Colorado",
+      "value": 6.63,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "annualizedTrend"
+    },
+    {
+      "rankingId": "price-trend",
+      "rankingTitle": "Electricity Price Trend Ranking",
+      "state": "Florida",
+      "value": 6.37,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "annualizedTrend"
+    },
+    {
+      "rankingId": "price-trend",
+      "rankingTitle": "Electricity Price Trend Ranking",
+      "state": "Utah",
+      "value": 6.35,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "annualizedTrend"
+    },
+    {
+      "rankingId": "price-trend",
+      "rankingTitle": "Electricity Price Trend Ranking",
+      "state": "Arizona",
+      "value": 5.74,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "annualizedTrend"
+    },
+    {
+      "rankingId": "price-trend",
+      "rankingTitle": "Electricity Price Trend Ranking",
+      "state": "Hawaii",
+      "value": 5.44,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "annualizedTrend"
+    },
+    {
+      "rankingId": "price-trend",
+      "rankingTitle": "Electricity Price Trend Ranking",
+      "state": "Mississippi",
+      "value": 5.19,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "annualizedTrend"
+    },
+    {
+      "rankingId": "price-trend",
+      "rankingTitle": "Electricity Price Trend Ranking",
+      "state": "Wisconsin",
+      "value": 5.17,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "annualizedTrend"
+    },
+    {
+      "rankingId": "price-trend",
+      "rankingTitle": "Electricity Price Trend Ranking",
+      "state": "Vermont",
+      "value": 5.07,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "annualizedTrend"
+    },
+    {
+      "rankingId": "price-trend",
+      "rankingTitle": "Electricity Price Trend Ranking",
+      "state": "Louisiana",
+      "value": 5.02,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "annualizedTrend"
+    },
+    {
+      "rankingId": "price-trend",
+      "rankingTitle": "Electricity Price Trend Ranking",
+      "state": "Illinois",
+      "value": 4.95,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "annualizedTrend"
+    },
+    {
+      "rankingId": "price-trend",
+      "rankingTitle": "Electricity Price Trend Ranking",
+      "state": "Indiana",
+      "value": 4.63,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "annualizedTrend"
+    },
+    {
+      "rankingId": "price-trend",
+      "rankingTitle": "Electricity Price Trend Ranking",
+      "state": "Tennessee",
+      "value": 4.44,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "annualizedTrend"
+    },
+    {
+      "rankingId": "price-trend",
+      "rankingTitle": "Electricity Price Trend Ranking",
+      "state": "Alabama",
+      "value": 4.42,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "annualizedTrend"
+    },
+    {
+      "rankingId": "price-trend",
+      "rankingTitle": "Electricity Price Trend Ranking",
+      "state": "Kentucky",
+      "value": 4.29,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "annualizedTrend"
+    },
+    {
+      "rankingId": "price-trend",
+      "rankingTitle": "Electricity Price Trend Ranking",
+      "state": "North Carolina",
+      "value": 4.09,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "annualizedTrend"
+    },
+    {
+      "rankingId": "price-trend",
+      "rankingTitle": "Electricity Price Trend Ranking",
+      "state": "Wyoming",
+      "value": 4.05,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "annualizedTrend"
+    },
+    {
+      "rankingId": "price-trend",
+      "rankingTitle": "Electricity Price Trend Ranking",
+      "state": "Idaho",
+      "value": 4.04,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "annualizedTrend"
+    },
+    {
+      "rankingId": "price-trend",
+      "rankingTitle": "Electricity Price Trend Ranking",
+      "state": "Arkansas",
+      "value": 3.93,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "annualizedTrend"
+    },
+    {
+      "rankingId": "price-trend",
+      "rankingTitle": "Electricity Price Trend Ranking",
+      "state": "Montana",
+      "value": 3.59,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "annualizedTrend"
+    },
+    {
+      "rankingId": "price-trend",
+      "rankingTitle": "Electricity Price Trend Ranking",
+      "state": "West Virginia",
+      "value": 3.57,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "annualizedTrend"
+    },
+    {
+      "rankingId": "price-trend",
+      "rankingTitle": "Electricity Price Trend Ranking",
+      "state": "Georgia",
+      "value": 3.5,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "annualizedTrend"
+    },
+    {
+      "rankingId": "price-trend",
+      "rankingTitle": "Electricity Price Trend Ranking",
+      "state": "New Mexico",
+      "value": 3.42,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "annualizedTrend"
+    },
+    {
+      "rankingId": "price-trend",
+      "rankingTitle": "Electricity Price Trend Ranking",
+      "state": "Alaska",
+      "value": 3.39,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "annualizedTrend"
+    },
+    {
+      "rankingId": "price-trend",
+      "rankingTitle": "Electricity Price Trend Ranking",
+      "state": "Missouri",
+      "value": 3.39,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "annualizedTrend"
+    },
+    {
+      "rankingId": "price-trend",
+      "rankingTitle": "Electricity Price Trend Ranking",
+      "state": "Minnesota",
+      "value": 3.23,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "annualizedTrend"
+    },
+    {
+      "rankingId": "price-trend",
+      "rankingTitle": "Electricity Price Trend Ranking",
+      "state": "Nebraska",
+      "value": 3.23,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "annualizedTrend"
+    },
+    {
+      "rankingId": "price-trend",
+      "rankingTitle": "Electricity Price Trend Ranking",
+      "state": "South Carolina",
+      "value": 3.02,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "annualizedTrend"
+    },
+    {
+      "rankingId": "price-trend",
+      "rankingTitle": "Electricity Price Trend Ranking",
+      "state": "Michigan",
+      "value": 2.88,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "annualizedTrend"
+    },
+    {
+      "rankingId": "price-trend",
+      "rankingTitle": "Electricity Price Trend Ranking",
+      "state": "Iowa",
+      "value": 2.51,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "annualizedTrend"
+    },
+    {
+      "rankingId": "price-trend",
+      "rankingTitle": "Electricity Price Trend Ranking",
+      "state": "Kansas",
+      "value": 2.46,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "annualizedTrend"
+    },
+    {
+      "rankingId": "price-trend",
+      "rankingTitle": "Electricity Price Trend Ranking",
+      "state": "Connecticut",
+      "value": 2.39,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "annualizedTrend"
+    },
+    {
+      "rankingId": "price-trend",
+      "rankingTitle": "Electricity Price Trend Ranking",
+      "state": "South Dakota",
+      "value": 2.32,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "annualizedTrend"
+    },
+    {
+      "rankingId": "price-trend",
+      "rankingTitle": "Electricity Price Trend Ranking",
+      "state": "North Dakota",
+      "value": 1.69,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "annualizedTrend"
+    },
+    {
+      "rankingId": "price-trend",
+      "rankingTitle": "Electricity Price Trend Ranking",
+      "state": "Nevada",
+      "value": 1.57,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "annualizedTrend"
+    },
+    {
+      "rankingId": "momentum-signal",
+      "rankingTitle": "Electricity Price Momentum Signal Ranking",
+      "state": "District of Columbia",
+      "value": 29.2,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "score"
+    },
+    {
+      "rankingId": "momentum-signal",
+      "rankingTitle": "Electricity Price Momentum Signal Ranking",
+      "state": "Rhode Island",
+      "value": 24.64,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "score"
+    },
+    {
+      "rankingId": "momentum-signal",
+      "rankingTitle": "Electricity Price Momentum Signal Ranking",
+      "state": "New Jersey",
+      "value": 20.39,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "score"
+    },
+    {
+      "rankingId": "momentum-signal",
+      "rankingTitle": "Electricity Price Momentum Signal Ranking",
+      "state": "Maine",
+      "value": 17.95,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "score"
+    },
+    {
+      "rankingId": "momentum-signal",
+      "rankingTitle": "Electricity Price Momentum Signal Ranking",
+      "state": "Pennsylvania",
+      "value": 16.35,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "score"
+    },
+    {
+      "rankingId": "momentum-signal",
+      "rankingTitle": "Electricity Price Momentum Signal Ranking",
+      "state": "California",
+      "value": 15.36,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "score"
+    },
+    {
+      "rankingId": "momentum-signal",
+      "rankingTitle": "Electricity Price Momentum Signal Ranking",
+      "state": "Washington",
+      "value": 14.49,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "score"
+    },
+    {
+      "rankingId": "momentum-signal",
+      "rankingTitle": "Electricity Price Momentum Signal Ranking",
+      "state": "New York",
+      "value": 14.21,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "score"
+    },
+    {
+      "rankingId": "momentum-signal",
+      "rankingTitle": "Electricity Price Momentum Signal Ranking",
+      "state": "Indiana",
+      "value": 13.03,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "score"
+    },
+    {
+      "rankingId": "momentum-signal",
+      "rankingTitle": "Electricity Price Momentum Signal Ranking",
+      "state": "New Hampshire",
+      "value": 12.98,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "score"
+    },
+    {
+      "rankingId": "momentum-signal",
+      "rankingTitle": "Electricity Price Momentum Signal Ranking",
+      "state": "Wisconsin",
+      "value": 11.72,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "score"
+    },
+    {
+      "rankingId": "momentum-signal",
+      "rankingTitle": "Electricity Price Momentum Signal Ranking",
+      "state": "Nebraska",
+      "value": 11.36,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "score"
+    },
+    {
+      "rankingId": "momentum-signal",
+      "rankingTitle": "Electricity Price Momentum Signal Ranking",
+      "state": "Ohio",
+      "value": 11.01,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "score"
+    },
+    {
+      "rankingId": "momentum-signal",
+      "rankingTitle": "Electricity Price Momentum Signal Ranking",
+      "state": "Wyoming",
+      "value": 11.01,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "score"
+    },
+    {
+      "rankingId": "momentum-signal",
+      "rankingTitle": "Electricity Price Momentum Signal Ranking",
+      "state": "Idaho",
+      "value": 10.4,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "score"
+    },
+    {
+      "rankingId": "momentum-signal",
+      "rankingTitle": "Electricity Price Momentum Signal Ranking",
+      "state": "Alaska",
+      "value": 9.99,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "score"
+    },
+    {
+      "rankingId": "momentum-signal",
+      "rankingTitle": "Electricity Price Momentum Signal Ranking",
+      "state": "Maryland",
+      "value": 9.94,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "score"
+    },
+    {
+      "rankingId": "momentum-signal",
+      "rankingTitle": "Electricity Price Momentum Signal Ranking",
+      "state": "North Dakota",
+      "value": 9.72,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "score"
+    },
+    {
+      "rankingId": "momentum-signal",
+      "rankingTitle": "Electricity Price Momentum Signal Ranking",
+      "state": "Montana",
+      "value": 9.49,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "score"
+    },
+    {
+      "rankingId": "momentum-signal",
+      "rankingTitle": "Electricity Price Momentum Signal Ranking",
+      "state": "Minnesota",
+      "value": 8.1,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "score"
+    },
+    {
+      "rankingId": "momentum-signal",
+      "rankingTitle": "Electricity Price Momentum Signal Ranking",
+      "state": "Michigan",
+      "value": 8.03,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "score"
+    },
+    {
+      "rankingId": "momentum-signal",
+      "rankingTitle": "Electricity Price Momentum Signal Ranking",
+      "state": "Alabama",
+      "value": 7.95,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "score"
+    },
+    {
+      "rankingId": "momentum-signal",
+      "rankingTitle": "Electricity Price Momentum Signal Ranking",
+      "state": "Illinois",
+      "value": 7.95,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "score"
+    },
+    {
+      "rankingId": "momentum-signal",
+      "rankingTitle": "Electricity Price Momentum Signal Ranking",
+      "state": "Florida",
+      "value": 7.85,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "score"
+    },
+    {
+      "rankingId": "momentum-signal",
+      "rankingTitle": "Electricity Price Momentum Signal Ranking",
+      "state": "Colorado",
+      "value": 7.75,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "score"
+    },
+    {
+      "rankingId": "momentum-signal",
+      "rankingTitle": "Electricity Price Momentum Signal Ranking",
+      "state": "Louisiana",
+      "value": 7.35,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "score"
+    },
+    {
+      "rankingId": "momentum-signal",
+      "rankingTitle": "Electricity Price Momentum Signal Ranking",
+      "state": "Virginia",
+      "value": 7.26,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "score"
+    },
+    {
+      "rankingId": "momentum-signal",
+      "rankingTitle": "Electricity Price Momentum Signal Ranking",
+      "state": "South Carolina",
+      "value": 7.24,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "score"
+    },
+    {
+      "rankingId": "momentum-signal",
+      "rankingTitle": "Electricity Price Momentum Signal Ranking",
+      "state": "Utah",
+      "value": 6.87,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "score"
+    },
+    {
+      "rankingId": "momentum-signal",
+      "rankingTitle": "Electricity Price Momentum Signal Ranking",
+      "state": "Arkansas",
+      "value": 6.76,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "score"
+    },
+    {
+      "rankingId": "momentum-signal",
+      "rankingTitle": "Electricity Price Momentum Signal Ranking",
+      "state": "Vermont",
+      "value": 6.31,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "score"
+    },
+    {
+      "rankingId": "momentum-signal",
+      "rankingTitle": "Electricity Price Momentum Signal Ranking",
+      "state": "Oregon",
+      "value": 6.29,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "score"
+    },
+    {
+      "rankingId": "momentum-signal",
+      "rankingTitle": "Electricity Price Momentum Signal Ranking",
+      "state": "Oklahoma",
+      "value": 5.97,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "score"
+    },
+    {
+      "rankingId": "momentum-signal",
+      "rankingTitle": "Electricity Price Momentum Signal Ranking",
+      "state": "Kansas",
+      "value": 5.57,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "score"
+    },
+    {
+      "rankingId": "momentum-signal",
+      "rankingTitle": "Electricity Price Momentum Signal Ranking",
+      "state": "Mississippi",
+      "value": 5.35,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "score"
+    },
+    {
+      "rankingId": "momentum-signal",
+      "rankingTitle": "Electricity Price Momentum Signal Ranking",
+      "state": "Texas",
+      "value": 4.32,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "score"
+    },
+    {
+      "rankingId": "momentum-signal",
+      "rankingTitle": "Electricity Price Momentum Signal Ranking",
+      "state": "Missouri",
+      "value": 3.94,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "score"
+    },
+    {
+      "rankingId": "momentum-signal",
+      "rankingTitle": "Electricity Price Momentum Signal Ranking",
+      "state": "New Mexico",
+      "value": 3.52,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "score"
+    },
+    {
+      "rankingId": "momentum-signal",
+      "rankingTitle": "Electricity Price Momentum Signal Ranking",
+      "state": "Iowa",
+      "value": 3.44,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "score"
+    },
+    {
+      "rankingId": "momentum-signal",
+      "rankingTitle": "Electricity Price Momentum Signal Ranking",
+      "state": "Arizona",
+      "value": 3.11,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "score"
+    },
+    {
+      "rankingId": "momentum-signal",
+      "rankingTitle": "Electricity Price Momentum Signal Ranking",
+      "state": "Delaware",
+      "value": 2.97,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "score"
+    },
+    {
+      "rankingId": "momentum-signal",
+      "rankingTitle": "Electricity Price Momentum Signal Ranking",
+      "state": "South Dakota",
+      "value": 2.96,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "score"
+    },
+    {
+      "rankingId": "momentum-signal",
+      "rankingTitle": "Electricity Price Momentum Signal Ranking",
+      "state": "Georgia",
+      "value": 2.56,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "score"
+    },
+    {
+      "rankingId": "momentum-signal",
+      "rankingTitle": "Electricity Price Momentum Signal Ranking",
+      "state": "Kentucky",
+      "value": 0,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "score"
+    },
+    {
+      "rankingId": "momentum-signal",
+      "rankingTitle": "Electricity Price Momentum Signal Ranking",
+      "state": "Massachusetts",
+      "value": 0,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "score"
+    },
+    {
+      "rankingId": "momentum-signal",
+      "rankingTitle": "Electricity Price Momentum Signal Ranking",
+      "state": "North Carolina",
+      "value": 0,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "score"
+    },
+    {
+      "rankingId": "momentum-signal",
+      "rankingTitle": "Electricity Price Momentum Signal Ranking",
+      "state": "Tennessee",
+      "value": 0,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "score"
+    },
+    {
+      "rankingId": "momentum-signal",
+      "rankingTitle": "Electricity Price Momentum Signal Ranking",
+      "state": "West Virginia",
+      "value": 0,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "score"
+    },
+    {
+      "rankingId": "momentum-signal",
+      "rankingTitle": "Electricity Price Momentum Signal Ranking",
+      "state": "Hawaii",
+      "value": -2.82,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "score"
+    },
+    {
+      "rankingId": "momentum-signal",
+      "rankingTitle": "Electricity Price Momentum Signal Ranking",
+      "state": "Connecticut",
+      "value": -11.03,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "score"
+    },
+    {
+      "rankingId": "momentum-signal",
+      "rankingTitle": "Electricity Price Momentum Signal Ranking",
+      "state": "Nevada",
+      "value": -14.72,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "score"
+    },
+    {
+      "rankingId": "electricity-inflation-1y",
+      "rankingTitle": "1-Year Electricity Inflation Ranking",
+      "state": "District of Columbia",
+      "value": 27.2,
+      "displayValue": "27.2%",
+      "direction": "desc",
+      "metricId": "inflation1yPercent"
+    },
+    {
+      "rankingId": "electricity-inflation-1y",
+      "rankingTitle": "1-Year Electricity Inflation Ranking",
+      "state": "Rhode Island",
+      "value": 22.6,
+      "displayValue": "22.6%",
+      "direction": "desc",
+      "metricId": "inflation1yPercent"
+    },
+    {
+      "rankingId": "electricity-inflation-1y",
+      "rankingTitle": "1-Year Electricity Inflation Ranking",
+      "state": "New Jersey",
+      "value": 18.4,
+      "displayValue": "18.4%",
+      "direction": "desc",
+      "metricId": "inflation1yPercent"
+    },
+    {
+      "rankingId": "electricity-inflation-1y",
+      "rankingTitle": "1-Year Electricity Inflation Ranking",
+      "state": "Maine",
+      "value": 15.9,
+      "displayValue": "15.9%",
+      "direction": "desc",
+      "metricId": "inflation1yPercent"
+    },
+    {
+      "rankingId": "electricity-inflation-1y",
+      "rankingTitle": "1-Year Electricity Inflation Ranking",
+      "state": "Pennsylvania",
+      "value": 14.4,
+      "displayValue": "14.4%",
+      "direction": "desc",
+      "metricId": "inflation1yPercent"
+    },
+    {
+      "rankingId": "electricity-inflation-1y",
+      "rankingTitle": "1-Year Electricity Inflation Ranking",
+      "state": "California",
+      "value": 13.4,
+      "displayValue": "13.4%",
+      "direction": "desc",
+      "metricId": "inflation1yPercent"
+    },
+    {
+      "rankingId": "electricity-inflation-1y",
+      "rankingTitle": "1-Year Electricity Inflation Ranking",
+      "state": "Washington",
+      "value": 12.5,
+      "displayValue": "12.5%",
+      "direction": "desc",
+      "metricId": "inflation1yPercent"
+    },
+    {
+      "rankingId": "electricity-inflation-1y",
+      "rankingTitle": "1-Year Electricity Inflation Ranking",
+      "state": "New York",
+      "value": 12.2,
+      "displayValue": "12.2%",
+      "direction": "desc",
+      "metricId": "inflation1yPercent"
+    },
+    {
+      "rankingId": "electricity-inflation-1y",
+      "rankingTitle": "1-Year Electricity Inflation Ranking",
+      "state": "Indiana",
+      "value": 11,
+      "displayValue": "11.0%",
+      "direction": "desc",
+      "metricId": "inflation1yPercent"
+    },
+    {
+      "rankingId": "electricity-inflation-1y",
+      "rankingTitle": "1-Year Electricity Inflation Ranking",
+      "state": "New Hampshire",
+      "value": 11,
+      "displayValue": "11.0%",
+      "direction": "desc",
+      "metricId": "inflation1yPercent"
+    },
+    {
+      "rankingId": "electricity-inflation-1y",
+      "rankingTitle": "1-Year Electricity Inflation Ranking",
+      "state": "Wisconsin",
+      "value": 9.7,
+      "displayValue": "9.7%",
+      "direction": "desc",
+      "metricId": "inflation1yPercent"
+    },
+    {
+      "rankingId": "electricity-inflation-1y",
+      "rankingTitle": "1-Year Electricity Inflation Ranking",
+      "state": "Nebraska",
+      "value": 9.4,
+      "displayValue": "9.4%",
+      "direction": "desc",
+      "metricId": "inflation1yPercent"
+    },
+    {
+      "rankingId": "electricity-inflation-1y",
+      "rankingTitle": "1-Year Electricity Inflation Ranking",
+      "state": "Ohio",
+      "value": 9,
+      "displayValue": "9.0%",
+      "direction": "desc",
+      "metricId": "inflation1yPercent"
+    },
+    {
+      "rankingId": "electricity-inflation-1y",
+      "rankingTitle": "1-Year Electricity Inflation Ranking",
+      "state": "Wyoming",
+      "value": 9,
+      "displayValue": "9.0%",
+      "direction": "desc",
+      "metricId": "inflation1yPercent"
+    },
+    {
+      "rankingId": "electricity-inflation-1y",
+      "rankingTitle": "1-Year Electricity Inflation Ranking",
+      "state": "Idaho",
+      "value": 8.4,
+      "displayValue": "8.4%",
+      "direction": "desc",
+      "metricId": "inflation1yPercent"
+    },
+    {
+      "rankingId": "electricity-inflation-1y",
+      "rankingTitle": "1-Year Electricity Inflation Ranking",
+      "state": "Alaska",
+      "value": 8,
+      "displayValue": "8.0%",
+      "direction": "desc",
+      "metricId": "inflation1yPercent"
+    },
+    {
+      "rankingId": "electricity-inflation-1y",
+      "rankingTitle": "1-Year Electricity Inflation Ranking",
+      "state": "Maryland",
+      "value": 7.9,
+      "displayValue": "7.9%",
+      "direction": "desc",
+      "metricId": "inflation1yPercent"
+    },
+    {
+      "rankingId": "electricity-inflation-1y",
+      "rankingTitle": "1-Year Electricity Inflation Ranking",
+      "state": "North Dakota",
+      "value": 7.7,
+      "displayValue": "7.7%",
+      "direction": "desc",
+      "metricId": "inflation1yPercent"
+    },
+    {
+      "rankingId": "electricity-inflation-1y",
+      "rankingTitle": "1-Year Electricity Inflation Ranking",
+      "state": "Montana",
+      "value": 7.5,
+      "displayValue": "7.5%",
+      "direction": "desc",
+      "metricId": "inflation1yPercent"
+    },
+    {
+      "rankingId": "electricity-inflation-1y",
+      "rankingTitle": "1-Year Electricity Inflation Ranking",
+      "state": "Illinois",
+      "value": 7,
+      "displayValue": "7.0%",
+      "direction": "desc",
+      "metricId": "inflation1yPercent"
+    },
+    {
+      "rankingId": "electricity-inflation-1y",
+      "rankingTitle": "1-Year Electricity Inflation Ranking",
+      "state": "Alabama",
+      "value": 6.9,
+      "displayValue": "6.9%",
+      "direction": "desc",
+      "metricId": "inflation1yPercent"
+    },
+    {
+      "rankingId": "electricity-inflation-1y",
+      "rankingTitle": "1-Year Electricity Inflation Ranking",
+      "state": "Colorado",
+      "value": 6.8,
+      "displayValue": "6.8%",
+      "direction": "desc",
+      "metricId": "inflation1yPercent"
+    },
+    {
+      "rankingId": "electricity-inflation-1y",
+      "rankingTitle": "1-Year Electricity Inflation Ranking",
+      "state": "Louisiana",
+      "value": 6.4,
+      "displayValue": "6.4%",
+      "direction": "desc",
+      "metricId": "inflation1yPercent"
+    },
+    {
+      "rankingId": "electricity-inflation-1y",
+      "rankingTitle": "1-Year Electricity Inflation Ranking",
+      "state": "Virginia",
+      "value": 6.3,
+      "displayValue": "6.3%",
+      "direction": "desc",
+      "metricId": "inflation1yPercent"
+    },
+    {
+      "rankingId": "electricity-inflation-1y",
+      "rankingTitle": "1-Year Electricity Inflation Ranking",
+      "state": "South Carolina",
+      "value": 6.2,
+      "displayValue": "6.2%",
+      "direction": "desc",
+      "metricId": "inflation1yPercent"
+    },
+    {
+      "rankingId": "electricity-inflation-1y",
+      "rankingTitle": "1-Year Electricity Inflation Ranking",
+      "state": "Minnesota",
+      "value": 6.1,
+      "displayValue": "6.1%",
+      "direction": "desc",
+      "metricId": "inflation1yPercent"
+    },
+    {
+      "rankingId": "electricity-inflation-1y",
+      "rankingTitle": "1-Year Electricity Inflation Ranking",
+      "state": "Michigan",
+      "value": 6,
+      "displayValue": "6.0%",
+      "direction": "desc",
+      "metricId": "inflation1yPercent"
+    },
+    {
+      "rankingId": "electricity-inflation-1y",
+      "rankingTitle": "1-Year Electricity Inflation Ranking",
+      "state": "Utah",
+      "value": 5.9,
+      "displayValue": "5.9%",
+      "direction": "desc",
+      "metricId": "inflation1yPercent"
+    },
+    {
+      "rankingId": "electricity-inflation-1y",
+      "rankingTitle": "1-Year Electricity Inflation Ranking",
+      "state": "Florida",
+      "value": 5.8,
+      "displayValue": "5.8%",
+      "direction": "desc",
+      "metricId": "inflation1yPercent"
+    },
+    {
+      "rankingId": "electricity-inflation-1y",
+      "rankingTitle": "1-Year Electricity Inflation Ranking",
+      "state": "Oregon",
+      "value": 5.3,
+      "displayValue": "5.3%",
+      "direction": "desc",
+      "metricId": "inflation1yPercent"
+    },
+    {
+      "rankingId": "electricity-inflation-1y",
+      "rankingTitle": "1-Year Electricity Inflation Ranking",
+      "state": "Vermont",
+      "value": 5.3,
+      "displayValue": "5.3%",
+      "direction": "desc",
+      "metricId": "inflation1yPercent"
+    },
+    {
+      "rankingId": "electricity-inflation-1y",
+      "rankingTitle": "1-Year Electricity Inflation Ranking",
+      "state": "Oklahoma",
+      "value": 5,
+      "displayValue": "5.0%",
+      "direction": "desc",
+      "metricId": "inflation1yPercent"
+    },
+    {
+      "rankingId": "electricity-inflation-1y",
+      "rankingTitle": "1-Year Electricity Inflation Ranking",
+      "state": "Arkansas",
+      "value": 4.8,
+      "displayValue": "4.8%",
+      "direction": "desc",
+      "metricId": "inflation1yPercent"
+    },
+    {
+      "rankingId": "electricity-inflation-1y",
+      "rankingTitle": "1-Year Electricity Inflation Ranking",
+      "state": "Kansas",
+      "value": 4.6,
+      "displayValue": "4.6%",
+      "direction": "desc",
+      "metricId": "inflation1yPercent"
+    },
+    {
+      "rankingId": "electricity-inflation-1y",
+      "rankingTitle": "1-Year Electricity Inflation Ranking",
+      "state": "Mississippi",
+      "value": 4.3,
+      "displayValue": "4.3%",
+      "direction": "desc",
+      "metricId": "inflation1yPercent"
+    },
+    {
+      "rankingId": "electricity-inflation-1y",
+      "rankingTitle": "1-Year Electricity Inflation Ranking",
+      "state": "Texas",
+      "value": 3.3,
+      "displayValue": "3.3%",
+      "direction": "desc",
+      "metricId": "inflation1yPercent"
+    },
+    {
+      "rankingId": "electricity-inflation-1y",
+      "rankingTitle": "1-Year Electricity Inflation Ranking",
+      "state": "Missouri",
+      "value": 2.9,
+      "displayValue": "2.9%",
+      "direction": "desc",
+      "metricId": "inflation1yPercent"
+    },
+    {
+      "rankingId": "electricity-inflation-1y",
+      "rankingTitle": "1-Year Electricity Inflation Ranking",
+      "state": "New Mexico",
+      "value": 2.5,
+      "displayValue": "2.5%",
+      "direction": "desc",
+      "metricId": "inflation1yPercent"
+    },
+    {
+      "rankingId": "electricity-inflation-1y",
+      "rankingTitle": "1-Year Electricity Inflation Ranking",
+      "state": "Iowa",
+      "value": 2.4,
+      "displayValue": "2.4%",
+      "direction": "desc",
+      "metricId": "inflation1yPercent"
+    },
+    {
+      "rankingId": "electricity-inflation-1y",
+      "rankingTitle": "1-Year Electricity Inflation Ranking",
+      "state": "Arizona",
+      "value": 2.1,
+      "displayValue": "2.1%",
+      "direction": "desc",
+      "metricId": "inflation1yPercent"
+    },
+    {
+      "rankingId": "electricity-inflation-1y",
+      "rankingTitle": "1-Year Electricity Inflation Ranking",
+      "state": "Delaware",
+      "value": 2,
+      "displayValue": "2.0%",
+      "direction": "desc",
+      "metricId": "inflation1yPercent"
+    },
+    {
+      "rankingId": "electricity-inflation-1y",
+      "rankingTitle": "1-Year Electricity Inflation Ranking",
+      "state": "South Dakota",
+      "value": 2,
+      "displayValue": "2.0%",
+      "direction": "desc",
+      "metricId": "inflation1yPercent"
+    },
+    {
+      "rankingId": "electricity-inflation-1y",
+      "rankingTitle": "1-Year Electricity Inflation Ranking",
+      "state": "Georgia",
+      "value": 1.6,
+      "displayValue": "1.6%",
+      "direction": "desc",
+      "metricId": "inflation1yPercent"
+    },
+    {
+      "rankingId": "electricity-inflation-1y",
+      "rankingTitle": "1-Year Electricity Inflation Ranking",
+      "state": "Kentucky",
+      "value": 1,
+      "displayValue": "1.0%",
+      "direction": "desc",
+      "metricId": "inflation1yPercent"
+    },
+    {
+      "rankingId": "electricity-inflation-1y",
+      "rankingTitle": "1-Year Electricity Inflation Ranking",
+      "state": "West Virginia",
+      "value": 0.9,
+      "displayValue": "0.9%",
+      "direction": "desc",
+      "metricId": "inflation1yPercent"
+    },
+    {
+      "rankingId": "electricity-inflation-1y",
+      "rankingTitle": "1-Year Electricity Inflation Ranking",
+      "state": "North Carolina",
+      "value": -0.3,
+      "displayValue": "-0.3%",
+      "direction": "desc",
+      "metricId": "inflation1yPercent"
+    },
+    {
+      "rankingId": "electricity-inflation-1y",
+      "rankingTitle": "1-Year Electricity Inflation Ranking",
+      "state": "Tennessee",
+      "value": -0.5,
+      "displayValue": "-0.5%",
+      "direction": "desc",
+      "metricId": "inflation1yPercent"
+    },
+    {
+      "rankingId": "electricity-inflation-1y",
+      "rankingTitle": "1-Year Electricity Inflation Ranking",
+      "state": "Massachusetts",
+      "value": -0.9,
+      "displayValue": "-0.9%",
+      "direction": "desc",
+      "metricId": "inflation1yPercent"
+    },
+    {
+      "rankingId": "electricity-inflation-1y",
+      "rankingTitle": "1-Year Electricity Inflation Ranking",
+      "state": "Hawaii",
+      "value": -1.8,
+      "displayValue": "-1.8%",
+      "direction": "desc",
+      "metricId": "inflation1yPercent"
+    },
+    {
+      "rankingId": "electricity-inflation-1y",
+      "rankingTitle": "1-Year Electricity Inflation Ranking",
+      "state": "Connecticut",
+      "value": -10,
+      "displayValue": "-10.0%",
+      "direction": "desc",
+      "metricId": "inflation1yPercent"
+    },
+    {
+      "rankingId": "electricity-inflation-1y",
+      "rankingTitle": "1-Year Electricity Inflation Ranking",
+      "state": "Nevada",
+      "value": -13.7,
+      "displayValue": "-13.7%",
+      "direction": "desc",
+      "metricId": "inflation1yPercent"
+    },
+    {
+      "rankingId": "electricity-inflation-5y",
+      "rankingTitle": "5-Year Electricity Inflation Ranking",
+      "state": "District of Columbia",
+      "value": 84.4,
+      "displayValue": "84.4%",
+      "direction": "desc",
+      "metricId": "inflation5yPercent"
+    },
+    {
+      "rankingId": "electricity-inflation-5y",
+      "rankingTitle": "5-Year Electricity Inflation Ranking",
+      "state": "Maine",
+      "value": 84,
+      "displayValue": "84.0%",
+      "direction": "desc",
+      "metricId": "inflation5yPercent"
+    },
+    {
+      "rankingId": "electricity-inflation-5y",
+      "rankingTitle": "5-Year Electricity Inflation Ranking",
+      "state": "California",
+      "value": 70,
+      "displayValue": "70.0%",
+      "direction": "desc",
+      "metricId": "inflation5yPercent"
+    },
+    {
+      "rankingId": "electricity-inflation-5y",
+      "rankingTitle": "5-Year Electricity Inflation Ranking",
+      "state": "Maryland",
+      "value": 53.9,
+      "displayValue": "53.9%",
+      "direction": "desc",
+      "metricId": "inflation5yPercent"
+    },
+    {
+      "rankingId": "electricity-inflation-5y",
+      "rankingTitle": "5-Year Electricity Inflation Ranking",
+      "state": "Pennsylvania",
+      "value": 52.4,
+      "displayValue": "52.4%",
+      "direction": "desc",
+      "metricId": "inflation5yPercent"
+    },
+    {
+      "rankingId": "electricity-inflation-5y",
+      "rankingTitle": "5-Year Electricity Inflation Ranking",
+      "state": "New York",
+      "value": 50,
+      "displayValue": "50.0%",
+      "direction": "desc",
+      "metricId": "inflation5yPercent"
+    },
+    {
+      "rankingId": "electricity-inflation-5y",
+      "rankingTitle": "5-Year Electricity Inflation Ranking",
+      "state": "Ohio",
+      "value": 44.1,
+      "displayValue": "44.1%",
+      "direction": "desc",
+      "metricId": "inflation5yPercent"
+    },
+    {
+      "rankingId": "electricity-inflation-5y",
+      "rankingTitle": "5-Year Electricity Inflation Ranking",
+      "state": "New Jersey",
+      "value": 44,
+      "displayValue": "44.0%",
+      "direction": "desc",
+      "metricId": "inflation5yPercent"
+    },
+    {
+      "rankingId": "electricity-inflation-5y",
+      "rankingTitle": "5-Year Electricity Inflation Ranking",
+      "state": "Massachusetts",
+      "value": 43.7,
+      "displayValue": "43.7%",
+      "direction": "desc",
+      "metricId": "inflation5yPercent"
+    },
+    {
+      "rankingId": "electricity-inflation-5y",
+      "rankingTitle": "5-Year Electricity Inflation Ranking",
+      "state": "Hawaii",
+      "value": 43.1,
+      "displayValue": "43.1%",
+      "direction": "desc",
+      "metricId": "inflation5yPercent"
+    },
+    {
+      "rankingId": "electricity-inflation-5y",
+      "rankingTitle": "5-Year Electricity Inflation Ranking",
+      "state": "Alabama",
+      "value": 41.4,
+      "displayValue": "41.4%",
+      "direction": "desc",
+      "metricId": "inflation5yPercent"
+    },
+    {
+      "rankingId": "electricity-inflation-5y",
+      "rankingTitle": "5-Year Electricity Inflation Ranking",
+      "state": "New Hampshire",
+      "value": 40.3,
+      "displayValue": "40.3%",
+      "direction": "desc",
+      "metricId": "inflation5yPercent"
+    },
+    {
+      "rankingId": "electricity-inflation-5y",
+      "rankingTitle": "5-Year Electricity Inflation Ranking",
+      "state": "Delaware",
+      "value": 38.3,
+      "displayValue": "38.3%",
+      "direction": "desc",
+      "metricId": "inflation5yPercent"
+    },
+    {
+      "rankingId": "electricity-inflation-5y",
+      "rankingTitle": "5-Year Electricity Inflation Ranking",
+      "state": "Rhode Island",
+      "value": 37.9,
+      "displayValue": "37.9%",
+      "direction": "desc",
+      "metricId": "inflation5yPercent"
+    },
+    {
+      "rankingId": "electricity-inflation-5y",
+      "rankingTitle": "5-Year Electricity Inflation Ranking",
+      "state": "Texas",
+      "value": 36.9,
+      "displayValue": "36.9%",
+      "direction": "desc",
+      "metricId": "inflation5yPercent"
+    },
+    {
+      "rankingId": "electricity-inflation-5y",
+      "rankingTitle": "5-Year Electricity Inflation Ranking",
+      "state": "Virginia",
+      "value": 36.7,
+      "displayValue": "36.7%",
+      "direction": "desc",
+      "metricId": "inflation5yPercent"
+    },
+    {
+      "rankingId": "electricity-inflation-5y",
+      "rankingTitle": "5-Year Electricity Inflation Ranking",
+      "state": "Oregon",
+      "value": 36.4,
+      "displayValue": "36.4%",
+      "direction": "desc",
+      "metricId": "inflation5yPercent"
+    },
+    {
+      "rankingId": "electricity-inflation-5y",
+      "rankingTitle": "5-Year Electricity Inflation Ranking",
+      "state": "Illinois",
+      "value": 36.3,
+      "displayValue": "36.3%",
+      "direction": "desc",
+      "metricId": "inflation5yPercent"
+    },
+    {
+      "rankingId": "electricity-inflation-5y",
+      "rankingTitle": "5-Year Electricity Inflation Ranking",
+      "state": "Oklahoma",
+      "value": 36.1,
+      "displayValue": "36.1%",
+      "direction": "desc",
+      "metricId": "inflation5yPercent"
+    },
+    {
+      "rankingId": "electricity-inflation-5y",
+      "rankingTitle": "5-Year Electricity Inflation Ranking",
+      "state": "Washington",
+      "value": 34.9,
+      "displayValue": "34.9%",
+      "direction": "desc",
+      "metricId": "inflation5yPercent"
+    },
+    {
+      "rankingId": "electricity-inflation-5y",
+      "rankingTitle": "5-Year Electricity Inflation Ranking",
+      "state": "Colorado",
+      "value": 32.6,
+      "displayValue": "32.6%",
+      "direction": "desc",
+      "metricId": "inflation5yPercent"
+    },
+    {
+      "rankingId": "electricity-inflation-5y",
+      "rankingTitle": "5-Year Electricity Inflation Ranking",
+      "state": "Florida",
+      "value": 30.8,
+      "displayValue": "30.8%",
+      "direction": "desc",
+      "metricId": "inflation5yPercent"
+    },
+    {
+      "rankingId": "electricity-inflation-5y",
+      "rankingTitle": "5-Year Electricity Inflation Ranking",
+      "state": "Louisiana",
+      "value": 28.8,
+      "displayValue": "28.8%",
+      "direction": "desc",
+      "metricId": "inflation5yPercent"
+    },
+    {
+      "rankingId": "electricity-inflation-5y",
+      "rankingTitle": "5-Year Electricity Inflation Ranking",
+      "state": "Utah",
+      "value": 28.7,
+      "displayValue": "28.7%",
+      "direction": "desc",
+      "metricId": "inflation5yPercent"
+    },
+    {
+      "rankingId": "electricity-inflation-5y",
+      "rankingTitle": "5-Year Electricity Inflation Ranking",
+      "state": "Arizona",
+      "value": 28.4,
+      "displayValue": "28.4%",
+      "direction": "desc",
+      "metricId": "inflation5yPercent"
+    },
+    {
+      "rankingId": "electricity-inflation-5y",
+      "rankingTitle": "5-Year Electricity Inflation Ranking",
+      "state": "North Carolina",
+      "value": 28.2,
+      "displayValue": "28.2%",
+      "direction": "desc",
+      "metricId": "inflation5yPercent"
+    },
+    {
+      "rankingId": "electricity-inflation-5y",
+      "rankingTitle": "5-Year Electricity Inflation Ranking",
+      "state": "West Virginia",
+      "value": 28,
+      "displayValue": "28.0%",
+      "direction": "desc",
+      "metricId": "inflation5yPercent"
+    },
+    {
+      "rankingId": "electricity-inflation-5y",
+      "rankingTitle": "5-Year Electricity Inflation Ranking",
+      "state": "Wisconsin",
+      "value": 27.2,
+      "displayValue": "27.2%",
+      "direction": "desc",
+      "metricId": "inflation5yPercent"
+    },
+    {
+      "rankingId": "electricity-inflation-5y",
+      "rankingTitle": "5-Year Electricity Inflation Ranking",
+      "state": "Mississippi",
+      "value": 26.7,
+      "displayValue": "26.7%",
+      "direction": "desc",
+      "metricId": "inflation5yPercent"
+    },
+    {
+      "rankingId": "electricity-inflation-5y",
+      "rankingTitle": "5-Year Electricity Inflation Ranking",
+      "state": "Arkansas",
+      "value": 24.9,
+      "displayValue": "24.9%",
+      "direction": "desc",
+      "metricId": "inflation5yPercent"
+    },
+    {
+      "rankingId": "electricity-inflation-5y",
+      "rankingTitle": "5-Year Electricity Inflation Ranking",
+      "state": "Kentucky",
+      "value": 24.6,
+      "displayValue": "24.6%",
+      "direction": "desc",
+      "metricId": "inflation5yPercent"
+    },
+    {
+      "rankingId": "electricity-inflation-5y",
+      "rankingTitle": "5-Year Electricity Inflation Ranking",
+      "state": "Georgia",
+      "value": 24.5,
+      "displayValue": "24.5%",
+      "direction": "desc",
+      "metricId": "inflation5yPercent"
+    },
+    {
+      "rankingId": "electricity-inflation-5y",
+      "rankingTitle": "5-Year Electricity Inflation Ranking",
+      "state": "Missouri",
+      "value": 23.7,
+      "displayValue": "23.7%",
+      "direction": "desc",
+      "metricId": "inflation5yPercent"
+    },
+    {
+      "rankingId": "electricity-inflation-5y",
+      "rankingTitle": "5-Year Electricity Inflation Ranking",
+      "state": "South Carolina",
+      "value": 23.5,
+      "displayValue": "23.5%",
+      "direction": "desc",
+      "metricId": "inflation5yPercent"
+    },
+    {
+      "rankingId": "electricity-inflation-5y",
+      "rankingTitle": "5-Year Electricity Inflation Ranking",
+      "state": "Tennessee",
+      "value": 23,
+      "displayValue": "23.0%",
+      "direction": "desc",
+      "metricId": "inflation5yPercent"
+    },
+    {
+      "rankingId": "electricity-inflation-5y",
+      "rankingTitle": "5-Year Electricity Inflation Ranking",
+      "state": "Connecticut",
+      "value": 22.5,
+      "displayValue": "22.5%",
+      "direction": "desc",
+      "metricId": "inflation5yPercent"
+    },
+    {
+      "rankingId": "electricity-inflation-5y",
+      "rankingTitle": "5-Year Electricity Inflation Ranking",
+      "state": "Indiana",
+      "value": 22.4,
+      "displayValue": "22.4%",
+      "direction": "desc",
+      "metricId": "inflation5yPercent"
+    },
+    {
+      "rankingId": "electricity-inflation-5y",
+      "rankingTitle": "5-Year Electricity Inflation Ranking",
+      "state": "Vermont",
+      "value": 21.4,
+      "displayValue": "21.4%",
+      "direction": "desc",
+      "metricId": "inflation5yPercent"
+    },
+    {
+      "rankingId": "electricity-inflation-5y",
+      "rankingTitle": "5-Year Electricity Inflation Ranking",
+      "state": "Wyoming",
+      "value": 21.2,
+      "displayValue": "21.2%",
+      "direction": "desc",
+      "metricId": "inflation5yPercent"
+    },
+    {
+      "rankingId": "electricity-inflation-5y",
+      "rankingTitle": "5-Year Electricity Inflation Ranking",
+      "state": "New Mexico",
+      "value": 20.2,
+      "displayValue": "20.2%",
+      "direction": "desc",
+      "metricId": "inflation5yPercent"
+    },
+    {
+      "rankingId": "electricity-inflation-5y",
+      "rankingTitle": "5-Year Electricity Inflation Ranking",
+      "state": "Idaho",
+      "value": 20.1,
+      "displayValue": "20.1%",
+      "direction": "desc",
+      "metricId": "inflation5yPercent"
+    },
+    {
+      "rankingId": "electricity-inflation-5y",
+      "rankingTitle": "5-Year Electricity Inflation Ranking",
+      "state": "Michigan",
+      "value": 19.6,
+      "displayValue": "19.6%",
+      "direction": "desc",
+      "metricId": "inflation5yPercent"
+    },
+    {
+      "rankingId": "electricity-inflation-5y",
+      "rankingTitle": "5-Year Electricity Inflation Ranking",
+      "state": "Minnesota",
+      "value": 18.7,
+      "displayValue": "18.7%",
+      "direction": "desc",
+      "metricId": "inflation5yPercent"
+    },
+    {
+      "rankingId": "electricity-inflation-5y",
+      "rankingTitle": "5-Year Electricity Inflation Ranking",
+      "state": "Montana",
+      "value": 18.7,
+      "displayValue": "18.7%",
+      "direction": "desc",
+      "metricId": "inflation5yPercent"
+    },
+    {
+      "rankingId": "electricity-inflation-5y",
+      "rankingTitle": "5-Year Electricity Inflation Ranking",
+      "state": "Alaska",
+      "value": 18,
+      "displayValue": "18.0%",
+      "direction": "desc",
+      "metricId": "inflation5yPercent"
+    },
+    {
+      "rankingId": "electricity-inflation-5y",
+      "rankingTitle": "5-Year Electricity Inflation Ranking",
+      "state": "North Dakota",
+      "value": 17.9,
+      "displayValue": "17.9%",
+      "direction": "desc",
+      "metricId": "inflation5yPercent"
+    },
+    {
+      "rankingId": "electricity-inflation-5y",
+      "rankingTitle": "5-Year Electricity Inflation Ranking",
+      "state": "Kansas",
+      "value": 17.6,
+      "displayValue": "17.6%",
+      "direction": "desc",
+      "metricId": "inflation5yPercent"
+    },
+    {
+      "rankingId": "electricity-inflation-5y",
+      "rankingTitle": "5-Year Electricity Inflation Ranking",
+      "state": "Iowa",
+      "value": 16.7,
+      "displayValue": "16.7%",
+      "direction": "desc",
+      "metricId": "inflation5yPercent"
+    },
+    {
+      "rankingId": "electricity-inflation-5y",
+      "rankingTitle": "5-Year Electricity Inflation Ranking",
+      "state": "Nebraska",
+      "value": 16.4,
+      "displayValue": "16.4%",
+      "direction": "desc",
+      "metricId": "inflation5yPercent"
+    },
+    {
+      "rankingId": "electricity-inflation-5y",
+      "rankingTitle": "5-Year Electricity Inflation Ranking",
+      "state": "Nevada",
+      "value": 14.9,
+      "displayValue": "14.9%",
+      "direction": "desc",
+      "metricId": "inflation5yPercent"
+    },
+    {
+      "rankingId": "electricity-inflation-5y",
+      "rankingTitle": "5-Year Electricity Inflation Ranking",
+      "state": "South Dakota",
+      "value": 10.5,
+      "displayValue": "10.5%",
+      "direction": "desc",
+      "metricId": "inflation5yPercent"
+    }
+  ]
+}

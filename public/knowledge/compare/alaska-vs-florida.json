@@ -1,0 +1,16 @@
+{
+  "schemaVersion": "1.0",
+  "generatedAt": "2026-03-09T17:50:09.701Z",
+  "sourceVersion": "v2",
+  "contractVersion": "1.0.0",
+  "stateA": "alaska",
+  "stateB": "florida",
+  "nameA": "Alaska",
+  "nameB": "Florida",
+  "rateA": 25.01,
+  "rateB": 15.27,
+  "differenceCents": 9.74,
+  "differencePercent": 63.8,
+  "higherCostState": "Alaska",
+  "lowerCostState": "Florida"
+}

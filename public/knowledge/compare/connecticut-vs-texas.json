@@ -1,0 +1,16 @@
+{
+  "schemaVersion": "1.0",
+  "generatedAt": "2026-03-09T17:50:09.701Z",
+  "sourceVersion": "v2",
+  "contractVersion": "1.0.0",
+  "stateA": "connecticut",
+  "stateB": "texas",
+  "nameA": "Connecticut",
+  "nameB": "Texas",
+  "rateA": 30.35,
+  "rateB": 15.83,
+  "differenceCents": 14.52,
+  "differencePercent": 91.7,
+  "higherCostState": "Connecticut",
+  "lowerCostState": "Texas"
+}

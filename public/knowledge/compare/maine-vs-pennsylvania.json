@@ -1,0 +1,16 @@
+{
+  "schemaVersion": "1.0",
+  "generatedAt": "2026-03-09T17:50:09.701Z",
+  "sourceVersion": "v2",
+  "contractVersion": "1.0.0",
+  "stateA": "maine",
+  "stateB": "pennsylvania",
+  "nameA": "Maine",
+  "nameB": "Pennsylvania",
+  "rateA": 27.24,
+  "rateB": 17.78,
+  "differenceCents": 9.46,
+  "differencePercent": 53.2,
+  "higherCostState": "Maine",
+  "lowerCostState": "Pennsylvania"
+}

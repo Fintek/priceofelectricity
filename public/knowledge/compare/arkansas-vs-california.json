@@ -1,0 +1,16 @@
+{
+  "schemaVersion": "1.0",
+  "generatedAt": "2026-03-09T17:50:09.701Z",
+  "sourceVersion": "v2",
+  "contractVersion": "1.0.0",
+  "stateA": "arkansas",
+  "stateB": "california",
+  "nameA": "Arkansas",
+  "nameB": "California",
+  "rateA": 12.83,
+  "rateB": 31.14,
+  "differenceCents": -18.31,
+  "differencePercent": -58.8,
+  "higherCostState": "California",
+  "lowerCostState": "Arkansas"
+}

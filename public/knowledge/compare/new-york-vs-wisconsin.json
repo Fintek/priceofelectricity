@@ -1,0 +1,16 @@
+{
+  "schemaVersion": "1.0",
+  "generatedAt": "2026-03-09T17:50:09.701Z",
+  "sourceVersion": "v2",
+  "contractVersion": "1.0.0",
+  "stateA": "new-york",
+  "stateB": "wisconsin",
+  "nameA": "New York",
+  "nameB": "Wisconsin",
+  "rateA": 23.87,
+  "rateB": 18.04,
+  "differenceCents": 5.83,
+  "differencePercent": 32.3,
+  "higherCostState": "New York",
+  "lowerCostState": "Wisconsin"
+}

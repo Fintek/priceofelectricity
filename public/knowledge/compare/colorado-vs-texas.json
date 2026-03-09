@@ -1,0 +1,16 @@
+{
+  "schemaVersion": "1.0",
+  "generatedAt": "2026-03-09T17:50:09.701Z",
+  "sourceVersion": "v2",
+  "contractVersion": "1.0.0",
+  "stateA": "colorado",
+  "stateB": "texas",
+  "nameA": "Colorado",
+  "nameB": "Texas",
+  "rateA": 15.79,
+  "rateB": 15.83,
+  "differenceCents": -0.04,
+  "differencePercent": -0.3,
+  "higherCostState": "Texas",
+  "lowerCostState": "Colorado"
+}

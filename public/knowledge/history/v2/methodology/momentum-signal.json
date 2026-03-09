@@ -1,0 +1,141 @@
+{
+  "meta": {
+    "schemaVersion": "1.0",
+    "id": "knowledge:methodology:momentum-signal",
+    "type": "methodology",
+    "slug": "momentum-signal",
+    "title": "Momentum Signal Methodology",
+    "description": "Directional historical signal for electricity price trend direction.",
+    "canonicalUrl": "http://localhost:3000/knowledge/methodology/momentum-signal",
+    "jsonUrl": "http://localhost:3000/knowledge/history/v2/methodology/momentum-signal.json",
+    "updatedAt": "2026-03-09T17:50:09.701Z",
+    "sourceVersion": "v2",
+    "temporalContext": {
+      "sourceVersion": "v2",
+      "isLatest": false
+    },
+    "provenance": [
+      {
+        "id": "poe-methodology-momentum-signal",
+        "sourceName": "PriceOfElectricity.com methodology: Momentum Signal",
+        "sourceUrl": "http://localhost:3000/knowledge/methodology/momentum-signal",
+        "publisher": "PriceOfElectricity.com",
+        "license": "Site content license",
+        "retrievedAt": "2026-03-09T17:50:09.701Z"
+      }
+    ],
+    "fieldProvenance": [
+      {
+        "field": "data.definition",
+        "provenanceIds": [
+          "poe-methodology-momentum-signal"
+        ]
+      },
+      {
+        "field": "data.inputs",
+        "provenanceIds": [
+          "poe-methodology-momentum-signal"
+        ]
+      },
+      {
+        "field": "data.steps",
+        "provenanceIds": [
+          "poe-methodology-momentum-signal"
+        ]
+      },
+      {
+        "field": "data.limitations",
+        "provenanceIds": [
+          "poe-methodology-momentum-signal"
+        ]
+      },
+      {
+        "field": "data.relatedInternalUrls",
+        "provenanceIds": [
+          "poe-methodology-momentum-signal"
+        ]
+      }
+    ],
+    "citations": [
+      {
+        "sourceName": "PriceOfElectricity.com methodology: Momentum Signal",
+        "sourceUrl": "http://localhost:3000/knowledge/methodology/momentum-signal",
+        "retrievedAt": "2026-03-09T17:50:09.701Z"
+      }
+    ],
+    "llmHints": {
+      "priority": "high",
+      "entityType": "methodology",
+      "semanticTopics": [
+        "methodology",
+        "electricity rates",
+        "index calculation",
+        "data freshness"
+      ],
+      "semanticCluster": "calculation-framework"
+    },
+    "freshness": {
+      "datasetUpdatedAt": "2025-12-15T00:00:00.000Z",
+      "computedAt": "2026-03-09T17:50:09.701Z",
+      "status": "aging",
+      "ageDays": 84,
+      "methodology": {
+        "id": "freshness",
+        "version": "1.0",
+        "url": "http://localhost:3000/knowledge/methodology/freshness.json",
+        "canonicalUrl": "http://localhost:3000/knowledge/methodology/freshness"
+      }
+    },
+    "excerpt": "Momentum Signal Methodology. Defines how metrics is computed from inputs and produces derived fields used across state and ranking pages.",
+    "disclaimerRefs": [
+      "methodology"
+    ],
+    "methodology": {
+      "id": "momentum-signal",
+      "version": "1.0",
+      "lastReviewedAt": "2026-03-09",
+      "relatedDerivedFields": [
+        "data.sortedStates",
+        "data.derived.momentum"
+      ]
+    },
+    "qualityScore": 90,
+    "contentHash": "803824dc8dd4bfb38df5259629f2b476a3d2b8753538443188763441c9a1feef",
+    "integrity": {
+      "contentHash": "803824dc8dd4bfb38df5259629f2b476a3d2b8753538443188763441c9a1feef",
+      "integrityAlgorithm": "sha256",
+      "signedAtBuild": "2026-03-09T17:50:09.701Z"
+    }
+  },
+  "data": {
+    "definition": "The momentum signal is a directional historical signal that summarizes whether a state's electricity prices appear to be accelerating, rising, stable, or falling. It is not a forecast.",
+    "inputs": [
+      "Historical monthly avgRateCentsPerKwh",
+      "Short window (~12 months ago to most recent)",
+      "Long window (~24 months ago to most recent)"
+    ],
+    "steps": [
+      "Use up to 24 most recent monthly points.",
+      "Require at least 6 usable points for a signal.",
+      "shortWindowChange = percent change from ~12 months ago to most recent.",
+      "longWindowChange = percent change from ~24 months ago to most recent.",
+      "acceleration = shortWindowChange - (longWindowChange / comparable_years_factor).",
+      "Classify: accelerating (shortWindowChange > 3% AND acceleration > 1%), rising (shortWindowChange > 1%), falling (shortWindowChange < -1%), otherwise stable.",
+      "momentumScore: accelerating = 2 + shortWindowChange, rising = 1 + shortWindowChange, stable = 0, falling = -1 + shortWindowChange."
+    ],
+    "limitations": [
+      "This is a directional historical signal, not a forecast.",
+      "Missing or limited history can make the signal unavailable.",
+      "Thresholds are deterministic and transparent."
+    ],
+    "relatedInternalUrls": [
+      "http://localhost:3000/knowledge/rankings/momentum-signal"
+    ],
+    "relatedEntities": {
+      "national": true,
+      "rankings": [
+        "momentum-signal"
+      ]
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "schemaVersion": "1.0",
+  "generatedAt": "2026-03-09T17:50:09.701Z",
+  "subject": "state",
+  "id": "arizona",
+  "insights": [
+    {
+      "type": "price",
+      "statement": "Electricity in Arizona costs 11% less than the national average.",
+      "confidence": "high"
+    },
+    {
+      "type": "ranking",
+      "statement": "Arizona ranks #24 among U.S. states for electricity prices.",
+      "confidence": "high"
+    },
+    {
+      "type": "trend",
+      "statement": "Arizona shows a rising electricity price trend based on recent historical data.",
+      "confidence": "medium"
+    }
+  ]
+}

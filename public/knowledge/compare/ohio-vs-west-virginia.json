@@ -1,0 +1,16 @@
+{
+  "schemaVersion": "1.0",
+  "generatedAt": "2026-03-09T17:50:09.701Z",
+  "sourceVersion": "v2",
+  "contractVersion": "1.0.0",
+  "stateA": "ohio",
+  "stateB": "west-virginia",
+  "nameA": "Ohio",
+  "nameB": "West Virginia",
+  "rateA": 16.9,
+  "rateB": 15.39,
+  "differenceCents": 1.51,
+  "differencePercent": 9.8,
+  "higherCostState": "Ohio",
+  "lowerCostState": "West Virginia"
+}

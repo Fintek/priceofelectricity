@@ -3,7 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { STATES } from "@/data/states";
 import { normalizeSlug } from "@/data/slug";
-import { isValidStateSlug, isValidUtilitySlug } from "@/lib/slugGuard";
+import { isValidStateSlug } from "@/lib/slugGuard";
 import { getUtility, UTILITIES } from "@/data/utilities";
 import { buildNormalizedState } from "@/lib/stateBuilder";
 import { SITE_URL } from "@/lib/site";

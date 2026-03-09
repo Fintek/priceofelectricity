@@ -1,0 +1,16 @@
+{
+  "schemaVersion": "1.0",
+  "generatedAt": "2026-03-09T17:50:09.701Z",
+  "sourceVersion": "v2",
+  "contractVersion": "1.0.0",
+  "stateA": "iowa",
+  "stateB": "new-york",
+  "nameA": "Iowa",
+  "nameB": "New York",
+  "rateA": 13.18,
+  "rateB": 23.87,
+  "differenceCents": -10.69,
+  "differencePercent": -44.8,
+  "higherCostState": "New York",
+  "lowerCostState": "Iowa"
+}

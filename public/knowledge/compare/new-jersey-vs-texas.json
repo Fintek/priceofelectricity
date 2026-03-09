@@ -1,0 +1,16 @@
+{
+  "schemaVersion": "1.0",
+  "generatedAt": "2026-03-09T17:50:09.701Z",
+  "sourceVersion": "v2",
+  "contractVersion": "1.0.0",
+  "stateA": "new-jersey",
+  "stateB": "texas",
+  "nameA": "New Jersey",
+  "nameB": "Texas",
+  "rateA": 22.15,
+  "rateB": 15.83,
+  "differenceCents": 6.32,
+  "differencePercent": 39.9,
+  "higherCostState": "New Jersey",
+  "lowerCostState": "Texas"
+}

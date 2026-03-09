@@ -1,0 +1,59 @@
+{
+  "schemaVersion": "1.0",
+  "generatedAt": "2026-03-09T17:50:09.701Z",
+  "sourceVersion": "v2",
+  "bundleId": "rankings",
+  "files": [
+    {
+      "url": "/knowledge/history/v2/rankings/affordability.json",
+      "contentHash": "74b69ce03f8528a383aa632582b594024fefd0d50556b95b653386fd4ff121f6"
+    },
+    {
+      "url": "/knowledge/history/v2/rankings/cagr-25y.json",
+      "contentHash": "3e686bad844ee6642405784e105ab4f12ae5fffdc063052de27caa41da7e6a7c"
+    },
+    {
+      "url": "/knowledge/history/v2/rankings/electricity-affordability.json",
+      "contentHash": "ec79ecca9f8f9cee7be259538e3c7397a8860b8e480ff4c617e5f1a882f7ff80"
+    },
+    {
+      "url": "/knowledge/history/v2/rankings/electricity-inflation-1y.json",
+      "contentHash": "d7abeeb7ed2130bb1585674da3bc9c68f1655af994718567949a00c4b10bb3d5"
+    },
+    {
+      "url": "/knowledge/history/v2/rankings/electricity-inflation-5y.json",
+      "contentHash": "e366b9705f250b505c5f040fdb02fe1b3fe438dd70bfd5316f4d094d48d9bd94"
+    },
+    {
+      "url": "/knowledge/history/v2/rankings/index.json"
+    },
+    {
+      "url": "/knowledge/history/v2/rankings/momentum-signal.json",
+      "contentHash": "3fe7fba79e5e062dc56dc05edba78e00158afbb61a397daf6b37e35124960a42"
+    },
+    {
+      "url": "/knowledge/history/v2/rankings/most-expensive-electricity.json",
+      "contentHash": "364edfaa2aa0ef713cca90a278d7a02b5bd8f9d6ff05cd9828f5bae18f12f0cc"
+    },
+    {
+      "url": "/knowledge/history/v2/rankings/price-trend.json",
+      "contentHash": "a8c2e0c2bc13880184ff96bb22dd3048990cd41e9d993144ba456a1fdf7f71ad"
+    },
+    {
+      "url": "/knowledge/history/v2/rankings/rate-high-to-low.json",
+      "contentHash": "4c0b79e2e05eab736046b20cfa47a0b62d610ef50a6a3a10c0245d60da821b28"
+    },
+    {
+      "url": "/knowledge/history/v2/rankings/rate-low-to-high.json",
+      "contentHash": "6c46a62e75fd2ad521e3e1f72224f2673fc27f052a6ca41379f730e3140bff48"
+    },
+    {
+      "url": "/knowledge/history/v2/rankings/value-score.json",
+      "contentHash": "be7bf769464b5ecaf8191f1b6e61839312f70ccc17adc0204a3483eb1b889065"
+    },
+    {
+      "url": "/knowledge/history/v2/rankings/volatility-5y.json",
+      "contentHash": "fd19a511eab82211e889295aa12a3746ccdaa997bf9f399a30eac313ccbd7af5"
+    }
+  ]
+}

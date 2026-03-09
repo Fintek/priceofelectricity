@@ -1,0 +1,16 @@
+{
+  "schemaVersion": "1.0",
+  "generatedAt": "2026-03-09T17:50:09.701Z",
+  "sourceVersion": "v2",
+  "contractVersion": "1.0.0",
+  "stateA": "hawaii",
+  "stateB": "ohio",
+  "nameA": "Hawaii",
+  "nameB": "Ohio",
+  "rateA": 41.3,
+  "rateB": 16.9,
+  "differenceCents": 24.4,
+  "differencePercent": 144.4,
+  "higherCostState": "Hawaii",
+  "lowerCostState": "Ohio"
+}

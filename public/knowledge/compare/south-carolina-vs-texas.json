@@ -1,0 +1,16 @@
+{
+  "schemaVersion": "1.0",
+  "generatedAt": "2026-03-09T17:50:09.701Z",
+  "sourceVersion": "v2",
+  "contractVersion": "1.0.0",
+  "stateA": "south-carolina",
+  "stateB": "texas",
+  "nameA": "South Carolina",
+  "nameB": "Texas",
+  "rateA": 14.72,
+  "rateB": 15.83,
+  "differenceCents": -1.11,
+  "differencePercent": -7,
+  "higherCostState": "Texas",
+  "lowerCostState": "South Carolina"
+}

@@ -1,0 +1,28 @@
+{
+  "schemaVersion": "1.0",
+  "generatedAt": "2026-03-09T17:50:09.701Z",
+  "subject": "state",
+  "id": "oregon",
+  "insights": [
+    {
+      "type": "price",
+      "statement": "Electricity in Oregon costs 15% less than the national average.",
+      "confidence": "high"
+    },
+    {
+      "type": "ranking",
+      "statement": "Oregon ranks #30 among U.S. states for electricity prices.",
+      "confidence": "high"
+    },
+    {
+      "type": "value",
+      "statement": "Oregon has a value score of 90, indicating strong affordability and freshness.",
+      "confidence": "medium"
+    },
+    {
+      "type": "trend",
+      "statement": "Oregon shows a rising electricity price trend based on recent historical data.",
+      "confidence": "medium"
+    }
+  ]
+}

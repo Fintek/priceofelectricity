@@ -1,0 +1,23 @@
+{
+  "schemaVersion": "1.0",
+  "generatedAt": "2026-03-09T17:50:09.701Z",
+  "subject": "state",
+  "id": "west-virginia",
+  "insights": [
+    {
+      "type": "price",
+      "statement": "Electricity in West Virginia costs 12% less than the national average.",
+      "confidence": "high"
+    },
+    {
+      "type": "ranking",
+      "statement": "West Virginia ranks #25 among U.S. states for electricity prices.",
+      "confidence": "high"
+    },
+    {
+      "type": "trend",
+      "statement": "West Virginia appears stable based on recent electricity price changes.",
+      "confidence": "medium"
+    }
+  ]
+}

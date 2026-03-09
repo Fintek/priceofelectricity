@@ -1,0 +1,13 @@
+{
+  "schemaVersion": "1.0",
+  "generatedAt": "2026-03-09T17:50:09.701Z",
+  "subject": "ranking",
+  "id": "electricity-affordability",
+  "insights": [
+    {
+      "type": "ranking",
+      "statement": "Idaho ranks #1 for most affordable electricity by state in the United States.",
+      "confidence": "high"
+    }
+  ]
+}

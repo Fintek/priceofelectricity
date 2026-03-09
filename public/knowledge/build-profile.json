@@ -1,0 +1,25 @@
+{
+  "schemaVersion": "1.0",
+  "generatedAt": "2026-03-09T17:50:09.701Z",
+  "sourceVersion": "v2",
+  "budgetsMs": {
+    "total": 60000,
+    "loadSnapshots": 10000,
+    "normalizeStates": 10000,
+    "computeNational": 5000,
+    "generatePages": 25000,
+    "generateIndexes": 15000,
+    "writeFiles": 20000
+  },
+  "durationsMs": {
+    "loadSnapshots": 81,
+    "normalizeStates": 5,
+    "computeNational": 4,
+    "generatePages": 54,
+    "generateIndexes": 1647,
+    "writeFiles": 704,
+    "verifyLocal": 0,
+    "total": 2501
+  },
+  "notes": "Build-time profiling for knowledge generation."
+}

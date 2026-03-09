@@ -1,0 +1,18 @@
+{
+  "schemaVersion": "1.0",
+  "generatedAt": "2026-03-09T17:50:09.701Z",
+  "sourceVersion": "v2",
+  "contractVersion": "1.0.0",
+  "releaseId": "knowledge-v1-v2",
+  "inputs": {
+    "release": "/knowledge/release.json",
+    "capabilities": "/knowledge/capabilities.json",
+    "publicEndpoints": "/knowledge/public-endpoints.json",
+    "searchIndex": "/knowledge/search-index.json",
+    "integrityManifest": "/knowledge/integrity/manifest.json"
+  },
+  "hash": {
+    "algorithm": "sha256",
+    "value": "6856febb5dfbf8f8bc85895e4e38649f0efae79d00ce7f3d7d0524c32bafdc12"
+  }
+}

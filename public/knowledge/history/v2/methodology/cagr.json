@@ -1,0 +1,134 @@
+{
+  "meta": {
+    "schemaVersion": "1.0",
+    "id": "knowledge:methodology:cagr",
+    "type": "methodology",
+    "slug": "cagr",
+    "title": "CAGR Methodology",
+    "description": "Compound annual growth rate methodology for long-horizon rate trends.",
+    "canonicalUrl": "http://localhost:3000/knowledge/methodology/cagr",
+    "jsonUrl": "http://localhost:3000/knowledge/history/v2/methodology/cagr.json",
+    "updatedAt": "2026-03-09T17:50:09.701Z",
+    "sourceVersion": "v2",
+    "temporalContext": {
+      "sourceVersion": "v2",
+      "isLatest": false
+    },
+    "provenance": [
+      {
+        "id": "poe-methodology-cagr",
+        "sourceName": "PriceOfElectricity.com methodology: CAGR",
+        "sourceUrl": "http://localhost:3000/knowledge/methodology/cagr",
+        "publisher": "PriceOfElectricity.com",
+        "license": "Site content license",
+        "retrievedAt": "2026-03-09T17:50:09.701Z"
+      }
+    ],
+    "fieldProvenance": [
+      {
+        "field": "data.definition",
+        "provenanceIds": [
+          "poe-methodology-cagr"
+        ]
+      },
+      {
+        "field": "data.inputs",
+        "provenanceIds": [
+          "poe-methodology-cagr"
+        ]
+      },
+      {
+        "field": "data.steps",
+        "provenanceIds": [
+          "poe-methodology-cagr"
+        ]
+      },
+      {
+        "field": "data.limitations",
+        "provenanceIds": [
+          "poe-methodology-cagr"
+        ]
+      },
+      {
+        "field": "data.relatedInternalUrls",
+        "provenanceIds": [
+          "poe-methodology-cagr"
+        ]
+      }
+    ],
+    "citations": [
+      {
+        "sourceName": "PriceOfElectricity.com methodology: CAGR",
+        "sourceUrl": "http://localhost:3000/knowledge/methodology/cagr",
+        "retrievedAt": "2026-03-09T17:50:09.701Z"
+      }
+    ],
+    "llmHints": {
+      "priority": "high",
+      "entityType": "methodology",
+      "semanticTopics": [
+        "methodology",
+        "electricity rates",
+        "index calculation",
+        "data freshness"
+      ],
+      "semanticCluster": "calculation-framework"
+    },
+    "freshness": {
+      "datasetUpdatedAt": "2025-12-15T00:00:00.000Z",
+      "computedAt": "2026-03-09T17:50:09.701Z",
+      "status": "aging",
+      "ageDays": 84,
+      "methodology": {
+        "id": "freshness",
+        "version": "1.0",
+        "url": "http://localhost:3000/knowledge/methodology/freshness.json",
+        "canonicalUrl": "http://localhost:3000/knowledge/methodology/freshness"
+      }
+    },
+    "excerpt": "CAGR Methodology. Defines how CAGR is computed from inputs and produces derived fields used across state and ranking pages.",
+    "disclaimerRefs": [
+      "methodology"
+    ],
+    "methodology": {
+      "id": "cagr",
+      "version": "1.0",
+      "lastReviewedAt": "2026-03-09",
+      "relatedDerivedFields": [
+        "data.sortedStates"
+      ]
+    },
+    "qualityScore": 90,
+    "contentHash": "5e31b375cf8fcc93de18770b1a6f512637a3636a3c08fd8ae998f4747531cba0",
+    "integrity": {
+      "contentHash": "5e31b375cf8fcc93de18770b1a6f512637a3636a3c08fd8ae998f4747531cba0",
+      "integrityAlgorithm": "sha256",
+      "signedAtBuild": "2026-03-09T17:50:09.701Z"
+    }
+  },
+  "data": {
+    "definition": "CAGR (Compound Annual Growth Rate) measures the geometric mean annual growth of electricity rates over a specified period.",
+    "inputs": [
+      "Historical monthly avgRateCentsPerKwh",
+      "Start and end dates"
+    ],
+    "steps": [
+      "Select start point near target years ago (e.g. 25y).",
+      "Select end point (most recent).",
+      "CAGR = (end/start)^(1/years) - 1."
+    ],
+    "limitations": [
+      "Requires historical time-series data. Rankings are disabled when history is unavailable.",
+      "Sensitive to start/end point selection."
+    ],
+    "relatedInternalUrls": [
+      "http://localhost:3000/knowledge/rankings/cagr-25y"
+    ],
+    "relatedEntities": {
+      "national": true,
+      "rankings": [
+        "cagr-25y"
+      ]
+    }
+  }
+}

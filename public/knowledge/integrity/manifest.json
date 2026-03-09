@@ -1,0 +1,96 @@
+{
+  "schemaVersion": "1.0",
+  "generatedAt": "2026-03-09T17:50:09.701Z",
+  "sourceVersion": "v2",
+  "contractVersion": "1.0.0",
+  "algorithm": "sha256",
+  "files": [
+    {
+      "url": "/knowledge/bundles/index.json",
+      "contentHash": "8f6ca52ecbef8c09c0b091a9ef38ff51ad3e30821825c0f17b570995e5f48e9a",
+      "bytes": 888
+    },
+    {
+      "url": "/knowledge/capabilities.json",
+      "contentHash": "c202a2dfe9c463bd7d229622e5f4c66d8069589018eff7a972594967dd72cb59",
+      "bytes": 1019
+    },
+    {
+      "url": "/knowledge/contract.json",
+      "contentHash": "b709062a9c0c323658b27d442815aa4623464ec0855f249fb08216d3964a6276",
+      "bytes": 7859
+    },
+    {
+      "url": "/knowledge/glossary/fields.json",
+      "contentHash": "e0fad83d1310520a47522ab7901c03d63c8da01c590dcca5575aaadad7218c43",
+      "bytes": 3114
+    },
+    {
+      "url": "/knowledge/index.json",
+      "contentHash": "e82a7733c370700168f60b16f90ad1c5a44a5070a9d84baf712c608afff1017d",
+      "bytes": 90322
+    },
+    {
+      "url": "/knowledge/ingest/starter-pack.json",
+      "contentHash": "ce31ce940a282fc4913374988e30786db5ba7ab7294005b653c92f61eab942ca",
+      "bytes": 1547
+    },
+    {
+      "url": "/knowledge/leaderboards/states.json",
+      "contentHash": "8e6cfc5c8b29c122e182d2ad70dcfc282d51855a20060f8d6a19828c9049f4ee",
+      "bytes": 3805
+    },
+    {
+      "url": "/knowledge/offers/index.json",
+      "contentHash": "7c467840ba24efbfeedba58874cfd7ffa7d6fde2f5d82f1cbddcb8d99b16a212",
+      "bytes": 22247
+    },
+    {
+      "url": "/knowledge/policy/deprecations.json",
+      "contentHash": "c4df6d0fe38986693ecca80f98c505c95c313c4e12d35f033acc4ec8d6b9346c",
+      "bytes": 144
+    },
+    {
+      "url": "/knowledge/policy/disclaimers.json",
+      "contentHash": "03664d939234558da197aadaeffabd0378be9cd75822c2ed762faa0c6afbe4a7",
+      "bytes": 1743
+    },
+    {
+      "url": "/knowledge/policy/offers-config.json",
+      "contentHash": "a7022c0839a5f2fe7950d86a0da5efd1adf8990adf8ad82c4c0feae3a7061d44",
+      "bytes": 295
+    },
+    {
+      "url": "/knowledge/provenance.json",
+      "contentHash": "5e70a198a1d8744d37683ff76a04d6ca9f572b36ad95b9c9aa3e2b7220a98fb7",
+      "bytes": 3962
+    },
+    {
+      "url": "/knowledge/public-endpoints.json",
+      "contentHash": "e8d5089c5c3f9420286e268e8f0cd565427a4c7ba4a13a2fc9ff552530234a01",
+      "bytes": 5101
+    },
+    {
+      "url": "/knowledge/related/index.json",
+      "contentHash": "d8f684fcf553d4d3a696ee475a6c4ac0c024fa6ff7e181e543bc74985a7c62be",
+      "bytes": 1697588
+    },
+    {
+      "url": "/knowledge/schema-map.json",
+      "contentHash": "0b63df00aad1c4f7d8f10649f1be67ea36de625a5b9b77faea12c92dbae5ceb4",
+      "bytes": 6699
+    },
+    {
+      "url": "/knowledge/search-index.json",
+      "contentHash": "c2ac699bbe1a1b1da61174a9af59ec1269e399b50db4030f8b91742b76143521",
+      "bytes": 965809
+    }
+  ],
+  "manifestHash": "11eb14dc631c83cccd7a02618e6b03f59fc427d33ba0b39552c286784c2745fa",
+  "signature": {
+    "enabled": false,
+    "method": null,
+    "signedBy": null,
+    "signatureValue": null
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "schemaVersion": "1.0",
+  "generatedAt": "2026-03-09T17:50:09.701Z",
+  "sourceVersion": "v2",
+  "contractVersion": "1.0.0",
+  "stateA": "new-mexico",
+  "stateB": "pennsylvania",
+  "nameA": "New Mexico",
+  "nameB": "Pennsylvania",
+  "rateA": 15.29,
+  "rateB": 17.78,
+  "differenceCents": -2.49,
+  "differencePercent": -14,
+  "higherCostState": "Pennsylvania",
+  "lowerCostState": "New Mexico"
+}

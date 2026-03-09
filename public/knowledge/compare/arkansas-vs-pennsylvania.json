@@ -1,0 +1,16 @@
+{
+  "schemaVersion": "1.0",
+  "generatedAt": "2026-03-09T17:50:09.701Z",
+  "sourceVersion": "v2",
+  "contractVersion": "1.0.0",
+  "stateA": "arkansas",
+  "stateB": "pennsylvania",
+  "nameA": "Arkansas",
+  "nameB": "Pennsylvania",
+  "rateA": 12.83,
+  "rateB": 17.78,
+  "differenceCents": -4.95,
+  "differencePercent": -27.8,
+  "higherCostState": "Pennsylvania",
+  "lowerCostState": "Arkansas"
+}

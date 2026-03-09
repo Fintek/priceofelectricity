@@ -1,0 +1,28 @@
+{
+  "schemaVersion": "1.0",
+  "generatedAt": "2026-03-09T17:50:09.701Z",
+  "subject": "national",
+  "id": "national",
+  "insights": [
+    {
+      "type": "price",
+      "statement": "The national average electricity rate is 17.57 cents per kWh.",
+      "confidence": "high"
+    },
+    {
+      "type": "price",
+      "statement": "The national median electricity rate is 15.34 cents per kWh.",
+      "confidence": "high"
+    },
+    {
+      "type": "price",
+      "statement": "Electricity prices in Hawaii are more than 3 times higher than in Idaho.",
+      "confidence": "high"
+    },
+    {
+      "type": "ranking",
+      "statement": "States with the highest electricity rates include Hawaii, California, Connecticut.",
+      "confidence": "medium"
+    }
+  ]
+}

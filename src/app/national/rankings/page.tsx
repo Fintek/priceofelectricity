@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { SITE_URL, LAST_REVIEWED } from "@/lib/site";
+import { SITE_URL } from "@/lib/site";
 import { buildAllNormalizedStates } from "@/lib/stateBuilder";
 import { computeElectricityPriceIndex } from "@/lib/priceIndex";
 

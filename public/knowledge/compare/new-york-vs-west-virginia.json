@@ -1,0 +1,16 @@
+{
+  "schemaVersion": "1.0",
+  "generatedAt": "2026-03-09T17:50:09.701Z",
+  "sourceVersion": "v2",
+  "contractVersion": "1.0.0",
+  "stateA": "new-york",
+  "stateB": "west-virginia",
+  "nameA": "New York",
+  "nameB": "West Virginia",
+  "rateA": 23.87,
+  "rateB": 15.39,
+  "differenceCents": 8.48,
+  "differencePercent": 55.1,
+  "higherCostState": "New York",
+  "lowerCostState": "West Virginia"
+}

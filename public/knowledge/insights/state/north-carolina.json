@@ -1,0 +1,28 @@
+{
+  "schemaVersion": "1.0",
+  "generatedAt": "2026-03-09T17:50:09.701Z",
+  "subject": "state",
+  "id": "north-carolina",
+  "insights": [
+    {
+      "type": "price",
+      "statement": "Electricity in North Carolina costs 20% less than the national average.",
+      "confidence": "high"
+    },
+    {
+      "type": "ranking",
+      "statement": "North Carolina ranks #33 among U.S. states for electricity prices.",
+      "confidence": "high"
+    },
+    {
+      "type": "value",
+      "statement": "North Carolina has a value score of 92, indicating strong affordability and freshness.",
+      "confidence": "medium"
+    },
+    {
+      "type": "trend",
+      "statement": "North Carolina appears stable based on recent electricity price changes.",
+      "confidence": "medium"
+    }
+  ]
+}

@@ -5,6 +5,7 @@ import "./globals.css";
 import { SITE_NAME, SITE_URL, LAUNCH_MODE } from "@/lib/site";
 import { reportWebVitals as reportWebVitalsImpl } from "@/lib/performance";
 import SearchBox from "@/app/components/SearchBox";
+import CommandPalette from "@/components/common/CommandPalette";
 import PreferredStateBanner from "@/app/components/PreferredStateBanner";
 import { STATES } from "@/data/states";
 import { getCurrentSnapshot } from "@/lib/snapshotLoader";
@@ -49,6 +50,7 @@ export default function RootLayout({
     "@type": "Organization",
     name: SITE_NAME,
     url: BASE_URL,
+    sameAs: [],
   };
   const websiteStructuredData = {
     "@context": "https://schema.org",
@@ -109,13 +111,20 @@ export default function RootLayout({
         <header className="site-header">
           <nav
             className="header-nav container"
-            style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}
+            style={{ display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: 12 }}
           >
             <Link href="/" className="site-title-link">
               {SITE_NAME}
             </Link>
-            <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
+            <div style={{ display: "flex", alignItems: "center", gap: 16, flexWrap: "wrap" }}>
+              <Link href="/knowledge" style={{ fontSize: 14 }}>Knowledge</Link>
+              <Link href="/electricity-trends" style={{ fontSize: 14 }}>Trends</Link>
+              <Link href="/electricity-insights" style={{ fontSize: 14 }}>Insights</Link>
+              <Link href="/datasets" style={{ fontSize: 14 }}>Data</Link>
+              <Link href="/methodology" style={{ fontSize: 14 }}>Methodology</Link>
+              <Link href="/site-map" style={{ fontSize: 14 }}>Site Map</Link>
               <SearchBox />
+              <CommandPalette />
               <Link href="/about" className="chip" style={{ marginLeft: 0 }}>
                 Trust & Methodology
               </Link>
@@ -155,6 +164,9 @@ export default function RootLayout({
             <Link href="/regulatory/queue">Regulatory Queue</Link> <span>|</span>{" "}
             <Link href="/alerts">Alerts</Link> <span>|</span>{" "}
             <Link href="/knowledge">Knowledge</Link> <span>|</span>{" "}
+            <Link href="/electricity-trends">Electricity Trends</Link> <span>|</span>{" "}
+            <Link href="/electricity-insights">Electricity Insights</Link> <span>|</span>{" "}
+            <Link href="/site-map">Site Map</Link> <span>|</span>{" "}
             <Link href="/knowledge.json" prefetch={false}>Knowledge JSON</Link> <span>|</span>{" "}
             <Link href="/registry.json" prefetch={false}>Registry</Link> <span>|</span>{" "}
             <Link href="/graph.json" prefetch={false}>Graph</Link> <span>|</span>{" "}

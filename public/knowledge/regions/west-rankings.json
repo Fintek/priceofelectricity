@@ -1,0 +1,112 @@
+{
+  "schemaVersion": "1.0",
+  "generatedAt": "2026-03-09T17:50:09.701Z",
+  "sourceVersion": "v2",
+  "contractVersion": "1.0.0",
+  "regionId": "west",
+  "regionName": "West",
+  "cheapestStates": [
+    {
+      "slug": "idaho",
+      "name": "Idaho",
+      "rate": 11.74
+    },
+    {
+      "slug": "washington",
+      "name": "Washington",
+      "rate": 12.86
+    },
+    {
+      "slug": "utah",
+      "name": "Utah",
+      "rate": 12.97
+    },
+    {
+      "slug": "montana",
+      "name": "Montana",
+      "rate": 13.12
+    },
+    {
+      "slug": "nevada",
+      "name": "Nevada",
+      "rate": 13.16
+    },
+    {
+      "slug": "wyoming",
+      "name": "Wyoming",
+      "rate": 14.02
+    },
+    {
+      "slug": "oregon",
+      "name": "Oregon",
+      "rate": 15
+    },
+    {
+      "slug": "new-mexico",
+      "name": "New Mexico",
+      "rate": 15.29
+    },
+    {
+      "slug": "arizona",
+      "name": "Arizona",
+      "rate": 15.7
+    },
+    {
+      "slug": "colorado",
+      "name": "Colorado",
+      "rate": 15.79
+    }
+  ],
+  "mostExpensiveStates": [
+    {
+      "slug": "hawaii",
+      "name": "Hawaii",
+      "rate": 41.3
+    },
+    {
+      "slug": "california",
+      "name": "California",
+      "rate": 31.14
+    },
+    {
+      "slug": "alaska",
+      "name": "Alaska",
+      "rate": 25.01
+    },
+    {
+      "slug": "colorado",
+      "name": "Colorado",
+      "rate": 15.79
+    },
+    {
+      "slug": "arizona",
+      "name": "Arizona",
+      "rate": 15.7
+    },
+    {
+      "slug": "new-mexico",
+      "name": "New Mexico",
+      "rate": 15.29
+    },
+    {
+      "slug": "oregon",
+      "name": "Oregon",
+      "rate": 15
+    },
+    {
+      "slug": "wyoming",
+      "name": "Wyoming",
+      "rate": 14.02
+    },
+    {
+      "slug": "nevada",
+      "name": "Nevada",
+      "rate": 13.16
+    },
+    {
+      "slug": "montana",
+      "name": "Montana",
+      "rate": 13.12
+    }
+  ]
+}

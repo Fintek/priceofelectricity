@@ -1,0 +1,132 @@
+{
+  "meta": {
+    "schemaVersion": "1.0",
+    "id": "knowledge:methodology:freshness",
+    "type": "methodology",
+    "slug": "freshness",
+    "title": "Freshness Scoring Methodology",
+    "description": "Methodology for data freshness status and recency labels.",
+    "canonicalUrl": "http://localhost:3000/knowledge/methodology/freshness",
+    "jsonUrl": "http://localhost:3000/knowledge/history/v2/methodology/freshness.json",
+    "updatedAt": "2026-03-09T17:50:09.701Z",
+    "sourceVersion": "v2",
+    "temporalContext": {
+      "sourceVersion": "v2",
+      "isLatest": false
+    },
+    "provenance": [
+      {
+        "id": "poe-methodology-freshness",
+        "sourceName": "PriceOfElectricity.com methodology: Freshness Scoring",
+        "sourceUrl": "http://localhost:3000/methodology/freshness-scoring",
+        "publisher": "PriceOfElectricity.com",
+        "license": "Site content license",
+        "retrievedAt": "2026-03-09T17:50:09.701Z"
+      }
+    ],
+    "fieldProvenance": [
+      {
+        "field": "data.definition",
+        "provenanceIds": [
+          "poe-methodology-freshness"
+        ]
+      },
+      {
+        "field": "data.inputs",
+        "provenanceIds": [
+          "poe-methodology-freshness"
+        ]
+      },
+      {
+        "field": "data.steps",
+        "provenanceIds": [
+          "poe-methodology-freshness"
+        ]
+      },
+      {
+        "field": "data.limitations",
+        "provenanceIds": [
+          "poe-methodology-freshness"
+        ]
+      },
+      {
+        "field": "data.relatedInternalUrls",
+        "provenanceIds": [
+          "poe-methodology-freshness"
+        ]
+      }
+    ],
+    "citations": [
+      {
+        "sourceName": "PriceOfElectricity.com methodology: Freshness Scoring",
+        "sourceUrl": "http://localhost:3000/methodology/freshness-scoring",
+        "retrievedAt": "2026-03-09T17:50:09.701Z"
+      }
+    ],
+    "llmHints": {
+      "priority": "high",
+      "entityType": "methodology",
+      "semanticTopics": [
+        "methodology",
+        "electricity rates",
+        "index calculation",
+        "data freshness"
+      ],
+      "semanticCluster": "calculation-framework"
+    },
+    "freshness": {
+      "datasetUpdatedAt": "2025-12-15T00:00:00.000Z",
+      "computedAt": "2026-03-09T17:50:09.701Z",
+      "status": "aging",
+      "ageDays": 84,
+      "methodology": {
+        "id": "freshness",
+        "version": "1.0",
+        "url": "http://localhost:3000/knowledge/methodology/freshness.json",
+        "canonicalUrl": "http://localhost:3000/knowledge/methodology/freshness"
+      }
+    },
+    "excerpt": "Freshness Scoring Methodology. Defines how freshness status is computed from inputs and produces derived fields used across state and ranking pages.",
+    "disclaimerRefs": [
+      "methodology"
+    ],
+    "methodology": {
+      "id": "freshness",
+      "version": "1.0",
+      "lastReviewedAt": "2026-03-09",
+      "relatedDerivedFields": [
+        "data.derived.freshnessStatus"
+      ]
+    },
+    "qualityScore": 90,
+    "contentHash": "2d67cd9cdfea7c1424eb6588acc724a733104e97b48744fb6889ad28ff7d5c91",
+    "integrity": {
+      "contentHash": "2d67cd9cdfea7c1424eb6588acc724a733104e97b48744fb6889ad28ff7d5c91",
+      "integrityAlgorithm": "sha256",
+      "signedAtBuild": "2026-03-09T17:50:09.701Z"
+    }
+  },
+  "data": {
+    "definition": "Freshness scoring classifies data recency based on the updated field age.",
+    "inputs": [
+      "Updated month",
+      "Current date"
+    ],
+    "steps": [
+      "Parse updated month/year into UTC date.",
+      "Calculate age in days.",
+      "Map age to freshness status and label."
+    ],
+    "limitations": [
+      "Recency does not guarantee source revision significance.",
+      "Cadence assumptions may vary by external publisher."
+    ],
+    "relatedInternalUrls": [
+      "http://localhost:3000/knowledge/methodology/freshness",
+      "http://localhost:3000/data-policy"
+    ],
+    "relatedEntities": {
+      "national": true
+    }
+  }
+}

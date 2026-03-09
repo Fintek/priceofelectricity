@@ -1,0 +1,240 @@
+{
+  "meta": {
+    "schemaVersion": "1.0",
+    "id": "knowledge:vertical:ai-energy",
+    "type": "vertical",
+    "slug": "ai-energy",
+    "title": "AI Energy Vertical Knowledge",
+    "description": "Stub machine-readable page for AI-energy vertical navigation and references.",
+    "canonicalUrl": "http://localhost:3000/knowledge/vertical/ai-energy",
+    "jsonUrl": "http://localhost:3000/knowledge/history/v2/vertical/ai-energy.json",
+    "updatedAt": "2026-03-09T17:50:09.701Z",
+    "sourceVersion": "v2",
+    "temporalContext": {
+      "sourceVersion": "v2",
+      "isLatest": false
+    },
+    "provenance": [
+      {
+        "id": "eia-retail-sales-923",
+        "sourceName": "U.S. Energy Information Administration (EIA) Retail Sales of Electricity",
+        "sourceUrl": "https://api.eia.gov/v2/electricity/retail-sales/data/",
+        "publisher": "U.S. Energy Information Administration",
+        "license": "U.S. Government work (public domain)",
+        "notes": "Primary source for state residential electricity rate series used by snapshots.",
+        "retrievedAt": "2026-03-09T17:50:09.701Z"
+      },
+      {
+        "id": "poe-methodology-epi",
+        "sourceName": "PriceOfElectricity.com methodology: Electricity Price Index",
+        "sourceUrl": "http://localhost:3000/methodology/electricity-price-index",
+        "publisher": "PriceOfElectricity.com",
+        "license": "Site content license",
+        "retrievedAt": "2026-03-09T17:50:09.701Z"
+      },
+      {
+        "id": "poe-methodology-freshness",
+        "sourceName": "PriceOfElectricity.com methodology: Freshness Scoring",
+        "sourceUrl": "http://localhost:3000/methodology/freshness-scoring",
+        "publisher": "PriceOfElectricity.com",
+        "license": "Site content license",
+        "retrievedAt": "2026-03-09T17:50:09.701Z"
+      },
+      {
+        "id": "poe-methodology-value-score",
+        "sourceName": "PriceOfElectricity.com methodology: Value Score",
+        "sourceUrl": "http://localhost:3000/methodology/value-score",
+        "publisher": "PriceOfElectricity.com",
+        "license": "Site content license",
+        "retrievedAt": "2026-03-09T17:50:09.701Z"
+      },
+      {
+        "id": "poe-vertical-ai-energy",
+        "sourceName": "PriceOfElectricity.com vertical: AI Energy",
+        "sourceUrl": "http://localhost:3000/v/ai-energy",
+        "publisher": "PriceOfElectricity.com",
+        "license": "Site content license",
+        "retrievedAt": "2026-03-09T17:50:09.701Z"
+      }
+    ],
+    "fieldProvenance": [
+      {
+        "field": "data.status",
+        "provenanceIds": [
+          "poe-vertical-ai-energy"
+        ]
+      },
+      {
+        "field": "data.summary",
+        "provenanceIds": [
+          "poe-vertical-ai-energy"
+        ]
+      },
+      {
+        "field": "data.keyThemes",
+        "provenanceIds": [
+          "poe-vertical-ai-energy"
+        ]
+      },
+      {
+        "field": "data.relatedStates",
+        "provenanceIds": [
+          "poe-vertical-ai-energy",
+          "eia-retail-sales-923"
+        ]
+      },
+      {
+        "field": "data.relatedRankings",
+        "provenanceIds": [
+          "poe-vertical-ai-energy",
+          "poe-methodology-epi"
+        ]
+      },
+      {
+        "field": "data.relatedMethodologies",
+        "provenanceIds": [
+          "poe-methodology-epi",
+          "poe-methodology-value-score",
+          "poe-methodology-freshness"
+        ]
+      },
+      {
+        "field": "data.monitoringEndpoints",
+        "provenanceIds": [
+          "poe-vertical-ai-energy"
+        ]
+      },
+      {
+        "field": "data.expansionReadiness",
+        "provenanceIds": [
+          "poe-vertical-ai-energy"
+        ]
+      }
+    ],
+    "citations": [
+      {
+        "sourceName": "U.S. Energy Information Administration (EIA) Retail Sales of Electricity",
+        "sourceUrl": "https://api.eia.gov/v2/electricity/retail-sales/data/",
+        "retrievedAt": "2026-03-09T17:50:09.701Z",
+        "notes": "Primary source for state residential electricity rate series used by snapshots."
+      },
+      {
+        "sourceName": "PriceOfElectricity.com methodology: Electricity Price Index",
+        "sourceUrl": "http://localhost:3000/methodology/electricity-price-index",
+        "retrievedAt": "2026-03-09T17:50:09.701Z"
+      },
+      {
+        "sourceName": "PriceOfElectricity.com methodology: Freshness Scoring",
+        "sourceUrl": "http://localhost:3000/methodology/freshness-scoring",
+        "retrievedAt": "2026-03-09T17:50:09.701Z"
+      },
+      {
+        "sourceName": "PriceOfElectricity.com methodology: Value Score",
+        "sourceUrl": "http://localhost:3000/methodology/value-score",
+        "retrievedAt": "2026-03-09T17:50:09.701Z"
+      },
+      {
+        "sourceName": "PriceOfElectricity.com vertical: AI Energy",
+        "sourceUrl": "http://localhost:3000/v/ai-energy",
+        "retrievedAt": "2026-03-09T17:50:09.701Z"
+      }
+    ],
+    "llmHints": {
+      "priority": "low",
+      "entityType": "vertical",
+      "semanticTopics": [
+        "ai energy",
+        "data centers",
+        "electricity demand",
+        "grid impacts"
+      ],
+      "semanticCluster": "industry-vertical"
+    },
+    "freshness": {
+      "datasetUpdatedAt": "2025-12-15T00:00:00.000Z",
+      "computedAt": "2026-03-09T17:50:09.701Z",
+      "status": "aging",
+      "ageDays": 84,
+      "methodology": {
+        "id": "freshness",
+        "version": "1.0",
+        "url": "http://localhost:3000/knowledge/methodology/freshness.json",
+        "canonicalUrl": "http://localhost:3000/knowledge/methodology/freshness"
+      }
+    },
+    "excerpt": "AI Energy Vertical Knowledge. stub vertical summary. Related states: 5.",
+    "disclaimerRefs": [
+      "general-site"
+    ],
+    "qualityScore": 90,
+    "contentHash": "ce9c503fc9f961c034217ee9aaa86be0b5c719546f23b1510e3d42514a197e0d",
+    "integrity": {
+      "contentHash": "ce9c503fc9f961c034217ee9aaa86be0b5c719546f23b1510e3d42514a197e0d",
+      "integrityAlgorithm": "sha256",
+      "signedAtBuild": "2026-03-09T17:50:09.701Z"
+    }
+  },
+  "data": {
+    "status": "stub",
+    "summary": "AI-energy vertical is structurally active with deterministic links, while demand/load datasets remain planned.",
+    "keyThemes": [
+      "ai data centers",
+      "load growth",
+      "regional price pressure",
+      "grid constraints"
+    ],
+    "relatedStates": [
+      "hawaii",
+      "california",
+      "connecticut",
+      "rhode-island",
+      "maine"
+    ],
+    "relatedRankings": [
+      "rate-high-to-low",
+      "affordability",
+      "value-score",
+      "rate-low-to-high"
+    ],
+    "relatedMethodologies": [
+      "electricity-price-index",
+      "value-score",
+      "freshness-scoring"
+    ],
+    "monitoringEndpoints": [
+      "http://localhost:3000/v/ai-energy",
+      "http://localhost:3000/v/ai-energy/watchlist",
+      "http://localhost:3000/v/ai-energy/monitoring",
+      "http://localhost:3000/v/ai-energy/glossary"
+    ],
+    "expansionReadiness": {
+      "dataAvailable": false,
+      "plannedDatasets": [
+        "Data-center load additions by region and balancing area",
+        "Utility interconnection queue additions tied to AI workloads",
+        "Substation/feeder congestion indicators by metro"
+      ],
+      "lastEvaluated": "2026-03-09T17:50:09.701Z"
+    },
+    "relatedEntities": {
+      "states": [
+        "california",
+        "connecticut",
+        "hawaii",
+        "maine",
+        "rhode-island"
+      ],
+      "rankings": [
+        "affordability",
+        "rate-high-to-low",
+        "rate-low-to-high",
+        "value-score"
+      ],
+      "methodologies": [
+        "epi",
+        "value-score",
+        "freshness"
+      ]
+    }
+  }
+}

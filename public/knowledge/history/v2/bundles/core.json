@@ -1,0 +1,29 @@
+{
+  "schemaVersion": "1.0",
+  "generatedAt": "2026-03-09T17:50:09.701Z",
+  "sourceVersion": "v2",
+  "bundleId": "core",
+  "files": [
+    {
+      "url": "/knowledge/history/v2/changelog.json"
+    },
+    {
+      "url": "/knowledge/history/v2/contract.json"
+    },
+    {
+      "url": "/knowledge/history/v2/entity-index.json"
+    },
+    {
+      "url": "/knowledge/history/v2/index.json"
+    },
+    {
+      "url": "/knowledge/history/v2/provenance.json"
+    },
+    {
+      "url": "/knowledge/history/v2/schema-map.json"
+    },
+    {
+      "url": "/knowledge/history/v2/search-index.json"
+    }
+  ]
+}

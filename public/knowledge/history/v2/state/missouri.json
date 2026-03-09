@@ -1,0 +1,589 @@
+{
+  "meta": {
+    "schemaVersion": "1.0",
+    "id": "knowledge:state:missouri",
+    "type": "state",
+    "slug": "missouri",
+    "title": "Missouri Electricity Price Knowledge",
+    "description": "Machine-readable summary for Missouri electricity rates and ranking metrics.",
+    "canonicalUrl": "http://localhost:3000/knowledge/state/missouri",
+    "jsonUrl": "http://localhost:3000/knowledge/history/v2/state/missouri.json",
+    "updatedAt": "2026-03-09T17:50:09.701Z",
+    "sourceVersion": "v2",
+    "temporalContext": {
+      "sourceVersion": "v2",
+      "isLatest": false
+    },
+    "provenance": [
+      {
+        "id": "eia-retail-sales-923",
+        "sourceName": "U.S. Energy Information Administration (EIA) Retail Sales of Electricity",
+        "sourceUrl": "https://api.eia.gov/v2/electricity/retail-sales/data/",
+        "publisher": "U.S. Energy Information Administration",
+        "license": "U.S. Government work (public domain)",
+        "notes": "Primary source for state residential electricity rate series used by snapshots.",
+        "retrievedAt": "2026-03-09T17:50:09.701Z"
+      },
+      {
+        "id": "poe-dataset-affordability-csv",
+        "sourceName": "PriceOfElectricity.com dataset endpoint: affordability.csv",
+        "sourceUrl": "http://localhost:3000/api/datasets/affordability.csv",
+        "publisher": "PriceOfElectricity.com",
+        "license": "Site content license",
+        "retrievedAt": "2026-03-09T17:50:09.701Z"
+      },
+      {
+        "id": "poe-dataset-states-csv",
+        "sourceName": "PriceOfElectricity.com dataset endpoint: states.csv",
+        "sourceUrl": "http://localhost:3000/api/datasets/states.csv",
+        "publisher": "PriceOfElectricity.com",
+        "license": "Site content license",
+        "retrievedAt": "2026-03-09T17:50:09.701Z"
+      },
+      {
+        "id": "poe-dataset-states-json",
+        "sourceName": "PriceOfElectricity.com dataset endpoint: states.json",
+        "sourceUrl": "http://localhost:3000/api/datasets/states.json",
+        "publisher": "PriceOfElectricity.com",
+        "license": "Site content license",
+        "retrievedAt": "2026-03-09T17:50:09.701Z"
+      },
+      {
+        "id": "poe-dataset-value-ranking-csv",
+        "sourceName": "PriceOfElectricity.com dataset endpoint: value-ranking.csv",
+        "sourceUrl": "http://localhost:3000/api/datasets/value-ranking.csv",
+        "publisher": "PriceOfElectricity.com",
+        "license": "Site content license",
+        "retrievedAt": "2026-03-09T17:50:09.701Z"
+      },
+      {
+        "id": "poe-methodology-epi",
+        "sourceName": "PriceOfElectricity.com methodology: Electricity Price Index",
+        "sourceUrl": "http://localhost:3000/methodology/electricity-price-index",
+        "publisher": "PriceOfElectricity.com",
+        "license": "Site content license",
+        "retrievedAt": "2026-03-09T17:50:09.701Z"
+      },
+      {
+        "id": "poe-methodology-freshness",
+        "sourceName": "PriceOfElectricity.com methodology: Freshness Scoring",
+        "sourceUrl": "http://localhost:3000/methodology/freshness-scoring",
+        "publisher": "PriceOfElectricity.com",
+        "license": "Site content license",
+        "retrievedAt": "2026-03-09T17:50:09.701Z"
+      },
+      {
+        "id": "poe-methodology-value-score",
+        "sourceName": "PriceOfElectricity.com methodology: Value Score",
+        "sourceUrl": "http://localhost:3000/methodology/value-score",
+        "publisher": "PriceOfElectricity.com",
+        "license": "Site content license",
+        "retrievedAt": "2026-03-09T17:50:09.701Z"
+      }
+    ],
+    "fieldProvenance": [
+      {
+        "field": "data.raw.avgRateCentsPerKwh",
+        "provenanceIds": [
+          "eia-retail-sales-923",
+          "poe-dataset-states-json"
+        ],
+        "isDerived": false
+      },
+      {
+        "field": "data.raw.updated",
+        "provenanceIds": [
+          "eia-retail-sales-923",
+          "poe-dataset-states-json"
+        ],
+        "isDerived": false
+      },
+      {
+        "field": "data.derived.exampleBills",
+        "provenanceIds": [
+          "eia-retail-sales-923",
+          "poe-dataset-states-json"
+        ],
+        "isDerived": true,
+        "derivedFromFields": [
+          "data.raw.avgRateCentsPerKwh"
+        ]
+      },
+      {
+        "field": "data.derived.affordabilityIndex",
+        "provenanceIds": [
+          "poe-dataset-affordability-csv",
+          "eia-retail-sales-923"
+        ],
+        "isDerived": true,
+        "derivedFromFields": [
+          "data.raw.avgRateCentsPerKwh"
+        ]
+      },
+      {
+        "field": "data.derived.valueScore",
+        "provenanceIds": [
+          "poe-methodology-value-score",
+          "poe-dataset-value-ranking-csv"
+        ],
+        "isDerived": true,
+        "derivedFromFields": [
+          "data.raw.avgRateCentsPerKwh",
+          "data.derived.affordabilityIndex"
+        ]
+      },
+      {
+        "field": "data.derived.freshnessStatus",
+        "provenanceIds": [
+          "poe-methodology-freshness",
+          "poe-dataset-states-json"
+        ],
+        "isDerived": true,
+        "derivedFromFields": [
+          "data.raw.updated"
+        ]
+      },
+      {
+        "field": "data.derived.percentileRankings",
+        "provenanceIds": [
+          "eia-retail-sales-923",
+          "poe-dataset-states-json",
+          "poe-dataset-affordability-csv",
+          "poe-dataset-value-ranking-csv"
+        ],
+        "isDerived": true,
+        "derivedFromFields": [
+          "data.raw.avgRateCentsPerKwh",
+          "data.derived.valueScore",
+          "data.derived.affordabilityIndex"
+        ]
+      },
+      {
+        "field": "data.derived.comparison",
+        "provenanceIds": [
+          "eia-retail-sales-923",
+          "poe-dataset-states-json",
+          "poe-methodology-epi"
+        ],
+        "isDerived": true,
+        "derivedFromFields": [
+          "data.raw.avgRateCentsPerKwh"
+        ]
+      },
+      {
+        "field": "data.derived.relatedUrls",
+        "provenanceIds": [
+          "poe-methodology-epi",
+          "poe-methodology-value-score",
+          "poe-methodology-freshness"
+        ],
+        "isDerived": true,
+        "derivedFromFields": []
+      }
+    ],
+    "citations": [
+      {
+        "sourceName": "U.S. Energy Information Administration (EIA) Retail Sales of Electricity",
+        "sourceUrl": "https://api.eia.gov/v2/electricity/retail-sales/data/",
+        "retrievedAt": "2026-03-09T17:50:09.701Z",
+        "notes": "Primary source for state residential electricity rate series used by snapshots."
+      },
+      {
+        "sourceName": "PriceOfElectricity.com dataset endpoint: affordability.csv",
+        "sourceUrl": "http://localhost:3000/api/datasets/affordability.csv",
+        "retrievedAt": "2026-03-09T17:50:09.701Z"
+      },
+      {
+        "sourceName": "PriceOfElectricity.com dataset endpoint: states.csv",
+        "sourceUrl": "http://localhost:3000/api/datasets/states.csv",
+        "retrievedAt": "2026-03-09T17:50:09.701Z"
+      },
+      {
+        "sourceName": "PriceOfElectricity.com dataset endpoint: states.json",
+        "sourceUrl": "http://localhost:3000/api/datasets/states.json",
+        "retrievedAt": "2026-03-09T17:50:09.701Z"
+      },
+      {
+        "sourceName": "PriceOfElectricity.com dataset endpoint: value-ranking.csv",
+        "sourceUrl": "http://localhost:3000/api/datasets/value-ranking.csv",
+        "retrievedAt": "2026-03-09T17:50:09.701Z"
+      },
+      {
+        "sourceName": "PriceOfElectricity.com methodology: Electricity Price Index",
+        "sourceUrl": "http://localhost:3000/methodology/electricity-price-index",
+        "retrievedAt": "2026-03-09T17:50:09.701Z"
+      },
+      {
+        "sourceName": "PriceOfElectricity.com methodology: Freshness Scoring",
+        "sourceUrl": "http://localhost:3000/methodology/freshness-scoring",
+        "retrievedAt": "2026-03-09T17:50:09.701Z"
+      },
+      {
+        "sourceName": "PriceOfElectricity.com methodology: Value Score",
+        "sourceUrl": "http://localhost:3000/methodology/value-score",
+        "retrievedAt": "2026-03-09T17:50:09.701Z"
+      }
+    ],
+    "llmHints": {
+      "priority": "high",
+      "entityType": "state",
+      "semanticTopics": [
+        "electricity rates",
+        "kwh pricing",
+        "energy affordability",
+        "state comparison"
+      ],
+      "semanticCluster": "geographic-state"
+    },
+    "freshness": {
+      "datasetUpdatedAt": "2025-12-15T00:00:00.000Z",
+      "computedAt": "2026-03-09T17:50:09.701Z",
+      "status": "aging",
+      "ageDays": 84,
+      "methodology": {
+        "id": "freshness",
+        "version": "1.0",
+        "url": "http://localhost:3000/knowledge/methodology/freshness.json",
+        "canonicalUrl": "http://localhost:3000/knowledge/methodology/freshness"
+      }
+    },
+    "excerpt": "Missouri residential electricity snapshot. Avg 13.37¢/kWh Value score 94 Affordability 94 Data freshness: fresh.",
+    "disclaimerRefs": [
+      "general-site",
+      "offers-disabled"
+    ],
+    "qualityScore": 90,
+    "contentHash": "5ac47017d916d115be6f742f1f20e364e8b8978987cd45ab3df86b337644958e",
+    "integrity": {
+      "contentHash": "5ac47017d916d115be6f742f1f20e364e8b8978987cd45ab3df86b337644958e",
+      "integrityAlgorithm": "sha256",
+      "signedAtBuild": "2026-03-09T17:50:09.701Z"
+    }
+  },
+  "data": {
+    "raw": {
+      "slug": "missouri",
+      "name": "Missouri",
+      "postal": null,
+      "avgRateCentsPerKwh": 13.37,
+      "updated": "February 2026"
+    },
+    "derived": {
+      "valueScore": 94,
+      "affordabilityIndex": 94,
+      "freshnessStatus": "fresh",
+      "exampleBills": {
+        "kwh500": 66.85,
+        "kwh1000": 133.7,
+        "kwh1500": 200.55
+      },
+      "relatedUrls": {
+        "statePage": "http://localhost:3000/missouri",
+        "utilitiesPage": "http://localhost:3000/missouri/utilities",
+        "plansPage": "http://localhost:3000/missouri/plans",
+        "methodology": [
+          "http://localhost:3000/knowledge/methodology/epi",
+          "http://localhost:3000/knowledge/methodology/value-score",
+          "http://localhost:3000/knowledge/methodology/freshness"
+        ]
+      },
+      "percentileRankings": {
+        "ratePercentile": 28.57,
+        "valueScorePercentile": 71.43,
+        "affordabilityPercentile": 71.43
+      },
+      "trends": {
+        "avgRateCentsPerKwh": {
+          "values": [
+            13.12,
+            11.91
+          ],
+          "min": 11.91,
+          "max": 13.12
+        }
+      },
+      "momentum": {
+        "enabled": true,
+        "signal": "rising",
+        "score": 3.94,
+        "shortWindowChangePercent": 2.94,
+        "longWindowChangePercent": 5.12,
+        "windowPointsUsed": 300
+      },
+      "comparison": {
+        "nationalAverage": 17.57,
+        "differenceCents": -4.2,
+        "differencePercent": -23.9,
+        "category": "lower than national average"
+      },
+      "priceHistory": {
+        "rateSeries": {
+          "periods": [
+            "2021-01",
+            "2021-02",
+            "2021-03",
+            "2021-04",
+            "2021-05",
+            "2021-06",
+            "2021-07",
+            "2021-08",
+            "2021-09",
+            "2021-10",
+            "2021-11",
+            "2021-12",
+            "2022-01",
+            "2022-02",
+            "2022-03",
+            "2022-04",
+            "2022-05",
+            "2022-06",
+            "2022-07",
+            "2022-08",
+            "2022-09",
+            "2022-10",
+            "2022-11",
+            "2022-12",
+            "2023-01",
+            "2023-02",
+            "2023-03",
+            "2023-04",
+            "2023-05",
+            "2023-06",
+            "2023-07",
+            "2023-08",
+            "2023-09",
+            "2023-10",
+            "2023-11",
+            "2023-12",
+            "2024-01",
+            "2024-02",
+            "2024-03",
+            "2024-04",
+            "2024-05",
+            "2024-06",
+            "2024-07",
+            "2024-08",
+            "2024-09",
+            "2024-10",
+            "2024-11",
+            "2024-12",
+            "2025-01",
+            "2025-02",
+            "2025-03",
+            "2025-04",
+            "2025-05",
+            "2025-06",
+            "2025-07",
+            "2025-08",
+            "2025-09",
+            "2025-10",
+            "2025-11",
+            "2025-12"
+          ],
+          "values": [
+            9.3,
+            9.28,
+            10.26,
+            11.08,
+            11.38,
+            13.22,
+            13.15,
+            13.16,
+            13.06,
+            11.2,
+            10.92,
+            10.54,
+            9.62,
+            9.51,
+            10.53,
+            10.98,
+            11.4,
+            13.52,
+            13.62,
+            13.96,
+            13.47,
+            11.58,
+            11.41,
+            10.54,
+            10.54,
+            11.36,
+            11.46,
+            11.79,
+            12.27,
+            14.1,
+            14.42,
+            14.25,
+            14.03,
+            12.2,
+            11.98,
+            11.33,
+            10.66,
+            11.27,
+            12.4,
+            12.35,
+            12.46,
+            14.54,
+            14.61,
+            14.72,
+            14.62,
+            12.4,
+            12.53,
+            11.57,
+            11.21,
+            11.27,
+            12.01,
+            12.88,
+            13.01,
+            15.91,
+            15.56,
+            15.46,
+            15.84,
+            12.95,
+            13.12,
+            11.91
+          ]
+        },
+        "rate1YearAgo": 11.57,
+        "rate5YearsAgo": 9.63,
+        "increase1YearPercent": 2.9,
+        "increase5YearPercent": 23.7,
+        "annualizedIncrease5Year": 4.3
+      }
+    },
+    "compareLinks": [
+      {
+        "pairSlug": "florida-vs-missouri",
+        "title": "Missouri vs Florida",
+        "url": "/electricity-cost-comparison/florida-vs-missouri"
+      },
+      {
+        "pairSlug": "missouri-vs-texas",
+        "title": "Missouri vs Texas",
+        "url": "/electricity-cost-comparison/missouri-vs-texas"
+      },
+      {
+        "pairSlug": "missouri-vs-ohio",
+        "title": "Missouri vs Ohio",
+        "url": "/electricity-cost-comparison/missouri-vs-ohio"
+      }
+    ],
+    "regionRef": {
+      "id": "midwest",
+      "name": "Midwest",
+      "href": "/knowledge/regions/midwest"
+    },
+    "derivedMeta": {
+      "methodologiesUsed": [
+        {
+          "id": "epi",
+          "version": "1.0",
+          "url": "http://localhost:3000/knowledge/methodology/epi.json",
+          "appliesToFields": [
+            "data.derived.exampleBills",
+            "data.derived.percentileRankings.ratePercentile",
+            "data.derived.relatedUrls",
+            "data.derived.trends",
+            "data.derived.comparison"
+          ]
+        },
+        {
+          "id": "value-score",
+          "version": "1.0",
+          "url": "http://localhost:3000/knowledge/methodology/value-score.json",
+          "appliesToFields": [
+            "data.derived.valueScore",
+            "data.derived.affordabilityIndex",
+            "data.derived.percentileRankings.valueScorePercentile",
+            "data.derived.percentileRankings.affordabilityPercentile"
+          ]
+        },
+        {
+          "id": "freshness",
+          "version": "1.0",
+          "url": "http://localhost:3000/knowledge/methodology/freshness.json",
+          "appliesToFields": [
+            "data.derived.freshnessStatus"
+          ]
+        },
+        {
+          "id": "momentum-signal",
+          "version": "1.0",
+          "url": "http://localhost:3000/knowledge/methodology/momentum-signal.json",
+          "appliesToFields": [
+            "data.derived.momentum"
+          ]
+        },
+        {
+          "id": "price-trend",
+          "version": "1.0",
+          "url": "http://localhost:3000/knowledge/methodology/price-trend.json",
+          "appliesToFields": [
+            "data.derived.priceHistory"
+          ]
+        }
+      ]
+    },
+    "relatedEntities": {
+      "methodologies": [
+        "epi",
+        "value-score",
+        "freshness",
+        "momentum-signal",
+        "price-trend"
+      ],
+      "rankings": [
+        "rate-low-to-high",
+        "rate-high-to-low",
+        "affordability",
+        "value-score",
+        "momentum-signal"
+      ],
+      "national": true
+    },
+    "offersRef": {
+      "offersIndexUrl": "/knowledge/offers/index.json",
+      "offersConfigUrl": "/knowledge/policy/offers-config.json",
+      "enabled": false
+    },
+    "facts": [
+      {
+        "label": "Affordability index",
+        "value": 94,
+        "sourceField": "data.derived.affordabilityIndex"
+      },
+      {
+        "label": "Average rate",
+        "value": 13.37,
+        "unit": "¢/kWh",
+        "sourceField": "data.raw.avgRateCentsPerKwh"
+      },
+      {
+        "label": "Data age",
+        "value": 84,
+        "unit": "days",
+        "sourceField": "meta.freshness.ageDays"
+      },
+      {
+        "label": "Example bill 1000 kWh",
+        "value": 133.7,
+        "unit": "$",
+        "sourceField": "data.derived.exampleBills.kwh1000"
+      },
+      {
+        "label": "Freshness status",
+        "value": "fresh",
+        "sourceField": "data.derived.freshnessStatus"
+      },
+      {
+        "label": "Rate percentile",
+        "value": 28.57,
+        "sourceField": "data.derived.percentileRankings.ratePercentile"
+      },
+      {
+        "label": "Value score",
+        "value": 94,
+        "sourceField": "data.derived.valueScore"
+      }
+    ]
+  }
+}

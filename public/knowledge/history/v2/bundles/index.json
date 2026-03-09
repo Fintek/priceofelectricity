@@ -1,0 +1,31 @@
+{
+  "schemaVersion": "1.0",
+  "generatedAt": "2026-03-09T17:50:09.701Z",
+  "sourceVersion": "v2",
+  "bundles": [
+    {
+      "id": "core",
+      "title": "Core knowledge entry points",
+      "description": "Small set of primary JSON entry points for ingestion.",
+      "manifestUrl": "/knowledge/history/v2/bundles/core.json"
+    },
+    {
+      "id": "methodologies",
+      "title": "Methodologies",
+      "description": "All methodology pages and index.",
+      "manifestUrl": "/knowledge/history/v2/bundles/methodologies.json"
+    },
+    {
+      "id": "rankings",
+      "title": "Rankings",
+      "description": "All ranking pages and rankings index.",
+      "manifestUrl": "/knowledge/history/v2/bundles/rankings.json"
+    },
+    {
+      "id": "states-all",
+      "title": "All states",
+      "description": "All state knowledge pages (50 + DC).",
+      "manifestUrl": "/knowledge/history/v2/bundles/states-all.json"
+    }
+  ]
+}

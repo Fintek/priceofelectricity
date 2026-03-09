@@ -187,3 +187,8 @@ h3 {
   border: 1px solid var(--color-border);
   color: #0b57d0;
 }
+
+@keyframes skeleton-shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}

@@ -1,0 +1,3835 @@
+{
+  "schemaVersion": "1.0",
+  "generatedAt": "2026-03-09T17:50:09.701Z",
+  "sourceVersion": "v2",
+  "contractVersion": "1.0.0",
+  "notes": "Build-generated knowledge pages.",
+  "diff": {
+    "added": [],
+    "removed": [],
+    "changed": [
+      {
+        "jsonUrl": "http://localhost:3000/knowledge/methodology/cagr.json",
+        "fromHash": "94c46a52c3cede2d3e41f009721c03248322e2847b1b6c248340b2332c40f14e",
+        "toHash": "9a19a43f81134c4be592f57036fa54f7944a6651e6e2f06c5cfd36949f413ef4"
+      },
+      {
+        "jsonUrl": "http://localhost:3000/knowledge/methodology/epi.json",
+        "fromHash": "e8b7cc63b65b455f7ee3b9e70c452cf94bf5cc4e188a0c338475615e60c892d0",
+        "toHash": "a0f19c8ea7ddc317e9c2ab3408ae9eaf12c03cb93d5126d53c6d1efa8265c3c5"
+      },
+      {
+        "jsonUrl": "http://localhost:3000/knowledge/methodology/freshness.json",
+        "fromHash": "8dc0eeefe9ea70f347a65983e543a69721bd411586eb0b7132590591f246bb64",
+        "toHash": "0e0e8f21b7a0705c75a4e04161234fed88a23d01d487484d3092a510bcc0975f"
+      },
+      {
+        "jsonUrl": "http://localhost:3000/knowledge/methodology/momentum-signal.json",
+        "fromHash": "95528768c97fb786841faa4fe2b96c302e71e0dd57f16929d15953f6163e5054",
+        "toHash": "6ec8d6a1f99ba92d9b7fd719ef0a26e043b7d9ef689fbec20acfaa0dc0d93ae1"
+      },
+      {
+        "jsonUrl": "http://localhost:3000/knowledge/methodology/price-trend.json",
+        "fromHash": "92446af96f2db8e15d927dfc8e2f661025cbf83dd7171abf673f005aa1ac7d71",
+        "toHash": "7380fcefd93dd1ad48abcbff0b40bc4fe1d74e91e7531615263c4896d0afc673"
+      },
+      {
+        "jsonUrl": "http://localhost:3000/knowledge/methodology/value-score.json",
+        "fromHash": "c430fb7613ea2ca02dfc4ced4ec36f75d336484420fe177621347438c721137d",
+        "toHash": "e13150b72d57a551d27b126684f92f90f1d19ea5e0ee4f044621d267502f9fd5"
+      },
+      {
+        "jsonUrl": "http://localhost:3000/knowledge/methodology/volatility.json",
+        "fromHash": "43f76c646c58d9e3a85cd620637261d264feb9ee2db7ced28345b1ec2db4df02",
+        "toHash": "01f5d86d598d3a9fe558d99dedcfb819f476d59fe223aa190ef30244a5b075f0"
+      },
+      {
+        "jsonUrl": "http://localhost:3000/knowledge/national.json",
+        "fromHash": "ca042c02fcc41b28f0bf5fc177c4d99d110094ab600ebfb4a3a87fa4c74d48ab",
+        "toHash": "e3059b2a58ec3c93760e477de458c89f971af69d697840f7088cd85b3a5a6d4b"
+      },
+      {
+        "jsonUrl": "http://localhost:3000/knowledge/rankings/affordability.json",
+        "fromHash": "3c0103f457390215bffd00879abeeb810a2bdae4d88d9d0ed99a1f6af74049f9",
+        "toHash": "75db77857fe4e440a7d2e4150c8d03e47122f9e00d0cf1c5af39a421aa519090"
+      },
+      {
+        "jsonUrl": "http://localhost:3000/knowledge/rankings/cagr-25y.json",
+        "fromHash": "c701ce5dfdfa0cebd8f8d5d5cd7cfa7c21e4d28a0fe76b26e961ccb12266d08a",
+        "toHash": "750ee5ddc21ef74f2cbfb61b254cdddb1d61aaa75606db416d6dc3e78b331d64"
+      },
+      {
+        "jsonUrl": "http://localhost:3000/knowledge/rankings/electricity-affordability.json",
+        "fromHash": "1de5dc87855dc253c709c2f0ac47bbf31d45ed8e753ba5b99cf6971c1afdb75c",
+        "toHash": "2088ec003c36807c1f1d3dfbdbb6754ffbafac8ec821551498ae4fa406f4e955"
+      },
+      {
+        "jsonUrl": "http://localhost:3000/knowledge/rankings/electricity-inflation-1y.json",
+        "fromHash": "7420ddf89a93c21326c43dfd2202db6dff350e7350eb47fef4ddb37787041100",
+        "toHash": "79e2ca7c2f58cbbac1b9066902245fd6f03e8539dfa8b64c37c97365a31e54a3"
+      },
+      {
+        "jsonUrl": "http://localhost:3000/knowledge/rankings/electricity-inflation-5y.json",
+        "fromHash": "8fa1c134767726fc8aaca4cad1926bb1e3b95e4119ee26ac3c8f44d61610586a",
+        "toHash": "bd10c11f0c068eabf59bef7dc92764fa11aff0db46f9dbf77c0de95a41393f54"
+      },
+      {
+        "jsonUrl": "http://localhost:3000/knowledge/rankings/momentum-signal.json",
+        "fromHash": "2c6410af1853cb5893804dfc60074d6a9f1b9844b6bbc0cfce14d2dfa84cb375",
+        "toHash": "1eb6b50d2819f43477208726d398aa22a518df8e1fb4a67b7fdcda4e8e5a09e8"
+      },
+      {
+        "jsonUrl": "http://localhost:3000/knowledge/rankings/most-expensive-electricity.json",
+        "fromHash": "03abdf9441c4f4a2c42cedf7ce5e7ac8cc6d88979ab68d1c0ce26bbd4eae8aba",
+        "toHash": "1fe33be2c2c07031821c366356331258fa73e9e2dcd6587e6113a0a3768f83fb"
+      },
+      {
+        "jsonUrl": "http://localhost:3000/knowledge/rankings/price-trend.json",
+        "fromHash": "b7d7020509c0393c8ca27678b7599f0cd8d40cf5f5f14c8a846ff091647a353c",
+        "toHash": "c62c27106e563779eee8fea3944ec6bbd87ac9d19b188a0063c1549ab9274e87"
+      },
+      {
+        "jsonUrl": "http://localhost:3000/knowledge/rankings/rate-high-to-low.json",
+        "fromHash": "e854e84bf5ac3d791e089cd34835430a40b7eb06081365e5b696e2adca27e124",
+        "toHash": "fcdc52965b1a8d0f6ab6a67a492a76afc861032ae4928ad634f4e8c1b1bad36e"
+      },
+      {
+        "jsonUrl": "http://localhost:3000/knowledge/rankings/rate-low-to-high.json",
+        "fromHash": "bd0e484b4b51777088a427d206639b5a88c4bd3ac0ba7e74c14b4816dd4dca42",
+        "toHash": "2fa02cddf5adf67ef174c394c326f616ea8ee48f6eba5716670965e9611a8793"
+      },
+      {
+        "jsonUrl": "http://localhost:3000/knowledge/rankings/value-score.json",
+        "fromHash": "b4d45acf83fc071275c199562c529abe2d34e7e7bfea9912aa00c2c1a8f34d03",
+        "toHash": "bad8a2492cd3bf6e81c202b019163d69d0f640993659728bc54c868b91a7136f"
+      },
+      {
+        "jsonUrl": "http://localhost:3000/knowledge/rankings/volatility-5y.json",
+        "fromHash": "6db71a53fecf53d1b047369b92560316d329a5bce34b52c4f4ad48e366ff5010",
+        "toHash": "23c8f8bc5e52d8d5e114f20ff926bd21bdc2c571974a774c069e198aa7fcf698"
+      },
+      {
+        "jsonUrl": "http://localhost:3000/knowledge/state/alabama.json",
+        "fromHash": "7635aee4ede74ab6e0bd3ab2e090615754ac6abf21e76ec0b92d1bae50e6c4aa",
+        "toHash": "6821469e3391733dfe606a631768053cb4fab30872bda1885777bc4b177a45bd"
+      },
+      {
+        "jsonUrl": "http://localhost:3000/knowledge/state/alaska.json",
+        "fromHash": "bc0a2b830d54813437f8d5e80887cb857efe0f27961ea6c2fdddaf2cfa3b289b",
+        "toHash": "7c7656ace2a4b79729e5665a7171144f999e6e8b4a81dd21fb9adf16e11f27bb"
+      },
+      {
+        "jsonUrl": "http://localhost:3000/knowledge/state/arizona.json",
+        "fromHash": "b9d4066428634547b3b815dc19d8176fbc7e1415426d1a2235e19ba53e2b9cf2",
+        "toHash": "2658469d606da20808070fe339aee556771819a2f5ae1a94d07bfca680dad9e4"
+      },
+      {
+        "jsonUrl": "http://localhost:3000/knowledge/state/arkansas.json",
+        "fromHash": "97136598eabb5fcab643b6b6d9dfd3bff905c35879d935ca49609e491961468f",
+        "toHash": "1046da76fcb4136f4b89bb1b93c4776ef81018f3036d58c1d6a728d42c7c9676"
+      },
+      {
+        "jsonUrl": "http://localhost:3000/knowledge/state/california.json",
+        "fromHash": "b99c1d6ee871ec7d066004a98102ffbe08cddbb87825ea5eaf9c0a41bfeed039",
+        "toHash": "36dfa6191a67ef7fc02c57cda2d3be00d4a6c0199c31fe75a06dba50b4a2af7d"
+      },
+      {
+        "jsonUrl": "http://localhost:3000/knowledge/state/colorado.json",
+        "fromHash": "775410c4d884dc8cf27274fe3a950c89060d9b61b22d3d12d8b26e26a60d426b",
+        "toHash": "56fa8abf42597bab37e4d974a70c47f9242df5b01e74e058da3da9478942c623"
+      },
+      {
+        "jsonUrl": "http://localhost:3000/knowledge/state/connecticut.json",
+        "fromHash": "710883be075b27458e8a67b2bcf44680524c32bfe4da25d6bfbe6034ad4a16e5",
+        "toHash": "bbd2e7b56f1dbdbdfebf6840eae0cc948bd5a21609241a8061c26d39e619d21d"
+      },
+      {
+        "jsonUrl": "http://localhost:3000/knowledge/state/delaware.json",
+        "fromHash": "2d73f4fbaab5c8c5cb71d44fa582ce5cf2e8d2ed61a53bbd7ac4d51748c255ee",
+        "toHash": "8397d618324db43cc910cfeb34a4c0af85b4a465b519ac0cc4fb3db4056e85d1"
+      },
+      {
+        "jsonUrl": "http://localhost:3000/knowledge/state/district-of-columbia.json",
+        "fromHash": "80bb7a8fe8826c1926731cc04bd6f903610cfdd8761f0e15112a0a2eedcd1d72",
+        "toHash": "bde38eaf7b0d425412de68df819360d77563901dc89313fa3ced5b2c40017124"
+      },
+      {
+        "jsonUrl": "http://localhost:3000/knowledge/state/florida.json",
+        "fromHash": "296856e61c77f3dd0715cc2395dae7ab34d0a5c4152335cdb5790d0d110de915",
+        "toHash": "c2680c856c60bf4e6b1799f5f593fe1846196d3f2ab73a53aa807b9ea2d50854"
+      },
+      {
+        "jsonUrl": "http://localhost:3000/knowledge/state/georgia.json",
+        "fromHash": "bc9863ab890a63894c24bf4ada156ee18b5855f9192a45f9eb71ad735595d7a7",
+        "toHash": "18da07512a757ccf93cf12860ee933134962b2b751f98ca09d95065628a1737a"
+      },
+      {
+        "jsonUrl": "http://localhost:3000/knowledge/state/hawaii.json",
+        "fromHash": "7ff2c1878656e1fbdb99e4a084c5f8c74c48e3ce4c2615ea61d60181fa3e41a4",
+        "toHash": "40bdf28dbdbb58a03f6f0bd748a3d9fdd9271bcb4e03f3d2c7a8733520c74cb7"
+      },
+      {
+        "jsonUrl": "http://localhost:3000/knowledge/state/idaho.json",
+        "fromHash": "27bbc6fd29eb400e4f12c0d794be2492f42461cb236ebb2f88e37d97473cd3e3",
+        "toHash": "67684e1f171d51b2d557438b100963c1ff1d42dd69d6760ad0d4f2c693178870"
+      },
+      {
+        "jsonUrl": "http://localhost:3000/knowledge/state/illinois.json",
+        "fromHash": "4d15f6b84d8a6831ded8173ddbe6085958704e44e92619ee9d84f11c5bbbdbf6",
+        "toHash": "0d025d46ea1f3dba15d0984ba2d45cd93f11e21a1636b5429437b3f89ce51f82"
+      },
+      {
+        "jsonUrl": "http://localhost:3000/knowledge/state/indiana.json",
+        "fromHash": "7843d94c1bf5cc57c4169571c69a28f1e2a1c8e7e91ce885f712cca7016874d2",
+        "toHash": "86f1dc6c932f10661439cf01b584c583c5fb3c34401c2491b166e15f33f8bb8f"
+      },
+      {
+        "jsonUrl": "http://localhost:3000/knowledge/state/iowa.json",
+        "fromHash": "dc91960763d1acd1bd8d2b4a7e8e5b8272779ee0a30820b1a4d1f62cb20e7aae",
+        "toHash": "c962f3cb3aef11dcc5ccb16adcd3fa3bea151ee01c752a891dae85d183f3c5e3"
+      },
+      {
+        "jsonUrl": "http://localhost:3000/knowledge/state/kansas.json",
+        "fromHash": "5301306c0086a3d20b0f10d49814aaf049274628500c9d0b2bb2650b8754660d",
+        "toHash": "d9bca5994370830b438d24027415d0ac7170adf564240225235f30f59cfe4f3f"
+      },
+      {
+        "jsonUrl": "http://localhost:3000/knowledge/state/kentucky.json",
+        "fromHash": "858d90446f2f365d52ca6d0648b22fd2fcb72f3b7f1b99a9d1faed509a4df305",
+        "toHash": "a4cacac651d8b4be477f40d9198c5d8351d1c832c6ab54127e372f5b0d2f8c3e"
+      },
+      {
+        "jsonUrl": "http://localhost:3000/knowledge/state/louisiana.json",
+        "fromHash": "b748d3eb9e26b27274e6bf887a90f48fc0ad56c77440189743103be733cba5bd",
+        "toHash": "f71ba25c89fe0620555420e82f91df98943de25b07c74829f8eb08f9f2d4712b"
+      },
+      {
+        "jsonUrl": "http://localhost:3000/knowledge/state/maine.json",
+        "fromHash": "3f32c93fb50d7ebb68a2598df605b7c1512abad209b1ded20bec165fd75e496e",
+        "toHash": "a75d0045a90b1feaa8d9e61e7156e811a534059d85f7aea74caf2299b083943d"
+      },
+      {
+        "jsonUrl": "http://localhost:3000/knowledge/state/maryland.json",
+        "fromHash": "3cb12947965514efc13bf4d4dfe9399550f6dbcdeb16756dd098986ac2b94e8a",
+        "toHash": "8c67d8144c1102e677a3cd06da9de3ca75fb1bd08dae15b257d77ec7214d38cf"
+      },
+      {
+        "jsonUrl": "http://localhost:3000/knowledge/state/massachusetts.json",
+        "fromHash": "8ebf59d03cefd0c667da5f831d532e128cc8228c63b7b821602aa08f190bd961",
+        "toHash": "d699d0e34c7737754ade465e5964e6ac08da64bf0299efd4a781dee38e4b73dc"
+      },
+      {
+        "jsonUrl": "http://localhost:3000/knowledge/state/michigan.json",
+        "fromHash": "a6dee025c2b7b79e824a6f1e48ee5d4825c0ef49cbbf752d7051e23dd6cf215f",
+        "toHash": "1c68c7f077b1f708a5a6f709859db3ff302a515a4f39c3d57c949f0a73d602c7"
+      },
+      {
+        "jsonUrl": "http://localhost:3000/knowledge/state/minnesota.json",
+        "fromHash": "3f61c88c43675c4414674a67e7a4430ac7a87bfb4e7df419a636d4071e91ea5b",
+        "toHash": "7f9ddb3532557d17d9e5d64143c87073dbf538901109b1607065c15b30bb88df"
+      },
+      {
+        "jsonUrl": "http://localhost:3000/knowledge/state/mississippi.json",
+        "fromHash": "b081c0ced1bf82823afd6c600eae707d2f9bbb30a1c61ae4982f5d4422683c22",
+        "toHash": "5faf5cc0f5f6326612cde56ad50bc6ac564febabb6e2d01dc3e3f85ef4849b87"
+      },
+      {
+        "jsonUrl": "http://localhost:3000/knowledge/state/missouri.json",
+        "fromHash": "b50b484da0307bef3b092cd23010b4e76b47edb7fa9754913ffa2ce73a27cd51",
+        "toHash": "1c0ceddf609e57546b81e8e5584141ccc8949a317ceec5e0263f5a2d5002c45d"
+      },
+      {
+        "jsonUrl": "http://localhost:3000/knowledge/state/montana.json",
+        "fromHash": "f8c888883c7d5cefb36a025572c5c3e6beb238890136ffde4ff6076dc4ceb6bc",
+        "toHash": "52c387fe93fc2b71c3ac24c9fb013550ed9b44b99f82119ab3ee9818d1e469df"
+      },
+      {
+        "jsonUrl": "http://localhost:3000/knowledge/state/nebraska.json",
+        "fromHash": "b9cc5624e4f3677fb45311963d1be407b98a5c49e6a09ca14583d95a03ee9bd1",
+        "toHash": "97eaa20bef7336ce6f8cbfbed50bea2e9587d4462f19b66301847ed45bfb24e4"
+      },
+      {
+        "jsonUrl": "http://localhost:3000/knowledge/state/nevada.json",
+        "fromHash": "69ef91556537228b27be5b940d0d7beec7f3ac19cb1dc2cf2549a9ee8d0d5fd4",
+        "toHash": "eb237614b1128c13c1a4128871c989ad2f56125bceac0454be7623eb749c4e5b"
+      },
+      {
+        "jsonUrl": "http://localhost:3000/knowledge/state/new-hampshire.json",
+        "fromHash": "3fb42586d1668302b978b1fd964e6f456151028ef4a64c8479ca8f001ad82110",
+        "toHash": "1df8566c52640e5d9c0f7116e9cb84689499da074d464f6b9f4d9fee85b92b83"
+      },
+      {
+        "jsonUrl": "http://localhost:3000/knowledge/state/new-jersey.json",
+        "fromHash": "01796646580a1b7d523e7510f75e35ec7aa72c34d0c1b8863d54b1943e93bf31",
+        "toHash": "734b0b44e70cc6403a053e09f5df1454eb0de80c447b045f7e66a7c52c9b73c0"
+      },
+      {
+        "jsonUrl": "http://localhost:3000/knowledge/state/new-mexico.json",
+        "fromHash": "60c47cb88b2ab6d417af60e89d8fc7155651327a3313b9a1bf14506a09ae2b67",
+        "toHash": "17ef4952756d75447a1879dde6fdec8295f82b6a3892c01499e0437b43d16c48"
+      },
+      {
+        "jsonUrl": "http://localhost:3000/knowledge/state/new-york.json",
+        "fromHash": "7416fcf58c31e712cc648ebdc6654f7dd4dbf2be9b7571e40d2f3ca0c0c865ed",
+        "toHash": "0394ccd826dcee178e325051217dc1aa9eef3cd778615719c6944c6777b88cde"
+      },
+      {
+        "jsonUrl": "http://localhost:3000/knowledge/state/north-carolina.json",
+        "fromHash": "4139b7a08d2f00f1ae4795296ab28e420421baf104fffc58f72aa3966af30a94",
+        "toHash": "2e1a791f0124e5f3bdba151e240366a6fbd2eb4d4b689830c9e1f9352d684a2f"
+      },
+      {
+        "jsonUrl": "http://localhost:3000/knowledge/state/north-dakota.json",
+        "fromHash": "4f3e2e04d77732c4b2b4d454872b4da3cbe6fb31c4f22d91868dd831eace237a",
+        "toHash": "a91a2293f8d1a6cfa68059cbcfc10b67d42da805e5debc6c8c8d456890fa58d6"
+      },
+      {
+        "jsonUrl": "http://localhost:3000/knowledge/state/ohio.json",
+        "fromHash": "3afe6ef91b6bf1cfcce4076ddee0212e348011fc0f4e1e9571bdb3431ab83704",
+        "toHash": "a8125a386f3265303cbab26eb5725f239ba3f7379c43404a6398cc57a22e734e"
+      },
+      {
+        "jsonUrl": "http://localhost:3000/knowledge/state/oklahoma.json",
+        "fromHash": "4db059e9c4170574d10f09b50b5ad7839f64d42eea2dce83d5c746f4775cdd04",
+        "toHash": "b6c855c02ef04714fb0fda5ed62a82e5a3be27434a0e5f7a9d8fc065ce513bff"
+      },
+      {
+        "jsonUrl": "http://localhost:3000/knowledge/state/oregon.json",
+        "fromHash": "00cf4a76df03a2edcafa95f1db3f742e1cbe81470aedbc017502b40056766161",
+        "toHash": "90ce24e4927b8efc0b43f8c886bae2ca5a6a153d5114d681cc185c8331216d71"
+      },
+      {
+        "jsonUrl": "http://localhost:3000/knowledge/state/pennsylvania.json",
+        "fromHash": "3bdc3cd7e8cb421a1588385793a47e5b5ff0b00a6fa1d96803dee7a315601d3c",
+        "toHash": "105f1162f648b82abb6498a4e6cc76c55d5f7b661b29a963cfb3eb49d02ab4dc"
+      },
+      {
+        "jsonUrl": "http://localhost:3000/knowledge/state/rhode-island.json",
+        "fromHash": "4c75393dde2e43996a03be08184b87595be11782edffd3ec9ddec5710768ac79",
+        "toHash": "2c92d27da5cf1f534f50033592aa7931589d15c2ec3afd6fcc3a52db65f357b0"
+      },
+      {
+        "jsonUrl": "http://localhost:3000/knowledge/state/south-carolina.json",
+        "fromHash": "0de7d68bf3cecfa2ce4aad06324548f36cdec892ad67d7637792433ff1f160fb",
+        "toHash": "520087187de68209b10c2facad70c17e469f2428f816922e94b9d5f0b71f66d4"
+      },
+      {
+        "jsonUrl": "http://localhost:3000/knowledge/state/south-dakota.json",
+        "fromHash": "1f5571a4ace9039c65ff0685fdb6a801120f0af0311645bfc44c2c5d9b8e52f5",
+        "toHash": "848a4a27ba31f6e3c9ebec5e6dc45297abcec51732e9127eaf9afc79823b4d3b"
+      },
+      {
+        "jsonUrl": "http://localhost:3000/knowledge/state/tennessee.json",
+        "fromHash": "92b08581151ba61a548b032ff8ff56d162b9cdc890eceb73eb8d9e7e0d77457c",
+        "toHash": "3a0c71e1cb784c4cc37bdf9cf47086c19ba588894d9af008e4dba8c7ec6fe894"
+      },
+      {
+        "jsonUrl": "http://localhost:3000/knowledge/state/texas.json",
+        "fromHash": "3fcf1a905df7ffad28ef8c8915e8929b5633ac77a1fd0320adc4e4bf1f5db81e",
+        "toHash": "2335530116c1df563eaa1dec45056ba5f834066ff34e6f1a0581477525feecbd"
+      },
+      {
+        "jsonUrl": "http://localhost:3000/knowledge/state/utah.json",
+        "fromHash": "fe74b0c14b9519c322e4832ee8d64094986c4f25f49396d762535cadc631e652",
+        "toHash": "b209b08a1cb6efa8677d395622ced9f3c41e1758ec35e47d6e8684be1126c49a"
+      },
+      {
+        "jsonUrl": "http://localhost:3000/knowledge/state/vermont.json",
+        "fromHash": "18d552ccf5f56ca2db59fa9a7102672a2ed8f3032664c8f6a1b044d5f0b21187",
+        "toHash": "bb43c0e26ce8a9f338c6b6f292a0a2f945133e849e9a5bec8177482c22e5c233"
+      },
+      {
+        "jsonUrl": "http://localhost:3000/knowledge/state/virginia.json",
+        "fromHash": "810c9b630fefa019b8d28748225b563fd95a91d5275669fc6235007f49938b30",
+        "toHash": "1471d3d30a9cd37f523731612d4d86ecb684b10babd3a62b6a9f874886cce708"
+      },
+      {
+        "jsonUrl": "http://localhost:3000/knowledge/state/washington.json",
+        "fromHash": "b9b2988f43da4ac273222f7c1e8edd0bbf86d8d57e492dac696065cebeb55dc6",
+        "toHash": "1f3c9a6c2cb6962f64d03d63afc91ab2ab553651e88604cd0e785a15d9eaecfd"
+      },
+      {
+        "jsonUrl": "http://localhost:3000/knowledge/state/west-virginia.json",
+        "fromHash": "f29d734b0ed1b8c0ec034b7f8b870df8b253a55aeb2995c7ef368f064f8c0cf3",
+        "toHash": "270f277c67caa4793441943fb59265f10e11c43b30b01834247185b7ab5202fa"
+      },
+      {
+        "jsonUrl": "http://localhost:3000/knowledge/state/wisconsin.json",
+        "fromHash": "2a094d7dbdf4faf992675b97280de9260e3b9e3d6518b04a6a860d8987e4d876",
+        "toHash": "c46fb6c59941cfc4475ed013e0702f3e3235e0eb6343726dd9092a77651d94a9"
+      },
+      {
+        "jsonUrl": "http://localhost:3000/knowledge/state/wyoming.json",
+        "fromHash": "37a0289e53f8d04a24eb37b747c9edd3597ee8e8d4beb051a24d23c339139daf",
+        "toHash": "6ee1f85f3929adb9beac7cc7f3d604edfc233bf11d86197de0e424c05d98bd1a"
+      },
+      {
+        "jsonUrl": "http://localhost:3000/knowledge/vertical/ai-energy.json",
+        "fromHash": "7f116ffeb95391049d1266edddc176346a6176c6be736417154ef15e10df3daf",
+        "toHash": "1a0da846080fa5b82186ce2b5f38ddb154fc00b276bd60a571fd0eb874eb140e"
+      }
+    ]
+  },
+  "metricChanges": {
+    "states": [
+      {
+        "slug": "alabama",
+        "fieldsChanged": [
+          {
+            "field": "data.raw.avgRateCentsPerKwh",
+            "previousValue": 16.55,
+            "currentValue": 16.55,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.valueScore",
+            "previousValue": 85,
+            "currentValue": 85,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.affordabilityIndex",
+            "previousValue": 84,
+            "currentValue": 84,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.exampleBills.kwh500",
+            "previousValue": 82.75,
+            "currentValue": 82.75,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.exampleBills.kwh1000",
+            "previousValue": 165.5,
+            "currentValue": 165.5,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.exampleBills.kwh1500",
+            "previousValue": 248.25,
+            "currentValue": 248.25,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.percentileRankings.ratePercentile",
+            "previousValue": 63.27,
+            "currentValue": 63.27,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.percentileRankings.valueScorePercentile",
+            "previousValue": 36.73,
+            "currentValue": 36.73,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.percentileRankings.affordabilityPercentile",
+            "previousValue": 36.73,
+            "currentValue": 36.73,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          }
+        ]
+      },
+      {
+        "slug": "alaska",
+        "fieldsChanged": [
+          {
+            "field": "data.raw.avgRateCentsPerKwh",
+            "previousValue": 25.01,
+            "currentValue": 25.01,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.valueScore",
+            "previousValue": 57,
+            "currentValue": 57,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.affordabilityIndex",
+            "previousValue": 55,
+            "currentValue": 55,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.exampleBills.kwh500",
+            "previousValue": 125.05,
+            "currentValue": 125.05,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.exampleBills.kwh1000",
+            "previousValue": 250.1,
+            "currentValue": 250.1,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.exampleBills.kwh1500",
+            "previousValue": 375.15,
+            "currentValue": 375.15,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.percentileRankings.ratePercentile",
+            "previousValue": 87.76,
+            "currentValue": 87.76,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.percentileRankings.valueScorePercentile",
+            "previousValue": 12.24,
+            "currentValue": 12.24,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.percentileRankings.affordabilityPercentile",
+            "previousValue": 12.24,
+            "currentValue": 12.24,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          }
+        ]
+      },
+      {
+        "slug": "arizona",
+        "fieldsChanged": [
+          {
+            "field": "data.raw.avgRateCentsPerKwh",
+            "previousValue": 15.7,
+            "currentValue": 15.7,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.valueScore",
+            "previousValue": 88,
+            "currentValue": 88,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.affordabilityIndex",
+            "previousValue": 87,
+            "currentValue": 87,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.exampleBills.kwh500",
+            "previousValue": 78.5,
+            "currentValue": 78.5,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.exampleBills.kwh1000",
+            "previousValue": 157,
+            "currentValue": 157,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.exampleBills.kwh1500",
+            "previousValue": 235.5,
+            "currentValue": 235.5,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.percentileRankings.ratePercentile",
+            "previousValue": 53.06,
+            "currentValue": 53.06,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.percentileRankings.valueScorePercentile",
+            "previousValue": 46.94,
+            "currentValue": 46.94,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.percentileRankings.affordabilityPercentile",
+            "previousValue": 46.94,
+            "currentValue": 46.94,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          }
+        ]
+      },
+      {
+        "slug": "arkansas",
+        "fieldsChanged": [
+          {
+            "field": "data.raw.avgRateCentsPerKwh",
+            "previousValue": 12.83,
+            "currentValue": 12.83,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.valueScore",
+            "previousValue": 96,
+            "currentValue": 96,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.affordabilityIndex",
+            "previousValue": 96,
+            "currentValue": 96,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.exampleBills.kwh500",
+            "previousValue": 64.15,
+            "currentValue": 64.15,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.exampleBills.kwh1000",
+            "previousValue": 128.3,
+            "currentValue": 128.3,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.exampleBills.kwh1500",
+            "previousValue": 192.45,
+            "currentValue": 192.45,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.percentileRankings.ratePercentile",
+            "previousValue": 8.16,
+            "currentValue": 8.16,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.percentileRankings.valueScorePercentile",
+            "previousValue": 85.71,
+            "currentValue": 85.71,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.percentileRankings.affordabilityPercentile",
+            "previousValue": 85.71,
+            "currentValue": 85.71,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          }
+        ]
+      },
+      {
+        "slug": "california",
+        "fieldsChanged": [
+          {
+            "field": "data.raw.avgRateCentsPerKwh",
+            "previousValue": 31.14,
+            "currentValue": 31.14,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.valueScore",
+            "previousValue": 38,
+            "currentValue": 38,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.affordabilityIndex",
+            "previousValue": 34,
+            "currentValue": 34,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.exampleBills.kwh500",
+            "previousValue": 155.7,
+            "currentValue": 155.7,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.exampleBills.kwh1000",
+            "previousValue": 311.4,
+            "currentValue": 311.4,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.exampleBills.kwh1500",
+            "previousValue": 467.1,
+            "currentValue": 467.1,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.percentileRankings.ratePercentile",
+            "previousValue": 97.96,
+            "currentValue": 97.96,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.percentileRankings.valueScorePercentile",
+            "previousValue": 2.04,
+            "currentValue": 2.04,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.percentileRankings.affordabilityPercentile",
+            "previousValue": 2.04,
+            "currentValue": 2.04,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          }
+        ]
+      },
+      {
+        "slug": "colorado",
+        "fieldsChanged": [
+          {
+            "field": "data.raw.avgRateCentsPerKwh",
+            "previousValue": 15.79,
+            "currentValue": 15.79,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.valueScore",
+            "previousValue": 87,
+            "currentValue": 87,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.affordabilityIndex",
+            "previousValue": 86,
+            "currentValue": 86,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.exampleBills.kwh500",
+            "previousValue": 78.95,
+            "currentValue": 78.95,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.exampleBills.kwh1000",
+            "previousValue": 157.9,
+            "currentValue": 157.9,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.exampleBills.kwh1500",
+            "previousValue": 236.85,
+            "currentValue": 236.85,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.percentileRankings.ratePercentile",
+            "previousValue": 55.1,
+            "currentValue": 55.1,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.percentileRankings.valueScorePercentile",
+            "previousValue": 42.86,
+            "currentValue": 42.86,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.percentileRankings.affordabilityPercentile",
+            "previousValue": 42.86,
+            "currentValue": 42.86,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          }
+        ]
+      },
+      {
+        "slug": "connecticut",
+        "fieldsChanged": [
+          {
+            "field": "data.raw.avgRateCentsPerKwh",
+            "previousValue": 30.35,
+            "currentValue": 30.35,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.valueScore",
+            "previousValue": 40,
+            "currentValue": 40,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.affordabilityIndex",
+            "previousValue": 37,
+            "currentValue": 37,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.exampleBills.kwh500",
+            "previousValue": 151.75,
+            "currentValue": 151.75,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.exampleBills.kwh1000",
+            "previousValue": 303.5,
+            "currentValue": 303.5,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.exampleBills.kwh1500",
+            "previousValue": 455.25,
+            "currentValue": 455.25,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.percentileRankings.ratePercentile",
+            "previousValue": 95.92,
+            "currentValue": 95.92,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.percentileRankings.valueScorePercentile",
+            "previousValue": 4.08,
+            "currentValue": 4.08,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.percentileRankings.affordabilityPercentile",
+            "previousValue": 4.08,
+            "currentValue": 4.08,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          }
+        ]
+      },
+      {
+        "slug": "delaware",
+        "fieldsChanged": [
+          {
+            "field": "data.raw.avgRateCentsPerKwh",
+            "previousValue": 17.18,
+            "currentValue": 17.18,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.valueScore",
+            "previousValue": 83,
+            "currentValue": 83,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.affordabilityIndex",
+            "previousValue": 82,
+            "currentValue": 82,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.exampleBills.kwh500",
+            "previousValue": 85.9,
+            "currentValue": 85.9,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.exampleBills.kwh1000",
+            "previousValue": 171.8,
+            "currentValue": 171.8,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.exampleBills.kwh1500",
+            "previousValue": 257.7,
+            "currentValue": 257.7,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.percentileRankings.ratePercentile",
+            "previousValue": 69.39,
+            "currentValue": 69.39,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.percentileRankings.valueScorePercentile",
+            "previousValue": 30.61,
+            "currentValue": 30.61,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.percentileRankings.affordabilityPercentile",
+            "previousValue": 30.61,
+            "currentValue": 30.61,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          }
+        ]
+      },
+      {
+        "slug": "florida",
+        "fieldsChanged": [
+          {
+            "field": "data.raw.avgRateCentsPerKwh",
+            "previousValue": 15.27,
+            "currentValue": 15.27,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.valueScore",
+            "previousValue": 89,
+            "currentValue": 89,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.affordabilityIndex",
+            "previousValue": 88,
+            "currentValue": 88,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.exampleBills.kwh500",
+            "previousValue": 76.35,
+            "currentValue": 76.35,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.exampleBills.kwh1000",
+            "previousValue": 152.7,
+            "currentValue": 152.7,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.exampleBills.kwh1500",
+            "previousValue": 229.05,
+            "currentValue": 229.05,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.percentileRankings.ratePercentile",
+            "previousValue": 46.94,
+            "currentValue": 46.94,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.percentileRankings.valueScorePercentile",
+            "previousValue": 48.98,
+            "currentValue": 48.98,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.percentileRankings.affordabilityPercentile",
+            "previousValue": 48.98,
+            "currentValue": 48.98,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          }
+        ]
+      },
+      {
+        "slug": "georgia",
+        "fieldsChanged": [
+          {
+            "field": "data.raw.avgRateCentsPerKwh",
+            "previousValue": 15.22,
+            "currentValue": 15.22,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.valueScore",
+            "previousValue": 89,
+            "currentValue": 89,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.affordabilityIndex",
+            "previousValue": 88,
+            "currentValue": 88,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.exampleBills.kwh500",
+            "previousValue": 76.1,
+            "currentValue": 76.1,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.exampleBills.kwh1000",
+            "previousValue": 152.2,
+            "currentValue": 152.2,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.exampleBills.kwh1500",
+            "previousValue": 228.3,
+            "currentValue": 228.3,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.percentileRankings.ratePercentile",
+            "previousValue": 42.86,
+            "currentValue": 42.86,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.percentileRankings.valueScorePercentile",
+            "previousValue": 51.02,
+            "currentValue": 51.02,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.percentileRankings.affordabilityPercentile",
+            "previousValue": 51.02,
+            "currentValue": 51.02,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          }
+        ]
+      },
+      {
+        "slug": "hawaii",
+        "fieldsChanged": [
+          {
+            "field": "data.raw.avgRateCentsPerKwh",
+            "previousValue": 41.3,
+            "currentValue": 41.3,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.valueScore",
+            "previousValue": 5,
+            "currentValue": 5,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.affordabilityIndex",
+            "previousValue": 0,
+            "currentValue": 0,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.exampleBills.kwh500",
+            "previousValue": 206.5,
+            "currentValue": 206.5,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.exampleBills.kwh1000",
+            "previousValue": 413,
+            "currentValue": 413,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.exampleBills.kwh1500",
+            "previousValue": 619.4999999999999,
+            "currentValue": 619.4999999999999,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.percentileRankings.ratePercentile",
+            "previousValue": 100,
+            "currentValue": 100,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.percentileRankings.valueScorePercentile",
+            "previousValue": 0,
+            "currentValue": 0,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.percentileRankings.affordabilityPercentile",
+            "previousValue": 0,
+            "currentValue": 0,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          }
+        ]
+      },
+      {
+        "slug": "idaho",
+        "fieldsChanged": [
+          {
+            "field": "data.raw.avgRateCentsPerKwh",
+            "previousValue": 11.74,
+            "currentValue": 11.74,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.valueScore",
+            "previousValue": 100,
+            "currentValue": 100,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.affordabilityIndex",
+            "previousValue": 100,
+            "currentValue": 100,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.exampleBills.kwh500",
+            "previousValue": 58.7,
+            "currentValue": 58.7,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.exampleBills.kwh1000",
+            "previousValue": 117.4,
+            "currentValue": 117.4,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.exampleBills.kwh1500",
+            "previousValue": 176.1,
+            "currentValue": 176.1,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.percentileRankings.ratePercentile",
+            "previousValue": 0,
+            "currentValue": 0,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.percentileRankings.valueScorePercentile",
+            "previousValue": 100,
+            "currentValue": 100,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.percentileRankings.affordabilityPercentile",
+            "previousValue": 100,
+            "currentValue": 100,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          }
+        ]
+      },
+      {
+        "slug": "illinois",
+        "fieldsChanged": [
+          {
+            "field": "data.raw.avgRateCentsPerKwh",
+            "previousValue": 16.96,
+            "currentValue": 16.96,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.valueScore",
+            "previousValue": 83,
+            "currentValue": 83,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.affordabilityIndex",
+            "previousValue": 82,
+            "currentValue": 82,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.exampleBills.kwh500",
+            "previousValue": 84.8,
+            "currentValue": 84.8,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.exampleBills.kwh1000",
+            "previousValue": 169.6,
+            "currentValue": 169.6,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.exampleBills.kwh1500",
+            "previousValue": 254.4,
+            "currentValue": 254.4,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.percentileRankings.ratePercentile",
+            "previousValue": 67.35,
+            "currentValue": 67.35,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.percentileRankings.valueScorePercentile",
+            "previousValue": 32.65,
+            "currentValue": 32.65,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.percentileRankings.affordabilityPercentile",
+            "previousValue": 32.65,
+            "currentValue": 32.65,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          }
+        ]
+      },
+      {
+        "slug": "indiana",
+        "fieldsChanged": [
+          {
+            "field": "data.raw.avgRateCentsPerKwh",
+            "previousValue": 16.12,
+            "currentValue": 16.12,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.valueScore",
+            "previousValue": 86,
+            "currentValue": 86,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.affordabilityIndex",
+            "previousValue": 85,
+            "currentValue": 85,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.exampleBills.kwh500",
+            "previousValue": 80.60000000000001,
+            "currentValue": 80.60000000000001,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.exampleBills.kwh1000",
+            "previousValue": 161.20000000000002,
+            "currentValue": 161.20000000000002,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.exampleBills.kwh1500",
+            "previousValue": 241.8,
+            "currentValue": 241.8,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.percentileRankings.ratePercentile",
+            "previousValue": 61.22,
+            "currentValue": 61.22,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.percentileRankings.valueScorePercentile",
+            "previousValue": 38.78,
+            "currentValue": 38.78,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.percentileRankings.affordabilityPercentile",
+            "previousValue": 38.78,
+            "currentValue": 38.78,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          }
+        ]
+      },
+      {
+        "slug": "iowa",
+        "fieldsChanged": [
+          {
+            "field": "data.raw.avgRateCentsPerKwh",
+            "previousValue": 13.18,
+            "currentValue": 13.18,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.valueScore",
+            "previousValue": 95,
+            "currentValue": 95,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.affordabilityIndex",
+            "previousValue": 95,
+            "currentValue": 95,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.exampleBills.kwh500",
+            "previousValue": 65.9,
+            "currentValue": 65.9,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.exampleBills.kwh1000",
+            "previousValue": 131.8,
+            "currentValue": 131.8,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.exampleBills.kwh1500",
+            "previousValue": 197.7,
+            "currentValue": 197.7,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.percentileRankings.ratePercentile",
+            "previousValue": 22.45,
+            "currentValue": 22.45,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.percentileRankings.valueScorePercentile",
+            "previousValue": 73.47,
+            "currentValue": 73.47,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.percentileRankings.affordabilityPercentile",
+            "previousValue": 73.47,
+            "currentValue": 73.47,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          }
+        ]
+      },
+      {
+        "slug": "kansas",
+        "fieldsChanged": [
+          {
+            "field": "data.raw.avgRateCentsPerKwh",
+            "previousValue": 14.48,
+            "currentValue": 14.48,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.valueScore",
+            "previousValue": 91,
+            "currentValue": 91,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.affordabilityIndex",
+            "previousValue": 91,
+            "currentValue": 91,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.exampleBills.kwh500",
+            "previousValue": 72.4,
+            "currentValue": 72.4,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.exampleBills.kwh1000",
+            "previousValue": 144.8,
+            "currentValue": 144.8,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.exampleBills.kwh1500",
+            "previousValue": 217.2,
+            "currentValue": 217.2,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.percentileRankings.ratePercentile",
+            "previousValue": 36.73,
+            "currentValue": 36.73,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.percentileRankings.valueScorePercentile",
+            "previousValue": 61.22,
+            "currentValue": 61.22,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.percentileRankings.affordabilityPercentile",
+            "previousValue": 63.27,
+            "currentValue": 63.27,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          }
+        ]
+      },
+      {
+        "slug": "kentucky",
+        "fieldsChanged": [
+          {
+            "field": "data.raw.avgRateCentsPerKwh",
+            "previousValue": 13.2,
+            "currentValue": 13.2,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.valueScore",
+            "previousValue": 95,
+            "currentValue": 95,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.affordabilityIndex",
+            "previousValue": 95,
+            "currentValue": 95,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.exampleBills.kwh500",
+            "previousValue": 66,
+            "currentValue": 66,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.exampleBills.kwh1000",
+            "previousValue": 132,
+            "currentValue": 132,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.exampleBills.kwh1500",
+            "previousValue": 198,
+            "currentValue": 198,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.percentileRankings.ratePercentile",
+            "previousValue": 24.49,
+            "currentValue": 24.49,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.percentileRankings.valueScorePercentile",
+            "previousValue": 75.51,
+            "currentValue": 75.51,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.percentileRankings.affordabilityPercentile",
+            "previousValue": 75.51,
+            "currentValue": 75.51,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          }
+        ]
+      },
+      {
+        "slug": "louisiana",
+        "fieldsChanged": [
+          {
+            "field": "data.raw.avgRateCentsPerKwh",
+            "previousValue": 12.34,
+            "currentValue": 12.34,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.valueScore",
+            "previousValue": 98,
+            "currentValue": 98,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.affordabilityIndex",
+            "previousValue": 98,
+            "currentValue": 98,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.exampleBills.kwh500",
+            "previousValue": 61.7,
+            "currentValue": 61.7,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.exampleBills.kwh1000",
+            "previousValue": 123.4,
+            "currentValue": 123.4,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.exampleBills.kwh1500",
+            "previousValue": 185.1,
+            "currentValue": 185.1,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.percentileRankings.ratePercentile",
+            "previousValue": 6.12,
+            "currentValue": 6.12,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.percentileRankings.valueScorePercentile",
+            "previousValue": 93.88,
+            "currentValue": 93.88,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.percentileRankings.affordabilityPercentile",
+            "previousValue": 93.88,
+            "currentValue": 93.88,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          }
+        ]
+      },
+      {
+        "slug": "maine",
+        "fieldsChanged": [
+          {
+            "field": "data.raw.avgRateCentsPerKwh",
+            "previousValue": 27.24,
+            "currentValue": 27.24,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.valueScore",
+            "previousValue": 51,
+            "currentValue": 51,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.affordabilityIndex",
+            "previousValue": 48,
+            "currentValue": 48,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.exampleBills.kwh500",
+            "previousValue": 136.2,
+            "currentValue": 136.2,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.exampleBills.kwh1000",
+            "previousValue": 272.4,
+            "currentValue": 272.4,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.exampleBills.kwh1500",
+            "previousValue": 408.6,
+            "currentValue": 408.6,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.percentileRankings.ratePercentile",
+            "previousValue": 91.84,
+            "currentValue": 91.84,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.percentileRankings.valueScorePercentile",
+            "previousValue": 8.16,
+            "currentValue": 8.16,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.percentileRankings.affordabilityPercentile",
+            "previousValue": 8.16,
+            "currentValue": 8.16,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          }
+        ]
+      },
+      {
+        "slug": "maryland",
+        "fieldsChanged": [
+          {
+            "field": "data.raw.avgRateCentsPerKwh",
+            "previousValue": 19.29,
+            "currentValue": 19.29,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.valueScore",
+            "previousValue": 76,
+            "currentValue": 76,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.affordabilityIndex",
+            "previousValue": 74,
+            "currentValue": 74,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.exampleBills.kwh500",
+            "previousValue": 96.45,
+            "currentValue": 96.45,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.exampleBills.kwh1000",
+            "previousValue": 192.9,
+            "currentValue": 192.9,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.exampleBills.kwh1500",
+            "previousValue": 289.35,
+            "currentValue": 289.35,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.percentileRankings.ratePercentile",
+            "previousValue": 75.51,
+            "currentValue": 75.51,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.percentileRankings.valueScorePercentile",
+            "previousValue": 24.49,
+            "currentValue": 24.49,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.percentileRankings.affordabilityPercentile",
+            "previousValue": 24.49,
+            "currentValue": 24.49,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          }
+        ]
+      },
+      {
+        "slug": "massachusetts",
+        "fieldsChanged": [
+          {
+            "field": "data.raw.avgRateCentsPerKwh",
+            "previousValue": 26.01,
+            "currentValue": 26.01,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.valueScore",
+            "previousValue": 54,
+            "currentValue": 54,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.affordabilityIndex",
+            "previousValue": 52,
+            "currentValue": 52,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.exampleBills.kwh500",
+            "previousValue": 130.05,
+            "currentValue": 130.05,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.exampleBills.kwh1000",
+            "previousValue": 260.1,
+            "currentValue": 260.1,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.exampleBills.kwh1500",
+            "previousValue": 390.15,
+            "currentValue": 390.15,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.percentileRankings.ratePercentile",
+            "previousValue": 89.8,
+            "currentValue": 89.8,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.percentileRankings.valueScorePercentile",
+            "previousValue": 10.2,
+            "currentValue": 10.2,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.percentileRankings.affordabilityPercentile",
+            "previousValue": 10.2,
+            "currentValue": 10.2,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          }
+        ]
+      },
+      {
+        "slug": "michigan",
+        "fieldsChanged": [
+          {
+            "field": "data.raw.avgRateCentsPerKwh",
+            "previousValue": 19.91,
+            "currentValue": 19.91,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.valueScore",
+            "previousValue": 74,
+            "currentValue": 74,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.affordabilityIndex",
+            "previousValue": 72,
+            "currentValue": 72,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.exampleBills.kwh500",
+            "previousValue": 99.55,
+            "currentValue": 99.55,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.exampleBills.kwh1000",
+            "previousValue": 199.1,
+            "currentValue": 199.1,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.exampleBills.kwh1500",
+            "previousValue": 298.65,
+            "currentValue": 298.65,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.percentileRankings.ratePercentile",
+            "previousValue": 77.55,
+            "currentValue": 77.55,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.percentileRankings.valueScorePercentile",
+            "previousValue": 22.45,
+            "currentValue": 22.45,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.percentileRankings.affordabilityPercentile",
+            "previousValue": 22.45,
+            "currentValue": 22.45,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          }
+        ]
+      },
+      {
+        "slug": "minnesota",
+        "fieldsChanged": [
+          {
+            "field": "data.raw.avgRateCentsPerKwh",
+            "previousValue": 16.04,
+            "currentValue": 16.04,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.valueScore",
+            "previousValue": 86,
+            "currentValue": 86,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.affordabilityIndex",
+            "previousValue": 85,
+            "currentValue": 85,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.exampleBills.kwh500",
+            "previousValue": 80.2,
+            "currentValue": 80.2,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.exampleBills.kwh1000",
+            "previousValue": 160.4,
+            "currentValue": 160.4,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.exampleBills.kwh1500",
+            "previousValue": 240.6,
+            "currentValue": 240.6,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.percentileRankings.ratePercentile",
+            "previousValue": 59.18,
+            "currentValue": 59.18,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.percentileRankings.valueScorePercentile",
+            "previousValue": 40.82,
+            "currentValue": 40.82,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.percentileRankings.affordabilityPercentile",
+            "previousValue": 40.82,
+            "currentValue": 40.82,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          }
+        ]
+      },
+      {
+        "slug": "mississippi",
+        "fieldsChanged": [
+          {
+            "field": "data.raw.avgRateCentsPerKwh",
+            "previousValue": 13.91,
+            "currentValue": 13.91,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.valueScore",
+            "previousValue": 93,
+            "currentValue": 93,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.affordabilityIndex",
+            "previousValue": 93,
+            "currentValue": 93,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.exampleBills.kwh500",
+            "previousValue": 69.55,
+            "currentValue": 69.55,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.exampleBills.kwh1000",
+            "previousValue": 139.1,
+            "currentValue": 139.1,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.exampleBills.kwh1500",
+            "previousValue": 208.65,
+            "currentValue": 208.65,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.percentileRankings.ratePercentile",
+            "previousValue": 30.61,
+            "currentValue": 30.61,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.percentileRankings.valueScorePercentile",
+            "previousValue": 67.35,
+            "currentValue": 67.35,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.percentileRankings.affordabilityPercentile",
+            "previousValue": 69.39,
+            "currentValue": 69.39,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          }
+        ]
+      },
+      {
+        "slug": "missouri",
+        "fieldsChanged": [
+          {
+            "field": "data.raw.avgRateCentsPerKwh",
+            "previousValue": 13.37,
+            "currentValue": 13.37,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.valueScore",
+            "previousValue": 94,
+            "currentValue": 94,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.affordabilityIndex",
+            "previousValue": 94,
+            "currentValue": 94,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.exampleBills.kwh500",
+            "previousValue": 66.85,
+            "currentValue": 66.85,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.exampleBills.kwh1000",
+            "previousValue": 133.7,
+            "currentValue": 133.7,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.exampleBills.kwh1500",
+            "previousValue": 200.55,
+            "currentValue": 200.55,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.percentileRankings.ratePercentile",
+            "previousValue": 28.57,
+            "currentValue": 28.57,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.percentileRankings.valueScorePercentile",
+            "previousValue": 71.43,
+            "currentValue": 71.43,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.percentileRankings.affordabilityPercentile",
+            "previousValue": 71.43,
+            "currentValue": 71.43,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          }
+        ]
+      },
+      {
+        "slug": "montana",
+        "fieldsChanged": [
+          {
+            "field": "data.raw.avgRateCentsPerKwh",
+            "previousValue": 13.12,
+            "currentValue": 13.12,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.valueScore",
+            "previousValue": 95,
+            "currentValue": 95,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.affordabilityIndex",
+            "previousValue": 95,
+            "currentValue": 95,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.exampleBills.kwh500",
+            "previousValue": 65.6,
+            "currentValue": 65.6,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.exampleBills.kwh1000",
+            "previousValue": 131.2,
+            "currentValue": 131.2,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.exampleBills.kwh1500",
+            "previousValue": 196.8,
+            "currentValue": 196.8,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.percentileRankings.ratePercentile",
+            "previousValue": 16.33,
+            "currentValue": 16.33,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.percentileRankings.valueScorePercentile",
+            "previousValue": 77.55,
+            "currentValue": 77.55,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.percentileRankings.affordabilityPercentile",
+            "previousValue": 77.55,
+            "currentValue": 77.55,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          }
+        ]
+      },
+      {
+        "slug": "nebraska",
+        "fieldsChanged": [
+          {
+            "field": "data.raw.avgRateCentsPerKwh",
+            "previousValue": 12.19,
+            "currentValue": 12.19,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.valueScore",
+            "previousValue": 98,
+            "currentValue": 98,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.affordabilityIndex",
+            "previousValue": 98,
+            "currentValue": 98,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.exampleBills.kwh500",
+            "previousValue": 60.95,
+            "currentValue": 60.95,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.exampleBills.kwh1000",
+            "previousValue": 121.9,
+            "currentValue": 121.9,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.exampleBills.kwh1500",
+            "previousValue": 182.85,
+            "currentValue": 182.85,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.percentileRankings.ratePercentile",
+            "previousValue": 4.08,
+            "currentValue": 4.08,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.percentileRankings.valueScorePercentile",
+            "previousValue": 95.92,
+            "currentValue": 95.92,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.percentileRankings.affordabilityPercentile",
+            "previousValue": 95.92,
+            "currentValue": 95.92,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          }
+        ]
+      },
+      {
+        "slug": "nevada",
+        "fieldsChanged": [
+          {
+            "field": "data.raw.avgRateCentsPerKwh",
+            "previousValue": 13.16,
+            "currentValue": 13.16,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.valueScore",
+            "previousValue": 95,
+            "currentValue": 95,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.affordabilityIndex",
+            "previousValue": 95,
+            "currentValue": 95,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.exampleBills.kwh500",
+            "previousValue": 65.8,
+            "currentValue": 65.8,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.exampleBills.kwh1000",
+            "previousValue": 131.6,
+            "currentValue": 131.6,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.exampleBills.kwh1500",
+            "previousValue": 197.4,
+            "currentValue": 197.4,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.percentileRankings.ratePercentile",
+            "previousValue": 20.41,
+            "currentValue": 20.41,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.percentileRankings.valueScorePercentile",
+            "previousValue": 79.59,
+            "currentValue": 79.59,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.percentileRankings.affordabilityPercentile",
+            "previousValue": 79.59,
+            "currentValue": 79.59,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          }
+        ]
+      },
+      {
+        "slug": "new-hampshire",
+        "fieldsChanged": [
+          {
+            "field": "data.raw.avgRateCentsPerKwh",
+            "previousValue": 23.35,
+            "currentValue": 23.35,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.valueScore",
+            "previousValue": 63,
+            "currentValue": 63,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.affordabilityIndex",
+            "previousValue": 61,
+            "currentValue": 61,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.exampleBills.kwh500",
+            "previousValue": 116.75,
+            "currentValue": 116.75,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.exampleBills.kwh1000",
+            "previousValue": 233.5,
+            "currentValue": 233.5,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.exampleBills.kwh1500",
+            "previousValue": 350.25,
+            "currentValue": 350.25,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.percentileRankings.ratePercentile",
+            "previousValue": 83.67,
+            "currentValue": 83.67,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.percentileRankings.valueScorePercentile",
+            "previousValue": 16.33,
+            "currentValue": 16.33,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.percentileRankings.affordabilityPercentile",
+            "previousValue": 16.33,
+            "currentValue": 16.33,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          }
+        ]
+      },
+      {
+        "slug": "new-jersey",
+        "fieldsChanged": [
+          {
+            "field": "data.raw.avgRateCentsPerKwh",
+            "previousValue": 22.15,
+            "currentValue": 22.15,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.valueScore",
+            "previousValue": 67,
+            "currentValue": 67,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.affordabilityIndex",
+            "previousValue": 65,
+            "currentValue": 65,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.exampleBills.kwh500",
+            "previousValue": 110.75,
+            "currentValue": 110.75,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.exampleBills.kwh1000",
+            "previousValue": 221.5,
+            "currentValue": 221.5,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.exampleBills.kwh1500",
+            "previousValue": 332.25,
+            "currentValue": 332.25,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.percentileRankings.ratePercentile",
+            "previousValue": 79.59,
+            "currentValue": 79.59,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.percentileRankings.valueScorePercentile",
+            "previousValue": 20.41,
+            "currentValue": 20.41,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.percentileRankings.affordabilityPercentile",
+            "previousValue": 20.41,
+            "currentValue": 20.41,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          }
+        ]
+      },
+      {
+        "slug": "new-mexico",
+        "fieldsChanged": [
+          {
+            "field": "data.raw.avgRateCentsPerKwh",
+            "previousValue": 15.29,
+            "currentValue": 15.29,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.valueScore",
+            "previousValue": 89,
+            "currentValue": 89,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.affordabilityIndex",
+            "previousValue": 88,
+            "currentValue": 88,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.exampleBills.kwh500",
+            "previousValue": 76.45,
+            "currentValue": 76.45,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.exampleBills.kwh1000",
+            "previousValue": 152.9,
+            "currentValue": 152.9,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.exampleBills.kwh1500",
+            "previousValue": 229.35,
+            "currentValue": 229.35,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.percentileRankings.ratePercentile",
+            "previousValue": 48.98,
+            "currentValue": 48.98,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.percentileRankings.valueScorePercentile",
+            "previousValue": 53.06,
+            "currentValue": 53.06,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.percentileRankings.affordabilityPercentile",
+            "previousValue": 53.06,
+            "currentValue": 53.06,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          }
+        ]
+      },
+      {
+        "slug": "new-york",
+        "fieldsChanged": [
+          {
+            "field": "data.raw.avgRateCentsPerKwh",
+            "previousValue": 23.87,
+            "currentValue": 23.87,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.valueScore",
+            "previousValue": 61,
+            "currentValue": 61,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.affordabilityIndex",
+            "previousValue": 59,
+            "currentValue": 59,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.exampleBills.kwh500",
+            "previousValue": 119.35,
+            "currentValue": 119.35,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.exampleBills.kwh1000",
+            "previousValue": 238.7,
+            "currentValue": 238.7,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.exampleBills.kwh1500",
+            "previousValue": 358.05,
+            "currentValue": 358.05,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.percentileRankings.ratePercentile",
+            "previousValue": 85.71,
+            "currentValue": 85.71,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.percentileRankings.valueScorePercentile",
+            "previousValue": 14.29,
+            "currentValue": 14.29,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.percentileRankings.affordabilityPercentile",
+            "previousValue": 14.29,
+            "currentValue": 14.29,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          }
+        ]
+      },
+      {
+        "slug": "north-carolina",
+        "fieldsChanged": [
+          {
+            "field": "data.raw.avgRateCentsPerKwh",
+            "previousValue": 14.08,
+            "currentValue": 14.08,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.valueScore",
+            "previousValue": 92,
+            "currentValue": 92,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.affordabilityIndex",
+            "previousValue": 92,
+            "currentValue": 92,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.exampleBills.kwh500",
+            "previousValue": 70.4,
+            "currentValue": 70.4,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.exampleBills.kwh1000",
+            "previousValue": 140.8,
+            "currentValue": 140.8,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.exampleBills.kwh1500",
+            "previousValue": 211.2,
+            "currentValue": 211.2,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.percentileRankings.ratePercentile",
+            "previousValue": 34.69,
+            "currentValue": 34.69,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.percentileRankings.valueScorePercentile",
+            "previousValue": 65.31,
+            "currentValue": 65.31,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.percentileRankings.affordabilityPercentile",
+            "previousValue": 65.31,
+            "currentValue": 65.31,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          }
+        ]
+      },
+      {
+        "slug": "north-dakota",
+        "fieldsChanged": [
+          {
+            "field": "data.raw.avgRateCentsPerKwh",
+            "previousValue": 11.92,
+            "currentValue": 11.92,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.valueScore",
+            "previousValue": 99,
+            "currentValue": 99,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.affordabilityIndex",
+            "previousValue": 99,
+            "currentValue": 99,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.exampleBills.kwh500",
+            "previousValue": 59.6,
+            "currentValue": 59.6,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.exampleBills.kwh1000",
+            "previousValue": 119.2,
+            "currentValue": 119.2,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.exampleBills.kwh1500",
+            "previousValue": 178.8,
+            "currentValue": 178.8,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.percentileRankings.ratePercentile",
+            "previousValue": 2.04,
+            "currentValue": 2.04,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.percentileRankings.valueScorePercentile",
+            "previousValue": 97.96,
+            "currentValue": 97.96,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.percentileRankings.affordabilityPercentile",
+            "previousValue": 97.96,
+            "currentValue": 97.96,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          }
+        ]
+      },
+      {
+        "slug": "ohio",
+        "fieldsChanged": [
+          {
+            "field": "data.raw.avgRateCentsPerKwh",
+            "previousValue": 16.9,
+            "currentValue": 16.9,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.valueScore",
+            "previousValue": 84,
+            "currentValue": 84,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.affordabilityIndex",
+            "previousValue": 83,
+            "currentValue": 83,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.exampleBills.kwh500",
+            "previousValue": 84.5,
+            "currentValue": 84.5,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.exampleBills.kwh1000",
+            "previousValue": 169,
+            "currentValue": 169,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.exampleBills.kwh1500",
+            "previousValue": 253.49999999999997,
+            "currentValue": 253.49999999999997,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.percentileRankings.ratePercentile",
+            "previousValue": 65.31,
+            "currentValue": 65.31,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.percentileRankings.valueScorePercentile",
+            "previousValue": 34.69,
+            "currentValue": 34.69,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.percentileRankings.affordabilityPercentile",
+            "previousValue": 34.69,
+            "currentValue": 34.69,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          }
+        ]
+      },
+      {
+        "slug": "oklahoma",
+        "fieldsChanged": [
+          {
+            "field": "data.raw.avgRateCentsPerKwh",
+            "previousValue": 13.05,
+            "currentValue": 13.05,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.valueScore",
+            "previousValue": 96,
+            "currentValue": 96,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.affordabilityIndex",
+            "previousValue": 96,
+            "currentValue": 96,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.exampleBills.kwh500",
+            "previousValue": 65.25,
+            "currentValue": 65.25,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.exampleBills.kwh1000",
+            "previousValue": 130.5,
+            "currentValue": 130.5,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.exampleBills.kwh1500",
+            "previousValue": 195.75,
+            "currentValue": 195.75,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.percentileRankings.ratePercentile",
+            "previousValue": 14.29,
+            "currentValue": 14.29,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.percentileRankings.valueScorePercentile",
+            "previousValue": 87.76,
+            "currentValue": 87.76,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.percentileRankings.affordabilityPercentile",
+            "previousValue": 87.76,
+            "currentValue": 87.76,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          }
+        ]
+      },
+      {
+        "slug": "oregon",
+        "fieldsChanged": [
+          {
+            "field": "data.raw.avgRateCentsPerKwh",
+            "previousValue": 15,
+            "currentValue": 15,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.valueScore",
+            "previousValue": 90,
+            "currentValue": 90,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.affordabilityIndex",
+            "previousValue": 89,
+            "currentValue": 89,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.exampleBills.kwh500",
+            "previousValue": 75,
+            "currentValue": 75,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.exampleBills.kwh1000",
+            "previousValue": 150,
+            "currentValue": 150,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.exampleBills.kwh1500",
+            "previousValue": 225,
+            "currentValue": 225,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.percentileRankings.ratePercentile",
+            "previousValue": 40.82,
+            "currentValue": 40.82,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.percentileRankings.valueScorePercentile",
+            "previousValue": 59.18,
+            "currentValue": 59.18,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.percentileRankings.affordabilityPercentile",
+            "previousValue": 59.18,
+            "currentValue": 59.18,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          }
+        ]
+      },
+      {
+        "slug": "pennsylvania",
+        "fieldsChanged": [
+          {
+            "field": "data.raw.avgRateCentsPerKwh",
+            "previousValue": 17.78,
+            "currentValue": 17.78,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.valueScore",
+            "previousValue": 81,
+            "currentValue": 81,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.affordabilityIndex",
+            "previousValue": 80,
+            "currentValue": 80,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.exampleBills.kwh500",
+            "previousValue": 88.9,
+            "currentValue": 88.9,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.exampleBills.kwh1000",
+            "previousValue": 177.8,
+            "currentValue": 177.8,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.exampleBills.kwh1500",
+            "previousValue": 266.7,
+            "currentValue": 266.7,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.percentileRankings.ratePercentile",
+            "previousValue": 71.43,
+            "currentValue": 71.43,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.percentileRankings.valueScorePercentile",
+            "previousValue": 28.57,
+            "currentValue": 28.57,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.percentileRankings.affordabilityPercentile",
+            "previousValue": 28.57,
+            "currentValue": 28.57,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          }
+        ]
+      },
+      {
+        "slug": "rhode-island",
+        "fieldsChanged": [
+          {
+            "field": "data.raw.avgRateCentsPerKwh",
+            "previousValue": 28.42,
+            "currentValue": 28.42,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.valueScore",
+            "previousValue": 47,
+            "currentValue": 47,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.affordabilityIndex",
+            "previousValue": 44,
+            "currentValue": 44,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.exampleBills.kwh500",
+            "previousValue": 142.1,
+            "currentValue": 142.1,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.exampleBills.kwh1000",
+            "previousValue": 284.2,
+            "currentValue": 284.2,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.exampleBills.kwh1500",
+            "previousValue": 426.3,
+            "currentValue": 426.3,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.percentileRankings.ratePercentile",
+            "previousValue": 93.88,
+            "currentValue": 93.88,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.percentileRankings.valueScorePercentile",
+            "previousValue": 6.12,
+            "currentValue": 6.12,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.percentileRankings.affordabilityPercentile",
+            "previousValue": 6.12,
+            "currentValue": 6.12,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          }
+        ]
+      },
+      {
+        "slug": "south-carolina",
+        "fieldsChanged": [
+          {
+            "field": "data.raw.avgRateCentsPerKwh",
+            "previousValue": 14.72,
+            "currentValue": 14.72,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.valueScore",
+            "previousValue": 91,
+            "currentValue": 91,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.affordabilityIndex",
+            "previousValue": 90,
+            "currentValue": 90,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.exampleBills.kwh500",
+            "previousValue": 73.6,
+            "currentValue": 73.6,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.exampleBills.kwh1000",
+            "previousValue": 147.2,
+            "currentValue": 147.2,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.exampleBills.kwh1500",
+            "previousValue": 220.8,
+            "currentValue": 220.8,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.percentileRankings.ratePercentile",
+            "previousValue": 38.78,
+            "currentValue": 38.78,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.percentileRankings.valueScorePercentile",
+            "previousValue": 63.27,
+            "currentValue": 63.27,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.percentileRankings.affordabilityPercentile",
+            "previousValue": 61.22,
+            "currentValue": 61.22,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          }
+        ]
+      },
+      {
+        "slug": "south-dakota",
+        "fieldsChanged": [
+          {
+            "field": "data.raw.avgRateCentsPerKwh",
+            "previousValue": 13.14,
+            "currentValue": 13.14,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.valueScore",
+            "previousValue": 95,
+            "currentValue": 95,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.affordabilityIndex",
+            "previousValue": 95,
+            "currentValue": 95,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.exampleBills.kwh500",
+            "previousValue": 65.7,
+            "currentValue": 65.7,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.exampleBills.kwh1000",
+            "previousValue": 131.4,
+            "currentValue": 131.4,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.exampleBills.kwh1500",
+            "previousValue": 197.1,
+            "currentValue": 197.1,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.percentileRankings.ratePercentile",
+            "previousValue": 18.37,
+            "currentValue": 18.37,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.percentileRankings.valueScorePercentile",
+            "previousValue": 81.63,
+            "currentValue": 81.63,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.percentileRankings.affordabilityPercentile",
+            "previousValue": 81.63,
+            "currentValue": 81.63,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          }
+        ]
+      },
+      {
+        "slug": "tennessee",
+        "fieldsChanged": [
+          {
+            "field": "data.raw.avgRateCentsPerKwh",
+            "previousValue": 13.28,
+            "currentValue": 13.28,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.valueScore",
+            "previousValue": 95,
+            "currentValue": 95,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.affordabilityIndex",
+            "previousValue": 95,
+            "currentValue": 95,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.exampleBills.kwh500",
+            "previousValue": 66.4,
+            "currentValue": 66.4,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.exampleBills.kwh1000",
+            "previousValue": 132.8,
+            "currentValue": 132.8,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.exampleBills.kwh1500",
+            "previousValue": 199.2,
+            "currentValue": 199.2,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.percentileRankings.ratePercentile",
+            "previousValue": 26.53,
+            "currentValue": 26.53,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.percentileRankings.valueScorePercentile",
+            "previousValue": 83.67,
+            "currentValue": 83.67,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.percentileRankings.affordabilityPercentile",
+            "previousValue": 83.67,
+            "currentValue": 83.67,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          }
+        ]
+      },
+      {
+        "slug": "texas",
+        "fieldsChanged": [
+          {
+            "field": "data.raw.avgRateCentsPerKwh",
+            "previousValue": 15.83,
+            "currentValue": 15.83,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.valueScore",
+            "previousValue": 87,
+            "currentValue": 87,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.affordabilityIndex",
+            "previousValue": 86,
+            "currentValue": 86,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.exampleBills.kwh500",
+            "previousValue": 79.15,
+            "currentValue": 79.15,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.exampleBills.kwh1000",
+            "previousValue": 158.3,
+            "currentValue": 158.3,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.exampleBills.kwh1500",
+            "previousValue": 237.45,
+            "currentValue": 237.45,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.percentileRankings.ratePercentile",
+            "previousValue": 57.14,
+            "currentValue": 57.14,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.percentileRankings.valueScorePercentile",
+            "previousValue": 44.9,
+            "currentValue": 44.9,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.percentileRankings.affordabilityPercentile",
+            "previousValue": 44.9,
+            "currentValue": 44.9,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          }
+        ]
+      },
+      {
+        "slug": "utah",
+        "fieldsChanged": [
+          {
+            "field": "data.raw.avgRateCentsPerKwh",
+            "previousValue": 12.97,
+            "currentValue": 12.97,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.valueScore",
+            "previousValue": 96,
+            "currentValue": 96,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.affordabilityIndex",
+            "previousValue": 96,
+            "currentValue": 96,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.exampleBills.kwh500",
+            "previousValue": 64.85,
+            "currentValue": 64.85,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.exampleBills.kwh1000",
+            "previousValue": 129.7,
+            "currentValue": 129.7,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.exampleBills.kwh1500",
+            "previousValue": 194.55,
+            "currentValue": 194.55,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.percentileRankings.ratePercentile",
+            "previousValue": 12.24,
+            "currentValue": 12.24,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.percentileRankings.valueScorePercentile",
+            "previousValue": 89.8,
+            "currentValue": 89.8,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.percentileRankings.affordabilityPercentile",
+            "previousValue": 89.8,
+            "currentValue": 89.8,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          }
+        ]
+      },
+      {
+        "slug": "vermont",
+        "fieldsChanged": [
+          {
+            "field": "data.raw.avgRateCentsPerKwh",
+            "previousValue": 22.58,
+            "currentValue": 22.58,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.valueScore",
+            "previousValue": 65,
+            "currentValue": 65,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.affordabilityIndex",
+            "previousValue": 63,
+            "currentValue": 63,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.exampleBills.kwh500",
+            "previousValue": 112.9,
+            "currentValue": 112.9,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.exampleBills.kwh1000",
+            "previousValue": 225.8,
+            "currentValue": 225.8,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.exampleBills.kwh1500",
+            "previousValue": 338.7,
+            "currentValue": 338.7,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.percentileRankings.ratePercentile",
+            "previousValue": 81.63,
+            "currentValue": 81.63,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.percentileRankings.valueScorePercentile",
+            "previousValue": 18.37,
+            "currentValue": 18.37,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.percentileRankings.affordabilityPercentile",
+            "previousValue": 18.37,
+            "currentValue": 18.37,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          }
+        ]
+      },
+      {
+        "slug": "virginia",
+        "fieldsChanged": [
+          {
+            "field": "data.raw.avgRateCentsPerKwh",
+            "previousValue": 15.26,
+            "currentValue": 15.26,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.valueScore",
+            "previousValue": 89,
+            "currentValue": 89,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.affordabilityIndex",
+            "previousValue": 88,
+            "currentValue": 88,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.exampleBills.kwh500",
+            "previousValue": 76.3,
+            "currentValue": 76.3,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.exampleBills.kwh1000",
+            "previousValue": 152.6,
+            "currentValue": 152.6,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.exampleBills.kwh1500",
+            "previousValue": 228.9,
+            "currentValue": 228.9,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.percentileRankings.ratePercentile",
+            "previousValue": 44.9,
+            "currentValue": 44.9,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.percentileRankings.valueScorePercentile",
+            "previousValue": 55.1,
+            "currentValue": 55.1,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.percentileRankings.affordabilityPercentile",
+            "previousValue": 55.1,
+            "currentValue": 55.1,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          }
+        ]
+      },
+      {
+        "slug": "washington",
+        "fieldsChanged": [
+          {
+            "field": "data.raw.avgRateCentsPerKwh",
+            "previousValue": 12.86,
+            "currentValue": 12.86,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.valueScore",
+            "previousValue": 96,
+            "currentValue": 96,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.affordabilityIndex",
+            "previousValue": 96,
+            "currentValue": 96,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.exampleBills.kwh500",
+            "previousValue": 64.3,
+            "currentValue": 64.3,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.exampleBills.kwh1000",
+            "previousValue": 128.6,
+            "currentValue": 128.6,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.exampleBills.kwh1500",
+            "previousValue": 192.9,
+            "currentValue": 192.9,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.percentileRankings.ratePercentile",
+            "previousValue": 10.2,
+            "currentValue": 10.2,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.percentileRankings.valueScorePercentile",
+            "previousValue": 91.84,
+            "currentValue": 91.84,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.percentileRankings.affordabilityPercentile",
+            "previousValue": 91.84,
+            "currentValue": 91.84,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          }
+        ]
+      },
+      {
+        "slug": "west-virginia",
+        "fieldsChanged": [
+          {
+            "field": "data.raw.avgRateCentsPerKwh",
+            "previousValue": 15.39,
+            "currentValue": 15.39,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.valueScore",
+            "previousValue": 89,
+            "currentValue": 89,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.affordabilityIndex",
+            "previousValue": 88,
+            "currentValue": 88,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.exampleBills.kwh500",
+            "previousValue": 76.95,
+            "currentValue": 76.95,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.exampleBills.kwh1000",
+            "previousValue": 153.9,
+            "currentValue": 153.9,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.exampleBills.kwh1500",
+            "previousValue": 230.85,
+            "currentValue": 230.85,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.percentileRankings.ratePercentile",
+            "previousValue": 51.02,
+            "currentValue": 51.02,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.percentileRankings.valueScorePercentile",
+            "previousValue": 57.14,
+            "currentValue": 57.14,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.percentileRankings.affordabilityPercentile",
+            "previousValue": 57.14,
+            "currentValue": 57.14,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          }
+        ]
+      },
+      {
+        "slug": "wisconsin",
+        "fieldsChanged": [
+          {
+            "field": "data.raw.avgRateCentsPerKwh",
+            "previousValue": 18.04,
+            "currentValue": 18.04,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.valueScore",
+            "previousValue": 80,
+            "currentValue": 80,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.affordabilityIndex",
+            "previousValue": 79,
+            "currentValue": 79,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.exampleBills.kwh500",
+            "previousValue": 90.2,
+            "currentValue": 90.2,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.exampleBills.kwh1000",
+            "previousValue": 180.4,
+            "currentValue": 180.4,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.exampleBills.kwh1500",
+            "previousValue": 270.6,
+            "currentValue": 270.6,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.percentileRankings.ratePercentile",
+            "previousValue": 73.47,
+            "currentValue": 73.47,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.percentileRankings.valueScorePercentile",
+            "previousValue": 26.53,
+            "currentValue": 26.53,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.percentileRankings.affordabilityPercentile",
+            "previousValue": 26.53,
+            "currentValue": 26.53,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          }
+        ]
+      },
+      {
+        "slug": "wyoming",
+        "fieldsChanged": [
+          {
+            "field": "data.raw.avgRateCentsPerKwh",
+            "previousValue": 14.02,
+            "currentValue": 14.02,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.valueScore",
+            "previousValue": 93,
+            "currentValue": 93,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.affordabilityIndex",
+            "previousValue": 92,
+            "currentValue": 92,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.exampleBills.kwh500",
+            "previousValue": 70.1,
+            "currentValue": 70.1,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.exampleBills.kwh1000",
+            "previousValue": 140.2,
+            "currentValue": 140.2,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.exampleBills.kwh1500",
+            "previousValue": 210.3,
+            "currentValue": 210.3,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.percentileRankings.ratePercentile",
+            "previousValue": 32.65,
+            "currentValue": 32.65,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.percentileRankings.valueScorePercentile",
+            "previousValue": 69.39,
+            "currentValue": 69.39,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          },
+          {
+            "field": "data.derived.percentileRankings.affordabilityPercentile",
+            "previousValue": 67.35,
+            "currentValue": 67.35,
+            "absoluteDelta": 0,
+            "percentDelta": 0
+          }
+        ]
+      }
+    ],
+    "national": [
+      {
+        "field": "data.derived.averageRate",
+        "previousValue": 17.57,
+        "currentValue": 17.57,
+        "absoluteDelta": 0,
+        "percentDelta": 0
+      },
+      {
+        "field": "data.derived.medianRate",
+        "previousValue": 15.34,
+        "currentValue": 15.34,
+        "absoluteDelta": 0,
+        "percentDelta": 0
+      },
+      {
+        "field": "data.derived.dispersionMetrics.stdDev",
+        "previousValue": 6.1,
+        "currentValue": 6.1,
+        "absoluteDelta": 0,
+        "percentDelta": 0
+      },
+      {
+        "field": "data.derived.dispersionMetrics.min",
+        "previousValue": 11.74,
+        "currentValue": 11.74,
+        "absoluteDelta": 0,
+        "percentDelta": 0
+      },
+      {
+        "field": "data.derived.dispersionMetrics.max",
+        "previousValue": 41.3,
+        "currentValue": 41.3,
+        "absoluteDelta": 0,
+        "percentDelta": 0
+      },
+      {
+        "field": "data.derived.dispersionMetrics.spread",
+        "previousValue": 29.56,
+        "currentValue": 29.56,
+        "absoluteDelta": 0,
+        "percentDelta": 0
+      },
+      {
+        "field": "data.derived.highestState.rate",
+        "previousValue": 41.3,
+        "currentValue": 41.3,
+        "absoluteDelta": 0,
+        "percentDelta": 0
+      },
+      {
+        "field": "data.derived.lowestState.rate",
+        "previousValue": 11.74,
+        "currentValue": 11.74,
+        "absoluteDelta": 0,
+        "percentDelta": 0
+      }
+    ]
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "schemaVersion": "1.0",
+  "generatedAt": "2026-03-09T17:50:09.701Z",
+  "sourceVersion": "v2",
+  "contractVersion": "1.0.0",
+  "stateA": "pennsylvania",
+  "stateB": "south-carolina",
+  "nameA": "Pennsylvania",
+  "nameB": "South Carolina",
+  "rateA": 17.78,
+  "rateB": 14.72,
+  "differenceCents": 3.06,
+  "differencePercent": 20.8,
+  "higherCostState": "Pennsylvania",
+  "lowerCostState": "South Carolina"
+}

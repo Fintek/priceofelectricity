@@ -1,0 +1,16 @@
+{
+  "schemaVersion": "1.0",
+  "generatedAt": "2026-03-09T17:50:09.701Z",
+  "sourceVersion": "v2",
+  "contractVersion": "1.0.0",
+  "stateA": "maryland",
+  "stateB": "texas",
+  "nameA": "Maryland",
+  "nameB": "Texas",
+  "rateA": 19.29,
+  "rateB": 15.83,
+  "differenceCents": 3.46,
+  "differencePercent": 21.9,
+  "higherCostState": "Maryland",
+  "lowerCostState": "Texas"
+}

@@ -1,0 +1,23 @@
+{
+  "schemaVersion": "1.0",
+  "generatedAt": "2026-03-09T17:50:09.701Z",
+  "subject": "state",
+  "id": "maryland",
+  "insights": [
+    {
+      "type": "price",
+      "statement": "Electricity in Maryland costs 10% more than the national average.",
+      "confidence": "high"
+    },
+    {
+      "type": "ranking",
+      "statement": "Maryland ranks #13 among U.S. states for electricity prices.",
+      "confidence": "high"
+    },
+    {
+      "type": "trend",
+      "statement": "Maryland shows an accelerating electricity price trend based on recent historical data.",
+      "confidence": "medium"
+    }
+  ]
+}

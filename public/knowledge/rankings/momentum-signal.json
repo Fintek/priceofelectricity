@@ -1,0 +1,702 @@
+{
+  "meta": {
+    "schemaVersion": "1.0",
+    "id": "knowledge:rankings:momentum-signal",
+    "type": "rankings",
+    "slug": "momentum-signal",
+    "title": "Electricity Price Momentum Signal Ranking",
+    "description": "States where electricity prices are accelerating, rising, stable, or falling.",
+    "canonicalUrl": "http://localhost:3000/knowledge/rankings/momentum-signal",
+    "jsonUrl": "http://localhost:3000/knowledge/rankings/momentum-signal.json",
+    "updatedAt": "2026-03-09T17:50:09.701Z",
+    "sourceVersion": "v2",
+    "temporalContext": {
+      "sourceVersion": "v2",
+      "isLatest": true
+    },
+    "provenance": [
+      {
+        "id": "eia-retail-sales-923",
+        "sourceName": "U.S. Energy Information Administration (EIA) Retail Sales of Electricity",
+        "sourceUrl": "https://api.eia.gov/v2/electricity/retail-sales/data/",
+        "publisher": "U.S. Energy Information Administration",
+        "license": "U.S. Government work (public domain)",
+        "notes": "Primary source for state residential electricity rate series used by snapshots.",
+        "retrievedAt": "2026-03-09T17:50:09.701Z"
+      },
+      {
+        "id": "poe-dataset-affordability-csv",
+        "sourceName": "PriceOfElectricity.com dataset endpoint: affordability.csv",
+        "sourceUrl": "http://localhost:3000/api/datasets/affordability.csv",
+        "publisher": "PriceOfElectricity.com",
+        "license": "Site content license",
+        "retrievedAt": "2026-03-09T17:50:09.701Z"
+      },
+      {
+        "id": "poe-dataset-states-json",
+        "sourceName": "PriceOfElectricity.com dataset endpoint: states.json",
+        "sourceUrl": "http://localhost:3000/api/datasets/states.json",
+        "publisher": "PriceOfElectricity.com",
+        "license": "Site content license",
+        "retrievedAt": "2026-03-09T17:50:09.701Z"
+      },
+      {
+        "id": "poe-dataset-value-ranking-csv",
+        "sourceName": "PriceOfElectricity.com dataset endpoint: value-ranking.csv",
+        "sourceUrl": "http://localhost:3000/api/datasets/value-ranking.csv",
+        "publisher": "PriceOfElectricity.com",
+        "license": "Site content license",
+        "retrievedAt": "2026-03-09T17:50:09.701Z"
+      },
+      {
+        "id": "poe-methodology-epi",
+        "sourceName": "PriceOfElectricity.com methodology: Electricity Price Index",
+        "sourceUrl": "http://localhost:3000/methodology/electricity-price-index",
+        "publisher": "PriceOfElectricity.com",
+        "license": "Site content license",
+        "retrievedAt": "2026-03-09T17:50:09.701Z"
+      },
+      {
+        "id": "poe-methodology-value-score",
+        "sourceName": "PriceOfElectricity.com methodology: Value Score",
+        "sourceUrl": "http://localhost:3000/methodology/value-score",
+        "publisher": "PriceOfElectricity.com",
+        "license": "Site content license",
+        "retrievedAt": "2026-03-09T17:50:09.701Z"
+      }
+    ],
+    "fieldProvenance": [
+      {
+        "field": "data.rankingType",
+        "provenanceIds": [
+          "poe-methodology-epi",
+          "poe-methodology-value-score"
+        ]
+      },
+      {
+        "field": "data.sortedStates",
+        "provenanceIds": [
+          "eia-retail-sales-923",
+          "poe-dataset-states-json",
+          "poe-dataset-affordability-csv",
+          "poe-dataset-value-ranking-csv"
+        ]
+      },
+      {
+        "field": "data.generatedAt",
+        "provenanceIds": [
+          "poe-dataset-states-json"
+        ]
+      }
+    ],
+    "citations": [
+      {
+        "sourceName": "U.S. Energy Information Administration (EIA) Retail Sales of Electricity",
+        "sourceUrl": "https://api.eia.gov/v2/electricity/retail-sales/data/",
+        "retrievedAt": "2026-03-09T17:50:09.701Z",
+        "notes": "Primary source for state residential electricity rate series used by snapshots."
+      },
+      {
+        "sourceName": "PriceOfElectricity.com dataset endpoint: affordability.csv",
+        "sourceUrl": "http://localhost:3000/api/datasets/affordability.csv",
+        "retrievedAt": "2026-03-09T17:50:09.701Z"
+      },
+      {
+        "sourceName": "PriceOfElectricity.com dataset endpoint: states.json",
+        "sourceUrl": "http://localhost:3000/api/datasets/states.json",
+        "retrievedAt": "2026-03-09T17:50:09.701Z"
+      },
+      {
+        "sourceName": "PriceOfElectricity.com dataset endpoint: value-ranking.csv",
+        "sourceUrl": "http://localhost:3000/api/datasets/value-ranking.csv",
+        "retrievedAt": "2026-03-09T17:50:09.701Z"
+      },
+      {
+        "sourceName": "PriceOfElectricity.com methodology: Electricity Price Index",
+        "sourceUrl": "http://localhost:3000/methodology/electricity-price-index",
+        "retrievedAt": "2026-03-09T17:50:09.701Z"
+      },
+      {
+        "sourceName": "PriceOfElectricity.com methodology: Value Score",
+        "sourceUrl": "http://localhost:3000/methodology/value-score",
+        "retrievedAt": "2026-03-09T17:50:09.701Z"
+      }
+    ],
+    "llmHints": {
+      "priority": "medium",
+      "entityType": "rankings",
+      "semanticTopics": [
+        "state comparison",
+        "electricity rates",
+        "affordability",
+        "ranking methodology"
+      ],
+      "semanticCluster": "comparative-analysis"
+    },
+    "freshness": {
+      "datasetUpdatedAt": "2025-12-15T00:00:00.000Z",
+      "computedAt": "2026-03-09T17:50:09.701Z",
+      "status": "aging",
+      "ageDays": 84,
+      "methodology": {
+        "id": "freshness",
+        "version": "1.0",
+        "url": "http://localhost:3000/knowledge/methodology/freshness.json",
+        "canonicalUrl": "http://localhost:3000/knowledge/methodology/freshness"
+      }
+    },
+    "excerpt": "Electricity Price Momentum Signal Ranking. Ranks states by momentum score (desc). Top 1: District of Columbia.",
+    "disclaimerRefs": [
+      "rankings"
+    ],
+    "qualityScore": 90,
+    "contentHash": "1eb6b50d2819f43477208726d398aa22a518df8e1fb4a67b7fdcda4e8e5a09e8",
+    "integrity": {
+      "contentHash": "1eb6b50d2819f43477208726d398aa22a518df8e1fb4a67b7fdcda4e8e5a09e8",
+      "integrityAlgorithm": "sha256",
+      "signedAtBuild": "2026-03-09T17:50:09.701Z"
+    }
+  },
+  "data": {
+    "rankingType": "momentum-signal",
+    "sortedStates": [
+      {
+        "rank": 1,
+        "slug": "district-of-columbia",
+        "name": "District of Columbia",
+        "metricValue": 29.2,
+        "signal": "accelerating",
+        "shortWindowChangePercent": 27.2,
+        "longWindowChangePercent": 34.12
+      },
+      {
+        "rank": 2,
+        "slug": "rhode-island",
+        "name": "Rhode Island",
+        "metricValue": 24.64,
+        "signal": "accelerating",
+        "shortWindowChangePercent": 22.64,
+        "longWindowChangePercent": 0.94
+      },
+      {
+        "rank": 3,
+        "slug": "new-jersey",
+        "name": "New Jersey",
+        "metricValue": 20.39,
+        "signal": "accelerating",
+        "shortWindowChangePercent": 18.39,
+        "longWindowChangePercent": 30.87
+      },
+      {
+        "rank": 4,
+        "slug": "maine",
+        "name": "Maine",
+        "metricValue": 17.95,
+        "signal": "accelerating",
+        "shortWindowChangePercent": 15.95,
+        "longWindowChangePercent": 8.57
+      },
+      {
+        "rank": 5,
+        "slug": "pennsylvania",
+        "name": "Pennsylvania",
+        "metricValue": 16.35,
+        "signal": "accelerating",
+        "shortWindowChangePercent": 14.35,
+        "longWindowChangePercent": 14.61
+      },
+      {
+        "rank": 6,
+        "slug": "california",
+        "name": "California",
+        "metricValue": 15.36,
+        "signal": "accelerating",
+        "shortWindowChangePercent": 13.36,
+        "longWindowChangePercent": 19.2
+      },
+      {
+        "rank": 7,
+        "slug": "washington",
+        "name": "Washington",
+        "metricValue": 14.49,
+        "signal": "accelerating",
+        "shortWindowChangePercent": 12.49,
+        "longWindowChangePercent": 21.4
+      },
+      {
+        "rank": 8,
+        "slug": "new-york",
+        "name": "New York",
+        "metricValue": 14.21,
+        "signal": "accelerating",
+        "shortWindowChangePercent": 12.21,
+        "longWindowChangePercent": 22.17
+      },
+      {
+        "rank": 9,
+        "slug": "indiana",
+        "name": "Indiana",
+        "metricValue": 13.03,
+        "signal": "accelerating",
+        "shortWindowChangePercent": 11.03,
+        "longWindowChangePercent": 9.12
+      },
+      {
+        "rank": 10,
+        "slug": "new-hampshire",
+        "name": "New Hampshire",
+        "metricValue": 12.98,
+        "signal": "accelerating",
+        "shortWindowChangePercent": 10.98,
+        "longWindowChangePercent": 6.22
+      },
+      {
+        "rank": 11,
+        "slug": "wisconsin",
+        "name": "Wisconsin",
+        "metricValue": 11.72,
+        "signal": "accelerating",
+        "shortWindowChangePercent": 9.72,
+        "longWindowChangePercent": 7.6
+      },
+      {
+        "rank": 12,
+        "slug": "nebraska",
+        "name": "Nebraska",
+        "metricValue": 11.36,
+        "signal": "accelerating",
+        "shortWindowChangePercent": 9.36,
+        "longWindowChangePercent": 10.51
+      },
+      {
+        "rank": 13,
+        "slug": "ohio",
+        "name": "Ohio",
+        "metricValue": 11.01,
+        "signal": "accelerating",
+        "shortWindowChangePercent": 9.01,
+        "longWindowChangePercent": 11.18
+      },
+      {
+        "rank": 14,
+        "slug": "wyoming",
+        "name": "Wyoming",
+        "metricValue": 11.01,
+        "signal": "accelerating",
+        "shortWindowChangePercent": 9.01,
+        "longWindowChangePercent": 13.34
+      },
+      {
+        "rank": 15,
+        "slug": "idaho",
+        "name": "Idaho",
+        "metricValue": 10.4,
+        "signal": "accelerating",
+        "shortWindowChangePercent": 8.4,
+        "longWindowChangePercent": 2.95
+      },
+      {
+        "rank": 16,
+        "slug": "alaska",
+        "name": "Alaska",
+        "metricValue": 9.99,
+        "signal": "accelerating",
+        "shortWindowChangePercent": 7.99,
+        "longWindowChangePercent": 5.45
+      },
+      {
+        "rank": 17,
+        "slug": "maryland",
+        "name": "Maryland",
+        "metricValue": 9.94,
+        "signal": "accelerating",
+        "shortWindowChangePercent": 7.94,
+        "longWindowChangePercent": 12.08
+      },
+      {
+        "rank": 18,
+        "slug": "north-dakota",
+        "name": "North Dakota",
+        "metricValue": 9.72,
+        "signal": "accelerating",
+        "shortWindowChangePercent": 7.72,
+        "longWindowChangePercent": 7.3
+      },
+      {
+        "rank": 19,
+        "slug": "montana",
+        "name": "Montana",
+        "metricValue": 9.49,
+        "signal": "accelerating",
+        "shortWindowChangePercent": 7.49,
+        "longWindowChangePercent": 1.51
+      },
+      {
+        "rank": 20,
+        "slug": "minnesota",
+        "name": "Minnesota",
+        "metricValue": 8.1,
+        "signal": "accelerating",
+        "shortWindowChangePercent": 6.1,
+        "longWindowChangePercent": 6.17
+      },
+      {
+        "rank": 21,
+        "slug": "michigan",
+        "name": "Michigan",
+        "metricValue": 8.03,
+        "signal": "accelerating",
+        "shortWindowChangePercent": 6.03,
+        "longWindowChangePercent": 4.44
+      },
+      {
+        "rank": 22,
+        "slug": "alabama",
+        "name": "Alabama",
+        "metricValue": 7.95,
+        "signal": "rising",
+        "shortWindowChangePercent": 6.95,
+        "longWindowChangePercent": 13.06
+      },
+      {
+        "rank": 23,
+        "slug": "illinois",
+        "name": "Illinois",
+        "metricValue": 7.95,
+        "signal": "rising",
+        "shortWindowChangePercent": 6.95,
+        "longWindowChangePercent": 15.03
+      },
+      {
+        "rank": 24,
+        "slug": "florida",
+        "name": "Florida",
+        "metricValue": 7.85,
+        "signal": "accelerating",
+        "shortWindowChangePercent": 5.85,
+        "longWindowChangePercent": -1.18
+      },
+      {
+        "rank": 25,
+        "slug": "colorado",
+        "name": "Colorado",
+        "metricValue": 7.75,
+        "signal": "rising",
+        "shortWindowChangePercent": 6.75,
+        "longWindowChangePercent": 13.68
+      },
+      {
+        "rank": 26,
+        "slug": "louisiana",
+        "name": "Louisiana",
+        "metricValue": 7.35,
+        "signal": "rising",
+        "shortWindowChangePercent": 6.35,
+        "longWindowChangePercent": 12.04
+      },
+      {
+        "rank": 27,
+        "slug": "virginia",
+        "name": "Virginia",
+        "metricValue": 7.26,
+        "signal": "rising",
+        "shortWindowChangePercent": 6.26,
+        "longWindowChangePercent": 12.78
+      },
+      {
+        "rank": 28,
+        "slug": "south-carolina",
+        "name": "South Carolina",
+        "metricValue": 7.24,
+        "signal": "rising",
+        "shortWindowChangePercent": 6.24,
+        "longWindowChangePercent": 11.76
+      },
+      {
+        "rank": 29,
+        "slug": "utah",
+        "name": "Utah",
+        "metricValue": 6.87,
+        "signal": "rising",
+        "shortWindowChangePercent": 5.87,
+        "longWindowChangePercent": 19.5
+      },
+      {
+        "rank": 30,
+        "slug": "arkansas",
+        "name": "Arkansas",
+        "metricValue": 6.76,
+        "signal": "accelerating",
+        "shortWindowChangePercent": 4.76,
+        "longWindowChangePercent": 6.85
+      },
+      {
+        "rank": 31,
+        "slug": "vermont",
+        "name": "Vermont",
+        "metricValue": 6.31,
+        "signal": "rising",
+        "shortWindowChangePercent": 5.31,
+        "longWindowChangePercent": 10.1
+      },
+      {
+        "rank": 32,
+        "slug": "oregon",
+        "name": "Oregon",
+        "metricValue": 6.29,
+        "signal": "rising",
+        "shortWindowChangePercent": 5.29,
+        "longWindowChangePercent": 18.48
+      },
+      {
+        "rank": 33,
+        "slug": "oklahoma",
+        "name": "Oklahoma",
+        "metricValue": 5.97,
+        "signal": "rising",
+        "shortWindowChangePercent": 4.97,
+        "longWindowChangePercent": 13.53
+      },
+      {
+        "rank": 34,
+        "slug": "kansas",
+        "name": "Kansas",
+        "metricValue": 5.57,
+        "signal": "rising",
+        "shortWindowChangePercent": 4.57,
+        "longWindowChangePercent": 13.44
+      },
+      {
+        "rank": 35,
+        "slug": "mississippi",
+        "name": "Mississippi",
+        "metricValue": 5.35,
+        "signal": "rising",
+        "shortWindowChangePercent": 4.35,
+        "longWindowChangePercent": 8.42
+      },
+      {
+        "rank": 36,
+        "slug": "texas",
+        "name": "Texas",
+        "metricValue": 4.32,
+        "signal": "rising",
+        "shortWindowChangePercent": 3.32,
+        "longWindowChangePercent": 8.4
+      },
+      {
+        "rank": 37,
+        "slug": "missouri",
+        "name": "Missouri",
+        "metricValue": 3.94,
+        "signal": "rising",
+        "shortWindowChangePercent": 2.94,
+        "longWindowChangePercent": 5.12
+      },
+      {
+        "rank": 38,
+        "slug": "new-mexico",
+        "name": "New Mexico",
+        "metricValue": 3.52,
+        "signal": "rising",
+        "shortWindowChangePercent": 2.52,
+        "longWindowChangePercent": 9.65
+      },
+      {
+        "rank": 39,
+        "slug": "iowa",
+        "name": "Iowa",
+        "metricValue": 3.44,
+        "signal": "rising",
+        "shortWindowChangePercent": 2.44,
+        "longWindowChangePercent": 5.44
+      },
+      {
+        "rank": 40,
+        "slug": "arizona",
+        "name": "Arizona",
+        "metricValue": 3.11,
+        "signal": "rising",
+        "shortWindowChangePercent": 2.11,
+        "longWindowChangePercent": 7.21
+      },
+      {
+        "rank": 41,
+        "slug": "delaware",
+        "name": "Delaware",
+        "metricValue": 2.97,
+        "signal": "rising",
+        "shortWindowChangePercent": 1.97,
+        "longWindowChangePercent": 5.03
+      },
+      {
+        "rank": 42,
+        "slug": "south-dakota",
+        "name": "South Dakota",
+        "metricValue": 2.96,
+        "signal": "rising",
+        "shortWindowChangePercent": 1.96,
+        "longWindowChangePercent": 6.02
+      },
+      {
+        "rank": 43,
+        "slug": "georgia",
+        "name": "Georgia",
+        "metricValue": 2.56,
+        "signal": "rising",
+        "shortWindowChangePercent": 1.56,
+        "longWindowChangePercent": 7.47
+      },
+      {
+        "rank": 44,
+        "slug": "kentucky",
+        "name": "Kentucky",
+        "metricValue": 0,
+        "signal": "stable",
+        "shortWindowChangePercent": 0.99,
+        "longWindowChangePercent": 7.13
+      },
+      {
+        "rank": 45,
+        "slug": "massachusetts",
+        "name": "Massachusetts",
+        "metricValue": 0,
+        "signal": "stable",
+        "shortWindowChangePercent": -0.93,
+        "longWindowChangePercent": 6.7
+      },
+      {
+        "rank": 46,
+        "slug": "north-carolina",
+        "name": "North Carolina",
+        "metricValue": 0,
+        "signal": "stable",
+        "shortWindowChangePercent": -0.3,
+        "longWindowChangePercent": 3.86
+      },
+      {
+        "rank": 47,
+        "slug": "tennessee",
+        "name": "Tennessee",
+        "metricValue": 0,
+        "signal": "stable",
+        "shortWindowChangePercent": -0.46,
+        "longWindowChangePercent": 6.28
+      },
+      {
+        "rank": 48,
+        "slug": "west-virginia",
+        "name": "West Virginia",
+        "metricValue": 0,
+        "signal": "stable",
+        "shortWindowChangePercent": 0.9,
+        "longWindowChangePercent": 9.44
+      },
+      {
+        "rank": 49,
+        "slug": "hawaii",
+        "name": "Hawaii",
+        "metricValue": -2.82,
+        "signal": "falling",
+        "shortWindowChangePercent": -1.82,
+        "longWindowChangePercent": 0.05
+      },
+      {
+        "rank": 50,
+        "slug": "connecticut",
+        "name": "Connecticut",
+        "metricValue": -11.03,
+        "signal": "falling",
+        "shortWindowChangePercent": -10.03,
+        "longWindowChangePercent": -5.91
+      },
+      {
+        "rank": 51,
+        "slug": "nevada",
+        "name": "Nevada",
+        "metricValue": -14.72,
+        "signal": "falling",
+        "shortWindowChangePercent": -13.72,
+        "longWindowChangePercent": -17.49
+      }
+    ],
+    "generatedAt": "2026-03-09T17:50:09.701Z",
+    "enabled": true,
+    "derivedMeta": {
+      "methodologiesUsed": [
+        {
+          "id": "momentum-signal",
+          "version": "1.0",
+          "url": "http://localhost:3000/knowledge/methodology/momentum-signal.json",
+          "appliesToFields": [
+            "data.sortedStates"
+          ]
+        }
+      ]
+    },
+    "relatedEntities": {
+      "methodologies": [
+        "momentum-signal"
+      ],
+      "states": [
+        "california",
+        "connecticut",
+        "district-of-columbia",
+        "georgia",
+        "hawaii",
+        "indiana",
+        "kentucky",
+        "maine",
+        "massachusetts",
+        "nevada",
+        "new-hampshire",
+        "new-jersey",
+        "new-york",
+        "north-carolina",
+        "pennsylvania",
+        "rhode-island",
+        "south-dakota",
+        "tennessee",
+        "washington",
+        "west-virginia"
+      ]
+    },
+    "facts": [
+      {
+        "label": "Bottom metric value",
+        "value": -14.72,
+        "sourceField": "data.sortedStates"
+      },
+      {
+        "label": "Bottom state",
+        "value": "Nevada",
+        "sourceField": "data.sortedStates"
+      },
+      {
+        "label": "Generated at",
+        "value": "2026-03-09T17:50:09.701Z",
+        "sourceField": "data.generatedAt"
+      },
+      {
+        "label": "Ranking type",
+        "value": "momentum-signal",
+        "sourceField": "data.rankingType"
+      },
+      {
+        "label": "Top metric value",
+        "value": 29.2,
+        "sourceField": "data.sortedStates"
+      },
+      {
+        "label": "Top state",
+        "value": "District of Columbia",
+        "sourceField": "data.sortedStates"
+      },
+      {
+        "label": "Total ranked",
+        "value": 51,
+        "sourceField": "data.sortedStates"
+      }
+    ]
+  }
+}

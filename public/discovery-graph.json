@@ -1,0 +1,371 @@
+{
+  "schemaVersion": "1.0",
+  "generatedAt": "2026-03-09T17:50:09.701Z",
+  "site": "PriceOfElectricity.com",
+  "nodes": [
+    {
+      "id": "electricity-cost",
+      "type": "topic",
+      "title": "Electricity Cost",
+      "url": "/electricity-cost",
+      "keywords": [
+        "electricity cost",
+        "rates",
+        "state"
+      ]
+    },
+    {
+      "id": "average-electricity-bill",
+      "type": "topic",
+      "title": "Average Electricity Bill",
+      "url": "/average-electricity-bill",
+      "keywords": [
+        "electricity bill",
+        "monthly",
+        "estimated"
+      ]
+    },
+    {
+      "id": "electricity-affordability",
+      "type": "topic",
+      "title": "Electricity Affordability",
+      "url": "/electricity-affordability",
+      "keywords": [
+        "affordability",
+        "cost burden"
+      ]
+    },
+    {
+      "id": "electricity-cost-of-living",
+      "type": "topic",
+      "title": "Electricity Cost of Living",
+      "url": "/electricity-cost-of-living",
+      "keywords": [
+        "cost of living",
+        "household"
+      ]
+    },
+    {
+      "id": "electricity-inflation",
+      "type": "topic",
+      "title": "Electricity Inflation",
+      "url": "/electricity-inflation",
+      "keywords": [
+        "inflation",
+        "price trends"
+      ]
+    },
+    {
+      "id": "electricity-price-volatility",
+      "type": "topic",
+      "title": "Electricity Price Volatility",
+      "url": "/electricity-price-volatility",
+      "keywords": [
+        "volatility",
+        "price stability"
+      ]
+    },
+    {
+      "id": "electricity-trends",
+      "type": "topic",
+      "title": "Electricity Trends",
+      "url": "/electricity-trends",
+      "keywords": [
+        "trends",
+        "national"
+      ]
+    },
+    {
+      "id": "electricity-data",
+      "type": "section",
+      "title": "Electricity Data",
+      "url": "/electricity-data",
+      "keywords": [
+        "data",
+        "datasets",
+        "methodology"
+      ]
+    },
+    {
+      "id": "datasets",
+      "type": "dataset",
+      "title": "Datasets",
+      "url": "/datasets",
+      "keywords": [
+        "download",
+        "csv",
+        "json"
+      ]
+    },
+    {
+      "id": "methodology",
+      "type": "methodology",
+      "title": "Methodology",
+      "url": "/methodology",
+      "keywords": [
+        "methodology",
+        "calculations"
+      ]
+    },
+    {
+      "id": "electricity-topics",
+      "type": "discovery",
+      "title": "Electricity Topics",
+      "url": "/electricity-topics",
+      "keywords": [
+        "topics",
+        "clusters",
+        "hub"
+      ]
+    },
+    {
+      "id": "entity-registry",
+      "type": "discovery",
+      "title": "Entity Registry",
+      "url": "/entity-registry",
+      "keywords": [
+        "entities",
+        "index"
+      ]
+    },
+    {
+      "id": "ai-energy-demand",
+      "type": "topic",
+      "title": "AI Energy Demand",
+      "url": "/ai-energy-demand",
+      "keywords": [
+        "ai",
+        "data centers",
+        "infrastructure"
+      ]
+    },
+    {
+      "id": "grid-capacity-and-electricity-demand",
+      "type": "topic",
+      "title": "Grid Capacity and Electricity Demand",
+      "url": "/grid-capacity-and-electricity-demand",
+      "keywords": [
+        "grid",
+        "capacity",
+        "demand"
+      ]
+    },
+    {
+      "id": "power-generation-mix",
+      "type": "topic",
+      "title": "Power Generation Mix",
+      "url": "/power-generation-mix",
+      "keywords": [
+        "generation",
+        "fuel mix"
+      ]
+    },
+    {
+      "id": "electricity-markets",
+      "type": "topic",
+      "title": "Electricity Markets",
+      "url": "/electricity-markets",
+      "keywords": [
+        "markets",
+        "regulation"
+      ]
+    },
+    {
+      "id": "regional-electricity-markets",
+      "type": "topic",
+      "title": "Regional Electricity Markets",
+      "url": "/regional-electricity-markets",
+      "keywords": [
+        "regional",
+        "markets"
+      ]
+    },
+    {
+      "id": "electricity-generation-cost-drivers",
+      "type": "topic",
+      "title": "Electricity Generation Cost Drivers",
+      "url": "/electricity-generation-cost-drivers",
+      "keywords": [
+        "cost drivers",
+        "generation"
+      ]
+    },
+    {
+      "id": "data-center-electricity-cost",
+      "type": "topic",
+      "title": "Data Center Electricity Cost",
+      "url": "/data-center-electricity-cost",
+      "keywords": [
+        "data center",
+        "ai",
+        "infrastructure"
+      ]
+    },
+    {
+      "id": "solar-vs-grid-electricity-cost",
+      "type": "topic",
+      "title": "Solar vs Grid Electricity Cost",
+      "url": "/solar-vs-grid-electricity-cost",
+      "keywords": [
+        "solar",
+        "grid",
+        "energy transition"
+      ]
+    },
+    {
+      "id": "battery-backup-electricity-cost",
+      "type": "topic",
+      "title": "Battery Backup Electricity Cost",
+      "url": "/battery-backup-electricity-cost",
+      "keywords": [
+        "battery",
+        "backup",
+        "energy transition"
+      ]
+    },
+    {
+      "id": "business-electricity-cost-decisions",
+      "type": "topic",
+      "title": "Business Electricity Cost Decisions",
+      "url": "/business-electricity-cost-decisions",
+      "keywords": [
+        "business",
+        "location",
+        "decisions"
+      ]
+    },
+    {
+      "id": "discovery-graph",
+      "type": "discovery",
+      "title": "Discovery Graph",
+      "url": "/discovery-graph",
+      "keywords": [
+        "discovery graph",
+        "topic graph",
+        "knowledge graph"
+      ]
+    },
+    {
+      "id": "data-registry",
+      "type": "discovery",
+      "title": "Data Registry",
+      "url": "/data-registry",
+      "keywords": [
+        "data registry",
+        "datasets"
+      ]
+    },
+    {
+      "id": "page-index",
+      "type": "discovery",
+      "title": "Page Index",
+      "url": "/page-index",
+      "keywords": [
+        "page index",
+        "navigation"
+      ]
+    },
+    {
+      "id": "site-map",
+      "type": "discovery",
+      "title": "Site Map",
+      "url": "/site-map",
+      "keywords": [
+        "site map",
+        "navigation"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "from": "electricity-cost",
+      "to": "electricity-affordability",
+      "relationship": "related_topic"
+    },
+    {
+      "from": "electricity-cost",
+      "to": "electricity-inflation",
+      "relationship": "related_topic"
+    },
+    {
+      "from": "electricity-affordability",
+      "to": "electricity-cost-of-living",
+      "relationship": "related_topic"
+    },
+    {
+      "from": "electricity-inflation",
+      "to": "electricity-price-volatility",
+      "relationship": "related_topic"
+    },
+    {
+      "from": "electricity-cost",
+      "to": "electricity-data",
+      "relationship": "uses_dataset"
+    },
+    {
+      "from": "electricity-affordability",
+      "to": "methodology",
+      "relationship": "explained_by_methodology"
+    },
+    {
+      "from": "electricity-inflation",
+      "to": "methodology",
+      "relationship": "explained_by_methodology"
+    },
+    {
+      "from": "electricity-topics",
+      "to": "electricity-cost",
+      "relationship": "grouped_in_discovery"
+    },
+    {
+      "from": "electricity-topics",
+      "to": "electricity-inflation",
+      "relationship": "grouped_in_discovery"
+    },
+    {
+      "from": "electricity-topics",
+      "to": "ai-energy-demand",
+      "relationship": "grouped_in_discovery"
+    },
+    {
+      "from": "electricity-data",
+      "to": "datasets",
+      "relationship": "uses_dataset"
+    },
+    {
+      "from": "entity-registry",
+      "to": "electricity-data",
+      "relationship": "related_topic"
+    },
+    {
+      "from": "ai-energy-demand",
+      "to": "data-center-electricity-cost",
+      "relationship": "related_topic"
+    },
+    {
+      "from": "ai-energy-demand",
+      "to": "grid-capacity-and-electricity-demand",
+      "relationship": "related_topic"
+    },
+    {
+      "from": "power-generation-mix",
+      "to": "electricity-markets",
+      "relationship": "related_topic"
+    },
+    {
+      "from": "power-generation-mix",
+      "to": "electricity-generation-cost-drivers",
+      "relationship": "related_topic"
+    },
+    {
+      "from": "discovery-graph",
+      "to": "entity-registry",
+      "relationship": "grouped_in_discovery"
+    },
+    {
+      "from": "discovery-graph",
+      "to": "electricity-topics",
+      "relationship": "grouped_in_discovery"
+    }
+  ]
+}

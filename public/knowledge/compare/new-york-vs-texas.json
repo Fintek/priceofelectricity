@@ -1,0 +1,16 @@
+{
+  "schemaVersion": "1.0",
+  "generatedAt": "2026-03-09T17:50:09.701Z",
+  "sourceVersion": "v2",
+  "contractVersion": "1.0.0",
+  "stateA": "new-york",
+  "stateB": "texas",
+  "nameA": "New York",
+  "nameB": "Texas",
+  "rateA": 23.87,
+  "rateB": 15.83,
+  "differenceCents": 8.04,
+  "differencePercent": 50.8,
+  "higherCostState": "New York",
+  "lowerCostState": "Texas"
+}

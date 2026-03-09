@@ -1,39 +1,29 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { SITE_URL } from "@/lib/site";
-import TrackLink from "@/app/components/TrackLink";
+import ExploreMore from "@/components/navigation/ExploreMore";
+import SectionNav from "@/components/navigation/SectionNav";
+import { buildMetadata } from "@/lib/seo/metadata";
 
 const BASE_URL = SITE_URL;
+export const dynamic = "force-static";
+export const revalidate = 86400;
 
-export const metadata: Metadata = {
-  title: "Electricity Data Downloads | PriceOfElectricity.com",
+export const metadata: Metadata = buildMetadata({
+  title: "Electricity Price Datasets – JSON & CSV Downloads | PriceOfElectricity.com",
   description:
-    "Download electricity rate datasets for all 50 U.S. states in JSON and CSV format. Includes affordability index and value score rankings.",
-  alternates: { canonical: `${BASE_URL}/datasets` },
-  openGraph: {
-    title: "Electricity Data Downloads | PriceOfElectricity.com",
-    description:
-      "Download electricity rate datasets for all 50 U.S. states in JSON and CSV format.",
-    url: `${BASE_URL}/datasets`,
-    siteName: "PriceOfElectricity.com",
-    type: "website",
-  },
-  twitter: {
-    card: "summary",
-    title: "Electricity Data Downloads | PriceOfElectricity.com",
-    description:
-      "Download electricity rate datasets for all 50 U.S. states in JSON and CSV format.",
-  },
-};
+    "Download electricity price and ranking datasets by state. JSON and CSV exports for research, analysis, and transparency. No API required.",
+  canonicalPath: "/datasets",
+});
 
-export default function DatasetsIndexPage() {
+export default function DatasetsHubPage() {
   const webPageStructuredData = {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    name: "Electricity Data Downloads",
-    url: `${BASE_URL}/datasets`,
+    name: "Datasets",
     description:
-      "Download electricity rate datasets for all 50 U.S. states in JSON and CSV format.",
+      "Downloadable electricity price and ranking datasets derived from build-time electricity data.",
+    url: `${BASE_URL}/datasets`,
   };
 
   return (
@@ -45,83 +35,108 @@ export default function DatasetsIndexPage() {
         }}
       />
 
-      <h1>Electricity Data Downloads</h1>
+      <h1>Datasets</h1>
+
+      <SectionNav
+        title="In this section"
+        description="Download electricity data and explore methodology."
+        links={[
+          { href: "/datasets/electricity-prices-by-state", label: "Prices by state" },
+          { href: "/datasets/electricity-rankings", label: "Electricity rankings" },
+          { href: "/methodology", label: "Methodology" },
+          { href: "/data-registry", label: "Data registry" },
+          { href: "/knowledge", label: "Knowledge Hub" },
+          { href: "/site-map", label: "Site map" },
+        ]}
+      />
 
       <p className="intro muted" style={{ marginTop: 0 }}>
-        Download structured electricity rate data for all 50 U.S. states. All
-        datasets are derived from the same normalized data pipeline and updated
-        monthly.
+        The downloadable evidence layer. PriceOfElectricity.com publishes electricity price and ranking datasets. Use these for research, analysis, or to verify our numbers—no API or runtime computation required.
+      </p>
+      <p style={{ marginTop: 8, marginBottom: 0, maxWidth: "65ch", fontSize: 14, lineHeight: 1.5 }}>
+        <strong>Why download?</strong> Researchers, analysts, and journalists use these datasets to study electricity prices, build models, or cite our data. All exports are static and deterministic.
       </p>
 
       <section style={{ marginTop: 24 }}>
         <h2 style={{ fontSize: 22, marginBottom: 12 }}>Available datasets</h2>
-        <ul style={{ paddingLeft: 20, lineHeight: 2 }}>
-          <li>
-            <TrackLink
-              href="/api/datasets/states.json"
-              eventName="data_download_click"
-              payload={{ dataset: "states-json" }}
-            >
-              States (JSON)
-            </TrackLink>{" "}
-            — All states
-            with rate, affordability index, value score, and freshness status
-          </li>
-          <li>
-            <TrackLink
-              href="/api/datasets/states.csv"
-              eventName="data_download_click"
-              payload={{ dataset: "states-csv" }}
-            >
-              States (CSV)
-            </TrackLink>{" "}
-            — Same dataset
-            in CSV format, sorted alphabetically
-          </li>
-          <li>
-            <TrackLink
-              href="/api/datasets/value-ranking.csv"
-              eventName="data_download_click"
-              payload={{ dataset: "value-ranking-csv" }}
-            >
-              Value Ranking (CSV)
-            </TrackLink>{" "}
-            — States ranked by Electricity Value Score™, highest first
-          </li>
-          <li>
-            <TrackLink
-              href="/api/datasets/affordability.csv"
-              eventName="data_download_click"
-              payload={{ dataset: "affordability-csv" }}
-            >
-              Affordability (CSV)
-            </TrackLink>{" "}
-            — States ranked by affordability index, most affordable first
-          </li>
-        </ul>
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))",
+            gap: 16,
+          }}
+        >
+          <div
+            style={{
+              padding: 20,
+              border: "1px solid var(--color-border, #e5e7eb)",
+              borderRadius: 8,
+              backgroundColor: "var(--color-surface-alt, #f9fafb)",
+            }}
+          >
+            <h3 style={{ fontSize: 18, margin: "0 0 8px 0" }}>
+              <Link href="/datasets/electricity-prices-by-state">
+                Electricity Prices by State
+              </Link>
+            </h3>
+            <p className="muted" style={{ margin: "0 0 12px 0", fontSize: 14 }}>
+              State-level rates, national comparison, momentum. JSON and CSV.
+            </p>
+            <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
+              <a href="/datasets/electricity-prices-by-state.json" download>
+                JSON
+              </a>
+              <a href="/datasets/electricity-prices-by-state.csv" download>
+                CSV
+              </a>
+            </div>
+          </div>
+          <div
+            style={{
+              padding: 20,
+              border: "1px solid var(--color-border, #e5e7eb)",
+              borderRadius: 8,
+              backgroundColor: "var(--color-surface-alt, #f9fafb)",
+            }}
+          >
+            <h3 style={{ fontSize: 18, margin: "0 0 8px 0" }}>
+              <Link href="/datasets/electricity-rankings">
+                Electricity Rankings
+              </Link>
+            </h3>
+            <p className="muted" style={{ margin: "0 0 12px 0", fontSize: 14 }}>
+              All state rankings in one dataset. Rate, affordability, inflation.
+            </p>
+            <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
+              <a href="/datasets/electricity-rankings.json" download>
+                JSON
+              </a>
+              <a href="/datasets/electricity-rankings.csv" download>
+                CSV
+              </a>
+            </div>
+          </div>
+        </div>
       </section>
 
-      <section style={{ marginTop: 24 }}>
-        <h2 style={{ fontSize: 22, marginBottom: 8 }}>About this data</h2>
-        <p style={{ marginTop: 0 }}>
-          Rates reflect state-level average residential electricity prices in
-          ¢/kWh. All estimates are energy-only and exclude delivery fees, taxes,
-          fixed charges, and other utility fees.
-        </p>
-        <p className="muted" style={{ marginTop: 6 }}>
-          See <Link href="/methodology">methodology</Link>,{" "}
-          <Link href="/about">about</Link>, and{" "}
-          <Link href="/data-policy">data policy</Link> for details on sources,
-          update cadence, and freshness definitions.
-        </p>
-      </section>
+      <ExploreMore
+        title="Explore more"
+        links={[
+          { href: "/electricity-data", label: "Explore electricity datasets" },
+          { href: "/methodology", label: "Methodology" },
+          { href: "/data-registry", label: "Data registry" },
+          { href: "/knowledge", label: "Knowledge Hub" },
+          { href: "/site-map", label: "Site map" },
+          { href: "/site-maintenance", label: "Site maintenance" },
+          { href: "/electricity-trends", label: "Electricity trends" },
+        ]}
+      />
 
       <p className="muted" style={{ marginTop: 24 }}>
         <Link href="/">Home</Link> {" | "}
         <Link href="/methodology">Methodology</Link> {" | "}
         <Link href="/sources">Sources</Link> {" | "}
-        <Link href="/compare">Compare states</Link> {" | "}
-        <Link href="/research">Research</Link>
+        <Link href="/data-policy">Data policy</Link>
       </p>
     </main>
   );

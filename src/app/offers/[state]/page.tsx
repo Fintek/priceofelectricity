@@ -78,7 +78,6 @@ export default async function StateOffersPage({
   const stateSpecific = getStateSpecificOffers(slug);
   const national = getNationalOffers();
   const allOffers = getOffersForState(slug);
-  const grouped = groupByCategory(allOffers);
 
   for (const offer of allOffers) {
     recordRevenueEvent("offer_impression", { state: slug, offerId: offer.id });

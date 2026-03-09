@@ -1,0 +1,16 @@
+{
+  "schemaVersion": "1.0",
+  "generatedAt": "2026-03-09T17:50:09.701Z",
+  "sourceVersion": "v2",
+  "contractVersion": "1.0.0",
+  "stateA": "california",
+  "stateB": "delaware",
+  "nameA": "California",
+  "nameB": "Delaware",
+  "rateA": 31.14,
+  "rateB": 17.18,
+  "differenceCents": 13.96,
+  "differencePercent": 81.3,
+  "higherCostState": "California",
+  "lowerCostState": "Delaware"
+}

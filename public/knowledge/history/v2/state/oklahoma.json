@@ -1,0 +1,589 @@
+{
+  "meta": {
+    "schemaVersion": "1.0",
+    "id": "knowledge:state:oklahoma",
+    "type": "state",
+    "slug": "oklahoma",
+    "title": "Oklahoma Electricity Price Knowledge",
+    "description": "Machine-readable summary for Oklahoma electricity rates and ranking metrics.",
+    "canonicalUrl": "http://localhost:3000/knowledge/state/oklahoma",
+    "jsonUrl": "http://localhost:3000/knowledge/history/v2/state/oklahoma.json",
+    "updatedAt": "2026-03-09T17:50:09.701Z",
+    "sourceVersion": "v2",
+    "temporalContext": {
+      "sourceVersion": "v2",
+      "isLatest": false
+    },
+    "provenance": [
+      {
+        "id": "eia-retail-sales-923",
+        "sourceName": "U.S. Energy Information Administration (EIA) Retail Sales of Electricity",
+        "sourceUrl": "https://api.eia.gov/v2/electricity/retail-sales/data/",
+        "publisher": "U.S. Energy Information Administration",
+        "license": "U.S. Government work (public domain)",
+        "notes": "Primary source for state residential electricity rate series used by snapshots.",
+        "retrievedAt": "2026-03-09T17:50:09.701Z"
+      },
+      {
+        "id": "poe-dataset-affordability-csv",
+        "sourceName": "PriceOfElectricity.com dataset endpoint: affordability.csv",
+        "sourceUrl": "http://localhost:3000/api/datasets/affordability.csv",
+        "publisher": "PriceOfElectricity.com",
+        "license": "Site content license",
+        "retrievedAt": "2026-03-09T17:50:09.701Z"
+      },
+      {
+        "id": "poe-dataset-states-csv",
+        "sourceName": "PriceOfElectricity.com dataset endpoint: states.csv",
+        "sourceUrl": "http://localhost:3000/api/datasets/states.csv",
+        "publisher": "PriceOfElectricity.com",
+        "license": "Site content license",
+        "retrievedAt": "2026-03-09T17:50:09.701Z"
+      },
+      {
+        "id": "poe-dataset-states-json",
+        "sourceName": "PriceOfElectricity.com dataset endpoint: states.json",
+        "sourceUrl": "http://localhost:3000/api/datasets/states.json",
+        "publisher": "PriceOfElectricity.com",
+        "license": "Site content license",
+        "retrievedAt": "2026-03-09T17:50:09.701Z"
+      },
+      {
+        "id": "poe-dataset-value-ranking-csv",
+        "sourceName": "PriceOfElectricity.com dataset endpoint: value-ranking.csv",
+        "sourceUrl": "http://localhost:3000/api/datasets/value-ranking.csv",
+        "publisher": "PriceOfElectricity.com",
+        "license": "Site content license",
+        "retrievedAt": "2026-03-09T17:50:09.701Z"
+      },
+      {
+        "id": "poe-methodology-epi",
+        "sourceName": "PriceOfElectricity.com methodology: Electricity Price Index",
+        "sourceUrl": "http://localhost:3000/methodology/electricity-price-index",
+        "publisher": "PriceOfElectricity.com",
+        "license": "Site content license",
+        "retrievedAt": "2026-03-09T17:50:09.701Z"
+      },
+      {
+        "id": "poe-methodology-freshness",
+        "sourceName": "PriceOfElectricity.com methodology: Freshness Scoring",
+        "sourceUrl": "http://localhost:3000/methodology/freshness-scoring",
+        "publisher": "PriceOfElectricity.com",
+        "license": "Site content license",
+        "retrievedAt": "2026-03-09T17:50:09.701Z"
+      },
+      {
+        "id": "poe-methodology-value-score",
+        "sourceName": "PriceOfElectricity.com methodology: Value Score",
+        "sourceUrl": "http://localhost:3000/methodology/value-score",
+        "publisher": "PriceOfElectricity.com",
+        "license": "Site content license",
+        "retrievedAt": "2026-03-09T17:50:09.701Z"
+      }
+    ],
+    "fieldProvenance": [
+      {
+        "field": "data.raw.avgRateCentsPerKwh",
+        "provenanceIds": [
+          "eia-retail-sales-923",
+          "poe-dataset-states-json"
+        ],
+        "isDerived": false
+      },
+      {
+        "field": "data.raw.updated",
+        "provenanceIds": [
+          "eia-retail-sales-923",
+          "poe-dataset-states-json"
+        ],
+        "isDerived": false
+      },
+      {
+        "field": "data.derived.exampleBills",
+        "provenanceIds": [
+          "eia-retail-sales-923",
+          "poe-dataset-states-json"
+        ],
+        "isDerived": true,
+        "derivedFromFields": [
+          "data.raw.avgRateCentsPerKwh"
+        ]
+      },
+      {
+        "field": "data.derived.affordabilityIndex",
+        "provenanceIds": [
+          "poe-dataset-affordability-csv",
+          "eia-retail-sales-923"
+        ],
+        "isDerived": true,
+        "derivedFromFields": [
+          "data.raw.avgRateCentsPerKwh"
+        ]
+      },
+      {
+        "field": "data.derived.valueScore",
+        "provenanceIds": [
+          "poe-methodology-value-score",
+          "poe-dataset-value-ranking-csv"
+        ],
+        "isDerived": true,
+        "derivedFromFields": [
+          "data.raw.avgRateCentsPerKwh",
+          "data.derived.affordabilityIndex"
+        ]
+      },
+      {
+        "field": "data.derived.freshnessStatus",
+        "provenanceIds": [
+          "poe-methodology-freshness",
+          "poe-dataset-states-json"
+        ],
+        "isDerived": true,
+        "derivedFromFields": [
+          "data.raw.updated"
+        ]
+      },
+      {
+        "field": "data.derived.percentileRankings",
+        "provenanceIds": [
+          "eia-retail-sales-923",
+          "poe-dataset-states-json",
+          "poe-dataset-affordability-csv",
+          "poe-dataset-value-ranking-csv"
+        ],
+        "isDerived": true,
+        "derivedFromFields": [
+          "data.raw.avgRateCentsPerKwh",
+          "data.derived.valueScore",
+          "data.derived.affordabilityIndex"
+        ]
+      },
+      {
+        "field": "data.derived.comparison",
+        "provenanceIds": [
+          "eia-retail-sales-923",
+          "poe-dataset-states-json",
+          "poe-methodology-epi"
+        ],
+        "isDerived": true,
+        "derivedFromFields": [
+          "data.raw.avgRateCentsPerKwh"
+        ]
+      },
+      {
+        "field": "data.derived.relatedUrls",
+        "provenanceIds": [
+          "poe-methodology-epi",
+          "poe-methodology-value-score",
+          "poe-methodology-freshness"
+        ],
+        "isDerived": true,
+        "derivedFromFields": []
+      }
+    ],
+    "citations": [
+      {
+        "sourceName": "U.S. Energy Information Administration (EIA) Retail Sales of Electricity",
+        "sourceUrl": "https://api.eia.gov/v2/electricity/retail-sales/data/",
+        "retrievedAt": "2026-03-09T17:50:09.701Z",
+        "notes": "Primary source for state residential electricity rate series used by snapshots."
+      },
+      {
+        "sourceName": "PriceOfElectricity.com dataset endpoint: affordability.csv",
+        "sourceUrl": "http://localhost:3000/api/datasets/affordability.csv",
+        "retrievedAt": "2026-03-09T17:50:09.701Z"
+      },
+      {
+        "sourceName": "PriceOfElectricity.com dataset endpoint: states.csv",
+        "sourceUrl": "http://localhost:3000/api/datasets/states.csv",
+        "retrievedAt": "2026-03-09T17:50:09.701Z"
+      },
+      {
+        "sourceName": "PriceOfElectricity.com dataset endpoint: states.json",
+        "sourceUrl": "http://localhost:3000/api/datasets/states.json",
+        "retrievedAt": "2026-03-09T17:50:09.701Z"
+      },
+      {
+        "sourceName": "PriceOfElectricity.com dataset endpoint: value-ranking.csv",
+        "sourceUrl": "http://localhost:3000/api/datasets/value-ranking.csv",
+        "retrievedAt": "2026-03-09T17:50:09.701Z"
+      },
+      {
+        "sourceName": "PriceOfElectricity.com methodology: Electricity Price Index",
+        "sourceUrl": "http://localhost:3000/methodology/electricity-price-index",
+        "retrievedAt": "2026-03-09T17:50:09.701Z"
+      },
+      {
+        "sourceName": "PriceOfElectricity.com methodology: Freshness Scoring",
+        "sourceUrl": "http://localhost:3000/methodology/freshness-scoring",
+        "retrievedAt": "2026-03-09T17:50:09.701Z"
+      },
+      {
+        "sourceName": "PriceOfElectricity.com methodology: Value Score",
+        "sourceUrl": "http://localhost:3000/methodology/value-score",
+        "retrievedAt": "2026-03-09T17:50:09.701Z"
+      }
+    ],
+    "llmHints": {
+      "priority": "high",
+      "entityType": "state",
+      "semanticTopics": [
+        "electricity rates",
+        "kwh pricing",
+        "energy affordability",
+        "state comparison"
+      ],
+      "semanticCluster": "geographic-state"
+    },
+    "freshness": {
+      "datasetUpdatedAt": "2025-12-15T00:00:00.000Z",
+      "computedAt": "2026-03-09T17:50:09.701Z",
+      "status": "aging",
+      "ageDays": 84,
+      "methodology": {
+        "id": "freshness",
+        "version": "1.0",
+        "url": "http://localhost:3000/knowledge/methodology/freshness.json",
+        "canonicalUrl": "http://localhost:3000/knowledge/methodology/freshness"
+      }
+    },
+    "excerpt": "Oklahoma residential electricity snapshot. Avg 13.05¢/kWh Value score 96 Affordability 96 Data freshness: fresh.",
+    "disclaimerRefs": [
+      "general-site",
+      "offers-disabled"
+    ],
+    "qualityScore": 90,
+    "contentHash": "b0f53f1d6ed9e50b4e5d0fbd7fcc591341e50c39f0da3c5c77be554dd01147f4",
+    "integrity": {
+      "contentHash": "b0f53f1d6ed9e50b4e5d0fbd7fcc591341e50c39f0da3c5c77be554dd01147f4",
+      "integrityAlgorithm": "sha256",
+      "signedAtBuild": "2026-03-09T17:50:09.701Z"
+    }
+  },
+  "data": {
+    "raw": {
+      "slug": "oklahoma",
+      "name": "Oklahoma",
+      "postal": null,
+      "avgRateCentsPerKwh": 13.05,
+      "updated": "February 2026"
+    },
+    "derived": {
+      "valueScore": 96,
+      "affordabilityIndex": 96,
+      "freshnessStatus": "fresh",
+      "exampleBills": {
+        "kwh500": 65.25,
+        "kwh1000": 130.5,
+        "kwh1500": 195.75
+      },
+      "relatedUrls": {
+        "statePage": "http://localhost:3000/oklahoma",
+        "utilitiesPage": "http://localhost:3000/oklahoma/utilities",
+        "plansPage": "http://localhost:3000/oklahoma/plans",
+        "methodology": [
+          "http://localhost:3000/knowledge/methodology/epi",
+          "http://localhost:3000/knowledge/methodology/value-score",
+          "http://localhost:3000/knowledge/methodology/freshness"
+        ]
+      },
+      "percentileRankings": {
+        "ratePercentile": 14.29,
+        "valueScorePercentile": 87.76,
+        "affordabilityPercentile": 87.76
+      },
+      "trends": {
+        "avgRateCentsPerKwh": {
+          "values": [
+            13.34,
+            12.25
+          ],
+          "min": 12.25,
+          "max": 13.34
+        }
+      },
+      "momentum": {
+        "enabled": true,
+        "signal": "rising",
+        "score": 5.97,
+        "shortWindowChangePercent": 4.97,
+        "longWindowChangePercent": 13.53,
+        "windowPointsUsed": 300
+      },
+      "comparison": {
+        "nationalAverage": 17.57,
+        "differenceCents": -4.52,
+        "differencePercent": -25.7,
+        "category": "much lower than national average"
+      },
+      "priceHistory": {
+        "rateSeries": {
+          "periods": [
+            "2021-01",
+            "2021-02",
+            "2021-03",
+            "2021-04",
+            "2021-05",
+            "2021-06",
+            "2021-07",
+            "2021-08",
+            "2021-09",
+            "2021-10",
+            "2021-11",
+            "2021-12",
+            "2022-01",
+            "2022-02",
+            "2022-03",
+            "2022-04",
+            "2022-05",
+            "2022-06",
+            "2022-07",
+            "2022-08",
+            "2022-09",
+            "2022-10",
+            "2022-11",
+            "2022-12",
+            "2023-01",
+            "2023-02",
+            "2023-03",
+            "2023-04",
+            "2023-05",
+            "2023-06",
+            "2023-07",
+            "2023-08",
+            "2023-09",
+            "2023-10",
+            "2023-11",
+            "2023-12",
+            "2024-01",
+            "2024-02",
+            "2024-03",
+            "2024-04",
+            "2024-05",
+            "2024-06",
+            "2024-07",
+            "2024-08",
+            "2024-09",
+            "2024-10",
+            "2024-11",
+            "2024-12",
+            "2025-01",
+            "2025-02",
+            "2025-03",
+            "2025-04",
+            "2025-05",
+            "2025-06",
+            "2025-07",
+            "2025-08",
+            "2025-09",
+            "2025-10",
+            "2025-11",
+            "2025-12"
+          ],
+          "values": [
+            8.83,
+            10.97,
+            8.85,
+            11.41,
+            10.88,
+            11.29,
+            11.19,
+            11.37,
+            12.03,
+            12.91,
+            11.65,
+            10.7,
+            10.04,
+            10.28,
+            11.08,
+            12.24,
+            12.28,
+            13.02,
+            13.22,
+            14.31,
+            14.2,
+            14.27,
+            12.34,
+            11.11,
+            10.75,
+            11.34,
+            11.71,
+            12.17,
+            11.63,
+            12.43,
+            12.27,
+            13.1,
+            13.03,
+            13.04,
+            11.88,
+            10.79,
+            10.44,
+            11.09,
+            11.6,
+            12.23,
+            11.49,
+            12.18,
+            12.76,
+            12.74,
+            13.81,
+            13.87,
+            12.87,
+            11.67,
+            11.03,
+            11.6,
+            12.37,
+            13.31,
+            12.94,
+            13.63,
+            13.52,
+            14.31,
+            14.79,
+            14.42,
+            13.34,
+            12.25
+          ]
+        },
+        "rate1YearAgo": 11.67,
+        "rate5YearsAgo": 9,
+        "increase1YearPercent": 5,
+        "increase5YearPercent": 36.1,
+        "annualizedIncrease5Year": 6.4
+      }
+    },
+    "compareLinks": [
+      {
+        "pairSlug": "florida-vs-oklahoma",
+        "title": "Oklahoma vs Florida",
+        "url": "/electricity-cost-comparison/florida-vs-oklahoma"
+      },
+      {
+        "pairSlug": "oklahoma-vs-texas",
+        "title": "Oklahoma vs Texas",
+        "url": "/electricity-cost-comparison/oklahoma-vs-texas"
+      },
+      {
+        "pairSlug": "ohio-vs-oklahoma",
+        "title": "Oklahoma vs Ohio",
+        "url": "/electricity-cost-comparison/ohio-vs-oklahoma"
+      }
+    ],
+    "regionRef": {
+      "id": "south",
+      "name": "South",
+      "href": "/knowledge/regions/south"
+    },
+    "derivedMeta": {
+      "methodologiesUsed": [
+        {
+          "id": "epi",
+          "version": "1.0",
+          "url": "http://localhost:3000/knowledge/methodology/epi.json",
+          "appliesToFields": [
+            "data.derived.exampleBills",
+            "data.derived.percentileRankings.ratePercentile",
+            "data.derived.relatedUrls",
+            "data.derived.trends",
+            "data.derived.comparison"
+          ]
+        },
+        {
+          "id": "value-score",
+          "version": "1.0",
+          "url": "http://localhost:3000/knowledge/methodology/value-score.json",
+          "appliesToFields": [
+            "data.derived.valueScore",
+            "data.derived.affordabilityIndex",
+            "data.derived.percentileRankings.valueScorePercentile",
+            "data.derived.percentileRankings.affordabilityPercentile"
+          ]
+        },
+        {
+          "id": "freshness",
+          "version": "1.0",
+          "url": "http://localhost:3000/knowledge/methodology/freshness.json",
+          "appliesToFields": [
+            "data.derived.freshnessStatus"
+          ]
+        },
+        {
+          "id": "momentum-signal",
+          "version": "1.0",
+          "url": "http://localhost:3000/knowledge/methodology/momentum-signal.json",
+          "appliesToFields": [
+            "data.derived.momentum"
+          ]
+        },
+        {
+          "id": "price-trend",
+          "version": "1.0",
+          "url": "http://localhost:3000/knowledge/methodology/price-trend.json",
+          "appliesToFields": [
+            "data.derived.priceHistory"
+          ]
+        }
+      ]
+    },
+    "relatedEntities": {
+      "methodologies": [
+        "epi",
+        "value-score",
+        "freshness",
+        "momentum-signal",
+        "price-trend"
+      ],
+      "rankings": [
+        "rate-low-to-high",
+        "rate-high-to-low",
+        "affordability",
+        "value-score",
+        "momentum-signal"
+      ],
+      "national": true
+    },
+    "offersRef": {
+      "offersIndexUrl": "/knowledge/offers/index.json",
+      "offersConfigUrl": "/knowledge/policy/offers-config.json",
+      "enabled": false
+    },
+    "facts": [
+      {
+        "label": "Affordability index",
+        "value": 96,
+        "sourceField": "data.derived.affordabilityIndex"
+      },
+      {
+        "label": "Average rate",
+        "value": 13.05,
+        "unit": "¢/kWh",
+        "sourceField": "data.raw.avgRateCentsPerKwh"
+      },
+      {
+        "label": "Data age",
+        "value": 84,
+        "unit": "days",
+        "sourceField": "meta.freshness.ageDays"
+      },
+      {
+        "label": "Example bill 1000 kWh",
+        "value": 130.5,
+        "unit": "$",
+        "sourceField": "data.derived.exampleBills.kwh1000"
+      },
+      {
+        "label": "Freshness status",
+        "value": "fresh",
+        "sourceField": "data.derived.freshnessStatus"
+      },
+      {
+        "label": "Rate percentile",
+        "value": 14.29,
+        "sourceField": "data.derived.percentileRankings.ratePercentile"
+      },
+      {
+        "label": "Value score",
+        "value": 96,
+        "sourceField": "data.derived.valueScore"
+      }
+    ]
+  }
+}

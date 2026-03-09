@@ -1,0 +1,16 @@
+{
+  "schemaVersion": "1.0",
+  "generatedAt": "2026-03-09T17:50:09.701Z",
+  "sourceVersion": "v2",
+  "contractVersion": "1.0.0",
+  "stateA": "indiana",
+  "stateB": "pennsylvania",
+  "nameA": "Indiana",
+  "nameB": "Pennsylvania",
+  "rateA": 16.12,
+  "rateB": 17.78,
+  "differenceCents": -1.66,
+  "differencePercent": -9.3,
+  "higherCostState": "Pennsylvania",
+  "lowerCostState": "Indiana"
+}

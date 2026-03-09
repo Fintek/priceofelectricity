@@ -1,0 +1,16 @@
+{
+  "schemaVersion": "1.0",
+  "generatedAt": "2026-03-09T17:50:09.701Z",
+  "sourceVersion": "v2",
+  "contractVersion": "1.0.0",
+  "stateA": "alaska",
+  "stateB": "new-york",
+  "nameA": "Alaska",
+  "nameB": "New York",
+  "rateA": 25.01,
+  "rateB": 23.87,
+  "differenceCents": 1.14,
+  "differencePercent": 4.8,
+  "higherCostState": "Alaska",
+  "lowerCostState": "New York"
+}

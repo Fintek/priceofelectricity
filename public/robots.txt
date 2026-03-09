@@ -1,0 +1,13 @@
+User-Agent: *
+Allow: /
+Allow: /data
+Allow: /knowledge/index.json
+Allow: /knowledge/search-index.json
+Allow: /knowledge/contract.json
+Allow: /knowledge/schema-map.json
+Allow: /knowledge/provenance.json
+Allow: /knowledge/rankings/index.json
+Allow: /knowledge/compare/states.json
+Disallow: /knowledge/state/*.json
+
+Sitemap: https://priceofelectricity.com/sitemap.xml

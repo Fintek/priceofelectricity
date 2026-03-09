@@ -1,0 +1,16 @@
+{
+  "schemaVersion": "1.0",
+  "generatedAt": "2026-03-09T17:50:09.701Z",
+  "sourceVersion": "v2",
+  "contractVersion": "1.0.0",
+  "stateA": "idaho",
+  "stateB": "new-york",
+  "nameA": "Idaho",
+  "nameB": "New York",
+  "rateA": 11.74,
+  "rateB": 23.87,
+  "differenceCents": -12.13,
+  "differencePercent": -50.8,
+  "higherCostState": "New York",
+  "lowerCostState": "Idaho"
+}

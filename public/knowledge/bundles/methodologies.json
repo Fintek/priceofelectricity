@@ -1,0 +1,39 @@
+{
+  "schemaVersion": "1.0",
+  "generatedAt": "2026-03-09T17:50:09.701Z",
+  "sourceVersion": "v2",
+  "bundleId": "methodologies",
+  "files": [
+    {
+      "url": "/knowledge/methodology/cagr.json",
+      "contentHash": "9a19a43f81134c4be592f57036fa54f7944a6651e6e2f06c5cfd36949f413ef4"
+    },
+    {
+      "url": "/knowledge/methodology/epi.json",
+      "contentHash": "a0f19c8ea7ddc317e9c2ab3408ae9eaf12c03cb93d5126d53c6d1efa8265c3c5"
+    },
+    {
+      "url": "/knowledge/methodology/freshness.json",
+      "contentHash": "0e0e8f21b7a0705c75a4e04161234fed88a23d01d487484d3092a510bcc0975f"
+    },
+    {
+      "url": "/knowledge/methodology/index.json"
+    },
+    {
+      "url": "/knowledge/methodology/momentum-signal.json",
+      "contentHash": "6ec8d6a1f99ba92d9b7fd719ef0a26e043b7d9ef689fbec20acfaa0dc0d93ae1"
+    },
+    {
+      "url": "/knowledge/methodology/price-trend.json",
+      "contentHash": "7380fcefd93dd1ad48abcbff0b40bc4fe1d74e91e7531615263c4896d0afc673"
+    },
+    {
+      "url": "/knowledge/methodology/value-score.json",
+      "contentHash": "e13150b72d57a551d27b126684f92f90f1d19ea5e0ee4f044621d267502f9fd5"
+    },
+    {
+      "url": "/knowledge/methodology/volatility.json",
+      "contentHash": "01f5d86d598d3a9fe558d99dedcfb819f476d59fe223aa190ef30244a5b075f0"
+    }
+  ]
+}

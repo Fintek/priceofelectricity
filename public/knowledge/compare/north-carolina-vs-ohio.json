@@ -1,0 +1,16 @@
+{
+  "schemaVersion": "1.0",
+  "generatedAt": "2026-03-09T17:50:09.701Z",
+  "sourceVersion": "v2",
+  "contractVersion": "1.0.0",
+  "stateA": "north-carolina",
+  "stateB": "ohio",
+  "nameA": "North Carolina",
+  "nameB": "Ohio",
+  "rateA": 14.08,
+  "rateB": 16.9,
+  "differenceCents": -2.82,
+  "differencePercent": -16.7,
+  "higherCostState": "Ohio",
+  "lowerCostState": "North Carolina"
+}

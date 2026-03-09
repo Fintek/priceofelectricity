@@ -2,35 +2,21 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { STATE_LIST, STATES } from "@/data/states";
 import HomepagePersonalization from "@/app/components/HomepagePersonalization";
+import AboutThisSite from "@/components/navigation/AboutThisSite";
 import { getRateTier, getRateTierLabel } from "@/lib/insights";
 import { LAST_REVIEWED, SITE_URL, UPDATE_CADENCE_TEXT } from "@/lib/site";
+import { buildMetadata } from "@/lib/seo/metadata";
 
 const BASE_URL = SITE_URL;
 export const dynamic = "force-static";
 export const revalidate = 2592000;
 
-export const metadata: Metadata = {
-  title: "Price of Electricity by State (¢/kWh) + Bill Estimator | PriceOfElectricity.com",
+export const metadata: Metadata = buildMetadata({
+  title: "Average Electricity Prices by State (¢/kWh) | PriceOfElectricity.com",
   description:
-    "Compare average residential electricity prices by state and estimate your monthly bill.",
-  alternates: {
-    canonical: `${BASE_URL}/`,
-  },
-  openGraph: {
-    title: "Price of Electricity by State (¢/kWh) + Bill Estimator | PriceOfElectricity.com",
-    description:
-      "Compare average residential electricity prices by state and estimate your monthly bill.",
-    url: `${BASE_URL}/`,
-    siteName: "PriceOfElectricity.com",
-    type: "website",
-  },
-  twitter: {
-    card: "summary",
-    title: "Price of Electricity by State (¢/kWh) + Bill Estimator | PriceOfElectricity.com",
-    description:
-      "Compare average residential electricity prices by state and estimate your monthly bill.",
-  },
-};
+    "Data-driven electricity analysis: state prices, rankings, comparisons, and datasets. Methodology and downloadable data published for verification.",
+  canonicalPath: "/",
+});
 
 export default function HomePage() {
   const websiteStructuredData = {
@@ -53,36 +39,55 @@ export default function HomePage() {
           __html: JSON.stringify(websiteStructuredData),
         }}
       />
-      <h1>Price of Electricity</h1>
+      <h1>Average Electricity Prices by State</h1>
       <p className="muted" style={{ marginTop: 0, marginBottom: 8 }}>
         {UPDATE_CADENCE_TEXT} {"•"} Last reviewed {LAST_REVIEWED} {"•"}{" "}
-        <Link href="/about">Methodology</Link>
+        <Link href="/methodology">Methodology</Link>
       </p>
-      <p style={{ marginTop: 0, marginBottom: 12 }}>
-        <Link href="/about" className="muted">
-          About / Methodology
-        </Link>{" "}
-        |{" "}
-        <Link href="/compare" className="muted">
-          Compare states
-        </Link>{" "}
-        |{" "}
-        <Link href="/affordability" className="muted">
-          Affordability index
-        </Link>{" "}
-        |{" "}
-        <Link href="/value-ranking" className="muted">
-          Value ranking
-        </Link>{" "}
-        |{" "}
-        <Link href="/calculator" className="muted">
-          National calculator
-        </Link>
-      </p>
+      <section style={{ marginBottom: 24, padding: "16px 20px", border: "1px solid var(--color-border, #e5e7eb)", borderRadius: 8, backgroundColor: "var(--color-surface-alt, #f9fafb)" }}>
+        <h2 style={{ fontSize: 16, fontWeight: 600, margin: "0 0 12px 0" }}>Explore</h2>
+        <p className="muted" style={{ margin: "0 0 12px 0", fontSize: 14 }}>
+          <Link href="/electricity-topics">Explore electricity topics</Link>
+          {" · "}
+          <Link href="/electricity-cost">Electricity cost by state</Link>
+          {" · "}
+          <Link href="/electricity-cost-comparison">Compare electricity costs</Link>
+          {" · "}
+          <Link href="/electricity-data">Electricity data and datasets</Link>
+          {" · "}
+          <Link href="/electricity-affordability">Electricity affordability</Link>
+          {" · "}
+          <Link href="/methodology">Methodology</Link>
+          {" · "}
+          <Link href="/electricity-inflation">Inflation and volatility</Link>
+        </p>
+        <p style={{ margin: 0, fontSize: 14 }}>
+          <Link href="/electricity-trends">Electricity trends</Link>
+          {" · "}
+          <Link href="/knowledge">Knowledge Hub</Link>
+          {" · "}
+          <Link href="/compare">Compare states</Link>
+          {" · "}
+          <Link href="/calculator">Calculator</Link>
+          {" · "}
+          <Link href="/about">About</Link>
+        </p>
+      </section>
       <p className="intro muted">
-        Select a state to see residential electricity rates and estimate your
-        bill.
+        A data-driven electricity analysis site. Compare average electricity price per kWh by state and estimate your monthly bill. Covers state prices, rankings, comparisons, and datasets. Select a state below to see prices (¢/kWh), cost estimates, and how your state compares. Explore methodology and downloadable data for verification.
       </p>
+
+      <AboutThisSite
+        title="About this site"
+        description="A data-driven electricity analysis site covering state prices, rankings, comparisons, and datasets. Methodology and downloadable data are published for verification."
+        links={[
+          { href: "/methodology", label: "Methodology" },
+          { href: "/electricity-data", label: "Electricity data" },
+          { href: "/datasets", label: "Datasets" },
+          { href: "/entity-registry", label: "Entity registry" },
+          { href: "/discovery-graph", label: "Discovery graph" },
+        ]}
+      />
 
       <HomepagePersonalization
         statesMap={Object.fromEntries(

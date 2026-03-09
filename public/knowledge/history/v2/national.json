@@ -1,0 +1,383 @@
+{
+  "meta": {
+    "schemaVersion": "1.0",
+    "id": "knowledge:national",
+    "type": "national",
+    "slug": "national",
+    "title": "U.S. National Electricity Pricing Overview",
+    "description": "National-level summary of U.S. residential electricity rates and extremes.",
+    "canonicalUrl": "http://localhost:3000/knowledge/national",
+    "jsonUrl": "http://localhost:3000/knowledge/history/v2/national.json",
+    "updatedAt": "2026-03-09T17:50:09.701Z",
+    "sourceVersion": "v2",
+    "temporalContext": {
+      "sourceVersion": "v2",
+      "isLatest": false
+    },
+    "provenance": [
+      {
+        "id": "eia-retail-sales-923",
+        "sourceName": "U.S. Energy Information Administration (EIA) Retail Sales of Electricity",
+        "sourceUrl": "https://api.eia.gov/v2/electricity/retail-sales/data/",
+        "publisher": "U.S. Energy Information Administration",
+        "license": "U.S. Government work (public domain)",
+        "notes": "Primary source for state residential electricity rate series used by snapshots.",
+        "retrievedAt": "2026-03-09T17:50:09.701Z"
+      },
+      {
+        "id": "poe-dataset-states-csv",
+        "sourceName": "PriceOfElectricity.com dataset endpoint: states.csv",
+        "sourceUrl": "http://localhost:3000/api/datasets/states.csv",
+        "publisher": "PriceOfElectricity.com",
+        "license": "Site content license",
+        "retrievedAt": "2026-03-09T17:50:09.701Z"
+      },
+      {
+        "id": "poe-dataset-states-json",
+        "sourceName": "PriceOfElectricity.com dataset endpoint: states.json",
+        "sourceUrl": "http://localhost:3000/api/datasets/states.json",
+        "publisher": "PriceOfElectricity.com",
+        "license": "Site content license",
+        "retrievedAt": "2026-03-09T17:50:09.701Z"
+      },
+      {
+        "id": "poe-methodology-epi",
+        "sourceName": "PriceOfElectricity.com methodology: Electricity Price Index",
+        "sourceUrl": "http://localhost:3000/methodology/electricity-price-index",
+        "publisher": "PriceOfElectricity.com",
+        "license": "Site content license",
+        "retrievedAt": "2026-03-09T17:50:09.701Z"
+      }
+    ],
+    "fieldProvenance": [
+      {
+        "field": "data.raw.stateCount",
+        "provenanceIds": [
+          "eia-retail-sales-923",
+          "poe-dataset-states-json"
+        ],
+        "isDerived": false
+      },
+      {
+        "field": "data.raw.datasetUpdatedAt",
+        "provenanceIds": [
+          "eia-retail-sales-923",
+          "poe-dataset-states-json"
+        ],
+        "isDerived": false
+      },
+      {
+        "field": "data.derived.averageRate",
+        "provenanceIds": [
+          "eia-retail-sales-923",
+          "poe-methodology-epi"
+        ],
+        "isDerived": true,
+        "derivedFromFields": [
+          "data.raw.stateCount"
+        ]
+      },
+      {
+        "field": "data.derived.medianRate",
+        "provenanceIds": [
+          "eia-retail-sales-923",
+          "poe-methodology-epi"
+        ],
+        "isDerived": true,
+        "derivedFromFields": [
+          "data.raw.stateCount"
+        ]
+      },
+      {
+        "field": "data.derived.dispersionMetrics",
+        "provenanceIds": [
+          "eia-retail-sales-923",
+          "poe-methodology-epi"
+        ],
+        "isDerived": true,
+        "derivedFromFields": [
+          "data.raw.stateCount"
+        ]
+      },
+      {
+        "field": "data.derived.highestState",
+        "provenanceIds": [
+          "eia-retail-sales-923",
+          "poe-methodology-epi"
+        ],
+        "isDerived": true,
+        "derivedFromFields": [
+          "data.raw.stateCount"
+        ]
+      },
+      {
+        "field": "data.derived.lowestState",
+        "provenanceIds": [
+          "eia-retail-sales-923",
+          "poe-methodology-epi"
+        ],
+        "isDerived": true,
+        "derivedFromFields": [
+          "data.raw.stateCount"
+        ]
+      },
+      {
+        "field": "data.derived.top5Highest",
+        "provenanceIds": [
+          "eia-retail-sales-923",
+          "poe-methodology-epi"
+        ],
+        "isDerived": true,
+        "derivedFromFields": [
+          "data.raw.stateCount"
+        ]
+      },
+      {
+        "field": "data.derived.top5Lowest",
+        "provenanceIds": [
+          "eia-retail-sales-923",
+          "poe-methodology-epi"
+        ],
+        "isDerived": true,
+        "derivedFromFields": [
+          "data.raw.stateCount"
+        ]
+      }
+    ],
+    "citations": [
+      {
+        "sourceName": "U.S. Energy Information Administration (EIA) Retail Sales of Electricity",
+        "sourceUrl": "https://api.eia.gov/v2/electricity/retail-sales/data/",
+        "retrievedAt": "2026-03-09T17:50:09.701Z",
+        "notes": "Primary source for state residential electricity rate series used by snapshots."
+      },
+      {
+        "sourceName": "PriceOfElectricity.com dataset endpoint: states.csv",
+        "sourceUrl": "http://localhost:3000/api/datasets/states.csv",
+        "retrievedAt": "2026-03-09T17:50:09.701Z"
+      },
+      {
+        "sourceName": "PriceOfElectricity.com dataset endpoint: states.json",
+        "sourceUrl": "http://localhost:3000/api/datasets/states.json",
+        "retrievedAt": "2026-03-09T17:50:09.701Z"
+      },
+      {
+        "sourceName": "PriceOfElectricity.com methodology: Electricity Price Index",
+        "sourceUrl": "http://localhost:3000/methodology/electricity-price-index",
+        "retrievedAt": "2026-03-09T17:50:09.701Z"
+      }
+    ],
+    "llmHints": {
+      "priority": "high",
+      "entityType": "national",
+      "semanticTopics": [
+        "electricity rates",
+        "kwh pricing",
+        "national trends",
+        "state comparison"
+      ],
+      "semanticCluster": "macro-overview"
+    },
+    "freshness": {
+      "datasetUpdatedAt": "2025-12-15T00:00:00.000Z",
+      "computedAt": "2026-03-09T17:50:09.701Z",
+      "status": "aging",
+      "ageDays": 84,
+      "methodology": {
+        "id": "freshness",
+        "version": "1.0",
+        "url": "http://localhost:3000/knowledge/methodology/freshness.json",
+        "canonicalUrl": "http://localhost:3000/knowledge/methodology/freshness"
+      }
+    },
+    "excerpt": "US residential electricity rate overview. Avg 17.57¢/kWh median 15.34¢/kWh Highest: Hawaii (41.30¢) Lowest: Idaho (11.74¢)",
+    "disclaimerRefs": [
+      "general-site"
+    ],
+    "qualityScore": 90,
+    "contentHash": "e293433b3d816959b5e4a9cbe711714fd50b5394144be212a35df1712e86fe41",
+    "integrity": {
+      "contentHash": "e293433b3d816959b5e4a9cbe711714fd50b5394144be212a35df1712e86fe41",
+      "registryHash": "d5162f44a8c264a4cc93b7729e3eca5eb7d2f615a77b5d20ba654d8a8f014bb9",
+      "integrityAlgorithm": "sha256",
+      "signedAtBuild": "2026-03-09T17:50:09.701Z"
+    }
+  },
+  "data": {
+    "raw": {
+      "stateCount": 50,
+      "datasetUpdatedAt": "2025-12-15T00:00:00.000Z"
+    },
+    "derived": {
+      "averageRate": 17.57,
+      "medianRate": 15.34,
+      "dispersionMetrics": {
+        "stdDev": 6.1,
+        "min": 11.74,
+        "max": 41.3,
+        "spread": 29.56
+      },
+      "highestState": {
+        "slug": "hawaii",
+        "name": "Hawaii",
+        "rate": 41.3
+      },
+      "lowestState": {
+        "slug": "idaho",
+        "name": "Idaho",
+        "rate": 11.74
+      },
+      "top5Highest": [
+        {
+          "slug": "hawaii",
+          "name": "Hawaii",
+          "rate": 41.3
+        },
+        {
+          "slug": "california",
+          "name": "California",
+          "rate": 31.14
+        },
+        {
+          "slug": "connecticut",
+          "name": "Connecticut",
+          "rate": 30.35
+        },
+        {
+          "slug": "rhode-island",
+          "name": "Rhode Island",
+          "rate": 28.42
+        },
+        {
+          "slug": "maine",
+          "name": "Maine",
+          "rate": 27.24
+        }
+      ],
+      "top5Lowest": [
+        {
+          "slug": "idaho",
+          "name": "Idaho",
+          "rate": 11.74
+        },
+        {
+          "slug": "north-dakota",
+          "name": "North Dakota",
+          "rate": 11.92
+        },
+        {
+          "slug": "nebraska",
+          "name": "Nebraska",
+          "rate": 12.19
+        },
+        {
+          "slug": "louisiana",
+          "name": "Louisiana",
+          "rate": 12.34
+        },
+        {
+          "slug": "arkansas",
+          "name": "Arkansas",
+          "rate": 12.83
+        }
+      ],
+      "trends": {
+        "avgRateCentsPerKwh": {
+          "values": [
+            18.26,
+            17.74
+          ],
+          "min": 17.74,
+          "max": 18.26
+        }
+      }
+    },
+    "derivedMeta": {
+      "methodologiesUsed": [
+        {
+          "id": "epi",
+          "version": "1.0",
+          "url": "http://localhost:3000/knowledge/methodology/epi.json",
+          "appliesToFields": [
+            "data.derived.averageRate",
+            "data.derived.medianRate",
+            "data.derived.dispersionMetrics",
+            "data.derived.highestState",
+            "data.derived.lowestState",
+            "data.derived.top5Highest",
+            "data.derived.top5Lowest",
+            "data.derived.trends"
+          ]
+        }
+      ]
+    },
+    "relatedEntities": {
+      "states": [
+        "arkansas",
+        "california",
+        "connecticut",
+        "hawaii",
+        "idaho",
+        "louisiana",
+        "maine",
+        "nebraska",
+        "north-dakota",
+        "rhode-island"
+      ],
+      "methodologies": [
+        "epi",
+        "value-score",
+        "freshness"
+      ],
+      "rankings": [
+        "rate-low-to-high",
+        "rate-high-to-low",
+        "affordability",
+        "value-score"
+      ]
+    },
+    "facts": [
+      {
+        "label": "Average rate",
+        "value": 17.57,
+        "unit": "¢/kWh",
+        "sourceField": "data.derived.averageRate"
+      },
+      {
+        "label": "Data age",
+        "value": 84,
+        "unit": "days",
+        "sourceField": "meta.freshness.ageDays"
+      },
+      {
+        "label": "Highest state rate",
+        "value": 41.3,
+        "unit": "¢/kWh",
+        "sourceField": "data.derived.highestState.rate"
+      },
+      {
+        "label": "Lowest state rate",
+        "value": 11.74,
+        "unit": "¢/kWh",
+        "sourceField": "data.derived.lowestState.rate"
+      },
+      {
+        "label": "Median rate",
+        "value": 15.34,
+        "unit": "¢/kWh",
+        "sourceField": "data.derived.medianRate"
+      },
+      {
+        "label": "Rate spread",
+        "value": 29.56,
+        "unit": "¢/kWh",
+        "sourceField": "data.derived.dispersionMetrics.spread"
+      },
+      {
+        "label": "State count",
+        "value": 50,
+        "sourceField": "data.raw.stateCount"
+      }
+    ]
+  }
+}

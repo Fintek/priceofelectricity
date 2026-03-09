@@ -1,0 +1,28 @@
+{
+  "schemaVersion": "1.0",
+  "generatedAt": "2026-03-09T17:50:09.701Z",
+  "subject": "state",
+  "id": "hawaii",
+  "insights": [
+    {
+      "type": "price",
+      "statement": "Electricity in Hawaii costs 135% more than the national average.",
+      "confidence": "high"
+    },
+    {
+      "type": "ranking",
+      "statement": "Hawaii ranks #1 among U.S. states for electricity prices.",
+      "confidence": "high"
+    },
+    {
+      "type": "ranking",
+      "statement": "Electricity in Hawaii is among the top 10 most expensive in the U.S.",
+      "confidence": "medium"
+    },
+    {
+      "type": "trend",
+      "statement": "Hawaii shows a falling electricity price trend based on recent historical data.",
+      "confidence": "medium"
+    }
+  ]
+}

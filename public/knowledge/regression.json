@@ -1,0 +1,20 @@
+{
+  "schemaVersion": "1.0",
+  "generatedAt": "2026-03-09T17:50:09.701Z",
+  "sourceVersion": "v2",
+  "entityTypeCounts": {
+    "national": 1,
+    "state": 51,
+    "methodology": 7,
+    "rankings": 12,
+    "vertical": 1
+  },
+  "fieldFingerprints": {
+    "national": "7f230ff4fccd279ea5b32fc8531910f97d5b62ac54683a06aed784b1e14bf9fa",
+    "state": "ad2a086a2a1119c9cbc492214e46276aeaf5e4d0d21e4ba1368d6ee675f21c2f",
+    "methodology": "0fcd7b06dc3fc647604aa203b14fc2c93a5d7fb429bac26f5c8a26e63cf95d9f",
+    "rankings": "3fde9cacb400a91589765adebcb8f94a3a21aafd6e6c66ce16b6fa793322d863",
+    "vertical": "ea943b0f2c40ad0c0dd8640808b4644c75b2d5c83cd7e0a2ef39f6bec5bfd305",
+    "compare": "bf0f18b8efc2fa23e48a1a0b15588b52fe0cd03623e09fa8a810cbabce9765da"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "schemaVersion": "1.0",
+  "generatedAt": "2026-03-09T17:50:09.701Z",
+  "sourceVersion": "v2",
+  "contractVersion": "1.0.0",
+  "stateA": "texas",
+  "stateB": "utah",
+  "nameA": "Texas",
+  "nameB": "Utah",
+  "rateA": 15.83,
+  "rateB": 12.97,
+  "differenceCents": 2.86,
+  "differencePercent": 22.1,
+  "higherCostState": "Texas",
+  "lowerCostState": "Utah"
+}

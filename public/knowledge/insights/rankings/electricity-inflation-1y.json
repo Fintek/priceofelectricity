@@ -1,0 +1,13 @@
+{
+  "schemaVersion": "1.0",
+  "generatedAt": "2026-03-09T17:50:09.701Z",
+  "subject": "ranking",
+  "id": "electricity-inflation-1y",
+  "insights": [
+    {
+      "type": "ranking",
+      "statement": "District of Columbia ranks #1 for 1-year electricity inflation in the United States.",
+      "confidence": "high"
+    }
+  ]
+}

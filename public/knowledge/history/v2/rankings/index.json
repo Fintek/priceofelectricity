@@ -1,0 +1,187 @@
+{
+  "schemaVersion": "1.0",
+  "generatedAt": "2026-03-09T17:50:09.701Z",
+  "sourceVersion": "v2",
+  "items": [
+    {
+      "id": "affordability",
+      "title": "Affordability Rankings",
+      "description": "Deterministic affordability ranking across normalized states.",
+      "metricField": "data.derived.affordabilityIndex",
+      "sortDirection": "desc",
+      "jsonUrl": "http://localhost:3000/knowledge/history/v2/rankings/affordability.json",
+      "canonicalUrl": "http://localhost:3000/knowledge/rankings/affordability",
+      "methodologiesUsed": [
+        {
+          "id": "value-score",
+          "version": "1.0"
+        }
+      ]
+    },
+    {
+      "id": "cagr-25y",
+      "title": "25-Year Rate Growth (CAGR)",
+      "description": "Compound annual growth rate of residential electricity rates over ~25 years. Higher = faster rate growth.",
+      "metricField": "data.derived.cagr25y",
+      "sortDirection": "desc",
+      "jsonUrl": "http://localhost:3000/knowledge/history/v2/rankings/cagr-25y.json",
+      "canonicalUrl": "http://localhost:3000/knowledge/rankings/cagr-25y",
+      "methodologiesUsed": [
+        {
+          "id": "cagr",
+          "version": "1.0"
+        }
+      ]
+    },
+    {
+      "id": "electricity-affordability",
+      "title": "Most Affordable Electricity by State",
+      "description": "States ranked by estimated monthly electricity bill at 900 kWh. Lower bill = more affordable.",
+      "metricField": "data.sortedStates.metricValue",
+      "sortDirection": "asc",
+      "jsonUrl": "http://localhost:3000/knowledge/history/v2/rankings/electricity-affordability.json",
+      "canonicalUrl": "http://localhost:3000/knowledge/rankings/electricity-affordability",
+      "methodologiesUsed": [
+        {
+          "id": "epi",
+          "version": "1.0"
+        }
+      ]
+    },
+    {
+      "id": "electricity-inflation-1y",
+      "title": "1-Year Electricity Inflation Ranking",
+      "description": "States ranked by 1-year electricity price increase. Higher = faster price growth.",
+      "metricField": "data.derived.inflation1yPercent",
+      "sortDirection": "desc",
+      "jsonUrl": "http://localhost:3000/knowledge/history/v2/rankings/electricity-inflation-1y.json",
+      "canonicalUrl": "http://localhost:3000/knowledge/rankings/electricity-inflation-1y",
+      "methodologiesUsed": [
+        {
+          "id": "price-trend",
+          "version": "1.0"
+        }
+      ]
+    },
+    {
+      "id": "electricity-inflation-5y",
+      "title": "5-Year Electricity Inflation Ranking",
+      "description": "States ranked by 5-year electricity price increase. Higher = faster price growth.",
+      "metricField": "data.derived.inflation5yPercent",
+      "sortDirection": "desc",
+      "jsonUrl": "http://localhost:3000/knowledge/history/v2/rankings/electricity-inflation-5y.json",
+      "canonicalUrl": "http://localhost:3000/knowledge/rankings/electricity-inflation-5y",
+      "methodologiesUsed": [
+        {
+          "id": "price-trend",
+          "version": "1.0"
+        }
+      ]
+    },
+    {
+      "id": "momentum-signal",
+      "title": "Electricity Price Momentum Signal Ranking",
+      "description": "States where electricity prices are accelerating, rising, stable, or falling.",
+      "metricField": "data.derived.momentum.score",
+      "sortDirection": "desc",
+      "jsonUrl": "http://localhost:3000/knowledge/history/v2/rankings/momentum-signal.json",
+      "canonicalUrl": "http://localhost:3000/knowledge/rankings/momentum-signal",
+      "methodologiesUsed": [
+        {
+          "id": "momentum-signal",
+          "version": "1.0"
+        }
+      ]
+    },
+    {
+      "id": "most-expensive-electricity",
+      "title": "Least Affordable Electricity by State",
+      "description": "States ranked by estimated monthly electricity bill at 900 kWh. Higher bill = less affordable.",
+      "metricField": "data.sortedStates.metricValue",
+      "sortDirection": "desc",
+      "jsonUrl": "http://localhost:3000/knowledge/history/v2/rankings/most-expensive-electricity.json",
+      "canonicalUrl": "http://localhost:3000/knowledge/rankings/most-expensive-electricity",
+      "methodologiesUsed": [
+        {
+          "id": "epi",
+          "version": "1.0"
+        }
+      ]
+    },
+    {
+      "id": "price-trend",
+      "title": "Electricity Price Trend Ranking",
+      "description": "States where electricity prices are rising the fastest.",
+      "metricField": "data.derived.annualizedTrend",
+      "sortDirection": "desc",
+      "jsonUrl": "http://localhost:3000/knowledge/history/v2/rankings/price-trend.json",
+      "canonicalUrl": "http://localhost:3000/knowledge/rankings/price-trend",
+      "methodologiesUsed": [
+        {
+          "id": "price-trend",
+          "version": "1.0"
+        }
+      ]
+    },
+    {
+      "id": "rate-high-to-low",
+      "title": "Rate Rankings (High to Low)",
+      "description": "Deterministic ranking of average state rates from highest to lowest.",
+      "metricField": "data.raw.avgRateCentsPerKwh",
+      "sortDirection": "desc",
+      "jsonUrl": "http://localhost:3000/knowledge/history/v2/rankings/rate-high-to-low.json",
+      "canonicalUrl": "http://localhost:3000/knowledge/rankings/rate-high-to-low",
+      "methodologiesUsed": [
+        {
+          "id": "epi",
+          "version": "1.0"
+        }
+      ]
+    },
+    {
+      "id": "rate-low-to-high",
+      "title": "Rate Rankings (Low to High)",
+      "description": "Deterministic ranking of average state rates from lowest to highest.",
+      "metricField": "data.raw.avgRateCentsPerKwh",
+      "sortDirection": "asc",
+      "jsonUrl": "http://localhost:3000/knowledge/history/v2/rankings/rate-low-to-high.json",
+      "canonicalUrl": "http://localhost:3000/knowledge/rankings/rate-low-to-high",
+      "methodologiesUsed": [
+        {
+          "id": "epi",
+          "version": "1.0"
+        }
+      ]
+    },
+    {
+      "id": "value-score",
+      "title": "Value Score Rankings",
+      "description": "Deterministic value score ranking across normalized states.",
+      "metricField": "data.derived.valueScore",
+      "sortDirection": "desc",
+      "jsonUrl": "http://localhost:3000/knowledge/history/v2/rankings/value-score.json",
+      "canonicalUrl": "http://localhost:3000/knowledge/rankings/value-score",
+      "methodologiesUsed": [
+        {
+          "id": "value-score",
+          "version": "1.0"
+        }
+      ]
+    },
+    {
+      "id": "volatility-5y",
+      "title": "5-Year Rate Volatility",
+      "description": "Coefficient of variation (stdev/mean) of monthly rates over the last 5 years. Higher = more volatile.",
+      "metricField": "data.derived.volatility5y",
+      "sortDirection": "desc",
+      "jsonUrl": "http://localhost:3000/knowledge/history/v2/rankings/volatility-5y.json",
+      "canonicalUrl": "http://localhost:3000/knowledge/rankings/volatility-5y",
+      "methodologiesUsed": [
+        {
+          "id": "volatility",
+          "version": "1.0"
+        }
+      ]
+    }
+  ]
+}

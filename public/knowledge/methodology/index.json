@@ -1,0 +1,98 @@
+{
+  "schemaVersion": "1.0",
+  "generatedAt": "2026-03-09T17:50:09.701Z",
+  "sourceVersion": "v2",
+  "items": [
+    {
+      "id": "cagr",
+      "title": "CAGR Methodology",
+      "jsonUrl": "http://localhost:3000/knowledge/methodology/cagr.json",
+      "canonicalUrl": "http://localhost:3000/knowledge/methodology/cagr",
+      "version": "1.0",
+      "lastReviewedAt": "2026-03-09",
+      "relatedDerivedFields": [
+        "data.sortedStates"
+      ]
+    },
+    {
+      "id": "epi",
+      "title": "Electricity Price Index Methodology",
+      "jsonUrl": "http://localhost:3000/knowledge/methodology/epi.json",
+      "canonicalUrl": "http://localhost:3000/knowledge/methodology/epi",
+      "version": "1.0",
+      "lastReviewedAt": "2026-03-09",
+      "relatedDerivedFields": [
+        "data.derived.exampleBills",
+        "data.derived.percentileRankings.ratePercentile",
+        "data.derived.averageRate",
+        "data.derived.medianRate",
+        "data.derived.dispersionMetrics",
+        "data.derived.highestState",
+        "data.derived.lowestState",
+        "data.derived.top5Highest",
+        "data.derived.top5Lowest",
+        "data.sortedStates"
+      ]
+    },
+    {
+      "id": "freshness",
+      "title": "Freshness Scoring Methodology",
+      "jsonUrl": "http://localhost:3000/knowledge/methodology/freshness.json",
+      "canonicalUrl": "http://localhost:3000/knowledge/methodology/freshness",
+      "version": "1.0",
+      "lastReviewedAt": "2026-03-09",
+      "relatedDerivedFields": [
+        "data.derived.freshnessStatus"
+      ]
+    },
+    {
+      "id": "momentum-signal",
+      "title": "Momentum Signal Methodology",
+      "jsonUrl": "http://localhost:3000/knowledge/methodology/momentum-signal.json",
+      "canonicalUrl": "http://localhost:3000/knowledge/methodology/momentum-signal",
+      "version": "1.0",
+      "lastReviewedAt": "2026-03-09",
+      "relatedDerivedFields": [
+        "data.sortedStates",
+        "data.derived.momentum"
+      ]
+    },
+    {
+      "id": "price-trend",
+      "title": "Price Trend Methodology",
+      "jsonUrl": "http://localhost:3000/knowledge/methodology/price-trend.json",
+      "canonicalUrl": "http://localhost:3000/knowledge/methodology/price-trend",
+      "version": "1.0",
+      "lastReviewedAt": "2026-03-09",
+      "relatedDerivedFields": [
+        "data.sortedStates"
+      ]
+    },
+    {
+      "id": "value-score",
+      "title": "Value Score Methodology",
+      "jsonUrl": "http://localhost:3000/knowledge/methodology/value-score.json",
+      "canonicalUrl": "http://localhost:3000/knowledge/methodology/value-score",
+      "version": "1.0",
+      "lastReviewedAt": "2026-03-09",
+      "relatedDerivedFields": [
+        "data.derived.valueScore",
+        "data.derived.affordabilityIndex",
+        "data.derived.percentileRankings.valueScorePercentile",
+        "data.derived.percentileRankings.affordabilityPercentile",
+        "data.sortedStates"
+      ]
+    },
+    {
+      "id": "volatility",
+      "title": "Volatility Index Methodology",
+      "jsonUrl": "http://localhost:3000/knowledge/methodology/volatility.json",
+      "canonicalUrl": "http://localhost:3000/knowledge/methodology/volatility",
+      "version": "1.0",
+      "lastReviewedAt": "2026-03-09",
+      "relatedDerivedFields": [
+        "data.sortedStates"
+      ]
+    }
+  ]
+}

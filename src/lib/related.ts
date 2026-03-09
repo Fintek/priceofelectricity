@@ -235,6 +235,7 @@ export function getRelatedLinks(ctx: RelatedContext): RelatedLink[] {
 // ── Context-specific helpers (guide / question / tool) ───────
 
 function forGuideCtx(slug: string, _state?: string): RelatedLink[] {
+  void _state;
   const links: RelatedLink[] = [];
   const otherGuides = GUIDES.filter((g) => g.slug !== slug);
   const words = new Set(slug.split("-"));
@@ -255,6 +256,7 @@ function forGuideCtx(slug: string, _state?: string): RelatedLink[] {
 }
 
 function forQuestionCtx(slug: string, _state?: string): RelatedLink[] {
+  void _state;
   const links: RelatedLink[] = [];
   const parsed = parseQuestionSlug(slug);
   if (parsed) {

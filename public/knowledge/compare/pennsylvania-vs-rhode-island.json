@@ -1,0 +1,16 @@
+{
+  "schemaVersion": "1.0",
+  "generatedAt": "2026-03-09T17:50:09.701Z",
+  "sourceVersion": "v2",
+  "contractVersion": "1.0.0",
+  "stateA": "pennsylvania",
+  "stateB": "rhode-island",
+  "nameA": "Pennsylvania",
+  "nameB": "Rhode Island",
+  "rateA": 17.78,
+  "rateB": 28.42,
+  "differenceCents": -10.64,
+  "differencePercent": -37.4,
+  "higherCostState": "Rhode Island",
+  "lowerCostState": "Pennsylvania"
+}

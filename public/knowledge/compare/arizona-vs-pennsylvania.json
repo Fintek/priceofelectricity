@@ -1,0 +1,16 @@
+{
+  "schemaVersion": "1.0",
+  "generatedAt": "2026-03-09T17:50:09.701Z",
+  "sourceVersion": "v2",
+  "contractVersion": "1.0.0",
+  "stateA": "arizona",
+  "stateB": "pennsylvania",
+  "nameA": "Arizona",
+  "nameB": "Pennsylvania",
+  "rateA": 15.7,
+  "rateB": 17.78,
+  "differenceCents": -2.08,
+  "differencePercent": -11.7,
+  "higherCostState": "Pennsylvania",
+  "lowerCostState": "Arizona"
+}

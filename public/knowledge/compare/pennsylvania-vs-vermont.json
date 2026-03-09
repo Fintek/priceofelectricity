@@ -1,0 +1,16 @@
+{
+  "schemaVersion": "1.0",
+  "generatedAt": "2026-03-09T17:50:09.701Z",
+  "sourceVersion": "v2",
+  "contractVersion": "1.0.0",
+  "stateA": "pennsylvania",
+  "stateB": "vermont",
+  "nameA": "Pennsylvania",
+  "nameB": "Vermont",
+  "rateA": 17.78,
+  "rateB": 22.58,
+  "differenceCents": -4.8,
+  "differencePercent": -21.3,
+  "higherCostState": "Vermont",
+  "lowerCostState": "Pennsylvania"
+}

@@ -1,0 +1,16 @@
+{
+  "schemaVersion": "1.0",
+  "generatedAt": "2026-03-09T17:50:09.701Z",
+  "sourceVersion": "v2",
+  "contractVersion": "1.0.0",
+  "releaseId": "knowledge-v1-v2",
+  "publicEndpointsUrl": "/knowledge/public-endpoints.json",
+  "integrityManifestUrl": "/knowledge/integrity/manifest.json",
+  "integrity": {
+    "algorithm": "sha256",
+    "manifestHash": "11eb14dc631c83cccd7a02618e6b03f59fc427d33ba0b39552c286784c2745fa"
+  },
+  "notes": [
+    "This release file pins the public endpoint set and integrity hash for reproducible ingestion."
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "schemaVersion": "1.0",
+  "generatedAt": "2026-03-09T17:50:09.701Z",
+  "sourceVersion": "v2",
+  "contractVersion": "1.0.0",
+  "stateA": "north-dakota",
+  "stateB": "pennsylvania",
+  "nameA": "North Dakota",
+  "nameB": "Pennsylvania",
+  "rateA": 11.92,
+  "rateB": 17.78,
+  "differenceCents": -5.86,
+  "differencePercent": -33,
+  "higherCostState": "Pennsylvania",
+  "lowerCostState": "North Dakota"
+}

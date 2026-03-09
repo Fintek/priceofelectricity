@@ -1,0 +1,16 @@
+{
+  "schemaVersion": "1.0",
+  "generatedAt": "2026-03-09T17:50:09.701Z",
+  "sourceVersion": "v2",
+  "contractVersion": "1.0.0",
+  "stateA": "new-york",
+  "stateB": "utah",
+  "nameA": "New York",
+  "nameB": "Utah",
+  "rateA": 23.87,
+  "rateB": 12.97,
+  "differenceCents": 10.9,
+  "differencePercent": 84,
+  "higherCostState": "New York",
+  "lowerCostState": "Utah"
+}

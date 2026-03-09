@@ -1,0 +1,44 @@
+{
+  "schemaVersion": "1.0",
+  "generatedAt": "2026-03-09T17:50:09.701Z",
+  "sourceVersion": "v2",
+  "contractVersion": "1.0.0",
+  "regions": [
+    {
+      "id": "northeast",
+      "name": "Northeast",
+      "href": "/knowledge/regions/northeast",
+      "excerpt": "Electricity rates and metrics for Northeast U.S. states. Average 24.64 ¢/kWh.",
+      "enabled": true,
+      "stateCount": 9,
+      "averageRateCentsPerKwh": 24.64
+    },
+    {
+      "id": "midwest",
+      "name": "Midwest",
+      "href": "/knowledge/regions/midwest",
+      "excerpt": "Electricity rates and metrics for Midwest U.S. states. Average 15.19 ¢/kWh.",
+      "enabled": true,
+      "stateCount": 12,
+      "averageRateCentsPerKwh": 15.19
+    },
+    {
+      "id": "south",
+      "name": "South",
+      "href": "/knowledge/regions/south",
+      "excerpt": "Electricity rates and metrics for South U.S. states. Average 14.84 ¢/kWh.",
+      "enabled": true,
+      "stateCount": 16,
+      "averageRateCentsPerKwh": 14.84
+    },
+    {
+      "id": "west",
+      "name": "West",
+      "href": "/knowledge/regions/west",
+      "excerpt": "Electricity rates and metrics for West U.S. states. Average 18.24 ¢/kWh.",
+      "enabled": true,
+      "stateCount": 13,
+      "averageRateCentsPerKwh": 18.24
+    }
+  ]
+}

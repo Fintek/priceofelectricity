@@ -1,0 +1,16 @@
+{
+  "schemaVersion": "1.0",
+  "generatedAt": "2026-03-09T17:50:09.701Z",
+  "sourceVersion": "v2",
+  "contractVersion": "1.0.0",
+  "stateA": "hawaii",
+  "stateB": "texas",
+  "nameA": "Hawaii",
+  "nameB": "Texas",
+  "rateA": 41.3,
+  "rateB": 15.83,
+  "differenceCents": 25.47,
+  "differencePercent": 160.9,
+  "higherCostState": "Hawaii",
+  "lowerCostState": "Texas"
+}

@@ -1,0 +1,16 @@
+{
+  "schemaVersion": "1.0",
+  "generatedAt": "2026-03-09T17:50:09.701Z",
+  "sourceVersion": "v2",
+  "contractVersion": "1.0.0",
+  "stateA": "florida",
+  "stateB": "south-carolina",
+  "nameA": "Florida",
+  "nameB": "South Carolina",
+  "rateA": 15.27,
+  "rateB": 14.72,
+  "differenceCents": 0.55,
+  "differencePercent": 3.7,
+  "higherCostState": "Florida",
+  "lowerCostState": "South Carolina"
+}

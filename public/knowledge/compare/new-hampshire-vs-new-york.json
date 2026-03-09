@@ -1,0 +1,16 @@
+{
+  "schemaVersion": "1.0",
+  "generatedAt": "2026-03-09T17:50:09.701Z",
+  "sourceVersion": "v2",
+  "contractVersion": "1.0.0",
+  "stateA": "new-hampshire",
+  "stateB": "new-york",
+  "nameA": "New Hampshire",
+  "nameB": "New York",
+  "rateA": 23.35,
+  "rateB": 23.87,
+  "differenceCents": -0.52,
+  "differencePercent": -2.2,
+  "higherCostState": "New York",
+  "lowerCostState": "New Hampshire"
+}

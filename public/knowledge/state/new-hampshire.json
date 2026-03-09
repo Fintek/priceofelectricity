@@ -1,0 +1,589 @@
+{
+  "meta": {
+    "schemaVersion": "1.0",
+    "id": "knowledge:state:new-hampshire",
+    "type": "state",
+    "slug": "new-hampshire",
+    "title": "New Hampshire Electricity Price Knowledge",
+    "description": "Machine-readable summary for New Hampshire electricity rates and ranking metrics.",
+    "canonicalUrl": "http://localhost:3000/knowledge/state/new-hampshire",
+    "jsonUrl": "http://localhost:3000/knowledge/state/new-hampshire.json",
+    "updatedAt": "2026-03-09T17:50:09.701Z",
+    "sourceVersion": "v2",
+    "temporalContext": {
+      "sourceVersion": "v2",
+      "isLatest": true
+    },
+    "provenance": [
+      {
+        "id": "eia-retail-sales-923",
+        "sourceName": "U.S. Energy Information Administration (EIA) Retail Sales of Electricity",
+        "sourceUrl": "https://api.eia.gov/v2/electricity/retail-sales/data/",
+        "publisher": "U.S. Energy Information Administration",
+        "license": "U.S. Government work (public domain)",
+        "notes": "Primary source for state residential electricity rate series used by snapshots.",
+        "retrievedAt": "2026-03-09T17:50:09.701Z"
+      },
+      {
+        "id": "poe-dataset-affordability-csv",
+        "sourceName": "PriceOfElectricity.com dataset endpoint: affordability.csv",
+        "sourceUrl": "http://localhost:3000/api/datasets/affordability.csv",
+        "publisher": "PriceOfElectricity.com",
+        "license": "Site content license",
+        "retrievedAt": "2026-03-09T17:50:09.701Z"
+      },
+      {
+        "id": "poe-dataset-states-csv",
+        "sourceName": "PriceOfElectricity.com dataset endpoint: states.csv",
+        "sourceUrl": "http://localhost:3000/api/datasets/states.csv",
+        "publisher": "PriceOfElectricity.com",
+        "license": "Site content license",
+        "retrievedAt": "2026-03-09T17:50:09.701Z"
+      },
+      {
+        "id": "poe-dataset-states-json",
+        "sourceName": "PriceOfElectricity.com dataset endpoint: states.json",
+        "sourceUrl": "http://localhost:3000/api/datasets/states.json",
+        "publisher": "PriceOfElectricity.com",
+        "license": "Site content license",
+        "retrievedAt": "2026-03-09T17:50:09.701Z"
+      },
+      {
+        "id": "poe-dataset-value-ranking-csv",
+        "sourceName": "PriceOfElectricity.com dataset endpoint: value-ranking.csv",
+        "sourceUrl": "http://localhost:3000/api/datasets/value-ranking.csv",
+        "publisher": "PriceOfElectricity.com",
+        "license": "Site content license",
+        "retrievedAt": "2026-03-09T17:50:09.701Z"
+      },
+      {
+        "id": "poe-methodology-epi",
+        "sourceName": "PriceOfElectricity.com methodology: Electricity Price Index",
+        "sourceUrl": "http://localhost:3000/methodology/electricity-price-index",
+        "publisher": "PriceOfElectricity.com",
+        "license": "Site content license",
+        "retrievedAt": "2026-03-09T17:50:09.701Z"
+      },
+      {
+        "id": "poe-methodology-freshness",
+        "sourceName": "PriceOfElectricity.com methodology: Freshness Scoring",
+        "sourceUrl": "http://localhost:3000/methodology/freshness-scoring",
+        "publisher": "PriceOfElectricity.com",
+        "license": "Site content license",
+        "retrievedAt": "2026-03-09T17:50:09.701Z"
+      },
+      {
+        "id": "poe-methodology-value-score",
+        "sourceName": "PriceOfElectricity.com methodology: Value Score",
+        "sourceUrl": "http://localhost:3000/methodology/value-score",
+        "publisher": "PriceOfElectricity.com",
+        "license": "Site content license",
+        "retrievedAt": "2026-03-09T17:50:09.701Z"
+      }
+    ],
+    "fieldProvenance": [
+      {
+        "field": "data.raw.avgRateCentsPerKwh",
+        "provenanceIds": [
+          "eia-retail-sales-923",
+          "poe-dataset-states-json"
+        ],
+        "isDerived": false
+      },
+      {
+        "field": "data.raw.updated",
+        "provenanceIds": [
+          "eia-retail-sales-923",
+          "poe-dataset-states-json"
+        ],
+        "isDerived": false
+      },
+      {
+        "field": "data.derived.exampleBills",
+        "provenanceIds": [
+          "eia-retail-sales-923",
+          "poe-dataset-states-json"
+        ],
+        "isDerived": true,
+        "derivedFromFields": [
+          "data.raw.avgRateCentsPerKwh"
+        ]
+      },
+      {
+        "field": "data.derived.affordabilityIndex",
+        "provenanceIds": [
+          "poe-dataset-affordability-csv",
+          "eia-retail-sales-923"
+        ],
+        "isDerived": true,
+        "derivedFromFields": [
+          "data.raw.avgRateCentsPerKwh"
+        ]
+      },
+      {
+        "field": "data.derived.valueScore",
+        "provenanceIds": [
+          "poe-methodology-value-score",
+          "poe-dataset-value-ranking-csv"
+        ],
+        "isDerived": true,
+        "derivedFromFields": [
+          "data.raw.avgRateCentsPerKwh",
+          "data.derived.affordabilityIndex"
+        ]
+      },
+      {
+        "field": "data.derived.freshnessStatus",
+        "provenanceIds": [
+          "poe-methodology-freshness",
+          "poe-dataset-states-json"
+        ],
+        "isDerived": true,
+        "derivedFromFields": [
+          "data.raw.updated"
+        ]
+      },
+      {
+        "field": "data.derived.percentileRankings",
+        "provenanceIds": [
+          "eia-retail-sales-923",
+          "poe-dataset-states-json",
+          "poe-dataset-affordability-csv",
+          "poe-dataset-value-ranking-csv"
+        ],
+        "isDerived": true,
+        "derivedFromFields": [
+          "data.raw.avgRateCentsPerKwh",
+          "data.derived.valueScore",
+          "data.derived.affordabilityIndex"
+        ]
+      },
+      {
+        "field": "data.derived.comparison",
+        "provenanceIds": [
+          "eia-retail-sales-923",
+          "poe-dataset-states-json",
+          "poe-methodology-epi"
+        ],
+        "isDerived": true,
+        "derivedFromFields": [
+          "data.raw.avgRateCentsPerKwh"
+        ]
+      },
+      {
+        "field": "data.derived.relatedUrls",
+        "provenanceIds": [
+          "poe-methodology-epi",
+          "poe-methodology-value-score",
+          "poe-methodology-freshness"
+        ],
+        "isDerived": true,
+        "derivedFromFields": []
+      }
+    ],
+    "citations": [
+      {
+        "sourceName": "U.S. Energy Information Administration (EIA) Retail Sales of Electricity",
+        "sourceUrl": "https://api.eia.gov/v2/electricity/retail-sales/data/",
+        "retrievedAt": "2026-03-09T17:50:09.701Z",
+        "notes": "Primary source for state residential electricity rate series used by snapshots."
+      },
+      {
+        "sourceName": "PriceOfElectricity.com dataset endpoint: affordability.csv",
+        "sourceUrl": "http://localhost:3000/api/datasets/affordability.csv",
+        "retrievedAt": "2026-03-09T17:50:09.701Z"
+      },
+      {
+        "sourceName": "PriceOfElectricity.com dataset endpoint: states.csv",
+        "sourceUrl": "http://localhost:3000/api/datasets/states.csv",
+        "retrievedAt": "2026-03-09T17:50:09.701Z"
+      },
+      {
+        "sourceName": "PriceOfElectricity.com dataset endpoint: states.json",
+        "sourceUrl": "http://localhost:3000/api/datasets/states.json",
+        "retrievedAt": "2026-03-09T17:50:09.701Z"
+      },
+      {
+        "sourceName": "PriceOfElectricity.com dataset endpoint: value-ranking.csv",
+        "sourceUrl": "http://localhost:3000/api/datasets/value-ranking.csv",
+        "retrievedAt": "2026-03-09T17:50:09.701Z"
+      },
+      {
+        "sourceName": "PriceOfElectricity.com methodology: Electricity Price Index",
+        "sourceUrl": "http://localhost:3000/methodology/electricity-price-index",
+        "retrievedAt": "2026-03-09T17:50:09.701Z"
+      },
+      {
+        "sourceName": "PriceOfElectricity.com methodology: Freshness Scoring",
+        "sourceUrl": "http://localhost:3000/methodology/freshness-scoring",
+        "retrievedAt": "2026-03-09T17:50:09.701Z"
+      },
+      {
+        "sourceName": "PriceOfElectricity.com methodology: Value Score",
+        "sourceUrl": "http://localhost:3000/methodology/value-score",
+        "retrievedAt": "2026-03-09T17:50:09.701Z"
+      }
+    ],
+    "llmHints": {
+      "priority": "high",
+      "entityType": "state",
+      "semanticTopics": [
+        "electricity rates",
+        "kwh pricing",
+        "energy affordability",
+        "state comparison"
+      ],
+      "semanticCluster": "geographic-state"
+    },
+    "freshness": {
+      "datasetUpdatedAt": "2025-12-15T00:00:00.000Z",
+      "computedAt": "2026-03-09T17:50:09.701Z",
+      "status": "aging",
+      "ageDays": 84,
+      "methodology": {
+        "id": "freshness",
+        "version": "1.0",
+        "url": "http://localhost:3000/knowledge/methodology/freshness.json",
+        "canonicalUrl": "http://localhost:3000/knowledge/methodology/freshness"
+      }
+    },
+    "excerpt": "New Hampshire residential electricity snapshot. Avg 23.35¢/kWh Value score 63 Affordability 61 Data freshness: fresh.",
+    "disclaimerRefs": [
+      "general-site",
+      "offers-disabled"
+    ],
+    "qualityScore": 90,
+    "contentHash": "1df8566c52640e5d9c0f7116e9cb84689499da074d464f6b9f4d9fee85b92b83",
+    "integrity": {
+      "contentHash": "1df8566c52640e5d9c0f7116e9cb84689499da074d464f6b9f4d9fee85b92b83",
+      "integrityAlgorithm": "sha256",
+      "signedAtBuild": "2026-03-09T17:50:09.701Z"
+    }
+  },
+  "data": {
+    "raw": {
+      "slug": "new-hampshire",
+      "name": "New Hampshire",
+      "postal": null,
+      "avgRateCentsPerKwh": 23.35,
+      "updated": "February 2026"
+    },
+    "derived": {
+      "valueScore": 63,
+      "affordabilityIndex": 61,
+      "freshnessStatus": "fresh",
+      "exampleBills": {
+        "kwh500": 116.75,
+        "kwh1000": 233.5,
+        "kwh1500": 350.25
+      },
+      "relatedUrls": {
+        "statePage": "http://localhost:3000/new-hampshire",
+        "utilitiesPage": "http://localhost:3000/new-hampshire/utilities",
+        "plansPage": "http://localhost:3000/new-hampshire/plans",
+        "methodology": [
+          "http://localhost:3000/knowledge/methodology/epi",
+          "http://localhost:3000/knowledge/methodology/value-score",
+          "http://localhost:3000/knowledge/methodology/freshness"
+        ]
+      },
+      "percentileRankings": {
+        "ratePercentile": 83.67,
+        "valueScorePercentile": 16.33,
+        "affordabilityPercentile": 16.33
+      },
+      "trends": {
+        "avgRateCentsPerKwh": {
+          "values": [
+            27.37,
+            26.28
+          ],
+          "min": 26.28,
+          "max": 27.37
+        }
+      },
+      "momentum": {
+        "enabled": true,
+        "signal": "accelerating",
+        "score": 12.98,
+        "shortWindowChangePercent": 10.98,
+        "longWindowChangePercent": 6.22,
+        "windowPointsUsed": 300
+      },
+      "comparison": {
+        "nationalAverage": 17.57,
+        "differenceCents": 5.78,
+        "differencePercent": 32.9,
+        "category": "much higher than national average"
+      },
+      "priceHistory": {
+        "rateSeries": {
+          "periods": [
+            "2021-01",
+            "2021-02",
+            "2021-03",
+            "2021-04",
+            "2021-05",
+            "2021-06",
+            "2021-07",
+            "2021-08",
+            "2021-09",
+            "2021-10",
+            "2021-11",
+            "2021-12",
+            "2022-01",
+            "2022-02",
+            "2022-03",
+            "2022-04",
+            "2022-05",
+            "2022-06",
+            "2022-07",
+            "2022-08",
+            "2022-09",
+            "2022-10",
+            "2022-11",
+            "2022-12",
+            "2023-01",
+            "2023-02",
+            "2023-03",
+            "2023-04",
+            "2023-05",
+            "2023-06",
+            "2023-07",
+            "2023-08",
+            "2023-09",
+            "2023-10",
+            "2023-11",
+            "2023-12",
+            "2024-01",
+            "2024-02",
+            "2024-03",
+            "2024-04",
+            "2024-05",
+            "2024-06",
+            "2024-07",
+            "2024-08",
+            "2024-09",
+            "2024-10",
+            "2024-11",
+            "2024-12",
+            "2025-01",
+            "2025-02",
+            "2025-03",
+            "2025-04",
+            "2025-05",
+            "2025-06",
+            "2025-07",
+            "2025-08",
+            "2025-09",
+            "2025-10",
+            "2025-11",
+            "2025-12"
+          ],
+          "values": [
+            18.93,
+            19.27,
+            19.22,
+            19.81,
+            19.95,
+            19.27,
+            19.05,
+            19.58,
+            20.66,
+            21.06,
+            21.16,
+            21.02,
+            21.23,
+            22.11,
+            22.94,
+            23.13,
+            23.02,
+            22.67,
+            21.77,
+            27.42,
+            32.26,
+            30.43,
+            30.61,
+            30.88,
+            31.68,
+            30.98,
+            30.25,
+            30.8,
+            30.6,
+            29.53,
+            28.96,
+            26.13,
+            23.24,
+            25.49,
+            25.58,
+            24.74,
+            24.85,
+            23.56,
+            22.3,
+            22.84,
+            23.11,
+            22.52,
+            21.79,
+            22.93,
+            24.93,
+            24.78,
+            24.46,
+            23.68,
+            23.4,
+            23.01,
+            22.81,
+            23.66,
+            24.02,
+            23.51,
+            22.79,
+            24.47,
+            27.82,
+            27.27,
+            27.37,
+            26.28
+          ]
+        },
+        "rate1YearAgo": 23.68,
+        "rate5YearsAgo": 18.73,
+        "increase1YearPercent": 11,
+        "increase5YearPercent": 40.3,
+        "annualizedIncrease5Year": 7
+      }
+    },
+    "compareLinks": [
+      {
+        "pairSlug": "new-hampshire-vs-new-york",
+        "title": "New Hampshire vs New York",
+        "url": "/electricity-cost-comparison/new-hampshire-vs-new-york"
+      },
+      {
+        "pairSlug": "new-hampshire-vs-pennsylvania",
+        "title": "New Hampshire vs Pennsylvania",
+        "url": "/electricity-cost-comparison/new-hampshire-vs-pennsylvania"
+      },
+      {
+        "pairSlug": "california-vs-new-hampshire",
+        "title": "New Hampshire vs California",
+        "url": "/electricity-cost-comparison/california-vs-new-hampshire"
+      }
+    ],
+    "regionRef": {
+      "id": "northeast",
+      "name": "Northeast",
+      "href": "/knowledge/regions/northeast"
+    },
+    "derivedMeta": {
+      "methodologiesUsed": [
+        {
+          "id": "epi",
+          "version": "1.0",
+          "url": "http://localhost:3000/knowledge/methodology/epi.json",
+          "appliesToFields": [
+            "data.derived.exampleBills",
+            "data.derived.percentileRankings.ratePercentile",
+            "data.derived.relatedUrls",
+            "data.derived.trends",
+            "data.derived.comparison"
+          ]
+        },
+        {
+          "id": "value-score",
+          "version": "1.0",
+          "url": "http://localhost:3000/knowledge/methodology/value-score.json",
+          "appliesToFields": [
+            "data.derived.valueScore",
+            "data.derived.affordabilityIndex",
+            "data.derived.percentileRankings.valueScorePercentile",
+            "data.derived.percentileRankings.affordabilityPercentile"
+          ]
+        },
+        {
+          "id": "freshness",
+          "version": "1.0",
+          "url": "http://localhost:3000/knowledge/methodology/freshness.json",
+          "appliesToFields": [
+            "data.derived.freshnessStatus"
+          ]
+        },
+        {
+          "id": "momentum-signal",
+          "version": "1.0",
+          "url": "http://localhost:3000/knowledge/methodology/momentum-signal.json",
+          "appliesToFields": [
+            "data.derived.momentum"
+          ]
+        },
+        {
+          "id": "price-trend",
+          "version": "1.0",
+          "url": "http://localhost:3000/knowledge/methodology/price-trend.json",
+          "appliesToFields": [
+            "data.derived.priceHistory"
+          ]
+        }
+      ]
+    },
+    "relatedEntities": {
+      "methodologies": [
+        "epi",
+        "value-score",
+        "freshness",
+        "momentum-signal",
+        "price-trend"
+      ],
+      "rankings": [
+        "rate-low-to-high",
+        "rate-high-to-low",
+        "affordability",
+        "value-score",
+        "momentum-signal"
+      ],
+      "national": true
+    },
+    "offersRef": {
+      "offersIndexUrl": "/knowledge/offers/index.json",
+      "offersConfigUrl": "/knowledge/policy/offers-config.json",
+      "enabled": false
+    },
+    "facts": [
+      {
+        "label": "Affordability index",
+        "value": 61,
+        "sourceField": "data.derived.affordabilityIndex"
+      },
+      {
+        "label": "Average rate",
+        "value": 23.35,
+        "unit": "¢/kWh",
+        "sourceField": "data.raw.avgRateCentsPerKwh"
+      },
+      {
+        "label": "Data age",
+        "value": 84,
+        "unit": "days",
+        "sourceField": "meta.freshness.ageDays"
+      },
+      {
+        "label": "Example bill 1000 kWh",
+        "value": 233.5,
+        "unit": "$",
+        "sourceField": "data.derived.exampleBills.kwh1000"
+      },
+      {
+        "label": "Freshness status",
+        "value": "fresh",
+        "sourceField": "data.derived.freshnessStatus"
+      },
+      {
+        "label": "Rate percentile",
+        "value": 83.67,
+        "sourceField": "data.derived.percentileRankings.ratePercentile"
+      },
+      {
+        "label": "Value score",
+        "value": 63,
+        "sourceField": "data.derived.valueScore"
+      }
+    ]
+  }
+}

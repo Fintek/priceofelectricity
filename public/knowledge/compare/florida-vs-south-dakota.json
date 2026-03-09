@@ -1,0 +1,16 @@
+{
+  "schemaVersion": "1.0",
+  "generatedAt": "2026-03-09T17:50:09.701Z",
+  "sourceVersion": "v2",
+  "contractVersion": "1.0.0",
+  "stateA": "florida",
+  "stateB": "south-dakota",
+  "nameA": "Florida",
+  "nameB": "South Dakota",
+  "rateA": 15.27,
+  "rateB": 13.14,
+  "differenceCents": 2.13,
+  "differencePercent": 16.2,
+  "higherCostState": "Florida",
+  "lowerCostState": "South Dakota"
+}

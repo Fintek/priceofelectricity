@@ -1,0 +1,23 @@
+{
+  "schemaVersion": "1.0",
+  "generatedAt": "2026-03-09T17:50:09.701Z",
+  "subject": "state",
+  "id": "texas",
+  "insights": [
+    {
+      "type": "price",
+      "statement": "Electricity in Texas costs 10% less than the national average.",
+      "confidence": "high"
+    },
+    {
+      "type": "ranking",
+      "statement": "Texas ranks #22 among U.S. states for electricity prices.",
+      "confidence": "high"
+    },
+    {
+      "type": "trend",
+      "statement": "Texas shows a rising electricity price trend based on recent historical data.",
+      "confidence": "medium"
+    }
+  ]
+}

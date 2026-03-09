@@ -1,0 +1,33 @@
+{
+  "schemaVersion": "1.0",
+  "generatedAt": "2026-03-09T17:50:09.701Z",
+  "subject": "state",
+  "id": "utah",
+  "insights": [
+    {
+      "type": "price",
+      "statement": "Electricity in Utah costs 26% less than the national average.",
+      "confidence": "high"
+    },
+    {
+      "type": "ranking",
+      "statement": "Utah ranks #44 among U.S. states for electricity prices.",
+      "confidence": "high"
+    },
+    {
+      "type": "ranking",
+      "statement": "Electricity in Utah is among the 10 least expensive states.",
+      "confidence": "medium"
+    },
+    {
+      "type": "value",
+      "statement": "Utah has a value score of 96, indicating strong affordability and freshness.",
+      "confidence": "medium"
+    },
+    {
+      "type": "trend",
+      "statement": "Utah shows a rising electricity price trend based on recent historical data.",
+      "confidence": "medium"
+    }
+  ]
+}

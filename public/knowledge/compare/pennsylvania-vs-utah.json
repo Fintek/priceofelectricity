@@ -1,0 +1,16 @@
+{
+  "schemaVersion": "1.0",
+  "generatedAt": "2026-03-09T17:50:09.701Z",
+  "sourceVersion": "v2",
+  "contractVersion": "1.0.0",
+  "stateA": "pennsylvania",
+  "stateB": "utah",
+  "nameA": "Pennsylvania",
+  "nameB": "Utah",
+  "rateA": 17.78,
+  "rateB": 12.97,
+  "differenceCents": 4.81,
+  "differencePercent": 37.1,
+  "higherCostState": "Pennsylvania",
+  "lowerCostState": "Utah"
+}

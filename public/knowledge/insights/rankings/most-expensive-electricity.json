@@ -1,0 +1,13 @@
+{
+  "schemaVersion": "1.0",
+  "generatedAt": "2026-03-09T17:50:09.701Z",
+  "subject": "ranking",
+  "id": "most-expensive-electricity",
+  "insights": [
+    {
+      "type": "ranking",
+      "statement": "Hawaii ranks #1 for least affordable electricity by state in the United States.",
+      "confidence": "high"
+    }
+  ]
+}

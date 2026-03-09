@@ -1,0 +1,136 @@
+{
+  "meta": {
+    "schemaVersion": "1.0",
+    "id": "knowledge:methodology:price-trend",
+    "type": "methodology",
+    "slug": "price-trend",
+    "title": "Price Trend Methodology",
+    "description": "Annualized linear trend methodology for electricity price growth.",
+    "canonicalUrl": "http://localhost:3000/knowledge/methodology/price-trend",
+    "jsonUrl": "http://localhost:3000/knowledge/methodology/price-trend.json",
+    "updatedAt": "2026-03-09T17:50:09.701Z",
+    "sourceVersion": "v2",
+    "temporalContext": {
+      "sourceVersion": "v2",
+      "isLatest": true
+    },
+    "provenance": [
+      {
+        "id": "poe-methodology-price-trend",
+        "sourceName": "PriceOfElectricity.com methodology: Price Trend",
+        "sourceUrl": "http://localhost:3000/knowledge/methodology/price-trend",
+        "publisher": "PriceOfElectricity.com",
+        "license": "Site content license",
+        "retrievedAt": "2026-03-09T17:50:09.701Z"
+      }
+    ],
+    "fieldProvenance": [
+      {
+        "field": "data.definition",
+        "provenanceIds": [
+          "poe-methodology-price-trend"
+        ]
+      },
+      {
+        "field": "data.inputs",
+        "provenanceIds": [
+          "poe-methodology-price-trend"
+        ]
+      },
+      {
+        "field": "data.steps",
+        "provenanceIds": [
+          "poe-methodology-price-trend"
+        ]
+      },
+      {
+        "field": "data.limitations",
+        "provenanceIds": [
+          "poe-methodology-price-trend"
+        ]
+      },
+      {
+        "field": "data.relatedInternalUrls",
+        "provenanceIds": [
+          "poe-methodology-price-trend"
+        ]
+      }
+    ],
+    "citations": [
+      {
+        "sourceName": "PriceOfElectricity.com methodology: Price Trend",
+        "sourceUrl": "http://localhost:3000/knowledge/methodology/price-trend",
+        "retrievedAt": "2026-03-09T17:50:09.701Z"
+      }
+    ],
+    "llmHints": {
+      "priority": "high",
+      "entityType": "methodology",
+      "semanticTopics": [
+        "methodology",
+        "electricity rates",
+        "index calculation",
+        "data freshness"
+      ],
+      "semanticCluster": "calculation-framework"
+    },
+    "freshness": {
+      "datasetUpdatedAt": "2025-12-15T00:00:00.000Z",
+      "computedAt": "2026-03-09T17:50:09.701Z",
+      "status": "aging",
+      "ageDays": 84,
+      "methodology": {
+        "id": "freshness",
+        "version": "1.0",
+        "url": "http://localhost:3000/knowledge/methodology/freshness.json",
+        "canonicalUrl": "http://localhost:3000/knowledge/methodology/freshness"
+      }
+    },
+    "excerpt": "Price Trend Methodology. Defines how metrics is computed from inputs and produces derived fields used across state and ranking pages.",
+    "disclaimerRefs": [
+      "methodology"
+    ],
+    "methodology": {
+      "id": "price-trend",
+      "version": "1.0",
+      "lastReviewedAt": "2026-03-09",
+      "relatedDerivedFields": [
+        "data.sortedStates"
+      ]
+    },
+    "qualityScore": 90,
+    "contentHash": "7380fcefd93dd1ad48abcbff0b40bc4fe1d74e91e7531615263c4896d0afc673",
+    "integrity": {
+      "contentHash": "7380fcefd93dd1ad48abcbff0b40bc4fe1d74e91e7531615263c4896d0afc673",
+      "integrityAlgorithm": "sha256",
+      "signedAtBuild": "2026-03-09T17:50:09.701Z"
+    }
+  },
+  "data": {
+    "definition": "Trend ranking measures historical growth in electricity prices using a linear percent change, annualized over the window.",
+    "inputs": [
+      "Historical monthly avgRateCentsPerKwh",
+      "Start and end dates (~5 years)"
+    ],
+    "steps": [
+      "Select start point: closest data ~5 years ago. If 5y not available, use longest available window.",
+      "Select end point: most recent data.",
+      "trendChange = ((endRate - startRate) / startRate) * 100",
+      "annualizedTrend = trendChange / years"
+    ],
+    "limitations": [
+      "Historical trends do not predict future prices.",
+      "Data coverage varies by state.",
+      "Requires historical time-series data. Rankings are disabled when history is unavailable."
+    ],
+    "relatedInternalUrls": [
+      "http://localhost:3000/knowledge/rankings/price-trend"
+    ],
+    "relatedEntities": {
+      "national": true,
+      "rankings": [
+        "price-trend"
+      ]
+    }
+  }
+}

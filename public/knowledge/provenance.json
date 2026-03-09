@@ -1,0 +1,98 @@
+{
+  "schemaVersion": "1.0",
+  "generatedAt": "2026-03-09T17:50:09.701Z",
+  "sources": [
+    {
+      "id": "eia-retail-sales-923",
+      "sourceName": "U.S. Energy Information Administration (EIA) Retail Sales of Electricity",
+      "sourceUrl": "https://api.eia.gov/v2/electricity/retail-sales/data/",
+      "publisher": "U.S. Energy Information Administration",
+      "license": "U.S. Government work (public domain)",
+      "notes": "Primary source for state residential electricity rate series used by snapshots."
+    },
+    {
+      "id": "poe-dataset-affordability-csv",
+      "sourceName": "PriceOfElectricity.com dataset endpoint: affordability.csv",
+      "sourceUrl": "http://localhost:3000/api/datasets/affordability.csv",
+      "publisher": "PriceOfElectricity.com",
+      "license": "Site content license"
+    },
+    {
+      "id": "poe-dataset-states-csv",
+      "sourceName": "PriceOfElectricity.com dataset endpoint: states.csv",
+      "sourceUrl": "http://localhost:3000/api/datasets/states.csv",
+      "publisher": "PriceOfElectricity.com",
+      "license": "Site content license"
+    },
+    {
+      "id": "poe-dataset-states-json",
+      "sourceName": "PriceOfElectricity.com dataset endpoint: states.json",
+      "sourceUrl": "http://localhost:3000/api/datasets/states.json",
+      "publisher": "PriceOfElectricity.com",
+      "license": "Site content license"
+    },
+    {
+      "id": "poe-dataset-value-ranking-csv",
+      "sourceName": "PriceOfElectricity.com dataset endpoint: value-ranking.csv",
+      "sourceUrl": "http://localhost:3000/api/datasets/value-ranking.csv",
+      "publisher": "PriceOfElectricity.com",
+      "license": "Site content license"
+    },
+    {
+      "id": "poe-methodology-cagr",
+      "sourceName": "PriceOfElectricity.com methodology: CAGR",
+      "sourceUrl": "http://localhost:3000/knowledge/methodology/cagr",
+      "publisher": "PriceOfElectricity.com",
+      "license": "Site content license"
+    },
+    {
+      "id": "poe-methodology-epi",
+      "sourceName": "PriceOfElectricity.com methodology: Electricity Price Index",
+      "sourceUrl": "http://localhost:3000/methodology/electricity-price-index",
+      "publisher": "PriceOfElectricity.com",
+      "license": "Site content license"
+    },
+    {
+      "id": "poe-methodology-freshness",
+      "sourceName": "PriceOfElectricity.com methodology: Freshness Scoring",
+      "sourceUrl": "http://localhost:3000/methodology/freshness-scoring",
+      "publisher": "PriceOfElectricity.com",
+      "license": "Site content license"
+    },
+    {
+      "id": "poe-methodology-momentum-signal",
+      "sourceName": "PriceOfElectricity.com methodology: Momentum Signal",
+      "sourceUrl": "http://localhost:3000/knowledge/methodology/momentum-signal",
+      "publisher": "PriceOfElectricity.com",
+      "license": "Site content license"
+    },
+    {
+      "id": "poe-methodology-price-trend",
+      "sourceName": "PriceOfElectricity.com methodology: Price Trend",
+      "sourceUrl": "http://localhost:3000/knowledge/methodology/price-trend",
+      "publisher": "PriceOfElectricity.com",
+      "license": "Site content license"
+    },
+    {
+      "id": "poe-methodology-value-score",
+      "sourceName": "PriceOfElectricity.com methodology: Value Score",
+      "sourceUrl": "http://localhost:3000/methodology/value-score",
+      "publisher": "PriceOfElectricity.com",
+      "license": "Site content license"
+    },
+    {
+      "id": "poe-methodology-volatility",
+      "sourceName": "PriceOfElectricity.com methodology: Volatility",
+      "sourceUrl": "http://localhost:3000/knowledge/methodology/volatility",
+      "publisher": "PriceOfElectricity.com",
+      "license": "Site content license"
+    },
+    {
+      "id": "poe-vertical-ai-energy",
+      "sourceName": "PriceOfElectricity.com vertical: AI Energy",
+      "sourceUrl": "http://localhost:3000/v/ai-energy",
+      "publisher": "PriceOfElectricity.com",
+      "license": "Site content license"
+    }
+  ]
+}

@@ -1,0 +1,112 @@
+{
+  "schemaVersion": "1.0",
+  "generatedAt": "2026-03-09T17:50:09.701Z",
+  "sourceVersion": "v2",
+  "contractVersion": "1.0.0",
+  "regionId": "midwest",
+  "regionName": "Midwest",
+  "cheapestStates": [
+    {
+      "slug": "north-dakota",
+      "name": "North Dakota",
+      "rate": 11.92
+    },
+    {
+      "slug": "nebraska",
+      "name": "Nebraska",
+      "rate": 12.19
+    },
+    {
+      "slug": "south-dakota",
+      "name": "South Dakota",
+      "rate": 13.14
+    },
+    {
+      "slug": "iowa",
+      "name": "Iowa",
+      "rate": 13.18
+    },
+    {
+      "slug": "missouri",
+      "name": "Missouri",
+      "rate": 13.37
+    },
+    {
+      "slug": "kansas",
+      "name": "Kansas",
+      "rate": 14.48
+    },
+    {
+      "slug": "minnesota",
+      "name": "Minnesota",
+      "rate": 16.04
+    },
+    {
+      "slug": "indiana",
+      "name": "Indiana",
+      "rate": 16.12
+    },
+    {
+      "slug": "ohio",
+      "name": "Ohio",
+      "rate": 16.9
+    },
+    {
+      "slug": "illinois",
+      "name": "Illinois",
+      "rate": 16.96
+    }
+  ],
+  "mostExpensiveStates": [
+    {
+      "slug": "michigan",
+      "name": "Michigan",
+      "rate": 19.91
+    },
+    {
+      "slug": "wisconsin",
+      "name": "Wisconsin",
+      "rate": 18.04
+    },
+    {
+      "slug": "illinois",
+      "name": "Illinois",
+      "rate": 16.96
+    },
+    {
+      "slug": "ohio",
+      "name": "Ohio",
+      "rate": 16.9
+    },
+    {
+      "slug": "indiana",
+      "name": "Indiana",
+      "rate": 16.12
+    },
+    {
+      "slug": "minnesota",
+      "name": "Minnesota",
+      "rate": 16.04
+    },
+    {
+      "slug": "kansas",
+      "name": "Kansas",
+      "rate": 14.48
+    },
+    {
+      "slug": "missouri",
+      "name": "Missouri",
+      "rate": 13.37
+    },
+    {
+      "slug": "iowa",
+      "name": "Iowa",
+      "rate": 13.18
+    },
+    {
+      "slug": "south-dakota",
+      "name": "South Dakota",
+      "rate": 13.14
+    }
+  ]
+}

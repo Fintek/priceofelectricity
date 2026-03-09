@@ -18,7 +18,8 @@ export type ContentTemplate = {
   };
 };
 
-function stateName(slug: string): string {
+/* eslint-disable-next-line @typescript-eslint/no-unused-vars -- utility for future template expansion */
+function _stateName(slug: string): string {
   return slug
     .split("-")
     .map((w) => w.charAt(0).toUpperCase() + w.slice(1))

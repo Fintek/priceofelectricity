@@ -1,0 +1,655 @@
+{
+  "meta": {
+    "schemaVersion": "1.0",
+    "id": "knowledge:rankings:electricity-inflation-1y",
+    "type": "rankings",
+    "slug": "electricity-inflation-1y",
+    "title": "1-Year Electricity Inflation Ranking",
+    "description": "States ranked by 1-year electricity price increase. Higher = faster price growth.",
+    "canonicalUrl": "http://localhost:3000/knowledge/rankings/electricity-inflation-1y",
+    "jsonUrl": "http://localhost:3000/knowledge/history/v2/rankings/electricity-inflation-1y.json",
+    "updatedAt": "2026-03-09T17:50:09.701Z",
+    "sourceVersion": "v2",
+    "temporalContext": {
+      "sourceVersion": "v2",
+      "isLatest": false
+    },
+    "provenance": [
+      {
+        "id": "eia-retail-sales-923",
+        "sourceName": "U.S. Energy Information Administration (EIA) Retail Sales of Electricity",
+        "sourceUrl": "https://api.eia.gov/v2/electricity/retail-sales/data/",
+        "publisher": "U.S. Energy Information Administration",
+        "license": "U.S. Government work (public domain)",
+        "notes": "Primary source for state residential electricity rate series used by snapshots.",
+        "retrievedAt": "2026-03-09T17:50:09.701Z"
+      },
+      {
+        "id": "poe-dataset-affordability-csv",
+        "sourceName": "PriceOfElectricity.com dataset endpoint: affordability.csv",
+        "sourceUrl": "http://localhost:3000/api/datasets/affordability.csv",
+        "publisher": "PriceOfElectricity.com",
+        "license": "Site content license",
+        "retrievedAt": "2026-03-09T17:50:09.701Z"
+      },
+      {
+        "id": "poe-dataset-states-json",
+        "sourceName": "PriceOfElectricity.com dataset endpoint: states.json",
+        "sourceUrl": "http://localhost:3000/api/datasets/states.json",
+        "publisher": "PriceOfElectricity.com",
+        "license": "Site content license",
+        "retrievedAt": "2026-03-09T17:50:09.701Z"
+      },
+      {
+        "id": "poe-dataset-value-ranking-csv",
+        "sourceName": "PriceOfElectricity.com dataset endpoint: value-ranking.csv",
+        "sourceUrl": "http://localhost:3000/api/datasets/value-ranking.csv",
+        "publisher": "PriceOfElectricity.com",
+        "license": "Site content license",
+        "retrievedAt": "2026-03-09T17:50:09.701Z"
+      },
+      {
+        "id": "poe-methodology-epi",
+        "sourceName": "PriceOfElectricity.com methodology: Electricity Price Index",
+        "sourceUrl": "http://localhost:3000/methodology/electricity-price-index",
+        "publisher": "PriceOfElectricity.com",
+        "license": "Site content license",
+        "retrievedAt": "2026-03-09T17:50:09.701Z"
+      },
+      {
+        "id": "poe-methodology-value-score",
+        "sourceName": "PriceOfElectricity.com methodology: Value Score",
+        "sourceUrl": "http://localhost:3000/methodology/value-score",
+        "publisher": "PriceOfElectricity.com",
+        "license": "Site content license",
+        "retrievedAt": "2026-03-09T17:50:09.701Z"
+      }
+    ],
+    "fieldProvenance": [
+      {
+        "field": "data.rankingType",
+        "provenanceIds": [
+          "poe-methodology-epi",
+          "poe-methodology-value-score"
+        ]
+      },
+      {
+        "field": "data.sortedStates",
+        "provenanceIds": [
+          "eia-retail-sales-923",
+          "poe-dataset-states-json",
+          "poe-dataset-affordability-csv",
+          "poe-dataset-value-ranking-csv"
+        ]
+      },
+      {
+        "field": "data.generatedAt",
+        "provenanceIds": [
+          "poe-dataset-states-json"
+        ]
+      }
+    ],
+    "citations": [
+      {
+        "sourceName": "U.S. Energy Information Administration (EIA) Retail Sales of Electricity",
+        "sourceUrl": "https://api.eia.gov/v2/electricity/retail-sales/data/",
+        "retrievedAt": "2026-03-09T17:50:09.701Z",
+        "notes": "Primary source for state residential electricity rate series used by snapshots."
+      },
+      {
+        "sourceName": "PriceOfElectricity.com dataset endpoint: affordability.csv",
+        "sourceUrl": "http://localhost:3000/api/datasets/affordability.csv",
+        "retrievedAt": "2026-03-09T17:50:09.701Z"
+      },
+      {
+        "sourceName": "PriceOfElectricity.com dataset endpoint: states.json",
+        "sourceUrl": "http://localhost:3000/api/datasets/states.json",
+        "retrievedAt": "2026-03-09T17:50:09.701Z"
+      },
+      {
+        "sourceName": "PriceOfElectricity.com dataset endpoint: value-ranking.csv",
+        "sourceUrl": "http://localhost:3000/api/datasets/value-ranking.csv",
+        "retrievedAt": "2026-03-09T17:50:09.701Z"
+      },
+      {
+        "sourceName": "PriceOfElectricity.com methodology: Electricity Price Index",
+        "sourceUrl": "http://localhost:3000/methodology/electricity-price-index",
+        "retrievedAt": "2026-03-09T17:50:09.701Z"
+      },
+      {
+        "sourceName": "PriceOfElectricity.com methodology: Value Score",
+        "sourceUrl": "http://localhost:3000/methodology/value-score",
+        "retrievedAt": "2026-03-09T17:50:09.701Z"
+      }
+    ],
+    "llmHints": {
+      "priority": "medium",
+      "entityType": "rankings",
+      "semanticTopics": [
+        "state comparison",
+        "electricity rates",
+        "affordability",
+        "ranking methodology"
+      ],
+      "semanticCluster": "comparative-analysis"
+    },
+    "freshness": {
+      "datasetUpdatedAt": "2025-12-15T00:00:00.000Z",
+      "computedAt": "2026-03-09T17:50:09.701Z",
+      "status": "aging",
+      "ageDays": 84,
+      "methodology": {
+        "id": "freshness",
+        "version": "1.0",
+        "url": "http://localhost:3000/knowledge/methodology/freshness.json",
+        "canonicalUrl": "http://localhost:3000/knowledge/methodology/freshness"
+      }
+    },
+    "excerpt": "1-Year Electricity Inflation Ranking. Ranks states by 1-year inflation % (desc). Top 1: District of Columbia.",
+    "disclaimerRefs": [
+      "rankings"
+    ],
+    "qualityScore": 90,
+    "contentHash": "d7abeeb7ed2130bb1585674da3bc9c68f1655af994718567949a00c4b10bb3d5",
+    "integrity": {
+      "contentHash": "d7abeeb7ed2130bb1585674da3bc9c68f1655af994718567949a00c4b10bb3d5",
+      "integrityAlgorithm": "sha256",
+      "signedAtBuild": "2026-03-09T17:50:09.701Z"
+    }
+  },
+  "data": {
+    "rankingType": "electricity-inflation-1y",
+    "sortedStates": [
+      {
+        "rank": 1,
+        "slug": "district-of-columbia",
+        "name": "District of Columbia",
+        "metricValue": 27.2,
+        "value": 27.2,
+        "displayValue": "27.2%"
+      },
+      {
+        "rank": 2,
+        "slug": "rhode-island",
+        "name": "Rhode Island",
+        "metricValue": 22.6,
+        "value": 22.6,
+        "displayValue": "22.6%"
+      },
+      {
+        "rank": 3,
+        "slug": "new-jersey",
+        "name": "New Jersey",
+        "metricValue": 18.4,
+        "value": 18.4,
+        "displayValue": "18.4%"
+      },
+      {
+        "rank": 4,
+        "slug": "maine",
+        "name": "Maine",
+        "metricValue": 15.9,
+        "value": 15.9,
+        "displayValue": "15.9%"
+      },
+      {
+        "rank": 5,
+        "slug": "pennsylvania",
+        "name": "Pennsylvania",
+        "metricValue": 14.4,
+        "value": 14.4,
+        "displayValue": "14.4%"
+      },
+      {
+        "rank": 6,
+        "slug": "california",
+        "name": "California",
+        "metricValue": 13.4,
+        "value": 13.4,
+        "displayValue": "13.4%"
+      },
+      {
+        "rank": 7,
+        "slug": "washington",
+        "name": "Washington",
+        "metricValue": 12.5,
+        "value": 12.5,
+        "displayValue": "12.5%"
+      },
+      {
+        "rank": 8,
+        "slug": "new-york",
+        "name": "New York",
+        "metricValue": 12.2,
+        "value": 12.2,
+        "displayValue": "12.2%"
+      },
+      {
+        "rank": 9,
+        "slug": "indiana",
+        "name": "Indiana",
+        "metricValue": 11,
+        "value": 11,
+        "displayValue": "11.0%"
+      },
+      {
+        "rank": 10,
+        "slug": "new-hampshire",
+        "name": "New Hampshire",
+        "metricValue": 11,
+        "value": 11,
+        "displayValue": "11.0%"
+      },
+      {
+        "rank": 11,
+        "slug": "wisconsin",
+        "name": "Wisconsin",
+        "metricValue": 9.7,
+        "value": 9.7,
+        "displayValue": "9.7%"
+      },
+      {
+        "rank": 12,
+        "slug": "nebraska",
+        "name": "Nebraska",
+        "metricValue": 9.4,
+        "value": 9.4,
+        "displayValue": "9.4%"
+      },
+      {
+        "rank": 13,
+        "slug": "ohio",
+        "name": "Ohio",
+        "metricValue": 9,
+        "value": 9,
+        "displayValue": "9.0%"
+      },
+      {
+        "rank": 14,
+        "slug": "wyoming",
+        "name": "Wyoming",
+        "metricValue": 9,
+        "value": 9,
+        "displayValue": "9.0%"
+      },
+      {
+        "rank": 15,
+        "slug": "idaho",
+        "name": "Idaho",
+        "metricValue": 8.4,
+        "value": 8.4,
+        "displayValue": "8.4%"
+      },
+      {
+        "rank": 16,
+        "slug": "alaska",
+        "name": "Alaska",
+        "metricValue": 8,
+        "value": 8,
+        "displayValue": "8.0%"
+      },
+      {
+        "rank": 17,
+        "slug": "maryland",
+        "name": "Maryland",
+        "metricValue": 7.9,
+        "value": 7.9,
+        "displayValue": "7.9%"
+      },
+      {
+        "rank": 18,
+        "slug": "north-dakota",
+        "name": "North Dakota",
+        "metricValue": 7.7,
+        "value": 7.7,
+        "displayValue": "7.7%"
+      },
+      {
+        "rank": 19,
+        "slug": "montana",
+        "name": "Montana",
+        "metricValue": 7.5,
+        "value": 7.5,
+        "displayValue": "7.5%"
+      },
+      {
+        "rank": 20,
+        "slug": "illinois",
+        "name": "Illinois",
+        "metricValue": 7,
+        "value": 7,
+        "displayValue": "7.0%"
+      },
+      {
+        "rank": 21,
+        "slug": "alabama",
+        "name": "Alabama",
+        "metricValue": 6.9,
+        "value": 6.9,
+        "displayValue": "6.9%"
+      },
+      {
+        "rank": 22,
+        "slug": "colorado",
+        "name": "Colorado",
+        "metricValue": 6.8,
+        "value": 6.8,
+        "displayValue": "6.8%"
+      },
+      {
+        "rank": 23,
+        "slug": "louisiana",
+        "name": "Louisiana",
+        "metricValue": 6.4,
+        "value": 6.4,
+        "displayValue": "6.4%"
+      },
+      {
+        "rank": 24,
+        "slug": "virginia",
+        "name": "Virginia",
+        "metricValue": 6.3,
+        "value": 6.3,
+        "displayValue": "6.3%"
+      },
+      {
+        "rank": 25,
+        "slug": "south-carolina",
+        "name": "South Carolina",
+        "metricValue": 6.2,
+        "value": 6.2,
+        "displayValue": "6.2%"
+      },
+      {
+        "rank": 26,
+        "slug": "minnesota",
+        "name": "Minnesota",
+        "metricValue": 6.1,
+        "value": 6.1,
+        "displayValue": "6.1%"
+      },
+      {
+        "rank": 27,
+        "slug": "michigan",
+        "name": "Michigan",
+        "metricValue": 6,
+        "value": 6,
+        "displayValue": "6.0%"
+      },
+      {
+        "rank": 28,
+        "slug": "utah",
+        "name": "Utah",
+        "metricValue": 5.9,
+        "value": 5.9,
+        "displayValue": "5.9%"
+      },
+      {
+        "rank": 29,
+        "slug": "florida",
+        "name": "Florida",
+        "metricValue": 5.8,
+        "value": 5.8,
+        "displayValue": "5.8%"
+      },
+      {
+        "rank": 30,
+        "slug": "oregon",
+        "name": "Oregon",
+        "metricValue": 5.3,
+        "value": 5.3,
+        "displayValue": "5.3%"
+      },
+      {
+        "rank": 31,
+        "slug": "vermont",
+        "name": "Vermont",
+        "metricValue": 5.3,
+        "value": 5.3,
+        "displayValue": "5.3%"
+      },
+      {
+        "rank": 32,
+        "slug": "oklahoma",
+        "name": "Oklahoma",
+        "metricValue": 5,
+        "value": 5,
+        "displayValue": "5.0%"
+      },
+      {
+        "rank": 33,
+        "slug": "arkansas",
+        "name": "Arkansas",
+        "metricValue": 4.8,
+        "value": 4.8,
+        "displayValue": "4.8%"
+      },
+      {
+        "rank": 34,
+        "slug": "kansas",
+        "name": "Kansas",
+        "metricValue": 4.6,
+        "value": 4.6,
+        "displayValue": "4.6%"
+      },
+      {
+        "rank": 35,
+        "slug": "mississippi",
+        "name": "Mississippi",
+        "metricValue": 4.3,
+        "value": 4.3,
+        "displayValue": "4.3%"
+      },
+      {
+        "rank": 36,
+        "slug": "texas",
+        "name": "Texas",
+        "metricValue": 3.3,
+        "value": 3.3,
+        "displayValue": "3.3%"
+      },
+      {
+        "rank": 37,
+        "slug": "missouri",
+        "name": "Missouri",
+        "metricValue": 2.9,
+        "value": 2.9,
+        "displayValue": "2.9%"
+      },
+      {
+        "rank": 38,
+        "slug": "new-mexico",
+        "name": "New Mexico",
+        "metricValue": 2.5,
+        "value": 2.5,
+        "displayValue": "2.5%"
+      },
+      {
+        "rank": 39,
+        "slug": "iowa",
+        "name": "Iowa",
+        "metricValue": 2.4,
+        "value": 2.4,
+        "displayValue": "2.4%"
+      },
+      {
+        "rank": 40,
+        "slug": "arizona",
+        "name": "Arizona",
+        "metricValue": 2.1,
+        "value": 2.1,
+        "displayValue": "2.1%"
+      },
+      {
+        "rank": 41,
+        "slug": "delaware",
+        "name": "Delaware",
+        "metricValue": 2,
+        "value": 2,
+        "displayValue": "2.0%"
+      },
+      {
+        "rank": 42,
+        "slug": "south-dakota",
+        "name": "South Dakota",
+        "metricValue": 2,
+        "value": 2,
+        "displayValue": "2.0%"
+      },
+      {
+        "rank": 43,
+        "slug": "georgia",
+        "name": "Georgia",
+        "metricValue": 1.6,
+        "value": 1.6,
+        "displayValue": "1.6%"
+      },
+      {
+        "rank": 44,
+        "slug": "kentucky",
+        "name": "Kentucky",
+        "metricValue": 1,
+        "value": 1,
+        "displayValue": "1.0%"
+      },
+      {
+        "rank": 45,
+        "slug": "west-virginia",
+        "name": "West Virginia",
+        "metricValue": 0.9,
+        "value": 0.9,
+        "displayValue": "0.9%"
+      },
+      {
+        "rank": 46,
+        "slug": "north-carolina",
+        "name": "North Carolina",
+        "metricValue": -0.3,
+        "value": -0.3,
+        "displayValue": "-0.3%"
+      },
+      {
+        "rank": 47,
+        "slug": "tennessee",
+        "name": "Tennessee",
+        "metricValue": -0.5,
+        "value": -0.5,
+        "displayValue": "-0.5%"
+      },
+      {
+        "rank": 48,
+        "slug": "massachusetts",
+        "name": "Massachusetts",
+        "metricValue": -0.9,
+        "value": -0.9,
+        "displayValue": "-0.9%"
+      },
+      {
+        "rank": 49,
+        "slug": "hawaii",
+        "name": "Hawaii",
+        "metricValue": -1.8,
+        "value": -1.8,
+        "displayValue": "-1.8%"
+      },
+      {
+        "rank": 50,
+        "slug": "connecticut",
+        "name": "Connecticut",
+        "metricValue": -10,
+        "value": -10,
+        "displayValue": "-10.0%"
+      },
+      {
+        "rank": 51,
+        "slug": "nevada",
+        "name": "Nevada",
+        "metricValue": -13.7,
+        "value": -13.7,
+        "displayValue": "-13.7%"
+      }
+    ],
+    "generatedAt": "2026-03-09T17:50:09.701Z",
+    "enabled": true,
+    "excludedStates": {
+      "count": -1,
+      "reason": "No historical data"
+    },
+    "derivedMeta": {
+      "methodologiesUsed": [
+        {
+          "id": "price-trend",
+          "version": "1.0",
+          "url": "http://localhost:3000/knowledge/methodology/price-trend.json",
+          "appliesToFields": [
+            "data.sortedStates"
+          ]
+        }
+      ]
+    },
+    "relatedEntities": {
+      "methodologies": [
+        "price-trend"
+      ],
+      "states": [
+        "california",
+        "connecticut",
+        "district-of-columbia",
+        "georgia",
+        "hawaii",
+        "indiana",
+        "kentucky",
+        "maine",
+        "massachusetts",
+        "nevada",
+        "new-hampshire",
+        "new-jersey",
+        "new-york",
+        "north-carolina",
+        "pennsylvania",
+        "rhode-island",
+        "south-dakota",
+        "tennessee",
+        "washington",
+        "west-virginia"
+      ]
+    },
+    "facts": [
+      {
+        "label": "Bottom metric value",
+        "value": -13.7,
+        "sourceField": "data.sortedStates"
+      },
+      {
+        "label": "Bottom state",
+        "value": "Nevada",
+        "sourceField": "data.sortedStates"
+      },
+      {
+        "label": "Generated at",
+        "value": "2026-03-09T17:50:09.701Z",
+        "sourceField": "data.generatedAt"
+      },
+      {
+        "label": "Ranking type",
+        "value": "electricity-inflation-1y",
+        "sourceField": "data.rankingType"
+      },
+      {
+        "label": "Top metric value",
+        "value": 27.2,
+        "sourceField": "data.sortedStates"
+      },
+      {
+        "label": "Top state",
+        "value": "District of Columbia",
+        "sourceField": "data.sortedStates"
+      },
+      {
+        "label": "Total ranked",
+        "value": 51,
+        "sourceField": "data.sortedStates"
+      }
+    ]
+  }
+}

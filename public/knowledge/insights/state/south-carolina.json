@@ -1,0 +1,28 @@
+{
+  "schemaVersion": "1.0",
+  "generatedAt": "2026-03-09T17:50:09.701Z",
+  "subject": "state",
+  "id": "south-carolina",
+  "insights": [
+    {
+      "type": "price",
+      "statement": "Electricity in South Carolina costs 16% less than the national average.",
+      "confidence": "high"
+    },
+    {
+      "type": "ranking",
+      "statement": "South Carolina ranks #31 among U.S. states for electricity prices.",
+      "confidence": "high"
+    },
+    {
+      "type": "value",
+      "statement": "South Carolina has a value score of 91, indicating strong affordability and freshness.",
+      "confidence": "medium"
+    },
+    {
+      "type": "trend",
+      "statement": "South Carolina shows a rising electricity price trend based on recent historical data.",
+      "confidence": "medium"
+    }
+  ]
+}

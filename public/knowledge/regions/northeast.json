@@ -1,0 +1,77 @@
+{
+  "schemaVersion": "1.0",
+  "generatedAt": "2026-03-09T17:50:09.701Z",
+  "sourceVersion": "v2",
+  "contractVersion": "1.0.0",
+  "id": "northeast",
+  "name": "Northeast",
+  "excerpt": "Electricity rates and metrics for Northeast U.S. states. Average 24.64 ¢/kWh.",
+  "enabled": true,
+  "stateCount": 9,
+  "averageRateCentsPerKwh": 24.64,
+  "medianRateCentsPerKwh": 23.87,
+  "highestState": {
+    "slug": "connecticut",
+    "name": "Connecticut",
+    "rate": 30.35
+  },
+  "lowestState": {
+    "slug": "pennsylvania",
+    "name": "Pennsylvania",
+    "rate": 17.78
+  },
+  "top5Highest": [
+    {
+      "slug": "connecticut",
+      "name": "Connecticut",
+      "rate": 30.35
+    },
+    {
+      "slug": "rhode-island",
+      "name": "Rhode Island",
+      "rate": 28.42
+    },
+    {
+      "slug": "maine",
+      "name": "Maine",
+      "rate": 27.24
+    },
+    {
+      "slug": "massachusetts",
+      "name": "Massachusetts",
+      "rate": 26.01
+    },
+    {
+      "slug": "new-york",
+      "name": "New York",
+      "rate": 23.87
+    }
+  ],
+  "top5Lowest": [
+    {
+      "slug": "pennsylvania",
+      "name": "Pennsylvania",
+      "rate": 17.78
+    },
+    {
+      "slug": "new-jersey",
+      "name": "New Jersey",
+      "rate": 22.15
+    },
+    {
+      "slug": "vermont",
+      "name": "Vermont",
+      "rate": 22.58
+    },
+    {
+      "slug": "new-hampshire",
+      "name": "New Hampshire",
+      "rate": 23.35
+    },
+    {
+      "slug": "new-york",
+      "name": "New York",
+      "rate": 23.87
+    }
+  ]
+}

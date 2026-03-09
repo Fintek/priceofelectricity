@@ -1,0 +1,16 @@
+{
+  "schemaVersion": "1.0",
+  "generatedAt": "2026-03-09T17:50:09.701Z",
+  "sourceVersion": "v2",
+  "contractVersion": "1.0.0",
+  "stateA": "delaware",
+  "stateB": "pennsylvania",
+  "nameA": "Delaware",
+  "nameB": "Pennsylvania",
+  "rateA": 17.18,
+  "rateB": 17.78,
+  "differenceCents": -0.6,
+  "differencePercent": -3.4,
+  "higherCostState": "Pennsylvania",
+  "lowerCostState": "Delaware"
+}

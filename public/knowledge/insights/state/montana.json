@@ -1,0 +1,33 @@
+{
+  "schemaVersion": "1.0",
+  "generatedAt": "2026-03-09T17:50:09.701Z",
+  "subject": "state",
+  "id": "montana",
+  "insights": [
+    {
+      "type": "price",
+      "statement": "Electricity in Montana costs 25% less than the national average.",
+      "confidence": "high"
+    },
+    {
+      "type": "ranking",
+      "statement": "Montana ranks #42 among U.S. states for electricity prices.",
+      "confidence": "high"
+    },
+    {
+      "type": "ranking",
+      "statement": "Electricity in Montana is among the 10 least expensive states.",
+      "confidence": "medium"
+    },
+    {
+      "type": "value",
+      "statement": "Montana has a value score of 95, indicating strong affordability and freshness.",
+      "confidence": "medium"
+    },
+    {
+      "type": "trend",
+      "statement": "Montana shows an accelerating electricity price trend based on recent historical data.",
+      "confidence": "medium"
+    }
+  ]
+}

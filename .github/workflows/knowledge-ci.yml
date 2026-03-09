@@ -1,0 +1,36 @@
+name: Knowledge CI
+
+on:
+  push:
+    paths:
+      - "public/knowledge/**"
+      - "scripts/knowledge-*.ts"
+      - "scripts/knowledge-*.js"
+      - "scripts/verify-knowledge.js"
+  pull_request:
+    paths:
+      - "public/knowledge/**"
+      - "scripts/knowledge-*.ts"
+      - "scripts/knowledge-*.js"
+      - "scripts/verify-knowledge.js"
+
+jobs:
+  knowledge-check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Knowledge check (release mode)
+        run: npm run knowledge:check
+        env:
+          RELEASE_MODE: "1"

@@ -1,4 +1,6 @@
 import type { MetadataRoute } from "next";
+import { readdirSync, existsSync, readFileSync, statSync } from "node:fs";
+import path from "node:path";
 import { STATES } from "@/data/states";
 import { CITIES } from "@/data/cities";
 import { UTILITIES } from "@/data/utilities";
@@ -10,8 +12,9 @@ import { REGIONS } from "@/data/regions";
 import { getSnapshotVersions } from "@/lib/snapshotLoader";
 import { generateTemplatePages } from "@/lib/templateGenerator";
 import { VERTICALS } from "@/content/verticals";
+import { SITE_URL } from "@/lib/site";
 
-const BASE_URL = "https://priceofelectricity.com";
+const BASE_URL = SITE_URL.replace(/\/+$/, "");
 
 function parseUpdatedDate(updated: string): Date {
   const parsed = Date.parse(updated);
@@ -19,6 +22,34 @@ function parseUpdatedDate(updated: string): Date {
     return new Date();
   }
   return new Date(parsed);
+}
+
+function getKnowledgeStateSlugs(): string[] {
+  try {
+    const stateDir = path.join(process.cwd(), "public", "knowledge", "state");
+    if (!existsSync(stateDir)) return [];
+    const files = readdirSync(stateDir);
+    return files
+      .filter((f) => f.endsWith(".json"))
+      .map((f) => f.replace(/\.json$/, ""))
+      .filter(Boolean)
+      .sort((a, b) => a.localeCompare(b));
+  } catch {
+    return [];
+  }
+}
+
+function getKnowledgeRankingIds(): string[] {
+  try {
+    const indexPath = path.join(process.cwd(), "public", "knowledge", "rankings", "index.json");
+    if (!existsSync(indexPath)) return [];
+    const raw = readFileSync(indexPath, "utf8");
+    const data = JSON.parse(raw) as { items?: Array<{ id?: string }> };
+    const items = data?.items ?? [];
+    return items.map((i) => i.id).filter((id): id is string => typeof id === "string").sort((a, b) => a.localeCompare(b));
+  } catch {
+    return [];
+  }
 }
 
 function getComparisonPairs() {
@@ -44,6 +75,35 @@ function getComparisonPairs() {
   }
 
   return [...pairSet].sort((a, b) => a.localeCompare(b));
+}
+
+function getKnowledgeHistoryVersionsWithBundles(): string[] {
+  try {
+    const historyDir = path.join(process.cwd(), "public", "knowledge", "history");
+    if (!existsSync(historyDir)) return [];
+    const entries = readdirSync(historyDir);
+    return entries
+      .filter((e) => {
+        const fullPath = path.join(historyDir, e);
+        const bundlesPath = path.join(fullPath, "bundles", "index.json");
+        return statSync(fullPath).isDirectory() && e.startsWith("v") && existsSync(bundlesPath);
+      })
+      .sort((a, b) => a.localeCompare(b));
+  } catch {
+    return [];
+  }
+}
+
+function getKnowledgeComparePairs(): string[] {
+  try {
+    const pairsPath = path.join(process.cwd(), "public", "knowledge", "compare", "pairs.json");
+    if (!existsSync(pairsPath)) return [];
+    const raw = readFileSync(pairsPath, "utf8");
+    const data = JSON.parse(raw) as { pairs?: string[] };
+    return (data?.pairs ?? []).sort((a, b) => a.localeCompare(b));
+  } catch {
+    return [];
+  }
 }
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -260,7 +320,163 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.5,
     },
     {
+      url: `${BASE_URL}/site-map`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.55,
+    },
+    {
+      url: `${BASE_URL}/data-registry`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.55,
+    },
+    {
+      url: `${BASE_URL}/discovery-graph`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.55,
+    },
+    {
+      url: `${BASE_URL}/entity-registry`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.55,
+    },
+    {
+      url: `${BASE_URL}/page-index`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.55,
+    },
+    {
+      url: `${BASE_URL}/site-maintenance`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.5,
+    },
+    {
+      url: `${BASE_URL}/site-maintenance/data-refresh`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.6,
+    },
+    {
+      url: `${BASE_URL}/site-maintenance/quality-checks`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.6,
+    },
+    {
+      url: `${BASE_URL}/site-maintenance/content-expansion`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.6,
+    },
+    {
+      url: `${BASE_URL}/future-expansion`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.5,
+    },
+    {
+      url: `${BASE_URL}/future-expansion/programmatic-scaling`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.5,
+    },
+    {
+      url: `${BASE_URL}/future-expansion/topic-expansion`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.5,
+    },
+    {
+      url: `${BASE_URL}/future-expansion/data-and-discovery-expansion`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.5,
+    },
+    {
+      url: `${BASE_URL}/operating-playbook`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.5,
+    },
+    {
+      url: `${BASE_URL}/operating-playbook/data-updates`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.5,
+    },
+    {
+      url: `${BASE_URL}/operating-playbook/expanding-the-site`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.5,
+    },
+    {
+      url: `${BASE_URL}/operating-playbook/quality-and-verification`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.5,
+    },
+    {
+      url: `${BASE_URL}/launch-checklist`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.5,
+    },
+    {
+      url: `${BASE_URL}/growth-roadmap`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.5,
+    },
+    {
+      url: `${BASE_URL}/growth-roadmap/programmatic-pages`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.5,
+    },
+    {
+      url: `${BASE_URL}/growth-roadmap/topic-clusters`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.5,
+    },
+    {
+      url: `${BASE_URL}/growth-roadmap/linkable-assets`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.5,
+    },
+    {
+      url: `${BASE_URL}/electricity-data`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.6,
+    },
+    {
       url: `${BASE_URL}/datasets`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.6,
+    },
+    {
+      url: `${BASE_URL}/datasets/electricity-prices-by-state`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.55,
+    },
+    {
+      url: `${BASE_URL}/datasets/electricity-rankings`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.55,
+    },
+    {
+      url: `${BASE_URL}/data`,
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.6,
@@ -344,6 +560,36 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.65,
     },
     {
+      url: `${BASE_URL}/methodology/electricity-rates`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.65,
+    },
+    {
+      url: `${BASE_URL}/methodology/electricity-inflation`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.65,
+    },
+    {
+      url: `${BASE_URL}/methodology/electricity-affordability`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.65,
+    },
+    {
+      url: `${BASE_URL}/methodology/battery-recharge-cost`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.65,
+    },
+    {
+      url: `${BASE_URL}/methodology/generator-vs-battery-cost`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.65,
+    },
+    {
       url: `${BASE_URL}/guides`,
       lastModified: new Date(),
       changeFrequency: "weekly",
@@ -394,10 +640,754 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.55,
     },
     {
+      url: `${BASE_URL}/electricity-cost`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.65,
+    },
+    ...getKnowledgeStateSlugs().map((slug) => ({
+      url: `${BASE_URL}/electricity-cost/${slug}`,
+      lastModified: new Date(),
+      changeFrequency: "monthly" as const,
+      priority: 0.6,
+    })),
+    {
+      url: `${BASE_URL}/average-electricity-bill`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.65,
+    },
+    ...getKnowledgeStateSlugs().map((slug) => ({
+      url: `${BASE_URL}/average-electricity-bill/${slug}`,
+      lastModified: new Date(),
+      changeFrequency: "monthly" as const,
+      priority: 0.6,
+    })),
+    {
+      url: `${BASE_URL}/moving-to-electricity-cost`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.65,
+    },
+    ...getKnowledgeStateSlugs().map((slug) => ({
+      url: `${BASE_URL}/moving-to-electricity-cost/${slug}`,
+      lastModified: new Date(),
+      changeFrequency: "monthly" as const,
+      priority: 0.6,
+    })),
+    {
+      url: `${BASE_URL}/electricity-cost-calculator`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.65,
+    },
+    ...getKnowledgeStateSlugs().map((slug) => ({
+      url: `${BASE_URL}/electricity-cost-calculator/${slug}`,
+      lastModified: new Date(),
+      changeFrequency: "monthly" as const,
+      priority: 0.6,
+    })),
+    {
+      url: `${BASE_URL}/how-much-does-500-kwh-cost`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.65,
+    },
+    ...getKnowledgeStateSlugs().map((slug) => ({
+      url: `${BASE_URL}/how-much-does-500-kwh-cost/${slug}`,
+      lastModified: new Date(),
+      changeFrequency: "monthly" as const,
+      priority: 0.6,
+    })),
+    {
+      url: `${BASE_URL}/how-much-does-1000-kwh-cost`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.65,
+    },
+    ...getKnowledgeStateSlugs().map((slug) => ({
+      url: `${BASE_URL}/how-much-does-1000-kwh-cost/${slug}`,
+      lastModified: new Date(),
+      changeFrequency: "monthly" as const,
+      priority: 0.6,
+    })),
+    {
+      url: `${BASE_URL}/how-much-does-2000-kwh-cost`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.65,
+    },
+    ...getKnowledgeStateSlugs().map((slug) => ({
+      url: `${BASE_URL}/how-much-does-2000-kwh-cost/${slug}`,
+      lastModified: new Date(),
+      changeFrequency: "monthly" as const,
+      priority: 0.6,
+    })),
+    {
+      url: `${BASE_URL}/battery-recharge-cost`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.65,
+    },
+    ...getKnowledgeStateSlugs().map((slug) => ({
+      url: `${BASE_URL}/battery-recharge-cost/${slug}`,
+      lastModified: new Date(),
+      changeFrequency: "monthly" as const,
+      priority: 0.6,
+    })),
+    {
+      url: `${BASE_URL}/generator-vs-battery-cost`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.65,
+    },
+    ...getKnowledgeStateSlugs().map((slug) => ({
+      url: `${BASE_URL}/generator-vs-battery-cost/${slug}`,
+      lastModified: new Date(),
+      changeFrequency: "monthly" as const,
+      priority: 0.6,
+    })),
+    {
+      url: `${BASE_URL}/electricity-price-history`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.65,
+    },
+    ...getKnowledgeStateSlugs().map((slug) => ({
+      url: `${BASE_URL}/electricity-price-history/${slug}`,
+      lastModified: new Date(),
+      changeFrequency: "monthly" as const,
+      priority: 0.6,
+    })),
+    {
+      url: `${BASE_URL}/business-electricity-cost-decisions`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.65,
+    },
+    {
+      url: `${BASE_URL}/business-electricity-cost-decisions/choosing-a-state-for-electricity-costs`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.6,
+    },
+    {
+      url: `${BASE_URL}/business-electricity-cost-decisions/electricity-costs-for-small-businesses`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.6,
+    },
+    {
+      url: `${BASE_URL}/business-electricity-options`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.65,
+    },
+    ...getKnowledgeStateSlugs().map((slug) => ({
+      url: `${BASE_URL}/business-electricity-options/${slug}`,
+      lastModified: new Date(),
+      changeFrequency: "monthly" as const,
+      priority: 0.6,
+    })),
+    {
+      url: `${BASE_URL}/data-center-electricity-cost`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.65,
+    },
+    ...getKnowledgeStateSlugs().map((slug) => ({
+      url: `${BASE_URL}/data-center-electricity-cost/${slug}`,
+      lastModified: new Date(),
+      changeFrequency: "monthly" as const,
+      priority: 0.6,
+    })),
+    {
+      url: `${BASE_URL}/solar-vs-grid-electricity-cost`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.65,
+    },
+    ...getKnowledgeStateSlugs().map((slug) => ({
+      url: `${BASE_URL}/solar-vs-grid-electricity-cost/${slug}`,
+      lastModified: new Date(),
+      changeFrequency: "monthly" as const,
+      priority: 0.6,
+    })),
+    {
+      url: `${BASE_URL}/solar-savings`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.65,
+    },
+    ...getKnowledgeStateSlugs().map((slug) => ({
+      url: `${BASE_URL}/solar-savings/${slug}`,
+      lastModified: new Date(),
+      changeFrequency: "monthly" as const,
+      priority: 0.6,
+    })),
+    {
+      url: `${BASE_URL}/battery-backup-electricity-cost`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.65,
+    },
+    ...getKnowledgeStateSlugs().map((slug) => ({
+      url: `${BASE_URL}/battery-backup-electricity-cost/${slug}`,
+      lastModified: new Date(),
+      changeFrequency: "monthly" as const,
+      priority: 0.6,
+    })),
+    {
+      url: `${BASE_URL}/why-electricity-prices-rise`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.65,
+    },
+    {
+      url: `${BASE_URL}/why-electricity-is-expensive`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.65,
+    },
+    ...getKnowledgeStateSlugs().map((slug) => ({
+      url: `${BASE_URL}/why-electricity-is-expensive/${slug}`,
+      lastModified: new Date(),
+      changeFrequency: "monthly" as const,
+      priority: 0.6,
+    })),
+    {
+      url: `${BASE_URL}/why-electricity-is-cheap`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.65,
+    },
+    ...getKnowledgeStateSlugs().map((slug) => ({
+      url: `${BASE_URL}/why-electricity-is-cheap/${slug}`,
+      lastModified: new Date(),
+      changeFrequency: "monthly" as const,
+      priority: 0.6,
+    })),
+    {
+      url: `${BASE_URL}/electricity-price-volatility`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.65,
+    },
+    ...getKnowledgeStateSlugs().map((slug) => ({
+      url: `${BASE_URL}/electricity-price-volatility/${slug}`,
+      lastModified: new Date(),
+      changeFrequency: "monthly" as const,
+      priority: 0.6,
+    })),
+    {
+      url: `${BASE_URL}/ai-energy-demand`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.65,
+    },
+    {
+      url: `${BASE_URL}/ai-energy-demand/data-centers-electricity`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.6,
+    },
+    {
+      url: `${BASE_URL}/ai-energy-demand/ai-power-consumption`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.6,
+    },
+    {
+      url: `${BASE_URL}/ai-energy-demand/electricity-prices-and-ai`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.6,
+    },
+    {
+      url: `${BASE_URL}/ai-energy-demand/grid-strain-and-electricity-costs`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.6,
+    },
+    {
+      url: `${BASE_URL}/grid-capacity-and-electricity-demand`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.65,
+    },
+    {
+      url: `${BASE_URL}/grid-capacity-and-electricity-demand/power-demand-growth`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.6,
+    },
+    {
+      url: `${BASE_URL}/grid-capacity-and-electricity-demand/grid-capacity-constraints`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.6,
+    },
+    {
+      url: `${BASE_URL}/power-generation-mix`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.65,
+    },
+    {
+      url: `${BASE_URL}/power-generation-mix/fuel-costs-and-electricity-prices`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.6,
+    },
+    {
+      url: `${BASE_URL}/power-generation-mix/generation-mix-and-price-volatility`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.6,
+    },
+    {
+      url: `${BASE_URL}/electricity-markets`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.65,
+    },
+    {
+      url: `${BASE_URL}/electricity-markets/iso-rto-markets`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.6,
+    },
+    {
+      url: `${BASE_URL}/electricity-markets/regulated-electricity-markets`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.6,
+    },
+    {
+      url: `${BASE_URL}/regional-electricity-markets`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.65,
+    },
+    {
+      url: `${BASE_URL}/regional-electricity-markets/why-electricity-prices-differ-by-region`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.6,
+    },
+    {
+      url: `${BASE_URL}/regional-electricity-markets/regional-grid-structure`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.6,
+    },
+    {
+      url: `${BASE_URL}/electricity-shopping`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.65,
+    },
+    {
+      url: `${BASE_URL}/shop-electricity`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.65,
+    },
+    ...getKnowledgeStateSlugs().map((slug) => ({
+      url: `${BASE_URL}/shop-electricity/${slug}`,
+      lastModified: new Date(),
+      changeFrequency: "monthly" as const,
+      priority: 0.6,
+    })),
+    {
+      url: `${BASE_URL}/electricity-shopping/by-state`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.6,
+    },
+    {
+      url: `${BASE_URL}/electricity-shopping/how-electricity-shopping-works`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.6,
+    },
+    {
+      url: `${BASE_URL}/compare-electricity-plans`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.65,
+    },
+    {
+      url: `${BASE_URL}/compare-electricity-plans/by-state`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.6,
+    },
+    {
+      url: `${BASE_URL}/compare-electricity-plans/how-to-compare-electricity-plans`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.6,
+    },
+    {
+      url: `${BASE_URL}/electricity-providers`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.65,
+    },
+    ...getKnowledgeStateSlugs().map((slug) => ({
+      url: `${BASE_URL}/electricity-providers/${slug}`,
+      lastModified: new Date(),
+      changeFrequency: "monthly" as const,
+      priority: 0.6,
+    })),
+    {
+      url: `${BASE_URL}/electricity-generation-cost-drivers`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.65,
+    },
+    {
+      url: `${BASE_URL}/electricity-generation-cost-drivers/fuel-prices-and-generation-costs`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.6,
+    },
+    {
+      url: `${BASE_URL}/electricity-generation-cost-drivers/infrastructure-and-electricity-costs`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.6,
+    },
+    {
+      url: `${BASE_URL}/electricity-insights`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.65,
+    },
+    {
+      url: `${BASE_URL}/electricity-trends`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.65,
+    },
+    {
+      url: `${BASE_URL}/electricity-topics`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.65,
+    },
+    {
+      url: `${BASE_URL}/electricity-inflation`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.65,
+    },
+    {
+      url: `${BASE_URL}/electricity-affordability`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.65,
+    },
+    ...getKnowledgeStateSlugs().map((slug) => ({
+      url: `${BASE_URL}/electricity-inflation/${slug}`,
+      lastModified: new Date(),
+      changeFrequency: "monthly" as const,
+      priority: 0.6,
+    })),
+    ...getKnowledgeStateSlugs().map((slug) => ({
+      url: `${BASE_URL}/electricity-affordability/${slug}`,
+      lastModified: new Date(),
+      changeFrequency: "monthly" as const,
+      priority: 0.6,
+    })),
+    {
+      url: `${BASE_URL}/electricity-cost-of-living`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.65,
+    },
+    ...getKnowledgeStateSlugs().map((slug) => ({
+      url: `${BASE_URL}/electricity-cost-of-living/${slug}`,
+      lastModified: new Date(),
+      changeFrequency: "monthly" as const,
+      priority: 0.6,
+    })),
+    {
+      url: `${BASE_URL}/electricity-cost-comparison`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.65,
+    },
+    ...getKnowledgeComparePairs().map((pair) => ({
+      url: `${BASE_URL}/electricity-cost-comparison/${pair}`,
+      lastModified: new Date(),
+      changeFrequency: "monthly" as const,
+      priority: 0.6,
+    })),
+    {
       url: `${BASE_URL}/knowledge`,
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.55,
+    },
+    {
+      url: `${BASE_URL}/knowledge/pages`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.55,
+    },
+    {
+      url: `${BASE_URL}/knowledge/docs`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.55,
+    },
+    {
+      url: `${BASE_URL}/knowledge/national`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.6,
+    },
+    ...(getKnowledgeStateSlugs().length > 0 ? getKnowledgeStateSlugs() : Object.keys(STATES)).map((slug) => ({
+      url: `${BASE_URL}/knowledge/state/${slug}`,
+      lastModified: new Date(),
+      changeFrequency: "monthly" as const,
+      priority: 0.55,
+    })),
+    ...getKnowledgeRankingIds().map((id) => ({
+      url: `${BASE_URL}/knowledge/rankings/${id}`,
+      lastModified: new Date(),
+      changeFrequency: "monthly" as const,
+      priority: 0.55,
+    })),
+    {
+      url: `${BASE_URL}/knowledge/compare`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.55,
+    },
+    ...getKnowledgeComparePairs().map((pair) => ({
+      url: `${BASE_URL}/knowledge/compare/${pair}`,
+      lastModified: new Date(),
+      changeFrequency: "monthly" as const,
+      priority: 0.55,
+    })),
+    {
+      url: `${BASE_URL}/knowledge/rankings`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.55,
+    },
+    {
+      url: `${BASE_URL}/knowledge/compare/states.json`,
+      lastModified: new Date(),
+      changeFrequency: "daily",
+      priority: 0.5,
+    },
+    {
+      url: `${BASE_URL}/knowledge/rankings/index.json`,
+      lastModified: new Date(),
+      changeFrequency: "daily",
+      priority: 0.5,
+    },
+    {
+      url: `${BASE_URL}/knowledge/related/index.json`,
+      lastModified: new Date(),
+      changeFrequency: "daily",
+      priority: 0.5,
+    },
+    {
+      url: `${BASE_URL}/knowledge/search-index.json`,
+      lastModified: new Date(),
+      changeFrequency: "daily",
+      priority: 0.5,
+    },
+    {
+      url: `${BASE_URL}/knowledge/index.json`,
+      lastModified: new Date(),
+      changeFrequency: "daily",
+      priority: 0.5,
+    },
+    {
+      url: `${BASE_URL}/knowledge/national.json`,
+      lastModified: new Date(),
+      changeFrequency: "daily",
+      priority: 0.5,
+    },
+    {
+      url: `${BASE_URL}/knowledge/contract.json`,
+      lastModified: new Date(),
+      changeFrequency: "daily",
+      priority: 0.5,
+    },
+    {
+      url: `${BASE_URL}/knowledge/labels/en.json`,
+      lastModified: new Date(),
+      changeFrequency: "daily",
+      priority: 0.5,
+    },
+    {
+      url: `${BASE_URL}/knowledge/glossary/fields.json`,
+      lastModified: new Date(),
+      changeFrequency: "daily",
+      priority: 0.5,
+    },
+    {
+      url: `${BASE_URL}/knowledge/docs/index.json`,
+      lastModified: new Date(),
+      changeFrequency: "daily",
+      priority: 0.5,
+    },
+    {
+      url: `${BASE_URL}/knowledge/ingest/starter-pack.json`,
+      lastModified: new Date(),
+      changeFrequency: "daily",
+      priority: 0.5,
+    },
+    {
+      url: `${BASE_URL}/knowledge/public-endpoints.json`,
+      lastModified: new Date(),
+      changeFrequency: "daily",
+      priority: 0.5,
+    },
+    {
+      url: `${BASE_URL}/knowledge/offers/index.json`,
+      lastModified: new Date(),
+      changeFrequency: "daily",
+      priority: 0.5,
+    },
+    {
+      url: `${BASE_URL}/knowledge/policy/disclaimers.json`,
+      lastModified: new Date(),
+      changeFrequency: "daily",
+      priority: 0.5,
+    },
+    {
+      url: `${BASE_URL}/knowledge/policy/offers-config.json`,
+      lastModified: new Date(),
+      changeFrequency: "daily",
+      priority: 0.5,
+    },
+    {
+      url: `${BASE_URL}/knowledge/policy/deprecations.json`,
+      lastModified: new Date(),
+      changeFrequency: "daily",
+      priority: 0.5,
+    },
+    {
+      url: `${BASE_URL}/knowledge/integrity/manifest.json`,
+      lastModified: new Date(),
+      changeFrequency: "daily",
+      priority: 0.5,
+    },
+    {
+      url: `${BASE_URL}/knowledge/capabilities.json`,
+      lastModified: new Date(),
+      changeFrequency: "daily",
+      priority: 0.5,
+    },
+    {
+      url: `${BASE_URL}/knowledge/release.json`,
+      lastModified: new Date(),
+      changeFrequency: "daily",
+      priority: 0.5,
+    },
+    {
+      url: `${BASE_URL}/knowledge/fingerprint.json`,
+      lastModified: new Date(),
+      changeFrequency: "daily",
+      priority: 0.5,
+    },
+    {
+      url: `${BASE_URL}/knowledge/changelog.json`,
+      lastModified: new Date(),
+      changeFrequency: "daily",
+      priority: 0.5,
+    },
+    {
+      url: `${BASE_URL}/knowledge/provenance.json`,
+      lastModified: new Date(),
+      changeFrequency: "daily",
+      priority: 0.5,
+    },
+    {
+      url: `${BASE_URL}/knowledge/schema-map.json`,
+      lastModified: new Date(),
+      changeFrequency: "daily",
+      priority: 0.5,
+    },
+    {
+      url: `${BASE_URL}/knowledge/entity-index.json`,
+      lastModified: new Date(),
+      changeFrequency: "daily",
+      priority: 0.5,
+    },
+    {
+      url: `${BASE_URL}/knowledge/bundles/index.json`,
+      lastModified: new Date(),
+      changeFrequency: "daily",
+      priority: 0.5,
+    },
+    {
+      url: `${BASE_URL}/knowledge/build-profile.json`,
+      lastModified: new Date(),
+      changeFrequency: "daily",
+      priority: 0.5,
+    },
+    {
+      url: `${BASE_URL}/knowledge/leaderboards/states.json`,
+      lastModified: new Date(),
+      changeFrequency: "daily",
+      priority: 0.5,
+    },
+    {
+      url: `${BASE_URL}/knowledge/bundles/core.json`,
+      lastModified: new Date(),
+      changeFrequency: "daily",
+      priority: 0.5,
+    },
+    {
+      url: `${BASE_URL}/knowledge/bundles/states-all.json`,
+      lastModified: new Date(),
+      changeFrequency: "daily",
+      priority: 0.5,
+    },
+    {
+      url: `${BASE_URL}/knowledge/bundles/methodologies.json`,
+      lastModified: new Date(),
+      changeFrequency: "daily",
+      priority: 0.5,
+    },
+    {
+      url: `${BASE_URL}/knowledge/bundles/rankings.json`,
+      lastModified: new Date(),
+      changeFrequency: "daily",
+      priority: 0.5,
+    },
+    {
+      url: `${BASE_URL}/knowledge/history/bundles/index.json`,
+      lastModified: new Date(),
+      changeFrequency: "daily",
+      priority: 0.5,
+    },
+    ...getKnowledgeHistoryVersionsWithBundles().map((version) => ({
+      url: `${BASE_URL}/knowledge/history/${version}/bundles/index.json`,
+      lastModified: new Date(),
+      changeFrequency: "daily" as const,
+      priority: 0.5,
+    })),
+    {
+      url: `${BASE_URL}/knowledge/methodology/index.json`,
+      lastModified: new Date(),
+      changeFrequency: "daily",
+      priority: 0.5,
+    },
+    {
+      url: `${BASE_URL}/knowledge/regression.json`,
+      lastModified: new Date(),
+      changeFrequency: "daily",
+      priority: 0.5,
     },
     ...Object.keys(STATES).map((slug) => ({
       url: `${BASE_URL}/offers/${slug}`,

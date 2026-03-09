@@ -1,0 +1,54 @@
+{
+  "schemaVersion": "1.0",
+  "generatedAt": "2026-03-09T17:50:09.701Z",
+  "sourceVersion": "v2",
+  "canonicalUrl": "/knowledge/docs",
+  "contractUrl": "/knowledge/contract.json",
+  "indexUrl": "/knowledge/index.json",
+  "entryPoints": [
+    {
+      "id": "bundles",
+      "url": "/knowledge/bundles/index.json",
+      "description": "Offline ingestion bundles."
+    },
+    {
+      "id": "compare-states",
+      "url": "/knowledge/compare/states.json",
+      "description": "State comparison metrics."
+    },
+    {
+      "id": "entity-index",
+      "url": "/knowledge/entity-index.json",
+      "description": "Entity catalog with temporal context."
+    },
+    {
+      "id": "methodology-index",
+      "url": "/knowledge/methodology/index.json",
+      "description": "Methodology definitions."
+    },
+    {
+      "id": "provenance",
+      "url": "/knowledge/provenance.json",
+      "description": "Data source catalog."
+    },
+    {
+      "id": "rankings-index",
+      "url": "/knowledge/rankings/index.json",
+      "description": "Rankings index."
+    },
+    {
+      "id": "schema-map",
+      "url": "/knowledge/schema-map.json",
+      "description": "Entity types and field definitions."
+    },
+    {
+      "id": "search-index",
+      "url": "/knowledge/search-index.json",
+      "description": "Primary discovery surface."
+    }
+  ],
+  "notes": [
+    "All knowledge artifacts are build-generated and deterministic.",
+    "Use search-index for discovery; use entity pages for details."
+  ]
+}

@@ -1,13 +1,10 @@
 import { SITE_NAME, SITE_URL } from "@/lib/site";
-import { getCurrentSnapshot } from "@/lib/snapshotLoader";
 import {
-  getNationalAverage,
-  getMedianRate,
-  getHighestState,
-  getLowestState,
-  getTopNByRate,
-  getBottomNByRate,
-} from "@/lib/nationalStats";
+  getKnowledgeSourceVersion,
+  getKnowledgeMethodologyRefs,
+  getKnowledgeDataEndpoints,
+  getKnowledgeNationalSummary,
+} from "@/lib/knowledge/common";
 
 export type KnowledgePack = {
   schemaVersion: "1.0";
@@ -44,56 +41,21 @@ export type KnowledgePack = {
 };
 
 export function buildKnowledgePack(): KnowledgePack {
-  const highest = getHighestState();
-  const lowest = getLowestState();
+  const methodologies = getKnowledgeMethodologyRefs();
+  const endpoints = getKnowledgeDataEndpoints();
+  const national = getKnowledgeNationalSummary();
 
   return {
     schemaVersion: "1.0",
     site: {
       name: SITE_NAME,
       url: SITE_URL,
-      dataVersion: getCurrentSnapshot().version,
+      dataVersion: getKnowledgeSourceVersion(),
       generatedAt: new Date().toISOString(),
     },
-    endpoints: {
-      registry: "/registry.json",
-      graph: "/graph.json",
-      llms: "/llms.txt",
-      dataHub: "/datasets",
-      statesJson: "/api/datasets/states.json",
-      statesCsv: "/api/datasets/states.csv",
-      valueRankingCsv: "/api/datasets/value-ranking.csv",
-      affordabilityCsv: "/api/datasets/affordability.csv",
-    },
-    methodologies: {
-      electricityPriceIndex: "/methodology/electricity-price-index",
-      valueScore: "/methodology/value-score",
-      freshnessScoring: "/methodology/freshness-scoring",
-    },
-    national: {
-      averageRateCentsPerKwh: getNationalAverage(),
-      medianRateCentsPerKwh: getMedianRate(),
-      highestState: {
-        slug: highest.slug,
-        name: highest.name,
-        rate: highest.avgRateCentsPerKwh,
-      },
-      lowestState: {
-        slug: lowest.slug,
-        name: lowest.name,
-        rate: lowest.avgRateCentsPerKwh,
-      },
-      top5Highest: getTopNByRate(5).map((s) => ({
-        slug: s.slug,
-        name: s.name,
-        rate: s.avgRateCentsPerKwh,
-      })),
-      top5Lowest: getBottomNByRate(5).map((s) => ({
-        slug: s.slug,
-        name: s.name,
-        rate: s.avgRateCentsPerKwh,
-      })),
-    },
+    endpoints,
+    methodologies,
+    national,
     notes: [
       "Rates are energy-only estimates.",
       "See sources and methodology.",

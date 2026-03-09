@@ -1,0 +1,16 @@
+{
+  "schemaVersion": "1.0",
+  "generatedAt": "2026-03-09T17:50:09.701Z",
+  "sourceVersion": "v2",
+  "contractVersion": "1.0.0",
+  "stateA": "new-york",
+  "stateB": "ohio",
+  "nameA": "New York",
+  "nameB": "Ohio",
+  "rateA": 23.87,
+  "rateB": 16.9,
+  "differenceCents": 6.97,
+  "differencePercent": 41.2,
+  "higherCostState": "New York",
+  "lowerCostState": "Ohio"
+}

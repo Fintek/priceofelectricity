@@ -1,0 +1,16 @@
+{
+  "schemaVersion": "1.0",
+  "generatedAt": "2026-03-09T17:50:09.701Z",
+  "sourceVersion": "v2",
+  "contractVersion": "1.0.0",
+  "stateA": "california",
+  "stateB": "missouri",
+  "nameA": "California",
+  "nameB": "Missouri",
+  "rateA": 31.14,
+  "rateB": 13.37,
+  "differenceCents": 17.77,
+  "differencePercent": 132.9,
+  "higherCostState": "California",
+  "lowerCostState": "Missouri"
+}

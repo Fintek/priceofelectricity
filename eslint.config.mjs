@@ -11,6 +11,13 @@ const eslintConfig = defineConfig([
       "react/no-unescaped-entities": "off",
     },
   },
+  {
+    files: ["scripts/**/*.js"],
+    languageOptions: { sourceType: "script" },
+    rules: {
+      "@typescript-eslint/no-require-imports": "off",
+    },
+  },
   globalIgnores([".next/**", "out/**", "build/**", "next-env.d.ts"]),
 ]);
 

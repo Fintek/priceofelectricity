@@ -1,0 +1,146 @@
+{
+  "meta": {
+    "schemaVersion": "1.0",
+    "id": "knowledge:methodology:epi",
+    "type": "methodology",
+    "slug": "epi",
+    "title": "Electricity Price Index Methodology",
+    "description": "Methodology for Electricity Price Index calculations and interpretation.",
+    "canonicalUrl": "http://localhost:3000/knowledge/methodology/epi",
+    "jsonUrl": "http://localhost:3000/knowledge/history/v2/methodology/epi.json",
+    "updatedAt": "2026-03-09T17:50:09.701Z",
+    "sourceVersion": "v2",
+    "temporalContext": {
+      "sourceVersion": "v2",
+      "isLatest": false
+    },
+    "provenance": [
+      {
+        "id": "poe-methodology-epi",
+        "sourceName": "PriceOfElectricity.com methodology: Electricity Price Index",
+        "sourceUrl": "http://localhost:3000/methodology/electricity-price-index",
+        "publisher": "PriceOfElectricity.com",
+        "license": "Site content license",
+        "retrievedAt": "2026-03-09T17:50:09.701Z"
+      }
+    ],
+    "fieldProvenance": [
+      {
+        "field": "data.definition",
+        "provenanceIds": [
+          "poe-methodology-epi"
+        ]
+      },
+      {
+        "field": "data.inputs",
+        "provenanceIds": [
+          "poe-methodology-epi"
+        ]
+      },
+      {
+        "field": "data.steps",
+        "provenanceIds": [
+          "poe-methodology-epi"
+        ]
+      },
+      {
+        "field": "data.limitations",
+        "provenanceIds": [
+          "poe-methodology-epi"
+        ]
+      },
+      {
+        "field": "data.relatedInternalUrls",
+        "provenanceIds": [
+          "poe-methodology-epi"
+        ]
+      }
+    ],
+    "citations": [
+      {
+        "sourceName": "PriceOfElectricity.com methodology: Electricity Price Index",
+        "sourceUrl": "http://localhost:3000/methodology/electricity-price-index",
+        "retrievedAt": "2026-03-09T17:50:09.701Z"
+      }
+    ],
+    "llmHints": {
+      "priority": "high",
+      "entityType": "methodology",
+      "semanticTopics": [
+        "methodology",
+        "electricity rates",
+        "index calculation",
+        "data freshness"
+      ],
+      "semanticCluster": "calculation-framework"
+    },
+    "freshness": {
+      "datasetUpdatedAt": "2025-12-15T00:00:00.000Z",
+      "computedAt": "2026-03-09T17:50:09.701Z",
+      "status": "aging",
+      "ageDays": 84,
+      "methodology": {
+        "id": "freshness",
+        "version": "1.0",
+        "url": "http://localhost:3000/knowledge/methodology/freshness.json",
+        "canonicalUrl": "http://localhost:3000/knowledge/methodology/freshness"
+      }
+    },
+    "excerpt": "Electricity Price Index Methodology. Defines how Electricity Price Index is computed from inputs and produces derived fields used across state and ranking pages.",
+    "disclaimerRefs": [
+      "methodology"
+    ],
+    "methodology": {
+      "id": "epi",
+      "version": "1.0",
+      "lastReviewedAt": "2026-03-09",
+      "relatedDerivedFields": [
+        "data.derived.exampleBills",
+        "data.derived.percentileRankings.ratePercentile",
+        "data.derived.averageRate",
+        "data.derived.medianRate",
+        "data.derived.dispersionMetrics",
+        "data.derived.highestState",
+        "data.derived.lowestState",
+        "data.derived.top5Highest",
+        "data.derived.top5Lowest",
+        "data.sortedStates"
+      ]
+    },
+    "qualityScore": 90,
+    "contentHash": "8e63c2e1b03775cd0a3cf214ddc8a7e7f173313bee24c6f509b3159dbfeea454",
+    "integrity": {
+      "contentHash": "8e63c2e1b03775cd0a3cf214ddc8a7e7f173313bee24c6f509b3159dbfeea454",
+      "integrityAlgorithm": "sha256",
+      "signedAtBuild": "2026-03-09T17:50:09.701Z"
+    }
+  },
+  "data": {
+    "definition": "Electricity Price Index compares each state's rate to the national baseline of 100.",
+    "inputs": [
+      "State average residential rate",
+      "National average residential rate"
+    ],
+    "steps": [
+      "Collect normalized state rates from canonical pipeline.",
+      "Compute index value relative to national average.",
+      "Round and categorize relative position."
+    ],
+    "limitations": [
+      "Energy-only rates do not include fees and taxes.",
+      "Comparative index does not model utility plan mix."
+    ],
+    "relatedInternalUrls": [
+      "http://localhost:3000/knowledge/methodology/epi",
+      "http://localhost:3000/index-ranking"
+    ],
+    "relatedEntities": {
+      "national": true,
+      "rankings": [
+        "rate-low-to-high",
+        "rate-high-to-low",
+        "affordability"
+      ]
+    }
+  }
+}

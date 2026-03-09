@@ -1,0 +1,542 @@
+{
+  "meta": {
+    "schemaVersion": "1.0",
+    "id": "knowledge:rankings:rate-high-to-low",
+    "type": "rankings",
+    "slug": "rate-high-to-low",
+    "title": "Rate Rankings (High to Low)",
+    "description": "Deterministic ranking of average state rates from highest to lowest.",
+    "canonicalUrl": "http://localhost:3000/knowledge/rankings/rate-high-to-low",
+    "jsonUrl": "http://localhost:3000/knowledge/history/v2/rankings/rate-high-to-low.json",
+    "updatedAt": "2026-03-09T17:50:09.701Z",
+    "sourceVersion": "v2",
+    "temporalContext": {
+      "sourceVersion": "v2",
+      "isLatest": false
+    },
+    "provenance": [
+      {
+        "id": "eia-retail-sales-923",
+        "sourceName": "U.S. Energy Information Administration (EIA) Retail Sales of Electricity",
+        "sourceUrl": "https://api.eia.gov/v2/electricity/retail-sales/data/",
+        "publisher": "U.S. Energy Information Administration",
+        "license": "U.S. Government work (public domain)",
+        "notes": "Primary source for state residential electricity rate series used by snapshots.",
+        "retrievedAt": "2026-03-09T17:50:09.701Z"
+      },
+      {
+        "id": "poe-dataset-affordability-csv",
+        "sourceName": "PriceOfElectricity.com dataset endpoint: affordability.csv",
+        "sourceUrl": "http://localhost:3000/api/datasets/affordability.csv",
+        "publisher": "PriceOfElectricity.com",
+        "license": "Site content license",
+        "retrievedAt": "2026-03-09T17:50:09.701Z"
+      },
+      {
+        "id": "poe-dataset-states-json",
+        "sourceName": "PriceOfElectricity.com dataset endpoint: states.json",
+        "sourceUrl": "http://localhost:3000/api/datasets/states.json",
+        "publisher": "PriceOfElectricity.com",
+        "license": "Site content license",
+        "retrievedAt": "2026-03-09T17:50:09.701Z"
+      },
+      {
+        "id": "poe-dataset-value-ranking-csv",
+        "sourceName": "PriceOfElectricity.com dataset endpoint: value-ranking.csv",
+        "sourceUrl": "http://localhost:3000/api/datasets/value-ranking.csv",
+        "publisher": "PriceOfElectricity.com",
+        "license": "Site content license",
+        "retrievedAt": "2026-03-09T17:50:09.701Z"
+      },
+      {
+        "id": "poe-methodology-epi",
+        "sourceName": "PriceOfElectricity.com methodology: Electricity Price Index",
+        "sourceUrl": "http://localhost:3000/methodology/electricity-price-index",
+        "publisher": "PriceOfElectricity.com",
+        "license": "Site content license",
+        "retrievedAt": "2026-03-09T17:50:09.701Z"
+      },
+      {
+        "id": "poe-methodology-value-score",
+        "sourceName": "PriceOfElectricity.com methodology: Value Score",
+        "sourceUrl": "http://localhost:3000/methodology/value-score",
+        "publisher": "PriceOfElectricity.com",
+        "license": "Site content license",
+        "retrievedAt": "2026-03-09T17:50:09.701Z"
+      }
+    ],
+    "fieldProvenance": [
+      {
+        "field": "data.rankingType",
+        "provenanceIds": [
+          "poe-methodology-epi",
+          "poe-methodology-value-score"
+        ]
+      },
+      {
+        "field": "data.sortedStates",
+        "provenanceIds": [
+          "eia-retail-sales-923",
+          "poe-dataset-states-json",
+          "poe-dataset-affordability-csv",
+          "poe-dataset-value-ranking-csv"
+        ]
+      },
+      {
+        "field": "data.generatedAt",
+        "provenanceIds": [
+          "poe-dataset-states-json"
+        ]
+      }
+    ],
+    "citations": [
+      {
+        "sourceName": "U.S. Energy Information Administration (EIA) Retail Sales of Electricity",
+        "sourceUrl": "https://api.eia.gov/v2/electricity/retail-sales/data/",
+        "retrievedAt": "2026-03-09T17:50:09.701Z",
+        "notes": "Primary source for state residential electricity rate series used by snapshots."
+      },
+      {
+        "sourceName": "PriceOfElectricity.com dataset endpoint: affordability.csv",
+        "sourceUrl": "http://localhost:3000/api/datasets/affordability.csv",
+        "retrievedAt": "2026-03-09T17:50:09.701Z"
+      },
+      {
+        "sourceName": "PriceOfElectricity.com dataset endpoint: states.json",
+        "sourceUrl": "http://localhost:3000/api/datasets/states.json",
+        "retrievedAt": "2026-03-09T17:50:09.701Z"
+      },
+      {
+        "sourceName": "PriceOfElectricity.com dataset endpoint: value-ranking.csv",
+        "sourceUrl": "http://localhost:3000/api/datasets/value-ranking.csv",
+        "retrievedAt": "2026-03-09T17:50:09.701Z"
+      },
+      {
+        "sourceName": "PriceOfElectricity.com methodology: Electricity Price Index",
+        "sourceUrl": "http://localhost:3000/methodology/electricity-price-index",
+        "retrievedAt": "2026-03-09T17:50:09.701Z"
+      },
+      {
+        "sourceName": "PriceOfElectricity.com methodology: Value Score",
+        "sourceUrl": "http://localhost:3000/methodology/value-score",
+        "retrievedAt": "2026-03-09T17:50:09.701Z"
+      }
+    ],
+    "llmHints": {
+      "priority": "medium",
+      "entityType": "rankings",
+      "semanticTopics": [
+        "state comparison",
+        "electricity rates",
+        "affordability",
+        "ranking methodology"
+      ],
+      "semanticCluster": "comparative-analysis"
+    },
+    "freshness": {
+      "datasetUpdatedAt": "2025-12-15T00:00:00.000Z",
+      "computedAt": "2026-03-09T17:50:09.701Z",
+      "status": "aging",
+      "ageDays": 84,
+      "methodology": {
+        "id": "freshness",
+        "version": "1.0",
+        "url": "http://localhost:3000/knowledge/methodology/freshness.json",
+        "canonicalUrl": "http://localhost:3000/knowledge/methodology/freshness"
+      }
+    },
+    "excerpt": "Rate Rankings (High to Low). Ranks states by rate (high to low) (desc). Top 1: Hawaii.",
+    "disclaimerRefs": [
+      "rankings"
+    ],
+    "qualityScore": 90,
+    "contentHash": "4c0b79e2e05eab736046b20cfa47a0b62d610ef50a6a3a10c0245d60da821b28",
+    "integrity": {
+      "contentHash": "4c0b79e2e05eab736046b20cfa47a0b62d610ef50a6a3a10c0245d60da821b28",
+      "integrityAlgorithm": "sha256",
+      "signedAtBuild": "2026-03-09T17:50:09.701Z"
+    }
+  },
+  "data": {
+    "rankingType": "rate-high-to-low",
+    "sortedStates": [
+      {
+        "rank": 1,
+        "slug": "hawaii",
+        "name": "Hawaii",
+        "metricValue": 41.3
+      },
+      {
+        "rank": 2,
+        "slug": "california",
+        "name": "California",
+        "metricValue": 31.14
+      },
+      {
+        "rank": 3,
+        "slug": "connecticut",
+        "name": "Connecticut",
+        "metricValue": 30.35
+      },
+      {
+        "rank": 4,
+        "slug": "rhode-island",
+        "name": "Rhode Island",
+        "metricValue": 28.42
+      },
+      {
+        "rank": 5,
+        "slug": "maine",
+        "name": "Maine",
+        "metricValue": 27.24
+      },
+      {
+        "rank": 6,
+        "slug": "massachusetts",
+        "name": "Massachusetts",
+        "metricValue": 26.01
+      },
+      {
+        "rank": 7,
+        "slug": "alaska",
+        "name": "Alaska",
+        "metricValue": 25.01
+      },
+      {
+        "rank": 8,
+        "slug": "new-york",
+        "name": "New York",
+        "metricValue": 23.87
+      },
+      {
+        "rank": 9,
+        "slug": "new-hampshire",
+        "name": "New Hampshire",
+        "metricValue": 23.35
+      },
+      {
+        "rank": 10,
+        "slug": "vermont",
+        "name": "Vermont",
+        "metricValue": 22.58
+      },
+      {
+        "rank": 11,
+        "slug": "new-jersey",
+        "name": "New Jersey",
+        "metricValue": 22.15
+      },
+      {
+        "rank": 12,
+        "slug": "michigan",
+        "name": "Michigan",
+        "metricValue": 19.91
+      },
+      {
+        "rank": 13,
+        "slug": "maryland",
+        "name": "Maryland",
+        "metricValue": 19.29
+      },
+      {
+        "rank": 14,
+        "slug": "wisconsin",
+        "name": "Wisconsin",
+        "metricValue": 18.04
+      },
+      {
+        "rank": 15,
+        "slug": "pennsylvania",
+        "name": "Pennsylvania",
+        "metricValue": 17.78
+      },
+      {
+        "rank": 16,
+        "slug": "delaware",
+        "name": "Delaware",
+        "metricValue": 17.18
+      },
+      {
+        "rank": 17,
+        "slug": "illinois",
+        "name": "Illinois",
+        "metricValue": 16.96
+      },
+      {
+        "rank": 18,
+        "slug": "ohio",
+        "name": "Ohio",
+        "metricValue": 16.9
+      },
+      {
+        "rank": 19,
+        "slug": "alabama",
+        "name": "Alabama",
+        "metricValue": 16.55
+      },
+      {
+        "rank": 20,
+        "slug": "indiana",
+        "name": "Indiana",
+        "metricValue": 16.12
+      },
+      {
+        "rank": 21,
+        "slug": "minnesota",
+        "name": "Minnesota",
+        "metricValue": 16.04
+      },
+      {
+        "rank": 22,
+        "slug": "texas",
+        "name": "Texas",
+        "metricValue": 15.83
+      },
+      {
+        "rank": 23,
+        "slug": "colorado",
+        "name": "Colorado",
+        "metricValue": 15.79
+      },
+      {
+        "rank": 24,
+        "slug": "arizona",
+        "name": "Arizona",
+        "metricValue": 15.7
+      },
+      {
+        "rank": 25,
+        "slug": "west-virginia",
+        "name": "West Virginia",
+        "metricValue": 15.39
+      },
+      {
+        "rank": 26,
+        "slug": "new-mexico",
+        "name": "New Mexico",
+        "metricValue": 15.29
+      },
+      {
+        "rank": 27,
+        "slug": "florida",
+        "name": "Florida",
+        "metricValue": 15.27
+      },
+      {
+        "rank": 28,
+        "slug": "virginia",
+        "name": "Virginia",
+        "metricValue": 15.26
+      },
+      {
+        "rank": 29,
+        "slug": "georgia",
+        "name": "Georgia",
+        "metricValue": 15.22
+      },
+      {
+        "rank": 30,
+        "slug": "oregon",
+        "name": "Oregon",
+        "metricValue": 15
+      },
+      {
+        "rank": 31,
+        "slug": "south-carolina",
+        "name": "South Carolina",
+        "metricValue": 14.72
+      },
+      {
+        "rank": 32,
+        "slug": "kansas",
+        "name": "Kansas",
+        "metricValue": 14.48
+      },
+      {
+        "rank": 33,
+        "slug": "north-carolina",
+        "name": "North Carolina",
+        "metricValue": 14.08
+      },
+      {
+        "rank": 34,
+        "slug": "wyoming",
+        "name": "Wyoming",
+        "metricValue": 14.02
+      },
+      {
+        "rank": 35,
+        "slug": "mississippi",
+        "name": "Mississippi",
+        "metricValue": 13.91
+      },
+      {
+        "rank": 36,
+        "slug": "missouri",
+        "name": "Missouri",
+        "metricValue": 13.37
+      },
+      {
+        "rank": 37,
+        "slug": "tennessee",
+        "name": "Tennessee",
+        "metricValue": 13.28
+      },
+      {
+        "rank": 38,
+        "slug": "kentucky",
+        "name": "Kentucky",
+        "metricValue": 13.2
+      },
+      {
+        "rank": 39,
+        "slug": "iowa",
+        "name": "Iowa",
+        "metricValue": 13.18
+      },
+      {
+        "rank": 40,
+        "slug": "nevada",
+        "name": "Nevada",
+        "metricValue": 13.16
+      },
+      {
+        "rank": 41,
+        "slug": "south-dakota",
+        "name": "South Dakota",
+        "metricValue": 13.14
+      },
+      {
+        "rank": 42,
+        "slug": "montana",
+        "name": "Montana",
+        "metricValue": 13.12
+      },
+      {
+        "rank": 43,
+        "slug": "oklahoma",
+        "name": "Oklahoma",
+        "metricValue": 13.05
+      },
+      {
+        "rank": 44,
+        "slug": "utah",
+        "name": "Utah",
+        "metricValue": 12.97
+      },
+      {
+        "rank": 45,
+        "slug": "washington",
+        "name": "Washington",
+        "metricValue": 12.86
+      },
+      {
+        "rank": 46,
+        "slug": "arkansas",
+        "name": "Arkansas",
+        "metricValue": 12.83
+      },
+      {
+        "rank": 47,
+        "slug": "louisiana",
+        "name": "Louisiana",
+        "metricValue": 12.34
+      },
+      {
+        "rank": 48,
+        "slug": "nebraska",
+        "name": "Nebraska",
+        "metricValue": 12.19
+      },
+      {
+        "rank": 49,
+        "slug": "north-dakota",
+        "name": "North Dakota",
+        "metricValue": 11.92
+      },
+      {
+        "rank": 50,
+        "slug": "idaho",
+        "name": "Idaho",
+        "metricValue": 11.74
+      }
+    ],
+    "generatedAt": "2026-03-09T17:50:09.701Z",
+    "derivedMeta": {
+      "methodologiesUsed": [
+        {
+          "id": "epi",
+          "version": "1.0",
+          "url": "http://localhost:3000/knowledge/methodology/epi.json",
+          "appliesToFields": [
+            "data.sortedStates"
+          ]
+        }
+      ]
+    },
+    "relatedEntities": {
+      "methodologies": [
+        "epi"
+      ],
+      "states": [
+        "alaska",
+        "arkansas",
+        "california",
+        "connecticut",
+        "hawaii",
+        "idaho",
+        "louisiana",
+        "maine",
+        "massachusetts",
+        "montana",
+        "nebraska",
+        "new-hampshire",
+        "new-york",
+        "north-dakota",
+        "oklahoma",
+        "rhode-island",
+        "south-dakota",
+        "utah",
+        "vermont",
+        "washington"
+      ]
+    },
+    "facts": [
+      {
+        "label": "Bottom metric value",
+        "value": 11.74,
+        "sourceField": "data.sortedStates"
+      },
+      {
+        "label": "Bottom state",
+        "value": "Idaho",
+        "sourceField": "data.sortedStates"
+      },
+      {
+        "label": "Generated at",
+        "value": "2026-03-09T17:50:09.701Z",
+        "sourceField": "data.generatedAt"
+      },
+      {
+        "label": "Ranking type",
+        "value": "rate-high-to-low",
+        "sourceField": "data.rankingType"
+      },
+      {
+        "label": "Top metric value",
+        "value": 41.3,
+        "sourceField": "data.sortedStates"
+      },
+      {
+        "label": "Top state",
+        "value": "Hawaii",
+        "sourceField": "data.sortedStates"
+      },
+      {
+        "label": "Total ranked",
+        "value": 50,
+        "sourceField": "data.sortedStates"
+      }
+    ]
+  }
+}

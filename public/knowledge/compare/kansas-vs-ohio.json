@@ -1,0 +1,16 @@
+{
+  "schemaVersion": "1.0",
+  "generatedAt": "2026-03-09T17:50:09.701Z",
+  "sourceVersion": "v2",
+  "contractVersion": "1.0.0",
+  "stateA": "kansas",
+  "stateB": "ohio",
+  "nameA": "Kansas",
+  "nameB": "Ohio",
+  "rateA": 14.48,
+  "rateB": 16.9,
+  "differenceCents": -2.42,
+  "differencePercent": -14.3,
+  "higherCostState": "Ohio",
+  "lowerCostState": "Kansas"
+}

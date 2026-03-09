@@ -1,0 +1,16 @@
+{
+  "schemaVersion": "1.0",
+  "generatedAt": "2026-03-09T17:50:09.701Z",
+  "sourceVersion": "v2",
+  "contractVersion": "1.0.0",
+  "stateA": "maryland",
+  "stateB": "ohio",
+  "nameA": "Maryland",
+  "nameB": "Ohio",
+  "rateA": 19.29,
+  "rateB": 16.9,
+  "differenceCents": 2.39,
+  "differencePercent": 14.1,
+  "higherCostState": "Maryland",
+  "lowerCostState": "Ohio"
+}
