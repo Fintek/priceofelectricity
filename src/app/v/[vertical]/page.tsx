@@ -160,7 +160,7 @@ export default async function VerticalHubPage({
             <Link href="/compare">Compare electricity prices by state</Link>
           </li>
           <li>
-            <Link href="/calculator">Bill calculator</Link>
+            <Link href="/electricity-cost-calculator">Bill calculator</Link>
           </li>
           <li>
             <Link href="/affordability">Affordability index</Link>

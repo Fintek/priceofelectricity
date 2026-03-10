@@ -92,7 +92,7 @@ export async function generateMetadata({
   const diff = Math.abs(stateA.avgRateCentsPerKwh - stateB.avgRateCentsPerKwh);
   const title = `${stateA.name} vs ${stateB.name} Electricity Price (¢/kWh Comparison)`;
   const description = `${stateA.name} (${stateA.avgRateCentsPerKwh.toFixed(2)}¢/kWh) vs ${stateB.name} (${stateB.avgRateCentsPerKwh.toFixed(2)}¢/kWh). Difference: ${diff.toFixed(2)}¢/kWh.`;
-  const canonicalUrl = `${BASE_URL}/compare/${canonicalPair}`;
+  const canonicalUrl = `${BASE_URL}/electricity-cost-comparison/${canonicalPair}`;
 
   return {
     title,
@@ -125,9 +125,7 @@ export default async function StateComparisonPage({
   }
 
   const { a, b, canonicalPair } = parsed;
-  if (pair !== canonicalPair) {
-    permanentRedirect(`/compare/${canonicalPair}`);
-  }
+  permanentRedirect(`/electricity-cost-comparison/${canonicalPair}`);
 
   const stateA = STATES[a];
   const stateB = STATES[b];
@@ -242,7 +240,7 @@ export default async function StateComparisonPage({
         <Link href={`/${a}`}>{stateA.name} page</Link> {" | "}
         <Link href={`/${b}`}>{stateB.name} page</Link> {" | "}
         <Link href="/compare">Back to compare</Link> {" | "}
-        <Link href="/calculator">National calculator</Link>
+        <Link href="/electricity-cost-calculator">National calculator</Link>
       </p>
     </main>
   );

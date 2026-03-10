@@ -8,6 +8,9 @@ import JsonLdScript from "@/app/components/seo/JsonLdScript";
 import StatusFooter from "@/components/common/StatusFooter";
 import Disclaimers from "@/app/components/policy/Disclaimers";
 import { getRelease } from "@/lib/knowledge/fetch";
+import ProviderComparisonTable from "@/components/providers/ProviderComparisonTable";
+import StateProviderList from "@/components/providers/StateProviderList";
+import { buildProviderComparisonRows, resolveProvidersForContext } from "@/lib/providers/resolve";
 
 const MONTHLY_USAGE_KWH = 900;
 
@@ -66,6 +69,12 @@ export default async function ElectricityProvidersStatePage({
   const raw = statePage.data?.raw as { name?: string; avgRateCentsPerKwh?: number } | undefined;
   const stateName = raw?.name ?? slugToDisplayName(slug);
   const avgRate = typeof raw?.avgRateCentsPerKwh === "number" ? raw.avgRateCentsPerKwh : null;
+  const providers = resolveProvidersForContext({
+    pageType: "provider-directory-state",
+    state: slug,
+    serviceCategory: "state-provider-listing",
+  }, 12);
+  const comparisonRows = buildProviderComparisonRows(providers);
 
   const rateDollarsPerKwh = avgRate != null ? avgRate / 100 : 0;
   const estimatedMonthlyCost = rateDollarsPerKwh * MONTHLY_USAGE_KWH;
@@ -171,6 +180,13 @@ export default async function ElectricityProvidersStatePage({
             <li>How estimated bills and affordability compare with other states</li>
           </ul>
         </section>
+
+        <StateProviderList stateName={stateName} providers={providers} />
+
+        <ProviderComparisonTable
+          title={`Configured provider framework for ${stateName}`}
+          rows={comparisonRows}
+        />
 
         {/* F) Related Pages */}
         <section style={{ marginBottom: 32 }}>

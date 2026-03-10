@@ -173,7 +173,7 @@ export default async function BillPage({
       <p className="muted" style={{ marginTop: 12 }}>
         <Link href={`/${slug}`}>Back to {ns.name}</Link> {" | "}
         <Link href="/compare">Compare states</Link> {" | "}
-        <Link href="/calculator">Calculator</Link>
+        <Link href="/electricity-cost-calculator">Calculator</Link>
       </p>
     </main>
   );

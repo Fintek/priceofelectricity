@@ -123,7 +123,7 @@ export default async function GuideDetailPage({
         <h2 style={{ marginBottom: 8 }}>Related tools and pages</h2>
         <ul style={{ marginTop: 0, paddingLeft: 20 }}>
           <li>
-            <Link href="/calculator">Electricity bill calculator</Link>
+            <Link href="/electricity-cost-calculator">Electricity bill calculator</Link>
           </li>
           <li>
             <Link href="/compare">Compare electricity prices by state</Link>

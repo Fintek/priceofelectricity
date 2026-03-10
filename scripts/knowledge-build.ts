@@ -4867,6 +4867,35 @@ async function main(): Promise<void> {
     ],
   };
 
+  const howMuch1500KwhEntity = {
+    id: "how-much-does-1500-kwh-cost:index",
+    type: "landing" as const,
+    slug: "how-much-does-1500-kwh-cost",
+    title: "How Much Does 1500 kWh Cost?",
+    canonicalUrl: ensureAbsoluteUrl("/how-much-does-1500-kwh-cost"),
+    excerpt: "Estimate electricity cost for 1500 kWh. National average and state-by-state estimates.",
+    qualityScore: 85,
+    freshnessStatus: "aging" as const,
+    tokens: [
+      "how",
+      "much",
+      "does",
+      "1500",
+      "kwh",
+      "cost",
+      "1500",
+      "kwh",
+      "electricity",
+      "cost",
+      "by",
+      "state",
+      "electricity",
+      "bill",
+      "quality-85",
+      "aging",
+    ],
+  };
+
   const howMuch2000KwhEntity = {
     id: "how-much-does-2000-kwh-cost:index",
     type: "landing" as const,
@@ -7807,6 +7836,7 @@ async function main(): Promise<void> {
     ...electricityCostCalculatorStateEntities,
     howMuch500KwhEntity,
     howMuch1000KwhEntity,
+    howMuch1500KwhEntity,
     howMuch2000KwhEntity,
     electricityProvidersLandingEntity,
     compareElectricityPlansHubEntity,

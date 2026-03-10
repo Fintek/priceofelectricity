@@ -22,11 +22,17 @@ type RevenueEntry = {
 const STORE_DIR = path.join(process.cwd(), ".data");
 const STORE_PATH = path.join(STORE_DIR, "revenue-events.jsonl");
 
+function isBuildTimeRevenueEvent(): boolean {
+  return process.env.NEXT_PHASE === "phase-production-build";
+}
+
 export function recordRevenueEvent(
   type: RevenueEventType,
   meta: RevenueEventMeta,
 ): void {
   try {
+    if (isBuildTimeRevenueEvent()) return;
+
     const entry: RevenueEntry = {
       ts: new Date().toISOString(),
       type,

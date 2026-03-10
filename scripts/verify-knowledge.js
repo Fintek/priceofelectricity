@@ -3072,9 +3072,6 @@ const KNOWN_STATIC_ROUTES = new Set([
   "/electricity-cost",
   "/average-electricity-bill",
   "/electricity-cost-calculator",
-  "/how-much-does-500-kwh-cost",
-  "/how-much-does-1000-kwh-cost",
-  "/how-much-does-2000-kwh-cost",
   "/electricity-providers",
   "/solar-savings",
   "/battery-recharge-cost",
@@ -3106,7 +3103,6 @@ const KNOWN_STATIC_ROUTES = new Set([
   "/data",
   "/about",
   "/compare",
-  "/calculator",
   "/affordability",
   "/value-ranking",
   "/index-ranking",
@@ -3168,9 +3164,11 @@ const KNOWN_ROUTE_FAMILY_PREFIXES = [
   "/electricity-cost/",
   "/average-electricity-bill/",
   "/electricity-cost-calculator/",
-  "/how-much-does-500-kwh-cost/",
-  "/how-much-does-1000-kwh-cost/",
-  "/how-much-does-2000-kwh-cost/",
+  "/electricity-usage/",
+  "/electricity-usage/home-size/",
+  "/electricity-usage/appliances/",
+  "/electricity-usage-cost/",
+  "/cost-to-run/",
   "/electricity-providers/",
   "/shop-electricity/",
   "/business-electricity-options/",
@@ -4035,7 +4033,7 @@ function runPreLaunchVerification(root, sitemapSource, layoutSource) {
     if (!searchContent.includes("/electricity-providers")) throw new Error("search-index must include electricity-providers coverage");
   });
 
-  runCheck("Fixed-usage electricity calculator pages", () => {
+  runCheck("Fixed-usage redirect entry routes", () => {
     const p500 = path.join(process.cwd(), "src", "app", "how-much-does-500-kwh-cost", "page.tsx");
     const p500Slug = path.join(process.cwd(), "src", "app", "how-much-does-500-kwh-cost", "[slug]", "page.tsx");
     const p1000 = path.join(process.cwd(), "src", "app", "how-much-does-1000-kwh-cost", "page.tsx");
@@ -4048,16 +4046,22 @@ function runPreLaunchVerification(root, sitemapSource, layoutSource) {
     if (!fs.existsSync(p1000Slug)) throw new Error("src/app/how-much-does-1000-kwh-cost/[slug]/page.tsx must exist");
     if (!fs.existsSync(p2000)) throw new Error("src/app/how-much-does-2000-kwh-cost/page.tsx must exist");
     if (!fs.existsSync(p2000Slug)) throw new Error("src/app/how-much-does-2000-kwh-cost/[slug]/page.tsx must exist");
+    const p1500 = path.join(process.cwd(), "src", "app", "how-much-does-1500-kwh-cost", "page.tsx");
+    const p1500Slug = path.join(process.cwd(), "src", "app", "how-much-does-1500-kwh-cost", "[slug]", "page.tsx");
+    if (!fs.existsSync(p1500)) throw new Error("src/app/how-much-does-1500-kwh-cost/page.tsx must exist");
+    if (!fs.existsSync(p1500Slug)) throw new Error("src/app/how-much-does-1500-kwh-cost/[slug]/page.tsx must exist");
     const sitemapPath = path.join(process.cwd(), "src", "app", "sitemap.ts");
     const sitemapSrc = sitemapSource || fs.readFileSync(sitemapPath, "utf8");
-    if (!sitemapSrc.includes("/how-much-does-500-kwh-cost")) throw new Error("sitemap must include /how-much-does-500-kwh-cost");
-    if (!sitemapSrc.includes("/how-much-does-1000-kwh-cost")) throw new Error("sitemap must include /how-much-does-1000-kwh-cost");
-    if (!sitemapSrc.includes("/how-much-does-2000-kwh-cost")) throw new Error("sitemap must include /how-much-does-2000-kwh-cost");
-    if (!sitemapSrc.includes("how-much-does-500-kwh-cost/")) throw new Error("sitemap must include how-much-does-500-kwh-cost dynamic routes");
+    if (sitemapSrc.includes("/how-much-does-500-kwh-cost")) throw new Error("sitemap must exclude /how-much-does-500-kwh-cost redirect routes");
+    if (sitemapSrc.includes("/how-much-does-1000-kwh-cost")) throw new Error("sitemap must exclude /how-much-does-1000-kwh-cost redirect routes");
+    if (sitemapSrc.includes("/how-much-does-1500-kwh-cost")) throw new Error("sitemap must exclude /how-much-does-1500-kwh-cost redirect routes");
+    if (sitemapSrc.includes("/how-much-does-2000-kwh-cost")) throw new Error("sitemap must exclude /how-much-does-2000-kwh-cost redirect routes");
+    if (!sitemapSrc.includes("/electricity-usage-cost/")) throw new Error("sitemap must include canonical electricity-usage-cost routes");
     const searchIndexPath = path.join(root, "search-index.json");
     const searchContent = fs.readFileSync(searchIndexPath, "utf8");
     if (!searchContent.includes("/how-much-does-500-kwh-cost")) throw new Error("search-index must include /how-much-does-500-kwh-cost");
     if (!searchContent.includes("/how-much-does-1000-kwh-cost")) throw new Error("search-index must include /how-much-does-1000-kwh-cost");
+    if (!searchContent.includes("/how-much-does-1500-kwh-cost")) throw new Error("search-index must include /how-much-does-1500-kwh-cost");
     if (!searchContent.includes("/how-much-does-2000-kwh-cost")) throw new Error("search-index must include /how-much-does-2000-kwh-cost");
   });
 

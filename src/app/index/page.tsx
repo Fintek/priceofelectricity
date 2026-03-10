@@ -53,7 +53,7 @@ export default function SiteIndexPage() {
             <Link href="/compare">Compare</Link>
           </li>
           <li>
-            <Link href="/calculator">Calculator</Link>
+            <Link href="/electricity-cost-calculator">Calculator</Link>
           </li>
         </ul>
       </section>

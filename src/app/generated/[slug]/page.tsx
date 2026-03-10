@@ -98,7 +98,7 @@ export default async function GeneratedPage({
             <Link href="/compare">Compare all states</Link>
           </li>
           <li>
-            <Link href="/calculator">Bill calculator</Link>
+            <Link href="/electricity-cost-calculator">Bill calculator</Link>
           </li>
           <li>
             <Link href={`/${page.stateSlug}/plans`}>Plans</Link>

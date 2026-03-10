@@ -7,6 +7,9 @@ import { buildBreadcrumbListJsonLd } from "@/lib/seo/jsonld";
 import JsonLdScript from "@/app/components/seo/JsonLdScript";
 import StatusFooter from "@/components/common/StatusFooter";
 import Disclaimers from "@/app/components/policy/Disclaimers";
+import ProviderComparisonTable from "@/components/providers/ProviderComparisonTable";
+import ProviderHighlightSection from "@/components/providers/ProviderHighlightSection";
+import { buildProviderComparisonRows, resolveProvidersForContext } from "@/lib/providers/resolve";
 
 export const dynamic = "force-static";
 export const revalidate = 86400;
@@ -28,6 +31,10 @@ export default async function ElectricityProvidersIndexPage() {
     entityIndex?.entities
       ?.filter((e) => e.type === "state")
       .sort((a, b) => a.slug.localeCompare(b.slug)) ?? [];
+  const featuredProviders = resolveProvidersForContext({
+    pageType: "provider-directory-index",
+  }, 6);
+  const comparisonRows = buildProviderComparisonRows(featuredProviders);
 
   const breadcrumbJsonLd = buildBreadcrumbListJsonLd([
     { name: "Home", url: "/" },
@@ -66,6 +73,18 @@ export default async function ElectricityProvidersIndexPage() {
             We do not list live plans, rates, or provider offers.
           </p>
         </section>
+
+        <ProviderHighlightSection
+          title="Featured provider integrations"
+          intro="The marketplace/provider layer supports plan comparison services, state-level listings, sponsored placements, and adjacent energy services. Featured records appear here when provider integrations are enabled."
+          providers={featuredProviders}
+          emptyMessage="No provider integrations are enabled yet. The structured provider dataset and display framework are in place for future marketplace rollouts."
+        />
+
+        <ProviderComparisonTable
+          title="Provider integration framework"
+          rows={comparisonRows}
+        />
 
         {/* WHY PROVIDER STRUCTURE MATTERS */}
         <section style={{ marginBottom: 32 }}>

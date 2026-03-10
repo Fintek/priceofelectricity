@@ -1,30 +1,29 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import JsonLdScript from "@/app/components/seo/JsonLdScript";
+import Disclaimers from "@/app/components/policy/Disclaimers";
+import StatusFooter from "@/components/common/StatusFooter";
+import LongtailStateTemplate from "@/components/longtail/LongtailStateTemplate";
 import {
-  loadKnowledgePage,
-  loadEntityIndex,
-} from "@/lib/knowledge/loadKnowledgePage";
+  AVERAGE_ELECTRICITY_BILL_USAGE_KWH,
+  buildAverageBillApplianceLinks,
+  buildAverageBillComparisonSummary,
+  buildAverageBillUsageExamples,
+  getAverageBillStaticParams,
+  loadAverageBillStateSummary,
+} from "@/lib/longtail/averageBill";
+import { getRelease } from "@/lib/knowledge/fetch";
+import { buildLongtailLinkSections } from "@/lib/longtail/internalLinks";
+import { formatRate, formatUsd } from "@/lib/longtail/stateLongtail";
 import { buildMetadata } from "@/lib/seo/metadata";
 import { buildBreadcrumbListJsonLd, buildWebPageJsonLd } from "@/lib/seo/jsonld";
-import JsonLdScript from "@/app/components/seo/JsonLdScript";
-import StatusFooter from "@/components/common/StatusFooter";
-import Disclaimers from "@/app/components/policy/Disclaimers";
-import ExploreMore from "@/components/navigation/ExploreMore";
-import MiniBarChart from "@/components/charts/MiniBarChart";
-import { getRelease } from "@/lib/knowledge/fetch";
-
-const MONTHLY_USAGE_KWH = 900;
-const ANNUAL_USAGE_KWH = 10800;
 
 export const dynamic = "force-static";
 export const revalidate = 86400;
 
 export async function generateStaticParams() {
-  const index = await loadEntityIndex();
-  return index.entities
-    .filter((e) => e.type === "state")
-    .map((e) => ({ slug: e.slug }));
+  return getAverageBillStaticParams();
 }
 
 export async function generateMetadata({
@@ -33,35 +32,27 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
   const { slug } = await params;
-  const [statePage] = await Promise.all([
-    loadKnowledgePage("state", slug),
-    loadKnowledgePage("national", "national"),
-  ]);
-  if (!statePage) {
+  const state = await loadAverageBillStateSummary(slug);
+  if (!state) {
     return buildMetadata({
       title: "Not found | PriceOfElectricity.com",
       description: "We couldn't find that page.",
       canonicalPath: `/average-electricity-bill/${slug}`,
     });
   }
-  const raw = statePage.data?.raw as { name?: string; avgRateCentsPerKwh?: number } | undefined;
-  const stateName = raw?.name ?? slug.replace(/-/g, " ").replace(/\b\w/g, (c) => c.toUpperCase());
-  const avgRate = typeof raw?.avgRateCentsPerKwh === "number" ? raw.avgRateCentsPerKwh : null;
-  const rateDollars = avgRate != null ? avgRate / 100 : 0;
-  const monthlyBill = rateDollars * MONTHLY_USAGE_KWH;
+
   const description =
-    avgRate != null
-      ? `Average electricity bill in ${stateName}: ${avgRate.toFixed(2)}¢/kWh. Estimated monthly bill for 900 kWh: $${monthlyBill.toFixed(2)}. Compare to national average.`
-      : `${stateName} average electricity bill. Residential rate, estimated monthly and annual bills.`;
+    state.monthlyBill != null
+      ? `Average electricity bill in ${state.name}: ${formatUsd(state.monthlyBill)} per month at ${formatRate(
+          state.avgRateCentsPerKwh,
+        )} using a ${AVERAGE_ELECTRICITY_BILL_USAGE_KWH.toLocaleString()} kWh benchmark.`
+      : `${state.name} average electricity bill. Residential rate, estimated monthly and annual bills.`;
+
   return buildMetadata({
-    title: `Average Electricity Bill in ${stateName} | PriceOfElectricity.com`,
+    title: `Average Electricity Bill in ${state.name} | PriceOfElectricity.com`,
     description,
     canonicalPath: `/average-electricity-bill/${slug}`,
   });
-}
-
-function slugToDisplayName(slug: string): string {
-  return slug.replace(/-/g, " ").replace(/\b\w/g, (c) => c.toUpperCase());
 }
 
 export default async function AverageElectricityBillStatePage({
@@ -70,265 +61,168 @@ export default async function AverageElectricityBillStatePage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const [statePage, nationalPage] = await Promise.all([
-    loadKnowledgePage("state", slug),
-    loadKnowledgePage("national", "national"),
-  ]);
-
-  if (!statePage) notFound();
-
-  const raw = statePage.data?.raw as {
-    name?: string;
-    avgRateCentsPerKwh?: number;
-  } | undefined;
-  const stateName = raw?.name ?? slugToDisplayName(slug);
-  const avgRate = typeof raw?.avgRateCentsPerKwh === "number" ? raw.avgRateCentsPerKwh : null;
-
-  const nationalData = nationalPage?.data as {
-    derived?: { averageRate?: number };
-  } | null;
-  const nationalAvg =
-    typeof nationalData?.derived?.averageRate === "number"
-      ? nationalData.derived.averageRate
-      : null;
-
-  const rateDollarsPerKwh = avgRate != null ? avgRate / 100 : 0;
-  const estimatedMonthlyBill = rateDollarsPerKwh * MONTHLY_USAGE_KWH;
-  const estimatedAnnualBill = rateDollarsPerKwh * ANNUAL_USAGE_KWH;
-
-  let nationalMonthlyBill: number | null = null;
-  let percentVsNational: number | null = null;
-  if (nationalAvg != null && avgRate != null) {
-    const nationalRateDollars = nationalAvg / 100;
-    nationalMonthlyBill = nationalRateDollars * MONTHLY_USAGE_KWH;
-    percentVsNational =
-      nationalMonthlyBill > 0
-        ? ((estimatedMonthlyBill - nationalMonthlyBill) / nationalMonthlyBill) * 100
-        : null;
-  }
+  const state = await loadAverageBillStateSummary(slug);
+  if (!state) notFound();
 
   const canonicalPath = `/average-electricity-bill/${slug}`;
+  const relatedLinkSections = await buildLongtailLinkSections({
+    pageType: "average-bill",
+    stateData: state,
+    usageKwh: AVERAGE_ELECTRICITY_BILL_USAGE_KWH,
+  });
+  const usageExamples = buildAverageBillUsageExamples(state);
+  const applianceLinks = buildAverageBillApplianceLinks(state);
 
   const breadcrumbJsonLd = buildBreadcrumbListJsonLd([
     { name: "Home", url: "/" },
     { name: "Average Electricity Bill", url: "/average-electricity-bill" },
-    { name: stateName, url: canonicalPath },
+    { name: state.name, url: canonicalPath },
   ]);
 
   const webPageJsonLd = buildWebPageJsonLd({
-    title: `Average Electricity Bill in ${stateName}`,
+    title: `Average Electricity Bill in ${state.name}`,
     description:
-      avgRate != null
-        ? `Average electricity bill in ${stateName}: ${avgRate.toFixed(2)}¢/kWh. Estimated monthly bill for 900 kWh: $${estimatedMonthlyBill.toFixed(2)}.`
-        : `${stateName} average electricity bill.`,
+      state.monthlyBill != null
+        ? `Average electricity bill in ${state.name}: ${formatUsd(state.monthlyBill)} per month using a ${AVERAGE_ELECTRICITY_BILL_USAGE_KWH.toLocaleString()} kWh residential benchmark.`
+        : `${state.name} average electricity bill.`,
     url: canonicalPath,
     isPartOf: "/",
-    about: [`${stateName} electricity bill`, "average electricity bill by state"],
+    about: [`${state.name} electricity bill`, "average electricity bill by state", "consumer electricity costs"],
   });
-
-  const faqItems: Array<{ question: string; answer: string }> = [];
-  if (avgRate != null) {
-    faqItems.push({
-      question: `What is the average electricity bill in ${stateName}?`,
-      answer: `The average residential electricity rate in ${stateName} is ${avgRate.toFixed(2)} cents per kWh. At 900 kWh per month, that translates to an estimated monthly bill of $${estimatedMonthlyBill.toFixed(2)} and an annual bill of about $${estimatedAnnualBill.toFixed(2)}.`,
-    });
-    faqItems.push({
-      question: "Why are electricity bills higher in some states?",
-      answer:
-        "Electricity bills vary by state due to differences in generation mix, transmission costs, regulations, and local demand. States with higher renewable mandates or limited fossil fuel resources often have higher rates.",
-    });
-    faqItems.push({
-      question: "How much electricity does a typical home use per month?",
-      answer:
-        "The U.S. Energy Information Administration reports that the average U.S. residential customer uses about 899 kWh per month. We use 900 kWh as a standard assumption for bill estimates.",
-    });
-    if (nationalAvg != null && percentVsNational != null) {
-      const dir = percentVsNational > 0 ? "more" : "less";
-      const absPct = Math.abs(percentVsNational).toFixed(1);
-      faqItems.push({
-        question: `How does ${stateName} compare to the U.S. average electricity bill?`,
-        answer: `${stateName} households pay approximately ${absPct}% ${dir} than the U.S. average when using 900 kWh per month.`,
-      });
-    }
-  }
-
-  const faqJsonLd =
-    faqItems.length > 0
-      ? {
-          "@context": "https://schema.org",
-          "@type": "FAQPage",
-          mainEntity: faqItems.map((item) => ({
-            "@type": "Question",
-            name: item.question,
-            acceptedAnswer: {
-              "@type": "Answer",
-              text: item.answer,
-            },
-          })),
-        }
-      : null;
-
-  const chartRows: Array<{ label: string; value: number }> = [];
-  if (avgRate != null && nationalMonthlyBill != null) {
-    chartRows.push({ label: stateName, value: estimatedMonthlyBill });
-    chartRows.push({ label: "U.S. average", value: nationalMonthlyBill });
-  }
 
   return (
     <>
-      <JsonLdScript
-        data={[breadcrumbJsonLd, webPageJsonLd, ...(faqJsonLd ? [faqJsonLd] : [])]}
-      />
-      <main className="container">
-        <nav aria-label="Breadcrumb" className="muted" style={{ marginBottom: 16, fontSize: 14 }}>
-          <Link href="/">Home</Link>
-          {" · "}
-          <Link href="/average-electricity-bill">Average Electricity Bill</Link>
-          {" · "}
-          <span aria-current="page">{stateName}</span>
-        </nav>
-
-        <h1 style={{ fontSize: 32, marginBottom: 16 }}>
-          Average Electricity Bill in {stateName}
-        </h1>
-        <p style={{ marginTop: 0, marginBottom: 24, maxWidth: "65ch", fontSize: 16, lineHeight: 1.6 }}>
-          Estimated average electricity bills for {stateName} based on the state&apos;s residential rate and a
-          standard 900 kWh monthly usage.
-        </p>
-
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(auto-fill, minmax(180px, 1fr))",
-            gap: 16,
-            marginBottom: 32,
-          }}
-        >
-          {avgRate != null && (
-            <div
-              style={{
-                padding: 20,
-                border: "1px solid var(--color-border, #e5e7eb)",
-                borderRadius: 8,
-                backgroundColor: "var(--color-surface-alt, #f9fafb)",
-              }}
-            >
-              <div className="muted" style={{ fontSize: 12, marginBottom: 4 }}>
-                Electricity rate
-              </div>
-              <div style={{ fontSize: 22, fontWeight: 600 }}>{avgRate.toFixed(2)} ¢/kWh</div>
-            </div>
-          )}
-          {avgRate != null && (
-            <div
-              style={{
-                padding: 20,
-                border: "1px solid var(--color-border, #e5e7eb)",
-                borderRadius: 8,
-                backgroundColor: "var(--color-surface-alt, #f9fafb)",
-              }}
-            >
-              <div className="muted" style={{ fontSize: 12, marginBottom: 4 }}>
-                Est. monthly bill (900 kWh)
-              </div>
-              <div style={{ fontSize: 22, fontWeight: 600 }}>${estimatedMonthlyBill.toFixed(2)}</div>
-            </div>
-          )}
-          {avgRate != null && (
-            <div
-              style={{
-                padding: 20,
-                border: "1px solid var(--color-border, #e5e7eb)",
-                borderRadius: 8,
-                backgroundColor: "var(--color-surface-alt, #f9fafb)",
-              }}
-            >
-              <div className="muted" style={{ fontSize: 12, marginBottom: 4 }}>
-                Est. annual bill (10,800 kWh)
-              </div>
-              <div style={{ fontSize: 22, fontWeight: 600 }}>${estimatedAnnualBill.toFixed(2)}</div>
-            </div>
-          )}
-        </div>
-
-        {percentVsNational != null && nationalMonthlyBill != null && (
-          <section style={{ marginBottom: 32 }}>
-            <h2 style={{ fontSize: 20, marginBottom: 12 }}>Comparison to U.S. Average</h2>
-            <p style={{ margin: 0 }}>
-              {stateName} households pay approximately{" "}
-              {Math.abs(percentVsNational).toFixed(1)}%{" "}
-              {percentVsNational > 0 ? "more" : "less"} than the U.S. average.
-            </p>
-          </section>
-        )}
-
-        {chartRows.length > 0 && (
-          <section style={{ marginBottom: 32 }}>
-            <h2 style={{ fontSize: 20, marginBottom: 12 }}>Monthly Bill Comparison</h2>
-            <MiniBarChart
-              rows={chartRows}
-              title="State vs U.S. average monthly bill"
-              subtitle="900 kWh usage"
-              formatValue={(v) => `$${v.toFixed(2)}`}
-              minValue={0}
-            />
-          </section>
-        )}
-
+      <JsonLdScript data={[breadcrumbJsonLd, webPageJsonLd]} />
+      <LongtailStateTemplate
+        breadcrumbs={[
+          { label: "Home", href: "/" },
+          { label: "Average Electricity Bill", href: "/average-electricity-bill" },
+          { label: state.name },
+        ]}
+        title={`Average Electricity Bill in ${state.name}`}
+        intro={`This page estimates a typical monthly and annual electricity bill in ${state.name} using the state's average residential electricity rate and a benchmark usage assumption of ${AVERAGE_ELECTRICITY_BILL_USAGE_KWH.toLocaleString()} kWh per month.`}
+        stats={[
+          { label: `${state.name} average rate`, value: formatRate(state.avgRateCentsPerKwh) },
+          { label: "Estimated monthly bill", value: formatUsd(state.monthlyBill) },
+          { label: "Estimated annual bill", value: formatUsd(state.annualBill) },
+          { label: "500 kWh example", value: formatUsd(usageExamples.find((row) => row.kwh === 500)?.cost ?? null) },
+          {
+            label: "1,500 kWh example",
+            value: formatUsd(usageExamples.find((row) => row.kwh === 1500)?.cost ?? null),
+          },
+        ]}
+        comparisonTitle={`${state.name} vs U.S. average bill`}
+        comparisonRows={[
+          { label: `${state.name} monthly bill`, value: formatUsd(state.monthlyBill) },
+          { label: "U.S. monthly bill", value: formatUsd(state.nationalMonthlyBill) },
+          {
+            label: "Monthly difference",
+            value:
+              state.monthlyDifference != null
+                ? `${state.monthlyDifference >= 0 ? "+" : "-"}${formatUsd(Math.abs(state.monthlyDifference))}`
+                : "N/A",
+          },
+          { label: `${state.name} average rate`, value: formatRate(state.avgRateCentsPerKwh) },
+        ]}
+        comparisonSummary={buildAverageBillComparisonSummary(state)}
+        relatedLinks={[]}
+        relatedLinkSections={[
+          {
+            title: `${state.name} appliance electricity examples`,
+            links: applianceLinks,
+          },
+          ...relatedLinkSections,
+        ]}
+        monetizationContext={{
+          pageType: "state-authority",
+          state: slug,
+          stateName: state.name,
+        }}
+        sourceAttribution={{
+          sourceName: state.sourceName,
+          sourceUrl: state.sourceUrl,
+          updatedLabel: state.updatedLabel,
+        }}
+      >
         <section style={{ marginBottom: 32 }}>
-          <h2 style={{ fontSize: 20, marginBottom: 12 }}>More Data</h2>
-          <ul style={{ margin: 0, paddingLeft: 20, lineHeight: 1.8 }}>
-            <li>
-              <Link href={`/electricity-cost-calculator/${slug}`}>
-                Need usage-based estimates? Try the electricity cost calculator for {stateName}.
-              </Link>
-            </li>
-            <li>
-              <Link href={`/electricity-cost/${slug}`}>Electricity cost in {stateName}</Link>
-              {" — "}
-              Rates and cost breakdown
-            </li>
-            <li>
-              <Link href={`/knowledge/state/${slug}`}>Full {stateName} knowledge page</Link>
-              {" — "}
-              Rates, value score, affordability
-            </li>
-            <li>
-              <Link href="/average-electricity-bill">Average electricity bill by state</Link>
-            </li>
-          </ul>
+          <h2 style={{ fontSize: 20, marginBottom: 12 }}>How to interpret this bill estimate</h2>
+          <p style={{ marginTop: 0, lineHeight: 1.7 }}>
+            The statewide residential rate in {state.name} is {formatRate(state.avgRateCentsPerKwh)}. Applying that
+            rate to {AVERAGE_ELECTRICITY_BILL_USAGE_KWH.toLocaleString()} kWh of monthly use produces an estimated bill
+            of {formatUsd(state.monthlyBill)} before delivery charges, taxes, and fixed utility fees.
+          </p>
+          <p style={{ marginBottom: 0, lineHeight: 1.7 }}>
+            That benchmark is useful for comparing states, but real households can land above or below it depending on
+            cooling load, heating type, home size, appliance intensity, and local utility rate design.
+          </p>
         </section>
 
-        <ExploreMore
-          title="Related electricity pages"
-          links={[
-            { href: `/electricity-cost/${slug}`, label: "Electricity cost" },
-            { href: `/electricity-affordability/${slug}`, label: "Electricity affordability analysis" },
-            { href: `/electricity-cost-calculator/${slug}`, label: "Electricity cost calculator" },
-            { href: `/battery-recharge-cost/${slug}`, label: "Battery recharge cost" },
-            { href: `/generator-vs-battery-cost/${slug}`, label: "Generator vs battery cost" },
-            { href: `/electricity-price-history/${slug}`, label: "Electricity price history" },
-            { href: `/knowledge/state/${slug}`, label: "State overview" },
-          ]}
-        />
+        <section style={{ marginBottom: 32 }}>
+          <h2 style={{ fontSize: 20, marginBottom: 12 }}>Usage-level bill examples in {state.name}</h2>
+          <div style={{ overflowX: "auto" }}>
+            <table
+              style={{
+                width: "100%",
+                borderCollapse: "collapse",
+                border: "1px solid var(--color-border, #e5e7eb)",
+              }}
+            >
+              <thead>
+                <tr>
+                  {["Monthly usage", "Estimated cost", "Canonical page"].map((label) => (
+                    <th
+                      key={label}
+                      style={{
+                        textAlign: "left",
+                        padding: 10,
+                        borderBottom: "1px solid var(--color-border, #e5e7eb)",
+                        backgroundColor: "var(--color-surface-alt, #f9fafb)",
+                      }}
+                    >
+                      {label}
+                    </th>
+                  ))}
+                </tr>
+              </thead>
+              <tbody>
+                {usageExamples.map((example) => (
+                  <tr key={example.kwh}>
+                    <td style={{ padding: 10, borderBottom: "1px solid var(--color-border, #e5e7eb)" }}>
+                      {example.kwh.toLocaleString()} kWh
+                    </td>
+                    <td style={{ padding: 10, borderBottom: "1px solid var(--color-border, #e5e7eb)" }}>
+                      {formatUsd(example.cost)}
+                    </td>
+                    <td style={{ padding: 10, borderBottom: "1px solid var(--color-border, #e5e7eb)" }}>
+                      <Link href={example.href}>{example.consumerLabel}</Link>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <p style={{ marginBottom: 0, marginTop: 12, lineHeight: 1.7 }}>
+            These usage pages are the canonical route family for fixed-kWh consumer electricity searches. The bill page
+            uses them as supporting examples rather than duplicating the same intent under another URL.
+          </p>
+        </section>
 
-        {faqItems.length > 0 && (
-          <section style={{ marginBottom: 32 }}>
-            <h2 style={{ fontSize: 20, marginBottom: 12 }}>Frequently Asked Questions</h2>
-            <dl style={{ margin: 0 }}>
-              {faqItems.map((item, idx) => (
-                <div key={idx} style={{ marginBottom: 16 }}>
-                  <dt style={{ fontWeight: 600, marginBottom: 4 }}>{item.question}</dt>
-                  <dd style={{ margin: 0, marginLeft: 0 }}>{item.answer}</dd>
-                </div>
-              ))}
-            </dl>
-          </section>
-        )}
-
+        <section style={{ marginBottom: 32 }}>
+          <h2 style={{ fontSize: 20, marginBottom: 12 }}>What usually moves a household bill?</h2>
+          <p style={{ marginTop: 0, lineHeight: 1.7 }}>
+            In practice, the biggest bill drivers are air conditioning, space heating, electric water heating, laundry,
+            EV charging, and the length of time high-wattage appliances run each month.
+          </p>
+          <p style={{ marginBottom: 0, lineHeight: 1.7 }}>
+            That is why this page links to both usage-cost routes and appliance operating-cost pages: one shows what a
+            whole-home kWh pattern looks like, and the other shows how specific devices contribute to the final bill.
+          </p>
+        </section>
+      </LongtailStateTemplate>
+      <div className="container">
         <Disclaimers disclaimerRefs={["general-site"]} />
         <StatusFooter release={await getRelease()} />
-      </main>
+      </div>
     </>
   );
 }

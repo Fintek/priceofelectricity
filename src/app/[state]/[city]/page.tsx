@@ -134,7 +134,7 @@ export default function CityPage({
         <p style={{ marginTop: 0 }}>
           <Link href={`/${stateSlug}`}>{stateInfo.name} electricity price page</Link>{" "}
           {" | "} <Link href={`/${stateSlug}/utilities`}>Utilities in {stateInfo.name}</Link>{" "}
-          {" | "} <Link href="/calculator">National calculator</Link> {" | "}{" "}
+          {" | "} <Link href="/electricity-cost-calculator">National calculator</Link> {" | "}{" "}
           <Link href="/compare">Compare all states</Link>
         </p>
       </section>

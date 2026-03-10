@@ -14,7 +14,23 @@ import { generateTemplatePages } from "@/lib/templateGenerator";
 import { VERTICALS } from "@/content/verticals";
 import { SITE_URL } from "@/lib/site";
 
+import {
+  isLongtailFamilyActive,
+  getActiveUsageKwhTiers,
+  getActiveIndustrySlugs,
+} from "@/lib/longtail/rollout";
+import { SUPPORTED_APPLIANCE_SLUGS } from "@/lib/longtail/applianceConfig";
+import { HOME_SIZE_SCENARIOS } from "@/lib/longtail/usageIntelligence";
+
 const BASE_URL = SITE_URL.replace(/\/+$/, "");
+const INDUSTRY_COST_SLUGS = [
+  "ev-charging",
+  "bitcoin-mining",
+  "ai-data-centers",
+  "data-centers",
+] as const;
+const LONGTAIL_USAGE_KWH_VALUES = [500, 750, 1000, 1500, 2000, 3000] as const;
+let cachedKnowledgeStateSlugs: string[] | null = null;
 
 function parseUpdatedDate(updated: string): Date {
   const parsed = Date.parse(updated);
@@ -25,15 +41,19 @@ function parseUpdatedDate(updated: string): Date {
 }
 
 function getKnowledgeStateSlugs(): string[] {
+  if (cachedKnowledgeStateSlugs) {
+    return cachedKnowledgeStateSlugs;
+  }
   try {
     const stateDir = path.join(process.cwd(), "public", "knowledge", "state");
     if (!existsSync(stateDir)) return [];
     const files = readdirSync(stateDir);
-    return files
+    cachedKnowledgeStateSlugs = files
       .filter((f) => f.endsWith(".json"))
       .map((f) => f.replace(/\.json$/, ""))
       .filter(Boolean)
       .sort((a, b) => a.localeCompare(b));
+    return cachedKnowledgeStateSlugs;
   } catch {
     return [];
   }
@@ -249,12 +269,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${BASE_URL}/value-ranking`,
-      lastModified: new Date(),
-      changeFrequency: "weekly",
-      priority: 0.8,
-    },
-    {
-      url: `${BASE_URL}/calculator`,
       lastModified: new Date(),
       changeFrequency: "weekly",
       priority: 0.8,
@@ -688,41 +702,143 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.6,
     })),
     {
-      url: `${BASE_URL}/how-much-does-500-kwh-cost`,
+      url: `${BASE_URL}/electricity-usage`,
       lastModified: new Date(),
       changeFrequency: "monthly",
+      priority: 0.62,
+    },
+    ...getKnowledgeStateSlugs().map((slug) => ({
+      url: `${BASE_URL}/electricity-usage/${slug}`,
+      lastModified: new Date(),
+      changeFrequency: "monthly" as const,
+      priority: 0.56,
+    })),
+    ...HOME_SIZE_SCENARIOS.map((scenario) => ({
+      url: `${BASE_URL}/electricity-usage/home-size/${scenario.slug}`,
+      lastModified: new Date(),
+      changeFrequency: "monthly" as const,
+      priority: 0.52,
+    })),
+    ...SUPPORTED_APPLIANCE_SLUGS.map((appliance) => ({
+      url: `${BASE_URL}/electricity-usage/appliances/${appliance}`,
+      lastModified: new Date(),
+      changeFrequency: "monthly" as const,
+      priority: 0.52,
+    })),
+    ...SUPPORTED_APPLIANCE_SLUGS.flatMap((appliance) =>
+      getKnowledgeStateSlugs().map((slug) => ({
+        url: `${BASE_URL}/electricity-cost-calculator/${slug}/${appliance}`,
+        lastModified: new Date(),
+        changeFrequency: "monthly" as const,
+        priority: 0.55,
+      })),
+    ),
+    {
+      url: `${BASE_URL}/electricity-hubs`,
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 0.7,
+    },
+    {
+      url: `${BASE_URL}/electricity-hubs/states`,
+      lastModified: new Date(),
+      changeFrequency: "weekly",
       priority: 0.65,
     },
     ...getKnowledgeStateSlugs().map((slug) => ({
-      url: `${BASE_URL}/how-much-does-500-kwh-cost/${slug}`,
+      url: `${BASE_URL}/electricity-hubs/states/${slug}`,
       lastModified: new Date(),
       changeFrequency: "monthly" as const,
-      priority: 0.6,
+      priority: 0.55,
     })),
     {
-      url: `${BASE_URL}/how-much-does-1000-kwh-cost`,
+      url: `${BASE_URL}/electricity-hubs/scenarios`,
       lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.65,
-    },
-    ...getKnowledgeStateSlugs().map((slug) => ({
-      url: `${BASE_URL}/how-much-does-1000-kwh-cost/${slug}`,
-      lastModified: new Date(),
-      changeFrequency: "monthly" as const,
+      changeFrequency: "weekly",
       priority: 0.6,
-    })),
+    },
+    ...(isLongtailFamilyActive("usage-cost")
+      ? [
+          {
+            url: `${BASE_URL}/electricity-hubs/usage`,
+            lastModified: new Date(),
+            changeFrequency: "weekly" as const,
+            priority: 0.6,
+          },
+          ...getActiveUsageKwhTiers().map((kwh) => ({
+            url: `${BASE_URL}/electricity-hubs/usage/${kwh}`,
+            lastModified: new Date(),
+            changeFrequency: "monthly" as const,
+            priority: 0.55,
+          })),
+        ]
+      : []),
     {
-      url: `${BASE_URL}/how-much-does-2000-kwh-cost`,
+      url: `${BASE_URL}/electricity-hubs/comparisons`,
       lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.65,
-    },
-    ...getKnowledgeStateSlugs().map((slug) => ({
-      url: `${BASE_URL}/how-much-does-2000-kwh-cost/${slug}`,
-      lastModified: new Date(),
-      changeFrequency: "monthly" as const,
+      changeFrequency: "weekly",
       priority: 0.6,
-    })),
+    },
+    ...(isLongtailFamilyActive("industry-cost")
+      ? [
+          {
+            url: `${BASE_URL}/electricity-hubs/industry`,
+            lastModified: new Date(),
+            changeFrequency: "weekly" as const,
+            priority: 0.6,
+          },
+          ...getActiveIndustrySlugs().map((industry) => ({
+            url: `${BASE_URL}/electricity-hubs/industry/${industry}`,
+            lastModified: new Date(),
+            changeFrequency: "monthly" as const,
+            priority: 0.55,
+          })),
+        ]
+      : []),
+    ...(isLongtailFamilyActive("state-price-per-kwh")
+      ? getKnowledgeStateSlugs().map((slug) => ({
+          url: `${BASE_URL}/electricity-price-per-kwh/${slug}`,
+          lastModified: new Date(),
+          changeFrequency: "monthly" as const,
+          priority: 0.6,
+        }))
+      : []),
+    ...(isLongtailFamilyActive("state-price-trend")
+      ? getKnowledgeStateSlugs().map((slug) => ({
+          url: `${BASE_URL}/electricity-price-trend/${slug}`,
+          lastModified: new Date(),
+          changeFrequency: "monthly" as const,
+          priority: 0.6,
+        }))
+      : []),
+    ...(isLongtailFamilyActive("usage-cost")
+      ? getActiveUsageKwhTiers().flatMap((kwh) =>
+          getKnowledgeStateSlugs().map((slug) => ({
+            url: `${BASE_URL}/electricity-usage-cost/${kwh}/${slug}`,
+            lastModified: new Date(),
+            changeFrequency: "monthly" as const,
+            priority: 0.55,
+          })),
+        )
+      : []),
+    ...SUPPORTED_APPLIANCE_SLUGS.flatMap((appliance) =>
+      getKnowledgeStateSlugs().map((slug) => ({
+        url: `${BASE_URL}/cost-to-run/${appliance}/${slug}`,
+        lastModified: new Date(),
+        changeFrequency: "monthly" as const,
+        priority: 0.55,
+      })),
+    ),
+    ...(isLongtailFamilyActive("industry-cost")
+      ? getActiveIndustrySlugs().flatMap((industry) =>
+          getKnowledgeStateSlugs().map((slug) => ({
+            url: `${BASE_URL}/industry-electricity-cost/${industry}/${slug}`,
+            lastModified: new Date(),
+            changeFrequency: "monthly" as const,
+            priority: 0.55,
+          })),
+        )
+      : []),
     {
       url: `${BASE_URL}/battery-recharge-cost`,
       lastModified: new Date(),

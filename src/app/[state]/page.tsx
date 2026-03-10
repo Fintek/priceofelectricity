@@ -23,6 +23,7 @@ import {
 } from "@/lib/nav";
 import { getRelatedLinks } from "@/lib/related";
 import RelatedLinks from "@/app/components/RelatedLinks";
+import PageMonetization from "@/components/monetization/PageMonetization";
 import { getRateCasesForState, getTimelineForState } from "@/content/regulatory";
 import { getTopDriversForState, DRIVER_CATEGORY_LABELS } from "@/content/drivers";
 
@@ -324,7 +325,7 @@ export default function StatePage({
           <Link href={`/${slug}/history`}>History in {ns.name}</Link> {" | "}
           <Link href={`/offers/${slug}`}>Offers in {ns.name}</Link> {" | "}
           <Link href="/compare">Compare all states</Link> {" | "}
-          <Link href="/calculator">National calculator</Link> {" | "}
+          <Link href="/electricity-cost-calculator">National calculator</Link> {" | "}
           <Link href="/affordability">Affordability index</Link>
         </p>
         <p className="muted" style={{ marginTop: 6 }}>
@@ -544,6 +545,14 @@ export default function StatePage({
           </div>
         ))}
       </section>
+
+      <PageMonetization
+        context={{
+          pageType: "state-authority",
+          state: slug,
+          stateName: ns.name,
+        }}
+      />
 
       <RelatedLinks links={getRelatedLinks({ kind: "state", state: slug })} />
     </main>

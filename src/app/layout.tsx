@@ -145,7 +145,7 @@ export default function RootLayout({
           <div className="container footer-links">
             <Link href="/about">About</Link> <span>|</span>{" "}
             <Link href="/compare">Compare</Link> <span>|</span>{" "}
-            <Link href="/calculator">Calculator</Link> <span>|</span>{" "}
+            <Link href="/electricity-cost-calculator">Calculator</Link> <span>|</span>{" "}
             <Link href="/changelog">Changelog</Link> <span>|</span>{" "}
             <Link href="/contact">Contact</Link> <span>|</span>{" "}
             <Link href="/newsletter">Newsletter</Link> <span>|</span>{" "}

@@ -68,7 +68,7 @@ export default function HomePage() {
           {" · "}
           <Link href="/compare">Compare states</Link>
           {" · "}
-          <Link href="/calculator">Calculator</Link>
+          <Link href="/electricity-cost-calculator">Calculator</Link>
           {" · "}
           <Link href="/about">About</Link>
         </p>
