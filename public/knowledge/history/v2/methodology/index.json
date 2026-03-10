@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-03-09T17:50:09.701Z",
+  "generatedAt": "2026-03-10T18:46:48.543Z",
   "sourceVersion": "v2",
   "items": [
     {
@@ -9,7 +9,7 @@
       "jsonUrl": "http://localhost:3000/knowledge/history/v2/methodology/cagr.json",
       "canonicalUrl": "http://localhost:3000/knowledge/methodology/cagr",
       "version": "1.0",
-      "lastReviewedAt": "2026-03-09",
+      "lastReviewedAt": "2026-03-10",
       "relatedDerivedFields": [
         "data.sortedStates"
       ]
@@ -20,7 +20,7 @@
       "jsonUrl": "http://localhost:3000/knowledge/history/v2/methodology/epi.json",
       "canonicalUrl": "http://localhost:3000/knowledge/methodology/epi",
       "version": "1.0",
-      "lastReviewedAt": "2026-03-09",
+      "lastReviewedAt": "2026-03-10",
       "relatedDerivedFields": [
         "data.derived.exampleBills",
         "data.derived.percentileRankings.ratePercentile",
@@ -40,7 +40,7 @@
       "jsonUrl": "http://localhost:3000/knowledge/history/v2/methodology/freshness.json",
       "canonicalUrl": "http://localhost:3000/knowledge/methodology/freshness",
       "version": "1.0",
-      "lastReviewedAt": "2026-03-09",
+      "lastReviewedAt": "2026-03-10",
       "relatedDerivedFields": [
         "data.derived.freshnessStatus"
       ]
@@ -51,7 +51,7 @@
       "jsonUrl": "http://localhost:3000/knowledge/history/v2/methodology/momentum-signal.json",
       "canonicalUrl": "http://localhost:3000/knowledge/methodology/momentum-signal",
       "version": "1.0",
-      "lastReviewedAt": "2026-03-09",
+      "lastReviewedAt": "2026-03-10",
       "relatedDerivedFields": [
         "data.sortedStates",
         "data.derived.momentum"
@@ -63,7 +63,7 @@
       "jsonUrl": "http://localhost:3000/knowledge/history/v2/methodology/price-trend.json",
       "canonicalUrl": "http://localhost:3000/knowledge/methodology/price-trend",
       "version": "1.0",
-      "lastReviewedAt": "2026-03-09",
+      "lastReviewedAt": "2026-03-10",
       "relatedDerivedFields": [
         "data.sortedStates"
       ]
@@ -74,7 +74,7 @@
       "jsonUrl": "http://localhost:3000/knowledge/history/v2/methodology/value-score.json",
       "canonicalUrl": "http://localhost:3000/knowledge/methodology/value-score",
       "version": "1.0",
-      "lastReviewedAt": "2026-03-09",
+      "lastReviewedAt": "2026-03-10",
       "relatedDerivedFields": [
         "data.derived.valueScore",
         "data.derived.affordabilityIndex",
@@ -89,7 +89,7 @@
       "jsonUrl": "http://localhost:3000/knowledge/history/v2/methodology/volatility.json",
       "canonicalUrl": "http://localhost:3000/knowledge/methodology/volatility",
       "version": "1.0",
-      "lastReviewedAt": "2026-03-09",
+      "lastReviewedAt": "2026-03-10",
       "relatedDerivedFields": [
         "data.sortedStates"
       ]

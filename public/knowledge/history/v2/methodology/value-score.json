@@ -8,7 +8,7 @@
     "description": "Methodology for Value Score composition and tier assignment.",
     "canonicalUrl": "http://localhost:3000/knowledge/methodology/value-score",
     "jsonUrl": "http://localhost:3000/knowledge/history/v2/methodology/value-score.json",
-    "updatedAt": "2026-03-09T17:50:09.701Z",
+    "updatedAt": "2026-03-10T18:46:48.543Z",
     "sourceVersion": "v2",
     "temporalContext": {
       "sourceVersion": "v2",
@@ -21,7 +21,7 @@
         "sourceUrl": "http://localhost:3000/methodology/value-score",
         "publisher": "PriceOfElectricity.com",
         "license": "Site content license",
-        "retrievedAt": "2026-03-09T17:50:09.701Z"
+        "retrievedAt": "2026-03-10T18:46:48.543Z"
       }
     ],
     "fieldProvenance": [
@@ -60,7 +60,7 @@
       {
         "sourceName": "PriceOfElectricity.com methodology: Value Score",
         "sourceUrl": "http://localhost:3000/methodology/value-score",
-        "retrievedAt": "2026-03-09T17:50:09.701Z"
+        "retrievedAt": "2026-03-10T18:46:48.543Z"
       }
     ],
     "llmHints": {
@@ -76,9 +76,9 @@
     },
     "freshness": {
       "datasetUpdatedAt": "2025-12-15T00:00:00.000Z",
-      "computedAt": "2026-03-09T17:50:09.701Z",
+      "computedAt": "2026-03-10T18:46:48.543Z",
       "status": "aging",
-      "ageDays": 84,
+      "ageDays": 85,
       "methodology": {
         "id": "freshness",
         "version": "1.0",
@@ -93,7 +93,7 @@
     "methodology": {
       "id": "value-score",
       "version": "1.0",
-      "lastReviewedAt": "2026-03-09",
+      "lastReviewedAt": "2026-03-10",
       "relatedDerivedFields": [
         "data.derived.valueScore",
         "data.derived.affordabilityIndex",
@@ -103,11 +103,11 @@
       ]
     },
     "qualityScore": 90,
-    "contentHash": "01ed2d8cf23c9f8c81b458ce2176cf98dde0347596a530115ee6521f05d79981",
+    "contentHash": "77e07a80827a47a782374543e7838a015e5682db55e1e165c4e6cc5f02f5dd97",
     "integrity": {
-      "contentHash": "01ed2d8cf23c9f8c81b458ce2176cf98dde0347596a530115ee6521f05d79981",
+      "contentHash": "77e07a80827a47a782374543e7838a015e5682db55e1e165c4e6cc5f02f5dd97",
       "integrityAlgorithm": "sha256",
-      "signedAtBuild": "2026-03-09T17:50:09.701Z"
+      "signedAtBuild": "2026-03-10T18:46:48.543Z"
     }
   },
   "data": {

@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-03-09T17:50:09.701Z",
+  "generatedAt": "2026-03-10T18:46:48.543Z",
   "sourceVersion": "v2",
   "byEntity": {
     "ai-energy-demand:index": [
@@ -12589,6 +12589,13 @@
     ],
     "how-much-does-1000-kwh-cost:index": [
       {
+        "id": "how-much-does-1500-kwh-cost:index",
+        "title": "How Much Does 1500 kWh Cost?",
+        "canonicalUrl": "http://localhost:3000/how-much-does-1500-kwh-cost",
+        "type": "landing",
+        "reason": "Related"
+      },
+      {
         "id": "electricity-cost-calculator:state:alabama",
         "title": "Electricity Cost Calculator for Alabama",
         "canonicalUrl": "http://localhost:3000/electricity-cost-calculator/alabama",
@@ -12622,11 +12629,48 @@
         "canonicalUrl": "http://localhost:3000/electricity-cost-calculator/california",
         "type": "landing",
         "reason": "Related"
+      }
+    ],
+    "how-much-does-1500-kwh-cost:index": [
+      {
+        "id": "how-much-does-1000-kwh-cost:index",
+        "title": "How Much Does 1000 kWh Cost?",
+        "canonicalUrl": "http://localhost:3000/how-much-does-1000-kwh-cost",
+        "type": "landing",
+        "reason": "Related"
       },
       {
-        "id": "electricity-cost-calculator:state:colorado",
-        "title": "Electricity Cost Calculator for Colorado",
-        "canonicalUrl": "http://localhost:3000/electricity-cost-calculator/colorado",
+        "id": "electricity-cost-calculator:state:alabama",
+        "title": "Electricity Cost Calculator for Alabama",
+        "canonicalUrl": "http://localhost:3000/electricity-cost-calculator/alabama",
+        "type": "landing",
+        "reason": "Related"
+      },
+      {
+        "id": "electricity-cost-calculator:state:alaska",
+        "title": "Electricity Cost Calculator for Alaska",
+        "canonicalUrl": "http://localhost:3000/electricity-cost-calculator/alaska",
+        "type": "landing",
+        "reason": "Related"
+      },
+      {
+        "id": "electricity-cost-calculator:state:arizona",
+        "title": "Electricity Cost Calculator for Arizona",
+        "canonicalUrl": "http://localhost:3000/electricity-cost-calculator/arizona",
+        "type": "landing",
+        "reason": "Related"
+      },
+      {
+        "id": "electricity-cost-calculator:state:arkansas",
+        "title": "Electricity Cost Calculator for Arkansas",
+        "canonicalUrl": "http://localhost:3000/electricity-cost-calculator/arkansas",
+        "type": "landing",
+        "reason": "Related"
+      },
+      {
+        "id": "electricity-cost-calculator:state:california",
+        "title": "Electricity Cost Calculator for California",
+        "canonicalUrl": "http://localhost:3000/electricity-cost-calculator/california",
         "type": "landing",
         "reason": "Related"
       }

@@ -1,39 +1,39 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-03-09T17:50:09.701Z",
+  "generatedAt": "2026-03-10T18:46:48.543Z",
   "sourceVersion": "v2",
   "bundleId": "methodologies",
   "files": [
     {
       "url": "/knowledge/methodology/cagr.json",
-      "contentHash": "9a19a43f81134c4be592f57036fa54f7944a6651e6e2f06c5cfd36949f413ef4"
+      "contentHash": "7c72d74dfbc0cabb4e05f5ac09c84d8f169dcda591e34ebc63be64d48603b4f3"
     },
     {
       "url": "/knowledge/methodology/epi.json",
-      "contentHash": "a0f19c8ea7ddc317e9c2ab3408ae9eaf12c03cb93d5126d53c6d1efa8265c3c5"
+      "contentHash": "1d0837b1fdf7c2c08dc4ff57e67ea8d41b10487df394a203db31b3ad081aa2d8"
     },
     {
       "url": "/knowledge/methodology/freshness.json",
-      "contentHash": "0e0e8f21b7a0705c75a4e04161234fed88a23d01d487484d3092a510bcc0975f"
+      "contentHash": "00b0d34313db50c058af03b7b366135b4b4224bbbb0e3104559dc0be0bb02710"
     },
     {
       "url": "/knowledge/methodology/index.json"
     },
     {
       "url": "/knowledge/methodology/momentum-signal.json",
-      "contentHash": "6ec8d6a1f99ba92d9b7fd719ef0a26e043b7d9ef689fbec20acfaa0dc0d93ae1"
+      "contentHash": "b1310c3be01006020acd433c6e778e6a5e3056f04ecd58013143e92911d3df12"
     },
     {
       "url": "/knowledge/methodology/price-trend.json",
-      "contentHash": "7380fcefd93dd1ad48abcbff0b40bc4fe1d74e91e7531615263c4896d0afc673"
+      "contentHash": "eebf5b9de98466c63056965eb0fe3d6677b5e605ffa3f01748c33914dfb8a7fe"
     },
     {
       "url": "/knowledge/methodology/value-score.json",
-      "contentHash": "e13150b72d57a551d27b126684f92f90f1d19ea5e0ee4f044621d267502f9fd5"
+      "contentHash": "232998e5067cec4adaae3aae4587689ff244c35864155a8f9a3784f4771de7c2"
     },
     {
       "url": "/knowledge/methodology/volatility.json",
-      "contentHash": "01f5d86d598d3a9fe558d99dedcfb819f476d59fe223aa190ef30244a5b075f0"
+      "contentHash": "a8cd29a7e2b015acfd1941af57abec0897ff68c3177f2780f7714bfc8c484774"
     }
   ]
 }

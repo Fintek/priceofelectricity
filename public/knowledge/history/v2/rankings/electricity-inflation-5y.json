@@ -8,7 +8,7 @@
     "description": "States ranked by 5-year electricity price increase. Higher = faster price growth.",
     "canonicalUrl": "http://localhost:3000/knowledge/rankings/electricity-inflation-5y",
     "jsonUrl": "http://localhost:3000/knowledge/history/v2/rankings/electricity-inflation-5y.json",
-    "updatedAt": "2026-03-09T17:50:09.701Z",
+    "updatedAt": "2026-03-10T18:46:48.543Z",
     "sourceVersion": "v2",
     "temporalContext": {
       "sourceVersion": "v2",
@@ -22,7 +22,7 @@
         "publisher": "U.S. Energy Information Administration",
         "license": "U.S. Government work (public domain)",
         "notes": "Primary source for state residential electricity rate series used by snapshots.",
-        "retrievedAt": "2026-03-09T17:50:09.701Z"
+        "retrievedAt": "2026-03-10T18:46:48.543Z"
       },
       {
         "id": "poe-dataset-affordability-csv",
@@ -30,7 +30,7 @@
         "sourceUrl": "http://localhost:3000/api/datasets/affordability.csv",
         "publisher": "PriceOfElectricity.com",
         "license": "Site content license",
-        "retrievedAt": "2026-03-09T17:50:09.701Z"
+        "retrievedAt": "2026-03-10T18:46:48.543Z"
       },
       {
         "id": "poe-dataset-states-json",
@@ -38,7 +38,7 @@
         "sourceUrl": "http://localhost:3000/api/datasets/states.json",
         "publisher": "PriceOfElectricity.com",
         "license": "Site content license",
-        "retrievedAt": "2026-03-09T17:50:09.701Z"
+        "retrievedAt": "2026-03-10T18:46:48.543Z"
       },
       {
         "id": "poe-dataset-value-ranking-csv",
@@ -46,7 +46,7 @@
         "sourceUrl": "http://localhost:3000/api/datasets/value-ranking.csv",
         "publisher": "PriceOfElectricity.com",
         "license": "Site content license",
-        "retrievedAt": "2026-03-09T17:50:09.701Z"
+        "retrievedAt": "2026-03-10T18:46:48.543Z"
       },
       {
         "id": "poe-methodology-epi",
@@ -54,7 +54,7 @@
         "sourceUrl": "http://localhost:3000/methodology/electricity-price-index",
         "publisher": "PriceOfElectricity.com",
         "license": "Site content license",
-        "retrievedAt": "2026-03-09T17:50:09.701Z"
+        "retrievedAt": "2026-03-10T18:46:48.543Z"
       },
       {
         "id": "poe-methodology-value-score",
@@ -62,7 +62,7 @@
         "sourceUrl": "http://localhost:3000/methodology/value-score",
         "publisher": "PriceOfElectricity.com",
         "license": "Site content license",
-        "retrievedAt": "2026-03-09T17:50:09.701Z"
+        "retrievedAt": "2026-03-10T18:46:48.543Z"
       }
     ],
     "fieldProvenance": [
@@ -93,33 +93,33 @@
       {
         "sourceName": "U.S. Energy Information Administration (EIA) Retail Sales of Electricity",
         "sourceUrl": "https://api.eia.gov/v2/electricity/retail-sales/data/",
-        "retrievedAt": "2026-03-09T17:50:09.701Z",
+        "retrievedAt": "2026-03-10T18:46:48.543Z",
         "notes": "Primary source for state residential electricity rate series used by snapshots."
       },
       {
         "sourceName": "PriceOfElectricity.com dataset endpoint: affordability.csv",
         "sourceUrl": "http://localhost:3000/api/datasets/affordability.csv",
-        "retrievedAt": "2026-03-09T17:50:09.701Z"
+        "retrievedAt": "2026-03-10T18:46:48.543Z"
       },
       {
         "sourceName": "PriceOfElectricity.com dataset endpoint: states.json",
         "sourceUrl": "http://localhost:3000/api/datasets/states.json",
-        "retrievedAt": "2026-03-09T17:50:09.701Z"
+        "retrievedAt": "2026-03-10T18:46:48.543Z"
       },
       {
         "sourceName": "PriceOfElectricity.com dataset endpoint: value-ranking.csv",
         "sourceUrl": "http://localhost:3000/api/datasets/value-ranking.csv",
-        "retrievedAt": "2026-03-09T17:50:09.701Z"
+        "retrievedAt": "2026-03-10T18:46:48.543Z"
       },
       {
         "sourceName": "PriceOfElectricity.com methodology: Electricity Price Index",
         "sourceUrl": "http://localhost:3000/methodology/electricity-price-index",
-        "retrievedAt": "2026-03-09T17:50:09.701Z"
+        "retrievedAt": "2026-03-10T18:46:48.543Z"
       },
       {
         "sourceName": "PriceOfElectricity.com methodology: Value Score",
         "sourceUrl": "http://localhost:3000/methodology/value-score",
-        "retrievedAt": "2026-03-09T17:50:09.701Z"
+        "retrievedAt": "2026-03-10T18:46:48.543Z"
       }
     ],
     "llmHints": {
@@ -135,9 +135,9 @@
     },
     "freshness": {
       "datasetUpdatedAt": "2025-12-15T00:00:00.000Z",
-      "computedAt": "2026-03-09T17:50:09.701Z",
+      "computedAt": "2026-03-10T18:46:48.543Z",
       "status": "aging",
-      "ageDays": 84,
+      "ageDays": 85,
       "methodology": {
         "id": "freshness",
         "version": "1.0",
@@ -150,11 +150,11 @@
       "rankings"
     ],
     "qualityScore": 90,
-    "contentHash": "e366b9705f250b505c5f040fdb02fe1b3fe438dd70bfd5316f4d094d48d9bd94",
+    "contentHash": "67f14015f3a3d0d6fe4363b346764ea08d7e1447309a31b95cd3b082819d15fe",
     "integrity": {
-      "contentHash": "e366b9705f250b505c5f040fdb02fe1b3fe438dd70bfd5316f4d094d48d9bd94",
+      "contentHash": "67f14015f3a3d0d6fe4363b346764ea08d7e1447309a31b95cd3b082819d15fe",
       "integrityAlgorithm": "sha256",
-      "signedAtBuild": "2026-03-09T17:50:09.701Z"
+      "signedAtBuild": "2026-03-10T18:46:48.543Z"
     }
   },
   "data": {
@@ -569,7 +569,7 @@
         "displayValue": "10.5%"
       }
     ],
-    "generatedAt": "2026-03-09T17:50:09.701Z",
+    "generatedAt": "2026-03-10T18:46:48.543Z",
     "enabled": true,
     "excludedStates": {
       "count": -1,
@@ -627,7 +627,7 @@
       },
       {
         "label": "Generated at",
-        "value": "2026-03-09T17:50:09.701Z",
+        "value": "2026-03-10T18:46:48.543Z",
         "sourceField": "data.generatedAt"
       },
       {

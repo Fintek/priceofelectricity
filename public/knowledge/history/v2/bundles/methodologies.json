@@ -1,39 +1,39 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-03-09T17:50:09.701Z",
+  "generatedAt": "2026-03-10T18:46:48.543Z",
   "sourceVersion": "v2",
   "bundleId": "methodologies",
   "files": [
     {
       "url": "/knowledge/history/v2/methodology/cagr.json",
-      "contentHash": "5e31b375cf8fcc93de18770b1a6f512637a3636a3c08fd8ae998f4747531cba0"
+      "contentHash": "599b0c456c62837698684907d25139e513c3f802bccf9e2dda4608e7f8fb4569"
     },
     {
       "url": "/knowledge/history/v2/methodology/epi.json",
-      "contentHash": "8e63c2e1b03775cd0a3cf214ddc8a7e7f173313bee24c6f509b3159dbfeea454"
+      "contentHash": "9d4cb625f4094d32f00b892f42878017406f1de448e36d5f93c1871b32755276"
     },
     {
       "url": "/knowledge/history/v2/methodology/freshness.json",
-      "contentHash": "2d67cd9cdfea7c1424eb6588acc724a733104e97b48744fb6889ad28ff7d5c91"
+      "contentHash": "8ff33a60d5bb15ea7cd6c6845c25e88bc314bd1a2c516902785ed7d8139a88dd"
     },
     {
       "url": "/knowledge/history/v2/methodology/index.json"
     },
     {
       "url": "/knowledge/history/v2/methodology/momentum-signal.json",
-      "contentHash": "803824dc8dd4bfb38df5259629f2b476a3d2b8753538443188763441c9a1feef"
+      "contentHash": "5638a6bae0b5eef9179231d97f3f4a134667ae21afa695e943a9a273510b1eff"
     },
     {
       "url": "/knowledge/history/v2/methodology/price-trend.json",
-      "contentHash": "9cff00fedb3ec9eb84fe6657f7e994f00c03b86ebb46909dbabd3bd82e1f3744"
+      "contentHash": "2fc11fed42bae12f79b6883d658ae08c2fa7784d947fc5f6905681f6a9dc846f"
     },
     {
       "url": "/knowledge/history/v2/methodology/value-score.json",
-      "contentHash": "01ed2d8cf23c9f8c81b458ce2176cf98dde0347596a530115ee6521f05d79981"
+      "contentHash": "77e07a80827a47a782374543e7838a015e5682db55e1e165c4e6cc5f02f5dd97"
     },
     {
       "url": "/knowledge/history/v2/methodology/volatility.json",
-      "contentHash": "8f0cab77acd4d6181385621d751655aad8f177a84cc4b465e16971ba3e408a61"
+      "contentHash": "629fa5596408566931ac3ab2a4762914e27bc9d5c85d9e2029dd26c9223f7463"
     }
   ]
 }

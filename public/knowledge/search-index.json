@@ -1,8 +1,8 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-03-09T17:50:09.701Z",
+  "generatedAt": "2026-03-10T18:46:48.543Z",
   "sourceVersion": "v2",
-  "totalEntities": 1015,
+  "totalEntities": 1016,
   "entities": [
     {
       "id": "ai-energy-demand:index",
@@ -8332,6 +8332,34 @@
         "kwh",
         "cost",
         "1000",
+        "kwh",
+        "electricity",
+        "cost",
+        "by",
+        "state",
+        "electricity",
+        "bill",
+        "quality-85",
+        "aging"
+      ]
+    },
+    {
+      "id": "how-much-does-1500-kwh-cost:index",
+      "type": "landing",
+      "slug": "how-much-does-1500-kwh-cost",
+      "title": "How Much Does 1500 kWh Cost?",
+      "canonicalUrl": "http://localhost:3000/how-much-does-1500-kwh-cost",
+      "excerpt": "Estimate electricity cost for 1500 kWh. National average and state-by-state estimates.",
+      "qualityScore": 85,
+      "freshnessStatus": "aging",
+      "tokens": [
+        "how",
+        "much",
+        "does",
+        "1500",
+        "kwh",
+        "cost",
+        "1500",
         "kwh",
         "electricity",
         "cost",
@@ -28054,7 +28082,7 @@
       "excerpt": "CAGR Methodology. Defines how CAGR is computed from inputs and produces derived fields used across state and ranking pages.",
       "qualityScore": 90,
       "freshnessStatus": "aging",
-      "ageDays": 84,
+      "ageDays": 85,
       "tokens": [
         "cagr",
         "cagr",
@@ -28091,7 +28119,7 @@
       "excerpt": "Electricity Price Index Methodology. Defines how Electricity Price Index is computed from inputs and produces derived fields used across state and ranking pages.",
       "qualityScore": 90,
       "freshnessStatus": "aging",
-      "ageDays": 84,
+      "ageDays": 85,
       "tokens": [
         "epi",
         "electricity",
@@ -28134,7 +28162,7 @@
       "excerpt": "Freshness Scoring Methodology. Defines how freshness status is computed from inputs and produces derived fields used across state and ranking pages.",
       "qualityScore": 90,
       "freshnessStatus": "aging",
-      "ageDays": 84,
+      "ageDays": 85,
       "tokens": [
         "freshness",
         "freshness",
@@ -28174,7 +28202,7 @@
       "excerpt": "Momentum Signal Methodology. Defines how metrics is computed from inputs and produces derived fields used across state and ranking pages.",
       "qualityScore": 90,
       "freshnessStatus": "aging",
-      "ageDays": 84,
+      "ageDays": 85,
       "tokens": [
         "momentum-signal",
         "momentum",
@@ -28213,7 +28241,7 @@
       "excerpt": "Price Trend Methodology. Defines how metrics is computed from inputs and produces derived fields used across state and ranking pages.",
       "qualityScore": 90,
       "freshnessStatus": "aging",
-      "ageDays": 84,
+      "ageDays": 85,
       "tokens": [
         "price-trend",
         "price",
@@ -28256,7 +28284,7 @@
       "excerpt": "Value Score Methodology. Defines how value score is computed from inputs and produces derived fields used across state and ranking pages.",
       "qualityScore": 90,
       "freshnessStatus": "aging",
-      "ageDays": 84,
+      "ageDays": 85,
       "tokens": [
         "value-score",
         "value",
@@ -28296,7 +28324,7 @@
       "excerpt": "Volatility Index Methodology. Defines how volatility index is computed from inputs and produces derived fields used across state and ranking pages.",
       "qualityScore": 90,
       "freshnessStatus": "aging",
-      "ageDays": 84,
+      "ageDays": 85,
       "tokens": [
         "volatility",
         "volatility",
@@ -28336,7 +28364,7 @@
       "excerpt": "US residential electricity rate overview. Avg 17.57¢/kWh median 15.34¢/kWh Highest: Hawaii (41.30¢) Lowest: Idaho (11.74¢)",
       "qualityScore": 90,
       "freshnessStatus": "aging",
-      "ageDays": 84,
+      "ageDays": 85,
       "tokens": [
         "national",
         "u.s.",
@@ -28378,7 +28406,7 @@
       "excerpt": "Affordability Rankings. Ranks states by affordability (desc). Top 1: Idaho.",
       "qualityScore": 90,
       "freshnessStatus": "aging",
-      "ageDays": 84,
+      "ageDays": 85,
       "tokens": [
         "affordability",
         "affordability",
@@ -28405,7 +28433,7 @@
       "excerpt": "25-Year Rate Growth (CAGR). Ranks states by 25-year CAGR (desc). Top 1: District of Columbia.",
       "qualityScore": 90,
       "freshnessStatus": "aging",
-      "ageDays": 84,
+      "ageDays": 85,
       "tokens": [
         "cagr-25y",
         "25-year",
@@ -28441,7 +28469,7 @@
       "excerpt": "Most Affordable Electricity by State. Ranks states by est. monthly bill (900 kWh) (asc). Top 1: Idaho.",
       "qualityScore": 90,
       "freshnessStatus": "aging",
-      "ageDays": 84,
+      "ageDays": 85,
       "tokens": [
         "electricity-affordability",
         "most",
@@ -28493,7 +28521,7 @@
       "excerpt": "1-Year Electricity Inflation Ranking. Ranks states by 1-year inflation % (desc). Top 1: District of Columbia.",
       "qualityScore": 90,
       "freshnessStatus": "aging",
-      "ageDays": 84,
+      "ageDays": 85,
       "tokens": [
         "electricity-inflation-1y",
         "1-year",
@@ -28553,7 +28581,7 @@
       "excerpt": "5-Year Electricity Inflation Ranking. Ranks states by 5-year inflation % (desc). Top 1: District of Columbia.",
       "qualityScore": 90,
       "freshnessStatus": "aging",
-      "ageDays": 84,
+      "ageDays": 85,
       "tokens": [
         "electricity-inflation-5y",
         "5-year",
@@ -28613,7 +28641,7 @@
       "excerpt": "Electricity Price Momentum Signal Ranking. Ranks states by momentum score (desc). Top 1: District of Columbia.",
       "qualityScore": 90,
       "freshnessStatus": "aging",
-      "ageDays": 84,
+      "ageDays": 85,
       "tokens": [
         "momentum-signal",
         "electricity",
@@ -28649,7 +28677,7 @@
       "excerpt": "Least Affordable Electricity by State. Ranks states by est. monthly bill (900 kWh) (desc). Top 1: Hawaii.",
       "qualityScore": 90,
       "freshnessStatus": "aging",
-      "ageDays": 84,
+      "ageDays": 85,
       "tokens": [
         "most-expensive-electricity",
         "least",
@@ -28701,7 +28729,7 @@
       "excerpt": "Electricity Price Trend Ranking. Ranks states by annualized price growth % (desc). Top 1: District of Columbia.",
       "qualityScore": 90,
       "freshnessStatus": "aging",
-      "ageDays": 84,
+      "ageDays": 85,
       "tokens": [
         "price-trend",
         "electricity",
@@ -28740,7 +28768,7 @@
       "excerpt": "Rate Rankings (High to Low). Ranks states by rate (high to low) (desc). Top 1: Hawaii.",
       "qualityScore": 90,
       "freshnessStatus": "aging",
-      "ageDays": 84,
+      "ageDays": 85,
       "tokens": [
         "rate-high-to-low",
         "rate",
@@ -28776,7 +28804,7 @@
       "excerpt": "Rate Rankings (Low to High). Ranks states by rate (low to high) (asc). Top 1: Idaho.",
       "qualityScore": 90,
       "freshnessStatus": "aging",
-      "ageDays": 84,
+      "ageDays": 85,
       "tokens": [
         "rate-low-to-high",
         "rate",
@@ -28812,7 +28840,7 @@
       "excerpt": "Value Score Rankings. Ranks states by value score (desc). Top 1: Idaho.",
       "qualityScore": 90,
       "freshnessStatus": "aging",
-      "ageDays": 84,
+      "ageDays": 85,
       "tokens": [
         "value-score",
         "value",
@@ -28842,7 +28870,7 @@
       "excerpt": "5-Year Rate Volatility. Ranks states by 5-year volatility % (desc). Top 1: District Of Columbia.",
       "qualityScore": 90,
       "freshnessStatus": "aging",
-      "ageDays": 84,
+      "ageDays": 85,
       "tokens": [
         "volatility-5y",
         "5-year",
@@ -28982,7 +29010,7 @@
       "excerpt": "Alabama residential electricity snapshot. Avg 16.55¢/kWh Value score 85 Affordability 84 Data freshness: fresh.",
       "qualityScore": 90,
       "freshnessStatus": "aging",
-      "ageDays": 84,
+      "ageDays": 85,
       "tokens": [
         "alabama",
         "alabama",
@@ -29026,7 +29054,7 @@
       "excerpt": "Alaska residential electricity snapshot. Avg 25.01¢/kWh Value score 57 Affordability 55 Data freshness: fresh.",
       "qualityScore": 90,
       "freshnessStatus": "aging",
-      "ageDays": 84,
+      "ageDays": 85,
       "tokens": [
         "alaska",
         "alaska",
@@ -29070,7 +29098,7 @@
       "excerpt": "Arizona residential electricity snapshot. Avg 15.70¢/kWh Value score 88 Affordability 87 Data freshness: fresh.",
       "qualityScore": 90,
       "freshnessStatus": "aging",
-      "ageDays": 84,
+      "ageDays": 85,
       "tokens": [
         "arizona",
         "arizona",
@@ -29114,7 +29142,7 @@
       "excerpt": "Arkansas residential electricity snapshot. Avg 12.83¢/kWh Value score 96 Affordability 96 Data freshness: fresh.",
       "qualityScore": 90,
       "freshnessStatus": "aging",
-      "ageDays": 84,
+      "ageDays": 85,
       "tokens": [
         "arkansas",
         "arkansas",
@@ -29158,7 +29186,7 @@
       "excerpt": "California residential electricity snapshot. Avg 31.14¢/kWh Value score 38 Affordability 34 Data freshness: fresh.",
       "qualityScore": 90,
       "freshnessStatus": "aging",
-      "ageDays": 84,
+      "ageDays": 85,
       "tokens": [
         "california",
         "california",
@@ -29202,7 +29230,7 @@
       "excerpt": "Colorado residential electricity snapshot. Avg 15.79¢/kWh Value score 87 Affordability 86 Data freshness: fresh.",
       "qualityScore": 90,
       "freshnessStatus": "aging",
-      "ageDays": 84,
+      "ageDays": 85,
       "tokens": [
         "colorado",
         "colorado",
@@ -29246,7 +29274,7 @@
       "excerpt": "Connecticut residential electricity snapshot. Avg 30.35¢/kWh Value score 40 Affordability 37 Data freshness: fresh.",
       "qualityScore": 90,
       "freshnessStatus": "aging",
-      "ageDays": 84,
+      "ageDays": 85,
       "tokens": [
         "connecticut",
         "connecticut",
@@ -29290,7 +29318,7 @@
       "excerpt": "Delaware residential electricity snapshot. Avg 17.18¢/kWh Value score 83 Affordability 82 Data freshness: fresh.",
       "qualityScore": 90,
       "freshnessStatus": "aging",
-      "ageDays": 84,
+      "ageDays": 85,
       "tokens": [
         "delaware",
         "delaware",
@@ -29334,7 +29362,7 @@
       "excerpt": "District of Columbia residential electricity snapshot. Data freshness: unavailable.",
       "qualityScore": 90,
       "freshnessStatus": "aging",
-      "ageDays": 84,
+      "ageDays": 85,
       "tokens": [
         "district-of-columbia",
         "district",
@@ -29373,7 +29401,7 @@
       "excerpt": "Florida residential electricity snapshot. Avg 15.27¢/kWh Value score 89 Affordability 88 Data freshness: fresh.",
       "qualityScore": 90,
       "freshnessStatus": "aging",
-      "ageDays": 84,
+      "ageDays": 85,
       "tokens": [
         "florida",
         "florida",
@@ -29417,7 +29445,7 @@
       "excerpt": "Georgia residential electricity snapshot. Avg 15.22¢/kWh Value score 89 Affordability 88 Data freshness: fresh.",
       "qualityScore": 90,
       "freshnessStatus": "aging",
-      "ageDays": 84,
+      "ageDays": 85,
       "tokens": [
         "georgia",
         "georgia",
@@ -29461,7 +29489,7 @@
       "excerpt": "Hawaii residential electricity snapshot. Avg 41.30¢/kWh Value score 5 Affordability 0 Data freshness: fresh.",
       "qualityScore": 90,
       "freshnessStatus": "aging",
-      "ageDays": 84,
+      "ageDays": 85,
       "tokens": [
         "hawaii",
         "hawaii",
@@ -29503,7 +29531,7 @@
       "excerpt": "Idaho residential electricity snapshot. Avg 11.74¢/kWh Value score 100 Affordability 100 Data freshness: fresh.",
       "qualityScore": 90,
       "freshnessStatus": "aging",
-      "ageDays": 84,
+      "ageDays": 85,
       "tokens": [
         "idaho",
         "idaho",
@@ -29547,7 +29575,7 @@
       "excerpt": "Illinois residential electricity snapshot. Avg 16.96¢/kWh Value score 83 Affordability 82 Data freshness: fresh.",
       "qualityScore": 90,
       "freshnessStatus": "aging",
-      "ageDays": 84,
+      "ageDays": 85,
       "tokens": [
         "illinois",
         "illinois",
@@ -29591,7 +29619,7 @@
       "excerpt": "Indiana residential electricity snapshot. Avg 16.12¢/kWh Value score 86 Affordability 85 Data freshness: fresh.",
       "qualityScore": 90,
       "freshnessStatus": "aging",
-      "ageDays": 84,
+      "ageDays": 85,
       "tokens": [
         "indiana",
         "indiana",
@@ -29635,7 +29663,7 @@
       "excerpt": "Iowa residential electricity snapshot. Avg 13.18¢/kWh Value score 95 Affordability 95 Data freshness: fresh.",
       "qualityScore": 90,
       "freshnessStatus": "aging",
-      "ageDays": 84,
+      "ageDays": 85,
       "tokens": [
         "iowa",
         "iowa",
@@ -29679,7 +29707,7 @@
       "excerpt": "Kansas residential electricity snapshot. Avg 14.48¢/kWh Value score 91 Affordability 91 Data freshness: fresh.",
       "qualityScore": 90,
       "freshnessStatus": "aging",
-      "ageDays": 84,
+      "ageDays": 85,
       "tokens": [
         "kansas",
         "kansas",
@@ -29723,7 +29751,7 @@
       "excerpt": "Kentucky residential electricity snapshot. Avg 13.20¢/kWh Value score 95 Affordability 95 Data freshness: fresh.",
       "qualityScore": 90,
       "freshnessStatus": "aging",
-      "ageDays": 84,
+      "ageDays": 85,
       "tokens": [
         "kentucky",
         "kentucky",
@@ -29767,7 +29795,7 @@
       "excerpt": "Louisiana residential electricity snapshot. Avg 12.34¢/kWh Value score 98 Affordability 98 Data freshness: fresh.",
       "qualityScore": 90,
       "freshnessStatus": "aging",
-      "ageDays": 84,
+      "ageDays": 85,
       "tokens": [
         "louisiana",
         "louisiana",
@@ -29811,7 +29839,7 @@
       "excerpt": "Maine residential electricity snapshot. Avg 27.24¢/kWh Value score 51 Affordability 48 Data freshness: fresh.",
       "qualityScore": 90,
       "freshnessStatus": "aging",
-      "ageDays": 84,
+      "ageDays": 85,
       "tokens": [
         "maine",
         "maine",
@@ -29855,7 +29883,7 @@
       "excerpt": "Maryland residential electricity snapshot. Avg 19.29¢/kWh Value score 76 Affordability 74 Data freshness: fresh.",
       "qualityScore": 90,
       "freshnessStatus": "aging",
-      "ageDays": 84,
+      "ageDays": 85,
       "tokens": [
         "maryland",
         "maryland",
@@ -29899,7 +29927,7 @@
       "excerpt": "Massachusetts residential electricity snapshot. Avg 26.01¢/kWh Value score 54 Affordability 52 Data freshness: fresh.",
       "qualityScore": 90,
       "freshnessStatus": "aging",
-      "ageDays": 84,
+      "ageDays": 85,
       "tokens": [
         "massachusetts",
         "massachusetts",
@@ -29943,7 +29971,7 @@
       "excerpt": "Michigan residential electricity snapshot. Avg 19.91¢/kWh Value score 74 Affordability 72 Data freshness: fresh.",
       "qualityScore": 90,
       "freshnessStatus": "aging",
-      "ageDays": 84,
+      "ageDays": 85,
       "tokens": [
         "michigan",
         "michigan",
@@ -29987,7 +30015,7 @@
       "excerpt": "Minnesota residential electricity snapshot. Avg 16.04¢/kWh Value score 86 Affordability 85 Data freshness: fresh.",
       "qualityScore": 90,
       "freshnessStatus": "aging",
-      "ageDays": 84,
+      "ageDays": 85,
       "tokens": [
         "minnesota",
         "minnesota",
@@ -30031,7 +30059,7 @@
       "excerpt": "Mississippi residential electricity snapshot. Avg 13.91¢/kWh Value score 93 Affordability 93 Data freshness: fresh.",
       "qualityScore": 90,
       "freshnessStatus": "aging",
-      "ageDays": 84,
+      "ageDays": 85,
       "tokens": [
         "mississippi",
         "mississippi",
@@ -30075,7 +30103,7 @@
       "excerpt": "Missouri residential electricity snapshot. Avg 13.37¢/kWh Value score 94 Affordability 94 Data freshness: fresh.",
       "qualityScore": 90,
       "freshnessStatus": "aging",
-      "ageDays": 84,
+      "ageDays": 85,
       "tokens": [
         "missouri",
         "missouri",
@@ -30119,7 +30147,7 @@
       "excerpt": "Montana residential electricity snapshot. Avg 13.12¢/kWh Value score 95 Affordability 95 Data freshness: fresh.",
       "qualityScore": 90,
       "freshnessStatus": "aging",
-      "ageDays": 84,
+      "ageDays": 85,
       "tokens": [
         "montana",
         "montana",
@@ -30163,7 +30191,7 @@
       "excerpt": "Nebraska residential electricity snapshot. Avg 12.19¢/kWh Value score 98 Affordability 98 Data freshness: fresh.",
       "qualityScore": 90,
       "freshnessStatus": "aging",
-      "ageDays": 84,
+      "ageDays": 85,
       "tokens": [
         "nebraska",
         "nebraska",
@@ -30207,7 +30235,7 @@
       "excerpt": "Nevada residential electricity snapshot. Avg 13.16¢/kWh Value score 95 Affordability 95 Data freshness: fresh.",
       "qualityScore": 90,
       "freshnessStatus": "aging",
-      "ageDays": 84,
+      "ageDays": 85,
       "tokens": [
         "nevada",
         "nevada",
@@ -30251,7 +30279,7 @@
       "excerpt": "New Hampshire residential electricity snapshot. Avg 23.35¢/kWh Value score 63 Affordability 61 Data freshness: fresh.",
       "qualityScore": 90,
       "freshnessStatus": "aging",
-      "ageDays": 84,
+      "ageDays": 85,
       "tokens": [
         "new-hampshire",
         "new",
@@ -30297,7 +30325,7 @@
       "excerpt": "New Jersey residential electricity snapshot. Avg 22.15¢/kWh Value score 67 Affordability 65 Data freshness: fresh.",
       "qualityScore": 90,
       "freshnessStatus": "aging",
-      "ageDays": 84,
+      "ageDays": 85,
       "tokens": [
         "new-jersey",
         "new",
@@ -30343,7 +30371,7 @@
       "excerpt": "New Mexico residential electricity snapshot. Avg 15.29¢/kWh Value score 89 Affordability 88 Data freshness: fresh.",
       "qualityScore": 90,
       "freshnessStatus": "aging",
-      "ageDays": 84,
+      "ageDays": 85,
       "tokens": [
         "new-mexico",
         "new",
@@ -30389,7 +30417,7 @@
       "excerpt": "New York residential electricity snapshot. Avg 23.87¢/kWh Value score 61 Affordability 59 Data freshness: fresh.",
       "qualityScore": 90,
       "freshnessStatus": "aging",
-      "ageDays": 84,
+      "ageDays": 85,
       "tokens": [
         "new-york",
         "new",
@@ -30435,7 +30463,7 @@
       "excerpt": "North Carolina residential electricity snapshot. Avg 14.08¢/kWh Value score 92 Affordability 92 Data freshness: fresh.",
       "qualityScore": 90,
       "freshnessStatus": "aging",
-      "ageDays": 84,
+      "ageDays": 85,
       "tokens": [
         "north-carolina",
         "north",
@@ -30481,7 +30509,7 @@
       "excerpt": "North Dakota residential electricity snapshot. Avg 11.92¢/kWh Value score 99 Affordability 99 Data freshness: fresh.",
       "qualityScore": 90,
       "freshnessStatus": "aging",
-      "ageDays": 84,
+      "ageDays": 85,
       "tokens": [
         "north-dakota",
         "north",
@@ -30527,7 +30555,7 @@
       "excerpt": "Ohio residential electricity snapshot. Avg 16.90¢/kWh Value score 84 Affordability 83 Data freshness: fresh.",
       "qualityScore": 90,
       "freshnessStatus": "aging",
-      "ageDays": 84,
+      "ageDays": 85,
       "tokens": [
         "ohio",
         "ohio",
@@ -30571,7 +30599,7 @@
       "excerpt": "Oklahoma residential electricity snapshot. Avg 13.05¢/kWh Value score 96 Affordability 96 Data freshness: fresh.",
       "qualityScore": 90,
       "freshnessStatus": "aging",
-      "ageDays": 84,
+      "ageDays": 85,
       "tokens": [
         "oklahoma",
         "oklahoma",
@@ -30615,7 +30643,7 @@
       "excerpt": "Oregon residential electricity snapshot. Avg 15.00¢/kWh Value score 90 Affordability 89 Data freshness: fresh.",
       "qualityScore": 90,
       "freshnessStatus": "aging",
-      "ageDays": 84,
+      "ageDays": 85,
       "tokens": [
         "oregon",
         "oregon",
@@ -30659,7 +30687,7 @@
       "excerpt": "Pennsylvania residential electricity snapshot. Avg 17.78¢/kWh Value score 81 Affordability 80 Data freshness: fresh.",
       "qualityScore": 90,
       "freshnessStatus": "aging",
-      "ageDays": 84,
+      "ageDays": 85,
       "tokens": [
         "pennsylvania",
         "pennsylvania",
@@ -30703,7 +30731,7 @@
       "excerpt": "Rhode Island residential electricity snapshot. Avg 28.42¢/kWh Value score 47 Affordability 44 Data freshness: fresh.",
       "qualityScore": 90,
       "freshnessStatus": "aging",
-      "ageDays": 84,
+      "ageDays": 85,
       "tokens": [
         "rhode-island",
         "rhode",
@@ -30749,7 +30777,7 @@
       "excerpt": "South Carolina residential electricity snapshot. Avg 14.72¢/kWh Value score 91 Affordability 90 Data freshness: fresh.",
       "qualityScore": 90,
       "freshnessStatus": "aging",
-      "ageDays": 84,
+      "ageDays": 85,
       "tokens": [
         "south-carolina",
         "south",
@@ -30795,7 +30823,7 @@
       "excerpt": "South Dakota residential electricity snapshot. Avg 13.14¢/kWh Value score 95 Affordability 95 Data freshness: fresh.",
       "qualityScore": 90,
       "freshnessStatus": "aging",
-      "ageDays": 84,
+      "ageDays": 85,
       "tokens": [
         "south-dakota",
         "south",
@@ -30841,7 +30869,7 @@
       "excerpt": "Tennessee residential electricity snapshot. Avg 13.28¢/kWh Value score 95 Affordability 95 Data freshness: fresh.",
       "qualityScore": 90,
       "freshnessStatus": "aging",
-      "ageDays": 84,
+      "ageDays": 85,
       "tokens": [
         "tennessee",
         "tennessee",
@@ -30885,7 +30913,7 @@
       "excerpt": "Texas residential electricity snapshot. Avg 15.83¢/kWh Value score 87 Affordability 86 Data freshness: fresh.",
       "qualityScore": 90,
       "freshnessStatus": "aging",
-      "ageDays": 84,
+      "ageDays": 85,
       "tokens": [
         "texas",
         "texas",
@@ -30929,7 +30957,7 @@
       "excerpt": "Utah residential electricity snapshot. Avg 12.97¢/kWh Value score 96 Affordability 96 Data freshness: fresh.",
       "qualityScore": 90,
       "freshnessStatus": "aging",
-      "ageDays": 84,
+      "ageDays": 85,
       "tokens": [
         "utah",
         "utah",
@@ -30973,7 +31001,7 @@
       "excerpt": "Vermont residential electricity snapshot. Avg 22.58¢/kWh Value score 65 Affordability 63 Data freshness: fresh.",
       "qualityScore": 90,
       "freshnessStatus": "aging",
-      "ageDays": 84,
+      "ageDays": 85,
       "tokens": [
         "vermont",
         "vermont",
@@ -31017,7 +31045,7 @@
       "excerpt": "Virginia residential electricity snapshot. Avg 15.26¢/kWh Value score 89 Affordability 88 Data freshness: fresh.",
       "qualityScore": 90,
       "freshnessStatus": "aging",
-      "ageDays": 84,
+      "ageDays": 85,
       "tokens": [
         "virginia",
         "virginia",
@@ -31061,7 +31089,7 @@
       "excerpt": "Washington residential electricity snapshot. Avg 12.86¢/kWh Value score 96 Affordability 96 Data freshness: fresh.",
       "qualityScore": 90,
       "freshnessStatus": "aging",
-      "ageDays": 84,
+      "ageDays": 85,
       "tokens": [
         "washington",
         "washington",
@@ -31105,7 +31133,7 @@
       "excerpt": "West Virginia residential electricity snapshot. Avg 15.39¢/kWh Value score 89 Affordability 88 Data freshness: fresh.",
       "qualityScore": 90,
       "freshnessStatus": "aging",
-      "ageDays": 84,
+      "ageDays": 85,
       "tokens": [
         "west-virginia",
         "west",
@@ -31151,7 +31179,7 @@
       "excerpt": "Wisconsin residential electricity snapshot. Avg 18.04¢/kWh Value score 80 Affordability 79 Data freshness: fresh.",
       "qualityScore": 90,
       "freshnessStatus": "aging",
-      "ageDays": 84,
+      "ageDays": 85,
       "tokens": [
         "wisconsin",
         "wisconsin",
@@ -31195,7 +31223,7 @@
       "excerpt": "Wyoming residential electricity snapshot. Avg 14.02¢/kWh Value score 93 Affordability 92 Data freshness: fresh.",
       "qualityScore": 90,
       "freshnessStatus": "aging",
-      "ageDays": 84,
+      "ageDays": 85,
       "tokens": [
         "wyoming",
         "wyoming",
@@ -31239,7 +31267,7 @@
       "excerpt": "AI Energy Vertical Knowledge. stub vertical summary. Related states: 5.",
       "qualityScore": 90,
       "freshnessStatus": "aging",
-      "ageDays": 84,
+      "ageDays": 85,
       "tokens": [
         "ai-energy",
         "ai",

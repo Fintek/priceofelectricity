@@ -8,7 +8,7 @@
     "description": "Methodology for data freshness status and recency labels.",
     "canonicalUrl": "http://localhost:3000/knowledge/methodology/freshness",
     "jsonUrl": "http://localhost:3000/knowledge/history/v2/methodology/freshness.json",
-    "updatedAt": "2026-03-09T17:50:09.701Z",
+    "updatedAt": "2026-03-10T18:46:48.543Z",
     "sourceVersion": "v2",
     "temporalContext": {
       "sourceVersion": "v2",
@@ -21,7 +21,7 @@
         "sourceUrl": "http://localhost:3000/methodology/freshness-scoring",
         "publisher": "PriceOfElectricity.com",
         "license": "Site content license",
-        "retrievedAt": "2026-03-09T17:50:09.701Z"
+        "retrievedAt": "2026-03-10T18:46:48.543Z"
       }
     ],
     "fieldProvenance": [
@@ -60,7 +60,7 @@
       {
         "sourceName": "PriceOfElectricity.com methodology: Freshness Scoring",
         "sourceUrl": "http://localhost:3000/methodology/freshness-scoring",
-        "retrievedAt": "2026-03-09T17:50:09.701Z"
+        "retrievedAt": "2026-03-10T18:46:48.543Z"
       }
     ],
     "llmHints": {
@@ -76,9 +76,9 @@
     },
     "freshness": {
       "datasetUpdatedAt": "2025-12-15T00:00:00.000Z",
-      "computedAt": "2026-03-09T17:50:09.701Z",
+      "computedAt": "2026-03-10T18:46:48.543Z",
       "status": "aging",
-      "ageDays": 84,
+      "ageDays": 85,
       "methodology": {
         "id": "freshness",
         "version": "1.0",
@@ -93,17 +93,17 @@
     "methodology": {
       "id": "freshness",
       "version": "1.0",
-      "lastReviewedAt": "2026-03-09",
+      "lastReviewedAt": "2026-03-10",
       "relatedDerivedFields": [
         "data.derived.freshnessStatus"
       ]
     },
     "qualityScore": 90,
-    "contentHash": "2d67cd9cdfea7c1424eb6588acc724a733104e97b48744fb6889ad28ff7d5c91",
+    "contentHash": "8ff33a60d5bb15ea7cd6c6845c25e88bc314bd1a2c516902785ed7d8139a88dd",
     "integrity": {
-      "contentHash": "2d67cd9cdfea7c1424eb6588acc724a733104e97b48744fb6889ad28ff7d5c91",
+      "contentHash": "8ff33a60d5bb15ea7cd6c6845c25e88bc314bd1a2c516902785ed7d8139a88dd",
       "integrityAlgorithm": "sha256",
-      "signedAtBuild": "2026-03-09T17:50:09.701Z"
+      "signedAtBuild": "2026-03-10T18:46:48.543Z"
     }
   },
   "data": {

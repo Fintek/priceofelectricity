@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-03-09T17:50:09.701Z",
+  "generatedAt": "2026-03-10T18:46:48.543Z",
   "sourceVersion": "v2",
   "budgetsMs": {
     "total": 60000,
@@ -12,14 +12,14 @@
     "writeFiles": 20000
   },
   "durationsMs": {
-    "loadSnapshots": 81,
-    "normalizeStates": 5,
-    "computeNational": 4,
-    "generatePages": 54,
-    "generateIndexes": 1647,
-    "writeFiles": 704,
+    "loadSnapshots": 74,
+    "normalizeStates": 4,
+    "computeNational": 5,
+    "generatePages": 50,
+    "generateIndexes": 1438,
+    "writeFiles": 587,
     "verifyLocal": 0,
-    "total": 2501
+    "total": 2164
   },
   "notes": "Build-time profiling for knowledge generation."
 }

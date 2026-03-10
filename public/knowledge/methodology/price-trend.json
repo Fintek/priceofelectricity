@@ -8,7 +8,7 @@
     "description": "Annualized linear trend methodology for electricity price growth.",
     "canonicalUrl": "http://localhost:3000/knowledge/methodology/price-trend",
     "jsonUrl": "http://localhost:3000/knowledge/methodology/price-trend.json",
-    "updatedAt": "2026-03-09T17:50:09.701Z",
+    "updatedAt": "2026-03-10T18:46:48.543Z",
     "sourceVersion": "v2",
     "temporalContext": {
       "sourceVersion": "v2",
@@ -21,7 +21,7 @@
         "sourceUrl": "http://localhost:3000/knowledge/methodology/price-trend",
         "publisher": "PriceOfElectricity.com",
         "license": "Site content license",
-        "retrievedAt": "2026-03-09T17:50:09.701Z"
+        "retrievedAt": "2026-03-10T18:46:48.543Z"
       }
     ],
     "fieldProvenance": [
@@ -60,7 +60,7 @@
       {
         "sourceName": "PriceOfElectricity.com methodology: Price Trend",
         "sourceUrl": "http://localhost:3000/knowledge/methodology/price-trend",
-        "retrievedAt": "2026-03-09T17:50:09.701Z"
+        "retrievedAt": "2026-03-10T18:46:48.543Z"
       }
     ],
     "llmHints": {
@@ -76,9 +76,9 @@
     },
     "freshness": {
       "datasetUpdatedAt": "2025-12-15T00:00:00.000Z",
-      "computedAt": "2026-03-09T17:50:09.701Z",
+      "computedAt": "2026-03-10T18:46:48.543Z",
       "status": "aging",
-      "ageDays": 84,
+      "ageDays": 85,
       "methodology": {
         "id": "freshness",
         "version": "1.0",
@@ -93,17 +93,17 @@
     "methodology": {
       "id": "price-trend",
       "version": "1.0",
-      "lastReviewedAt": "2026-03-09",
+      "lastReviewedAt": "2026-03-10",
       "relatedDerivedFields": [
         "data.sortedStates"
       ]
     },
     "qualityScore": 90,
-    "contentHash": "7380fcefd93dd1ad48abcbff0b40bc4fe1d74e91e7531615263c4896d0afc673",
+    "contentHash": "eebf5b9de98466c63056965eb0fe3d6677b5e605ffa3f01748c33914dfb8a7fe",
     "integrity": {
-      "contentHash": "7380fcefd93dd1ad48abcbff0b40bc4fe1d74e91e7531615263c4896d0afc673",
+      "contentHash": "eebf5b9de98466c63056965eb0fe3d6677b5e605ffa3f01748c33914dfb8a7fe",
       "integrityAlgorithm": "sha256",
-      "signedAtBuild": "2026-03-09T17:50:09.701Z"
+      "signedAtBuild": "2026-03-10T18:46:48.543Z"
     }
   },
   "data": {

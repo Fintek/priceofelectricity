@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-03-09T17:50:09.701Z",
+  "generatedAt": "2026-03-10T18:46:48.543Z",
   "sourceVersion": "v2",
   "contractVersion": "1.0.0",
   "releaseId": "knowledge-v1-v2",
@@ -13,6 +13,6 @@
   },
   "hash": {
     "algorithm": "sha256",
-    "value": "6856febb5dfbf8f8bc85895e4e38649f0efae79d00ce7f3d7d0524c32bafdc12"
+    "value": "2764ea4781ae39cffc94593dca061b7b1dcf1339d2119f63885ad8ac5c48b7a2"
   }
 }
