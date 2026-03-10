@@ -72,29 +72,12 @@ function getKnowledgeRankingIds(): string[] {
   }
 }
 
-function getComparisonPairs() {
-  const entries = Object.entries(STATES);
-  const topHigh = [...entries]
-    .sort((a, b) => b[1].avgRateCentsPerKwh - a[1].avgRateCentsPerKwh)
-    .slice(0, 10)
-    .map(([slug]) => slug);
-  const topLow = [...entries]
-    .sort((a, b) => a[1].avgRateCentsPerKwh - b[1].avgRateCentsPerKwh)
-    .slice(0, 10)
-    .map(([slug]) => slug);
-
-  const pairSet = new Set<string>();
-  for (const highSlug of topHigh) {
-    for (const lowSlug of topLow) {
-      if (highSlug === lowSlug) {
-        continue;
-      }
-      const [a, b] = [highSlug, lowSlug].sort((x, y) => x.localeCompare(y));
-      pairSet.add(`${a}-vs-${b}`);
-    }
-  }
-
-  return [...pairSet].sort((a, b) => a.localeCompare(b));
+function hasKnowledgeComparePairPage(pair: string): boolean {
+  if (!pair || !pair.includes("-vs-")) return false;
+  const parts = pair.split("-vs-");
+  if (parts.length !== 2 || !parts[0] || !parts[1] || parts[0] === parts[1]) return false;
+  const comparePairPath = path.join(process.cwd(), "public", "knowledge", "compare", `${pair}.json`);
+  return existsSync(comparePairPath);
 }
 
 function getKnowledgeHistoryVersionsWithBundles(): string[] {
@@ -209,12 +192,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.6,
     };
   });
-  const comparisonEntries: MetadataRoute.Sitemap = getComparisonPairs().map((pair) => ({
+  const comparisonEntries: MetadataRoute.Sitemap = getKnowledgeComparePairs()
+    .filter(hasKnowledgeComparePairPage)
+    .map((pair) => ({
     url: `${BASE_URL}/compare/${pair}`,
     lastModified: new Date(),
     changeFrequency: "monthly",
     priority: 0.7,
-  }));
+    }));
   const guideEntries: MetadataRoute.Sitemap = GUIDES.map((guide) => ({
     url: `${BASE_URL}/guides/${guide.slug}`,
     lastModified: new Date(),
