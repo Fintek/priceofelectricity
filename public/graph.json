@@ -1,8 +1,8 @@
 {
   "version": "1.0",
-  "generatedAt": "2026-03-10T18:46:48.543Z",
-  "totalNodes": 1267,
-  "totalEdges": 1723,
+  "generatedAt": "2025-12-15T00:00:00.000Z",
+  "totalNodes": 1232,
+  "totalEdges": 1990,
   "nodes": [
     {
       "id": "alerts:ai-energy",
@@ -1770,484 +1770,54 @@
       "url": "http://localhost:3000/wyoming/bill/750"
     },
     {
-      "id": "city:california:fresno",
-      "type": "city",
-      "url": "http://localhost:3000/california/city/fresno"
-    },
-    {
       "id": "city:california:los-angeles",
       "type": "city",
-      "url": "http://localhost:3000/california/city/los-angeles"
-    },
-    {
-      "id": "city:california:sacramento",
-      "type": "city",
-      "url": "http://localhost:3000/california/city/sacramento"
+      "url": "http://localhost:3000/electricity-cost/california/los-angeles"
     },
     {
       "id": "city:california:san-diego",
       "type": "city",
-      "url": "http://localhost:3000/california/city/san-diego"
-    },
-    {
-      "id": "city:california:san-francisco",
-      "type": "city",
-      "url": "http://localhost:3000/california/city/san-francisco"
-    },
-    {
-      "id": "city:california:san-jose",
-      "type": "city",
-      "url": "http://localhost:3000/california/city/san-jose"
-    },
-    {
-      "id": "city:florida:hialeah",
-      "type": "city",
-      "url": "http://localhost:3000/florida/city/hialeah"
-    },
-    {
-      "id": "city:florida:jacksonville",
-      "type": "city",
-      "url": "http://localhost:3000/florida/city/jacksonville"
+      "url": "http://localhost:3000/electricity-cost/california/san-diego"
     },
     {
       "id": "city:florida:miami",
       "type": "city",
-      "url": "http://localhost:3000/florida/city/miami"
-    },
-    {
-      "id": "city:florida:orlando",
-      "type": "city",
-      "url": "http://localhost:3000/florida/city/orlando"
-    },
-    {
-      "id": "city:florida:st-petersburg",
-      "type": "city",
-      "url": "http://localhost:3000/florida/city/st-petersburg"
-    },
-    {
-      "id": "city:florida:tampa",
-      "type": "city",
-      "url": "http://localhost:3000/florida/city/tampa"
-    },
-    {
-      "id": "city:georgia:athens",
-      "type": "city",
-      "url": "http://localhost:3000/georgia/city/athens"
+      "url": "http://localhost:3000/electricity-cost/florida/miami"
     },
     {
       "id": "city:georgia:atlanta",
       "type": "city",
-      "url": "http://localhost:3000/georgia/city/atlanta"
-    },
-    {
-      "id": "city:georgia:augusta",
-      "type": "city",
-      "url": "http://localhost:3000/georgia/city/augusta"
-    },
-    {
-      "id": "city:georgia:columbus",
-      "type": "city",
-      "url": "http://localhost:3000/georgia/city/columbus"
-    },
-    {
-      "id": "city:georgia:macon",
-      "type": "city",
-      "url": "http://localhost:3000/georgia/city/macon"
-    },
-    {
-      "id": "city:georgia:savannah",
-      "type": "city",
-      "url": "http://localhost:3000/georgia/city/savannah"
-    },
-    {
-      "id": "city:illinois:aurora",
-      "type": "city",
-      "url": "http://localhost:3000/illinois/city/aurora"
+      "url": "http://localhost:3000/electricity-cost/georgia/atlanta"
     },
     {
       "id": "city:illinois:chicago",
       "type": "city",
-      "url": "http://localhost:3000/illinois/city/chicago"
-    },
-    {
-      "id": "city:illinois:joliet",
-      "type": "city",
-      "url": "http://localhost:3000/illinois/city/joliet"
-    },
-    {
-      "id": "city:illinois:naperville",
-      "type": "city",
-      "url": "http://localhost:3000/illinois/city/naperville"
-    },
-    {
-      "id": "city:illinois:rockford",
-      "type": "city",
-      "url": "http://localhost:3000/illinois/city/rockford"
-    },
-    {
-      "id": "city:illinois:springfield",
-      "type": "city",
-      "url": "http://localhost:3000/illinois/city/springfield"
-    },
-    {
-      "id": "city:new-york:albany",
-      "type": "city",
-      "url": "http://localhost:3000/new-york/city/albany"
-    },
-    {
-      "id": "city:new-york:buffalo",
-      "type": "city",
-      "url": "http://localhost:3000/new-york/city/buffalo"
+      "url": "http://localhost:3000/electricity-cost/illinois/chicago"
     },
     {
       "id": "city:new-york:new-york-city",
       "type": "city",
-      "url": "http://localhost:3000/new-york/city/new-york-city"
-    },
-    {
-      "id": "city:new-york:rochester",
-      "type": "city",
-      "url": "http://localhost:3000/new-york/city/rochester"
-    },
-    {
-      "id": "city:new-york:syracuse",
-      "type": "city",
-      "url": "http://localhost:3000/new-york/city/syracuse"
-    },
-    {
-      "id": "city:new-york:yonkers",
-      "type": "city",
-      "url": "http://localhost:3000/new-york/city/yonkers"
-    },
-    {
-      "id": "city:ohio:akron",
-      "type": "city",
-      "url": "http://localhost:3000/ohio/city/akron"
-    },
-    {
-      "id": "city:ohio:cincinnati",
-      "type": "city",
-      "url": "http://localhost:3000/ohio/city/cincinnati"
-    },
-    {
-      "id": "city:ohio:cleveland",
-      "type": "city",
-      "url": "http://localhost:3000/ohio/city/cleveland"
+      "url": "http://localhost:3000/electricity-cost/new-york/new-york-city"
     },
     {
       "id": "city:ohio:columbus",
       "type": "city",
-      "url": "http://localhost:3000/ohio/city/columbus"
-    },
-    {
-      "id": "city:ohio:dayton",
-      "type": "city",
-      "url": "http://localhost:3000/ohio/city/dayton"
-    },
-    {
-      "id": "city:ohio:toledo",
-      "type": "city",
-      "url": "http://localhost:3000/ohio/city/toledo"
-    },
-    {
-      "id": "city:pennsylvania:allentown",
-      "type": "city",
-      "url": "http://localhost:3000/pennsylvania/city/allentown"
-    },
-    {
-      "id": "city:pennsylvania:erie",
-      "type": "city",
-      "url": "http://localhost:3000/pennsylvania/city/erie"
+      "url": "http://localhost:3000/electricity-cost/ohio/columbus"
     },
     {
       "id": "city:pennsylvania:philadelphia",
       "type": "city",
-      "url": "http://localhost:3000/pennsylvania/city/philadelphia"
-    },
-    {
-      "id": "city:pennsylvania:pittsburgh",
-      "type": "city",
-      "url": "http://localhost:3000/pennsylvania/city/pittsburgh"
-    },
-    {
-      "id": "city:pennsylvania:reading",
-      "type": "city",
-      "url": "http://localhost:3000/pennsylvania/city/reading"
-    },
-    {
-      "id": "city:pennsylvania:scranton",
-      "type": "city",
-      "url": "http://localhost:3000/pennsylvania/city/scranton"
+      "url": "http://localhost:3000/electricity-cost/pennsylvania/philadelphia"
     },
     {
       "id": "city:texas:austin",
       "type": "city",
-      "url": "http://localhost:3000/texas/city/austin"
-    },
-    {
-      "id": "city:texas:dallas",
-      "type": "city",
-      "url": "http://localhost:3000/texas/city/dallas"
-    },
-    {
-      "id": "city:texas:el-paso",
-      "type": "city",
-      "url": "http://localhost:3000/texas/city/el-paso"
-    },
-    {
-      "id": "city:texas:fort-worth",
-      "type": "city",
-      "url": "http://localhost:3000/texas/city/fort-worth"
+      "url": "http://localhost:3000/electricity-cost/texas/austin"
     },
     {
       "id": "city:texas:houston",
       "type": "city",
-      "url": "http://localhost:3000/texas/city/houston"
-    },
-    {
-      "id": "city:texas:san-antonio",
-      "type": "city",
-      "url": "http://localhost:3000/texas/city/san-antonio"
-    },
-    {
-      "id": "citydual:california:fresno",
-      "type": "city",
-      "url": "http://localhost:3000/california/fresno"
-    },
-    {
-      "id": "citydual:california:los-angeles",
-      "type": "city",
-      "url": "http://localhost:3000/california/los-angeles"
-    },
-    {
-      "id": "citydual:california:sacramento",
-      "type": "city",
-      "url": "http://localhost:3000/california/sacramento"
-    },
-    {
-      "id": "citydual:california:san-diego",
-      "type": "city",
-      "url": "http://localhost:3000/california/san-diego"
-    },
-    {
-      "id": "citydual:california:san-francisco",
-      "type": "city",
-      "url": "http://localhost:3000/california/san-francisco"
-    },
-    {
-      "id": "citydual:california:san-jose",
-      "type": "city",
-      "url": "http://localhost:3000/california/san-jose"
-    },
-    {
-      "id": "citydual:florida:hialeah",
-      "type": "city",
-      "url": "http://localhost:3000/florida/hialeah"
-    },
-    {
-      "id": "citydual:florida:jacksonville",
-      "type": "city",
-      "url": "http://localhost:3000/florida/jacksonville"
-    },
-    {
-      "id": "citydual:florida:miami",
-      "type": "city",
-      "url": "http://localhost:3000/florida/miami"
-    },
-    {
-      "id": "citydual:florida:orlando",
-      "type": "city",
-      "url": "http://localhost:3000/florida/orlando"
-    },
-    {
-      "id": "citydual:florida:st-petersburg",
-      "type": "city",
-      "url": "http://localhost:3000/florida/st-petersburg"
-    },
-    {
-      "id": "citydual:florida:tampa",
-      "type": "city",
-      "url": "http://localhost:3000/florida/tampa"
-    },
-    {
-      "id": "citydual:georgia:athens",
-      "type": "city",
-      "url": "http://localhost:3000/georgia/athens"
-    },
-    {
-      "id": "citydual:georgia:atlanta",
-      "type": "city",
-      "url": "http://localhost:3000/georgia/atlanta"
-    },
-    {
-      "id": "citydual:georgia:augusta",
-      "type": "city",
-      "url": "http://localhost:3000/georgia/augusta"
-    },
-    {
-      "id": "citydual:georgia:columbus",
-      "type": "city",
-      "url": "http://localhost:3000/georgia/columbus"
-    },
-    {
-      "id": "citydual:georgia:macon",
-      "type": "city",
-      "url": "http://localhost:3000/georgia/macon"
-    },
-    {
-      "id": "citydual:georgia:savannah",
-      "type": "city",
-      "url": "http://localhost:3000/georgia/savannah"
-    },
-    {
-      "id": "citydual:illinois:aurora",
-      "type": "city",
-      "url": "http://localhost:3000/illinois/aurora"
-    },
-    {
-      "id": "citydual:illinois:chicago",
-      "type": "city",
-      "url": "http://localhost:3000/illinois/chicago"
-    },
-    {
-      "id": "citydual:illinois:joliet",
-      "type": "city",
-      "url": "http://localhost:3000/illinois/joliet"
-    },
-    {
-      "id": "citydual:illinois:naperville",
-      "type": "city",
-      "url": "http://localhost:3000/illinois/naperville"
-    },
-    {
-      "id": "citydual:illinois:rockford",
-      "type": "city",
-      "url": "http://localhost:3000/illinois/rockford"
-    },
-    {
-      "id": "citydual:illinois:springfield",
-      "type": "city",
-      "url": "http://localhost:3000/illinois/springfield"
-    },
-    {
-      "id": "citydual:new-york:albany",
-      "type": "city",
-      "url": "http://localhost:3000/new-york/albany"
-    },
-    {
-      "id": "citydual:new-york:buffalo",
-      "type": "city",
-      "url": "http://localhost:3000/new-york/buffalo"
-    },
-    {
-      "id": "citydual:new-york:new-york-city",
-      "type": "city",
-      "url": "http://localhost:3000/new-york/new-york-city"
-    },
-    {
-      "id": "citydual:new-york:rochester",
-      "type": "city",
-      "url": "http://localhost:3000/new-york/rochester"
-    },
-    {
-      "id": "citydual:new-york:syracuse",
-      "type": "city",
-      "url": "http://localhost:3000/new-york/syracuse"
-    },
-    {
-      "id": "citydual:new-york:yonkers",
-      "type": "city",
-      "url": "http://localhost:3000/new-york/yonkers"
-    },
-    {
-      "id": "citydual:ohio:akron",
-      "type": "city",
-      "url": "http://localhost:3000/ohio/akron"
-    },
-    {
-      "id": "citydual:ohio:cincinnati",
-      "type": "city",
-      "url": "http://localhost:3000/ohio/cincinnati"
-    },
-    {
-      "id": "citydual:ohio:cleveland",
-      "type": "city",
-      "url": "http://localhost:3000/ohio/cleveland"
-    },
-    {
-      "id": "citydual:ohio:columbus",
-      "type": "city",
-      "url": "http://localhost:3000/ohio/columbus"
-    },
-    {
-      "id": "citydual:ohio:dayton",
-      "type": "city",
-      "url": "http://localhost:3000/ohio/dayton"
-    },
-    {
-      "id": "citydual:ohio:toledo",
-      "type": "city",
-      "url": "http://localhost:3000/ohio/toledo"
-    },
-    {
-      "id": "citydual:pennsylvania:allentown",
-      "type": "city",
-      "url": "http://localhost:3000/pennsylvania/allentown"
-    },
-    {
-      "id": "citydual:pennsylvania:erie",
-      "type": "city",
-      "url": "http://localhost:3000/pennsylvania/erie"
-    },
-    {
-      "id": "citydual:pennsylvania:philadelphia",
-      "type": "city",
-      "url": "http://localhost:3000/pennsylvania/philadelphia"
-    },
-    {
-      "id": "citydual:pennsylvania:pittsburgh",
-      "type": "city",
-      "url": "http://localhost:3000/pennsylvania/pittsburgh"
-    },
-    {
-      "id": "citydual:pennsylvania:reading",
-      "type": "city",
-      "url": "http://localhost:3000/pennsylvania/reading"
-    },
-    {
-      "id": "citydual:pennsylvania:scranton",
-      "type": "city",
-      "url": "http://localhost:3000/pennsylvania/scranton"
-    },
-    {
-      "id": "citydual:texas:austin",
-      "type": "city",
-      "url": "http://localhost:3000/texas/austin"
-    },
-    {
-      "id": "citydual:texas:dallas",
-      "type": "city",
-      "url": "http://localhost:3000/texas/dallas"
-    },
-    {
-      "id": "citydual:texas:el-paso",
-      "type": "city",
-      "url": "http://localhost:3000/texas/el-paso"
-    },
-    {
-      "id": "citydual:texas:fort-worth",
-      "type": "city",
-      "url": "http://localhost:3000/texas/fort-worth"
-    },
-    {
-      "id": "citydual:texas:houston",
-      "type": "city",
-      "url": "http://localhost:3000/texas/houston"
-    },
-    {
-      "id": "citydual:texas:san-antonio",
-      "type": "city",
-      "url": "http://localhost:3000/texas/san-antonio"
+      "url": "http://localhost:3000/electricity-cost/texas/houston"
     },
     {
       "id": "drivers:alabama",
@@ -3563,6 +3133,261 @@
       "id": "offer:wyoming",
       "type": "offer",
       "url": "http://localhost:3000/offers/wyoming"
+    },
+    {
+      "id": "provider:alabama",
+      "type": "offer",
+      "url": "http://localhost:3000/electricity-providers/alabama"
+    },
+    {
+      "id": "provider:alaska",
+      "type": "offer",
+      "url": "http://localhost:3000/electricity-providers/alaska"
+    },
+    {
+      "id": "provider:arizona",
+      "type": "offer",
+      "url": "http://localhost:3000/electricity-providers/arizona"
+    },
+    {
+      "id": "provider:arkansas",
+      "type": "offer",
+      "url": "http://localhost:3000/electricity-providers/arkansas"
+    },
+    {
+      "id": "provider:california",
+      "type": "offer",
+      "url": "http://localhost:3000/electricity-providers/california"
+    },
+    {
+      "id": "provider:colorado",
+      "type": "offer",
+      "url": "http://localhost:3000/electricity-providers/colorado"
+    },
+    {
+      "id": "provider:connecticut",
+      "type": "offer",
+      "url": "http://localhost:3000/electricity-providers/connecticut"
+    },
+    {
+      "id": "provider:delaware",
+      "type": "offer",
+      "url": "http://localhost:3000/electricity-providers/delaware"
+    },
+    {
+      "id": "provider:florida",
+      "type": "offer",
+      "url": "http://localhost:3000/electricity-providers/florida"
+    },
+    {
+      "id": "provider:georgia",
+      "type": "offer",
+      "url": "http://localhost:3000/electricity-providers/georgia"
+    },
+    {
+      "id": "provider:hawaii",
+      "type": "offer",
+      "url": "http://localhost:3000/electricity-providers/hawaii"
+    },
+    {
+      "id": "provider:hub",
+      "type": "offer",
+      "url": "http://localhost:3000/electricity-providers"
+    },
+    {
+      "id": "provider:idaho",
+      "type": "offer",
+      "url": "http://localhost:3000/electricity-providers/idaho"
+    },
+    {
+      "id": "provider:illinois",
+      "type": "offer",
+      "url": "http://localhost:3000/electricity-providers/illinois"
+    },
+    {
+      "id": "provider:indiana",
+      "type": "offer",
+      "url": "http://localhost:3000/electricity-providers/indiana"
+    },
+    {
+      "id": "provider:iowa",
+      "type": "offer",
+      "url": "http://localhost:3000/electricity-providers/iowa"
+    },
+    {
+      "id": "provider:kansas",
+      "type": "offer",
+      "url": "http://localhost:3000/electricity-providers/kansas"
+    },
+    {
+      "id": "provider:kentucky",
+      "type": "offer",
+      "url": "http://localhost:3000/electricity-providers/kentucky"
+    },
+    {
+      "id": "provider:louisiana",
+      "type": "offer",
+      "url": "http://localhost:3000/electricity-providers/louisiana"
+    },
+    {
+      "id": "provider:maine",
+      "type": "offer",
+      "url": "http://localhost:3000/electricity-providers/maine"
+    },
+    {
+      "id": "provider:maryland",
+      "type": "offer",
+      "url": "http://localhost:3000/electricity-providers/maryland"
+    },
+    {
+      "id": "provider:massachusetts",
+      "type": "offer",
+      "url": "http://localhost:3000/electricity-providers/massachusetts"
+    },
+    {
+      "id": "provider:michigan",
+      "type": "offer",
+      "url": "http://localhost:3000/electricity-providers/michigan"
+    },
+    {
+      "id": "provider:minnesota",
+      "type": "offer",
+      "url": "http://localhost:3000/electricity-providers/minnesota"
+    },
+    {
+      "id": "provider:mississippi",
+      "type": "offer",
+      "url": "http://localhost:3000/electricity-providers/mississippi"
+    },
+    {
+      "id": "provider:missouri",
+      "type": "offer",
+      "url": "http://localhost:3000/electricity-providers/missouri"
+    },
+    {
+      "id": "provider:montana",
+      "type": "offer",
+      "url": "http://localhost:3000/electricity-providers/montana"
+    },
+    {
+      "id": "provider:nebraska",
+      "type": "offer",
+      "url": "http://localhost:3000/electricity-providers/nebraska"
+    },
+    {
+      "id": "provider:nevada",
+      "type": "offer",
+      "url": "http://localhost:3000/electricity-providers/nevada"
+    },
+    {
+      "id": "provider:new-hampshire",
+      "type": "offer",
+      "url": "http://localhost:3000/electricity-providers/new-hampshire"
+    },
+    {
+      "id": "provider:new-jersey",
+      "type": "offer",
+      "url": "http://localhost:3000/electricity-providers/new-jersey"
+    },
+    {
+      "id": "provider:new-mexico",
+      "type": "offer",
+      "url": "http://localhost:3000/electricity-providers/new-mexico"
+    },
+    {
+      "id": "provider:new-york",
+      "type": "offer",
+      "url": "http://localhost:3000/electricity-providers/new-york"
+    },
+    {
+      "id": "provider:north-carolina",
+      "type": "offer",
+      "url": "http://localhost:3000/electricity-providers/north-carolina"
+    },
+    {
+      "id": "provider:north-dakota",
+      "type": "offer",
+      "url": "http://localhost:3000/electricity-providers/north-dakota"
+    },
+    {
+      "id": "provider:ohio",
+      "type": "offer",
+      "url": "http://localhost:3000/electricity-providers/ohio"
+    },
+    {
+      "id": "provider:oklahoma",
+      "type": "offer",
+      "url": "http://localhost:3000/electricity-providers/oklahoma"
+    },
+    {
+      "id": "provider:oregon",
+      "type": "offer",
+      "url": "http://localhost:3000/electricity-providers/oregon"
+    },
+    {
+      "id": "provider:pennsylvania",
+      "type": "offer",
+      "url": "http://localhost:3000/electricity-providers/pennsylvania"
+    },
+    {
+      "id": "provider:rhode-island",
+      "type": "offer",
+      "url": "http://localhost:3000/electricity-providers/rhode-island"
+    },
+    {
+      "id": "provider:south-carolina",
+      "type": "offer",
+      "url": "http://localhost:3000/electricity-providers/south-carolina"
+    },
+    {
+      "id": "provider:south-dakota",
+      "type": "offer",
+      "url": "http://localhost:3000/electricity-providers/south-dakota"
+    },
+    {
+      "id": "provider:tennessee",
+      "type": "offer",
+      "url": "http://localhost:3000/electricity-providers/tennessee"
+    },
+    {
+      "id": "provider:texas",
+      "type": "offer",
+      "url": "http://localhost:3000/electricity-providers/texas"
+    },
+    {
+      "id": "provider:utah",
+      "type": "offer",
+      "url": "http://localhost:3000/electricity-providers/utah"
+    },
+    {
+      "id": "provider:vermont",
+      "type": "offer",
+      "url": "http://localhost:3000/electricity-providers/vermont"
+    },
+    {
+      "id": "provider:virginia",
+      "type": "offer",
+      "url": "http://localhost:3000/electricity-providers/virginia"
+    },
+    {
+      "id": "provider:washington",
+      "type": "offer",
+      "url": "http://localhost:3000/electricity-providers/washington"
+    },
+    {
+      "id": "provider:west-virginia",
+      "type": "offer",
+      "url": "http://localhost:3000/electricity-providers/west-virginia"
+    },
+    {
+      "id": "provider:wisconsin",
+      "type": "offer",
+      "url": "http://localhost:3000/electricity-providers/wisconsin"
+    },
+    {
+      "id": "provider:wyoming",
+      "type": "offer",
+      "url": "http://localhost:3000/electricity-providers/wyoming"
     },
     {
       "id": "question:average-electric-bill-in-alabama",
@@ -8112,17 +7937,7 @@
       "rel": "parent"
     },
     {
-      "from": "city:california:fresno",
-      "to": "state:california",
-      "rel": "parent"
-    },
-    {
       "from": "city:california:los-angeles",
-      "to": "state:california",
-      "rel": "parent"
-    },
-    {
-      "from": "city:california:sacramento",
       "to": "state:california",
       "rel": "parent"
     },
@@ -8132,48 +7947,8 @@
       "rel": "parent"
     },
     {
-      "from": "city:california:san-francisco",
-      "to": "state:california",
-      "rel": "parent"
-    },
-    {
-      "from": "city:california:san-jose",
-      "to": "state:california",
-      "rel": "parent"
-    },
-    {
-      "from": "city:florida:hialeah",
-      "to": "state:florida",
-      "rel": "parent"
-    },
-    {
-      "from": "city:florida:jacksonville",
-      "to": "state:florida",
-      "rel": "parent"
-    },
-    {
       "from": "city:florida:miami",
       "to": "state:florida",
-      "rel": "parent"
-    },
-    {
-      "from": "city:florida:orlando",
-      "to": "state:florida",
-      "rel": "parent"
-    },
-    {
-      "from": "city:florida:st-petersburg",
-      "to": "state:florida",
-      "rel": "parent"
-    },
-    {
-      "from": "city:florida:tampa",
-      "to": "state:florida",
-      "rel": "parent"
-    },
-    {
-      "from": "city:georgia:athens",
-      "to": "state:georgia",
       "rel": "parent"
     },
     {
@@ -8182,63 +7957,8 @@
       "rel": "parent"
     },
     {
-      "from": "city:georgia:augusta",
-      "to": "state:georgia",
-      "rel": "parent"
-    },
-    {
-      "from": "city:georgia:columbus",
-      "to": "state:georgia",
-      "rel": "parent"
-    },
-    {
-      "from": "city:georgia:macon",
-      "to": "state:georgia",
-      "rel": "parent"
-    },
-    {
-      "from": "city:georgia:savannah",
-      "to": "state:georgia",
-      "rel": "parent"
-    },
-    {
-      "from": "city:illinois:aurora",
-      "to": "state:illinois",
-      "rel": "parent"
-    },
-    {
       "from": "city:illinois:chicago",
       "to": "state:illinois",
-      "rel": "parent"
-    },
-    {
-      "from": "city:illinois:joliet",
-      "to": "state:illinois",
-      "rel": "parent"
-    },
-    {
-      "from": "city:illinois:naperville",
-      "to": "state:illinois",
-      "rel": "parent"
-    },
-    {
-      "from": "city:illinois:rockford",
-      "to": "state:illinois",
-      "rel": "parent"
-    },
-    {
-      "from": "city:illinois:springfield",
-      "to": "state:illinois",
-      "rel": "parent"
-    },
-    {
-      "from": "city:new-york:albany",
-      "to": "state:new-york",
-      "rel": "parent"
-    },
-    {
-      "from": "city:new-york:buffalo",
-      "to": "state:new-york",
       "rel": "parent"
     },
     {
@@ -8247,77 +7967,12 @@
       "rel": "parent"
     },
     {
-      "from": "city:new-york:rochester",
-      "to": "state:new-york",
-      "rel": "parent"
-    },
-    {
-      "from": "city:new-york:syracuse",
-      "to": "state:new-york",
-      "rel": "parent"
-    },
-    {
-      "from": "city:new-york:yonkers",
-      "to": "state:new-york",
-      "rel": "parent"
-    },
-    {
-      "from": "city:ohio:akron",
-      "to": "state:ohio",
-      "rel": "parent"
-    },
-    {
-      "from": "city:ohio:cincinnati",
-      "to": "state:ohio",
-      "rel": "parent"
-    },
-    {
-      "from": "city:ohio:cleveland",
-      "to": "state:ohio",
-      "rel": "parent"
-    },
-    {
       "from": "city:ohio:columbus",
       "to": "state:ohio",
       "rel": "parent"
     },
     {
-      "from": "city:ohio:dayton",
-      "to": "state:ohio",
-      "rel": "parent"
-    },
-    {
-      "from": "city:ohio:toledo",
-      "to": "state:ohio",
-      "rel": "parent"
-    },
-    {
-      "from": "city:pennsylvania:allentown",
-      "to": "state:pennsylvania",
-      "rel": "parent"
-    },
-    {
-      "from": "city:pennsylvania:erie",
-      "to": "state:pennsylvania",
-      "rel": "parent"
-    },
-    {
       "from": "city:pennsylvania:philadelphia",
-      "to": "state:pennsylvania",
-      "rel": "parent"
-    },
-    {
-      "from": "city:pennsylvania:pittsburgh",
-      "to": "state:pennsylvania",
-      "rel": "parent"
-    },
-    {
-      "from": "city:pennsylvania:reading",
-      "to": "state:pennsylvania",
-      "rel": "parent"
-    },
-    {
-      "from": "city:pennsylvania:scranton",
       "to": "state:pennsylvania",
       "rel": "parent"
     },
@@ -8327,267 +7982,7 @@
       "rel": "parent"
     },
     {
-      "from": "city:texas:dallas",
-      "to": "state:texas",
-      "rel": "parent"
-    },
-    {
-      "from": "city:texas:el-paso",
-      "to": "state:texas",
-      "rel": "parent"
-    },
-    {
-      "from": "city:texas:fort-worth",
-      "to": "state:texas",
-      "rel": "parent"
-    },
-    {
       "from": "city:texas:houston",
-      "to": "state:texas",
-      "rel": "parent"
-    },
-    {
-      "from": "city:texas:san-antonio",
-      "to": "state:texas",
-      "rel": "parent"
-    },
-    {
-      "from": "citydual:california:fresno",
-      "to": "state:california",
-      "rel": "parent"
-    },
-    {
-      "from": "citydual:california:los-angeles",
-      "to": "state:california",
-      "rel": "parent"
-    },
-    {
-      "from": "citydual:california:sacramento",
-      "to": "state:california",
-      "rel": "parent"
-    },
-    {
-      "from": "citydual:california:san-diego",
-      "to": "state:california",
-      "rel": "parent"
-    },
-    {
-      "from": "citydual:california:san-francisco",
-      "to": "state:california",
-      "rel": "parent"
-    },
-    {
-      "from": "citydual:california:san-jose",
-      "to": "state:california",
-      "rel": "parent"
-    },
-    {
-      "from": "citydual:florida:hialeah",
-      "to": "state:florida",
-      "rel": "parent"
-    },
-    {
-      "from": "citydual:florida:jacksonville",
-      "to": "state:florida",
-      "rel": "parent"
-    },
-    {
-      "from": "citydual:florida:miami",
-      "to": "state:florida",
-      "rel": "parent"
-    },
-    {
-      "from": "citydual:florida:orlando",
-      "to": "state:florida",
-      "rel": "parent"
-    },
-    {
-      "from": "citydual:florida:st-petersburg",
-      "to": "state:florida",
-      "rel": "parent"
-    },
-    {
-      "from": "citydual:florida:tampa",
-      "to": "state:florida",
-      "rel": "parent"
-    },
-    {
-      "from": "citydual:georgia:athens",
-      "to": "state:georgia",
-      "rel": "parent"
-    },
-    {
-      "from": "citydual:georgia:atlanta",
-      "to": "state:georgia",
-      "rel": "parent"
-    },
-    {
-      "from": "citydual:georgia:augusta",
-      "to": "state:georgia",
-      "rel": "parent"
-    },
-    {
-      "from": "citydual:georgia:columbus",
-      "to": "state:georgia",
-      "rel": "parent"
-    },
-    {
-      "from": "citydual:georgia:macon",
-      "to": "state:georgia",
-      "rel": "parent"
-    },
-    {
-      "from": "citydual:georgia:savannah",
-      "to": "state:georgia",
-      "rel": "parent"
-    },
-    {
-      "from": "citydual:illinois:aurora",
-      "to": "state:illinois",
-      "rel": "parent"
-    },
-    {
-      "from": "citydual:illinois:chicago",
-      "to": "state:illinois",
-      "rel": "parent"
-    },
-    {
-      "from": "citydual:illinois:joliet",
-      "to": "state:illinois",
-      "rel": "parent"
-    },
-    {
-      "from": "citydual:illinois:naperville",
-      "to": "state:illinois",
-      "rel": "parent"
-    },
-    {
-      "from": "citydual:illinois:rockford",
-      "to": "state:illinois",
-      "rel": "parent"
-    },
-    {
-      "from": "citydual:illinois:springfield",
-      "to": "state:illinois",
-      "rel": "parent"
-    },
-    {
-      "from": "citydual:new-york:albany",
-      "to": "state:new-york",
-      "rel": "parent"
-    },
-    {
-      "from": "citydual:new-york:buffalo",
-      "to": "state:new-york",
-      "rel": "parent"
-    },
-    {
-      "from": "citydual:new-york:new-york-city",
-      "to": "state:new-york",
-      "rel": "parent"
-    },
-    {
-      "from": "citydual:new-york:rochester",
-      "to": "state:new-york",
-      "rel": "parent"
-    },
-    {
-      "from": "citydual:new-york:syracuse",
-      "to": "state:new-york",
-      "rel": "parent"
-    },
-    {
-      "from": "citydual:new-york:yonkers",
-      "to": "state:new-york",
-      "rel": "parent"
-    },
-    {
-      "from": "citydual:ohio:akron",
-      "to": "state:ohio",
-      "rel": "parent"
-    },
-    {
-      "from": "citydual:ohio:cincinnati",
-      "to": "state:ohio",
-      "rel": "parent"
-    },
-    {
-      "from": "citydual:ohio:cleveland",
-      "to": "state:ohio",
-      "rel": "parent"
-    },
-    {
-      "from": "citydual:ohio:columbus",
-      "to": "state:ohio",
-      "rel": "parent"
-    },
-    {
-      "from": "citydual:ohio:dayton",
-      "to": "state:ohio",
-      "rel": "parent"
-    },
-    {
-      "from": "citydual:ohio:toledo",
-      "to": "state:ohio",
-      "rel": "parent"
-    },
-    {
-      "from": "citydual:pennsylvania:allentown",
-      "to": "state:pennsylvania",
-      "rel": "parent"
-    },
-    {
-      "from": "citydual:pennsylvania:erie",
-      "to": "state:pennsylvania",
-      "rel": "parent"
-    },
-    {
-      "from": "citydual:pennsylvania:philadelphia",
-      "to": "state:pennsylvania",
-      "rel": "parent"
-    },
-    {
-      "from": "citydual:pennsylvania:pittsburgh",
-      "to": "state:pennsylvania",
-      "rel": "parent"
-    },
-    {
-      "from": "citydual:pennsylvania:reading",
-      "to": "state:pennsylvania",
-      "rel": "parent"
-    },
-    {
-      "from": "citydual:pennsylvania:scranton",
-      "to": "state:pennsylvania",
-      "rel": "parent"
-    },
-    {
-      "from": "citydual:texas:austin",
-      "to": "state:texas",
-      "rel": "parent"
-    },
-    {
-      "from": "citydual:texas:dallas",
-      "to": "state:texas",
-      "rel": "parent"
-    },
-    {
-      "from": "citydual:texas:el-paso",
-      "to": "state:texas",
-      "rel": "parent"
-    },
-    {
-      "from": "citydual:texas:fort-worth",
-      "to": "state:texas",
-      "rel": "parent"
-    },
-    {
-      "from": "citydual:texas:houston",
-      "to": "state:texas",
-      "rel": "parent"
-    },
-    {
-      "from": "citydual:texas:san-antonio",
       "to": "state:texas",
       "rel": "parent"
     },
@@ -10632,6 +10027,1521 @@
       "rel": "parent"
     },
     {
+      "from": "provider:alabama",
+      "to": "offer:alabama",
+      "rel": "related"
+    },
+    {
+      "from": "provider:alabama",
+      "to": "provider:hub",
+      "rel": "parent"
+    },
+    {
+      "from": "provider:alabama",
+      "to": "provider:hub",
+      "rel": "related"
+    },
+    {
+      "from": "provider:alabama",
+      "to": "state:alabama",
+      "rel": "related"
+    },
+    {
+      "from": "provider:alabama",
+      "to": "tool:compare",
+      "rel": "related"
+    },
+    {
+      "from": "provider:alaska",
+      "to": "offer:alaska",
+      "rel": "related"
+    },
+    {
+      "from": "provider:alaska",
+      "to": "provider:hub",
+      "rel": "parent"
+    },
+    {
+      "from": "provider:alaska",
+      "to": "provider:hub",
+      "rel": "related"
+    },
+    {
+      "from": "provider:alaska",
+      "to": "state:alaska",
+      "rel": "related"
+    },
+    {
+      "from": "provider:alaska",
+      "to": "tool:compare",
+      "rel": "related"
+    },
+    {
+      "from": "provider:arizona",
+      "to": "offer:arizona",
+      "rel": "related"
+    },
+    {
+      "from": "provider:arizona",
+      "to": "provider:hub",
+      "rel": "parent"
+    },
+    {
+      "from": "provider:arizona",
+      "to": "provider:hub",
+      "rel": "related"
+    },
+    {
+      "from": "provider:arizona",
+      "to": "state:arizona",
+      "rel": "related"
+    },
+    {
+      "from": "provider:arizona",
+      "to": "tool:compare",
+      "rel": "related"
+    },
+    {
+      "from": "provider:arkansas",
+      "to": "offer:arkansas",
+      "rel": "related"
+    },
+    {
+      "from": "provider:arkansas",
+      "to": "provider:hub",
+      "rel": "parent"
+    },
+    {
+      "from": "provider:arkansas",
+      "to": "provider:hub",
+      "rel": "related"
+    },
+    {
+      "from": "provider:arkansas",
+      "to": "state:arkansas",
+      "rel": "related"
+    },
+    {
+      "from": "provider:arkansas",
+      "to": "tool:compare",
+      "rel": "related"
+    },
+    {
+      "from": "provider:california",
+      "to": "offer:california",
+      "rel": "related"
+    },
+    {
+      "from": "provider:california",
+      "to": "provider:hub",
+      "rel": "parent"
+    },
+    {
+      "from": "provider:california",
+      "to": "provider:hub",
+      "rel": "related"
+    },
+    {
+      "from": "provider:california",
+      "to": "state:california",
+      "rel": "related"
+    },
+    {
+      "from": "provider:california",
+      "to": "tool:compare",
+      "rel": "related"
+    },
+    {
+      "from": "provider:colorado",
+      "to": "offer:colorado",
+      "rel": "related"
+    },
+    {
+      "from": "provider:colorado",
+      "to": "provider:hub",
+      "rel": "parent"
+    },
+    {
+      "from": "provider:colorado",
+      "to": "provider:hub",
+      "rel": "related"
+    },
+    {
+      "from": "provider:colorado",
+      "to": "state:colorado",
+      "rel": "related"
+    },
+    {
+      "from": "provider:colorado",
+      "to": "tool:compare",
+      "rel": "related"
+    },
+    {
+      "from": "provider:connecticut",
+      "to": "offer:connecticut",
+      "rel": "related"
+    },
+    {
+      "from": "provider:connecticut",
+      "to": "provider:hub",
+      "rel": "parent"
+    },
+    {
+      "from": "provider:connecticut",
+      "to": "provider:hub",
+      "rel": "related"
+    },
+    {
+      "from": "provider:connecticut",
+      "to": "state:connecticut",
+      "rel": "related"
+    },
+    {
+      "from": "provider:connecticut",
+      "to": "tool:compare",
+      "rel": "related"
+    },
+    {
+      "from": "provider:delaware",
+      "to": "offer:delaware",
+      "rel": "related"
+    },
+    {
+      "from": "provider:delaware",
+      "to": "provider:hub",
+      "rel": "parent"
+    },
+    {
+      "from": "provider:delaware",
+      "to": "provider:hub",
+      "rel": "related"
+    },
+    {
+      "from": "provider:delaware",
+      "to": "state:delaware",
+      "rel": "related"
+    },
+    {
+      "from": "provider:delaware",
+      "to": "tool:compare",
+      "rel": "related"
+    },
+    {
+      "from": "provider:florida",
+      "to": "offer:florida",
+      "rel": "related"
+    },
+    {
+      "from": "provider:florida",
+      "to": "provider:hub",
+      "rel": "parent"
+    },
+    {
+      "from": "provider:florida",
+      "to": "provider:hub",
+      "rel": "related"
+    },
+    {
+      "from": "provider:florida",
+      "to": "state:florida",
+      "rel": "related"
+    },
+    {
+      "from": "provider:florida",
+      "to": "tool:compare",
+      "rel": "related"
+    },
+    {
+      "from": "provider:georgia",
+      "to": "offer:georgia",
+      "rel": "related"
+    },
+    {
+      "from": "provider:georgia",
+      "to": "provider:hub",
+      "rel": "parent"
+    },
+    {
+      "from": "provider:georgia",
+      "to": "provider:hub",
+      "rel": "related"
+    },
+    {
+      "from": "provider:georgia",
+      "to": "state:georgia",
+      "rel": "related"
+    },
+    {
+      "from": "provider:georgia",
+      "to": "tool:compare",
+      "rel": "related"
+    },
+    {
+      "from": "provider:hawaii",
+      "to": "offer:hawaii",
+      "rel": "related"
+    },
+    {
+      "from": "provider:hawaii",
+      "to": "provider:hub",
+      "rel": "parent"
+    },
+    {
+      "from": "provider:hawaii",
+      "to": "provider:hub",
+      "rel": "related"
+    },
+    {
+      "from": "provider:hawaii",
+      "to": "state:hawaii",
+      "rel": "related"
+    },
+    {
+      "from": "provider:hawaii",
+      "to": "tool:compare",
+      "rel": "related"
+    },
+    {
+      "from": "provider:hub",
+      "to": "offer:hub",
+      "rel": "related"
+    },
+    {
+      "from": "provider:hub",
+      "to": "provider:alabama",
+      "rel": "related"
+    },
+    {
+      "from": "provider:hub",
+      "to": "provider:alaska",
+      "rel": "related"
+    },
+    {
+      "from": "provider:hub",
+      "to": "provider:arizona",
+      "rel": "related"
+    },
+    {
+      "from": "provider:hub",
+      "to": "provider:arkansas",
+      "rel": "related"
+    },
+    {
+      "from": "provider:hub",
+      "to": "provider:california",
+      "rel": "related"
+    },
+    {
+      "from": "provider:hub",
+      "to": "provider:colorado",
+      "rel": "related"
+    },
+    {
+      "from": "provider:hub",
+      "to": "provider:connecticut",
+      "rel": "related"
+    },
+    {
+      "from": "provider:hub",
+      "to": "provider:delaware",
+      "rel": "related"
+    },
+    {
+      "from": "provider:hub",
+      "to": "provider:florida",
+      "rel": "related"
+    },
+    {
+      "from": "provider:hub",
+      "to": "provider:georgia",
+      "rel": "related"
+    },
+    {
+      "from": "provider:hub",
+      "to": "provider:hawaii",
+      "rel": "related"
+    },
+    {
+      "from": "provider:hub",
+      "to": "provider:idaho",
+      "rel": "related"
+    },
+    {
+      "from": "provider:hub",
+      "to": "provider:illinois",
+      "rel": "related"
+    },
+    {
+      "from": "provider:hub",
+      "to": "provider:indiana",
+      "rel": "related"
+    },
+    {
+      "from": "provider:hub",
+      "to": "provider:iowa",
+      "rel": "related"
+    },
+    {
+      "from": "provider:hub",
+      "to": "provider:kansas",
+      "rel": "related"
+    },
+    {
+      "from": "provider:hub",
+      "to": "provider:kentucky",
+      "rel": "related"
+    },
+    {
+      "from": "provider:hub",
+      "to": "provider:louisiana",
+      "rel": "related"
+    },
+    {
+      "from": "provider:hub",
+      "to": "provider:maine",
+      "rel": "related"
+    },
+    {
+      "from": "provider:hub",
+      "to": "provider:maryland",
+      "rel": "related"
+    },
+    {
+      "from": "provider:hub",
+      "to": "provider:massachusetts",
+      "rel": "related"
+    },
+    {
+      "from": "provider:hub",
+      "to": "provider:michigan",
+      "rel": "related"
+    },
+    {
+      "from": "provider:hub",
+      "to": "provider:minnesota",
+      "rel": "related"
+    },
+    {
+      "from": "provider:hub",
+      "to": "provider:mississippi",
+      "rel": "related"
+    },
+    {
+      "from": "provider:hub",
+      "to": "provider:missouri",
+      "rel": "related"
+    },
+    {
+      "from": "provider:hub",
+      "to": "provider:montana",
+      "rel": "related"
+    },
+    {
+      "from": "provider:hub",
+      "to": "provider:nebraska",
+      "rel": "related"
+    },
+    {
+      "from": "provider:hub",
+      "to": "provider:nevada",
+      "rel": "related"
+    },
+    {
+      "from": "provider:hub",
+      "to": "provider:new-hampshire",
+      "rel": "related"
+    },
+    {
+      "from": "provider:hub",
+      "to": "provider:new-jersey",
+      "rel": "related"
+    },
+    {
+      "from": "provider:hub",
+      "to": "provider:new-mexico",
+      "rel": "related"
+    },
+    {
+      "from": "provider:hub",
+      "to": "provider:new-york",
+      "rel": "related"
+    },
+    {
+      "from": "provider:hub",
+      "to": "provider:north-carolina",
+      "rel": "related"
+    },
+    {
+      "from": "provider:hub",
+      "to": "provider:north-dakota",
+      "rel": "related"
+    },
+    {
+      "from": "provider:hub",
+      "to": "provider:ohio",
+      "rel": "related"
+    },
+    {
+      "from": "provider:hub",
+      "to": "provider:oklahoma",
+      "rel": "related"
+    },
+    {
+      "from": "provider:hub",
+      "to": "provider:oregon",
+      "rel": "related"
+    },
+    {
+      "from": "provider:hub",
+      "to": "provider:pennsylvania",
+      "rel": "related"
+    },
+    {
+      "from": "provider:hub",
+      "to": "provider:rhode-island",
+      "rel": "related"
+    },
+    {
+      "from": "provider:hub",
+      "to": "provider:south-carolina",
+      "rel": "related"
+    },
+    {
+      "from": "provider:hub",
+      "to": "provider:south-dakota",
+      "rel": "related"
+    },
+    {
+      "from": "provider:hub",
+      "to": "provider:tennessee",
+      "rel": "related"
+    },
+    {
+      "from": "provider:hub",
+      "to": "provider:texas",
+      "rel": "related"
+    },
+    {
+      "from": "provider:hub",
+      "to": "provider:utah",
+      "rel": "related"
+    },
+    {
+      "from": "provider:hub",
+      "to": "provider:vermont",
+      "rel": "related"
+    },
+    {
+      "from": "provider:hub",
+      "to": "provider:virginia",
+      "rel": "related"
+    },
+    {
+      "from": "provider:hub",
+      "to": "provider:washington",
+      "rel": "related"
+    },
+    {
+      "from": "provider:hub",
+      "to": "provider:west-virginia",
+      "rel": "related"
+    },
+    {
+      "from": "provider:hub",
+      "to": "provider:wisconsin",
+      "rel": "related"
+    },
+    {
+      "from": "provider:hub",
+      "to": "provider:wyoming",
+      "rel": "related"
+    },
+    {
+      "from": "provider:hub",
+      "to": "state:texas",
+      "rel": "related"
+    },
+    {
+      "from": "provider:hub",
+      "to": "tool:compare",
+      "rel": "related"
+    },
+    {
+      "from": "provider:idaho",
+      "to": "offer:idaho",
+      "rel": "related"
+    },
+    {
+      "from": "provider:idaho",
+      "to": "provider:hub",
+      "rel": "parent"
+    },
+    {
+      "from": "provider:idaho",
+      "to": "provider:hub",
+      "rel": "related"
+    },
+    {
+      "from": "provider:idaho",
+      "to": "state:idaho",
+      "rel": "related"
+    },
+    {
+      "from": "provider:idaho",
+      "to": "tool:compare",
+      "rel": "related"
+    },
+    {
+      "from": "provider:illinois",
+      "to": "offer:illinois",
+      "rel": "related"
+    },
+    {
+      "from": "provider:illinois",
+      "to": "provider:hub",
+      "rel": "parent"
+    },
+    {
+      "from": "provider:illinois",
+      "to": "provider:hub",
+      "rel": "related"
+    },
+    {
+      "from": "provider:illinois",
+      "to": "state:illinois",
+      "rel": "related"
+    },
+    {
+      "from": "provider:illinois",
+      "to": "tool:compare",
+      "rel": "related"
+    },
+    {
+      "from": "provider:indiana",
+      "to": "offer:indiana",
+      "rel": "related"
+    },
+    {
+      "from": "provider:indiana",
+      "to": "provider:hub",
+      "rel": "parent"
+    },
+    {
+      "from": "provider:indiana",
+      "to": "provider:hub",
+      "rel": "related"
+    },
+    {
+      "from": "provider:indiana",
+      "to": "state:indiana",
+      "rel": "related"
+    },
+    {
+      "from": "provider:indiana",
+      "to": "tool:compare",
+      "rel": "related"
+    },
+    {
+      "from": "provider:iowa",
+      "to": "offer:iowa",
+      "rel": "related"
+    },
+    {
+      "from": "provider:iowa",
+      "to": "provider:hub",
+      "rel": "parent"
+    },
+    {
+      "from": "provider:iowa",
+      "to": "provider:hub",
+      "rel": "related"
+    },
+    {
+      "from": "provider:iowa",
+      "to": "state:iowa",
+      "rel": "related"
+    },
+    {
+      "from": "provider:iowa",
+      "to": "tool:compare",
+      "rel": "related"
+    },
+    {
+      "from": "provider:kansas",
+      "to": "offer:kansas",
+      "rel": "related"
+    },
+    {
+      "from": "provider:kansas",
+      "to": "provider:hub",
+      "rel": "parent"
+    },
+    {
+      "from": "provider:kansas",
+      "to": "provider:hub",
+      "rel": "related"
+    },
+    {
+      "from": "provider:kansas",
+      "to": "state:kansas",
+      "rel": "related"
+    },
+    {
+      "from": "provider:kansas",
+      "to": "tool:compare",
+      "rel": "related"
+    },
+    {
+      "from": "provider:kentucky",
+      "to": "offer:kentucky",
+      "rel": "related"
+    },
+    {
+      "from": "provider:kentucky",
+      "to": "provider:hub",
+      "rel": "parent"
+    },
+    {
+      "from": "provider:kentucky",
+      "to": "provider:hub",
+      "rel": "related"
+    },
+    {
+      "from": "provider:kentucky",
+      "to": "state:kentucky",
+      "rel": "related"
+    },
+    {
+      "from": "provider:kentucky",
+      "to": "tool:compare",
+      "rel": "related"
+    },
+    {
+      "from": "provider:louisiana",
+      "to": "offer:louisiana",
+      "rel": "related"
+    },
+    {
+      "from": "provider:louisiana",
+      "to": "provider:hub",
+      "rel": "parent"
+    },
+    {
+      "from": "provider:louisiana",
+      "to": "provider:hub",
+      "rel": "related"
+    },
+    {
+      "from": "provider:louisiana",
+      "to": "state:louisiana",
+      "rel": "related"
+    },
+    {
+      "from": "provider:louisiana",
+      "to": "tool:compare",
+      "rel": "related"
+    },
+    {
+      "from": "provider:maine",
+      "to": "offer:maine",
+      "rel": "related"
+    },
+    {
+      "from": "provider:maine",
+      "to": "provider:hub",
+      "rel": "parent"
+    },
+    {
+      "from": "provider:maine",
+      "to": "provider:hub",
+      "rel": "related"
+    },
+    {
+      "from": "provider:maine",
+      "to": "state:maine",
+      "rel": "related"
+    },
+    {
+      "from": "provider:maine",
+      "to": "tool:compare",
+      "rel": "related"
+    },
+    {
+      "from": "provider:maryland",
+      "to": "offer:maryland",
+      "rel": "related"
+    },
+    {
+      "from": "provider:maryland",
+      "to": "provider:hub",
+      "rel": "parent"
+    },
+    {
+      "from": "provider:maryland",
+      "to": "provider:hub",
+      "rel": "related"
+    },
+    {
+      "from": "provider:maryland",
+      "to": "state:maryland",
+      "rel": "related"
+    },
+    {
+      "from": "provider:maryland",
+      "to": "tool:compare",
+      "rel": "related"
+    },
+    {
+      "from": "provider:massachusetts",
+      "to": "offer:massachusetts",
+      "rel": "related"
+    },
+    {
+      "from": "provider:massachusetts",
+      "to": "provider:hub",
+      "rel": "parent"
+    },
+    {
+      "from": "provider:massachusetts",
+      "to": "provider:hub",
+      "rel": "related"
+    },
+    {
+      "from": "provider:massachusetts",
+      "to": "state:massachusetts",
+      "rel": "related"
+    },
+    {
+      "from": "provider:massachusetts",
+      "to": "tool:compare",
+      "rel": "related"
+    },
+    {
+      "from": "provider:michigan",
+      "to": "offer:michigan",
+      "rel": "related"
+    },
+    {
+      "from": "provider:michigan",
+      "to": "provider:hub",
+      "rel": "parent"
+    },
+    {
+      "from": "provider:michigan",
+      "to": "provider:hub",
+      "rel": "related"
+    },
+    {
+      "from": "provider:michigan",
+      "to": "state:michigan",
+      "rel": "related"
+    },
+    {
+      "from": "provider:michigan",
+      "to": "tool:compare",
+      "rel": "related"
+    },
+    {
+      "from": "provider:minnesota",
+      "to": "offer:minnesota",
+      "rel": "related"
+    },
+    {
+      "from": "provider:minnesota",
+      "to": "provider:hub",
+      "rel": "parent"
+    },
+    {
+      "from": "provider:minnesota",
+      "to": "provider:hub",
+      "rel": "related"
+    },
+    {
+      "from": "provider:minnesota",
+      "to": "state:minnesota",
+      "rel": "related"
+    },
+    {
+      "from": "provider:minnesota",
+      "to": "tool:compare",
+      "rel": "related"
+    },
+    {
+      "from": "provider:mississippi",
+      "to": "offer:mississippi",
+      "rel": "related"
+    },
+    {
+      "from": "provider:mississippi",
+      "to": "provider:hub",
+      "rel": "parent"
+    },
+    {
+      "from": "provider:mississippi",
+      "to": "provider:hub",
+      "rel": "related"
+    },
+    {
+      "from": "provider:mississippi",
+      "to": "state:mississippi",
+      "rel": "related"
+    },
+    {
+      "from": "provider:mississippi",
+      "to": "tool:compare",
+      "rel": "related"
+    },
+    {
+      "from": "provider:missouri",
+      "to": "offer:missouri",
+      "rel": "related"
+    },
+    {
+      "from": "provider:missouri",
+      "to": "provider:hub",
+      "rel": "parent"
+    },
+    {
+      "from": "provider:missouri",
+      "to": "provider:hub",
+      "rel": "related"
+    },
+    {
+      "from": "provider:missouri",
+      "to": "state:missouri",
+      "rel": "related"
+    },
+    {
+      "from": "provider:missouri",
+      "to": "tool:compare",
+      "rel": "related"
+    },
+    {
+      "from": "provider:montana",
+      "to": "offer:montana",
+      "rel": "related"
+    },
+    {
+      "from": "provider:montana",
+      "to": "provider:hub",
+      "rel": "parent"
+    },
+    {
+      "from": "provider:montana",
+      "to": "provider:hub",
+      "rel": "related"
+    },
+    {
+      "from": "provider:montana",
+      "to": "state:montana",
+      "rel": "related"
+    },
+    {
+      "from": "provider:montana",
+      "to": "tool:compare",
+      "rel": "related"
+    },
+    {
+      "from": "provider:nebraska",
+      "to": "offer:nebraska",
+      "rel": "related"
+    },
+    {
+      "from": "provider:nebraska",
+      "to": "provider:hub",
+      "rel": "parent"
+    },
+    {
+      "from": "provider:nebraska",
+      "to": "provider:hub",
+      "rel": "related"
+    },
+    {
+      "from": "provider:nebraska",
+      "to": "state:nebraska",
+      "rel": "related"
+    },
+    {
+      "from": "provider:nebraska",
+      "to": "tool:compare",
+      "rel": "related"
+    },
+    {
+      "from": "provider:nevada",
+      "to": "offer:nevada",
+      "rel": "related"
+    },
+    {
+      "from": "provider:nevada",
+      "to": "provider:hub",
+      "rel": "parent"
+    },
+    {
+      "from": "provider:nevada",
+      "to": "provider:hub",
+      "rel": "related"
+    },
+    {
+      "from": "provider:nevada",
+      "to": "state:nevada",
+      "rel": "related"
+    },
+    {
+      "from": "provider:nevada",
+      "to": "tool:compare",
+      "rel": "related"
+    },
+    {
+      "from": "provider:new-hampshire",
+      "to": "offer:new-hampshire",
+      "rel": "related"
+    },
+    {
+      "from": "provider:new-hampshire",
+      "to": "provider:hub",
+      "rel": "parent"
+    },
+    {
+      "from": "provider:new-hampshire",
+      "to": "provider:hub",
+      "rel": "related"
+    },
+    {
+      "from": "provider:new-hampshire",
+      "to": "state:new-hampshire",
+      "rel": "related"
+    },
+    {
+      "from": "provider:new-hampshire",
+      "to": "tool:compare",
+      "rel": "related"
+    },
+    {
+      "from": "provider:new-jersey",
+      "to": "offer:new-jersey",
+      "rel": "related"
+    },
+    {
+      "from": "provider:new-jersey",
+      "to": "provider:hub",
+      "rel": "parent"
+    },
+    {
+      "from": "provider:new-jersey",
+      "to": "provider:hub",
+      "rel": "related"
+    },
+    {
+      "from": "provider:new-jersey",
+      "to": "state:new-jersey",
+      "rel": "related"
+    },
+    {
+      "from": "provider:new-jersey",
+      "to": "tool:compare",
+      "rel": "related"
+    },
+    {
+      "from": "provider:new-mexico",
+      "to": "offer:new-mexico",
+      "rel": "related"
+    },
+    {
+      "from": "provider:new-mexico",
+      "to": "provider:hub",
+      "rel": "parent"
+    },
+    {
+      "from": "provider:new-mexico",
+      "to": "provider:hub",
+      "rel": "related"
+    },
+    {
+      "from": "provider:new-mexico",
+      "to": "state:new-mexico",
+      "rel": "related"
+    },
+    {
+      "from": "provider:new-mexico",
+      "to": "tool:compare",
+      "rel": "related"
+    },
+    {
+      "from": "provider:new-york",
+      "to": "offer:new-york",
+      "rel": "related"
+    },
+    {
+      "from": "provider:new-york",
+      "to": "provider:hub",
+      "rel": "parent"
+    },
+    {
+      "from": "provider:new-york",
+      "to": "provider:hub",
+      "rel": "related"
+    },
+    {
+      "from": "provider:new-york",
+      "to": "state:new-york",
+      "rel": "related"
+    },
+    {
+      "from": "provider:new-york",
+      "to": "tool:compare",
+      "rel": "related"
+    },
+    {
+      "from": "provider:north-carolina",
+      "to": "offer:north-carolina",
+      "rel": "related"
+    },
+    {
+      "from": "provider:north-carolina",
+      "to": "provider:hub",
+      "rel": "parent"
+    },
+    {
+      "from": "provider:north-carolina",
+      "to": "provider:hub",
+      "rel": "related"
+    },
+    {
+      "from": "provider:north-carolina",
+      "to": "state:north-carolina",
+      "rel": "related"
+    },
+    {
+      "from": "provider:north-carolina",
+      "to": "tool:compare",
+      "rel": "related"
+    },
+    {
+      "from": "provider:north-dakota",
+      "to": "offer:north-dakota",
+      "rel": "related"
+    },
+    {
+      "from": "provider:north-dakota",
+      "to": "provider:hub",
+      "rel": "parent"
+    },
+    {
+      "from": "provider:north-dakota",
+      "to": "provider:hub",
+      "rel": "related"
+    },
+    {
+      "from": "provider:north-dakota",
+      "to": "state:north-dakota",
+      "rel": "related"
+    },
+    {
+      "from": "provider:north-dakota",
+      "to": "tool:compare",
+      "rel": "related"
+    },
+    {
+      "from": "provider:ohio",
+      "to": "offer:ohio",
+      "rel": "related"
+    },
+    {
+      "from": "provider:ohio",
+      "to": "provider:hub",
+      "rel": "parent"
+    },
+    {
+      "from": "provider:ohio",
+      "to": "provider:hub",
+      "rel": "related"
+    },
+    {
+      "from": "provider:ohio",
+      "to": "state:ohio",
+      "rel": "related"
+    },
+    {
+      "from": "provider:ohio",
+      "to": "tool:compare",
+      "rel": "related"
+    },
+    {
+      "from": "provider:oklahoma",
+      "to": "offer:oklahoma",
+      "rel": "related"
+    },
+    {
+      "from": "provider:oklahoma",
+      "to": "provider:hub",
+      "rel": "parent"
+    },
+    {
+      "from": "provider:oklahoma",
+      "to": "provider:hub",
+      "rel": "related"
+    },
+    {
+      "from": "provider:oklahoma",
+      "to": "state:oklahoma",
+      "rel": "related"
+    },
+    {
+      "from": "provider:oklahoma",
+      "to": "tool:compare",
+      "rel": "related"
+    },
+    {
+      "from": "provider:oregon",
+      "to": "offer:oregon",
+      "rel": "related"
+    },
+    {
+      "from": "provider:oregon",
+      "to": "provider:hub",
+      "rel": "parent"
+    },
+    {
+      "from": "provider:oregon",
+      "to": "provider:hub",
+      "rel": "related"
+    },
+    {
+      "from": "provider:oregon",
+      "to": "state:oregon",
+      "rel": "related"
+    },
+    {
+      "from": "provider:oregon",
+      "to": "tool:compare",
+      "rel": "related"
+    },
+    {
+      "from": "provider:pennsylvania",
+      "to": "offer:pennsylvania",
+      "rel": "related"
+    },
+    {
+      "from": "provider:pennsylvania",
+      "to": "provider:hub",
+      "rel": "parent"
+    },
+    {
+      "from": "provider:pennsylvania",
+      "to": "provider:hub",
+      "rel": "related"
+    },
+    {
+      "from": "provider:pennsylvania",
+      "to": "state:pennsylvania",
+      "rel": "related"
+    },
+    {
+      "from": "provider:pennsylvania",
+      "to": "tool:compare",
+      "rel": "related"
+    },
+    {
+      "from": "provider:rhode-island",
+      "to": "offer:rhode-island",
+      "rel": "related"
+    },
+    {
+      "from": "provider:rhode-island",
+      "to": "provider:hub",
+      "rel": "parent"
+    },
+    {
+      "from": "provider:rhode-island",
+      "to": "provider:hub",
+      "rel": "related"
+    },
+    {
+      "from": "provider:rhode-island",
+      "to": "state:rhode-island",
+      "rel": "related"
+    },
+    {
+      "from": "provider:rhode-island",
+      "to": "tool:compare",
+      "rel": "related"
+    },
+    {
+      "from": "provider:south-carolina",
+      "to": "offer:south-carolina",
+      "rel": "related"
+    },
+    {
+      "from": "provider:south-carolina",
+      "to": "provider:hub",
+      "rel": "parent"
+    },
+    {
+      "from": "provider:south-carolina",
+      "to": "provider:hub",
+      "rel": "related"
+    },
+    {
+      "from": "provider:south-carolina",
+      "to": "state:south-carolina",
+      "rel": "related"
+    },
+    {
+      "from": "provider:south-carolina",
+      "to": "tool:compare",
+      "rel": "related"
+    },
+    {
+      "from": "provider:south-dakota",
+      "to": "offer:south-dakota",
+      "rel": "related"
+    },
+    {
+      "from": "provider:south-dakota",
+      "to": "provider:hub",
+      "rel": "parent"
+    },
+    {
+      "from": "provider:south-dakota",
+      "to": "provider:hub",
+      "rel": "related"
+    },
+    {
+      "from": "provider:south-dakota",
+      "to": "state:south-dakota",
+      "rel": "related"
+    },
+    {
+      "from": "provider:south-dakota",
+      "to": "tool:compare",
+      "rel": "related"
+    },
+    {
+      "from": "provider:tennessee",
+      "to": "offer:tennessee",
+      "rel": "related"
+    },
+    {
+      "from": "provider:tennessee",
+      "to": "provider:hub",
+      "rel": "parent"
+    },
+    {
+      "from": "provider:tennessee",
+      "to": "provider:hub",
+      "rel": "related"
+    },
+    {
+      "from": "provider:tennessee",
+      "to": "state:tennessee",
+      "rel": "related"
+    },
+    {
+      "from": "provider:tennessee",
+      "to": "tool:compare",
+      "rel": "related"
+    },
+    {
+      "from": "provider:texas",
+      "to": "offer:texas",
+      "rel": "related"
+    },
+    {
+      "from": "provider:texas",
+      "to": "provider:hub",
+      "rel": "parent"
+    },
+    {
+      "from": "provider:texas",
+      "to": "provider:hub",
+      "rel": "related"
+    },
+    {
+      "from": "provider:texas",
+      "to": "state:texas",
+      "rel": "related"
+    },
+    {
+      "from": "provider:texas",
+      "to": "tool:compare",
+      "rel": "related"
+    },
+    {
+      "from": "provider:utah",
+      "to": "offer:utah",
+      "rel": "related"
+    },
+    {
+      "from": "provider:utah",
+      "to": "provider:hub",
+      "rel": "parent"
+    },
+    {
+      "from": "provider:utah",
+      "to": "provider:hub",
+      "rel": "related"
+    },
+    {
+      "from": "provider:utah",
+      "to": "state:utah",
+      "rel": "related"
+    },
+    {
+      "from": "provider:utah",
+      "to": "tool:compare",
+      "rel": "related"
+    },
+    {
+      "from": "provider:vermont",
+      "to": "offer:vermont",
+      "rel": "related"
+    },
+    {
+      "from": "provider:vermont",
+      "to": "provider:hub",
+      "rel": "parent"
+    },
+    {
+      "from": "provider:vermont",
+      "to": "provider:hub",
+      "rel": "related"
+    },
+    {
+      "from": "provider:vermont",
+      "to": "state:vermont",
+      "rel": "related"
+    },
+    {
+      "from": "provider:vermont",
+      "to": "tool:compare",
+      "rel": "related"
+    },
+    {
+      "from": "provider:virginia",
+      "to": "offer:virginia",
+      "rel": "related"
+    },
+    {
+      "from": "provider:virginia",
+      "to": "provider:hub",
+      "rel": "parent"
+    },
+    {
+      "from": "provider:virginia",
+      "to": "provider:hub",
+      "rel": "related"
+    },
+    {
+      "from": "provider:virginia",
+      "to": "state:virginia",
+      "rel": "related"
+    },
+    {
+      "from": "provider:virginia",
+      "to": "tool:compare",
+      "rel": "related"
+    },
+    {
+      "from": "provider:washington",
+      "to": "offer:washington",
+      "rel": "related"
+    },
+    {
+      "from": "provider:washington",
+      "to": "provider:hub",
+      "rel": "parent"
+    },
+    {
+      "from": "provider:washington",
+      "to": "provider:hub",
+      "rel": "related"
+    },
+    {
+      "from": "provider:washington",
+      "to": "state:washington",
+      "rel": "related"
+    },
+    {
+      "from": "provider:washington",
+      "to": "tool:compare",
+      "rel": "related"
+    },
+    {
+      "from": "provider:west-virginia",
+      "to": "offer:west-virginia",
+      "rel": "related"
+    },
+    {
+      "from": "provider:west-virginia",
+      "to": "provider:hub",
+      "rel": "parent"
+    },
+    {
+      "from": "provider:west-virginia",
+      "to": "provider:hub",
+      "rel": "related"
+    },
+    {
+      "from": "provider:west-virginia",
+      "to": "state:west-virginia",
+      "rel": "related"
+    },
+    {
+      "from": "provider:west-virginia",
+      "to": "tool:compare",
+      "rel": "related"
+    },
+    {
+      "from": "provider:wisconsin",
+      "to": "offer:wisconsin",
+      "rel": "related"
+    },
+    {
+      "from": "provider:wisconsin",
+      "to": "provider:hub",
+      "rel": "parent"
+    },
+    {
+      "from": "provider:wisconsin",
+      "to": "provider:hub",
+      "rel": "related"
+    },
+    {
+      "from": "provider:wisconsin",
+      "to": "state:wisconsin",
+      "rel": "related"
+    },
+    {
+      "from": "provider:wisconsin",
+      "to": "tool:compare",
+      "rel": "related"
+    },
+    {
+      "from": "provider:wyoming",
+      "to": "offer:wyoming",
+      "rel": "related"
+    },
+    {
+      "from": "provider:wyoming",
+      "to": "provider:hub",
+      "rel": "parent"
+    },
+    {
+      "from": "provider:wyoming",
+      "to": "provider:hub",
+      "rel": "related"
+    },
+    {
+      "from": "provider:wyoming",
+      "to": "state:wyoming",
+      "rel": "related"
+    },
+    {
+      "from": "provider:wyoming",
+      "to": "tool:compare",
+      "rel": "related"
+    },
+    {
       "from": "question:average-electric-bill-in-alabama",
       "to": "state:alabama",
       "rel": "related"
@@ -12498,6 +13408,11 @@
     },
     {
       "from": "state:alabama",
+      "to": "provider:alabama",
+      "rel": "related"
+    },
+    {
+      "from": "state:alabama",
       "to": "state:alabama:history",
       "rel": "related"
     },
@@ -12539,6 +13454,11 @@
     {
       "from": "state:alaska",
       "to": "offer:alaska",
+      "rel": "related"
+    },
+    {
+      "from": "state:alaska",
+      "to": "provider:alaska",
       "rel": "related"
     },
     {
@@ -12588,6 +13508,11 @@
     },
     {
       "from": "state:arizona",
+      "to": "provider:arizona",
+      "rel": "related"
+    },
+    {
+      "from": "state:arizona",
       "to": "state:arizona:history",
       "rel": "related"
     },
@@ -12629,6 +13554,11 @@
     {
       "from": "state:arkansas",
       "to": "offer:arkansas",
+      "rel": "related"
+    },
+    {
+      "from": "state:arkansas",
+      "to": "provider:arkansas",
       "rel": "related"
     },
     {
@@ -12678,6 +13608,11 @@
     },
     {
       "from": "state:california",
+      "to": "provider:california",
+      "rel": "related"
+    },
+    {
+      "from": "state:california",
       "to": "state:california:history",
       "rel": "related"
     },
@@ -12719,6 +13654,11 @@
     {
       "from": "state:colorado",
       "to": "offer:colorado",
+      "rel": "related"
+    },
+    {
+      "from": "state:colorado",
+      "to": "provider:colorado",
       "rel": "related"
     },
     {
@@ -12768,6 +13708,11 @@
     },
     {
       "from": "state:connecticut",
+      "to": "provider:connecticut",
+      "rel": "related"
+    },
+    {
+      "from": "state:connecticut",
       "to": "state:connecticut:history",
       "rel": "related"
     },
@@ -12809,6 +13754,11 @@
     {
       "from": "state:delaware",
       "to": "offer:delaware",
+      "rel": "related"
+    },
+    {
+      "from": "state:delaware",
+      "to": "provider:delaware",
       "rel": "related"
     },
     {
@@ -12858,6 +13808,11 @@
     },
     {
       "from": "state:florida",
+      "to": "provider:florida",
+      "rel": "related"
+    },
+    {
+      "from": "state:florida",
       "to": "state:florida:history",
       "rel": "related"
     },
@@ -12899,6 +13854,11 @@
     {
       "from": "state:georgia",
       "to": "offer:georgia",
+      "rel": "related"
+    },
+    {
+      "from": "state:georgia",
+      "to": "provider:georgia",
       "rel": "related"
     },
     {
@@ -12948,6 +13908,11 @@
     },
     {
       "from": "state:hawaii",
+      "to": "provider:hawaii",
+      "rel": "related"
+    },
+    {
+      "from": "state:hawaii",
       "to": "state:hawaii:history",
       "rel": "related"
     },
@@ -12989,6 +13954,11 @@
     {
       "from": "state:idaho",
       "to": "offer:idaho",
+      "rel": "related"
+    },
+    {
+      "from": "state:idaho",
+      "to": "provider:idaho",
       "rel": "related"
     },
     {
@@ -13038,6 +14008,11 @@
     },
     {
       "from": "state:illinois",
+      "to": "provider:illinois",
+      "rel": "related"
+    },
+    {
+      "from": "state:illinois",
       "to": "state:illinois:history",
       "rel": "related"
     },
@@ -13079,6 +14054,11 @@
     {
       "from": "state:indiana",
       "to": "offer:indiana",
+      "rel": "related"
+    },
+    {
+      "from": "state:indiana",
+      "to": "provider:indiana",
       "rel": "related"
     },
     {
@@ -13128,6 +14108,11 @@
     },
     {
       "from": "state:iowa",
+      "to": "provider:iowa",
+      "rel": "related"
+    },
+    {
+      "from": "state:iowa",
       "to": "state:iowa:history",
       "rel": "related"
     },
@@ -13169,6 +14154,11 @@
     {
       "from": "state:kansas",
       "to": "offer:kansas",
+      "rel": "related"
+    },
+    {
+      "from": "state:kansas",
+      "to": "provider:kansas",
       "rel": "related"
     },
     {
@@ -13218,6 +14208,11 @@
     },
     {
       "from": "state:kentucky",
+      "to": "provider:kentucky",
+      "rel": "related"
+    },
+    {
+      "from": "state:kentucky",
       "to": "state:kentucky:history",
       "rel": "related"
     },
@@ -13259,6 +14254,11 @@
     {
       "from": "state:louisiana",
       "to": "offer:louisiana",
+      "rel": "related"
+    },
+    {
+      "from": "state:louisiana",
+      "to": "provider:louisiana",
       "rel": "related"
     },
     {
@@ -13308,6 +14308,11 @@
     },
     {
       "from": "state:maine",
+      "to": "provider:maine",
+      "rel": "related"
+    },
+    {
+      "from": "state:maine",
       "to": "state:maine:history",
       "rel": "related"
     },
@@ -13349,6 +14354,11 @@
     {
       "from": "state:maryland",
       "to": "offer:maryland",
+      "rel": "related"
+    },
+    {
+      "from": "state:maryland",
+      "to": "provider:maryland",
       "rel": "related"
     },
     {
@@ -13398,6 +14408,11 @@
     },
     {
       "from": "state:massachusetts",
+      "to": "provider:massachusetts",
+      "rel": "related"
+    },
+    {
+      "from": "state:massachusetts",
       "to": "state:massachusetts:history",
       "rel": "related"
     },
@@ -13439,6 +14454,11 @@
     {
       "from": "state:michigan",
       "to": "offer:michigan",
+      "rel": "related"
+    },
+    {
+      "from": "state:michigan",
+      "to": "provider:michigan",
       "rel": "related"
     },
     {
@@ -13488,6 +14508,11 @@
     },
     {
       "from": "state:minnesota",
+      "to": "provider:minnesota",
+      "rel": "related"
+    },
+    {
+      "from": "state:minnesota",
       "to": "state:minnesota:history",
       "rel": "related"
     },
@@ -13529,6 +14554,11 @@
     {
       "from": "state:mississippi",
       "to": "offer:mississippi",
+      "rel": "related"
+    },
+    {
+      "from": "state:mississippi",
+      "to": "provider:mississippi",
       "rel": "related"
     },
     {
@@ -13578,6 +14608,11 @@
     },
     {
       "from": "state:missouri",
+      "to": "provider:missouri",
+      "rel": "related"
+    },
+    {
+      "from": "state:missouri",
       "to": "state:missouri:history",
       "rel": "related"
     },
@@ -13619,6 +14654,11 @@
     {
       "from": "state:montana",
       "to": "offer:montana",
+      "rel": "related"
+    },
+    {
+      "from": "state:montana",
+      "to": "provider:montana",
       "rel": "related"
     },
     {
@@ -13668,6 +14708,11 @@
     },
     {
       "from": "state:nebraska",
+      "to": "provider:nebraska",
+      "rel": "related"
+    },
+    {
+      "from": "state:nebraska",
       "to": "state:nebraska:history",
       "rel": "related"
     },
@@ -13709,6 +14754,11 @@
     {
       "from": "state:nevada",
       "to": "offer:nevada",
+      "rel": "related"
+    },
+    {
+      "from": "state:nevada",
+      "to": "provider:nevada",
       "rel": "related"
     },
     {
@@ -13758,6 +14808,11 @@
     },
     {
       "from": "state:new-hampshire",
+      "to": "provider:new-hampshire",
+      "rel": "related"
+    },
+    {
+      "from": "state:new-hampshire",
       "to": "state:new-hampshire:history",
       "rel": "related"
     },
@@ -13799,6 +14854,11 @@
     {
       "from": "state:new-jersey",
       "to": "offer:new-jersey",
+      "rel": "related"
+    },
+    {
+      "from": "state:new-jersey",
+      "to": "provider:new-jersey",
       "rel": "related"
     },
     {
@@ -13848,6 +14908,11 @@
     },
     {
       "from": "state:new-mexico",
+      "to": "provider:new-mexico",
+      "rel": "related"
+    },
+    {
+      "from": "state:new-mexico",
       "to": "state:new-mexico:history",
       "rel": "related"
     },
@@ -13889,6 +14954,11 @@
     {
       "from": "state:new-york",
       "to": "offer:new-york",
+      "rel": "related"
+    },
+    {
+      "from": "state:new-york",
+      "to": "provider:new-york",
       "rel": "related"
     },
     {
@@ -13938,6 +15008,11 @@
     },
     {
       "from": "state:north-carolina",
+      "to": "provider:north-carolina",
+      "rel": "related"
+    },
+    {
+      "from": "state:north-carolina",
       "to": "state:north-carolina:history",
       "rel": "related"
     },
@@ -13979,6 +15054,11 @@
     {
       "from": "state:north-dakota",
       "to": "offer:north-dakota",
+      "rel": "related"
+    },
+    {
+      "from": "state:north-dakota",
+      "to": "provider:north-dakota",
       "rel": "related"
     },
     {
@@ -14028,6 +15108,11 @@
     },
     {
       "from": "state:ohio",
+      "to": "provider:ohio",
+      "rel": "related"
+    },
+    {
+      "from": "state:ohio",
       "to": "state:ohio:history",
       "rel": "related"
     },
@@ -14069,6 +15154,11 @@
     {
       "from": "state:oklahoma",
       "to": "offer:oklahoma",
+      "rel": "related"
+    },
+    {
+      "from": "state:oklahoma",
+      "to": "provider:oklahoma",
       "rel": "related"
     },
     {
@@ -14118,6 +15208,11 @@
     },
     {
       "from": "state:oregon",
+      "to": "provider:oregon",
+      "rel": "related"
+    },
+    {
+      "from": "state:oregon",
       "to": "state:oregon:history",
       "rel": "related"
     },
@@ -14159,6 +15254,11 @@
     {
       "from": "state:pennsylvania",
       "to": "offer:pennsylvania",
+      "rel": "related"
+    },
+    {
+      "from": "state:pennsylvania",
+      "to": "provider:pennsylvania",
       "rel": "related"
     },
     {
@@ -14208,6 +15308,11 @@
     },
     {
       "from": "state:rhode-island",
+      "to": "provider:rhode-island",
+      "rel": "related"
+    },
+    {
+      "from": "state:rhode-island",
       "to": "state:rhode-island:history",
       "rel": "related"
     },
@@ -14249,6 +15354,11 @@
     {
       "from": "state:south-carolina",
       "to": "offer:south-carolina",
+      "rel": "related"
+    },
+    {
+      "from": "state:south-carolina",
+      "to": "provider:south-carolina",
       "rel": "related"
     },
     {
@@ -14298,6 +15408,11 @@
     },
     {
       "from": "state:south-dakota",
+      "to": "provider:south-dakota",
+      "rel": "related"
+    },
+    {
+      "from": "state:south-dakota",
       "to": "state:south-dakota:history",
       "rel": "related"
     },
@@ -14339,6 +15454,11 @@
     {
       "from": "state:tennessee",
       "to": "offer:tennessee",
+      "rel": "related"
+    },
+    {
+      "from": "state:tennessee",
+      "to": "provider:tennessee",
       "rel": "related"
     },
     {
@@ -14388,6 +15508,11 @@
     },
     {
       "from": "state:texas",
+      "to": "provider:texas",
+      "rel": "related"
+    },
+    {
+      "from": "state:texas",
       "to": "state:texas:history",
       "rel": "related"
     },
@@ -14429,6 +15554,11 @@
     {
       "from": "state:utah",
       "to": "offer:utah",
+      "rel": "related"
+    },
+    {
+      "from": "state:utah",
+      "to": "provider:utah",
       "rel": "related"
     },
     {
@@ -14478,6 +15608,11 @@
     },
     {
       "from": "state:vermont",
+      "to": "provider:vermont",
+      "rel": "related"
+    },
+    {
+      "from": "state:vermont",
       "to": "state:vermont:history",
       "rel": "related"
     },
@@ -14519,6 +15654,11 @@
     {
       "from": "state:virginia",
       "to": "offer:virginia",
+      "rel": "related"
+    },
+    {
+      "from": "state:virginia",
+      "to": "provider:virginia",
       "rel": "related"
     },
     {
@@ -14568,6 +15708,11 @@
     },
     {
       "from": "state:washington",
+      "to": "provider:washington",
+      "rel": "related"
+    },
+    {
+      "from": "state:washington",
       "to": "state:washington:history",
       "rel": "related"
     },
@@ -14609,6 +15754,11 @@
     {
       "from": "state:west-virginia",
       "to": "offer:west-virginia",
+      "rel": "related"
+    },
+    {
+      "from": "state:west-virginia",
+      "to": "provider:west-virginia",
       "rel": "related"
     },
     {
@@ -14658,6 +15808,11 @@
     },
     {
       "from": "state:wisconsin",
+      "to": "provider:wisconsin",
+      "rel": "related"
+    },
+    {
+      "from": "state:wisconsin",
       "to": "state:wisconsin:history",
       "rel": "related"
     },
@@ -14699,6 +15854,11 @@
     {
       "from": "state:wyoming",
       "to": "offer:wyoming",
+      "rel": "related"
+    },
+    {
+      "from": "state:wyoming",
+      "to": "provider:wyoming",
       "rel": "related"
     },
     {

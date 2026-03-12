@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { STATES } from "@/data/states";
-import { getCitiesByState } from "@/data/cities";
 import { normalizeSlug } from "@/data/slug";
+import { getActiveCitiesForState } from "@/lib/longtail/rollout";
 import { isValidStateSlug } from "@/lib/slugGuard";
 import { getUtilitiesByState } from "@/data/utilities";
 import { LAST_REVIEWED, SITE_URL, UPDATE_CADENCE_TEXT } from "@/lib/site";
@@ -63,7 +63,7 @@ export default async function StateUtilitiesPage({
 
   const { slug, info } = resolved;
   const utilities = getUtilitiesByState(slug);
-  const cities = getCitiesByState(slug);
+  const cities = getActiveCitiesForState(slug);
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "WebPage",
@@ -113,7 +113,7 @@ export default async function StateUtilitiesPage({
           </ul>
           {cities.length > 0 ? (
             <p className="muted" style={{ marginTop: 8 }}>
-              <Link href={`/${slug}/city/${cities[0].slug}`}>Serving cities in {info.name}</Link>
+              <Link href={`/electricity-cost/${slug}/${cities[0].slug}`}>Serving cities in {info.name}</Link>
             </p>
           ) : null}
           <p>

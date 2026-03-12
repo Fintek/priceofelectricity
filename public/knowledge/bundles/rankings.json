@@ -1,59 +1,59 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-03-10T18:46:48.543Z",
+  "generatedAt": "2025-12-15T00:00:00.000Z",
   "sourceVersion": "v2",
   "bundleId": "rankings",
   "files": [
     {
       "url": "/knowledge/rankings/affordability.json",
-      "contentHash": "12a04d6c13275400fafc56be05f570d3244b00972a49d3203a4de0aafeb77fed"
+      "contentHash": "5cc1ebd73d3db8414df0e6685c6d52780f0d0fa079ce11f3406f13f9298f7b9c"
     },
     {
       "url": "/knowledge/rankings/cagr-25y.json",
-      "contentHash": "f638a7be0721ac8517aeeb49704f23747ea00ff5ca7c371bf6748357060d0bde"
+      "contentHash": "6be627ebb9f9482c9e663fff741160255cba449eae20d45f6d0a7f4508ef4a00"
     },
     {
       "url": "/knowledge/rankings/electricity-affordability.json",
-      "contentHash": "2d513b3fa446e47055032cee583ecfbcf72c368ad3c5fbf68d41ce4627ddd8d4"
+      "contentHash": "c17181c380d9c0c83365d1a62d06d59c18ebfd0c06796759c9784abfffbe2509"
     },
     {
       "url": "/knowledge/rankings/electricity-inflation-1y.json",
-      "contentHash": "7bd7e2aac834d0d58139b232404cdf426a60feb6ba0d0c476919955353de1586"
+      "contentHash": "85c4efb837eb8ec2d5973c86e322e44ea2c3d5daf35e180b91811ca99237bbf8"
     },
     {
       "url": "/knowledge/rankings/electricity-inflation-5y.json",
-      "contentHash": "f5a403f54f538840fb56703810c45a7a26e0da55573f3fdb06b7920cf56099c1"
+      "contentHash": "a20e8a42c4e558e9b647c8f1abe643f6a3a4a480de92823bad02c1369acd0c0f"
     },
     {
       "url": "/knowledge/rankings/index.json"
     },
     {
       "url": "/knowledge/rankings/momentum-signal.json",
-      "contentHash": "637b432f7b8ddce34d9f63dc68ff39cf32c3cd19954c2f3e177eb8067c0c6508"
+      "contentHash": "ad9fde64d1cd9fed284141b5ccaaa1df807fe647cfe1967b515dc825473fec33"
     },
     {
       "url": "/knowledge/rankings/most-expensive-electricity.json",
-      "contentHash": "7ffc0f989d4c2d51176bb95e90acd37c86335e0669e4fb6a79d8a11334d76f47"
+      "contentHash": "8b5fb4ce25be71548f12b99839a865202f4c8a9d202fee34a5c23d97129c8c11"
     },
     {
       "url": "/knowledge/rankings/price-trend.json",
-      "contentHash": "5d5d991eb8f7857623cf51d9ec4ff468c6c0dc6c9c184b79b8c9ab44f5e06aed"
+      "contentHash": "d2570ac4f32df953d0b3505c3da19c666d581c6b745dce3514185336a2cadb25"
     },
     {
       "url": "/knowledge/rankings/rate-high-to-low.json",
-      "contentHash": "c5a52cdd2aae587cb30f89ecc609dd6e054feecff59d6b1062464d39afce9b0e"
+      "contentHash": "667e16e63d872d7b00f4f25a092b47786b3c16cc0841c2b9a4b37a1d4b083bcd"
     },
     {
       "url": "/knowledge/rankings/rate-low-to-high.json",
-      "contentHash": "2676ba9d40e7ffb26a5c40b4fe99993397deb13d63e148d865a2dad18851d053"
+      "contentHash": "c3670fa810ce3b2df1aaa6ffd2fed7b626f30693b28d6ee5ad1237f0fc5197fe"
     },
     {
       "url": "/knowledge/rankings/value-score.json",
-      "contentHash": "57461f079145887c246e44028f19dbf881edb01822fa6f6c2cfd49047ce9fe0c"
+      "contentHash": "64d7f4b15b1fa6268c9dd6f48906d347e56a80ca4a530c55def402b6bcc16ee4"
     },
     {
       "url": "/knowledge/rankings/volatility-5y.json",
-      "contentHash": "82dad1fc3e690ab09e159e669b635d87261d0630a6f1afad13b95034887f88ba"
+      "contentHash": "ffa2bb0ac3a6d04e414d2bab5bf9e1c44633d955e0b6608fe89dec5a5c36b938"
     }
   ]
 }

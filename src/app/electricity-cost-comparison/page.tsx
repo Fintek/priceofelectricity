@@ -10,6 +10,7 @@ import { buildBreadcrumbListJsonLd } from "@/lib/seo/jsonld";
 import JsonLdScript from "@/app/components/seo/JsonLdScript";
 import StatusFooter from "@/components/common/StatusFooter";
 import Disclaimers from "@/app/components/policy/Disclaimers";
+import CommercialPlacement from "@/components/monetization/CommercialPlacement";
 
 export const dynamic = "force-static";
 export const revalidate = 86400;
@@ -228,6 +229,13 @@ export default async function ElectricityCostComparisonIndexPage() {
             </li>
           </ul>
         </section>
+
+        <CommercialPlacement
+          pageFamily="energy-comparison-hub-pages"
+          context={{
+            pageType: "hub-comparisons",
+          }}
+        />
 
         <Disclaimers disclaimerRefs={["general-site"]} />
         <StatusFooter release={await getRelease()} />

@@ -3,14 +3,21 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { loadKnowledgePage, loadEntityIndex } from "@/lib/knowledge/loadKnowledgePage";
 import { buildMetadata } from "@/lib/seo/metadata";
-import { buildBreadcrumbListJsonLd } from "@/lib/seo/jsonld";
+import { buildBreadcrumbListJsonLd, buildItemListJsonLd, buildWebPageJsonLd } from "@/lib/seo/jsonld";
 import JsonLdScript from "@/app/components/seo/JsonLdScript";
 import StatusFooter from "@/components/common/StatusFooter";
 import Disclaimers from "@/app/components/policy/Disclaimers";
+import CommercialPlacement from "@/components/monetization/CommercialPlacement";
 import { getRelease } from "@/lib/knowledge/fetch";
 import ProviderComparisonTable from "@/components/providers/ProviderComparisonTable";
 import StateProviderList from "@/components/providers/StateProviderList";
 import { buildProviderComparisonRows, resolveProvidersForContext } from "@/lib/providers/resolve";
+import {
+  buildProviderDiscoveryItemListEntries,
+  buildProviderOfferItemListEntries,
+} from "@/lib/providers/providerDiscovery";
+import { getEnabledProviderCatalogEntriesForState } from "@/lib/providers/providerCatalog";
+import { buildCommercialPathwayItemListJsonLd } from "@/lib/seo/jsonld";
 
 const MONTHLY_USAGE_KWH = 900;
 
@@ -74,6 +81,7 @@ export default async function ElectricityProvidersStatePage({
     state: slug,
     serviceCategory: "state-provider-listing",
   }, 12);
+  const catalogEntries = getEnabledProviderCatalogEntriesForState(slug);
   const comparisonRows = buildProviderComparisonRows(providers);
 
   const rateDollarsPerKwh = avgRate != null ? avgRate / 100 : 0;
@@ -84,10 +92,54 @@ export default async function ElectricityProvidersStatePage({
     { name: "Electricity Providers", url: "/electricity-providers" },
     { name: stateName, url: `/electricity-providers/${slug}` },
   ]);
+  const webPageJsonLd = buildWebPageJsonLd({
+    title: `Electricity providers in ${stateName}`,
+    description: `State-level provider marketplace context for ${stateName}, linked to canonical electricity cost, bill, and comparison clusters.`,
+    url: `/electricity-providers/${slug}`,
+    isPartOf: "/",
+    about: [`electricity providers ${stateName}`, "state provider marketplace context"],
+  });
+  const providerItemListJsonLd = buildItemListJsonLd(
+    `${stateName} provider discovery pathways`,
+    [
+      ...buildProviderDiscoveryItemListEntries([{ slug, name: stateName }], 1),
+      { name: `${stateName} electricity cost authority`, url: `/electricity-cost/${slug}` },
+      { name: `${stateName} average electricity bill`, url: `/average-electricity-bill/${slug}` },
+      { name: `${stateName} electricity bill estimator`, url: `/electricity-bill-estimator/${slug}` },
+    ],
+  );
+  const providerOfferItemListJsonLd = buildItemListJsonLd(
+    `${stateName} configured provider onboarding entries`,
+    buildProviderOfferItemListEntries(
+      catalogEntries.map((entry) => ({
+        providerName: entry.providerName,
+        signupUrl: entry.signupUrl,
+        offerDescription: entry.offerDescription,
+      })),
+      8,
+    ),
+  );
+  const commercialPathwaysItemListJsonLd = buildCommercialPathwayItemListJsonLd(
+    `${stateName} commercial provider pathways`,
+    [
+      { name: `${stateName} offers and savings`, url: `/offers/${slug}`, pathwayType: "offers" },
+      { name: `${stateName} electricity plans`, url: `/${slug}/plans`, pathwayType: "state-cluster" },
+      { name: `${stateName} electricity cost calculator`, url: `/electricity-cost-calculator/${slug}`, pathwayType: "estimator-cluster" },
+      { name: `${stateName} provider marketplace context`, url: `/electricity-providers/${slug}`, pathwayType: "provider-marketplace" },
+    ],
+  );
 
   return (
     <>
-      <JsonLdScript data={breadcrumbJsonLd} />
+      <JsonLdScript
+        data={[
+          breadcrumbJsonLd,
+          webPageJsonLd,
+          providerItemListJsonLd,
+          providerOfferItemListJsonLd,
+          commercialPathwaysItemListJsonLd,
+        ]}
+      />
       <main className="container">
         <nav aria-label="Breadcrumb" className="muted" style={{ marginBottom: 16, fontSize: 14 }}>
           <Link href="/">Home</Link>
@@ -184,8 +236,97 @@ export default async function ElectricityProvidersStatePage({
         <StateProviderList stateName={stateName} providers={providers} />
 
         <ProviderComparisonTable
-          title={`Configured provider framework for ${stateName}`}
+          title={`Provider comparison framework for ${stateName}`}
           rows={comparisonRows}
+        />
+
+        <section style={{ marginBottom: 32 }}>
+          <h2 style={{ fontSize: 20, marginBottom: 12 }}>Provider comparison clarity in {stateName}</h2>
+          <p style={{ marginTop: 0, marginBottom: 12, maxWidth: "70ch", lineHeight: 1.6 }}>
+            Comparison signals summarize configured provider context and market-fit assumptions for {stateName}. They
+            are informational and do not represent live utility enrollment, guaranteed rates, or official tariff quotes.
+          </p>
+          <ul style={{ margin: 0, paddingLeft: 20, lineHeight: 1.8 }}>
+            <li>Coverage and offer type context are deterministic and policy-scoped.</li>
+            <li>Provider ranking remains stable through deterministic resolver logic.</li>
+            <li>Commercial placements remain rollout-guarded and disclosure-first.</li>
+          </ul>
+        </section>
+
+        <section style={{ marginBottom: 32 }}>
+          <h2 style={{ fontSize: 20, marginBottom: 12 }}>Provider differentiation signals in {stateName}</h2>
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(auto-fill, minmax(220px, 1fr))",
+              gap: 14,
+            }}
+          >
+            {catalogEntries.slice(0, 8).map((entry) => (
+              <article
+                key={`diff-${entry.providerId}`}
+                style={{
+                  padding: 14,
+                  border: "1px solid var(--color-border, #e5e7eb)",
+                  borderRadius: 8,
+                  backgroundColor: "var(--color-surface-alt, #f9fafb)",
+                }}
+              >
+                <h3 style={{ marginTop: 0, marginBottom: 8, fontSize: 16 }}>{entry.providerName}</h3>
+                <p className="muted" style={{ marginTop: 0, marginBottom: 6, fontSize: 13 }}>
+                  {entry.coverageAreaDescription}
+                </p>
+                <p className="muted" style={{ marginTop: 0, marginBottom: 8, fontSize: 13 }}>
+                  {entry.planTypeSummary}
+                </p>
+                <ul style={{ margin: 0, paddingLeft: 18, lineHeight: 1.6 }}>
+                  {entry.featureHighlights.slice(0, 3).map((highlight) => (
+                    <li key={`${entry.providerId}-${highlight}`}>{highlight}</li>
+                  ))}
+                </ul>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section style={{ marginBottom: 32 }}>
+          <h2 style={{ fontSize: 20, marginBottom: 12 }}>Provider onboarding coverage in {stateName}</h2>
+          <p style={{ marginTop: 0, marginBottom: 12, maxWidth: "70ch", lineHeight: 1.6 }}>
+            This deterministic onboarding view shows configured provider entries for {stateName}. Listing coverage does
+            not override rollout guardrails for where commercial modules render.
+          </p>
+          <p className="muted" style={{ marginTop: 0, marginBottom: 8, fontSize: 14 }}>
+            Enabled provider entries configured for this state: {catalogEntries.length}
+          </p>
+          <ul style={{ margin: 0, paddingLeft: 20, lineHeight: 1.8 }}>
+            {catalogEntries.slice(0, 10).map((entry) => (
+              <li key={entry.providerId}>
+                {entry.providerName} ({entry.offerType})
+              </li>
+            ))}
+          </ul>
+        </section>
+
+        <section style={{ marginBottom: 32 }}>
+          <h2 style={{ fontSize: 20, marginBottom: 12 }}>Commercial pathway visibility in {stateName}</h2>
+          <p style={{ marginTop: 0, marginBottom: 12, maxWidth: "70ch", lineHeight: 1.6 }}>
+            These supporting pathways keep provider context connected to state-level savings and plan research surfaces.
+          </p>
+          <ul style={{ margin: 0, paddingLeft: 20, lineHeight: 1.8 }}>
+            <li><Link href={`/offers/${slug}`}>Offers in {stateName}</Link></li>
+            <li><Link href={`/${slug}/plans`}>Plans in {stateName}</Link></li>
+            <li><Link href={`/electricity-cost-calculator/${slug}`}>Electricity calculator in {stateName}</Link></li>
+            <li><Link href="/energy-comparison">Energy comparison discovery hub</Link></li>
+          </ul>
+        </section>
+
+        <CommercialPlacement
+          pageFamily="provider-marketplace-pages"
+          context={{
+            pageType: "hub-index",
+            state: slug,
+            stateName,
+          }}
         />
 
         {/* F) Related Pages */}
@@ -196,6 +337,8 @@ export default async function ElectricityProvidersStatePage({
             <li><Link href={`/average-electricity-bill/${slug}`}>Average electricity bill in {stateName}</Link></li>
             <li><Link href={`/electricity-affordability/${slug}`}>Electricity affordability in {stateName}</Link></li>
             <li><Link href="/electricity-cost-comparison">Compare electricity prices between states</Link></li>
+            <li><Link href="/energy-comparison">Energy comparison discovery hub</Link></li>
+            <li><Link href="/electricity-hubs">Electricity hubs discovery index</Link></li>
             <li><Link href="/electricity-markets">Explore electricity market structures</Link></li>
             <li><Link href="/regional-electricity-markets">Explore regional electricity markets</Link></li>
             <li><Link href="/electricity-providers">Electricity providers by state</Link></li>

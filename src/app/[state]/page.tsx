@@ -8,7 +8,6 @@ import TrackedOutboundLink from "../components/TrackedOutboundLink";
 import { STATES } from "@/data/states";
 import { HISTORY_BY_STATE } from "@/data/history";
 import { getUtilitiesByState } from "@/data/utilities";
-import { getCitiesByState } from "@/data/cities";
 import { getRegionByStateSlug } from "@/data/regions";
 import { normalizeSlug } from "@/data/slug";
 import { isValidStateSlug } from "@/lib/slugGuard";
@@ -23,9 +22,10 @@ import {
 } from "@/lib/nav";
 import { getRelatedLinks } from "@/lib/related";
 import RelatedLinks from "@/app/components/RelatedLinks";
-import PageMonetization from "@/components/monetization/PageMonetization";
+import CommercialPlacement from "@/components/monetization/CommercialPlacement";
 import { getRateCasesForState, getTimelineForState } from "@/content/regulatory";
 import { getTopDriversForState, DRIVER_CATEGORY_LABELS } from "@/content/drivers";
+import { getActiveCitiesForState } from "@/lib/longtail/rollout";
 
 const BASE_URL = SITE_URL;
 export const dynamic = "force-static";
@@ -199,7 +199,7 @@ export default function StatePage({
   const sortedStates = getStatesSortedByName(STATES);
   const { prev, next } = getPrevNextByName(slug, sortedStates);
   const relatedStates = getRelatedByRate(slug, STATES, 5);
-  const majorCities = getCitiesByState(slug);
+  const majorCities = getActiveCitiesForState(slug);
   const majorUtilities = getUtilitiesByState(slug);
   const region = getRegionByStateSlug(slug);
   const otherStatesInRegion = region
@@ -324,7 +324,10 @@ export default function StatePage({
           <Link href={`/${slug}/plans`}>Plans in {ns.name}</Link> {" | "}
           <Link href={`/${slug}/history`}>History in {ns.name}</Link> {" | "}
           <Link href={`/offers/${slug}`}>Offers in {ns.name}</Link> {" | "}
+          <Link href={`/electricity-providers/${slug}`}>Provider context in {ns.name}</Link> {" | "}
+          <Link href={`/electricity-shopping/by-state`}>Electricity shopping pathways</Link> {" | "}
           <Link href="/compare">Compare all states</Link> {" | "}
+          <Link href="/energy-comparison/states">State comparison hub</Link> {" | "}
           <Link href="/electricity-cost-calculator">National calculator</Link> {" | "}
           <Link href="/affordability">Affordability index</Link>
         </p>
@@ -519,7 +522,7 @@ export default function StatePage({
           <ul style={{ marginTop: 0, paddingLeft: 20 }}>
             {majorCities.map((city) => (
               <li key={city.slug} style={{ marginBottom: 6 }}>
-                <Link href={`/${slug}/city/${city.slug}`}>{city.name}</Link>
+                <Link href={`/electricity-cost/${slug}/${city.slug}`}>{city.name}</Link>
               </li>
             ))}
           </ul>
@@ -535,6 +538,27 @@ export default function StatePage({
       <RegulatorySignals slug={slug} stateName={ns.name} />
 
       <section style={{ marginTop: 28 }}>
+        <h2 style={{ fontSize: 22, marginBottom: 12 }}>Explore related electricity clusters</h2>
+        <ul style={{ marginTop: 0, paddingLeft: 20, lineHeight: 1.9 }}>
+          <li>
+            <Link href={`/electricity-cost/${slug}`}>{ns.name} electricity cost authority page</Link>
+          </li>
+          <li>
+            <Link href={`/electricity-bill-estimator/${slug}`}>{ns.name} electricity bill estimator</Link>
+          </li>
+          <li>
+            <Link href={`/cost-to-run/refrigerator/${slug}`}>Appliance operating cost pages in {ns.name}</Link>
+          </li>
+          <li>
+            <Link href={`/electricity-providers/${slug}`}>Provider marketplace discovery for {ns.name}</Link>
+          </li>
+          <li>
+            <Link href="/energy-comparison">Energy Comparison Hub</Link>
+          </li>
+        </ul>
+      </section>
+
+      <section style={{ marginTop: 28 }}>
         <h2 style={{ fontSize: 22, marginBottom: 12 }}>FAQ</h2>
         {schema.faqItems.map((item, i) => (
           <div key={i} style={i > 0 ? { marginTop: 16 } : undefined}>
@@ -546,7 +570,8 @@ export default function StatePage({
         ))}
       </section>
 
-      <PageMonetization
+      <CommercialPlacement
+        pageFamily="state-electricity-pages"
         context={{
           pageType: "state-authority",
           state: slug,

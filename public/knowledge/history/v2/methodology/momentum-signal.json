@@ -6,9 +6,9 @@
     "slug": "momentum-signal",
     "title": "Momentum Signal Methodology",
     "description": "Directional historical signal for electricity price trend direction.",
-    "canonicalUrl": "http://localhost:3000/knowledge/methodology/momentum-signal",
-    "jsonUrl": "http://localhost:3000/knowledge/history/v2/methodology/momentum-signal.json",
-    "updatedAt": "2026-03-10T18:46:48.543Z",
+    "canonicalUrl": "https://priceofelectricity.com/knowledge/methodology/momentum-signal",
+    "jsonUrl": "https://priceofelectricity.com/knowledge/history/v2/methodology/momentum-signal.json",
+    "updatedAt": "2025-12-15T00:00:00.000Z",
     "sourceVersion": "v2",
     "temporalContext": {
       "sourceVersion": "v2",
@@ -18,10 +18,10 @@
       {
         "id": "poe-methodology-momentum-signal",
         "sourceName": "PriceOfElectricity.com methodology: Momentum Signal",
-        "sourceUrl": "http://localhost:3000/knowledge/methodology/momentum-signal",
+        "sourceUrl": "https://priceofelectricity.com/knowledge/methodology/momentum-signal",
         "publisher": "PriceOfElectricity.com",
         "license": "Site content license",
-        "retrievedAt": "2026-03-10T18:46:48.543Z"
+        "retrievedAt": "2025-12-15T00:00:00.000Z"
       }
     ],
     "fieldProvenance": [
@@ -59,8 +59,8 @@
     "citations": [
       {
         "sourceName": "PriceOfElectricity.com methodology: Momentum Signal",
-        "sourceUrl": "http://localhost:3000/knowledge/methodology/momentum-signal",
-        "retrievedAt": "2026-03-10T18:46:48.543Z"
+        "sourceUrl": "https://priceofelectricity.com/knowledge/methodology/momentum-signal",
+        "retrievedAt": "2025-12-15T00:00:00.000Z"
       }
     ],
     "llmHints": {
@@ -76,14 +76,14 @@
     },
     "freshness": {
       "datasetUpdatedAt": "2025-12-15T00:00:00.000Z",
-      "computedAt": "2026-03-10T18:46:48.543Z",
-      "status": "aging",
-      "ageDays": 85,
+      "computedAt": "2025-12-15T00:00:00.000Z",
+      "status": "fresh",
+      "ageDays": 0,
       "methodology": {
         "id": "freshness",
         "version": "1.0",
-        "url": "http://localhost:3000/knowledge/methodology/freshness.json",
-        "canonicalUrl": "http://localhost:3000/knowledge/methodology/freshness"
+        "url": "https://priceofelectricity.com/knowledge/methodology/freshness.json",
+        "canonicalUrl": "https://priceofelectricity.com/knowledge/methodology/freshness"
       }
     },
     "excerpt": "Momentum Signal Methodology. Defines how metrics is computed from inputs and produces derived fields used across state and ranking pages.",
@@ -93,18 +93,18 @@
     "methodology": {
       "id": "momentum-signal",
       "version": "1.0",
-      "lastReviewedAt": "2026-03-10",
+      "lastReviewedAt": "2025-12-15",
       "relatedDerivedFields": [
         "data.sortedStates",
         "data.derived.momentum"
       ]
     },
-    "qualityScore": 90,
-    "contentHash": "5638a6bae0b5eef9179231d97f3f4a134667ae21afa695e943a9a273510b1eff",
+    "qualityScore": 100,
+    "contentHash": "45f17e069e9988272b1f1e07d60a63cda4fa7c79cbbba6e1a926a40cb5ade974",
     "integrity": {
-      "contentHash": "5638a6bae0b5eef9179231d97f3f4a134667ae21afa695e943a9a273510b1eff",
+      "contentHash": "45f17e069e9988272b1f1e07d60a63cda4fa7c79cbbba6e1a926a40cb5ade974",
       "integrityAlgorithm": "sha256",
-      "signedAtBuild": "2026-03-10T18:46:48.543Z"
+      "signedAtBuild": "2025-12-15T00:00:00.000Z"
     }
   },
   "data": {
@@ -129,7 +129,7 @@
       "Thresholds are deterministic and transparent."
     ],
     "relatedInternalUrls": [
-      "http://localhost:3000/knowledge/rankings/momentum-signal"
+      "https://priceofelectricity.com/knowledge/rankings/momentum-signal"
     ],
     "relatedEntities": {
       "national": true,

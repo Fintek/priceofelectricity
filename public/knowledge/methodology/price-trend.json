@@ -6,9 +6,9 @@
     "slug": "price-trend",
     "title": "Price Trend Methodology",
     "description": "Annualized linear trend methodology for electricity price growth.",
-    "canonicalUrl": "http://localhost:3000/knowledge/methodology/price-trend",
-    "jsonUrl": "http://localhost:3000/knowledge/methodology/price-trend.json",
-    "updatedAt": "2026-03-10T18:46:48.543Z",
+    "canonicalUrl": "https://priceofelectricity.com/knowledge/methodology/price-trend",
+    "jsonUrl": "https://priceofelectricity.com/knowledge/methodology/price-trend.json",
+    "updatedAt": "2025-12-15T00:00:00.000Z",
     "sourceVersion": "v2",
     "temporalContext": {
       "sourceVersion": "v2",
@@ -18,10 +18,10 @@
       {
         "id": "poe-methodology-price-trend",
         "sourceName": "PriceOfElectricity.com methodology: Price Trend",
-        "sourceUrl": "http://localhost:3000/knowledge/methodology/price-trend",
+        "sourceUrl": "https://priceofelectricity.com/knowledge/methodology/price-trend",
         "publisher": "PriceOfElectricity.com",
         "license": "Site content license",
-        "retrievedAt": "2026-03-10T18:46:48.543Z"
+        "retrievedAt": "2025-12-15T00:00:00.000Z"
       }
     ],
     "fieldProvenance": [
@@ -59,8 +59,8 @@
     "citations": [
       {
         "sourceName": "PriceOfElectricity.com methodology: Price Trend",
-        "sourceUrl": "http://localhost:3000/knowledge/methodology/price-trend",
-        "retrievedAt": "2026-03-10T18:46:48.543Z"
+        "sourceUrl": "https://priceofelectricity.com/knowledge/methodology/price-trend",
+        "retrievedAt": "2025-12-15T00:00:00.000Z"
       }
     ],
     "llmHints": {
@@ -76,14 +76,14 @@
     },
     "freshness": {
       "datasetUpdatedAt": "2025-12-15T00:00:00.000Z",
-      "computedAt": "2026-03-10T18:46:48.543Z",
-      "status": "aging",
-      "ageDays": 85,
+      "computedAt": "2025-12-15T00:00:00.000Z",
+      "status": "fresh",
+      "ageDays": 0,
       "methodology": {
         "id": "freshness",
         "version": "1.0",
-        "url": "http://localhost:3000/knowledge/methodology/freshness.json",
-        "canonicalUrl": "http://localhost:3000/knowledge/methodology/freshness"
+        "url": "https://priceofelectricity.com/knowledge/methodology/freshness.json",
+        "canonicalUrl": "https://priceofelectricity.com/knowledge/methodology/freshness"
       }
     },
     "excerpt": "Price Trend Methodology. Defines how metrics is computed from inputs and produces derived fields used across state and ranking pages.",
@@ -93,17 +93,17 @@
     "methodology": {
       "id": "price-trend",
       "version": "1.0",
-      "lastReviewedAt": "2026-03-10",
+      "lastReviewedAt": "2025-12-15",
       "relatedDerivedFields": [
         "data.sortedStates"
       ]
     },
-    "qualityScore": 90,
-    "contentHash": "eebf5b9de98466c63056965eb0fe3d6677b5e605ffa3f01748c33914dfb8a7fe",
+    "qualityScore": 100,
+    "contentHash": "0815246cd6cf832fe67640ec4cb468f8315fc602c5f8961683ff3e302b632d77",
     "integrity": {
-      "contentHash": "eebf5b9de98466c63056965eb0fe3d6677b5e605ffa3f01748c33914dfb8a7fe",
+      "contentHash": "0815246cd6cf832fe67640ec4cb468f8315fc602c5f8961683ff3e302b632d77",
       "integrityAlgorithm": "sha256",
-      "signedAtBuild": "2026-03-10T18:46:48.543Z"
+      "signedAtBuild": "2025-12-15T00:00:00.000Z"
     }
   },
   "data": {
@@ -124,7 +124,7 @@
       "Requires historical time-series data. Rankings are disabled when history is unavailable."
     ],
     "relatedInternalUrls": [
-      "http://localhost:3000/knowledge/rankings/price-trend"
+      "https://priceofelectricity.com/knowledge/rankings/price-trend"
     ],
     "relatedEntities": {
       "national": true,

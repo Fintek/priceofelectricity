@@ -1,15 +1,15 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-03-10T18:46:48.543Z",
+  "generatedAt": "2025-12-15T00:00:00.000Z",
   "sourceVersion": "v2",
   "items": [
     {
       "id": "cagr",
       "title": "CAGR Methodology",
-      "jsonUrl": "http://localhost:3000/knowledge/methodology/cagr.json",
-      "canonicalUrl": "http://localhost:3000/knowledge/methodology/cagr",
+      "jsonUrl": "https://priceofelectricity.com/knowledge/methodology/cagr.json",
+      "canonicalUrl": "https://priceofelectricity.com/knowledge/methodology/cagr",
       "version": "1.0",
-      "lastReviewedAt": "2026-03-10",
+      "lastReviewedAt": "2025-12-15",
       "relatedDerivedFields": [
         "data.sortedStates"
       ]
@@ -17,10 +17,10 @@
     {
       "id": "epi",
       "title": "Electricity Price Index Methodology",
-      "jsonUrl": "http://localhost:3000/knowledge/methodology/epi.json",
-      "canonicalUrl": "http://localhost:3000/knowledge/methodology/epi",
+      "jsonUrl": "https://priceofelectricity.com/knowledge/methodology/epi.json",
+      "canonicalUrl": "https://priceofelectricity.com/knowledge/methodology/epi",
       "version": "1.0",
-      "lastReviewedAt": "2026-03-10",
+      "lastReviewedAt": "2025-12-15",
       "relatedDerivedFields": [
         "data.derived.exampleBills",
         "data.derived.percentileRankings.ratePercentile",
@@ -37,10 +37,10 @@
     {
       "id": "freshness",
       "title": "Freshness Scoring Methodology",
-      "jsonUrl": "http://localhost:3000/knowledge/methodology/freshness.json",
-      "canonicalUrl": "http://localhost:3000/knowledge/methodology/freshness",
+      "jsonUrl": "https://priceofelectricity.com/knowledge/methodology/freshness.json",
+      "canonicalUrl": "https://priceofelectricity.com/knowledge/methodology/freshness",
       "version": "1.0",
-      "lastReviewedAt": "2026-03-10",
+      "lastReviewedAt": "2025-12-15",
       "relatedDerivedFields": [
         "data.derived.freshnessStatus"
       ]
@@ -48,10 +48,10 @@
     {
       "id": "momentum-signal",
       "title": "Momentum Signal Methodology",
-      "jsonUrl": "http://localhost:3000/knowledge/methodology/momentum-signal.json",
-      "canonicalUrl": "http://localhost:3000/knowledge/methodology/momentum-signal",
+      "jsonUrl": "https://priceofelectricity.com/knowledge/methodology/momentum-signal.json",
+      "canonicalUrl": "https://priceofelectricity.com/knowledge/methodology/momentum-signal",
       "version": "1.0",
-      "lastReviewedAt": "2026-03-10",
+      "lastReviewedAt": "2025-12-15",
       "relatedDerivedFields": [
         "data.sortedStates",
         "data.derived.momentum"
@@ -60,10 +60,10 @@
     {
       "id": "price-trend",
       "title": "Price Trend Methodology",
-      "jsonUrl": "http://localhost:3000/knowledge/methodology/price-trend.json",
-      "canonicalUrl": "http://localhost:3000/knowledge/methodology/price-trend",
+      "jsonUrl": "https://priceofelectricity.com/knowledge/methodology/price-trend.json",
+      "canonicalUrl": "https://priceofelectricity.com/knowledge/methodology/price-trend",
       "version": "1.0",
-      "lastReviewedAt": "2026-03-10",
+      "lastReviewedAt": "2025-12-15",
       "relatedDerivedFields": [
         "data.sortedStates"
       ]
@@ -71,10 +71,10 @@
     {
       "id": "value-score",
       "title": "Value Score Methodology",
-      "jsonUrl": "http://localhost:3000/knowledge/methodology/value-score.json",
-      "canonicalUrl": "http://localhost:3000/knowledge/methodology/value-score",
+      "jsonUrl": "https://priceofelectricity.com/knowledge/methodology/value-score.json",
+      "canonicalUrl": "https://priceofelectricity.com/knowledge/methodology/value-score",
       "version": "1.0",
-      "lastReviewedAt": "2026-03-10",
+      "lastReviewedAt": "2025-12-15",
       "relatedDerivedFields": [
         "data.derived.valueScore",
         "data.derived.affordabilityIndex",
@@ -86,10 +86,10 @@
     {
       "id": "volatility",
       "title": "Volatility Index Methodology",
-      "jsonUrl": "http://localhost:3000/knowledge/methodology/volatility.json",
-      "canonicalUrl": "http://localhost:3000/knowledge/methodology/volatility",
+      "jsonUrl": "https://priceofelectricity.com/knowledge/methodology/volatility.json",
+      "canonicalUrl": "https://priceofelectricity.com/knowledge/methodology/volatility",
       "version": "1.0",
-      "lastReviewedAt": "2026-03-10",
+      "lastReviewedAt": "2025-12-15",
       "relatedDerivedFields": [
         "data.sortedStates"
       ]

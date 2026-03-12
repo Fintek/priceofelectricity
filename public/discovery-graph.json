@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-03-10T18:46:48.543Z",
+  "generatedAt": "2025-12-15T00:00:00.000Z",
   "site": "PriceOfElectricity.com",
   "nodes": [
     {
@@ -235,6 +235,195 @@
       ]
     },
     {
+      "id": "average-electricity-bill",
+      "type": "topic",
+      "title": "Average Electricity Bill",
+      "url": "/average-electricity-bill",
+      "keywords": [
+        "average bill",
+        "benchmark"
+      ]
+    },
+    {
+      "id": "electricity-bill-estimator",
+      "type": "topic",
+      "title": "Electricity Bill Estimator",
+      "url": "/electricity-bill-estimator",
+      "keywords": [
+        "bill estimator",
+        "household profiles"
+      ]
+    },
+    {
+      "id": "electricity-cost-calculator",
+      "type": "topic",
+      "title": "Electricity Cost Calculator",
+      "url": "/electricity-cost-calculator",
+      "keywords": [
+        "calculator",
+        "kwh cost"
+      ]
+    },
+    {
+      "id": "electricity-usage",
+      "type": "topic",
+      "title": "Electricity Usage",
+      "url": "/electricity-usage",
+      "keywords": [
+        "usage",
+        "kwh",
+        "household"
+      ]
+    },
+    {
+      "id": "electricity-usage-cost",
+      "type": "topic",
+      "title": "Fixed Usage Cost",
+      "url": "/electricity-usage-cost/1000/texas",
+      "keywords": [
+        "fixed kwh",
+        "usage cost"
+      ]
+    },
+    {
+      "id": "electricity-cost-comparison",
+      "type": "topic",
+      "title": "Electricity Cost Comparison",
+      "url": "/electricity-cost-comparison",
+      "keywords": [
+        "state comparison",
+        "cost comparison"
+      ]
+    },
+    {
+      "id": "appliance-cost",
+      "type": "topic",
+      "title": "Appliance Cost to Run",
+      "url": "/cost-to-run/refrigerator/texas",
+      "keywords": [
+        "appliance cost",
+        "cost to run"
+      ]
+    },
+    {
+      "id": "city-electricity-context",
+      "type": "topic",
+      "title": "City Electricity Context",
+      "url": "/electricity-cost/texas/houston",
+      "keywords": [
+        "city electricity",
+        "state city context"
+      ]
+    },
+    {
+      "id": "electricity-hubs",
+      "type": "discovery",
+      "title": "Electricity Hubs",
+      "url": "/electricity-hubs",
+      "keywords": [
+        "hubs",
+        "discovery"
+      ]
+    },
+    {
+      "id": "energy-comparison",
+      "type": "discovery",
+      "title": "Energy Comparison Hub",
+      "url": "/energy-comparison",
+      "keywords": [
+        "comparison hub",
+        "state usage appliance"
+      ]
+    },
+    {
+      "id": "provider-marketplace",
+      "type": "topic",
+      "title": "Electricity Provider Marketplace",
+      "url": "/electricity-providers",
+      "keywords": [
+        "providers",
+        "marketplace",
+        "state provider context"
+      ]
+    },
+    {
+      "id": "provider-information",
+      "type": "topic",
+      "title": "Provider Information Cluster",
+      "url": "/electricity-providers",
+      "keywords": [
+        "provider information",
+        "provider differentiation",
+        "market structure"
+      ]
+    },
+    {
+      "id": "commercial-surfaces",
+      "type": "discovery",
+      "title": "Commercial Discovery Surfaces",
+      "url": "/offers",
+      "keywords": [
+        "commercial surfaces",
+        "provider discovery",
+        "marketplace pathways"
+      ]
+    },
+    {
+      "id": "provider-pilot-choice-marketplace-sample",
+      "type": "topic",
+      "title": "Pilot Choice Marketplace (Sample)",
+      "url": "/electricity-providers",
+      "keywords": [
+        "provider onboarding",
+        "provider discovery",
+        "marketplace"
+      ]
+    },
+    {
+      "id": "provider-pilot-northeast-marketplace-sample",
+      "type": "topic",
+      "title": "Pilot Northeast Marketplace (Sample)",
+      "url": "/electricity-providers",
+      "keywords": [
+        "provider onboarding",
+        "provider discovery",
+        "marketplace"
+      ]
+    },
+    {
+      "id": "provider-pilot-regional-supplier-sample",
+      "type": "topic",
+      "title": "Pilot Regional Supplier (Sample)",
+      "url": "/electricity-providers",
+      "keywords": [
+        "provider onboarding",
+        "provider discovery",
+        "affiliate"
+      ]
+    },
+    {
+      "id": "provider-pilot-multi-state-supplier-sample",
+      "type": "topic",
+      "title": "Pilot Multi-State Supplier (Sample)",
+      "url": "/electricity-providers",
+      "keywords": [
+        "provider onboarding",
+        "provider discovery",
+        "supplier"
+      ]
+    },
+    {
+      "id": "provider-pilot-efficiency-affiliate-sample",
+      "type": "topic",
+      "title": "Pilot Efficiency Affiliate (Sample)",
+      "url": "/electricity-providers",
+      "keywords": [
+        "provider onboarding",
+        "provider discovery",
+        "affiliate"
+      ]
+    },
+    {
       "id": "discovery-graph",
       "type": "discovery",
       "title": "Discovery Graph",
@@ -358,6 +547,541 @@
       "relationship": "related_topic"
     },
     {
+      "from": "electricity-cost",
+      "to": "city-electricity-context",
+      "relationship": "state_to_city_pathway"
+    },
+    {
+      "from": "electricity-cost",
+      "to": "appliance-cost",
+      "relationship": "state_to_appliance_pathway"
+    },
+    {
+      "from": "electricity-cost",
+      "to": "electricity-bill-estimator",
+      "relationship": "state_to_estimator_pathway"
+    },
+    {
+      "from": "city-electricity-context",
+      "to": "appliance-cost",
+      "relationship": "city_to_appliance_pathway"
+    },
+    {
+      "from": "average-electricity-bill",
+      "to": "electricity-bill-estimator",
+      "relationship": "estimator_pathway"
+    },
+    {
+      "from": "average-electricity-bill",
+      "to": "appliance-cost",
+      "relationship": "bill_to_appliance_pathway"
+    },
+    {
+      "from": "electricity-bill-estimator",
+      "to": "electricity-cost-calculator",
+      "relationship": "estimator_to_calculator_pathway"
+    },
+    {
+      "from": "electricity-usage",
+      "to": "electricity-usage-cost",
+      "relationship": "usage_pathway"
+    },
+    {
+      "from": "energy-comparison",
+      "to": "electricity-cost-comparison",
+      "relationship": "comparison_pathway"
+    },
+    {
+      "from": "electricity-hubs",
+      "to": "electricity-cost",
+      "relationship": "hub_to_canonical_cluster"
+    },
+    {
+      "from": "electricity-hubs",
+      "to": "average-electricity-bill",
+      "relationship": "hub_to_canonical_cluster"
+    },
+    {
+      "from": "electricity-hubs",
+      "to": "electricity-bill-estimator",
+      "relationship": "hub_to_canonical_cluster"
+    },
+    {
+      "from": "electricity-hubs",
+      "to": "appliance-cost",
+      "relationship": "hub_to_canonical_cluster"
+    },
+    {
+      "from": "electricity-hubs",
+      "to": "city-electricity-context",
+      "relationship": "hub_to_canonical_cluster"
+    },
+    {
+      "from": "electricity-hubs",
+      "to": "electricity-cost-calculator",
+      "relationship": "hub_to_canonical_cluster"
+    },
+    {
+      "from": "electricity-hubs",
+      "to": "electricity-usage-cost",
+      "relationship": "hub_to_canonical_cluster"
+    },
+    {
+      "from": "electricity-hubs",
+      "to": "electricity-cost-comparison",
+      "relationship": "hub_to_canonical_cluster"
+    },
+    {
+      "from": "electricity-hubs",
+      "to": "energy-comparison",
+      "relationship": "hub_to_canonical_cluster"
+    },
+    {
+      "from": "energy-comparison",
+      "to": "appliance-cost",
+      "relationship": "comparison_pathway"
+    },
+    {
+      "from": "energy-comparison",
+      "to": "electricity-usage-cost",
+      "relationship": "comparison_pathway"
+    },
+    {
+      "from": "energy-comparison",
+      "to": "electricity-bill-estimator",
+      "relationship": "comparison_pathway"
+    },
+    {
+      "from": "energy-comparison",
+      "to": "city-electricity-context",
+      "relationship": "comparison_pathway"
+    },
+    {
+      "from": "energy-comparison",
+      "to": "average-electricity-bill",
+      "relationship": "comparison_pathway"
+    },
+    {
+      "from": "energy-comparison",
+      "to": "electricity-cost-calculator",
+      "relationship": "comparison_pathway"
+    },
+    {
+      "from": "electricity-bill-estimator",
+      "to": "appliance-cost",
+      "relationship": "estimator_to_appliance_pathway"
+    },
+    {
+      "from": "appliance-cost",
+      "to": "electricity-bill-estimator",
+      "relationship": "appliance_to_estimator_pathway"
+    },
+    {
+      "from": "appliance-cost",
+      "to": "electricity-cost-comparison",
+      "relationship": "appliance_to_comparison_pathway"
+    },
+    {
+      "from": "appliance-cost",
+      "to": "electricity-usage",
+      "relationship": "appliance_to_usage_pathway"
+    },
+    {
+      "from": "provider-marketplace",
+      "to": "electricity-cost-comparison",
+      "relationship": "provider_to_comparison_cluster"
+    },
+    {
+      "from": "provider-marketplace",
+      "to": "electricity-cost",
+      "relationship": "provider_to_state_cluster"
+    },
+    {
+      "from": "provider-marketplace",
+      "to": "electricity-bill-estimator",
+      "relationship": "provider_to_estimator_discovery"
+    },
+    {
+      "from": "provider-marketplace",
+      "to": "electricity-cost",
+      "relationship": "provider_marketplace_to_state_cluster"
+    },
+    {
+      "from": "provider-marketplace",
+      "to": "electricity-cost-comparison",
+      "relationship": "provider_marketplace_to_comparison_cluster"
+    },
+    {
+      "from": "provider-marketplace",
+      "to": "electricity-bill-estimator",
+      "relationship": "provider_marketplace_to_estimator_cluster"
+    },
+    {
+      "from": "provider-marketplace",
+      "to": "electricity-hubs",
+      "relationship": "provider_to_hub_discovery"
+    },
+    {
+      "from": "provider-marketplace",
+      "to": "energy-comparison",
+      "relationship": "provider_to_hub_discovery"
+    },
+    {
+      "from": "provider-marketplace",
+      "to": "provider-information",
+      "relationship": "provider_to_provider_information_cluster"
+    },
+    {
+      "from": "provider-marketplace",
+      "to": "commercial-surfaces",
+      "relationship": "provider_to_commercial_discovery"
+    },
+    {
+      "from": "commercial-surfaces",
+      "to": "provider-marketplace",
+      "relationship": "commercial_surface_to_provider_marketplace"
+    },
+    {
+      "from": "commercial-surfaces",
+      "to": "energy-comparison",
+      "relationship": "commercial_surface_to_provider_marketplace"
+    },
+    {
+      "from": "commercial-surfaces",
+      "to": "electricity-hubs",
+      "relationship": "commercial_surface_to_provider_marketplace"
+    },
+    {
+      "from": "energy-comparison",
+      "to": "provider-marketplace",
+      "relationship": "comparison_to_provider_discovery"
+    },
+    {
+      "from": "electricity-hubs",
+      "to": "provider-marketplace",
+      "relationship": "hub_to_provider_discovery"
+    },
+    {
+      "from": "provider-pilot-choice-marketplace-sample",
+      "to": "provider-marketplace",
+      "relationship": "provider_to_provider_marketplace_hub"
+    },
+    {
+      "from": "provider-pilot-choice-marketplace-sample",
+      "to": "provider-information",
+      "relationship": "provider_to_provider_information_cluster"
+    },
+    {
+      "from": "provider-pilot-choice-marketplace-sample",
+      "to": "commercial-surfaces",
+      "relationship": "provider_to_commercial_discovery"
+    },
+    {
+      "from": "provider-pilot-choice-marketplace-sample",
+      "to": "electricity-cost-comparison",
+      "relationship": "provider_to_comparison_cluster"
+    },
+    {
+      "from": "provider-pilot-choice-marketplace-sample",
+      "to": "electricity-bill-estimator",
+      "relationship": "provider_to_estimator_discovery"
+    },
+    {
+      "from": "provider-pilot-choice-marketplace-sample",
+      "to": "energy-comparison",
+      "relationship": "provider_to_hub_discovery_cluster"
+    },
+    {
+      "from": "provider-pilot-choice-marketplace-sample",
+      "to": "electricity-hubs",
+      "relationship": "provider_to_hub_discovery_cluster"
+    },
+    {
+      "from": "provider-pilot-choice-marketplace-sample",
+      "to": "appliance-cost",
+      "relationship": "provider_to_appliance_cluster"
+    },
+    {
+      "from": "provider-pilot-choice-marketplace-sample",
+      "to": "electricity-cost",
+      "relationship": "provider_to_state_cluster"
+    },
+    {
+      "from": "provider-pilot-choice-marketplace-sample",
+      "to": "electricity-cost",
+      "relationship": "provider_to_state_cluster"
+    },
+    {
+      "from": "provider-pilot-choice-marketplace-sample",
+      "to": "electricity-cost",
+      "relationship": "provider_to_state_cluster"
+    },
+    {
+      "from": "provider-pilot-choice-marketplace-sample",
+      "to": "electricity-cost",
+      "relationship": "provider_to_state_cluster"
+    },
+    {
+      "from": "provider-pilot-choice-marketplace-sample",
+      "to": "electricity-cost",
+      "relationship": "provider_to_state_cluster"
+    },
+    {
+      "from": "provider-pilot-northeast-marketplace-sample",
+      "to": "provider-marketplace",
+      "relationship": "provider_to_provider_marketplace_hub"
+    },
+    {
+      "from": "provider-pilot-northeast-marketplace-sample",
+      "to": "provider-information",
+      "relationship": "provider_to_provider_information_cluster"
+    },
+    {
+      "from": "provider-pilot-northeast-marketplace-sample",
+      "to": "commercial-surfaces",
+      "relationship": "provider_to_commercial_discovery"
+    },
+    {
+      "from": "provider-pilot-northeast-marketplace-sample",
+      "to": "electricity-cost-comparison",
+      "relationship": "provider_to_comparison_cluster"
+    },
+    {
+      "from": "provider-pilot-northeast-marketplace-sample",
+      "to": "electricity-bill-estimator",
+      "relationship": "provider_to_estimator_discovery"
+    },
+    {
+      "from": "provider-pilot-northeast-marketplace-sample",
+      "to": "energy-comparison",
+      "relationship": "provider_to_hub_discovery_cluster"
+    },
+    {
+      "from": "provider-pilot-northeast-marketplace-sample",
+      "to": "electricity-hubs",
+      "relationship": "provider_to_hub_discovery_cluster"
+    },
+    {
+      "from": "provider-pilot-northeast-marketplace-sample",
+      "to": "appliance-cost",
+      "relationship": "provider_to_appliance_cluster"
+    },
+    {
+      "from": "provider-pilot-northeast-marketplace-sample",
+      "to": "electricity-cost",
+      "relationship": "provider_to_state_cluster"
+    },
+    {
+      "from": "provider-pilot-northeast-marketplace-sample",
+      "to": "electricity-cost",
+      "relationship": "provider_to_state_cluster"
+    },
+    {
+      "from": "provider-pilot-northeast-marketplace-sample",
+      "to": "electricity-cost",
+      "relationship": "provider_to_state_cluster"
+    },
+    {
+      "from": "provider-pilot-northeast-marketplace-sample",
+      "to": "electricity-cost",
+      "relationship": "provider_to_state_cluster"
+    },
+    {
+      "from": "provider-pilot-northeast-marketplace-sample",
+      "to": "electricity-cost",
+      "relationship": "provider_to_state_cluster"
+    },
+    {
+      "from": "provider-pilot-northeast-marketplace-sample",
+      "to": "electricity-cost",
+      "relationship": "provider_to_state_cluster"
+    },
+    {
+      "from": "provider-pilot-regional-supplier-sample",
+      "to": "provider-marketplace",
+      "relationship": "provider_to_provider_marketplace_hub"
+    },
+    {
+      "from": "provider-pilot-regional-supplier-sample",
+      "to": "provider-information",
+      "relationship": "provider_to_provider_information_cluster"
+    },
+    {
+      "from": "provider-pilot-regional-supplier-sample",
+      "to": "commercial-surfaces",
+      "relationship": "provider_to_commercial_discovery"
+    },
+    {
+      "from": "provider-pilot-regional-supplier-sample",
+      "to": "electricity-cost-comparison",
+      "relationship": "provider_to_comparison_cluster"
+    },
+    {
+      "from": "provider-pilot-regional-supplier-sample",
+      "to": "electricity-bill-estimator",
+      "relationship": "provider_to_estimator_discovery"
+    },
+    {
+      "from": "provider-pilot-regional-supplier-sample",
+      "to": "energy-comparison",
+      "relationship": "provider_to_hub_discovery_cluster"
+    },
+    {
+      "from": "provider-pilot-regional-supplier-sample",
+      "to": "electricity-hubs",
+      "relationship": "provider_to_hub_discovery_cluster"
+    },
+    {
+      "from": "provider-pilot-regional-supplier-sample",
+      "to": "appliance-cost",
+      "relationship": "provider_to_appliance_cluster"
+    },
+    {
+      "from": "provider-pilot-regional-supplier-sample",
+      "to": "electricity-cost",
+      "relationship": "provider_to_state_cluster"
+    },
+    {
+      "from": "provider-pilot-regional-supplier-sample",
+      "to": "electricity-cost",
+      "relationship": "provider_to_state_cluster"
+    },
+    {
+      "from": "provider-pilot-regional-supplier-sample",
+      "to": "electricity-cost",
+      "relationship": "provider_to_state_cluster"
+    },
+    {
+      "from": "provider-pilot-regional-supplier-sample",
+      "to": "electricity-cost",
+      "relationship": "provider_to_state_cluster"
+    },
+    {
+      "from": "provider-pilot-multi-state-supplier-sample",
+      "to": "provider-marketplace",
+      "relationship": "provider_to_provider_marketplace_hub"
+    },
+    {
+      "from": "provider-pilot-multi-state-supplier-sample",
+      "to": "provider-information",
+      "relationship": "provider_to_provider_information_cluster"
+    },
+    {
+      "from": "provider-pilot-multi-state-supplier-sample",
+      "to": "commercial-surfaces",
+      "relationship": "provider_to_commercial_discovery"
+    },
+    {
+      "from": "provider-pilot-multi-state-supplier-sample",
+      "to": "electricity-cost-comparison",
+      "relationship": "provider_to_comparison_cluster"
+    },
+    {
+      "from": "provider-pilot-multi-state-supplier-sample",
+      "to": "electricity-bill-estimator",
+      "relationship": "provider_to_estimator_discovery"
+    },
+    {
+      "from": "provider-pilot-multi-state-supplier-sample",
+      "to": "energy-comparison",
+      "relationship": "provider_to_hub_discovery_cluster"
+    },
+    {
+      "from": "provider-pilot-multi-state-supplier-sample",
+      "to": "electricity-hubs",
+      "relationship": "provider_to_hub_discovery_cluster"
+    },
+    {
+      "from": "provider-pilot-multi-state-supplier-sample",
+      "to": "appliance-cost",
+      "relationship": "provider_to_appliance_cluster"
+    },
+    {
+      "from": "provider-pilot-multi-state-supplier-sample",
+      "to": "electricity-cost",
+      "relationship": "provider_to_state_cluster"
+    },
+    {
+      "from": "provider-pilot-multi-state-supplier-sample",
+      "to": "electricity-cost",
+      "relationship": "provider_to_state_cluster"
+    },
+    {
+      "from": "provider-pilot-multi-state-supplier-sample",
+      "to": "electricity-cost",
+      "relationship": "provider_to_state_cluster"
+    },
+    {
+      "from": "provider-pilot-multi-state-supplier-sample",
+      "to": "electricity-cost",
+      "relationship": "provider_to_state_cluster"
+    },
+    {
+      "from": "provider-pilot-multi-state-supplier-sample",
+      "to": "electricity-cost",
+      "relationship": "provider_to_state_cluster"
+    },
+    {
+      "from": "provider-pilot-multi-state-supplier-sample",
+      "to": "electricity-cost",
+      "relationship": "provider_to_state_cluster"
+    },
+    {
+      "from": "provider-pilot-efficiency-affiliate-sample",
+      "to": "provider-marketplace",
+      "relationship": "provider_to_provider_marketplace_hub"
+    },
+    {
+      "from": "provider-pilot-efficiency-affiliate-sample",
+      "to": "provider-information",
+      "relationship": "provider_to_provider_information_cluster"
+    },
+    {
+      "from": "provider-pilot-efficiency-affiliate-sample",
+      "to": "commercial-surfaces",
+      "relationship": "provider_to_commercial_discovery"
+    },
+    {
+      "from": "provider-pilot-efficiency-affiliate-sample",
+      "to": "electricity-cost-comparison",
+      "relationship": "provider_to_comparison_cluster"
+    },
+    {
+      "from": "provider-pilot-efficiency-affiliate-sample",
+      "to": "electricity-bill-estimator",
+      "relationship": "provider_to_estimator_discovery"
+    },
+    {
+      "from": "provider-pilot-efficiency-affiliate-sample",
+      "to": "energy-comparison",
+      "relationship": "provider_to_hub_discovery_cluster"
+    },
+    {
+      "from": "provider-pilot-efficiency-affiliate-sample",
+      "to": "electricity-hubs",
+      "relationship": "provider_to_hub_discovery_cluster"
+    },
+    {
+      "from": "provider-pilot-efficiency-affiliate-sample",
+      "to": "appliance-cost",
+      "relationship": "provider_to_appliance_cluster"
+    },
+    {
+      "from": "provider-pilot-efficiency-affiliate-sample",
+      "to": "electricity-cost",
+      "relationship": "provider_to_state_cluster"
+    },
+    {
+      "from": "provider-pilot-efficiency-affiliate-sample",
+      "to": "electricity-cost",
+      "relationship": "provider_to_state_cluster"
+    },
+    {
+      "from": "provider-pilot-efficiency-affiliate-sample",
+      "to": "electricity-cost",
+      "relationship": "provider_to_state_cluster"
+    },
+    {
       "from": "discovery-graph",
       "to": "entity-registry",
       "relationship": "grouped_in_discovery"
@@ -365,6 +1089,16 @@
     {
       "from": "discovery-graph",
       "to": "electricity-topics",
+      "relationship": "grouped_in_discovery"
+    },
+    {
+      "from": "discovery-graph",
+      "to": "energy-comparison",
+      "relationship": "grouped_in_discovery"
+    },
+    {
+      "from": "discovery-graph",
+      "to": "electricity-hubs",
       "relationship": "grouped_in_discovery"
     }
   ]

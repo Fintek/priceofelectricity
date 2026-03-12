@@ -13,8 +13,13 @@ import {
   parseApplianceCalculatorSlug,
 } from "@/lib/longtail/calculatorCluster";
 import { getRelease } from "@/lib/knowledge/fetch";
+import { loadActiveCityElectricitySummariesForState } from "@/lib/longtail/cityElectricity";
 import { buildLongtailLinkSections } from "@/lib/longtail/internalLinks";
 import { getApplianceConfig } from "@/lib/longtail/applianceConfig";
+import {
+  getActiveApplianceCityPagesForStateAppliance,
+  isActiveApplianceSlug,
+} from "@/lib/longtail/rollout";
 import {
   calculateApplianceOperatingCost,
   formatHoursPerDay,
@@ -26,6 +31,7 @@ import { buildMetadata } from "@/lib/seo/metadata";
 import { buildBreadcrumbListJsonLd, buildWebPageJsonLd } from "@/lib/seo/jsonld";
 
 export const dynamic = "force-static";
+export const dynamicParams = false;
 export const revalidate = 86400;
 
 export async function generateStaticParams() {
@@ -39,7 +45,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { slug, appliance } = await params;
   const applianceSlug = parseApplianceCalculatorSlug(appliance);
-  if (!applianceSlug) {
+  if (!applianceSlug || !isActiveApplianceSlug(applianceSlug)) {
     return buildMetadata({
       title: "Not found | PriceOfElectricity.com",
       description: "We couldn't find that page.",
@@ -71,7 +77,7 @@ export default async function StateApplianceCalculatorPage({
 }) {
   const { slug, appliance } = await params;
   const applianceSlug = parseApplianceCalculatorSlug(appliance);
-  if (!applianceSlug) notFound();
+  if (!applianceSlug || !isActiveApplianceSlug(applianceSlug)) notFound();
 
   const state = await loadLongtailStateData(slug);
   if (!state) notFound();
@@ -96,6 +102,18 @@ export default async function StateApplianceCalculatorPage({
     pageType: "appliance-cost",
     stateData: state,
     usageKwh: Math.max(1, Math.round(typicalStateScenario.kwhPerMonth)),
+  });
+  const citySummaries = await loadActiveCityElectricitySummariesForState(state.slug);
+  const activeApplianceCityKeys = new Set(
+    getActiveApplianceCityPagesForStateAppliance(state.slug, applianceSlug).map((page) => page.citySlug),
+  );
+  const calculatorCityRows = citySummaries.slice(0, 4).map((citySummary) => {
+    const monthlyCost = (citySummary.cityRateCentsPerKwh / 100) * typicalStateScenario.kwhPerMonth;
+    return {
+      citySummary,
+      monthlyCost,
+      hasApplianceCityPilot: activeApplianceCityKeys.has(citySummary.city.slug),
+    };
   });
 
   const canonicalPath = `/electricity-cost-calculator/${slug}/${applianceSlug}`;
@@ -253,6 +271,55 @@ export default async function StateApplianceCalculatorPage({
             </li>
           </ul>
         </section>
+
+        <section style={{ marginBottom: 32 }}>
+          <h2 style={{ fontSize: 20, marginBottom: 12 }}>Comparison discovery routes</h2>
+          <p style={{ marginTop: 0, lineHeight: 1.7 }}>
+            For comparison-first navigation, use the curated Energy Comparison Hub slices below. These are discovery
+            routes and preserve canonical ownership in the existing calculator, appliance-cost, and state-comparison
+            systems.
+          </p>
+          <ul style={{ margin: 0, paddingLeft: 20, lineHeight: 1.8 }}>
+            <li>
+              <Link href="/energy-comparison">Energy comparison hub</Link>
+            </li>
+            <li>
+              <Link href="/energy-comparison/appliances">Appliance comparison slice</Link>
+            </li>
+            <li>
+              <Link href="/energy-comparison/usage">Usage comparison slice</Link>
+            </li>
+          </ul>
+        </section>
+
+        {calculatorCityRows.length > 0 && (
+          <section style={{ marginBottom: 32 }}>
+            <h2 style={{ fontSize: 20, marginBottom: 12 }}>
+              City authority context for {state.name}
+            </h2>
+            <p style={{ marginTop: 0, lineHeight: 1.7 }}>
+              For local context, rollout-enabled city electricity pages can be used alongside this calculator scenario.
+              These links are supplemental and do not change calculator or appliance-cost canonicals.
+            </p>
+            <ul style={{ margin: 0, paddingLeft: 20, lineHeight: 1.8 }}>
+              {calculatorCityRows.map((row) => (
+                <li key={row.citySummary.city.slug}>
+                  {row.hasApplianceCityPilot ? (
+                    <Link href={`/cost-to-run/${applianceSlug}/${state.slug}/${row.citySummary.city.slug}`}>
+                      {row.citySummary.city.name} appliance city pilot
+                    </Link>
+                  ) : (
+                    <Link href={`/electricity-cost/${state.slug}/${row.citySummary.city.slug}`}>
+                      {row.citySummary.city.name} electricity context
+                    </Link>
+                  )}{" "}
+                  - {formatRate(row.citySummary.cityRateCentsPerKwh)}; est. monthly appliance profile cost{" "}
+                  {formatUsd(row.monthlyCost)}
+                </li>
+              ))}
+            </ul>
+          </section>
+        )}
       </LongtailStateTemplate>
       <div className="container">
         <Disclaimers disclaimerRefs={["general-site"]} />

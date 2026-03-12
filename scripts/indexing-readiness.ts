@@ -33,8 +33,8 @@ async function checkRobotsTxt(base: string): Promise<void> {
   pass("/robots.txt reachable");
 
   const body = await res.text();
-  const expectedSitemap = `Sitemap: ${SITE_URL}/sitemap.xml`;
-  if (body.includes("Sitemap:") && body.includes("/sitemap.xml")) {
+  const expectedSitemap = `Sitemap: ${SITE_URL}/sitemap-index.xml`;
+  if (body.includes("Sitemap:") && (body.includes("/sitemap.xml") || body.includes("/sitemap-index.xml"))) {
     pass(`/robots.txt contains sitemap directive`);
   } else {
     fail(`/robots.txt contains sitemap directive`, `expected "${expectedSitemap}"`);
@@ -42,20 +42,37 @@ async function checkRobotsTxt(base: string): Promise<void> {
 }
 
 async function checkSitemap(base: string): Promise<void> {
-  const res = await fetchWithTimeout(`${base}/sitemap.xml`);
-  if (!res.ok) {
-    fail("/sitemap.xml reachable", `status ${res.status}`);
+  const candidates = ["/sitemap.xml", "/sitemap-index.xml", "/sitemap/states.xml"];
+  let body: string | null = null;
+  let selected: string | null = null;
+  for (const candidate of candidates) {
+    const res = await fetchWithTimeout(`${base}${candidate}`);
+    if (res.ok) {
+      body = await res.text();
+      selected = candidate;
+      break;
+    }
+  }
+  if (!body || !selected) {
+    fail("sitemap endpoint reachable", "tried /sitemap.xml, /sitemap-index.xml, /sitemap/states.xml");
     return;
   }
-  pass("/sitemap.xml reachable");
+  pass(`${selected} reachable`);
 
-  const body = await res.text();
+  if (selected === "/sitemap-index.xml") {
+    if (body.includes("/sitemap/states.xml")) {
+      pass("/sitemap-index.xml references /sitemap/states.xml");
+    } else {
+      fail("/sitemap-index.xml references /sitemap/states.xml");
+    }
+    return;
+  }
   if (body.includes("<loc>") && body.includes("/texas</loc>")) {
-    pass("/sitemap.xml contains /texas");
+    pass(`${selected} contains /texas`);
   } else if (body.includes("/texas")) {
-    pass("/sitemap.xml references /texas");
+    pass(`${selected} references /texas`);
   } else {
-    fail("/sitemap.xml contains /texas");
+    fail(`${selected} contains /texas`);
   }
 }
 
@@ -92,6 +109,117 @@ async function checkCanonical(base: string, path: string): Promise<void> {
   }
 }
 
+async function checkDiscoveryHubs(base: string): Promise<void> {
+  const checks: Array<{
+    path: string;
+    required: string[];
+    label: string;
+  }> = [
+    {
+      path: "/electricity-hubs",
+      required: [
+        "/electricity-cost",
+        "/average-electricity-bill",
+        "/electricity-bill-estimator",
+        "/electricity-cost-calculator",
+        "/electricity-usage",
+        "/energy-comparison",
+        "/electricity-providers",
+      ],
+      label: "electricity-hubs discovery links",
+    },
+    {
+      path: "/energy-comparison",
+      required: [
+        "/electricity-cost-comparison/",
+        "/electricity-usage-cost/",
+        "/cost-to-run/",
+        "/electricity-bill-estimator/",
+        "/average-electricity-bill",
+        "/electricity-cost-calculator",
+        "/electricity-providers",
+      ],
+      label: "energy-comparison canonical cluster links",
+    },
+    {
+      path: "/electricity-hubs/comparisons",
+      required: [
+        "/electricity-cost-comparison",
+        "/compare",
+        "/electricity-providers",
+      ],
+      label: "comparison hub provider discovery links",
+    },
+    {
+      path: "/electricity-cost-comparison",
+      required: [
+        "/electricity-providers",
+        "/electricity-cost",
+      ],
+      label: "comparison index provider discovery links",
+    },
+    {
+      path: "/electricity-providers",
+      required: [
+        "/electricity-providers/texas",
+        "/electricity-cost-comparison",
+        "/electricity-cost",
+        "/energy-comparison",
+        "/electricity-hubs",
+        "/offers",
+        "/electricity-shopping/by-state",
+      ],
+      label: "provider marketplace index discovery links",
+    },
+    {
+      path: "/electricity-providers/texas",
+      required: [
+        "/electricity-cost/texas",
+        "/average-electricity-bill/texas",
+        "/electricity-bill-estimator/texas",
+        "/energy-comparison",
+        "/electricity-hubs",
+        "/offers/texas",
+        "/electricity-cost-calculator/texas",
+      ],
+      label: "provider state page canonical cluster links",
+    },
+    {
+      path: "/texas",
+      required: [
+        "/electricity-providers/texas",
+        "/offers/texas",
+      ],
+      label: "state electricity page revenue pathways",
+    },
+    {
+      path: "/electricity-bill-estimator/texas",
+      required: [
+        "/electricity-providers/texas",
+        "/offers/texas",
+      ],
+      label: "bill estimator revenue pathways",
+    },
+  ];
+
+  for (const check of checks) {
+    const res = await fetchWithTimeout(`${base}${check.path}`);
+    if (!res.ok) {
+      fail(`${check.path} reachable`, `status ${res.status}`);
+      continue;
+    }
+    pass(`${check.path} reachable`);
+    const html = await res.text();
+    for (const expected of check.required) {
+      if (html.includes(expected)) {
+        pass(`${check.label} includes ${expected}`);
+      } else {
+        fail(`${check.label} includes ${expected}`);
+      }
+    }
+  }
+}
+
 async function main(): Promise<void> {
   console.log("\n=== Indexing Readiness Check ===\n");
 
@@ -106,6 +234,7 @@ async function main(): Promise<void> {
     await checkSitemap(base);
     await checkCanonical(base, "/");
     await checkCanonical(base, "/texas");
+    await checkDiscoveryHubs(base);
 
     console.log(`\n  ${passed} passed, ${failed} failed\n`);
   } finally {

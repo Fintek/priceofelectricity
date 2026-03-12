@@ -6,9 +6,9 @@
     "slug": "cagr",
     "title": "CAGR Methodology",
     "description": "Compound annual growth rate methodology for long-horizon rate trends.",
-    "canonicalUrl": "http://localhost:3000/knowledge/methodology/cagr",
-    "jsonUrl": "http://localhost:3000/knowledge/history/v2/methodology/cagr.json",
-    "updatedAt": "2026-03-10T18:46:48.543Z",
+    "canonicalUrl": "https://priceofelectricity.com/knowledge/methodology/cagr",
+    "jsonUrl": "https://priceofelectricity.com/knowledge/history/v2/methodology/cagr.json",
+    "updatedAt": "2025-12-15T00:00:00.000Z",
     "sourceVersion": "v2",
     "temporalContext": {
       "sourceVersion": "v2",
@@ -18,10 +18,10 @@
       {
         "id": "poe-methodology-cagr",
         "sourceName": "PriceOfElectricity.com methodology: CAGR",
-        "sourceUrl": "http://localhost:3000/knowledge/methodology/cagr",
+        "sourceUrl": "https://priceofelectricity.com/knowledge/methodology/cagr",
         "publisher": "PriceOfElectricity.com",
         "license": "Site content license",
-        "retrievedAt": "2026-03-10T18:46:48.543Z"
+        "retrievedAt": "2025-12-15T00:00:00.000Z"
       }
     ],
     "fieldProvenance": [
@@ -59,8 +59,8 @@
     "citations": [
       {
         "sourceName": "PriceOfElectricity.com methodology: CAGR",
-        "sourceUrl": "http://localhost:3000/knowledge/methodology/cagr",
-        "retrievedAt": "2026-03-10T18:46:48.543Z"
+        "sourceUrl": "https://priceofelectricity.com/knowledge/methodology/cagr",
+        "retrievedAt": "2025-12-15T00:00:00.000Z"
       }
     ],
     "llmHints": {
@@ -76,14 +76,14 @@
     },
     "freshness": {
       "datasetUpdatedAt": "2025-12-15T00:00:00.000Z",
-      "computedAt": "2026-03-10T18:46:48.543Z",
-      "status": "aging",
-      "ageDays": 85,
+      "computedAt": "2025-12-15T00:00:00.000Z",
+      "status": "fresh",
+      "ageDays": 0,
       "methodology": {
         "id": "freshness",
         "version": "1.0",
-        "url": "http://localhost:3000/knowledge/methodology/freshness.json",
-        "canonicalUrl": "http://localhost:3000/knowledge/methodology/freshness"
+        "url": "https://priceofelectricity.com/knowledge/methodology/freshness.json",
+        "canonicalUrl": "https://priceofelectricity.com/knowledge/methodology/freshness"
       }
     },
     "excerpt": "CAGR Methodology. Defines how CAGR is computed from inputs and produces derived fields used across state and ranking pages.",
@@ -93,17 +93,17 @@
     "methodology": {
       "id": "cagr",
       "version": "1.0",
-      "lastReviewedAt": "2026-03-10",
+      "lastReviewedAt": "2025-12-15",
       "relatedDerivedFields": [
         "data.sortedStates"
       ]
     },
-    "qualityScore": 90,
-    "contentHash": "599b0c456c62837698684907d25139e513c3f802bccf9e2dda4608e7f8fb4569",
+    "qualityScore": 100,
+    "contentHash": "be4c3da5ab314f9d75c549f3fa6e6d59126ebff034d2828c9c7db241f4d84a0f",
     "integrity": {
-      "contentHash": "599b0c456c62837698684907d25139e513c3f802bccf9e2dda4608e7f8fb4569",
+      "contentHash": "be4c3da5ab314f9d75c549f3fa6e6d59126ebff034d2828c9c7db241f4d84a0f",
       "integrityAlgorithm": "sha256",
-      "signedAtBuild": "2026-03-10T18:46:48.543Z"
+      "signedAtBuild": "2025-12-15T00:00:00.000Z"
     }
   },
   "data": {
@@ -122,7 +122,7 @@
       "Sensitive to start/end point selection."
     ],
     "relatedInternalUrls": [
-      "http://localhost:3000/knowledge/rankings/cagr-25y"
+      "https://priceofelectricity.com/knowledge/rankings/cagr-25y"
     ],
     "relatedEntities": {
       "national": true,

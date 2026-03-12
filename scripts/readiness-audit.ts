@@ -140,7 +140,10 @@ async function checkRobots(base: string): Promise<CheckResult[]> {
     } else {
       results.push(pass("robots.txt allows crawling", "no blanket disallow"));
     }
-    if (body.includes("Sitemap:") && body.includes("/sitemap.xml")) {
+    if (
+      body.includes("Sitemap:") &&
+      (body.includes("/sitemap.xml") || body.includes("/sitemap-index.xml"))
+    ) {
       results.push(pass("robots.txt references sitemap"));
     } else {
       results.push(fail("robots.txt references sitemap"));
@@ -156,25 +159,34 @@ async function checkRobots(base: string): Promise<CheckResult[]> {
 
 async function checkSitemap(base: string): Promise<CheckResult[]> {
   const results: CheckResult[] = [];
-  const required = ["/texas", "/national", "/offers", "/drivers"];
+  const required = ["/sitemap/states.xml", "/sitemap/core.xml"];
   try {
-    const res = await fetchWithTimeout(`${base}/sitemap.xml`);
-    if (!res.ok) {
-      results.push(fail("sitemap.xml reachable", `status ${res.status}`));
+    const candidates = ["/sitemap.xml", "/sitemap-index.xml", "/sitemap/core.xml"];
+    let selected: string | null = null;
+    let body: string | null = null;
+    for (const candidate of candidates) {
+      const res = await fetchWithTimeout(`${base}${candidate}`);
+      if (res.ok) {
+        selected = candidate;
+        body = await res.text();
+        break;
+      }
+    }
+    if (!selected || !body) {
+      results.push(fail("sitemap endpoint reachable", "tried /sitemap.xml, /sitemap-index.xml, /sitemap/core.xml"));
       return results;
     }
-    results.push(pass("sitemap.xml reachable"));
-    const body = await res.text();
+    results.push(pass(`${selected} reachable`));
     for (const slug of required) {
       if (body.includes(slug)) {
-        results.push(pass(`sitemap contains ${slug}`));
+        results.push(pass(`${selected} contains ${slug}`));
       } else {
-        results.push(fail(`sitemap contains ${slug}`));
+        results.push(fail(`${selected} contains ${slug}`));
       }
     }
   } catch (err) {
     const msg = err instanceof Error ? err.message : String(err);
-    results.push(fail("sitemap.xml check", msg));
+    results.push(fail("sitemap check", msg));
   }
   return results;
 }
@@ -294,6 +306,125 @@ async function checkReleaseMetadata(base: string): Promise<CheckResult[]> {
   return results;
 }
 
+async function checkTrafficDiscovery(base: string): Promise<CheckResult[]> {
+  const results: CheckResult[] = [];
+  const checks: Array<{
+    path: string;
+    required: string[];
+    label: string;
+  }> = [
+    {
+      path: "/electricity-hubs",
+      required: [
+        "/electricity-cost",
+        "/average-electricity-bill",
+        "/electricity-bill-estimator",
+        "/electricity-cost-calculator",
+        "/electricity-usage",
+        "/energy-comparison",
+        "/electricity-providers",
+      ],
+      label: "electricity-hubs links canonical clusters",
+    },
+    {
+      path: "/energy-comparison",
+      required: [
+        "/electricity-cost-comparison/",
+        "/electricity-usage-cost/",
+        "/cost-to-run/",
+        "/electricity-bill-estimator/",
+        "/average-electricity-bill",
+        "/electricity-cost-calculator",
+        "/electricity-providers",
+      ],
+      label: "energy-comparison links canonical clusters",
+    },
+    {
+      path: "/electricity-hubs/comparisons",
+      required: [
+        "/electricity-cost-comparison",
+        "/compare",
+        "/electricity-providers",
+      ],
+      label: "comparison hub links provider discovery",
+    },
+    {
+      path: "/electricity-cost-comparison",
+      required: [
+        "/electricity-providers",
+        "/electricity-cost",
+      ],
+      label: "comparison index links provider discovery",
+    },
+    {
+      path: "/electricity-providers",
+      required: [
+        "/electricity-providers/texas",
+        "/electricity-cost-comparison",
+        "/electricity-cost",
+        "/energy-comparison",
+        "/electricity-hubs",
+        "/offers",
+        "/electricity-shopping/by-state",
+      ],
+      label: "provider index links marketplace clusters",
+    },
+    {
+      path: "/electricity-providers/texas",
+      required: [
+        "/electricity-cost/texas",
+        "/average-electricity-bill/texas",
+        "/electricity-bill-estimator/texas",
+        "/energy-comparison",
+        "/electricity-hubs",
+        "/offers/texas",
+        "/electricity-cost-calculator/texas",
+      ],
+      label: "provider state links canonical state clusters",
+    },
+    {
+      path: "/texas",
+      required: [
+        "/electricity-providers/texas",
+        "/offers/texas",
+      ],
+      label: "state page revenue pathway links",
+    },
+    {
+      path: "/electricity-bill-estimator/texas",
+      required: [
+        "/electricity-providers/texas",
+        "/offers/texas",
+      ],
+      label: "bill estimator revenue pathway links",
+    },
+  ];
+
+  for (const check of checks) {
+    try {
+      const res = await fetchWithTimeout(`${base}${check.path}`);
+      if (!res.ok) {
+        results.push(fail(`${check.path} reachable`, `status ${res.status}`));
+        continue;
+      }
+      results.push(pass(`${check.path} reachable`));
+      const html = await res.text();
+      for (const expected of check.required) {
+        if (html.includes(expected)) {
+          results.push(pass(`${check.label}: ${expected}`));
+        } else {
+          results.push(fail(`${check.label}: ${expected}`));
+        }
+      }
+    } catch (err) {
+      const msg = err instanceof Error ? err.message : String(err);
+      results.push(fail(`${check.path} traffic discovery check`, msg));
+    }
+  }
+
+  return results;
+}
+
 // ── Main ─────────────────────────────────────────────────────────────
 
 async function main(): Promise<void> {
@@ -314,6 +445,7 @@ async function main(): Promise<void> {
       ...(await checkSecurityHeaders(base)),
       ...(await checkApiContract(base)),
       ...(await checkReleaseMetadata(base)),
+      ...(await checkTrafficDiscovery(base)),
     ];
 
     const passedCount = checks.filter((c) => c.passed).length;

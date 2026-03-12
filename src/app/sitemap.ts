@@ -2,7 +2,6 @@ import type { MetadataRoute } from "next";
 import { readdirSync, existsSync, readFileSync, statSync } from "node:fs";
 import path from "node:path";
 import { STATES } from "@/data/states";
-import { CITIES } from "@/data/cities";
 import { UTILITIES } from "@/data/utilities";
 import { GUIDES } from "@/data/guides";
 import { TOPICS } from "@/data/topics";
@@ -18,26 +17,71 @@ import {
   isLongtailFamilyActive,
   getActiveUsageKwhTiers,
   getActiveIndustrySlugs,
+  getActiveApplianceSlugs,
+  getActiveApplianceCityPages,
+  getActiveCityPages,
 } from "@/lib/longtail/rollout";
-import { SUPPORTED_APPLIANCE_SLUGS } from "@/lib/longtail/applianceConfig";
 import { HOME_SIZE_SCENARIOS } from "@/lib/longtail/usageIntelligence";
+import { getLegacyCompareStaticPairs } from "@/lib/compare/legacyComparePairs";
+import { BILL_ESTIMATOR_PROFILES } from "@/lib/longtail/billEstimator";
+import {
+  assertNoDuplicateSegmentUrls,
+  SITEMAP_SEGMENT_IDS,
+  groupSitemapEntriesBySegment,
+  type SitemapSegmentId,
+} from "@/lib/seo/sitemapSegments";
 
 const BASE_URL = SITE_URL.replace(/\/+$/, "");
-const INDUSTRY_COST_SLUGS = [
-  "ev-charging",
-  "bitcoin-mining",
-  "ai-data-centers",
-  "data-centers",
-] as const;
-const LONGTAIL_USAGE_KWH_VALUES = [500, 750, 1000, 1500, 2000, 3000] as const;
 let cachedKnowledgeStateSlugs: string[] | null = null;
+const STATE_SLUG_SET = new Set(Object.keys(STATES));
 
-function parseUpdatedDate(updated: string): Date {
+function parseUpdatedDate(updated: string): Date | undefined {
   const parsed = Date.parse(updated);
   if (Number.isNaN(parsed)) {
-    return new Date();
+    return undefined;
   }
   return new Date(parsed);
+}
+
+function hasDeterministicStateLastModified(url: string): boolean {
+  let pathname = url;
+  try {
+    pathname = new URL(url).pathname;
+  } catch {
+    // Keep raw path-like values as-is.
+  }
+  const segments = pathname.replace(/^\/+|\/+$/g, "").split("/").filter(Boolean);
+  if (segments.length === 0) return false;
+  const stateSlug = segments[0];
+  if (!STATE_SLUG_SET.has(stateSlug)) return false;
+  if (segments.length === 1) return true;
+  if (segments.length === 2) {
+    return segments[1] === "utilities" || segments[1] === "plans" || segments[1] === "plan-types" || segments[1] === "history";
+  }
+  if (segments.length === 3) {
+    if (segments[1] === "bill") return /^\d+$/.test(segments[2]);
+    if (segments[1] === "utility" || segments[1] === "city") return segments[2].length > 0;
+    if (segments[0] === "electricity-cost" && STATE_SLUG_SET.has(segments[1])) {
+      return segments[2].length > 0;
+    }
+  }
+  if (segments.length === 4) {
+    if (segments[0] === "cost-to-run" && STATE_SLUG_SET.has(segments[2])) {
+      return segments[1].length > 0 && segments[3].length > 0;
+    }
+  }
+  return false;
+}
+
+function stripVolatileLastModified(entries: MetadataRoute.Sitemap): MetadataRoute.Sitemap {
+  return entries.map((entry) => {
+    if (!entry.lastModified || hasDeterministicStateLastModified(entry.url)) {
+      return entry;
+    }
+    const stableEntry = { ...entry };
+    delete stableEntry.lastModified;
+    return stableEntry;
+  });
 }
 
 function getKnowledgeStateSlugs(): string[] {
@@ -80,28 +124,6 @@ function hasKnowledgeComparePairPage(pair: string): boolean {
   return existsSync(comparePairPath);
 }
 
-function getLegacyCompareStaticPairs(): string[] {
-  const entries = Object.entries(STATES);
-  const topHigh = [...entries]
-    .sort((a, b) => b[1].avgRateCentsPerKwh - a[1].avgRateCentsPerKwh)
-    .slice(0, 10)
-    .map(([slug]) => slug);
-  const topLow = [...entries]
-    .sort((a, b) => a[1].avgRateCentsPerKwh - b[1].avgRateCentsPerKwh)
-    .slice(0, 10)
-    .map(([slug]) => slug);
-
-  const pairSet = new Set<string>();
-  for (const highSlug of topHigh) {
-    for (const lowSlug of topLow) {
-      if (highSlug === lowSlug) continue;
-      const [a, b] = [highSlug, lowSlug].sort((x, y) => x.localeCompare(y));
-      pairSet.add(`${a}-vs-${b}`);
-    }
-  }
-
-  return [...pairSet].sort((a, b) => a.localeCompare(b));
-}
 
 function getKnowledgeHistoryVersionsWithBundles(): string[] {
   try {
@@ -132,7 +154,7 @@ function getKnowledgeComparePairs(): string[] {
   }
 }
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export function getSegmentedSitemapEntries() {
   const stateEntries: MetadataRoute.Sitemap = Object.keys(STATES).map((slug) => {
     const info = STATES[slug];
     return {
@@ -155,7 +177,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     const stateInfo = STATES[utility.stateSlug];
     return {
       url: `${BASE_URL}/${utility.stateSlug}/utility/${utility.slug}`,
-      lastModified: stateInfo ? parseUpdatedDate(stateInfo.updated) : new Date(),
+      lastModified: parseUpdatedDate(stateInfo?.updated ?? ""),
       changeFrequency: "monthly",
       priority: 0.55,
     };
@@ -206,13 +228,22 @@ export default function sitemap(): MetadataRoute.Sitemap {
     changeFrequency: "monthly",
     priority: 0.7,
   }));
-  const cityEntries: MetadataRoute.Sitemap = CITIES.map((city) => {
+  const cityEntries: MetadataRoute.Sitemap = getActiveCityPages().map((city) => {
     const stateInfo = STATES[city.stateSlug];
     return {
-      url: `${BASE_URL}/${city.stateSlug}/city/${city.slug}`,
-      lastModified: stateInfo ? parseUpdatedDate(stateInfo.updated) : new Date(),
+      url: `${BASE_URL}/electricity-cost/${city.stateSlug}/${city.slug}`,
+      lastModified: parseUpdatedDate(stateInfo?.updated ?? ""),
       changeFrequency: "monthly",
       priority: 0.6,
+    };
+  });
+  const applianceCityPilotEntries: MetadataRoute.Sitemap = getActiveApplianceCityPages().map((page) => {
+    const stateInfo = STATES[page.stateSlug];
+    return {
+      url: `${BASE_URL}/cost-to-run/${page.applianceSlug}/${page.stateSlug}/${page.citySlug}`,
+      lastModified: parseUpdatedDate(stateInfo?.updated ?? ""),
+      changeFrequency: "monthly",
+      priority: 0.52,
     };
   });
   const legacyCompareStaticPairSet = new Set(getLegacyCompareStaticPairs());
@@ -258,7 +289,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     })),
   ];
 
-  return [
+  const entries: MetadataRoute.Sitemap = [
     {
       url: `${BASE_URL}/`,
       lastModified: new Date(),
@@ -646,6 +677,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...billEntries,
     ...regionEntries,
     ...cityEntries,
+    ...applianceCityPilotEntries,
     ...comparisonEntries,
     ...guideEntries,
     ...questionEntries,
@@ -688,6 +720,26 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.6,
     })),
     {
+      url: `${BASE_URL}/electricity-bill-estimator`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.62,
+    },
+    ...getKnowledgeStateSlugs().map((slug) => ({
+      url: `${BASE_URL}/electricity-bill-estimator/${slug}`,
+      lastModified: new Date(),
+      changeFrequency: "monthly" as const,
+      priority: 0.58,
+    })),
+    ...getKnowledgeStateSlugs().flatMap((slug) =>
+      BILL_ESTIMATOR_PROFILES.map((profile) => ({
+        url: `${BASE_URL}/electricity-bill-estimator/${slug}/${profile.slug}`,
+        lastModified: new Date(),
+        changeFrequency: "monthly" as const,
+        priority: 0.54,
+      })),
+    ),
+    {
       url: `${BASE_URL}/moving-to-electricity-cost`,
       lastModified: new Date(),
       changeFrequency: "monthly",
@@ -729,13 +781,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly" as const,
       priority: 0.52,
     })),
-    ...SUPPORTED_APPLIANCE_SLUGS.map((appliance) => ({
+    ...getActiveApplianceSlugs().map((appliance) => ({
       url: `${BASE_URL}/electricity-usage/appliances/${appliance}`,
       lastModified: new Date(),
       changeFrequency: "monthly" as const,
       priority: 0.52,
     })),
-    ...SUPPORTED_APPLIANCE_SLUGS.flatMap((appliance) =>
+    ...getActiveApplianceSlugs().flatMap((appliance) =>
       getKnowledgeStateSlugs().map((slug) => ({
         url: `${BASE_URL}/electricity-cost-calculator/${slug}/${appliance}`,
         lastModified: new Date(),
@@ -747,13 +799,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${BASE_URL}/electricity-hubs`,
       lastModified: new Date(),
       changeFrequency: "weekly",
-      priority: 0.7,
+      priority: 0.8,
     },
     {
       url: `${BASE_URL}/electricity-hubs/states`,
       lastModified: new Date(),
       changeFrequency: "weekly",
-      priority: 0.65,
+      priority: 0.72,
     },
     ...getKnowledgeStateSlugs().map((slug) => ({
       url: `${BASE_URL}/electricity-hubs/states/${slug}`,
@@ -765,7 +817,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${BASE_URL}/electricity-hubs/scenarios`,
       lastModified: new Date(),
       changeFrequency: "weekly",
-      priority: 0.6,
+      priority: 0.68,
     },
     ...(isLongtailFamilyActive("usage-cost")
       ? [
@@ -773,7 +825,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
             url: `${BASE_URL}/electricity-hubs/usage`,
             lastModified: new Date(),
             changeFrequency: "weekly" as const,
-            priority: 0.6,
+            priority: 0.68,
           },
           ...getActiveUsageKwhTiers().map((kwh) => ({
             url: `${BASE_URL}/electricity-hubs/usage/${kwh}`,
@@ -787,7 +839,31 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${BASE_URL}/electricity-hubs/comparisons`,
       lastModified: new Date(),
       changeFrequency: "weekly",
-      priority: 0.6,
+      priority: 0.68,
+    },
+    {
+      url: `${BASE_URL}/energy-comparison`,
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 0.78,
+    },
+    {
+      url: `${BASE_URL}/energy-comparison/states`,
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 0.7,
+    },
+    {
+      url: `${BASE_URL}/energy-comparison/usage`,
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 0.68,
+    },
+    {
+      url: `${BASE_URL}/energy-comparison/appliances`,
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 0.68,
     },
     ...(isLongtailFamilyActive("industry-cost")
       ? [
@@ -831,7 +907,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
           })),
         )
       : []),
-    ...SUPPORTED_APPLIANCE_SLUGS.flatMap((appliance) =>
+    ...getActiveApplianceSlugs().flatMap((appliance) =>
       getKnowledgeStateSlugs().map((slug) => ({
         url: `${BASE_URL}/cost-to-run/${appliance}/${slug}`,
         lastModified: new Date(),
@@ -1692,4 +1768,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.65,
     },
   ];
+  // Keep lastModified only when backed by stable source dates.
+  const stableEntries = stripVolatileLastModified(entries);
+  const grouped = groupSitemapEntriesBySegment(stableEntries);
+  assertNoDuplicateSegmentUrls(grouped);
+  return grouped;
+}
+
+export function generateSitemaps(): Array<{ id: SitemapSegmentId }> {
+  return SITEMAP_SEGMENT_IDS.map((id) => ({ id }));
+}
+
+export default function sitemap({ id }: { id: SitemapSegmentId }): MetadataRoute.Sitemap {
+  const grouped = getSegmentedSitemapEntries();
+  return grouped[id] ?? grouped.core;
 }

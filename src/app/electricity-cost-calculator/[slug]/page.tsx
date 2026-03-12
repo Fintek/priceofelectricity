@@ -228,7 +228,10 @@ export default async function ElectricityCostCalculatorStatePage({
               <Link href={`/electricity-hubs/states/${slug}`}>{state.name} electricity hub</Link>
             </li>
             <li>
-              <Link href="/electricity-cost-comparison">Electricity comparison hub</Link>
+              <Link href="/energy-comparison/states">State comparison discovery hub</Link>
+            </li>
+            <li>
+              <Link href="/energy-comparison/usage">Usage comparison discovery slice</Link>
             </li>
           </ul>
         </section>

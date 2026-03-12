@@ -6,7 +6,9 @@ import Disclaimers from "@/app/components/policy/Disclaimers";
 import StatusFooter from "@/components/common/StatusFooter";
 import LongtailRelatedLinks from "@/components/longtail/LongtailRelatedLinks";
 import LongtailStateTemplate from "@/components/longtail/LongtailStateTemplate";
+import CommercialPlacement from "@/components/monetization/CommercialPlacement";
 import { getRelease } from "@/lib/knowledge/fetch";
+import { loadActiveCityElectricitySummariesForState } from "@/lib/longtail/cityElectricity";
 import {
   calculateApplianceOperatingCost,
   formatHoursPerDay,
@@ -17,12 +19,17 @@ import {
   parseApplianceSlug,
 } from "@/lib/longtail/applianceLongtail";
 import { getApplianceConfig } from "@/lib/longtail/applianceConfig";
+import {
+  getActiveApplianceCityPagesForStateAppliance,
+  isActiveApplianceSlug,
+} from "@/lib/longtail/rollout";
 import { buildLongtailLinkSections } from "@/lib/longtail/internalLinks";
 import { formatRate, formatUsd, loadLongtailStateData } from "@/lib/longtail/stateLongtail";
 import { buildMetadata } from "@/lib/seo/metadata";
-import { buildBreadcrumbListJsonLd, buildWebPageJsonLd } from "@/lib/seo/jsonld";
+import { buildBreadcrumbListJsonLd, buildDatasetJsonLd, buildFaqPageJsonLd, buildWebPageJsonLd } from "@/lib/seo/jsonld";
 
 export const dynamic = "force-static";
+export const dynamicParams = false;
 export const revalidate = 86400;
 
 export async function generateStaticParams() {
@@ -40,8 +47,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { appliance, state } = await params;
   const applianceSlug = parseApplianceSlug(appliance);
-
-  if (!applianceSlug) {
+  if (!applianceSlug || !isActiveApplianceSlug(applianceSlug)) {
     return buildMetadata({
       title: "Not found | PriceOfElectricity.com",
       description: "We couldn't find that page.",
@@ -81,7 +87,7 @@ export default async function ApplianceCostToRunPage({
 }) {
   const { appliance, state } = await params;
   const applianceSlug = parseApplianceSlug(appliance);
-  if (!applianceSlug) notFound();
+  if (!applianceSlug || !isActiveApplianceSlug(applianceSlug)) notFound();
 
   const stateData = await loadLongtailStateData(state);
   if (!stateData) notFound();
@@ -100,6 +106,22 @@ export default async function ApplianceCostToRunPage({
     pageType: "appliance-cost",
     stateData,
     usageKwh: Math.max(1, Math.round(stateEstimate.kwhPerMonth)),
+  });
+  const citySummaries = await loadActiveCityElectricitySummariesForState(stateData.slug);
+  const activeApplianceCityKeys = new Set(
+    getActiveApplianceCityPagesForStateAppliance(stateData.slug, applianceSlug).map(
+      (page) => page.citySlug,
+    ),
+  );
+  const applianceCityRows = citySummaries.slice(0, 6).map((citySummary) => {
+    const monthlyCost = (citySummary.cityRateCentsPerKwh / 100) * stateEstimate.kwhPerMonth;
+    const yearlyCost = monthlyCost * 12;
+    return {
+      citySummary,
+      monthlyCost,
+      yearlyCost,
+      hasApplianceCityPilot: activeApplianceCityKeys.has(citySummary.city.slug),
+    };
   });
 
   const relatedApplianceSections = [
@@ -133,10 +155,40 @@ export default async function ApplianceCostToRunPage({
       `${stateData.name} appliance operating cost`,
     ],
   });
+  const datasetJsonLd = buildDatasetJsonLd({
+    name: `${stateData.name} Residential Electricity Dataset Reference`,
+    description:
+      "State-level residential electricity rate data used to price deterministic appliance operating-cost scenarios.",
+    url: canonicalPath,
+    publisher: "PriceOfElectricity.com",
+    sameAs: stateData.sourceUrl ? [stateData.sourceUrl] : undefined,
+    distribution: [
+      { contentUrl: "/datasets/electricity-prices-by-state.json", encodingFormat: "application/json" },
+      { contentUrl: "/datasets/electricity-prices-by-state.csv", encodingFormat: "text/csv" },
+    ],
+  });
+  const faqJsonLd = buildFaqPageJsonLd([
+    {
+      question: `How much does it cost to run ${article} ${applianceConfig.displayName.toLowerCase()} in ${stateData.name}?`,
+      answer:
+        stateEstimate.costPerMonth != null
+          ? `Using ${formatHoursPerDay(applianceConfig.typicalUsageHoursPerDay)} and a state average rate of ${formatRate(stateData.avgRateCentsPerKwh)}, this deterministic model estimates about ${formatUsd(stateEstimate.costPerMonth)} per month.`
+          : "This route uses deterministic wattage and runtime assumptions to estimate energy-only operating cost.",
+    },
+    {
+      question: "Does this estimate include delivery fees and taxes?",
+      answer:
+        "No. This model is energy-only and excludes delivery charges, taxes, fixed monthly fees, and plan-specific adjustments.",
+    },
+    {
+      question: `Where can I compare this appliance across more routes?`,
+      answer: `Use /energy-comparison/appliances for curated appliance comparisons and /electricity-bill-estimator/${stateData.slug} for household bill profiles in ${stateData.name}.`,
+    },
+  ]);
 
   return (
     <>
-      <JsonLdScript data={[breadcrumbJsonLd, webPageJsonLd]} />
+      <JsonLdScript data={[breadcrumbJsonLd, webPageJsonLd, datasetJsonLd, faqJsonLd]} />
       <LongtailStateTemplate
         breadcrumbs={[
           { label: "Home", href: "/" },
@@ -173,12 +225,6 @@ export default async function ApplianceCostToRunPage({
         }
         relatedLinks={[]}
         relatedLinkSections={relatedLinkSections}
-        monetizationContext={{
-          pageType: "longtail-usage",
-          state,
-          stateName: stateData.name,
-          usageKwh: Math.max(1, Math.round(stateEstimate.kwhPerMonth)),
-        }}
         sourceAttribution={{
           sourceName: stateData.sourceName,
           sourceUrl: stateData.sourceUrl,
@@ -297,6 +343,112 @@ export default async function ApplianceCostToRunPage({
             to compare light, typical, and heavy usage profiles.
           </p>
         </section>
+
+        <section style={{ marginBottom: 32 }}>
+          <h2 style={{ fontSize: 20, marginBottom: 12 }}>Comparison discovery pathways</h2>
+          <p style={{ marginTop: 0, lineHeight: 1.7 }}>
+            Use the curated Energy Comparison Hub to move between appliance, state, and usage comparison routes
+            without changing canonical ownership for appliance cost intent.
+          </p>
+          <ul style={{ margin: 0, paddingLeft: 20, lineHeight: 1.8 }}>
+            <li>
+              <Link href="/energy-comparison/appliances">Appliance comparison slice</Link>
+            </li>
+            <li>
+              <Link href="/energy-comparison/states">State comparison slice</Link>
+            </li>
+            <li>
+              <Link href="/energy-comparison/usage">Usage comparison slice</Link>
+            </li>
+            <li>
+              <Link href={`/electricity-bill-estimator/${stateData.slug}`}>State bill estimator scenarios</Link>
+            </li>
+          </ul>
+        </section>
+
+        {applianceCityRows.length > 0 && (
+          <section style={{ marginBottom: 32 }}>
+            <h2 style={{ fontSize: 20, marginBottom: 12 }}>
+              Rollout-enabled city context in {stateData.name}
+            </h2>
+            <p style={{ marginTop: 0, lineHeight: 1.7 }}>
+              These city pages provide supplemental local context for this same appliance usage profile. City values are
+              deterministic estimates and remain secondary to the canonical appliance-state route.
+            </p>
+            <div style={{ overflowX: "auto" }}>
+              <table
+                style={{
+                  width: "100%",
+                  borderCollapse: "collapse",
+                  border: "1px solid var(--color-border, #e5e7eb)",
+                }}
+              >
+                <thead>
+                  <tr>
+                    {["City", "City rate", "Monthly estimate", "Yearly estimate", "City route"].map((label) => (
+                      <th
+                        key={label}
+                        style={{
+                          textAlign: "left",
+                          padding: 10,
+                          borderBottom: "1px solid var(--color-border, #e5e7eb)",
+                          backgroundColor: "var(--color-surface-alt, #f9fafb)",
+                        }}
+                      >
+                        {label}
+                      </th>
+                    ))}
+                  </tr>
+                </thead>
+                <tbody>
+                  {applianceCityRows.map((row) => (
+                    <tr key={row.citySummary.city.slug}>
+                      <td style={{ padding: 10, borderBottom: "1px solid var(--color-border, #e5e7eb)" }}>
+                        {row.citySummary.city.name}
+                      </td>
+                      <td style={{ padding: 10, borderBottom: "1px solid var(--color-border, #e5e7eb)" }}>
+                        {formatRate(row.citySummary.cityRateCentsPerKwh)}
+                      </td>
+                      <td style={{ padding: 10, borderBottom: "1px solid var(--color-border, #e5e7eb)" }}>
+                        {formatUsd(row.monthlyCost)}
+                      </td>
+                      <td style={{ padding: 10, borderBottom: "1px solid var(--color-border, #e5e7eb)" }}>
+                        {formatUsd(row.yearlyCost)}
+                      </td>
+                      <td style={{ padding: 10, borderBottom: "1px solid var(--color-border, #e5e7eb)" }}>
+                        {row.hasApplianceCityPilot ? (
+                          <Link
+                            href={`/cost-to-run/${applianceSlug}/${stateData.slug}/${row.citySummary.city.slug}`}
+                          >
+                            Appliance city pilot page
+                          </Link>
+                        ) : (
+                          <Link href={`/electricity-cost/${stateData.slug}/${row.citySummary.city.slug}`}>
+                            City electricity context
+                          </Link>
+                        )}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            <p style={{ marginBottom: 0, marginTop: 12, lineHeight: 1.7 }}>
+              City pages are authority/context routes and not appliance-by-city canonical pages. Appliance cost intent
+              remains canonical at this state-level route.
+            </p>
+          </section>
+        )}
+
+        <CommercialPlacement
+          pageFamily="appliance-cost-pages"
+          context={{
+            pageType: "longtail-usage",
+            state,
+            stateName: stateData.name,
+            usageKwh: Math.max(1, Math.round(stateEstimate.kwhPerMonth)),
+          }}
+        />
 
         <LongtailRelatedLinks sections={relatedApplianceSections} />
       </LongtailStateTemplate>

@@ -13,7 +13,6 @@ import {
   formatUsd,
   getLongtailStateStaticParams,
   isValidLongtailUsageKwh,
-  LONGTAIL_USAGE_KWH_VALUES,
   loadLongtailStateData,
 } from "@/lib/longtail/stateLongtail";
 import { buildLongtailLinkSections } from "@/lib/longtail/internalLinks";

@@ -246,6 +246,13 @@ export default async function AverageElectricityBillIndexPage() {
               {` `}
               <span className="muted">Model a custom bill instead of using the standard 900 kWh assumption.</span>
             </li>
+            <li>
+              <Link href="/electricity-bill-estimator">Household-profile bill estimator hub</Link>
+              {` `}
+              <span className="muted">
+                Compare deterministic apartment, small-home, medium-home, and large-home scenarios.
+              </span>
+            </li>
           </ul>
         </section>
 

@@ -210,6 +210,9 @@ export default async function ElectricityCostCalculatorIndexPage() {
               <Link href="/average-electricity-bill">Average electricity bill hub</Link>
             </li>
             <li>
+              <Link href="/electricity-bill-estimator">Household-profile bill estimator hub</Link>
+            </li>
+            <li>
               <Link href={`/average-electricity-bill/${representativeState.slug}`}>
                 Average electricity bill in {representativeState.name}
               </Link>

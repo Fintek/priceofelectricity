@@ -120,11 +120,18 @@ async function fetchLocalPath(
 }
 
 async function collectSitemapPaths(baseUrl: string): Promise<string[]> {
-  const res = await fetchWithTimeout(`${baseUrl}/sitemap.xml`);
-  if (res.status !== 200) {
-    throw new Error(`Failed to fetch sitemap.xml (status ${res.status})`);
+  const candidates = ["/sitemap.xml", "/sitemap-index.xml", "/sitemap/core.xml"];
+  let xml: string | null = null;
+  for (const candidate of candidates) {
+    const res = await fetchWithTimeout(`${baseUrl}${candidate}`);
+    if (res.status === 200) {
+      xml = await res.text();
+      break;
+    }
   }
-  const xml = await res.text();
+  if (!xml) {
+    throw new Error("Failed to fetch sitemap source (tried /sitemap.xml, /sitemap-index.xml, /sitemap/core.xml)");
+  }
   const locRegex = /<loc>(.*?)<\/loc>/g;
   const paths = new Set<string>();
   let match: RegExpExecArray | null;

@@ -4,7 +4,8 @@ import { notFound } from "next/navigation";
 import JsonLdScript from "@/app/components/seo/JsonLdScript";
 import Disclaimers from "@/app/components/policy/Disclaimers";
 import StatusFooter from "@/components/common/StatusFooter";
-import { APPLIANCE_CONFIGS, getApplianceConfig } from "@/lib/longtail/applianceConfig";
+import { getApplianceConfig } from "@/lib/longtail/applianceConfig";
+import { isActiveApplianceSlug } from "@/lib/longtail/rollout";
 import { getRelease } from "@/lib/knowledge/fetch";
 import {
   formatHoursPerDay,
@@ -14,16 +15,18 @@ import {
 import { loadLongtailStateData } from "@/lib/longtail/stateLongtail";
 import {
   getApplianceUsageReference,
+  getUsageApplianceStaticParams,
   parseUsageApplianceSlug,
 } from "@/lib/longtail/usageIntelligence";
 import { buildMetadata } from "@/lib/seo/metadata";
 import { buildBreadcrumbListJsonLd, buildWebPageJsonLd } from "@/lib/seo/jsonld";
 
 export const dynamic = "force-static";
+export const dynamicParams = false;
 export const revalidate = 86400;
 
 export async function generateStaticParams() {
-  return APPLIANCE_CONFIGS.map((appliance) => ({ appliance: appliance.slug }));
+  return getUsageApplianceStaticParams();
 }
 
 export async function generateMetadata({
@@ -33,7 +36,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { appliance } = await params;
   const applianceSlug = parseUsageApplianceSlug(appliance);
-  if (!applianceSlug) {
+  if (!applianceSlug || !isActiveApplianceSlug(applianceSlug)) {
     return buildMetadata({
       title: "Not found | PriceOfElectricity.com",
       description: "We couldn't find that page.",
@@ -56,7 +59,7 @@ export default async function ApplianceUsageReferencePage({
 }) {
   const { appliance } = await params;
   const applianceSlug = parseUsageApplianceSlug(appliance);
-  if (!applianceSlug) notFound();
+  if (!applianceSlug || !isActiveApplianceSlug(applianceSlug)) notFound();
 
   const applianceConfig = getApplianceConfig(applianceSlug);
   const usage = getApplianceUsageReference(applianceSlug);

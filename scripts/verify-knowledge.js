@@ -60,6 +60,31 @@ function readJson(filePath, label) {
   }
 }
 
+function getExpectedDeterministicGeneratedAt(sourceVersion) {
+  try {
+    if (typeof sourceVersion === "string" && sourceVersion.length > 0) {
+      const versionPath = path.join(process.cwd(), "src", "data", "snapshots", `${sourceVersion}.json`);
+      if (fs.existsSync(versionPath)) {
+        const byVersion = readJson(versionPath, `src/data/snapshots/${sourceVersion}.json`);
+        if (byVersion && typeof byVersion.releasedAt === "string" && byVersion.releasedAt.length > 0) {
+          return byVersion.releasedAt.includes("T")
+            ? byVersion.releasedAt
+            : `${byVersion.releasedAt}T00:00:00.000Z`;
+        }
+      }
+    }
+    const latestSnapshotPath = path.join(process.cwd(), "src", "data", "snapshots", "latest.json");
+    if (!fs.existsSync(latestSnapshotPath)) return null;
+    const latest = readJson(latestSnapshotPath, "src/data/snapshots/latest.json");
+    if (!latest || typeof latest.releasedAt !== "string" || latest.releasedAt.length === 0) return null;
+    return latest.releasedAt.includes("T")
+      ? latest.releasedAt
+      : `${latest.releasedAt}T00:00:00.000Z`;
+  } catch {
+    return null;
+  }
+}
+
 function recomputeContentHash(pageObject) {
   if (!pageObject || typeof pageObject !== "object" || !pageObject.meta || typeof pageObject.meta !== "object") {
     return null;
@@ -520,6 +545,26 @@ function main() {
   ensureFileExists(averageElectricityBillSlugPath, "average-electricity-bill [slug] page");
   if (!sitemapSource.includes("average-electricity-bill")) {
     fail("sitemap must include average-electricity-bill routes");
+  }
+  const electricityBillEstimatorIndexPath = path.join(process.cwd(), "src", "app", "electricity-bill-estimator", "page.tsx");
+  ensureFileExists(electricityBillEstimatorIndexPath, "electricity-bill-estimator index page");
+  const electricityBillEstimatorSlugPath = path.join(process.cwd(), "src", "app", "electricity-bill-estimator", "[slug]", "page.tsx");
+  ensureFileExists(electricityBillEstimatorSlugPath, "electricity-bill-estimator [slug] page");
+  const electricityBillEstimatorProfilePath = path.join(process.cwd(), "src", "app", "electricity-bill-estimator", "[slug]", "[profile]", "page.tsx");
+  ensureFileExists(electricityBillEstimatorProfilePath, "electricity-bill-estimator [slug]/[profile] page");
+  if (!sitemapSource.includes("electricity-bill-estimator")) {
+    fail("sitemap must include electricity-bill-estimator routes");
+  }
+  const energyComparisonHubPath = path.join(process.cwd(), "src", "app", "energy-comparison", "page.tsx");
+  ensureFileExists(energyComparisonHubPath, "energy-comparison page");
+  const energyComparisonStatesPath = path.join(process.cwd(), "src", "app", "energy-comparison", "states", "page.tsx");
+  ensureFileExists(energyComparisonStatesPath, "energy-comparison states page");
+  const energyComparisonUsagePath = path.join(process.cwd(), "src", "app", "energy-comparison", "usage", "page.tsx");
+  ensureFileExists(energyComparisonUsagePath, "energy-comparison usage page");
+  const energyComparisonAppliancesPath = path.join(process.cwd(), "src", "app", "energy-comparison", "appliances", "page.tsx");
+  ensureFileExists(energyComparisonAppliancesPath, "energy-comparison appliances page");
+  if (!sitemapSource.includes("energy-comparison")) {
+    fail("sitemap must include energy-comparison routes");
   }
   const movingToElectricityCostIndexPath = path.join(process.cwd(), "src", "app", "moving-to-electricity-cost", "page.tsx");
   ensureFileExists(movingToElectricityCostIndexPath, "moving-to-electricity-cost index page");
@@ -3163,7 +3208,9 @@ const KNOWN_STATIC_ROUTES = new Set([
 const KNOWN_ROUTE_FAMILY_PREFIXES = [
   "/electricity-cost/",
   "/average-electricity-bill/",
+  "/electricity-bill-estimator/",
   "/electricity-cost-calculator/",
+  "/energy-comparison/",
   "/electricity-usage/",
   "/electricity-usage/home-size/",
   "/electricity-usage/appliances/",
@@ -3239,7 +3286,13 @@ function isValidInternalRoute(route) {
 const PRODUCTION_SUMMARY_GROUPS = {
   "Core pages": ["Core pages", "Broken internal link scan"],
   "Programmatic sections": ["Programmatic sections", "Static route references", "Generated route families"],
-  "Data assets": ["Knowledge datasets", "Search index", "Route-family backing"],
+  "Data assets": [
+    "Knowledge datasets",
+    "Search index",
+    "Canonical origin integrity",
+    "Generated output determinism policy",
+    "Route-family backing",
+  ],
   "Dataset exports": ["Dataset exports"],
   "Sitemap/robots": [
     "Sitemap file",
@@ -3386,6 +3439,45 @@ function runPreLaunchVerification(root, sitemapSource, layoutSource) {
     }
   });
 
+  runCheck("Canonical origin integrity", () => {
+    const forbiddenOrigins = ["http://localhost", "http://127.0.0.1"];
+    const artifactFiles = [
+      path.join(root, "search-index.json"),
+      path.join(root, "entity-index.json"),
+      path.join(root, "index.json"),
+    ];
+    for (const filePath of artifactFiles) {
+      if (!fs.existsSync(filePath)) continue;
+      const content = fs.readFileSync(filePath, "utf8");
+      for (const origin of forbiddenOrigins) {
+        if (content.includes(origin)) {
+          const relPath = path.relative(process.cwd(), filePath);
+          throw new Error(
+            `${relPath} contains forbidden origin "${origin}". ` +
+            "Generated artifacts must use production canonical origin. " +
+            "See docs/CANONICAL_ARCHITECTURE_POLICY.md § B."
+          );
+        }
+      }
+    }
+  });
+
+  runCheck("Generated output determinism policy", () => {
+    const indexPath = path.join(root, "index.json");
+    if (!fs.existsSync(indexPath)) throw new Error("public/knowledge/index.json must exist");
+    const index = readJson(indexPath, "public/knowledge/index.json");
+    const sourceVersion = index && typeof index.sourceVersion === "string" ? index.sourceVersion : "";
+    const expectedGeneratedAt = getExpectedDeterministicGeneratedAt(sourceVersion);
+    if (!expectedGeneratedAt) return;
+    const actualGeneratedAt = index && typeof index.generatedAt === "string" ? index.generatedAt : "";
+    if (actualGeneratedAt !== expectedGeneratedAt) {
+      throw new Error(
+        "knowledge/index.json generatedAt must match deterministic snapshot release timestamp " +
+          `(expected ${expectedGeneratedAt}, got ${actualGeneratedAt || "empty"})`
+      );
+    }
+  });
+
   runCheck("Sitemap file", () => {
     const sitemapPath = path.join(process.cwd(), "src", "app", "sitemap.ts");
     if (!fs.existsSync(sitemapPath)) throw new Error("src/app/sitemap.ts must exist");
@@ -3394,6 +3486,295 @@ function runPreLaunchVerification(root, sitemapSource, layoutSource) {
   runCheck("Robots file", () => {
     const robotsTsPath = path.join(process.cwd(), "src", "app", "robots.ts");
     if (!fs.existsSync(robotsTsPath)) throw new Error("src/app/robots.ts must exist");
+  });
+
+  runCheck("Monetization infrastructure files", () => {
+    const required = [
+      path.join(process.cwd(), "src", "components", "monetization", "CommercialModule.tsx"),
+      path.join(process.cwd(), "src", "components", "monetization", "CommercialPlacement.tsx"),
+      path.join(process.cwd(), "src", "components", "monetization", "CommercialComplianceNote.tsx"),
+      path.join(process.cwd(), "src", "lib", "monetization", "placementConfig.ts"),
+      path.join(process.cwd(), "src", "lib", "providers", "providerCatalog.ts"),
+      path.join(process.cwd(), "src", "lib", "providers", "providerResolver.ts"),
+      path.join(process.cwd(), "src", "lib", "providers", "providerPilot.ts"),
+      path.join(process.cwd(), "src", "lib", "providers", "providerRolloutPlan.ts"),
+      path.join(process.cwd(), "docs", "MONETIZATION_INFRASTRUCTURE.md"),
+      path.join(process.cwd(), "docs", "PROVIDER_MARKETPLACE.md"),
+      path.join(process.cwd(), "docs", "PROVIDER_ONBOARDING_PILOT.md"),
+      path.join(process.cwd(), "docs", "PROVIDER_ROLLOUT_PLAN.md"),
+    ];
+    for (const filePath of required) {
+      if (!fs.existsSync(filePath)) {
+        throw new Error(`missing monetization infrastructure file: ${path.relative(process.cwd(), filePath)}`);
+      }
+    }
+  });
+
+  runCheck("Provider pilot activation policy", () => {
+    const pilotPath = path.join(process.cwd(), "src", "lib", "providers", "providerPilot.ts");
+    if (!fs.existsSync(pilotPath)) {
+      throw new Error("src/lib/providers/providerPilot.ts must exist");
+    }
+    const pilotSource = fs.readFileSync(pilotPath, "utf8");
+    const requiredPilotSignals = [
+      "enabled: true",
+      "\"state-electricity-pages\"",
+      "\"bill-estimator-pages\"",
+      "\"energy-comparison-hub-pages\"",
+      "\"provider-comparison\"",
+      "\"marketplace-cta\"",
+      "\"texas\"",
+      "\"pennsylvania\"",
+      "\"ohio\"",
+      "\"illinois\"",
+      "\"new-jersey\"",
+      "\"new-york\"",
+    ];
+    for (const signal of requiredPilotSignals) {
+      if (!pilotSource.includes(signal)) {
+        throw new Error(`provider pilot policy must include ${signal}`);
+      }
+    }
+    const forbiddenPilotFamilySignals = ["\"calculator-pages\"", "\"city-electricity-pages\"", "\"appliance-cost-pages\""];
+    for (const signal of forbiddenPilotFamilySignals) {
+      if (pilotSource.includes(signal)) {
+        throw new Error(`provider pilot policy must keep family blocked: ${signal}`);
+      }
+    }
+  });
+
+  runCheck("Provider rollout plan integrity", () => {
+    const planPath = path.join(process.cwd(), "src", "lib", "providers", "providerRolloutPlan.ts");
+    if (!fs.existsSync(planPath)) {
+      throw new Error("src/lib/providers/providerRolloutPlan.ts must exist");
+    }
+    const planSource = fs.readFileSync(planPath, "utf8");
+    const requiredTierSignals = [
+      "\"tier-1-pilot\"",
+      "\"tier-2-deregulated\"",
+      "\"tier-3-limited-marketplace\"",
+      "\"tier-4-informational-only\"",
+      "\"texas\"",
+      "\"pennsylvania\"",
+      "\"ohio\"",
+      "\"illinois\"",
+      "\"new-jersey\"",
+      "\"new-york\"",
+    ];
+    for (const signal of requiredTierSignals) {
+      if (!planSource.includes(signal)) {
+        throw new Error(`provider rollout plan must include ${signal}`);
+      }
+    }
+    const blockedFamilySignals = ["\"calculator-pages\"", "\"city-electricity-pages\"", "permanently-blocked"];
+    for (const signal of blockedFamilySignals) {
+      if (!planSource.includes(signal)) {
+        throw new Error(`provider rollout plan must include blocked-family policy: ${signal}`);
+      }
+    }
+  });
+
+  runCheck("Provider catalog state alignment with rollout plan", () => {
+    const planPath = path.join(process.cwd(), "src", "lib", "providers", "providerRolloutPlan.ts");
+    const catalogPath = path.join(process.cwd(), "src", "lib", "providers", "providerCatalog.ts");
+    if (!fs.existsSync(planPath) || !fs.existsSync(catalogPath)) return;
+    const planSource = fs.readFileSync(planPath, "utf8");
+    const catalogSource = fs.readFileSync(catalogPath, "utf8");
+    const catalogStates = ["illinois", "new-jersey", "new-york", "ohio", "pennsylvania", "texas"];
+    for (const state of catalogStates) {
+      if (!catalogSource.includes(`"${state}"`)) continue;
+      if (!planSource.includes(`"${state}"`)) {
+        throw new Error(`provider rollout plan must account for provider catalog state: ${state}`);
+      }
+    }
+  });
+
+  runCheck("Provider catalog structure integrity", () => {
+    const catalogPath = path.join(process.cwd(), "src", "lib", "providers", "providerCatalog.ts");
+    if (!fs.existsSync(catalogPath)) return;
+    const src = fs.readFileSync(catalogPath, "utf8");
+    const entryCount = (src.match(/providerId:\s*"/g) || []).length;
+    if (entryCount === 0) throw new Error("provider catalog must contain at least one provider entry");
+    const requiredFieldPatterns = [
+      /providerName:\s*"/g,
+      /serviceStates:\s*\[/g,
+      /offerType:\s*"/g,
+      /offerDescription:\s*"/g,
+      /coverageAreaDescription:\s*"/g,
+      /planTypeSummary:\s*"/g,
+      /featureHighlights:\s*\[/g,
+      /signupUrl:\s*"/g,
+      /enabled:\s*(true|false)/g,
+      /allowedPageFamilies:\s*\[/g,
+      /allowedModuleTypes:\s*\[/g,
+      /priority:\s*\d+/g,
+    ];
+    for (const pattern of requiredFieldPatterns) {
+      const count = (src.match(pattern) || []).length;
+      if (count < entryCount) {
+        throw new Error(`provider catalog field coverage invalid for pattern ${pattern}`);
+      }
+    }
+    const priorities = Array.from(src.matchAll(/priority:\s*(\d+)/g)).map((m) => Number(m[1]));
+    if (priorities.length < entryCount) {
+      throw new Error("provider catalog entries must include numeric priority values");
+    }
+    if (priorities.some((p) => !Number.isFinite(p) || p < 0)) {
+      throw new Error("provider catalog priority values must be finite non-negative numbers");
+    }
+    const providerIds = Array.from(src.matchAll(/providerId:\s*"([^"]+)"/g)).map((m) => m[1]);
+    if (new Set(providerIds).size !== providerIds.length) {
+      throw new Error("provider catalog providerId values must be unique");
+    }
+    const requiredMultiProviderStates = ["texas", "illinois", "new-york"];
+    for (const state of requiredMultiProviderStates) {
+      const occurrences = (src.match(new RegExp(`"${state}"`, "g")) || []).length;
+      if (occurrences < 2) {
+        throw new Error(`provider catalog should support multi-provider state coverage for ${state}`);
+      }
+    }
+  });
+
+  runCheck("Provider discovery infrastructure integrity", () => {
+    const helperPath = path.join(process.cwd(), "src", "lib", "providers", "providerDiscovery.ts");
+    const componentPath = path.join(process.cwd(), "src", "components", "providers", "ProviderDiscoverySection.tsx");
+    ensureFileExists(helperPath, "provider discovery helper");
+    ensureFileExists(componentPath, "provider discovery section component");
+    const helperSrc = fs.readFileSync(helperPath, "utf8");
+    const componentSrc = fs.readFileSync(componentPath, "utf8");
+    const requiredHelperSignals = [
+      "buildProviderDiscoveryLinks",
+      "buildProviderDiscoveryItemListEntries",
+      "buildProviderOfferItemListEntries",
+      "getProviderDiscoveryStatesFromCatalog",
+    ];
+    for (const signal of requiredHelperSignals) {
+      if (!helperSrc.includes(signal)) {
+        throw new Error(`provider discovery helper missing signal: ${signal}`);
+      }
+    }
+    if (!componentSrc.includes("links.map")) {
+      throw new Error("provider discovery section must render deterministic link lists");
+    }
+  });
+
+  runCheck("Marketplace maturity provider comparison clarity surfaces", () => {
+    const providerPages = [
+      path.join(process.cwd(), "src", "app", "electricity-providers", "page.tsx"),
+      path.join(process.cwd(), "src", "app", "electricity-providers", "[slug]", "page.tsx"),
+    ];
+    for (const pagePath of providerPages) {
+      const src = fs.readFileSync(pagePath, "utf8");
+      const requiredSignals = [
+        "Provider comparison clarity",
+        "Provider differentiation signals",
+        "Commercial pathway visibility",
+        "buildCommercialPathwayItemListJsonLd",
+      ];
+      for (const signal of requiredSignals) {
+        if (!src.includes(signal)) {
+          throw new Error(`provider maturity signal missing in ${path.relative(process.cwd(), pagePath)}: ${signal}`);
+        }
+      }
+    }
+  });
+
+  runCheck("Provider resolver deterministic ranking policy", () => {
+    const resolverPath = path.join(process.cwd(), "src", "lib", "providers", "providerResolver.ts");
+    if (!fs.existsSync(resolverPath)) return;
+    const src = fs.readFileSync(resolverPath, "utf8");
+    const requiredSignals = [
+      "deterministicRank",
+      "applyComparisonDiversity",
+      "localeCompare",
+      "isProviderPilotActiveForContext",
+      "isProviderContextAllowedByRolloutPlan",
+      "getEnabledProviderCatalogEntries",
+      "supportsProviderState",
+    ];
+    for (const signal of requiredSignals) {
+      if (!src.includes(signal)) {
+        throw new Error(`provider resolver ranking guard missing: ${signal}`);
+      }
+    }
+  });
+
+  runCheck("Platform architecture documentation coverage", () => {
+    const docsPath = path.join(process.cwd(), "docs", "PLATFORM_ARCHITECTURE.md");
+    ensureFileExists(docsPath, "platform architecture documentation");
+    const src = fs.readFileSync(docsPath, "utf8");
+    const requiredSignals = [
+      "Platform architecture overview",
+      "Canonical cluster structure",
+      "Provider marketplace architecture",
+      "Monetization architecture",
+      "Discovery graph system",
+      "Verification infrastructure",
+    ];
+    for (const signal of requiredSignals) {
+      if (!src.includes(signal)) {
+        throw new Error(`platform architecture docs missing section: ${signal}`);
+      }
+    }
+  });
+
+  runCheck("Provider coverage for active rollout states", () => {
+    const pilotPath = path.join(process.cwd(), "src", "lib", "providers", "providerPilot.ts");
+    const catalogPath = path.join(process.cwd(), "src", "lib", "providers", "providerCatalog.ts");
+    if (!fs.existsSync(pilotPath) || !fs.existsSync(catalogPath)) return;
+    const pilotSource = fs.readFileSync(pilotPath, "utf8");
+    const catalogSource = fs.readFileSync(catalogPath, "utf8");
+    const stateMatches = Array.from(
+      pilotSource.matchAll(/"state-electricity-pages"\s*:\s*\[([^\]]*)\]/g),
+    )
+      .flatMap((m) => Array.from(m[1].matchAll(/"([^"]+)"/g)).map((s) => s[1]));
+    const uniqueStates = Array.from(new Set(stateMatches));
+    for (const state of uniqueStates) {
+      if (!catalogSource.includes(`"${state}"`)) {
+        throw new Error(`active rollout state lacks provider catalog coverage signal: ${state}`);
+      }
+    }
+  });
+
+  runCheck("Provider pilot states subset of rollout tiers", () => {
+    const planPath = path.join(process.cwd(), "src", "lib", "providers", "providerRolloutPlan.ts");
+    const pilotPath = path.join(process.cwd(), "src", "lib", "providers", "providerPilot.ts");
+    if (!fs.existsSync(planPath) || !fs.existsSync(pilotPath)) return;
+    const planSource = fs.readFileSync(planPath, "utf8");
+    const pilotSource = fs.readFileSync(pilotPath, "utf8");
+
+    const familyKeys = ["state-electricity-pages", "bill-estimator-pages"];
+    for (const family of familyKeys) {
+      const escapedFamily = family.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+      const familyRegex = new RegExp(`"${escapedFamily}"\\s*:\\s*\\[([^\\]]*)\\]`);
+      const match = pilotSource.match(familyRegex);
+      if (!match) continue;
+      const states = Array.from(match[1].matchAll(/"([^"]+)"/g)).map((m) => m[1]);
+      for (const state of states) {
+        if (!planSource.includes(`"${state}"`)) {
+          throw new Error(`pilot activation state must exist in rollout tiers: ${state}`);
+        }
+      }
+    }
+  });
+
+  runCheck("Blocked provider family activation policy", () => {
+    const placementPath = path.join(process.cwd(), "src", "lib", "monetization", "placementConfig.ts");
+    if (!fs.existsSync(placementPath)) {
+      throw new Error("src/lib/monetization/placementConfig.ts must exist");
+    }
+    const placementSource = fs.readFileSync(placementPath, "utf8");
+    const blockedSignals = [
+      "\"city-electricity-pages\"",
+      "\"calculator-pages\"",
+      "\"affiliate-link-block\"",
+      "enabled: false",
+    ];
+    for (const signal of blockedSignals) {
+      if (!placementSource.includes(signal)) {
+        throw new Error(`placement config must preserve blocked-family signal: ${signal}`);
+      }
+    }
   });
 
   runCheck("Core static sitemap coverage", () => {
@@ -3418,7 +3799,9 @@ function runPreLaunchVerification(root, sitemapSource, layoutSource) {
       "/ai-energy-demand",
       "/electricity-cost",
       "/average-electricity-bill",
+      "/electricity-bill-estimator",
       "/electricity-cost-calculator",
+      "/energy-comparison",
       "/battery-recharge-cost",
       "/generator-vs-battery-cost",
       "/electricity-price-history",
@@ -3444,11 +3827,243 @@ function runPreLaunchVerification(root, sitemapSource, layoutSource) {
     const familyEvidence = [
       { pattern: "electricity-cost/", name: "electricity-cost/[slug]" },
       { pattern: "average-electricity-bill/", name: "average-electricity-bill/[slug]" },
+      { pattern: "electricity-bill-estimator/", name: "electricity-bill-estimator/[slug]" },
       { pattern: "knowledge/state/", name: "knowledge/state/[slug]" },
       { pattern: "knowledge/rankings/", name: "knowledge/rankings/[id]" },
     ];
     for (const { pattern, name } of familyEvidence) {
       if (!src.includes(pattern)) throw new Error(`sitemap must include ${name} route family`);
+    }
+  });
+
+  runCheck("Search authority schema coverage on key families", () => {
+    const keyPages = [
+      path.join(process.cwd(), "src", "app", "[state]", "page.tsx"),
+      path.join(process.cwd(), "src", "app", "electricity-cost", "[slug]", "[city]", "page.tsx"),
+      path.join(process.cwd(), "src", "app", "cost-to-run", "[appliance]", "[state]", "page.tsx"),
+      path.join(process.cwd(), "src", "app", "electricity-bill-estimator", "[slug]", "page.tsx"),
+      path.join(process.cwd(), "src", "app", "energy-comparison", "page.tsx"),
+    ];
+    for (const pagePath of keyPages) {
+      ensureFileExists(pagePath, `schema key page ${path.relative(process.cwd(), pagePath)}`);
+      const src = fs.readFileSync(pagePath, "utf8");
+      if (!src.includes("application/ld+json") && !src.includes("JsonLdScript")) {
+        throw new Error(`key authority page missing JSON-LD output: ${path.relative(process.cwd(), pagePath)}`);
+      }
+    }
+  });
+
+  runCheck("Search authority FAQ schema coverage", () => {
+    const faqPages = [
+      path.join(process.cwd(), "src", "app", "electricity-hubs", "page.tsx"),
+      path.join(process.cwd(), "src", "app", "electricity-cost", "[slug]", "[city]", "page.tsx"),
+      path.join(process.cwd(), "src", "app", "cost-to-run", "[appliance]", "[state]", "page.tsx"),
+      path.join(process.cwd(), "src", "app", "electricity-bill-estimator", "[slug]", "page.tsx"),
+      path.join(process.cwd(), "src", "app", "energy-comparison", "page.tsx"),
+    ];
+    for (const pagePath of faqPages) {
+      const src = fs.readFileSync(pagePath, "utf8");
+      if (!src.includes("buildFaqPageJsonLd")) {
+        throw new Error(`expected FAQ schema helper on ${path.relative(process.cwd(), pagePath)}`);
+      }
+    }
+  });
+
+  runCheck("Authority hub structured data reinforcement", () => {
+    const hubPages = [
+      path.join(process.cwd(), "src", "app", "electricity-hubs", "page.tsx"),
+      path.join(process.cwd(), "src", "app", "energy-comparison", "page.tsx"),
+    ];
+    for (const pagePath of hubPages) {
+      const src = fs.readFileSync(pagePath, "utf8");
+      if (!src.includes("buildItemListJsonLd")) {
+        throw new Error(`authority hub missing ItemList JSON-LD signal: ${path.relative(process.cwd(), pagePath)}`);
+      }
+    }
+  });
+
+  runCheck("Energy comparison hub links to canonical clusters", () => {
+    const hubPath = path.join(process.cwd(), "src", "app", "energy-comparison", "page.tsx");
+    const src = fs.readFileSync(hubPath, "utf8");
+    const requiredCanonicalTargets = [
+      "/electricity-cost-comparison/",
+      "/electricity-usage-cost/",
+      "/cost-to-run/",
+      "/electricity-cost/",
+    ];
+    for (const target of requiredCanonicalTargets) {
+      if (!src.includes(target)) {
+        throw new Error(`energy comparison hub must link canonical cluster: ${target}`);
+      }
+    }
+  });
+
+  runCheck("Marketplace growth provider discovery links on hubs", () => {
+    const pagePaths = [
+      path.join(process.cwd(), "src", "app", "electricity-hubs", "page.tsx"),
+      path.join(process.cwd(), "src", "app", "energy-comparison", "page.tsx"),
+      path.join(process.cwd(), "src", "app", "electricity-hubs", "comparisons", "page.tsx"),
+      path.join(process.cwd(), "src", "app", "electricity-cost-comparison", "page.tsx"),
+      path.join(process.cwd(), "src", "app", "electricity-bill-estimator", "[slug]", "page.tsx"),
+    ];
+    for (const pagePath of pagePaths) {
+      const src = fs.readFileSync(pagePath, "utf8");
+      const hasDirectProviderLinkSignal = src.includes("/electricity-providers");
+      const hasSharedDiscoveryHelperSignal = src.includes("buildProviderDiscoveryLinks");
+      if (!hasDirectProviderLinkSignal && !hasSharedDiscoveryHelperSignal) {
+        throw new Error(
+          `provider discovery signal missing in ${path.relative(process.cwd(), pagePath)}: /electricity-providers or buildProviderDiscoveryLinks`,
+        );
+      }
+    }
+  });
+
+  runCheck("Provider expansion placement standardization", () => {
+    const pages = [
+      path.join(process.cwd(), "src", "app", "[state]", "page.tsx"),
+      path.join(process.cwd(), "src", "app", "electricity-bill-estimator", "[slug]", "page.tsx"),
+      path.join(process.cwd(), "src", "app", "energy-comparison", "page.tsx"),
+      path.join(process.cwd(), "src", "app", "electricity-hubs", "page.tsx"),
+      path.join(process.cwd(), "src", "app", "electricity-hubs", "comparisons", "page.tsx"),
+      path.join(process.cwd(), "src", "app", "electricity-cost-comparison", "page.tsx"),
+      path.join(process.cwd(), "src", "app", "electricity-providers", "page.tsx"),
+      path.join(process.cwd(), "src", "app", "electricity-providers", "[slug]", "page.tsx"),
+    ];
+    for (const pagePath of pages) {
+      const src = fs.readFileSync(pagePath, "utf8");
+      if (!src.includes("CommercialPlacement")) {
+        throw new Error(`provider placement signal missing in ${path.relative(process.cwd(), pagePath)}`);
+      }
+    }
+  });
+
+  runCheck("Search authority sitemap priorities for discovery hubs", () => {
+    const sitemapPath = path.join(process.cwd(), "src", "app", "sitemap.ts");
+    const src = sitemapSource || fs.readFileSync(sitemapPath, "utf8");
+    const requiredSignals = [
+      "`${BASE_URL}/energy-comparison`",
+      "`${BASE_URL}/electricity-hubs`",
+      "priority: 0.78",
+      "priority: 0.8",
+    ];
+    for (const signal of requiredSignals) {
+      if (!src.includes(signal)) {
+        throw new Error(`sitemap search-authority priority signal missing: ${signal}`);
+      }
+    }
+  });
+
+  runCheck("Indexing acceleration sitemap segmentation", () => {
+    const sitemapPath = path.join(process.cwd(), "src", "app", "sitemap.ts");
+    const src = sitemapSource || fs.readFileSync(sitemapPath, "utf8");
+    const segmentLibPath = path.join(process.cwd(), "src", "lib", "seo", "sitemapSegments.ts");
+    if (!fs.existsSync(segmentLibPath)) {
+      throw new Error("sitemap segment library must exist: src/lib/seo/sitemapSegments.ts");
+    }
+    const segmentSrc = fs.readFileSync(segmentLibPath, "utf8");
+    const sitemapIndexRoutePath = path.join(process.cwd(), "src", "app", "sitemap-index.xml", "route.ts");
+    if (!fs.existsSync(sitemapIndexRoutePath)) {
+      throw new Error("sitemap index route must exist: src/app/sitemap-index.xml/route.ts");
+    }
+    const requiredSignals = [
+      "SITEMAP_SEGMENT_IDS",
+      "getSegmentedSitemapEntries",
+      "generateSitemaps",
+      "\"core\"",
+      "\"states\"",
+      "\"cities\"",
+      "\"appliances\"",
+      "\"estimators\"",
+      "groupSitemapEntriesBySegment",
+      "assertNoDuplicateSegmentUrls",
+    ];
+    for (const signal of requiredSignals) {
+      if (!src.includes(signal) && !segmentSrc.includes(signal)) {
+        throw new Error(`sitemap segmentation signal missing: ${signal}`);
+      }
+    }
+  });
+
+  runCheck("Indexing acceleration canonical families in sitemap segments", () => {
+    const segmentLibPath = path.join(process.cwd(), "src", "lib", "seo", "sitemapSegments.ts");
+    const src = fs.readFileSync(segmentLibPath, "utf8");
+    const requiredSignals = [
+      "isStateScopedPath",
+      "isCityScopedPath",
+      "isApplianceScopedPath",
+      "isEstimatorScopedPath",
+      "electricity-cost",
+      "cost-to-run",
+      "electricity-bill-estimator",
+    ];
+    for (const signal of requiredSignals) {
+      if (!src.includes(signal)) {
+        throw new Error(`sitemap segment canonical-family coverage missing signal: ${signal}`);
+      }
+    }
+  });
+
+  runCheck("Indexing acceleration discovery graph pathways", () => {
+    const discoveryGraphPath = path.join(process.cwd(), "public", "discovery-graph.json");
+    if (!fs.existsSync(discoveryGraphPath)) {
+      throw new Error("public/discovery-graph.json must exist");
+    }
+    const graph = readJson(discoveryGraphPath, "public/discovery-graph.json");
+    const graphText = JSON.stringify(graph);
+    const requiredSignals = [
+      "\"state_to_city_pathway\"",
+      "\"city_to_appliance_pathway\"",
+      "\"estimator_pathway\"",
+      "\"comparison_pathway\"",
+      "\"estimator_to_appliance_pathway\"",
+      "\"appliance_to_estimator_pathway\"",
+      "\"state_to_appliance_pathway\"",
+      "\"state_to_estimator_pathway\"",
+      "\"bill_to_appliance_pathway\"",
+      "\"appliance_to_comparison_pathway\"",
+      "\"appliance_to_usage_pathway\"",
+      "\"provider_to_comparison_cluster\"",
+      "\"provider_to_state_cluster\"",
+      "\"provider_to_estimator_discovery\"",
+      "\"provider_marketplace_to_state_cluster\"",
+      "\"provider_marketplace_to_comparison_cluster\"",
+      "\"provider_marketplace_to_estimator_cluster\"",
+      "\"provider_to_hub_discovery\"",
+      "\"provider_to_provider_marketplace_hub\"",
+      "\"provider_to_provider_information_cluster\"",
+      "\"provider_to_commercial_discovery\"",
+      "\"provider_to_hub_discovery_cluster\"",
+      "\"provider_to_appliance_cluster\"",
+      "\"commercial_surface_to_provider_marketplace\"",
+      "\"comparison_to_provider_discovery\"",
+      "\"hub_to_provider_discovery\"",
+      "\"provider-marketplace\"",
+      "\"provider-information\"",
+      "\"commercial-surfaces\"",
+      "\"energy-comparison\"",
+      "\"electricity-bill-estimator\"",
+    ];
+    for (const signal of requiredSignals) {
+      if (!graphText.includes(signal)) {
+        throw new Error(`discovery-graph indexing pathway missing: ${signal}`);
+      }
+    }
+  });
+
+  runCheck("Traffic optimization longtail pathway signals", () => {
+    const internalLinksPath = path.join(process.cwd(), "src", "lib", "longtail", "internalLinks.ts");
+    const src = fs.readFileSync(internalLinksPath, "utf8");
+    const requiredSignals = [
+      "buildApplianceEstimatorPathwaySection",
+      "/cost-to-run/",
+      "/electricity-cost-calculator/",
+      "/electricity-bill-estimator/",
+      "/energy-comparison/appliances",
+    ];
+    for (const signal of requiredSignals) {
+      if (!src.includes(signal)) {
+        throw new Error(`longtail pathway signal missing: ${signal}`);
+      }
     }
   });
 
@@ -3504,9 +4119,16 @@ function runPreLaunchVerification(root, sitemapSource, layoutSource) {
       ["electricity-price-volatility", "page.tsx"],
       ["moving-to-electricity-cost", "page.tsx"],
       ["electricity-cost-comparison", "page.tsx"],
+      ["electricity-bill-estimator", "page.tsx"],
+      ["energy-comparison", "page.tsx"],
+      ["energy-comparison", "states", "page.tsx"],
+      ["energy-comparison", "usage", "page.tsx"],
+      ["energy-comparison", "appliances", "page.tsx"],
       ["knowledge", "state", "[slug]", "page.tsx"],
       ["knowledge", "rankings", "[id]", "page.tsx"],
       ["electricity-cost-comparison", "[pair]", "page.tsx"],
+      ["electricity-bill-estimator", "[slug]", "page.tsx"],
+      ["electricity-bill-estimator", "[slug]", "[profile]", "page.tsx"],
     ];
     for (const parts of routeFamilies) {
       const p = path.join(appDir, ...parts);
@@ -3519,6 +4141,8 @@ function runPreLaunchVerification(root, sitemapSource, layoutSource) {
     const families = [
       ["electricity-cost", "[slug]"],
       ["average-electricity-bill", "[slug]"],
+      ["electricity-bill-estimator", "[slug]"],
+      ["electricity-bill-estimator", "[slug]", "[profile]"],
       ["electricity-cost-calculator", "[slug]"],
       ["battery-recharge-cost", "[slug]"],
       ["generator-vs-battery-cost", "[slug]"],

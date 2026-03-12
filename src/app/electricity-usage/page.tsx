@@ -5,6 +5,7 @@ import JsonLdScript from "@/app/components/seo/JsonLdScript";
 import Disclaimers from "@/app/components/policy/Disclaimers";
 import StatusFooter from "@/components/common/StatusFooter";
 import { APPLIANCE_CONFIGS } from "@/lib/longtail/applianceConfig";
+import { getActiveApplianceSlugs } from "@/lib/longtail/rollout";
 import { getRelease } from "@/lib/knowledge/fetch";
 import {
   formatKwh,
@@ -157,7 +158,9 @@ export default async function ElectricityUsageHubPage() {
         <section style={{ marginBottom: 32 }}>
           <h2 style={{ fontSize: 20, marginBottom: 12 }}>Appliance usage references</h2>
           <ul style={{ margin: 0, paddingLeft: 20, lineHeight: 1.8 }}>
-            {APPLIANCE_CONFIGS.slice(0, 8).map((appliance) => (
+            {APPLIANCE_CONFIGS.filter((a) => getActiveApplianceSlugs().includes(a.slug))
+              .slice(0, 8)
+              .map((appliance) => (
               <li key={appliance.slug}>
                 <Link href={`/electricity-usage/appliances/${appliance.slug}`}>
                   {appliance.displayName} electricity usage profile

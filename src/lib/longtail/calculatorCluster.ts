@@ -5,6 +5,7 @@ import {
   type ApplianceConfig,
   type ApplianceSlug,
 } from "@/lib/longtail/applianceConfig";
+import { getActiveApplianceSlugs } from "@/lib/longtail/rollout";
 import {
   calculateApplianceOperatingCost,
   formatHoursPerDay,
@@ -73,7 +74,10 @@ export function buildCalculatorApplianceLinks(
   state: LongtailStateData,
   limit = 6,
 ): CalculatorApplianceLink[] {
-  return APPLIANCE_CONFIGS.slice(0, limit).map((appliance) => ({
+  const activeSlugs = new Set(getActiveApplianceSlugs());
+  return APPLIANCE_CONFIGS.filter((appliance) => activeSlugs.has(appliance.slug))
+    .slice(0, limit)
+    .map((appliance) => ({
     href: `/electricity-cost-calculator/${state.slug}/${appliance.slug}`,
     label: `${appliance.displayName} calculator`,
     description: `Model ${appliance.displayName.toLowerCase()} electricity cost in ${state.name} at ${formatRate(

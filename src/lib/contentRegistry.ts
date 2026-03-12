@@ -1,9 +1,9 @@
 import { STATES } from "@/data/states";
 import { UTILITIES } from "@/data/utilities";
-import { CITIES } from "@/data/cities";
 import { GUIDES } from "@/data/guides";
 import { TOPICS } from "@/data/topics";
 import { SOURCES } from "@/data/sources";
+import { getActiveCityPages } from "@/lib/longtail/rollout";
 import { getQuestionSlugs, parseQuestionSlug } from "@/lib/questions";
 import { SITE_URL } from "@/lib/site";
 import { generateTemplatePages } from "@/lib/templateGenerator";
@@ -33,6 +33,9 @@ export type ContentNode = {
 
 const BASE = SITE_URL;
 const BILL_KWH_VALUES = [500, 750, 1000, 1250, 1500, 2000];
+const PROVIDER_HUB_ID = "provider:hub";
+const OFFERS_HUB_ID = "offer:hub";
+const COMPARE_TOOL_ID = "tool:compare";
 
 function questionTitle(slug: string): string {
   const parsed = parseQuestionSlug(slug);
@@ -60,6 +63,7 @@ export function buildContentRegistry(): ContentNode[] {
         `state:${slug}:history`,
         `state:${slug}:plan-types`,
         `offer:${slug}`,
+        `provider:${slug}`,
       ],
     });
   }
@@ -108,24 +112,13 @@ export function buildContentRegistry(): ContentNode[] {
     });
   }
 
-  // ── Cities (city/ routes) ─────────────────────────────────
-  for (const c of CITIES) {
+  // ── Cities (rollout-gated canonical city routes) ──────────
+  for (const c of getActiveCityPages()) {
     nodes.push({
       id: `city:${c.stateSlug}:${c.slug}`,
       type: "city",
       title: `${c.name} Electricity Rates`,
-      url: `${BASE}/${c.stateSlug}/city/${c.slug}`,
-      parent: `state:${c.stateSlug}`,
-    });
-  }
-
-  // ── Cities (dual-slug [state]/[city] routes) ──────────────
-  for (const c of CITIES) {
-    nodes.push({
-      id: `citydual:${c.stateSlug}:${c.slug}`,
-      type: "city",
-      title: `${c.name}, ${STATES[c.stateSlug]?.name ?? c.stateSlug}`,
-      url: `${BASE}/${c.stateSlug}/${c.slug}`,
+      url: `${BASE}/electricity-cost/${c.stateSlug}/${c.slug}`,
       parent: `state:${c.stateSlug}`,
     });
   }
@@ -202,7 +195,7 @@ export function buildContentRegistry(): ContentNode[] {
 
   // ── Offers ────────────────────────────────────────────────
   nodes.push({
-    id: "offer:hub",
+    id: OFFERS_HUB_ID,
     type: "offer",
     title: "Offers & Savings",
     url: `${BASE}/offers`,
@@ -214,7 +207,37 @@ export function buildContentRegistry(): ContentNode[] {
       type: "offer",
       title: `Offers in ${s.name}`,
       url: `${BASE}/offers/${slug}`,
-      parent: "offer:hub",
+      parent: OFFERS_HUB_ID,
+    });
+  }
+
+  // ── Provider marketplace discovery ────────────────────────
+  nodes.push({
+    id: PROVIDER_HUB_ID,
+    type: "offer",
+    title: "Electricity Providers by State",
+    url: `${BASE}/electricity-providers`,
+    related: [
+      ...stateSlugs.map((slug) => `provider:${slug}`),
+      OFFERS_HUB_ID,
+      COMPARE_TOOL_ID,
+      "state:texas",
+    ],
+  });
+  for (const slug of stateSlugs) {
+    const s = STATES[slug];
+    nodes.push({
+      id: `provider:${slug}`,
+      type: "offer",
+      title: `Electricity Providers in ${s.name}`,
+      url: `${BASE}/electricity-providers/${slug}`,
+      parent: PROVIDER_HUB_ID,
+      related: [
+        `state:${slug}`,
+        `offer:${slug}`,
+        PROVIDER_HUB_ID,
+        COMPARE_TOOL_ID,
+      ],
     });
   }
 

@@ -1,0 +1,523 @@
+{
+  "schemaVersion": "1.0",
+  "generatedAt": "2026-03-09",
+  "description": "Longtail programmatic page expansion blueprint for PriceOfElectricity.com. Maps search patterns to page families, data requirements, and internal linking. Grounded in the actual dataset and knowledge system.",
+  "stateCount": 51,
+  "stateSlugs": [
+    "alabama", "alaska", "arizona", "arkansas", "california", "colorado",
+    "connecticut", "delaware", "florida", "georgia", "hawaii", "idaho",
+    "illinois", "indiana", "iowa", "kansas", "kentucky", "louisiana",
+    "maine", "maryland", "massachusetts", "michigan", "minnesota",
+    "mississippi", "missouri", "montana", "nebraska", "nevada",
+    "new-hampshire", "new-jersey", "new-mexico", "new-york",
+    "north-carolina", "north-dakota", "ohio", "oklahoma", "oregon",
+    "pennsylvania", "rhode-island", "south-carolina", "south-dakota",
+    "tennessee", "texas", "utah", "vermont", "virginia", "washington",
+    "west-virginia", "wisconsin", "wyoming"
+  ],
+  "dataFieldsAvailable": {
+    "perState": {
+      "avgRateCentsPerKwh": "Average residential rate (¢/kWh)",
+      "exampleBills": "Estimated bills at 500, 1000, 1500 kWh",
+      "affordabilityIndex": "0–100 affordability index",
+      "affordabilityCategory": "Category label (Very Affordable → Very Expensive)",
+      "valueScore": "0–100 composite value score",
+      "valueTier": "Tier label (Excellent → Poor)",
+      "rateTier": "Low / Medium / High based on ¢/kWh thresholds",
+      "freshnessStatus": "Data freshness classification",
+      "priceHistory.rateSeries": "Monthly ¢/kWh for last 60 months",
+      "priceHistory.rate1YearAgo": "Rate 12 months ago",
+      "priceHistory.rate5YearsAgo": "Rate 5 years ago",
+      "priceHistory.increase1YearPercent": "1-year % change",
+      "priceHistory.increase5YearPercent": "5-year % change",
+      "priceHistory.annualizedIncrease5Year": "5-year CAGR",
+      "momentum.signal": "accelerating / rising / stable / falling / unavailable",
+      "momentum.shortWindowChangePercent": "Short-window % change",
+      "momentum.longWindowChangePercent": "Long-window % change",
+      "comparison.nationalAverage": "National average ¢/kWh",
+      "comparison.differenceCents": "Difference from national (¢)",
+      "comparison.differencePercent": "Difference from national (%)",
+      "percentileRankings": "Rate, value score, affordability percentiles"
+    },
+    "perComparison": {
+      "rateA": "State A rate ¢/kWh",
+      "rateB": "State B rate ¢/kWh",
+      "differenceCents": "Rate difference ¢/kWh",
+      "differencePercent": "Rate difference %",
+      "higherCostState": "Name of higher-cost state",
+      "lowerCostState": "Name of lower-cost state"
+    }
+  },
+  "groups": [
+    {
+      "groupId": "state-electricity-price",
+      "groupName": "State Electricity Price Pages",
+      "description": "Core per-state pages targeting 'electricity price/rate/cost in [state]' queries.",
+      "pages": [
+        {
+          "id": "electricity-price-per-kwh",
+          "title": "Electricity Price per kWh in {State}",
+          "slug": "/electricity-price-per-kwh/{state}",
+          "category": "state-electricity-price",
+          "dataRequired": ["avgRateCentsPerKwh", "comparison.nationalAverage", "comparison.differencePercent", "rateTier", "percentileRankings.ratePercentile"],
+          "autoGeneratable": true,
+          "existsAlready": false,
+          "searchIntent": "Users searching for the current electricity rate per kWh in a specific state. High-volume informational query.",
+          "targetKeywords": ["electricity price per kwh in {state}", "{state} electricity rate per kwh", "cost of electricity per kwh {state}"],
+          "internalLinkingTargets": ["/{state}", "/electricity-cost/{state}", "/average-electricity-bill/{state}", "/electricity-price-history/{state}", "/national/rankings"]
+        },
+        {
+          "id": "electricity-rate-today",
+          "title": "Electricity Rate in {State} Today",
+          "slug": "/electricity-rate/{state}",
+          "category": "state-electricity-price",
+          "dataRequired": ["avgRateCentsPerKwh", "freshnessStatus", "comparison.nationalAverage", "momentum.signal"],
+          "autoGeneratable": true,
+          "existsAlready": false,
+          "searchIntent": "Users wanting the most current electricity rate. Freshness-sensitive informational query.",
+          "targetKeywords": ["{state} electricity rate today", "current electricity rate {state}", "{state} electric rate 2026"],
+          "internalLinkingTargets": ["/{state}", "/electricity-cost/{state}", "/electricity-price-history/{state}", "/status"]
+        },
+        {
+          "id": "cheapest-electricity",
+          "title": "Is {State} Cheap for Electricity?",
+          "slug": "/cheap-electricity/{state}",
+          "category": "state-electricity-price",
+          "dataRequired": ["avgRateCentsPerKwh", "affordabilityIndex", "affordabilityCategory", "valueScore", "valueTier", "comparison.differencePercent"],
+          "autoGeneratable": true,
+          "existsAlready": false,
+          "searchIntent": "Users evaluating whether a state has cheap electricity, often for relocation or business decisions.",
+          "targetKeywords": ["cheap electricity {state}", "is electricity cheap in {state}", "{state} cheap electric rates"],
+          "internalLinkingTargets": ["/{state}", "/why-electricity-is-cheap/{state}", "/why-electricity-is-expensive/{state}", "/affordability", "/value-ranking"]
+        },
+        {
+          "id": "electricity-cost-per-month",
+          "title": "Electricity Cost per Month in {State}",
+          "slug": "/electricity-cost-per-month/{state}",
+          "category": "state-electricity-price",
+          "dataRequired": ["avgRateCentsPerKwh", "exampleBills", "affordabilityIndex"],
+          "autoGeneratable": true,
+          "existsAlready": false,
+          "searchIntent": "Users wanting a monthly cost estimate. Budget-planning intent.",
+          "targetKeywords": ["electricity cost per month {state}", "monthly electricity bill {state}", "how much is electricity per month in {state}"],
+          "internalLinkingTargets": ["/{state}", "/average-electricity-bill/{state}", "/how-much-does-1000-kwh-cost/{state}", "/calculator"]
+        }
+      ]
+    },
+    {
+      "groupId": "usage-based-bill",
+      "groupName": "Usage-Based Electricity Bill Pages",
+      "description": "Pages targeting specific kWh usage amounts. Extends the existing 500/1000/2000 kWh pages to additional usage tiers.",
+      "pages": [
+        {
+          "id": "cost-750-kwh",
+          "title": "How Much Does 750 kWh of Electricity Cost in {State}?",
+          "slug": "/how-much-does-750-kwh-cost/{state}",
+          "category": "usage-based-bill",
+          "dataRequired": ["avgRateCentsPerKwh"],
+          "autoGeneratable": true,
+          "existsAlready": false,
+          "searchIntent": "Users with specific usage wanting a cost estimate. Small apartment or low-usage household.",
+          "targetKeywords": ["750 kwh electricity cost {state}", "electric bill for 750 kwh {state}"],
+          "internalLinkingTargets": ["/how-much-does-500-kwh-cost/{state}", "/how-much-does-1000-kwh-cost/{state}", "/average-electricity-bill/{state}", "/calculator"]
+        },
+        {
+          "id": "cost-1500-kwh",
+          "title": "How Much Does 1,500 kWh of Electricity Cost in {State}?",
+          "slug": "/how-much-does-1500-kwh-cost/{state}",
+          "category": "usage-based-bill",
+          "dataRequired": ["avgRateCentsPerKwh"],
+          "autoGeneratable": true,
+          "existsAlready": false,
+          "searchIntent": "Users with above-average usage. Larger households, hot/cold climates.",
+          "targetKeywords": ["1500 kwh electricity cost {state}", "electric bill for 1500 kwh {state}"],
+          "internalLinkingTargets": ["/how-much-does-1000-kwh-cost/{state}", "/how-much-does-2000-kwh-cost/{state}", "/average-electricity-bill/{state}", "/calculator"],
+          "note": "1500 kWh is already in exampleBills; page exists in /[state]/bill/1250 and /[state]/bill/1500 but not as a standalone longtail slug."
+        },
+        {
+          "id": "cost-3000-kwh",
+          "title": "How Much Does 3,000 kWh of Electricity Cost in {State}?",
+          "slug": "/how-much-does-3000-kwh-cost/{state}",
+          "category": "usage-based-bill",
+          "dataRequired": ["avgRateCentsPerKwh"],
+          "autoGeneratable": true,
+          "existsAlready": false,
+          "searchIntent": "High-usage households: large homes, pools, EVs, electric heating. Seasonal peak usage.",
+          "targetKeywords": ["3000 kwh electricity cost {state}", "high usage electric bill {state}", "electric bill 3000 kwh"],
+          "internalLinkingTargets": ["/how-much-does-2000-kwh-cost/{state}", "/electricity-cost/{state}", "/calculator"]
+        },
+        {
+          "id": "cost-per-kwh-by-usage",
+          "title": "Electricity Cost by Usage Level in {State}",
+          "slug": "/electricity-cost-by-usage/{state}",
+          "category": "usage-based-bill",
+          "dataRequired": ["avgRateCentsPerKwh", "exampleBills"],
+          "autoGeneratable": true,
+          "existsAlready": false,
+          "searchIntent": "Users comparing costs across multiple usage tiers in one view. Comparison/planning intent.",
+          "targetKeywords": ["electricity cost by usage {state}", "{state} electric bill by kwh", "electricity price per kwh by usage tier {state}"],
+          "internalLinkingTargets": ["/how-much-does-500-kwh-cost/{state}", "/how-much-does-1000-kwh-cost/{state}", "/how-much-does-2000-kwh-cost/{state}", "/calculator"]
+        }
+      ]
+    },
+    {
+      "groupId": "state-comparison",
+      "groupName": "State Comparison Pages",
+      "description": "Head-to-head state comparisons. Extends the existing comparison pair system to new high-intent patterns.",
+      "pages": [
+        {
+          "id": "electricity-cost-vs",
+          "title": "{StateA} vs {StateB} Electricity Cost",
+          "slug": "/electricity-cost/{stateA}-vs-{stateB}",
+          "category": "state-comparison",
+          "dataRequired": ["comparison pair data: rateA, rateB, differenceCents, differencePercent, higherCostState, lowerCostState"],
+          "autoGeneratable": true,
+          "existsAlready": true,
+          "existingRoute": "/electricity-cost-comparison/{pair}",
+          "searchIntent": "Users comparing electricity costs between two specific states. Relocation, business, or curiosity.",
+          "targetKeywords": ["{stateA} vs {stateB} electricity cost", "electricity price {stateA} compared to {stateB}"],
+          "internalLinkingTargets": ["/{stateA}", "/{stateB}", "/compare", "/electricity-cost/{stateA}", "/electricity-cost/{stateB}"],
+          "note": "Already exists at /electricity-cost-comparison/{pair} and /knowledge/compare/{pair}. This entry documents the pattern; no new route needed."
+        },
+        {
+          "id": "electricity-bill-vs",
+          "title": "Electricity Bill: {StateA} vs {StateB}",
+          "slug": "/electricity-bill-comparison/{stateA}-vs-{stateB}",
+          "category": "state-comparison",
+          "dataRequired": ["comparison pair data", "exampleBills for both states"],
+          "autoGeneratable": true,
+          "existsAlready": false,
+          "searchIntent": "Users comparing actual monthly bill amounts between states, not just rates.",
+          "targetKeywords": ["electricity bill {stateA} vs {stateB}", "electric bill comparison {stateA} {stateB}"],
+          "internalLinkingTargets": ["/electricity-cost-comparison/{pair}", "/average-electricity-bill/{stateA}", "/average-electricity-bill/{stateB}", "/compare"]
+        },
+        {
+          "id": "cheapest-vs-most-expensive",
+          "title": "Cheapest vs Most Expensive Electricity by State",
+          "slug": "/cheapest-vs-most-expensive-electricity",
+          "category": "state-comparison",
+          "dataRequired": ["all state avgRateCentsPerKwh, sorted"],
+          "autoGeneratable": true,
+          "existsAlready": false,
+          "searchIntent": "Users wanting a ranked overview. High-volume informational query.",
+          "targetKeywords": ["cheapest electricity by state", "most expensive electricity by state", "cheapest vs most expensive electricity"],
+          "internalLinkingTargets": ["/national/rankings", "/affordability", "/value-ranking", "/compare"],
+          "note": "Single page (not per-state). Could link to all 51 state pages."
+        }
+      ]
+    },
+    {
+      "groupId": "historical-price",
+      "groupName": "Historical Electricity Price Pages",
+      "description": "Pages targeting historical and trend queries. Leverages the 60-month time series and 1y/5y change data.",
+      "pages": [
+        {
+          "id": "electricity-price-trend",
+          "title": "Electricity Price Trend in {State}",
+          "slug": "/electricity-price-trend/{state}",
+          "category": "historical-price",
+          "dataRequired": ["priceHistory.rateSeries", "priceHistory.increase1YearPercent", "priceHistory.increase5YearPercent", "momentum.signal"],
+          "autoGeneratable": true,
+          "existsAlready": false,
+          "searchIntent": "Users wanting to see how electricity prices have changed over time. Trend analysis intent.",
+          "targetKeywords": ["electricity price trend {state}", "{state} electricity price over time", "electricity rate trend {state}"],
+          "internalLinkingTargets": ["/electricity-price-history/{state}", "/electricity-inflation/{state}", "/electricity-price-volatility/{state}", "/{state}/history"]
+        },
+        {
+          "id": "electricity-price-5-year",
+          "title": "Electricity Prices in {State}: 5-Year History",
+          "slug": "/electricity-price-5-year-history/{state}",
+          "category": "historical-price",
+          "dataRequired": ["priceHistory.rateSeries", "priceHistory.rate5YearsAgo", "priceHistory.increase5YearPercent", "priceHistory.annualizedIncrease5Year"],
+          "autoGeneratable": true,
+          "existsAlready": false,
+          "searchIntent": "Users researching long-term price movement. Investment, business planning, or academic research.",
+          "targetKeywords": ["{state} electricity price history 5 years", "electricity rate change {state} 5 years", "{state} electric rate history"],
+          "internalLinkingTargets": ["/electricity-price-history/{state}", "/electricity-inflation/{state}", "/{state}/history", "/data-history"]
+        },
+        {
+          "id": "electricity-price-increase",
+          "title": "How Much Has Electricity Gone Up in {State}?",
+          "slug": "/electricity-price-increase/{state}",
+          "category": "historical-price",
+          "dataRequired": ["priceHistory.increase1YearPercent", "priceHistory.increase5YearPercent", "priceHistory.annualizedIncrease5Year", "momentum.signal"],
+          "autoGeneratable": true,
+          "existsAlready": false,
+          "searchIntent": "Users alarmed by rising bills wanting to understand the increase. High emotional intent.",
+          "targetKeywords": ["electricity price increase {state}", "how much has electricity gone up in {state}", "electricity rate increase {state} 2026"],
+          "internalLinkingTargets": ["/electricity-inflation/{state}", "/electricity-price-history/{state}", "/why-electricity-is-expensive/{state}", "/drivers/{state}"]
+        },
+        {
+          "id": "electricity-inflation-rate",
+          "title": "Electricity Inflation Rate in {State}",
+          "slug": "/electricity-inflation-rate/{state}",
+          "category": "historical-price",
+          "dataRequired": ["priceHistory.annualizedIncrease5Year", "priceHistory.increase1YearPercent", "priceHistory.increase5YearPercent"],
+          "autoGeneratable": true,
+          "existsAlready": false,
+          "searchIntent": "Users comparing electricity inflation to general CPI. Economic analysis intent.",
+          "targetKeywords": ["electricity inflation rate {state}", "{state} electricity inflation", "electricity price inflation {state}"],
+          "internalLinkingTargets": ["/electricity-inflation/{state}", "/electricity-price-increase/{state}", "/national/trends"],
+          "note": "Complements existing /electricity-inflation/{state} with a more keyword-specific slug."
+        }
+      ]
+    },
+    {
+      "groupId": "industry-cost",
+      "groupName": "Industry Electricity Cost Pages",
+      "description": "Pages targeting industry-specific electricity cost queries. Uses avgRateCentsPerKwh with industry-specific usage multipliers.",
+      "pages": [
+        {
+          "id": "ev-charging-cost",
+          "title": "Electricity Cost for EV Charging in {State}",
+          "slug": "/ev-charging-electricity-cost/{state}",
+          "category": "industry-cost",
+          "dataRequired": ["avgRateCentsPerKwh"],
+          "autoGeneratable": true,
+          "existsAlready": false,
+          "searchIntent": "EV owners or prospective buyers wanting to estimate home charging costs. High commercial intent.",
+          "targetKeywords": ["ev charging cost {state}", "electricity cost to charge ev {state}", "electric car charging cost per kwh {state}"],
+          "internalLinkingTargets": ["/{state}", "/electricity-cost/{state}", "/how-much-does-1000-kwh-cost/{state}", "/calculator"],
+          "derivedCalculations": {
+            "costPerKwhCharging": "avgRateCentsPerKwh (residential rate as proxy)",
+            "costPer100Miles": "(avgRateCentsPerKwh / 100) * 30 kWh (avg EV efficiency ~30 kWh/100mi)",
+            "monthlyCostEstimate": "(avgRateCentsPerKwh / 100) * 300 kWh (avg ~1000 mi/month)"
+          }
+        },
+        {
+          "id": "bitcoin-mining-cost",
+          "title": "Electricity Cost for Bitcoin Mining in {State}",
+          "slug": "/bitcoin-mining-electricity-cost/{state}",
+          "category": "industry-cost",
+          "dataRequired": ["avgRateCentsPerKwh"],
+          "autoGeneratable": true,
+          "existsAlready": false,
+          "searchIntent": "Crypto miners evaluating operational costs by state. High commercial/financial intent.",
+          "targetKeywords": ["bitcoin mining electricity cost {state}", "crypto mining electric cost {state}", "mining profitability electricity {state}"],
+          "internalLinkingTargets": ["/{state}", "/electricity-cost/{state}", "/cheap-electricity/{state}", "/national/rankings"],
+          "derivedCalculations": {
+            "costPerMWhMining": "(avgRateCentsPerKwh / 100) * 1000",
+            "dailyCostPerRig": "(avgRateCentsPerKwh / 100) * 72 kWh (avg ASIC ~3kW * 24h)",
+            "monthlyCostPerRig": "dailyCostPerRig * 30"
+          },
+          "note": "Uses residential rate as proxy. Add disclaimer that commercial/industrial rates differ."
+        },
+        {
+          "id": "ai-data-center-cost",
+          "title": "Electricity Cost for AI Data Centers in {State}",
+          "slug": "/ai-data-center-electricity-cost/{state}",
+          "category": "industry-cost",
+          "dataRequired": ["avgRateCentsPerKwh"],
+          "autoGeneratable": true,
+          "existsAlready": false,
+          "searchIntent": "Data center operators and AI companies evaluating energy costs. Enterprise/B2B intent.",
+          "targetKeywords": ["ai data center electricity cost {state}", "data center power cost {state}", "electricity cost per mwh {state} data center"],
+          "internalLinkingTargets": ["/data-center-electricity-cost/{state}", "/ai-energy-demand", "/{state}", "/grid-capacity-and-electricity-demand"],
+          "derivedCalculations": {
+            "costPerMWh": "(avgRateCentsPerKwh / 100) * 1000",
+            "annualCostPer1MW": "costPerMWh * 8760",
+            "annualCostPer10MW": "annualCostPer1MW * 10"
+          },
+          "note": "Complements existing /data-center-electricity-cost/{state}. Uses residential rate as proxy with disclaimer about commercial rates."
+        },
+        {
+          "id": "cannabis-grow-cost",
+          "title": "Electricity Cost for Indoor Cannabis Growing in {State}",
+          "slug": "/cannabis-grow-electricity-cost/{state}",
+          "category": "industry-cost",
+          "dataRequired": ["avgRateCentsPerKwh"],
+          "autoGeneratable": true,
+          "existsAlready": false,
+          "searchIntent": "Legal cannabis cultivators estimating operational electricity costs. Niche but high-intent.",
+          "targetKeywords": ["electricity cost growing cannabis {state}", "indoor grow electricity cost {state}", "grow room electric bill {state}"],
+          "internalLinkingTargets": ["/{state}", "/electricity-cost/{state}", "/how-much-does-2000-kwh-cost/{state}"],
+          "derivedCalculations": {
+            "costPer1000WLight12h": "(avgRateCentsPerKwh / 100) * 12 per day",
+            "monthlyPer4Lights": "costPer1000WLight12h * 4 * 30"
+          }
+        },
+        {
+          "id": "home-office-cost",
+          "title": "Electricity Cost for a Home Office in {State}",
+          "slug": "/home-office-electricity-cost/{state}",
+          "category": "industry-cost",
+          "dataRequired": ["avgRateCentsPerKwh"],
+          "autoGeneratable": true,
+          "existsAlready": false,
+          "searchIntent": "Remote workers wanting to estimate the electricity cost of working from home. Post-COVID evergreen query.",
+          "targetKeywords": ["home office electricity cost {state}", "work from home electric bill {state}", "remote work electricity cost"],
+          "internalLinkingTargets": ["/{state}", "/electricity-cost/{state}", "/average-electricity-bill/{state}", "/calculator"],
+          "derivedCalculations": {
+            "dailyCostEstimate": "(avgRateCentsPerKwh / 100) * 2 kWh (computer + monitor + lighting ~250W * 8h)",
+            "monthlyCostEstimate": "dailyCostEstimate * 22 workdays"
+          }
+        }
+      ]
+    },
+    {
+      "groupId": "consumption-scenario",
+      "groupName": "Electricity Consumption Scenario Pages",
+      "description": "Pages targeting specific consumption scenarios and appliance-level cost queries.",
+      "pages": [
+        {
+          "id": "ac-running-cost",
+          "title": "How Much Does It Cost to Run AC in {State}?",
+          "slug": "/air-conditioning-electricity-cost/{state}",
+          "category": "consumption-scenario",
+          "dataRequired": ["avgRateCentsPerKwh"],
+          "autoGeneratable": true,
+          "existsAlready": false,
+          "searchIntent": "Homeowners in hot climates wanting to estimate AC costs. Seasonal high-volume query.",
+          "targetKeywords": ["ac electricity cost {state}", "air conditioning cost per month {state}", "how much does it cost to run ac in {state}"],
+          "internalLinkingTargets": ["/{state}", "/electricity-cost/{state}", "/average-electricity-bill/{state}", "/how-much-does-2000-kwh-cost/{state}"],
+          "derivedCalculations": {
+            "dailyCost3Ton": "(avgRateCentsPerKwh / 100) * 36 kWh (3-ton unit ~3kW * 12h/day avg)",
+            "monthlyCost3Ton": "dailyCost3Ton * 30"
+          }
+        },
+        {
+          "id": "electric-heating-cost",
+          "title": "Electric Heating Cost in {State}",
+          "slug": "/electric-heating-cost/{state}",
+          "category": "consumption-scenario",
+          "dataRequired": ["avgRateCentsPerKwh"],
+          "autoGeneratable": true,
+          "existsAlready": false,
+          "searchIntent": "Homeowners in cold climates evaluating electric heat costs. Seasonal high-volume query.",
+          "targetKeywords": ["electric heating cost {state}", "electric heat bill {state}", "cost to heat home electrically {state}"],
+          "internalLinkingTargets": ["/{state}", "/electricity-cost/{state}", "/how-much-does-3000-kwh-cost/{state}", "/average-electricity-bill/{state}"],
+          "derivedCalculations": {
+            "monthlyHeatingEstimate": "(avgRateCentsPerKwh / 100) * 1500 kWh (avg electric furnace winter month)"
+          }
+        },
+        {
+          "id": "pool-pump-cost",
+          "title": "Electricity Cost to Run a Pool Pump in {State}",
+          "slug": "/pool-pump-electricity-cost/{state}",
+          "category": "consumption-scenario",
+          "dataRequired": ["avgRateCentsPerKwh"],
+          "autoGeneratable": true,
+          "existsAlready": false,
+          "searchIntent": "Pool owners estimating pump electricity costs. Niche but consistent seasonal query.",
+          "targetKeywords": ["pool pump electricity cost {state}", "cost to run pool pump {state}", "pool electricity cost per month"],
+          "internalLinkingTargets": ["/{state}", "/electricity-cost/{state}", "/how-much-does-1000-kwh-cost/{state}"],
+          "derivedCalculations": {
+            "dailyCost1HP8h": "(avgRateCentsPerKwh / 100) * 6 kWh (1HP pump ~0.75kW * 8h)",
+            "monthlyCost": "dailyCost1HP8h * 30"
+          }
+        },
+        {
+          "id": "hot-tub-cost",
+          "title": "Electricity Cost to Run a Hot Tub in {State}",
+          "slug": "/hot-tub-electricity-cost/{state}",
+          "category": "consumption-scenario",
+          "dataRequired": ["avgRateCentsPerKwh"],
+          "autoGeneratable": true,
+          "existsAlready": false,
+          "searchIntent": "Hot tub owners or prospective buyers estimating ongoing electricity costs.",
+          "targetKeywords": ["hot tub electricity cost {state}", "cost to run hot tub {state}", "hot tub electric bill per month"],
+          "internalLinkingTargets": ["/{state}", "/electricity-cost/{state}", "/how-much-does-1500-kwh-cost/{state}"],
+          "derivedCalculations": {
+            "monthlyEstimate": "(avgRateCentsPerKwh / 100) * 200 kWh (avg hot tub ~200 kWh/month)"
+          }
+        },
+        {
+          "id": "electric-dryer-cost",
+          "title": "Electricity Cost to Run a Dryer in {State}",
+          "slug": "/electric-dryer-cost/{state}",
+          "category": "consumption-scenario",
+          "dataRequired": ["avgRateCentsPerKwh"],
+          "autoGeneratable": true,
+          "existsAlready": false,
+          "searchIntent": "Homeowners comparing gas vs electric dryer costs. Appliance purchase decision.",
+          "targetKeywords": ["electric dryer cost {state}", "cost to run dryer {state}", "dryer electricity cost per load"],
+          "internalLinkingTargets": ["/{state}", "/electricity-cost/{state}", "/average-electricity-bill/{state}"],
+          "derivedCalculations": {
+            "costPerLoad": "(avgRateCentsPerKwh / 100) * 5 kWh (avg dryer cycle)",
+            "monthlyEstimate": "costPerLoad * 20 loads"
+          }
+        },
+        {
+          "id": "space-heater-cost",
+          "title": "Electricity Cost to Run a Space Heater in {State}",
+          "slug": "/space-heater-electricity-cost/{state}",
+          "category": "consumption-scenario",
+          "dataRequired": ["avgRateCentsPerKwh"],
+          "autoGeneratable": true,
+          "existsAlready": false,
+          "searchIntent": "Users evaluating supplemental heating costs. Winter seasonal query.",
+          "targetKeywords": ["space heater electricity cost {state}", "cost to run space heater {state}", "space heater electric bill"],
+          "internalLinkingTargets": ["/{state}", "/electric-heating-cost/{state}", "/electricity-cost/{state}"],
+          "derivedCalculations": {
+            "costPer8Hours": "(avgRateCentsPerKwh / 100) * 12 kWh (1500W * 8h)",
+            "monthlyEstimate": "costPer8Hours * 30"
+          }
+        }
+      ]
+    }
+  ],
+  "expansionSummary": {
+    "newPageFamilies": 22,
+    "existingPageFamilies": 1,
+    "totalNewPagesIfAllStates": "22 families × 51 states = 1,122 new pages (plus comparison variants)",
+    "dataSourcesRequired": "All derivable from existing avgRateCentsPerKwh + priceHistory + comparison pairs. No new external data needed.",
+    "implementationApproach": "Each family follows the existing knowledge page pattern: loadEntityIndex() for generateStaticParams, loadKnowledgePage() for state data, template-driven content generation.",
+    "priorityOrder": [
+      {
+        "tier": 1,
+        "reason": "Highest search volume, closest to existing data",
+        "families": ["electricity-price-per-kwh", "electricity-rate-today", "electricity-cost-per-month", "electricity-price-trend", "electricity-price-increase"]
+      },
+      {
+        "tier": 2,
+        "reason": "Strong commercial intent, differentiated from existing pages",
+        "families": ["ev-charging-cost", "bitcoin-mining-cost", "ai-data-center-cost", "ac-running-cost", "electric-heating-cost"]
+      },
+      {
+        "tier": 3,
+        "reason": "Fills usage tier gaps and niche appliance queries",
+        "families": ["cost-750-kwh", "cost-1500-kwh", "cost-3000-kwh", "cost-per-kwh-by-usage", "home-office-cost", "cheapest-electricity"]
+      },
+      {
+        "tier": 4,
+        "reason": "Niche but consistent long-tail traffic",
+        "families": ["cannabis-grow-cost", "pool-pump-cost", "hot-tub-cost", "electric-dryer-cost", "space-heater-cost", "electricity-bill-vs", "electricity-inflation-rate", "electricity-price-5-year"]
+      }
+    ]
+  },
+  "existingPagesAlreadyCovering": {
+    "note": "These route families already exist and should NOT be duplicated. New pages should link to them.",
+    "routes": [
+      "/electricity-cost/{state}",
+      "/average-electricity-bill/{state}",
+      "/electricity-price-history/{state}",
+      "/how-much-does-500-kwh-cost/{state}",
+      "/how-much-does-1000-kwh-cost/{state}",
+      "/how-much-does-2000-kwh-cost/{state}",
+      "/electricity-cost-comparison/{pair}",
+      "/solar-savings/{state}",
+      "/solar-vs-grid-electricity-cost/{state}",
+      "/battery-backup-electricity-cost/{state}",
+      "/battery-recharge-cost/{state}",
+      "/generator-vs-battery-cost/{state}",
+      "/data-center-electricity-cost/{state}",
+      "/electricity-inflation/{state}",
+      "/electricity-price-volatility/{state}",
+      "/electricity-affordability/{state}",
+      "/electricity-cost-of-living/{state}",
+      "/electricity-providers/{state}",
+      "/shop-electricity/{state}",
+      "/business-electricity-options/{state}",
+      "/why-electricity-is-cheap/{state}",
+      "/why-electricity-is-expensive/{state}",
+      "/moving-to-electricity-cost/{state}",
+      "/electricity-cost-calculator/{state}",
+      "/ai-energy-demand (hub only, no per-state)",
+      "/{state}/bill/{kwh} (500, 750, 1000, 1250, 1500, 2000)",
+      "/{state}/history",
+      "/compare/{pair}",
+      "/knowledge/compare/{pair}",
+      "/knowledge/state/{state}"
+    ]
+  }
+}

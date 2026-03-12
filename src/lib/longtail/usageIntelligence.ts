@@ -4,6 +4,7 @@ import {
   isSupportedApplianceSlug,
   type ApplianceSlug,
 } from "@/lib/longtail/applianceConfig";
+import { getActiveApplianceSlugs } from "@/lib/longtail/rollout";
 import {
   calculateUsageCost,
   formatUsd,
@@ -221,7 +222,10 @@ export function buildHomeSizeCostRows(
 }
 
 export function getUsageApplianceStaticParams(): Array<{ appliance: string }> {
-  return APPLIANCE_CONFIGS.map((appliance) => ({ appliance: appliance.slug }));
+  const activeSlugs = new Set(getActiveApplianceSlugs());
+  return APPLIANCE_CONFIGS.filter((appliance) => activeSlugs.has(appliance.slug)).map((appliance) => ({
+    appliance: appliance.slug,
+  }));
 }
 
 export function parseUsageApplianceSlug(value: string): ApplianceSlug | null {

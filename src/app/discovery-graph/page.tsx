@@ -12,7 +12,7 @@ export const revalidate = 86400;
 export const metadata: Metadata = buildMetadata({
   title: "Discovery Graph – Topic & Data Relationships | PriceOfElectricity.com",
   description:
-    "Relationship map of topics, datasets, and methodology. Machine-readable JSON for crawlers.",
+    "Curated relationship map of major topics, datasets, and methodology. Machine-readable JSON for crawlers.",
   canonicalPath: "/discovery-graph",
 });
 
@@ -41,7 +41,7 @@ export default async function DiscoveryGraphPage() {
         {/* A) Intro */}
         <section style={{ marginBottom: 32 }}>
           <p style={{ marginTop: 0, marginBottom: 12, maxWidth: "65ch", fontSize: 16, lineHeight: 1.6 }}>
-            Relationship map of topics, datasets, and methodology. Shows how electricity content connects across the site. Machine-readable JSON for crawlers and programmatic discovery.
+            Curated relationship map of major topics, datasets, and methodology. It shows representative connections across the site rather than an exhaustive graph of every page and edge. Machine-readable JSON is available for crawlers and programmatic discovery.
           </p>
           <p className="muted" style={{ margin: "0 0 24px 0", fontSize: 14, maxWidth: "50ch" }}>
             <strong>Best for:</strong> Understanding site structure and the machine-readable topic map.
@@ -114,7 +114,7 @@ export default async function DiscoveryGraphPage() {
         <section style={{ marginBottom: 32 }}>
           <h2 style={{ fontSize: 20, marginBottom: 12 }}>Machine-Readable Graph</h2>
           <p style={{ marginTop: 0, marginBottom: 12, maxWidth: "65ch", fontSize: 16, lineHeight: 1.6 }}>
-            A lightweight JSON representation of major nodes and relationships is available for programmatic discovery and LLM crawlers:
+            A lightweight, curated JSON subset of major nodes and relationships is available for programmatic discovery and LLM crawlers:
           </p>
           <p style={{ margin: 0 }}>
             <Link href="/discovery-graph.json">/discovery-graph.json</Link>

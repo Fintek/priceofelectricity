@@ -1,10 +1,10 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-03-10T18:46:48.543Z",
+  "generatedAt": "2025-12-15T00:00:00.000Z",
   "sourceVersion": "v2",
   "contractVersion": "1.0.0",
-  "registryHash": "e6bc381627f18127e206b36cb88d8b20036c7a2f82d967e8cee96a67d8285db2",
-  "integritySignature": "e0e30244d4c9f85640b7de4a36b3cbfd7fd2f3d15eb03ff1feffaa8a62cde16f",
+  "registryHash": "2d8119594e21abd62ab115c3b0ddc78a7c15cbafef7ceee6d863ac36aacd5454",
+  "integritySignature": "c777d4526398aa66575598e809404abb71ba9fc4bb8c0f48645640e318217caf",
   "totalPages": 78,
   "contractUrl": "/knowledge/contract.json",
   "changelogUrl": "/knowledge/changelog.json",
@@ -40,24 +40,24 @@
       "slug": "national",
       "title": "U.S. National Electricity Pricing Overview",
       "description": "National-level summary of U.S. residential electricity rates and extremes.",
-      "url": "http://localhost:3000/knowledge/national",
-      "canonicalUrl": "http://localhost:3000/knowledge/national",
-      "jsonUrl": "http://localhost:3000/knowledge/national.json",
+      "url": "https://priceofelectricity.com/knowledge/national",
+      "canonicalUrl": "https://priceofelectricity.com/knowledge/national",
+      "jsonUrl": "https://priceofelectricity.com/knowledge/national.json",
       "relatedMethodologyUrls": [
-        "http://localhost:3000/knowledge/methodology/epi",
-        "http://localhost:3000/knowledge/methodology/value-score",
-        "http://localhost:3000/knowledge/methodology/freshness"
+        "https://priceofelectricity.com/knowledge/methodology/epi",
+        "https://priceofelectricity.com/knowledge/methodology/value-score",
+        "https://priceofelectricity.com/knowledge/methodology/freshness"
       ],
       "relatedDataEndpoints": [
-        "http://localhost:3000/api/datasets/states.json",
-        "http://localhost:3000/api/datasets/states.csv"
+        "https://priceofelectricity.com/api/datasets/states.json",
+        "https://priceofelectricity.com/api/datasets/states.csv"
       ],
-      "contentHash": "71ab48fc605998989adbf00bbf6dc0b8c656d5a52d8a549f7b77b77102243bc6",
-      "updatedAt": "2026-03-10T18:46:48.543Z",
+      "contentHash": "e5ccc7642db35c41f3f0529793d9ce277a71f86ffac85be81c0425b7cb1eb25e",
+      "updatedAt": "2025-12-15T00:00:00.000Z",
       "sourceVersion": "v2",
-      "freshnessStatus": "aging",
+      "freshnessStatus": "fresh",
       "datasetUpdatedAt": "2025-12-15T00:00:00.000Z",
-      "qualityScore": 90
+      "qualityScore": 100
     },
     {
       "id": "knowledge:state:alabama",
@@ -65,26 +65,26 @@
       "slug": "alabama",
       "title": "Alabama Electricity Price Knowledge",
       "description": "Machine-readable summary for Alabama electricity rates and ranking metrics.",
-      "url": "http://localhost:3000/knowledge/state/alabama",
-      "canonicalUrl": "http://localhost:3000/knowledge/state/alabama",
-      "jsonUrl": "http://localhost:3000/knowledge/state/alabama.json",
+      "url": "https://priceofelectricity.com/knowledge/state/alabama",
+      "canonicalUrl": "https://priceofelectricity.com/knowledge/state/alabama",
+      "jsonUrl": "https://priceofelectricity.com/knowledge/state/alabama.json",
       "relatedMethodologyUrls": [
-        "http://localhost:3000/knowledge/methodology/epi",
-        "http://localhost:3000/knowledge/methodology/value-score",
-        "http://localhost:3000/knowledge/methodology/freshness"
+        "https://priceofelectricity.com/knowledge/methodology/epi",
+        "https://priceofelectricity.com/knowledge/methodology/value-score",
+        "https://priceofelectricity.com/knowledge/methodology/freshness"
       ],
       "relatedDataEndpoints": [
-        "http://localhost:3000/api/datasets/states.json",
-        "http://localhost:3000/api/datasets/states.csv",
-        "http://localhost:3000/api/datasets/value-ranking.csv",
-        "http://localhost:3000/api/datasets/affordability.csv"
+        "https://priceofelectricity.com/api/datasets/states.json",
+        "https://priceofelectricity.com/api/datasets/states.csv",
+        "https://priceofelectricity.com/api/datasets/value-ranking.csv",
+        "https://priceofelectricity.com/api/datasets/affordability.csv"
       ],
-      "contentHash": "4cfdb512c0b3b7647ed6b55f5eb7eea1a07e11d16445aafec723b19d959780e5",
-      "updatedAt": "2026-03-10T18:46:48.543Z",
+      "contentHash": "94cbb33bc9d5ef33bc7b2cc779e553f0a74d8f9d48e2b7db1bd5e9cff453f656",
+      "updatedAt": "2025-12-15T00:00:00.000Z",
       "sourceVersion": "v2",
-      "freshnessStatus": "aging",
+      "freshnessStatus": "fresh",
       "datasetUpdatedAt": "2025-12-15T00:00:00.000Z",
-      "qualityScore": 90
+      "qualityScore": 100
     },
     {
       "id": "knowledge:state:alaska",
@@ -92,26 +92,26 @@
       "slug": "alaska",
       "title": "Alaska Electricity Price Knowledge",
       "description": "Machine-readable summary for Alaska electricity rates and ranking metrics.",
-      "url": "http://localhost:3000/knowledge/state/alaska",
-      "canonicalUrl": "http://localhost:3000/knowledge/state/alaska",
-      "jsonUrl": "http://localhost:3000/knowledge/state/alaska.json",
+      "url": "https://priceofelectricity.com/knowledge/state/alaska",
+      "canonicalUrl": "https://priceofelectricity.com/knowledge/state/alaska",
+      "jsonUrl": "https://priceofelectricity.com/knowledge/state/alaska.json",
       "relatedMethodologyUrls": [
-        "http://localhost:3000/knowledge/methodology/epi",
-        "http://localhost:3000/knowledge/methodology/value-score",
-        "http://localhost:3000/knowledge/methodology/freshness"
+        "https://priceofelectricity.com/knowledge/methodology/epi",
+        "https://priceofelectricity.com/knowledge/methodology/value-score",
+        "https://priceofelectricity.com/knowledge/methodology/freshness"
       ],
       "relatedDataEndpoints": [
-        "http://localhost:3000/api/datasets/states.json",
-        "http://localhost:3000/api/datasets/states.csv",
-        "http://localhost:3000/api/datasets/value-ranking.csv",
-        "http://localhost:3000/api/datasets/affordability.csv"
+        "https://priceofelectricity.com/api/datasets/states.json",
+        "https://priceofelectricity.com/api/datasets/states.csv",
+        "https://priceofelectricity.com/api/datasets/value-ranking.csv",
+        "https://priceofelectricity.com/api/datasets/affordability.csv"
       ],
-      "contentHash": "3a3e1ddce9d639d825d53b3d79868e8664ff5cd079a0a1c2a62b188415884458",
-      "updatedAt": "2026-03-10T18:46:48.543Z",
+      "contentHash": "33e2e8e824053b86e7ee24974e181c8c5299701b64047a1facf7d338c4448967",
+      "updatedAt": "2025-12-15T00:00:00.000Z",
       "sourceVersion": "v2",
-      "freshnessStatus": "aging",
+      "freshnessStatus": "fresh",
       "datasetUpdatedAt": "2025-12-15T00:00:00.000Z",
-      "qualityScore": 90
+      "qualityScore": 100
     },
     {
       "id": "knowledge:state:arizona",
@@ -119,26 +119,26 @@
       "slug": "arizona",
       "title": "Arizona Electricity Price Knowledge",
       "description": "Machine-readable summary for Arizona electricity rates and ranking metrics.",
-      "url": "http://localhost:3000/knowledge/state/arizona",
-      "canonicalUrl": "http://localhost:3000/knowledge/state/arizona",
-      "jsonUrl": "http://localhost:3000/knowledge/state/arizona.json",
+      "url": "https://priceofelectricity.com/knowledge/state/arizona",
+      "canonicalUrl": "https://priceofelectricity.com/knowledge/state/arizona",
+      "jsonUrl": "https://priceofelectricity.com/knowledge/state/arizona.json",
       "relatedMethodologyUrls": [
-        "http://localhost:3000/knowledge/methodology/epi",
-        "http://localhost:3000/knowledge/methodology/value-score",
-        "http://localhost:3000/knowledge/methodology/freshness"
+        "https://priceofelectricity.com/knowledge/methodology/epi",
+        "https://priceofelectricity.com/knowledge/methodology/value-score",
+        "https://priceofelectricity.com/knowledge/methodology/freshness"
       ],
       "relatedDataEndpoints": [
-        "http://localhost:3000/api/datasets/states.json",
-        "http://localhost:3000/api/datasets/states.csv",
-        "http://localhost:3000/api/datasets/value-ranking.csv",
-        "http://localhost:3000/api/datasets/affordability.csv"
+        "https://priceofelectricity.com/api/datasets/states.json",
+        "https://priceofelectricity.com/api/datasets/states.csv",
+        "https://priceofelectricity.com/api/datasets/value-ranking.csv",
+        "https://priceofelectricity.com/api/datasets/affordability.csv"
       ],
-      "contentHash": "272e96c20f44b1201c1c10dde43140a4d417b1ee5cb391ee975b7da99d8ecee1",
-      "updatedAt": "2026-03-10T18:46:48.543Z",
+      "contentHash": "51d8e0fbde32d4af55cdd8518081ee762e7dae67d973774cf7b110f312691b3f",
+      "updatedAt": "2025-12-15T00:00:00.000Z",
       "sourceVersion": "v2",
-      "freshnessStatus": "aging",
+      "freshnessStatus": "fresh",
       "datasetUpdatedAt": "2025-12-15T00:00:00.000Z",
-      "qualityScore": 90
+      "qualityScore": 100
     },
     {
       "id": "knowledge:state:arkansas",
@@ -146,26 +146,26 @@
       "slug": "arkansas",
       "title": "Arkansas Electricity Price Knowledge",
       "description": "Machine-readable summary for Arkansas electricity rates and ranking metrics.",
-      "url": "http://localhost:3000/knowledge/state/arkansas",
-      "canonicalUrl": "http://localhost:3000/knowledge/state/arkansas",
-      "jsonUrl": "http://localhost:3000/knowledge/state/arkansas.json",
+      "url": "https://priceofelectricity.com/knowledge/state/arkansas",
+      "canonicalUrl": "https://priceofelectricity.com/knowledge/state/arkansas",
+      "jsonUrl": "https://priceofelectricity.com/knowledge/state/arkansas.json",
       "relatedMethodologyUrls": [
-        "http://localhost:3000/knowledge/methodology/epi",
-        "http://localhost:3000/knowledge/methodology/value-score",
-        "http://localhost:3000/knowledge/methodology/freshness"
+        "https://priceofelectricity.com/knowledge/methodology/epi",
+        "https://priceofelectricity.com/knowledge/methodology/value-score",
+        "https://priceofelectricity.com/knowledge/methodology/freshness"
       ],
       "relatedDataEndpoints": [
-        "http://localhost:3000/api/datasets/states.json",
-        "http://localhost:3000/api/datasets/states.csv",
-        "http://localhost:3000/api/datasets/value-ranking.csv",
-        "http://localhost:3000/api/datasets/affordability.csv"
+        "https://priceofelectricity.com/api/datasets/states.json",
+        "https://priceofelectricity.com/api/datasets/states.csv",
+        "https://priceofelectricity.com/api/datasets/value-ranking.csv",
+        "https://priceofelectricity.com/api/datasets/affordability.csv"
       ],
-      "contentHash": "d80d49c175eec2d0dcf4ea1ae424ea7c110f9f7709c980f85266cb14ec2f246c",
-      "updatedAt": "2026-03-10T18:46:48.543Z",
+      "contentHash": "d9a25976ba114315db764c989a0915ef54147d84a7a8655c6a2ff882b0686bf8",
+      "updatedAt": "2025-12-15T00:00:00.000Z",
       "sourceVersion": "v2",
-      "freshnessStatus": "aging",
+      "freshnessStatus": "fresh",
       "datasetUpdatedAt": "2025-12-15T00:00:00.000Z",
-      "qualityScore": 90
+      "qualityScore": 100
     },
     {
       "id": "knowledge:state:california",
@@ -173,26 +173,26 @@
       "slug": "california",
       "title": "California Electricity Price Knowledge",
       "description": "Machine-readable summary for California electricity rates and ranking metrics.",
-      "url": "http://localhost:3000/knowledge/state/california",
-      "canonicalUrl": "http://localhost:3000/knowledge/state/california",
-      "jsonUrl": "http://localhost:3000/knowledge/state/california.json",
+      "url": "https://priceofelectricity.com/knowledge/state/california",
+      "canonicalUrl": "https://priceofelectricity.com/knowledge/state/california",
+      "jsonUrl": "https://priceofelectricity.com/knowledge/state/california.json",
       "relatedMethodologyUrls": [
-        "http://localhost:3000/knowledge/methodology/epi",
-        "http://localhost:3000/knowledge/methodology/value-score",
-        "http://localhost:3000/knowledge/methodology/freshness"
+        "https://priceofelectricity.com/knowledge/methodology/epi",
+        "https://priceofelectricity.com/knowledge/methodology/value-score",
+        "https://priceofelectricity.com/knowledge/methodology/freshness"
       ],
       "relatedDataEndpoints": [
-        "http://localhost:3000/api/datasets/states.json",
-        "http://localhost:3000/api/datasets/states.csv",
-        "http://localhost:3000/api/datasets/value-ranking.csv",
-        "http://localhost:3000/api/datasets/affordability.csv"
+        "https://priceofelectricity.com/api/datasets/states.json",
+        "https://priceofelectricity.com/api/datasets/states.csv",
+        "https://priceofelectricity.com/api/datasets/value-ranking.csv",
+        "https://priceofelectricity.com/api/datasets/affordability.csv"
       ],
-      "contentHash": "b718012f78e3fd10b165563e448ecc6c27691a515c6a2cb85379576e5a002d4e",
-      "updatedAt": "2026-03-10T18:46:48.543Z",
+      "contentHash": "97fbf6b3d2b6d365af4f14f46f3344f979b25aa32063da14d1ca76e7b2354d7f",
+      "updatedAt": "2025-12-15T00:00:00.000Z",
       "sourceVersion": "v2",
-      "freshnessStatus": "aging",
+      "freshnessStatus": "fresh",
       "datasetUpdatedAt": "2025-12-15T00:00:00.000Z",
-      "qualityScore": 90
+      "qualityScore": 100
     },
     {
       "id": "knowledge:state:colorado",
@@ -200,26 +200,26 @@
       "slug": "colorado",
       "title": "Colorado Electricity Price Knowledge",
       "description": "Machine-readable summary for Colorado electricity rates and ranking metrics.",
-      "url": "http://localhost:3000/knowledge/state/colorado",
-      "canonicalUrl": "http://localhost:3000/knowledge/state/colorado",
-      "jsonUrl": "http://localhost:3000/knowledge/state/colorado.json",
+      "url": "https://priceofelectricity.com/knowledge/state/colorado",
+      "canonicalUrl": "https://priceofelectricity.com/knowledge/state/colorado",
+      "jsonUrl": "https://priceofelectricity.com/knowledge/state/colorado.json",
       "relatedMethodologyUrls": [
-        "http://localhost:3000/knowledge/methodology/epi",
-        "http://localhost:3000/knowledge/methodology/value-score",
-        "http://localhost:3000/knowledge/methodology/freshness"
+        "https://priceofelectricity.com/knowledge/methodology/epi",
+        "https://priceofelectricity.com/knowledge/methodology/value-score",
+        "https://priceofelectricity.com/knowledge/methodology/freshness"
       ],
       "relatedDataEndpoints": [
-        "http://localhost:3000/api/datasets/states.json",
-        "http://localhost:3000/api/datasets/states.csv",
-        "http://localhost:3000/api/datasets/value-ranking.csv",
-        "http://localhost:3000/api/datasets/affordability.csv"
+        "https://priceofelectricity.com/api/datasets/states.json",
+        "https://priceofelectricity.com/api/datasets/states.csv",
+        "https://priceofelectricity.com/api/datasets/value-ranking.csv",
+        "https://priceofelectricity.com/api/datasets/affordability.csv"
       ],
-      "contentHash": "f68e096204998fc0b7a82c1abec78abece14d1c3c00fd79045ba6e04139eab27",
-      "updatedAt": "2026-03-10T18:46:48.543Z",
+      "contentHash": "3e575d2e1588bf9e6da406f53ca01cd5e05ced376befb1b3e4c3364caeb09483",
+      "updatedAt": "2025-12-15T00:00:00.000Z",
       "sourceVersion": "v2",
-      "freshnessStatus": "aging",
+      "freshnessStatus": "fresh",
       "datasetUpdatedAt": "2025-12-15T00:00:00.000Z",
-      "qualityScore": 90
+      "qualityScore": 100
     },
     {
       "id": "knowledge:state:connecticut",
@@ -227,26 +227,26 @@
       "slug": "connecticut",
       "title": "Connecticut Electricity Price Knowledge",
       "description": "Machine-readable summary for Connecticut electricity rates and ranking metrics.",
-      "url": "http://localhost:3000/knowledge/state/connecticut",
-      "canonicalUrl": "http://localhost:3000/knowledge/state/connecticut",
-      "jsonUrl": "http://localhost:3000/knowledge/state/connecticut.json",
+      "url": "https://priceofelectricity.com/knowledge/state/connecticut",
+      "canonicalUrl": "https://priceofelectricity.com/knowledge/state/connecticut",
+      "jsonUrl": "https://priceofelectricity.com/knowledge/state/connecticut.json",
       "relatedMethodologyUrls": [
-        "http://localhost:3000/knowledge/methodology/epi",
-        "http://localhost:3000/knowledge/methodology/value-score",
-        "http://localhost:3000/knowledge/methodology/freshness"
+        "https://priceofelectricity.com/knowledge/methodology/epi",
+        "https://priceofelectricity.com/knowledge/methodology/value-score",
+        "https://priceofelectricity.com/knowledge/methodology/freshness"
       ],
       "relatedDataEndpoints": [
-        "http://localhost:3000/api/datasets/states.json",
-        "http://localhost:3000/api/datasets/states.csv",
-        "http://localhost:3000/api/datasets/value-ranking.csv",
-        "http://localhost:3000/api/datasets/affordability.csv"
+        "https://priceofelectricity.com/api/datasets/states.json",
+        "https://priceofelectricity.com/api/datasets/states.csv",
+        "https://priceofelectricity.com/api/datasets/value-ranking.csv",
+        "https://priceofelectricity.com/api/datasets/affordability.csv"
       ],
-      "contentHash": "c375201856029a37d8fff113c9d7160ba949407358370ce2c1cbdf662a0166d4",
-      "updatedAt": "2026-03-10T18:46:48.543Z",
+      "contentHash": "c077da153cb8b80b6b5649eaaac4bcde8a7c3e908c45e720921bcce4f4e725f7",
+      "updatedAt": "2025-12-15T00:00:00.000Z",
       "sourceVersion": "v2",
-      "freshnessStatus": "aging",
+      "freshnessStatus": "fresh",
       "datasetUpdatedAt": "2025-12-15T00:00:00.000Z",
-      "qualityScore": 90
+      "qualityScore": 100
     },
     {
       "id": "knowledge:state:delaware",
@@ -254,26 +254,26 @@
       "slug": "delaware",
       "title": "Delaware Electricity Price Knowledge",
       "description": "Machine-readable summary for Delaware electricity rates and ranking metrics.",
-      "url": "http://localhost:3000/knowledge/state/delaware",
-      "canonicalUrl": "http://localhost:3000/knowledge/state/delaware",
-      "jsonUrl": "http://localhost:3000/knowledge/state/delaware.json",
+      "url": "https://priceofelectricity.com/knowledge/state/delaware",
+      "canonicalUrl": "https://priceofelectricity.com/knowledge/state/delaware",
+      "jsonUrl": "https://priceofelectricity.com/knowledge/state/delaware.json",
       "relatedMethodologyUrls": [
-        "http://localhost:3000/knowledge/methodology/epi",
-        "http://localhost:3000/knowledge/methodology/value-score",
-        "http://localhost:3000/knowledge/methodology/freshness"
+        "https://priceofelectricity.com/knowledge/methodology/epi",
+        "https://priceofelectricity.com/knowledge/methodology/value-score",
+        "https://priceofelectricity.com/knowledge/methodology/freshness"
       ],
       "relatedDataEndpoints": [
-        "http://localhost:3000/api/datasets/states.json",
-        "http://localhost:3000/api/datasets/states.csv",
-        "http://localhost:3000/api/datasets/value-ranking.csv",
-        "http://localhost:3000/api/datasets/affordability.csv"
+        "https://priceofelectricity.com/api/datasets/states.json",
+        "https://priceofelectricity.com/api/datasets/states.csv",
+        "https://priceofelectricity.com/api/datasets/value-ranking.csv",
+        "https://priceofelectricity.com/api/datasets/affordability.csv"
       ],
-      "contentHash": "1244bb59957fac68719a689aa22d224ba0a1239ca161187d196068dcd4eaf01e",
-      "updatedAt": "2026-03-10T18:46:48.543Z",
+      "contentHash": "c0522eb4ccf70f41aa7476f3d73d3e4e86f5e3308c341479bca517705a2ee0bb",
+      "updatedAt": "2025-12-15T00:00:00.000Z",
       "sourceVersion": "v2",
-      "freshnessStatus": "aging",
+      "freshnessStatus": "fresh",
       "datasetUpdatedAt": "2025-12-15T00:00:00.000Z",
-      "qualityScore": 90
+      "qualityScore": 100
     },
     {
       "id": "knowledge:state:district-of-columbia",
@@ -281,24 +281,24 @@
       "slug": "district-of-columbia",
       "title": "District of Columbia Electricity Price Knowledge",
       "description": "Machine-readable state-like record for District of Columbia; values are unavailable in current normalized pipeline.",
-      "url": "http://localhost:3000/knowledge/state/district-of-columbia",
-      "canonicalUrl": "http://localhost:3000/knowledge/state/district-of-columbia",
-      "jsonUrl": "http://localhost:3000/knowledge/state/district-of-columbia.json",
+      "url": "https://priceofelectricity.com/knowledge/state/district-of-columbia",
+      "canonicalUrl": "https://priceofelectricity.com/knowledge/state/district-of-columbia",
+      "jsonUrl": "https://priceofelectricity.com/knowledge/state/district-of-columbia.json",
       "relatedMethodologyUrls": [
-        "http://localhost:3000/knowledge/methodology/epi",
-        "http://localhost:3000/knowledge/methodology/value-score",
-        "http://localhost:3000/knowledge/methodology/freshness"
+        "https://priceofelectricity.com/knowledge/methodology/epi",
+        "https://priceofelectricity.com/knowledge/methodology/value-score",
+        "https://priceofelectricity.com/knowledge/methodology/freshness"
       ],
       "relatedDataEndpoints": [
-        "http://localhost:3000/api/datasets/states.json",
-        "http://localhost:3000/api/datasets/states.csv"
+        "https://priceofelectricity.com/api/datasets/states.json",
+        "https://priceofelectricity.com/api/datasets/states.csv"
       ],
-      "contentHash": "4f64babe0044abc8df0f515721bd2d5ecbf7e121f230cb00d28773ba89be03e0",
-      "updatedAt": "2026-03-10T18:46:48.543Z",
+      "contentHash": "81327ebe297ac8fc457725cfba821979bf5320d0bcbb14e7c0dab3a6666a29ef",
+      "updatedAt": "2025-12-15T00:00:00.000Z",
       "sourceVersion": "v2",
-      "freshnessStatus": "aging",
+      "freshnessStatus": "fresh",
       "datasetUpdatedAt": "2025-12-15T00:00:00.000Z",
-      "qualityScore": 90
+      "qualityScore": 100
     },
     {
       "id": "knowledge:state:florida",
@@ -306,26 +306,26 @@
       "slug": "florida",
       "title": "Florida Electricity Price Knowledge",
       "description": "Machine-readable summary for Florida electricity rates and ranking metrics.",
-      "url": "http://localhost:3000/knowledge/state/florida",
-      "canonicalUrl": "http://localhost:3000/knowledge/state/florida",
-      "jsonUrl": "http://localhost:3000/knowledge/state/florida.json",
+      "url": "https://priceofelectricity.com/knowledge/state/florida",
+      "canonicalUrl": "https://priceofelectricity.com/knowledge/state/florida",
+      "jsonUrl": "https://priceofelectricity.com/knowledge/state/florida.json",
       "relatedMethodologyUrls": [
-        "http://localhost:3000/knowledge/methodology/epi",
-        "http://localhost:3000/knowledge/methodology/value-score",
-        "http://localhost:3000/knowledge/methodology/freshness"
+        "https://priceofelectricity.com/knowledge/methodology/epi",
+        "https://priceofelectricity.com/knowledge/methodology/value-score",
+        "https://priceofelectricity.com/knowledge/methodology/freshness"
       ],
       "relatedDataEndpoints": [
-        "http://localhost:3000/api/datasets/states.json",
-        "http://localhost:3000/api/datasets/states.csv",
-        "http://localhost:3000/api/datasets/value-ranking.csv",
-        "http://localhost:3000/api/datasets/affordability.csv"
+        "https://priceofelectricity.com/api/datasets/states.json",
+        "https://priceofelectricity.com/api/datasets/states.csv",
+        "https://priceofelectricity.com/api/datasets/value-ranking.csv",
+        "https://priceofelectricity.com/api/datasets/affordability.csv"
       ],
-      "contentHash": "2dfff905d89648610a97e9edc3a3d1626ef082929a433893ec9be60cb5b991dd",
-      "updatedAt": "2026-03-10T18:46:48.543Z",
+      "contentHash": "a13e04238214e2f9b3e3ce6ae5d39e85da47e467431e34a12acd4660e96c5a62",
+      "updatedAt": "2025-12-15T00:00:00.000Z",
       "sourceVersion": "v2",
-      "freshnessStatus": "aging",
+      "freshnessStatus": "fresh",
       "datasetUpdatedAt": "2025-12-15T00:00:00.000Z",
-      "qualityScore": 90
+      "qualityScore": 100
     },
     {
       "id": "knowledge:state:georgia",
@@ -333,26 +333,26 @@
       "slug": "georgia",
       "title": "Georgia Electricity Price Knowledge",
       "description": "Machine-readable summary for Georgia electricity rates and ranking metrics.",
-      "url": "http://localhost:3000/knowledge/state/georgia",
-      "canonicalUrl": "http://localhost:3000/knowledge/state/georgia",
-      "jsonUrl": "http://localhost:3000/knowledge/state/georgia.json",
+      "url": "https://priceofelectricity.com/knowledge/state/georgia",
+      "canonicalUrl": "https://priceofelectricity.com/knowledge/state/georgia",
+      "jsonUrl": "https://priceofelectricity.com/knowledge/state/georgia.json",
       "relatedMethodologyUrls": [
-        "http://localhost:3000/knowledge/methodology/epi",
-        "http://localhost:3000/knowledge/methodology/value-score",
-        "http://localhost:3000/knowledge/methodology/freshness"
+        "https://priceofelectricity.com/knowledge/methodology/epi",
+        "https://priceofelectricity.com/knowledge/methodology/value-score",
+        "https://priceofelectricity.com/knowledge/methodology/freshness"
       ],
       "relatedDataEndpoints": [
-        "http://localhost:3000/api/datasets/states.json",
-        "http://localhost:3000/api/datasets/states.csv",
-        "http://localhost:3000/api/datasets/value-ranking.csv",
-        "http://localhost:3000/api/datasets/affordability.csv"
+        "https://priceofelectricity.com/api/datasets/states.json",
+        "https://priceofelectricity.com/api/datasets/states.csv",
+        "https://priceofelectricity.com/api/datasets/value-ranking.csv",
+        "https://priceofelectricity.com/api/datasets/affordability.csv"
       ],
-      "contentHash": "fe64396b2a58354388aaee4cfcf786bd8afef85f439e34d9a9e1f10653b1d2f8",
-      "updatedAt": "2026-03-10T18:46:48.543Z",
+      "contentHash": "bf8d1c13d6d2fadcb17b3b31ef510e90f255a3abb764f5239a336f4d863d43b0",
+      "updatedAt": "2025-12-15T00:00:00.000Z",
       "sourceVersion": "v2",
-      "freshnessStatus": "aging",
+      "freshnessStatus": "fresh",
       "datasetUpdatedAt": "2025-12-15T00:00:00.000Z",
-      "qualityScore": 90
+      "qualityScore": 100
     },
     {
       "id": "knowledge:state:hawaii",
@@ -360,26 +360,26 @@
       "slug": "hawaii",
       "title": "Hawaii Electricity Price Knowledge",
       "description": "Machine-readable summary for Hawaii electricity rates and ranking metrics.",
-      "url": "http://localhost:3000/knowledge/state/hawaii",
-      "canonicalUrl": "http://localhost:3000/knowledge/state/hawaii",
-      "jsonUrl": "http://localhost:3000/knowledge/state/hawaii.json",
+      "url": "https://priceofelectricity.com/knowledge/state/hawaii",
+      "canonicalUrl": "https://priceofelectricity.com/knowledge/state/hawaii",
+      "jsonUrl": "https://priceofelectricity.com/knowledge/state/hawaii.json",
       "relatedMethodologyUrls": [
-        "http://localhost:3000/knowledge/methodology/epi",
-        "http://localhost:3000/knowledge/methodology/value-score",
-        "http://localhost:3000/knowledge/methodology/freshness"
+        "https://priceofelectricity.com/knowledge/methodology/epi",
+        "https://priceofelectricity.com/knowledge/methodology/value-score",
+        "https://priceofelectricity.com/knowledge/methodology/freshness"
       ],
       "relatedDataEndpoints": [
-        "http://localhost:3000/api/datasets/states.json",
-        "http://localhost:3000/api/datasets/states.csv",
-        "http://localhost:3000/api/datasets/value-ranking.csv",
-        "http://localhost:3000/api/datasets/affordability.csv"
+        "https://priceofelectricity.com/api/datasets/states.json",
+        "https://priceofelectricity.com/api/datasets/states.csv",
+        "https://priceofelectricity.com/api/datasets/value-ranking.csv",
+        "https://priceofelectricity.com/api/datasets/affordability.csv"
       ],
-      "contentHash": "ddde2fb6cf8ca924c4e6367b3f600221bd5847ee7aca9ed240970a11f75a6cdb",
-      "updatedAt": "2026-03-10T18:46:48.543Z",
+      "contentHash": "0f0c11177b115502d9c122dc60797ccc9238b87fe0902dd015f11dcd88efd98f",
+      "updatedAt": "2025-12-15T00:00:00.000Z",
       "sourceVersion": "v2",
-      "freshnessStatus": "aging",
+      "freshnessStatus": "fresh",
       "datasetUpdatedAt": "2025-12-15T00:00:00.000Z",
-      "qualityScore": 90
+      "qualityScore": 100
     },
     {
       "id": "knowledge:state:idaho",
@@ -387,26 +387,26 @@
       "slug": "idaho",
       "title": "Idaho Electricity Price Knowledge",
       "description": "Machine-readable summary for Idaho electricity rates and ranking metrics.",
-      "url": "http://localhost:3000/knowledge/state/idaho",
-      "canonicalUrl": "http://localhost:3000/knowledge/state/idaho",
-      "jsonUrl": "http://localhost:3000/knowledge/state/idaho.json",
+      "url": "https://priceofelectricity.com/knowledge/state/idaho",
+      "canonicalUrl": "https://priceofelectricity.com/knowledge/state/idaho",
+      "jsonUrl": "https://priceofelectricity.com/knowledge/state/idaho.json",
       "relatedMethodologyUrls": [
-        "http://localhost:3000/knowledge/methodology/epi",
-        "http://localhost:3000/knowledge/methodology/value-score",
-        "http://localhost:3000/knowledge/methodology/freshness"
+        "https://priceofelectricity.com/knowledge/methodology/epi",
+        "https://priceofelectricity.com/knowledge/methodology/value-score",
+        "https://priceofelectricity.com/knowledge/methodology/freshness"
       ],
       "relatedDataEndpoints": [
-        "http://localhost:3000/api/datasets/states.json",
-        "http://localhost:3000/api/datasets/states.csv",
-        "http://localhost:3000/api/datasets/value-ranking.csv",
-        "http://localhost:3000/api/datasets/affordability.csv"
+        "https://priceofelectricity.com/api/datasets/states.json",
+        "https://priceofelectricity.com/api/datasets/states.csv",
+        "https://priceofelectricity.com/api/datasets/value-ranking.csv",
+        "https://priceofelectricity.com/api/datasets/affordability.csv"
       ],
-      "contentHash": "0f72f39aa08f308b2e515c442decac81fcd91fc72496f639a8f702e030bb38de",
-      "updatedAt": "2026-03-10T18:46:48.543Z",
+      "contentHash": "7aaf98c5927537066d2fac85b4e112b6cc4be49b2eea00545f4e5ed2f0a1c084",
+      "updatedAt": "2025-12-15T00:00:00.000Z",
       "sourceVersion": "v2",
-      "freshnessStatus": "aging",
+      "freshnessStatus": "fresh",
       "datasetUpdatedAt": "2025-12-15T00:00:00.000Z",
-      "qualityScore": 90
+      "qualityScore": 100
     },
     {
       "id": "knowledge:state:illinois",
@@ -414,26 +414,26 @@
       "slug": "illinois",
       "title": "Illinois Electricity Price Knowledge",
       "description": "Machine-readable summary for Illinois electricity rates and ranking metrics.",
-      "url": "http://localhost:3000/knowledge/state/illinois",
-      "canonicalUrl": "http://localhost:3000/knowledge/state/illinois",
-      "jsonUrl": "http://localhost:3000/knowledge/state/illinois.json",
+      "url": "https://priceofelectricity.com/knowledge/state/illinois",
+      "canonicalUrl": "https://priceofelectricity.com/knowledge/state/illinois",
+      "jsonUrl": "https://priceofelectricity.com/knowledge/state/illinois.json",
       "relatedMethodologyUrls": [
-        "http://localhost:3000/knowledge/methodology/epi",
-        "http://localhost:3000/knowledge/methodology/value-score",
-        "http://localhost:3000/knowledge/methodology/freshness"
+        "https://priceofelectricity.com/knowledge/methodology/epi",
+        "https://priceofelectricity.com/knowledge/methodology/value-score",
+        "https://priceofelectricity.com/knowledge/methodology/freshness"
       ],
       "relatedDataEndpoints": [
-        "http://localhost:3000/api/datasets/states.json",
-        "http://localhost:3000/api/datasets/states.csv",
-        "http://localhost:3000/api/datasets/value-ranking.csv",
-        "http://localhost:3000/api/datasets/affordability.csv"
+        "https://priceofelectricity.com/api/datasets/states.json",
+        "https://priceofelectricity.com/api/datasets/states.csv",
+        "https://priceofelectricity.com/api/datasets/value-ranking.csv",
+        "https://priceofelectricity.com/api/datasets/affordability.csv"
       ],
-      "contentHash": "5a8b1a5aef73ae55aa074460a8e9915853b9dd94821525d7ff87dd1ac7ae9dd5",
-      "updatedAt": "2026-03-10T18:46:48.543Z",
+      "contentHash": "9970b5189f9635344785cdbb3170312ab90e0697d3c90757a5553d8b3620c0b5",
+      "updatedAt": "2025-12-15T00:00:00.000Z",
       "sourceVersion": "v2",
-      "freshnessStatus": "aging",
+      "freshnessStatus": "fresh",
       "datasetUpdatedAt": "2025-12-15T00:00:00.000Z",
-      "qualityScore": 90
+      "qualityScore": 100
     },
     {
       "id": "knowledge:state:indiana",
@@ -441,26 +441,26 @@
       "slug": "indiana",
       "title": "Indiana Electricity Price Knowledge",
       "description": "Machine-readable summary for Indiana electricity rates and ranking metrics.",
-      "url": "http://localhost:3000/knowledge/state/indiana",
-      "canonicalUrl": "http://localhost:3000/knowledge/state/indiana",
-      "jsonUrl": "http://localhost:3000/knowledge/state/indiana.json",
+      "url": "https://priceofelectricity.com/knowledge/state/indiana",
+      "canonicalUrl": "https://priceofelectricity.com/knowledge/state/indiana",
+      "jsonUrl": "https://priceofelectricity.com/knowledge/state/indiana.json",
       "relatedMethodologyUrls": [
-        "http://localhost:3000/knowledge/methodology/epi",
-        "http://localhost:3000/knowledge/methodology/value-score",
-        "http://localhost:3000/knowledge/methodology/freshness"
+        "https://priceofelectricity.com/knowledge/methodology/epi",
+        "https://priceofelectricity.com/knowledge/methodology/value-score",
+        "https://priceofelectricity.com/knowledge/methodology/freshness"
       ],
       "relatedDataEndpoints": [
-        "http://localhost:3000/api/datasets/states.json",
-        "http://localhost:3000/api/datasets/states.csv",
-        "http://localhost:3000/api/datasets/value-ranking.csv",
-        "http://localhost:3000/api/datasets/affordability.csv"
+        "https://priceofelectricity.com/api/datasets/states.json",
+        "https://priceofelectricity.com/api/datasets/states.csv",
+        "https://priceofelectricity.com/api/datasets/value-ranking.csv",
+        "https://priceofelectricity.com/api/datasets/affordability.csv"
       ],
-      "contentHash": "213375f7c7dd12c9effe5dd584c25cee8253adc1dbbac5845b552d39c4a0421d",
-      "updatedAt": "2026-03-10T18:46:48.543Z",
+      "contentHash": "b66309a8398930d052acd57fba51294dbd3abb26a22001556b14117f3c48cdc3",
+      "updatedAt": "2025-12-15T00:00:00.000Z",
       "sourceVersion": "v2",
-      "freshnessStatus": "aging",
+      "freshnessStatus": "fresh",
       "datasetUpdatedAt": "2025-12-15T00:00:00.000Z",
-      "qualityScore": 90
+      "qualityScore": 100
     },
     {
       "id": "knowledge:state:iowa",
@@ -468,26 +468,26 @@
       "slug": "iowa",
       "title": "Iowa Electricity Price Knowledge",
       "description": "Machine-readable summary for Iowa electricity rates and ranking metrics.",
-      "url": "http://localhost:3000/knowledge/state/iowa",
-      "canonicalUrl": "http://localhost:3000/knowledge/state/iowa",
-      "jsonUrl": "http://localhost:3000/knowledge/state/iowa.json",
+      "url": "https://priceofelectricity.com/knowledge/state/iowa",
+      "canonicalUrl": "https://priceofelectricity.com/knowledge/state/iowa",
+      "jsonUrl": "https://priceofelectricity.com/knowledge/state/iowa.json",
       "relatedMethodologyUrls": [
-        "http://localhost:3000/knowledge/methodology/epi",
-        "http://localhost:3000/knowledge/methodology/value-score",
-        "http://localhost:3000/knowledge/methodology/freshness"
+        "https://priceofelectricity.com/knowledge/methodology/epi",
+        "https://priceofelectricity.com/knowledge/methodology/value-score",
+        "https://priceofelectricity.com/knowledge/methodology/freshness"
       ],
       "relatedDataEndpoints": [
-        "http://localhost:3000/api/datasets/states.json",
-        "http://localhost:3000/api/datasets/states.csv",
-        "http://localhost:3000/api/datasets/value-ranking.csv",
-        "http://localhost:3000/api/datasets/affordability.csv"
+        "https://priceofelectricity.com/api/datasets/states.json",
+        "https://priceofelectricity.com/api/datasets/states.csv",
+        "https://priceofelectricity.com/api/datasets/value-ranking.csv",
+        "https://priceofelectricity.com/api/datasets/affordability.csv"
       ],
-      "contentHash": "e905a40001c6392867903ea6a2ad9300f1e72d38efdcc6b4f03cdd8b7c34c2bb",
-      "updatedAt": "2026-03-10T18:46:48.543Z",
+      "contentHash": "484eaaa2e33ec1d3fa68627f53ca7b380607bde562d9bf8fee9ef54bb45ae3bf",
+      "updatedAt": "2025-12-15T00:00:00.000Z",
       "sourceVersion": "v2",
-      "freshnessStatus": "aging",
+      "freshnessStatus": "fresh",
       "datasetUpdatedAt": "2025-12-15T00:00:00.000Z",
-      "qualityScore": 90
+      "qualityScore": 100
     },
     {
       "id": "knowledge:state:kansas",
@@ -495,26 +495,26 @@
       "slug": "kansas",
       "title": "Kansas Electricity Price Knowledge",
       "description": "Machine-readable summary for Kansas electricity rates and ranking metrics.",
-      "url": "http://localhost:3000/knowledge/state/kansas",
-      "canonicalUrl": "http://localhost:3000/knowledge/state/kansas",
-      "jsonUrl": "http://localhost:3000/knowledge/state/kansas.json",
+      "url": "https://priceofelectricity.com/knowledge/state/kansas",
+      "canonicalUrl": "https://priceofelectricity.com/knowledge/state/kansas",
+      "jsonUrl": "https://priceofelectricity.com/knowledge/state/kansas.json",
       "relatedMethodologyUrls": [
-        "http://localhost:3000/knowledge/methodology/epi",
-        "http://localhost:3000/knowledge/methodology/value-score",
-        "http://localhost:3000/knowledge/methodology/freshness"
+        "https://priceofelectricity.com/knowledge/methodology/epi",
+        "https://priceofelectricity.com/knowledge/methodology/value-score",
+        "https://priceofelectricity.com/knowledge/methodology/freshness"
       ],
       "relatedDataEndpoints": [
-        "http://localhost:3000/api/datasets/states.json",
-        "http://localhost:3000/api/datasets/states.csv",
-        "http://localhost:3000/api/datasets/value-ranking.csv",
-        "http://localhost:3000/api/datasets/affordability.csv"
+        "https://priceofelectricity.com/api/datasets/states.json",
+        "https://priceofelectricity.com/api/datasets/states.csv",
+        "https://priceofelectricity.com/api/datasets/value-ranking.csv",
+        "https://priceofelectricity.com/api/datasets/affordability.csv"
       ],
-      "contentHash": "1fcf8cd63a31c5f963c4b69104276bc39f83e4256900f4ba35cab0cfe5cf9f97",
-      "updatedAt": "2026-03-10T18:46:48.543Z",
+      "contentHash": "cf9358235ef9e76d341f34c764266fbd63219badcdab5afe837a3caa3c44a4fd",
+      "updatedAt": "2025-12-15T00:00:00.000Z",
       "sourceVersion": "v2",
-      "freshnessStatus": "aging",
+      "freshnessStatus": "fresh",
       "datasetUpdatedAt": "2025-12-15T00:00:00.000Z",
-      "qualityScore": 90
+      "qualityScore": 100
     },
     {
       "id": "knowledge:state:kentucky",
@@ -522,26 +522,26 @@
       "slug": "kentucky",
       "title": "Kentucky Electricity Price Knowledge",
       "description": "Machine-readable summary for Kentucky electricity rates and ranking metrics.",
-      "url": "http://localhost:3000/knowledge/state/kentucky",
-      "canonicalUrl": "http://localhost:3000/knowledge/state/kentucky",
-      "jsonUrl": "http://localhost:3000/knowledge/state/kentucky.json",
+      "url": "https://priceofelectricity.com/knowledge/state/kentucky",
+      "canonicalUrl": "https://priceofelectricity.com/knowledge/state/kentucky",
+      "jsonUrl": "https://priceofelectricity.com/knowledge/state/kentucky.json",
       "relatedMethodologyUrls": [
-        "http://localhost:3000/knowledge/methodology/epi",
-        "http://localhost:3000/knowledge/methodology/value-score",
-        "http://localhost:3000/knowledge/methodology/freshness"
+        "https://priceofelectricity.com/knowledge/methodology/epi",
+        "https://priceofelectricity.com/knowledge/methodology/value-score",
+        "https://priceofelectricity.com/knowledge/methodology/freshness"
       ],
       "relatedDataEndpoints": [
-        "http://localhost:3000/api/datasets/states.json",
-        "http://localhost:3000/api/datasets/states.csv",
-        "http://localhost:3000/api/datasets/value-ranking.csv",
-        "http://localhost:3000/api/datasets/affordability.csv"
+        "https://priceofelectricity.com/api/datasets/states.json",
+        "https://priceofelectricity.com/api/datasets/states.csv",
+        "https://priceofelectricity.com/api/datasets/value-ranking.csv",
+        "https://priceofelectricity.com/api/datasets/affordability.csv"
       ],
-      "contentHash": "1ab9f743fede47f55a8a1bd31c35924eca233a2c0635f555dd30b13e77ccfeb4",
-      "updatedAt": "2026-03-10T18:46:48.543Z",
+      "contentHash": "33d3c8371d87eadfaf37b6390c9f06336001505ccf80a908a7c57b7771e95385",
+      "updatedAt": "2025-12-15T00:00:00.000Z",
       "sourceVersion": "v2",
-      "freshnessStatus": "aging",
+      "freshnessStatus": "fresh",
       "datasetUpdatedAt": "2025-12-15T00:00:00.000Z",
-      "qualityScore": 90
+      "qualityScore": 100
     },
     {
       "id": "knowledge:state:louisiana",
@@ -549,26 +549,26 @@
       "slug": "louisiana",
       "title": "Louisiana Electricity Price Knowledge",
       "description": "Machine-readable summary for Louisiana electricity rates and ranking metrics.",
-      "url": "http://localhost:3000/knowledge/state/louisiana",
-      "canonicalUrl": "http://localhost:3000/knowledge/state/louisiana",
-      "jsonUrl": "http://localhost:3000/knowledge/state/louisiana.json",
+      "url": "https://priceofelectricity.com/knowledge/state/louisiana",
+      "canonicalUrl": "https://priceofelectricity.com/knowledge/state/louisiana",
+      "jsonUrl": "https://priceofelectricity.com/knowledge/state/louisiana.json",
       "relatedMethodologyUrls": [
-        "http://localhost:3000/knowledge/methodology/epi",
-        "http://localhost:3000/knowledge/methodology/value-score",
-        "http://localhost:3000/knowledge/methodology/freshness"
+        "https://priceofelectricity.com/knowledge/methodology/epi",
+        "https://priceofelectricity.com/knowledge/methodology/value-score",
+        "https://priceofelectricity.com/knowledge/methodology/freshness"
       ],
       "relatedDataEndpoints": [
-        "http://localhost:3000/api/datasets/states.json",
-        "http://localhost:3000/api/datasets/states.csv",
-        "http://localhost:3000/api/datasets/value-ranking.csv",
-        "http://localhost:3000/api/datasets/affordability.csv"
+        "https://priceofelectricity.com/api/datasets/states.json",
+        "https://priceofelectricity.com/api/datasets/states.csv",
+        "https://priceofelectricity.com/api/datasets/value-ranking.csv",
+        "https://priceofelectricity.com/api/datasets/affordability.csv"
       ],
-      "contentHash": "339edf953903837286b3c0b4df68727b5d84e17556383bb836b0ec09a77de3a9",
-      "updatedAt": "2026-03-10T18:46:48.543Z",
+      "contentHash": "33efacda686ea8db8a1501c010e37f68726076c22be7a5d4436b8af0ec244877",
+      "updatedAt": "2025-12-15T00:00:00.000Z",
       "sourceVersion": "v2",
-      "freshnessStatus": "aging",
+      "freshnessStatus": "fresh",
       "datasetUpdatedAt": "2025-12-15T00:00:00.000Z",
-      "qualityScore": 90
+      "qualityScore": 100
     },
     {
       "id": "knowledge:state:maine",
@@ -576,26 +576,26 @@
       "slug": "maine",
       "title": "Maine Electricity Price Knowledge",
       "description": "Machine-readable summary for Maine electricity rates and ranking metrics.",
-      "url": "http://localhost:3000/knowledge/state/maine",
-      "canonicalUrl": "http://localhost:3000/knowledge/state/maine",
-      "jsonUrl": "http://localhost:3000/knowledge/state/maine.json",
+      "url": "https://priceofelectricity.com/knowledge/state/maine",
+      "canonicalUrl": "https://priceofelectricity.com/knowledge/state/maine",
+      "jsonUrl": "https://priceofelectricity.com/knowledge/state/maine.json",
       "relatedMethodologyUrls": [
-        "http://localhost:3000/knowledge/methodology/epi",
-        "http://localhost:3000/knowledge/methodology/value-score",
-        "http://localhost:3000/knowledge/methodology/freshness"
+        "https://priceofelectricity.com/knowledge/methodology/epi",
+        "https://priceofelectricity.com/knowledge/methodology/value-score",
+        "https://priceofelectricity.com/knowledge/methodology/freshness"
       ],
       "relatedDataEndpoints": [
-        "http://localhost:3000/api/datasets/states.json",
-        "http://localhost:3000/api/datasets/states.csv",
-        "http://localhost:3000/api/datasets/value-ranking.csv",
-        "http://localhost:3000/api/datasets/affordability.csv"
+        "https://priceofelectricity.com/api/datasets/states.json",
+        "https://priceofelectricity.com/api/datasets/states.csv",
+        "https://priceofelectricity.com/api/datasets/value-ranking.csv",
+        "https://priceofelectricity.com/api/datasets/affordability.csv"
       ],
-      "contentHash": "90a2e35e721d214e0975199cb3fa97417a49aab5a010d72ad7d5e0d6b7cf97e7",
-      "updatedAt": "2026-03-10T18:46:48.543Z",
+      "contentHash": "6b1c4a200f93a9c704b43580cf4429466988ae3f31ef05641d4a69c4b28d025d",
+      "updatedAt": "2025-12-15T00:00:00.000Z",
       "sourceVersion": "v2",
-      "freshnessStatus": "aging",
+      "freshnessStatus": "fresh",
       "datasetUpdatedAt": "2025-12-15T00:00:00.000Z",
-      "qualityScore": 90
+      "qualityScore": 100
     },
     {
       "id": "knowledge:state:maryland",
@@ -603,26 +603,26 @@
       "slug": "maryland",
       "title": "Maryland Electricity Price Knowledge",
       "description": "Machine-readable summary for Maryland electricity rates and ranking metrics.",
-      "url": "http://localhost:3000/knowledge/state/maryland",
-      "canonicalUrl": "http://localhost:3000/knowledge/state/maryland",
-      "jsonUrl": "http://localhost:3000/knowledge/state/maryland.json",
+      "url": "https://priceofelectricity.com/knowledge/state/maryland",
+      "canonicalUrl": "https://priceofelectricity.com/knowledge/state/maryland",
+      "jsonUrl": "https://priceofelectricity.com/knowledge/state/maryland.json",
       "relatedMethodologyUrls": [
-        "http://localhost:3000/knowledge/methodology/epi",
-        "http://localhost:3000/knowledge/methodology/value-score",
-        "http://localhost:3000/knowledge/methodology/freshness"
+        "https://priceofelectricity.com/knowledge/methodology/epi",
+        "https://priceofelectricity.com/knowledge/methodology/value-score",
+        "https://priceofelectricity.com/knowledge/methodology/freshness"
       ],
       "relatedDataEndpoints": [
-        "http://localhost:3000/api/datasets/states.json",
-        "http://localhost:3000/api/datasets/states.csv",
-        "http://localhost:3000/api/datasets/value-ranking.csv",
-        "http://localhost:3000/api/datasets/affordability.csv"
+        "https://priceofelectricity.com/api/datasets/states.json",
+        "https://priceofelectricity.com/api/datasets/states.csv",
+        "https://priceofelectricity.com/api/datasets/value-ranking.csv",
+        "https://priceofelectricity.com/api/datasets/affordability.csv"
       ],
-      "contentHash": "079e3adb9af1749a65b1b19b5f592005832028f10834029f29eec9e1522435be",
-      "updatedAt": "2026-03-10T18:46:48.543Z",
+      "contentHash": "4608d41d0d86546222d110ff9d2e9ff55f6b0fb3f01def0d887053aa7451bd7e",
+      "updatedAt": "2025-12-15T00:00:00.000Z",
       "sourceVersion": "v2",
-      "freshnessStatus": "aging",
+      "freshnessStatus": "fresh",
       "datasetUpdatedAt": "2025-12-15T00:00:00.000Z",
-      "qualityScore": 90
+      "qualityScore": 100
     },
     {
       "id": "knowledge:state:massachusetts",
@@ -630,26 +630,26 @@
       "slug": "massachusetts",
       "title": "Massachusetts Electricity Price Knowledge",
       "description": "Machine-readable summary for Massachusetts electricity rates and ranking metrics.",
-      "url": "http://localhost:3000/knowledge/state/massachusetts",
-      "canonicalUrl": "http://localhost:3000/knowledge/state/massachusetts",
-      "jsonUrl": "http://localhost:3000/knowledge/state/massachusetts.json",
+      "url": "https://priceofelectricity.com/knowledge/state/massachusetts",
+      "canonicalUrl": "https://priceofelectricity.com/knowledge/state/massachusetts",
+      "jsonUrl": "https://priceofelectricity.com/knowledge/state/massachusetts.json",
       "relatedMethodologyUrls": [
-        "http://localhost:3000/knowledge/methodology/epi",
-        "http://localhost:3000/knowledge/methodology/value-score",
-        "http://localhost:3000/knowledge/methodology/freshness"
+        "https://priceofelectricity.com/knowledge/methodology/epi",
+        "https://priceofelectricity.com/knowledge/methodology/value-score",
+        "https://priceofelectricity.com/knowledge/methodology/freshness"
       ],
       "relatedDataEndpoints": [
-        "http://localhost:3000/api/datasets/states.json",
-        "http://localhost:3000/api/datasets/states.csv",
-        "http://localhost:3000/api/datasets/value-ranking.csv",
-        "http://localhost:3000/api/datasets/affordability.csv"
+        "https://priceofelectricity.com/api/datasets/states.json",
+        "https://priceofelectricity.com/api/datasets/states.csv",
+        "https://priceofelectricity.com/api/datasets/value-ranking.csv",
+        "https://priceofelectricity.com/api/datasets/affordability.csv"
       ],
-      "contentHash": "1e82a179b9fc4e1d95fd030d1d96c5b75728323651fd582657147231ef681087",
-      "updatedAt": "2026-03-10T18:46:48.543Z",
+      "contentHash": "79423c564c35fd549ce3da42b80bb2fe2e7318374f268f64aae61b050f4c6117",
+      "updatedAt": "2025-12-15T00:00:00.000Z",
       "sourceVersion": "v2",
-      "freshnessStatus": "aging",
+      "freshnessStatus": "fresh",
       "datasetUpdatedAt": "2025-12-15T00:00:00.000Z",
-      "qualityScore": 90
+      "qualityScore": 100
     },
     {
       "id": "knowledge:state:michigan",
@@ -657,26 +657,26 @@
       "slug": "michigan",
       "title": "Michigan Electricity Price Knowledge",
       "description": "Machine-readable summary for Michigan electricity rates and ranking metrics.",
-      "url": "http://localhost:3000/knowledge/state/michigan",
-      "canonicalUrl": "http://localhost:3000/knowledge/state/michigan",
-      "jsonUrl": "http://localhost:3000/knowledge/state/michigan.json",
+      "url": "https://priceofelectricity.com/knowledge/state/michigan",
+      "canonicalUrl": "https://priceofelectricity.com/knowledge/state/michigan",
+      "jsonUrl": "https://priceofelectricity.com/knowledge/state/michigan.json",
       "relatedMethodologyUrls": [
-        "http://localhost:3000/knowledge/methodology/epi",
-        "http://localhost:3000/knowledge/methodology/value-score",
-        "http://localhost:3000/knowledge/methodology/freshness"
+        "https://priceofelectricity.com/knowledge/methodology/epi",
+        "https://priceofelectricity.com/knowledge/methodology/value-score",
+        "https://priceofelectricity.com/knowledge/methodology/freshness"
       ],
       "relatedDataEndpoints": [
-        "http://localhost:3000/api/datasets/states.json",
-        "http://localhost:3000/api/datasets/states.csv",
-        "http://localhost:3000/api/datasets/value-ranking.csv",
-        "http://localhost:3000/api/datasets/affordability.csv"
+        "https://priceofelectricity.com/api/datasets/states.json",
+        "https://priceofelectricity.com/api/datasets/states.csv",
+        "https://priceofelectricity.com/api/datasets/value-ranking.csv",
+        "https://priceofelectricity.com/api/datasets/affordability.csv"
       ],
-      "contentHash": "796e14a0f3e0bac7644182dcf155944fdf0605ccaadea5a6fec7aae72677a461",
-      "updatedAt": "2026-03-10T18:46:48.543Z",
+      "contentHash": "8459bebc3a761553775c349988d150f82fc7444f7a5e1378d932c4859b0f84b0",
+      "updatedAt": "2025-12-15T00:00:00.000Z",
       "sourceVersion": "v2",
-      "freshnessStatus": "aging",
+      "freshnessStatus": "fresh",
       "datasetUpdatedAt": "2025-12-15T00:00:00.000Z",
-      "qualityScore": 90
+      "qualityScore": 100
     },
     {
       "id": "knowledge:state:minnesota",
@@ -684,26 +684,26 @@
       "slug": "minnesota",
       "title": "Minnesota Electricity Price Knowledge",
       "description": "Machine-readable summary for Minnesota electricity rates and ranking metrics.",
-      "url": "http://localhost:3000/knowledge/state/minnesota",
-      "canonicalUrl": "http://localhost:3000/knowledge/state/minnesota",
-      "jsonUrl": "http://localhost:3000/knowledge/state/minnesota.json",
+      "url": "https://priceofelectricity.com/knowledge/state/minnesota",
+      "canonicalUrl": "https://priceofelectricity.com/knowledge/state/minnesota",
+      "jsonUrl": "https://priceofelectricity.com/knowledge/state/minnesota.json",
       "relatedMethodologyUrls": [
-        "http://localhost:3000/knowledge/methodology/epi",
-        "http://localhost:3000/knowledge/methodology/value-score",
-        "http://localhost:3000/knowledge/methodology/freshness"
+        "https://priceofelectricity.com/knowledge/methodology/epi",
+        "https://priceofelectricity.com/knowledge/methodology/value-score",
+        "https://priceofelectricity.com/knowledge/methodology/freshness"
       ],
       "relatedDataEndpoints": [
-        "http://localhost:3000/api/datasets/states.json",
-        "http://localhost:3000/api/datasets/states.csv",
-        "http://localhost:3000/api/datasets/value-ranking.csv",
-        "http://localhost:3000/api/datasets/affordability.csv"
+        "https://priceofelectricity.com/api/datasets/states.json",
+        "https://priceofelectricity.com/api/datasets/states.csv",
+        "https://priceofelectricity.com/api/datasets/value-ranking.csv",
+        "https://priceofelectricity.com/api/datasets/affordability.csv"
       ],
-      "contentHash": "543a5c1ef0835ccab45f8b0691cf1b677d063b884b6a587dbf8c230996263ff0",
-      "updatedAt": "2026-03-10T18:46:48.543Z",
+      "contentHash": "6cdc6a08b9c1671cf492f166cdd97685ec8959e9ae6bd25a260bf77e17b8bbf4",
+      "updatedAt": "2025-12-15T00:00:00.000Z",
       "sourceVersion": "v2",
-      "freshnessStatus": "aging",
+      "freshnessStatus": "fresh",
       "datasetUpdatedAt": "2025-12-15T00:00:00.000Z",
-      "qualityScore": 90
+      "qualityScore": 100
     },
     {
       "id": "knowledge:state:mississippi",
@@ -711,26 +711,26 @@
       "slug": "mississippi",
       "title": "Mississippi Electricity Price Knowledge",
       "description": "Machine-readable summary for Mississippi electricity rates and ranking metrics.",
-      "url": "http://localhost:3000/knowledge/state/mississippi",
-      "canonicalUrl": "http://localhost:3000/knowledge/state/mississippi",
-      "jsonUrl": "http://localhost:3000/knowledge/state/mississippi.json",
+      "url": "https://priceofelectricity.com/knowledge/state/mississippi",
+      "canonicalUrl": "https://priceofelectricity.com/knowledge/state/mississippi",
+      "jsonUrl": "https://priceofelectricity.com/knowledge/state/mississippi.json",
       "relatedMethodologyUrls": [
-        "http://localhost:3000/knowledge/methodology/epi",
-        "http://localhost:3000/knowledge/methodology/value-score",
-        "http://localhost:3000/knowledge/methodology/freshness"
+        "https://priceofelectricity.com/knowledge/methodology/epi",
+        "https://priceofelectricity.com/knowledge/methodology/value-score",
+        "https://priceofelectricity.com/knowledge/methodology/freshness"
       ],
       "relatedDataEndpoints": [
-        "http://localhost:3000/api/datasets/states.json",
-        "http://localhost:3000/api/datasets/states.csv",
-        "http://localhost:3000/api/datasets/value-ranking.csv",
-        "http://localhost:3000/api/datasets/affordability.csv"
+        "https://priceofelectricity.com/api/datasets/states.json",
+        "https://priceofelectricity.com/api/datasets/states.csv",
+        "https://priceofelectricity.com/api/datasets/value-ranking.csv",
+        "https://priceofelectricity.com/api/datasets/affordability.csv"
       ],
-      "contentHash": "24b958ed5a81c893c0630b4ba6ea970ccbede0949f16d11fd8c65546d968bfae",
-      "updatedAt": "2026-03-10T18:46:48.543Z",
+      "contentHash": "5aec7d6cad62195e532faff0dc7c9d9b8d50e728584ff843e39427712eb4679d",
+      "updatedAt": "2025-12-15T00:00:00.000Z",
       "sourceVersion": "v2",
-      "freshnessStatus": "aging",
+      "freshnessStatus": "fresh",
       "datasetUpdatedAt": "2025-12-15T00:00:00.000Z",
-      "qualityScore": 90
+      "qualityScore": 100
     },
     {
       "id": "knowledge:state:missouri",
@@ -738,26 +738,26 @@
       "slug": "missouri",
       "title": "Missouri Electricity Price Knowledge",
       "description": "Machine-readable summary for Missouri electricity rates and ranking metrics.",
-      "url": "http://localhost:3000/knowledge/state/missouri",
-      "canonicalUrl": "http://localhost:3000/knowledge/state/missouri",
-      "jsonUrl": "http://localhost:3000/knowledge/state/missouri.json",
+      "url": "https://priceofelectricity.com/knowledge/state/missouri",
+      "canonicalUrl": "https://priceofelectricity.com/knowledge/state/missouri",
+      "jsonUrl": "https://priceofelectricity.com/knowledge/state/missouri.json",
       "relatedMethodologyUrls": [
-        "http://localhost:3000/knowledge/methodology/epi",
-        "http://localhost:3000/knowledge/methodology/value-score",
-        "http://localhost:3000/knowledge/methodology/freshness"
+        "https://priceofelectricity.com/knowledge/methodology/epi",
+        "https://priceofelectricity.com/knowledge/methodology/value-score",
+        "https://priceofelectricity.com/knowledge/methodology/freshness"
       ],
       "relatedDataEndpoints": [
-        "http://localhost:3000/api/datasets/states.json",
-        "http://localhost:3000/api/datasets/states.csv",
-        "http://localhost:3000/api/datasets/value-ranking.csv",
-        "http://localhost:3000/api/datasets/affordability.csv"
+        "https://priceofelectricity.com/api/datasets/states.json",
+        "https://priceofelectricity.com/api/datasets/states.csv",
+        "https://priceofelectricity.com/api/datasets/value-ranking.csv",
+        "https://priceofelectricity.com/api/datasets/affordability.csv"
       ],
-      "contentHash": "5f9231f276f9301025ca8cc48af00c17441e317f580ee55899ff0ba2d9c88da4",
-      "updatedAt": "2026-03-10T18:46:48.543Z",
+      "contentHash": "bee0d400d688d2498b80bb23053dfddab99d4d5960b3309264cae8f007fb9ff2",
+      "updatedAt": "2025-12-15T00:00:00.000Z",
       "sourceVersion": "v2",
-      "freshnessStatus": "aging",
+      "freshnessStatus": "fresh",
       "datasetUpdatedAt": "2025-12-15T00:00:00.000Z",
-      "qualityScore": 90
+      "qualityScore": 100
     },
     {
       "id": "knowledge:state:montana",
@@ -765,26 +765,26 @@
       "slug": "montana",
       "title": "Montana Electricity Price Knowledge",
       "description": "Machine-readable summary for Montana electricity rates and ranking metrics.",
-      "url": "http://localhost:3000/knowledge/state/montana",
-      "canonicalUrl": "http://localhost:3000/knowledge/state/montana",
-      "jsonUrl": "http://localhost:3000/knowledge/state/montana.json",
+      "url": "https://priceofelectricity.com/knowledge/state/montana",
+      "canonicalUrl": "https://priceofelectricity.com/knowledge/state/montana",
+      "jsonUrl": "https://priceofelectricity.com/knowledge/state/montana.json",
       "relatedMethodologyUrls": [
-        "http://localhost:3000/knowledge/methodology/epi",
-        "http://localhost:3000/knowledge/methodology/value-score",
-        "http://localhost:3000/knowledge/methodology/freshness"
+        "https://priceofelectricity.com/knowledge/methodology/epi",
+        "https://priceofelectricity.com/knowledge/methodology/value-score",
+        "https://priceofelectricity.com/knowledge/methodology/freshness"
       ],
       "relatedDataEndpoints": [
-        "http://localhost:3000/api/datasets/states.json",
-        "http://localhost:3000/api/datasets/states.csv",
-        "http://localhost:3000/api/datasets/value-ranking.csv",
-        "http://localhost:3000/api/datasets/affordability.csv"
+        "https://priceofelectricity.com/api/datasets/states.json",
+        "https://priceofelectricity.com/api/datasets/states.csv",
+        "https://priceofelectricity.com/api/datasets/value-ranking.csv",
+        "https://priceofelectricity.com/api/datasets/affordability.csv"
       ],
-      "contentHash": "af442136d5b2150ec328ada60a635c843f31c7a1f2ee4df99154e4448b952f03",
-      "updatedAt": "2026-03-10T18:46:48.543Z",
+      "contentHash": "5c740ad903f10c873a2f5c4acad387ec017f56787444d531fab9715c709e8733",
+      "updatedAt": "2025-12-15T00:00:00.000Z",
       "sourceVersion": "v2",
-      "freshnessStatus": "aging",
+      "freshnessStatus": "fresh",
       "datasetUpdatedAt": "2025-12-15T00:00:00.000Z",
-      "qualityScore": 90
+      "qualityScore": 100
     },
     {
       "id": "knowledge:state:nebraska",
@@ -792,26 +792,26 @@
       "slug": "nebraska",
       "title": "Nebraska Electricity Price Knowledge",
       "description": "Machine-readable summary for Nebraska electricity rates and ranking metrics.",
-      "url": "http://localhost:3000/knowledge/state/nebraska",
-      "canonicalUrl": "http://localhost:3000/knowledge/state/nebraska",
-      "jsonUrl": "http://localhost:3000/knowledge/state/nebraska.json",
+      "url": "https://priceofelectricity.com/knowledge/state/nebraska",
+      "canonicalUrl": "https://priceofelectricity.com/knowledge/state/nebraska",
+      "jsonUrl": "https://priceofelectricity.com/knowledge/state/nebraska.json",
       "relatedMethodologyUrls": [
-        "http://localhost:3000/knowledge/methodology/epi",
-        "http://localhost:3000/knowledge/methodology/value-score",
-        "http://localhost:3000/knowledge/methodology/freshness"
+        "https://priceofelectricity.com/knowledge/methodology/epi",
+        "https://priceofelectricity.com/knowledge/methodology/value-score",
+        "https://priceofelectricity.com/knowledge/methodology/freshness"
       ],
       "relatedDataEndpoints": [
-        "http://localhost:3000/api/datasets/states.json",
-        "http://localhost:3000/api/datasets/states.csv",
-        "http://localhost:3000/api/datasets/value-ranking.csv",
-        "http://localhost:3000/api/datasets/affordability.csv"
+        "https://priceofelectricity.com/api/datasets/states.json",
+        "https://priceofelectricity.com/api/datasets/states.csv",
+        "https://priceofelectricity.com/api/datasets/value-ranking.csv",
+        "https://priceofelectricity.com/api/datasets/affordability.csv"
       ],
-      "contentHash": "eceb81f1b353e1369517dbb772fc3ee47a793a154ba2884042abd8c2e2bbc57d",
-      "updatedAt": "2026-03-10T18:46:48.543Z",
+      "contentHash": "8613e91475db8887568e36ea2b9349282d544789d54929fa1b5e658943d02a7a",
+      "updatedAt": "2025-12-15T00:00:00.000Z",
       "sourceVersion": "v2",
-      "freshnessStatus": "aging",
+      "freshnessStatus": "fresh",
       "datasetUpdatedAt": "2025-12-15T00:00:00.000Z",
-      "qualityScore": 90
+      "qualityScore": 100
     },
     {
       "id": "knowledge:state:nevada",
@@ -819,26 +819,26 @@
       "slug": "nevada",
       "title": "Nevada Electricity Price Knowledge",
       "description": "Machine-readable summary for Nevada electricity rates and ranking metrics.",
-      "url": "http://localhost:3000/knowledge/state/nevada",
-      "canonicalUrl": "http://localhost:3000/knowledge/state/nevada",
-      "jsonUrl": "http://localhost:3000/knowledge/state/nevada.json",
+      "url": "https://priceofelectricity.com/knowledge/state/nevada",
+      "canonicalUrl": "https://priceofelectricity.com/knowledge/state/nevada",
+      "jsonUrl": "https://priceofelectricity.com/knowledge/state/nevada.json",
       "relatedMethodologyUrls": [
-        "http://localhost:3000/knowledge/methodology/epi",
-        "http://localhost:3000/knowledge/methodology/value-score",
-        "http://localhost:3000/knowledge/methodology/freshness"
+        "https://priceofelectricity.com/knowledge/methodology/epi",
+        "https://priceofelectricity.com/knowledge/methodology/value-score",
+        "https://priceofelectricity.com/knowledge/methodology/freshness"
       ],
       "relatedDataEndpoints": [
-        "http://localhost:3000/api/datasets/states.json",
-        "http://localhost:3000/api/datasets/states.csv",
-        "http://localhost:3000/api/datasets/value-ranking.csv",
-        "http://localhost:3000/api/datasets/affordability.csv"
+        "https://priceofelectricity.com/api/datasets/states.json",
+        "https://priceofelectricity.com/api/datasets/states.csv",
+        "https://priceofelectricity.com/api/datasets/value-ranking.csv",
+        "https://priceofelectricity.com/api/datasets/affordability.csv"
       ],
-      "contentHash": "6efa124fb04ccdc1e19a38cee54265ec89f1380aca73d26b66c8fec29bc5beb5",
-      "updatedAt": "2026-03-10T18:46:48.543Z",
+      "contentHash": "db17a48908f3b0e6d3c507b53c54fc13fa933b49294ba635180552f14080a887",
+      "updatedAt": "2025-12-15T00:00:00.000Z",
       "sourceVersion": "v2",
-      "freshnessStatus": "aging",
+      "freshnessStatus": "fresh",
       "datasetUpdatedAt": "2025-12-15T00:00:00.000Z",
-      "qualityScore": 90
+      "qualityScore": 100
     },
     {
       "id": "knowledge:state:new-hampshire",
@@ -846,26 +846,26 @@
       "slug": "new-hampshire",
       "title": "New Hampshire Electricity Price Knowledge",
       "description": "Machine-readable summary for New Hampshire electricity rates and ranking metrics.",
-      "url": "http://localhost:3000/knowledge/state/new-hampshire",
-      "canonicalUrl": "http://localhost:3000/knowledge/state/new-hampshire",
-      "jsonUrl": "http://localhost:3000/knowledge/state/new-hampshire.json",
+      "url": "https://priceofelectricity.com/knowledge/state/new-hampshire",
+      "canonicalUrl": "https://priceofelectricity.com/knowledge/state/new-hampshire",
+      "jsonUrl": "https://priceofelectricity.com/knowledge/state/new-hampshire.json",
       "relatedMethodologyUrls": [
-        "http://localhost:3000/knowledge/methodology/epi",
-        "http://localhost:3000/knowledge/methodology/value-score",
-        "http://localhost:3000/knowledge/methodology/freshness"
+        "https://priceofelectricity.com/knowledge/methodology/epi",
+        "https://priceofelectricity.com/knowledge/methodology/value-score",
+        "https://priceofelectricity.com/knowledge/methodology/freshness"
       ],
       "relatedDataEndpoints": [
-        "http://localhost:3000/api/datasets/states.json",
-        "http://localhost:3000/api/datasets/states.csv",
-        "http://localhost:3000/api/datasets/value-ranking.csv",
-        "http://localhost:3000/api/datasets/affordability.csv"
+        "https://priceofelectricity.com/api/datasets/states.json",
+        "https://priceofelectricity.com/api/datasets/states.csv",
+        "https://priceofelectricity.com/api/datasets/value-ranking.csv",
+        "https://priceofelectricity.com/api/datasets/affordability.csv"
       ],
-      "contentHash": "fe9844faee80f4439df0740cded024a59b1580cb1b60bea0121a5aa929b73e5a",
-      "updatedAt": "2026-03-10T18:46:48.543Z",
+      "contentHash": "18fbf8963ab5a06b199a5fa3bcdd8f00ae63f2d9792c7de5fae6cd6ef192dbad",
+      "updatedAt": "2025-12-15T00:00:00.000Z",
       "sourceVersion": "v2",
-      "freshnessStatus": "aging",
+      "freshnessStatus": "fresh",
       "datasetUpdatedAt": "2025-12-15T00:00:00.000Z",
-      "qualityScore": 90
+      "qualityScore": 100
     },
     {
       "id": "knowledge:state:new-jersey",
@@ -873,26 +873,26 @@
       "slug": "new-jersey",
       "title": "New Jersey Electricity Price Knowledge",
       "description": "Machine-readable summary for New Jersey electricity rates and ranking metrics.",
-      "url": "http://localhost:3000/knowledge/state/new-jersey",
-      "canonicalUrl": "http://localhost:3000/knowledge/state/new-jersey",
-      "jsonUrl": "http://localhost:3000/knowledge/state/new-jersey.json",
+      "url": "https://priceofelectricity.com/knowledge/state/new-jersey",
+      "canonicalUrl": "https://priceofelectricity.com/knowledge/state/new-jersey",
+      "jsonUrl": "https://priceofelectricity.com/knowledge/state/new-jersey.json",
       "relatedMethodologyUrls": [
-        "http://localhost:3000/knowledge/methodology/epi",
-        "http://localhost:3000/knowledge/methodology/value-score",
-        "http://localhost:3000/knowledge/methodology/freshness"
+        "https://priceofelectricity.com/knowledge/methodology/epi",
+        "https://priceofelectricity.com/knowledge/methodology/value-score",
+        "https://priceofelectricity.com/knowledge/methodology/freshness"
       ],
       "relatedDataEndpoints": [
-        "http://localhost:3000/api/datasets/states.json",
-        "http://localhost:3000/api/datasets/states.csv",
-        "http://localhost:3000/api/datasets/value-ranking.csv",
-        "http://localhost:3000/api/datasets/affordability.csv"
+        "https://priceofelectricity.com/api/datasets/states.json",
+        "https://priceofelectricity.com/api/datasets/states.csv",
+        "https://priceofelectricity.com/api/datasets/value-ranking.csv",
+        "https://priceofelectricity.com/api/datasets/affordability.csv"
       ],
-      "contentHash": "f06de19e9083c70f5ed68be25cc67c0f2e692f83b76e37270f24f670a088fbe8",
-      "updatedAt": "2026-03-10T18:46:48.543Z",
+      "contentHash": "77cf8db19cc5d28c4d51e412546f01e2772f0ee99e408b290f6b33bc7254db1d",
+      "updatedAt": "2025-12-15T00:00:00.000Z",
       "sourceVersion": "v2",
-      "freshnessStatus": "aging",
+      "freshnessStatus": "fresh",
       "datasetUpdatedAt": "2025-12-15T00:00:00.000Z",
-      "qualityScore": 90
+      "qualityScore": 100
     },
     {
       "id": "knowledge:state:new-mexico",
@@ -900,26 +900,26 @@
       "slug": "new-mexico",
       "title": "New Mexico Electricity Price Knowledge",
       "description": "Machine-readable summary for New Mexico electricity rates and ranking metrics.",
-      "url": "http://localhost:3000/knowledge/state/new-mexico",
-      "canonicalUrl": "http://localhost:3000/knowledge/state/new-mexico",
-      "jsonUrl": "http://localhost:3000/knowledge/state/new-mexico.json",
+      "url": "https://priceofelectricity.com/knowledge/state/new-mexico",
+      "canonicalUrl": "https://priceofelectricity.com/knowledge/state/new-mexico",
+      "jsonUrl": "https://priceofelectricity.com/knowledge/state/new-mexico.json",
       "relatedMethodologyUrls": [
-        "http://localhost:3000/knowledge/methodology/epi",
-        "http://localhost:3000/knowledge/methodology/value-score",
-        "http://localhost:3000/knowledge/methodology/freshness"
+        "https://priceofelectricity.com/knowledge/methodology/epi",
+        "https://priceofelectricity.com/knowledge/methodology/value-score",
+        "https://priceofelectricity.com/knowledge/methodology/freshness"
       ],
       "relatedDataEndpoints": [
-        "http://localhost:3000/api/datasets/states.json",
-        "http://localhost:3000/api/datasets/states.csv",
-        "http://localhost:3000/api/datasets/value-ranking.csv",
-        "http://localhost:3000/api/datasets/affordability.csv"
+        "https://priceofelectricity.com/api/datasets/states.json",
+        "https://priceofelectricity.com/api/datasets/states.csv",
+        "https://priceofelectricity.com/api/datasets/value-ranking.csv",
+        "https://priceofelectricity.com/api/datasets/affordability.csv"
       ],
-      "contentHash": "507c76efd8e878d57d923bc3ac232ff417b11873c5362710a359fbea9624e704",
-      "updatedAt": "2026-03-10T18:46:48.543Z",
+      "contentHash": "7e662f8db96d1e7498cba6827ca421872177e44965e4fe70a11b35f8919a54e6",
+      "updatedAt": "2025-12-15T00:00:00.000Z",
       "sourceVersion": "v2",
-      "freshnessStatus": "aging",
+      "freshnessStatus": "fresh",
       "datasetUpdatedAt": "2025-12-15T00:00:00.000Z",
-      "qualityScore": 90
+      "qualityScore": 100
     },
     {
       "id": "knowledge:state:new-york",
@@ -927,26 +927,26 @@
       "slug": "new-york",
       "title": "New York Electricity Price Knowledge",
       "description": "Machine-readable summary for New York electricity rates and ranking metrics.",
-      "url": "http://localhost:3000/knowledge/state/new-york",
-      "canonicalUrl": "http://localhost:3000/knowledge/state/new-york",
-      "jsonUrl": "http://localhost:3000/knowledge/state/new-york.json",
+      "url": "https://priceofelectricity.com/knowledge/state/new-york",
+      "canonicalUrl": "https://priceofelectricity.com/knowledge/state/new-york",
+      "jsonUrl": "https://priceofelectricity.com/knowledge/state/new-york.json",
       "relatedMethodologyUrls": [
-        "http://localhost:3000/knowledge/methodology/epi",
-        "http://localhost:3000/knowledge/methodology/value-score",
-        "http://localhost:3000/knowledge/methodology/freshness"
+        "https://priceofelectricity.com/knowledge/methodology/epi",
+        "https://priceofelectricity.com/knowledge/methodology/value-score",
+        "https://priceofelectricity.com/knowledge/methodology/freshness"
       ],
       "relatedDataEndpoints": [
-        "http://localhost:3000/api/datasets/states.json",
-        "http://localhost:3000/api/datasets/states.csv",
-        "http://localhost:3000/api/datasets/value-ranking.csv",
-        "http://localhost:3000/api/datasets/affordability.csv"
+        "https://priceofelectricity.com/api/datasets/states.json",
+        "https://priceofelectricity.com/api/datasets/states.csv",
+        "https://priceofelectricity.com/api/datasets/value-ranking.csv",
+        "https://priceofelectricity.com/api/datasets/affordability.csv"
       ],
-      "contentHash": "a91893b5d114673a6bda77d034d1244bcb980b0a4a9eb6ed8c3933810ea1cbcd",
-      "updatedAt": "2026-03-10T18:46:48.543Z",
+      "contentHash": "7efcfb70b234a66f50c4106b412589154d971837b7e32a8ce1c09914c54881e1",
+      "updatedAt": "2025-12-15T00:00:00.000Z",
       "sourceVersion": "v2",
-      "freshnessStatus": "aging",
+      "freshnessStatus": "fresh",
       "datasetUpdatedAt": "2025-12-15T00:00:00.000Z",
-      "qualityScore": 90
+      "qualityScore": 100
     },
     {
       "id": "knowledge:state:north-carolina",
@@ -954,26 +954,26 @@
       "slug": "north-carolina",
       "title": "North Carolina Electricity Price Knowledge",
       "description": "Machine-readable summary for North Carolina electricity rates and ranking metrics.",
-      "url": "http://localhost:3000/knowledge/state/north-carolina",
-      "canonicalUrl": "http://localhost:3000/knowledge/state/north-carolina",
-      "jsonUrl": "http://localhost:3000/knowledge/state/north-carolina.json",
+      "url": "https://priceofelectricity.com/knowledge/state/north-carolina",
+      "canonicalUrl": "https://priceofelectricity.com/knowledge/state/north-carolina",
+      "jsonUrl": "https://priceofelectricity.com/knowledge/state/north-carolina.json",
       "relatedMethodologyUrls": [
-        "http://localhost:3000/knowledge/methodology/epi",
-        "http://localhost:3000/knowledge/methodology/value-score",
-        "http://localhost:3000/knowledge/methodology/freshness"
+        "https://priceofelectricity.com/knowledge/methodology/epi",
+        "https://priceofelectricity.com/knowledge/methodology/value-score",
+        "https://priceofelectricity.com/knowledge/methodology/freshness"
       ],
       "relatedDataEndpoints": [
-        "http://localhost:3000/api/datasets/states.json",
-        "http://localhost:3000/api/datasets/states.csv",
-        "http://localhost:3000/api/datasets/value-ranking.csv",
-        "http://localhost:3000/api/datasets/affordability.csv"
+        "https://priceofelectricity.com/api/datasets/states.json",
+        "https://priceofelectricity.com/api/datasets/states.csv",
+        "https://priceofelectricity.com/api/datasets/value-ranking.csv",
+        "https://priceofelectricity.com/api/datasets/affordability.csv"
       ],
-      "contentHash": "1dbc310939c564025fdd91d4d1d188d999e1199ce92f9a01e4ad1847d413d23c",
-      "updatedAt": "2026-03-10T18:46:48.543Z",
+      "contentHash": "3a9e35aeab81051f220642225f3a818906cd8860a99e423d7982b9e6895ce900",
+      "updatedAt": "2025-12-15T00:00:00.000Z",
       "sourceVersion": "v2",
-      "freshnessStatus": "aging",
+      "freshnessStatus": "fresh",
       "datasetUpdatedAt": "2025-12-15T00:00:00.000Z",
-      "qualityScore": 90
+      "qualityScore": 100
     },
     {
       "id": "knowledge:state:north-dakota",
@@ -981,26 +981,26 @@
       "slug": "north-dakota",
       "title": "North Dakota Electricity Price Knowledge",
       "description": "Machine-readable summary for North Dakota electricity rates and ranking metrics.",
-      "url": "http://localhost:3000/knowledge/state/north-dakota",
-      "canonicalUrl": "http://localhost:3000/knowledge/state/north-dakota",
-      "jsonUrl": "http://localhost:3000/knowledge/state/north-dakota.json",
+      "url": "https://priceofelectricity.com/knowledge/state/north-dakota",
+      "canonicalUrl": "https://priceofelectricity.com/knowledge/state/north-dakota",
+      "jsonUrl": "https://priceofelectricity.com/knowledge/state/north-dakota.json",
       "relatedMethodologyUrls": [
-        "http://localhost:3000/knowledge/methodology/epi",
-        "http://localhost:3000/knowledge/methodology/value-score",
-        "http://localhost:3000/knowledge/methodology/freshness"
+        "https://priceofelectricity.com/knowledge/methodology/epi",
+        "https://priceofelectricity.com/knowledge/methodology/value-score",
+        "https://priceofelectricity.com/knowledge/methodology/freshness"
       ],
       "relatedDataEndpoints": [
-        "http://localhost:3000/api/datasets/states.json",
-        "http://localhost:3000/api/datasets/states.csv",
-        "http://localhost:3000/api/datasets/value-ranking.csv",
-        "http://localhost:3000/api/datasets/affordability.csv"
+        "https://priceofelectricity.com/api/datasets/states.json",
+        "https://priceofelectricity.com/api/datasets/states.csv",
+        "https://priceofelectricity.com/api/datasets/value-ranking.csv",
+        "https://priceofelectricity.com/api/datasets/affordability.csv"
       ],
-      "contentHash": "2ced468770ec817336d31b86cf232e531c19e2d85c064f66560ab4299b9f2600",
-      "updatedAt": "2026-03-10T18:46:48.543Z",
+      "contentHash": "ea7009e5f9111917bbc3a46322494f8b49afd2f9ecbd6e339af96459c582c21c",
+      "updatedAt": "2025-12-15T00:00:00.000Z",
       "sourceVersion": "v2",
-      "freshnessStatus": "aging",
+      "freshnessStatus": "fresh",
       "datasetUpdatedAt": "2025-12-15T00:00:00.000Z",
-      "qualityScore": 90
+      "qualityScore": 100
     },
     {
       "id": "knowledge:state:ohio",
@@ -1008,26 +1008,26 @@
       "slug": "ohio",
       "title": "Ohio Electricity Price Knowledge",
       "description": "Machine-readable summary for Ohio electricity rates and ranking metrics.",
-      "url": "http://localhost:3000/knowledge/state/ohio",
-      "canonicalUrl": "http://localhost:3000/knowledge/state/ohio",
-      "jsonUrl": "http://localhost:3000/knowledge/state/ohio.json",
+      "url": "https://priceofelectricity.com/knowledge/state/ohio",
+      "canonicalUrl": "https://priceofelectricity.com/knowledge/state/ohio",
+      "jsonUrl": "https://priceofelectricity.com/knowledge/state/ohio.json",
       "relatedMethodologyUrls": [
-        "http://localhost:3000/knowledge/methodology/epi",
-        "http://localhost:3000/knowledge/methodology/value-score",
-        "http://localhost:3000/knowledge/methodology/freshness"
+        "https://priceofelectricity.com/knowledge/methodology/epi",
+        "https://priceofelectricity.com/knowledge/methodology/value-score",
+        "https://priceofelectricity.com/knowledge/methodology/freshness"
       ],
       "relatedDataEndpoints": [
-        "http://localhost:3000/api/datasets/states.json",
-        "http://localhost:3000/api/datasets/states.csv",
-        "http://localhost:3000/api/datasets/value-ranking.csv",
-        "http://localhost:3000/api/datasets/affordability.csv"
+        "https://priceofelectricity.com/api/datasets/states.json",
+        "https://priceofelectricity.com/api/datasets/states.csv",
+        "https://priceofelectricity.com/api/datasets/value-ranking.csv",
+        "https://priceofelectricity.com/api/datasets/affordability.csv"
       ],
-      "contentHash": "39df3649ce534b99fb3bb5f8f6e4894e24c86d1cb8c404943a9ac01ebba9b48a",
-      "updatedAt": "2026-03-10T18:46:48.543Z",
+      "contentHash": "0dd20bd5bbdb4faab4da8234e879dfa62add44fa8c9413b9e7be89d5e621181f",
+      "updatedAt": "2025-12-15T00:00:00.000Z",
       "sourceVersion": "v2",
-      "freshnessStatus": "aging",
+      "freshnessStatus": "fresh",
       "datasetUpdatedAt": "2025-12-15T00:00:00.000Z",
-      "qualityScore": 90
+      "qualityScore": 100
     },
     {
       "id": "knowledge:state:oklahoma",
@@ -1035,26 +1035,26 @@
       "slug": "oklahoma",
       "title": "Oklahoma Electricity Price Knowledge",
       "description": "Machine-readable summary for Oklahoma electricity rates and ranking metrics.",
-      "url": "http://localhost:3000/knowledge/state/oklahoma",
-      "canonicalUrl": "http://localhost:3000/knowledge/state/oklahoma",
-      "jsonUrl": "http://localhost:3000/knowledge/state/oklahoma.json",
+      "url": "https://priceofelectricity.com/knowledge/state/oklahoma",
+      "canonicalUrl": "https://priceofelectricity.com/knowledge/state/oklahoma",
+      "jsonUrl": "https://priceofelectricity.com/knowledge/state/oklahoma.json",
       "relatedMethodologyUrls": [
-        "http://localhost:3000/knowledge/methodology/epi",
-        "http://localhost:3000/knowledge/methodology/value-score",
-        "http://localhost:3000/knowledge/methodology/freshness"
+        "https://priceofelectricity.com/knowledge/methodology/epi",
+        "https://priceofelectricity.com/knowledge/methodology/value-score",
+        "https://priceofelectricity.com/knowledge/methodology/freshness"
       ],
       "relatedDataEndpoints": [
-        "http://localhost:3000/api/datasets/states.json",
-        "http://localhost:3000/api/datasets/states.csv",
-        "http://localhost:3000/api/datasets/value-ranking.csv",
-        "http://localhost:3000/api/datasets/affordability.csv"
+        "https://priceofelectricity.com/api/datasets/states.json",
+        "https://priceofelectricity.com/api/datasets/states.csv",
+        "https://priceofelectricity.com/api/datasets/value-ranking.csv",
+        "https://priceofelectricity.com/api/datasets/affordability.csv"
       ],
-      "contentHash": "8dc1d9d931fc856ad47d00280e9c7101f473be9b542d512392ece643eba72e8d",
-      "updatedAt": "2026-03-10T18:46:48.543Z",
+      "contentHash": "a83460a6f513fdae7c514ceaf3104ec780963392ae124941dfa93341502b37f5",
+      "updatedAt": "2025-12-15T00:00:00.000Z",
       "sourceVersion": "v2",
-      "freshnessStatus": "aging",
+      "freshnessStatus": "fresh",
       "datasetUpdatedAt": "2025-12-15T00:00:00.000Z",
-      "qualityScore": 90
+      "qualityScore": 100
     },
     {
       "id": "knowledge:state:oregon",
@@ -1062,26 +1062,26 @@
       "slug": "oregon",
       "title": "Oregon Electricity Price Knowledge",
       "description": "Machine-readable summary for Oregon electricity rates and ranking metrics.",
-      "url": "http://localhost:3000/knowledge/state/oregon",
-      "canonicalUrl": "http://localhost:3000/knowledge/state/oregon",
-      "jsonUrl": "http://localhost:3000/knowledge/state/oregon.json",
+      "url": "https://priceofelectricity.com/knowledge/state/oregon",
+      "canonicalUrl": "https://priceofelectricity.com/knowledge/state/oregon",
+      "jsonUrl": "https://priceofelectricity.com/knowledge/state/oregon.json",
       "relatedMethodologyUrls": [
-        "http://localhost:3000/knowledge/methodology/epi",
-        "http://localhost:3000/knowledge/methodology/value-score",
-        "http://localhost:3000/knowledge/methodology/freshness"
+        "https://priceofelectricity.com/knowledge/methodology/epi",
+        "https://priceofelectricity.com/knowledge/methodology/value-score",
+        "https://priceofelectricity.com/knowledge/methodology/freshness"
       ],
       "relatedDataEndpoints": [
-        "http://localhost:3000/api/datasets/states.json",
-        "http://localhost:3000/api/datasets/states.csv",
-        "http://localhost:3000/api/datasets/value-ranking.csv",
-        "http://localhost:3000/api/datasets/affordability.csv"
+        "https://priceofelectricity.com/api/datasets/states.json",
+        "https://priceofelectricity.com/api/datasets/states.csv",
+        "https://priceofelectricity.com/api/datasets/value-ranking.csv",
+        "https://priceofelectricity.com/api/datasets/affordability.csv"
       ],
-      "contentHash": "9ff1e395f7e7b5b65d035fc5c7e86702639919a205360134820ee484de6b0f13",
-      "updatedAt": "2026-03-10T18:46:48.543Z",
+      "contentHash": "45b8dafaa3f5cbd7f544cbd916263ef15b05bae717292073e13135a5b0846889",
+      "updatedAt": "2025-12-15T00:00:00.000Z",
       "sourceVersion": "v2",
-      "freshnessStatus": "aging",
+      "freshnessStatus": "fresh",
       "datasetUpdatedAt": "2025-12-15T00:00:00.000Z",
-      "qualityScore": 90
+      "qualityScore": 100
     },
     {
       "id": "knowledge:state:pennsylvania",
@@ -1089,26 +1089,26 @@
       "slug": "pennsylvania",
       "title": "Pennsylvania Electricity Price Knowledge",
       "description": "Machine-readable summary for Pennsylvania electricity rates and ranking metrics.",
-      "url": "http://localhost:3000/knowledge/state/pennsylvania",
-      "canonicalUrl": "http://localhost:3000/knowledge/state/pennsylvania",
-      "jsonUrl": "http://localhost:3000/knowledge/state/pennsylvania.json",
+      "url": "https://priceofelectricity.com/knowledge/state/pennsylvania",
+      "canonicalUrl": "https://priceofelectricity.com/knowledge/state/pennsylvania",
+      "jsonUrl": "https://priceofelectricity.com/knowledge/state/pennsylvania.json",
       "relatedMethodologyUrls": [
-        "http://localhost:3000/knowledge/methodology/epi",
-        "http://localhost:3000/knowledge/methodology/value-score",
-        "http://localhost:3000/knowledge/methodology/freshness"
+        "https://priceofelectricity.com/knowledge/methodology/epi",
+        "https://priceofelectricity.com/knowledge/methodology/value-score",
+        "https://priceofelectricity.com/knowledge/methodology/freshness"
       ],
       "relatedDataEndpoints": [
-        "http://localhost:3000/api/datasets/states.json",
-        "http://localhost:3000/api/datasets/states.csv",
-        "http://localhost:3000/api/datasets/value-ranking.csv",
-        "http://localhost:3000/api/datasets/affordability.csv"
+        "https://priceofelectricity.com/api/datasets/states.json",
+        "https://priceofelectricity.com/api/datasets/states.csv",
+        "https://priceofelectricity.com/api/datasets/value-ranking.csv",
+        "https://priceofelectricity.com/api/datasets/affordability.csv"
       ],
-      "contentHash": "70c9e823943e4aeff5f2ad3d4ed400f0cb91f3ac17fc6a127f384062c0712428",
-      "updatedAt": "2026-03-10T18:46:48.543Z",
+      "contentHash": "0e5b90994f9b283faf50dd4c5b0e9e0bd88fbba5c59380353f295fc114623462",
+      "updatedAt": "2025-12-15T00:00:00.000Z",
       "sourceVersion": "v2",
-      "freshnessStatus": "aging",
+      "freshnessStatus": "fresh",
       "datasetUpdatedAt": "2025-12-15T00:00:00.000Z",
-      "qualityScore": 90
+      "qualityScore": 100
     },
     {
       "id": "knowledge:state:rhode-island",
@@ -1116,26 +1116,26 @@
       "slug": "rhode-island",
       "title": "Rhode Island Electricity Price Knowledge",
       "description": "Machine-readable summary for Rhode Island electricity rates and ranking metrics.",
-      "url": "http://localhost:3000/knowledge/state/rhode-island",
-      "canonicalUrl": "http://localhost:3000/knowledge/state/rhode-island",
-      "jsonUrl": "http://localhost:3000/knowledge/state/rhode-island.json",
+      "url": "https://priceofelectricity.com/knowledge/state/rhode-island",
+      "canonicalUrl": "https://priceofelectricity.com/knowledge/state/rhode-island",
+      "jsonUrl": "https://priceofelectricity.com/knowledge/state/rhode-island.json",
       "relatedMethodologyUrls": [
-        "http://localhost:3000/knowledge/methodology/epi",
-        "http://localhost:3000/knowledge/methodology/value-score",
-        "http://localhost:3000/knowledge/methodology/freshness"
+        "https://priceofelectricity.com/knowledge/methodology/epi",
+        "https://priceofelectricity.com/knowledge/methodology/value-score",
+        "https://priceofelectricity.com/knowledge/methodology/freshness"
       ],
       "relatedDataEndpoints": [
-        "http://localhost:3000/api/datasets/states.json",
-        "http://localhost:3000/api/datasets/states.csv",
-        "http://localhost:3000/api/datasets/value-ranking.csv",
-        "http://localhost:3000/api/datasets/affordability.csv"
+        "https://priceofelectricity.com/api/datasets/states.json",
+        "https://priceofelectricity.com/api/datasets/states.csv",
+        "https://priceofelectricity.com/api/datasets/value-ranking.csv",
+        "https://priceofelectricity.com/api/datasets/affordability.csv"
       ],
-      "contentHash": "1db0a787f1ecf3eb8fa3eccf4ca434bad99858539b81ada0d7fb163a46a1bb1a",
-      "updatedAt": "2026-03-10T18:46:48.543Z",
+      "contentHash": "4eac920f4113123e3d225b22ad48e841607232158f39ec89f498eb57f05b5608",
+      "updatedAt": "2025-12-15T00:00:00.000Z",
       "sourceVersion": "v2",
-      "freshnessStatus": "aging",
+      "freshnessStatus": "fresh",
       "datasetUpdatedAt": "2025-12-15T00:00:00.000Z",
-      "qualityScore": 90
+      "qualityScore": 100
     },
     {
       "id": "knowledge:state:south-carolina",
@@ -1143,26 +1143,26 @@
       "slug": "south-carolina",
       "title": "South Carolina Electricity Price Knowledge",
       "description": "Machine-readable summary for South Carolina electricity rates and ranking metrics.",
-      "url": "http://localhost:3000/knowledge/state/south-carolina",
-      "canonicalUrl": "http://localhost:3000/knowledge/state/south-carolina",
-      "jsonUrl": "http://localhost:3000/knowledge/state/south-carolina.json",
+      "url": "https://priceofelectricity.com/knowledge/state/south-carolina",
+      "canonicalUrl": "https://priceofelectricity.com/knowledge/state/south-carolina",
+      "jsonUrl": "https://priceofelectricity.com/knowledge/state/south-carolina.json",
       "relatedMethodologyUrls": [
-        "http://localhost:3000/knowledge/methodology/epi",
-        "http://localhost:3000/knowledge/methodology/value-score",
-        "http://localhost:3000/knowledge/methodology/freshness"
+        "https://priceofelectricity.com/knowledge/methodology/epi",
+        "https://priceofelectricity.com/knowledge/methodology/value-score",
+        "https://priceofelectricity.com/knowledge/methodology/freshness"
       ],
       "relatedDataEndpoints": [
-        "http://localhost:3000/api/datasets/states.json",
-        "http://localhost:3000/api/datasets/states.csv",
-        "http://localhost:3000/api/datasets/value-ranking.csv",
-        "http://localhost:3000/api/datasets/affordability.csv"
+        "https://priceofelectricity.com/api/datasets/states.json",
+        "https://priceofelectricity.com/api/datasets/states.csv",
+        "https://priceofelectricity.com/api/datasets/value-ranking.csv",
+        "https://priceofelectricity.com/api/datasets/affordability.csv"
       ],
-      "contentHash": "cc1f82aaf4801b51306cd4552d73e514832253341b229448ede38a1492864b0d",
-      "updatedAt": "2026-03-10T18:46:48.543Z",
+      "contentHash": "708e5594b6ee84d8bbaca09558e5c07940d805aeb81235431d87c5d4bdf79d9b",
+      "updatedAt": "2025-12-15T00:00:00.000Z",
       "sourceVersion": "v2",
-      "freshnessStatus": "aging",
+      "freshnessStatus": "fresh",
       "datasetUpdatedAt": "2025-12-15T00:00:00.000Z",
-      "qualityScore": 90
+      "qualityScore": 100
     },
     {
       "id": "knowledge:state:south-dakota",
@@ -1170,26 +1170,26 @@
       "slug": "south-dakota",
       "title": "South Dakota Electricity Price Knowledge",
       "description": "Machine-readable summary for South Dakota electricity rates and ranking metrics.",
-      "url": "http://localhost:3000/knowledge/state/south-dakota",
-      "canonicalUrl": "http://localhost:3000/knowledge/state/south-dakota",
-      "jsonUrl": "http://localhost:3000/knowledge/state/south-dakota.json",
+      "url": "https://priceofelectricity.com/knowledge/state/south-dakota",
+      "canonicalUrl": "https://priceofelectricity.com/knowledge/state/south-dakota",
+      "jsonUrl": "https://priceofelectricity.com/knowledge/state/south-dakota.json",
       "relatedMethodologyUrls": [
-        "http://localhost:3000/knowledge/methodology/epi",
-        "http://localhost:3000/knowledge/methodology/value-score",
-        "http://localhost:3000/knowledge/methodology/freshness"
+        "https://priceofelectricity.com/knowledge/methodology/epi",
+        "https://priceofelectricity.com/knowledge/methodology/value-score",
+        "https://priceofelectricity.com/knowledge/methodology/freshness"
       ],
       "relatedDataEndpoints": [
-        "http://localhost:3000/api/datasets/states.json",
-        "http://localhost:3000/api/datasets/states.csv",
-        "http://localhost:3000/api/datasets/value-ranking.csv",
-        "http://localhost:3000/api/datasets/affordability.csv"
+        "https://priceofelectricity.com/api/datasets/states.json",
+        "https://priceofelectricity.com/api/datasets/states.csv",
+        "https://priceofelectricity.com/api/datasets/value-ranking.csv",
+        "https://priceofelectricity.com/api/datasets/affordability.csv"
       ],
-      "contentHash": "eefcd6281d11f8a3caba07f11fcca7660492aa05783668cca3d8c4283368e2e3",
-      "updatedAt": "2026-03-10T18:46:48.543Z",
+      "contentHash": "04093dbd6a44975ea5ec10318de2db68ac1eb03d34f5cddd844442e24df13239",
+      "updatedAt": "2025-12-15T00:00:00.000Z",
       "sourceVersion": "v2",
-      "freshnessStatus": "aging",
+      "freshnessStatus": "fresh",
       "datasetUpdatedAt": "2025-12-15T00:00:00.000Z",
-      "qualityScore": 90
+      "qualityScore": 100
     },
     {
       "id": "knowledge:state:tennessee",
@@ -1197,26 +1197,26 @@
       "slug": "tennessee",
       "title": "Tennessee Electricity Price Knowledge",
       "description": "Machine-readable summary for Tennessee electricity rates and ranking metrics.",
-      "url": "http://localhost:3000/knowledge/state/tennessee",
-      "canonicalUrl": "http://localhost:3000/knowledge/state/tennessee",
-      "jsonUrl": "http://localhost:3000/knowledge/state/tennessee.json",
+      "url": "https://priceofelectricity.com/knowledge/state/tennessee",
+      "canonicalUrl": "https://priceofelectricity.com/knowledge/state/tennessee",
+      "jsonUrl": "https://priceofelectricity.com/knowledge/state/tennessee.json",
       "relatedMethodologyUrls": [
-        "http://localhost:3000/knowledge/methodology/epi",
-        "http://localhost:3000/knowledge/methodology/value-score",
-        "http://localhost:3000/knowledge/methodology/freshness"
+        "https://priceofelectricity.com/knowledge/methodology/epi",
+        "https://priceofelectricity.com/knowledge/methodology/value-score",
+        "https://priceofelectricity.com/knowledge/methodology/freshness"
       ],
       "relatedDataEndpoints": [
-        "http://localhost:3000/api/datasets/states.json",
-        "http://localhost:3000/api/datasets/states.csv",
-        "http://localhost:3000/api/datasets/value-ranking.csv",
-        "http://localhost:3000/api/datasets/affordability.csv"
+        "https://priceofelectricity.com/api/datasets/states.json",
+        "https://priceofelectricity.com/api/datasets/states.csv",
+        "https://priceofelectricity.com/api/datasets/value-ranking.csv",
+        "https://priceofelectricity.com/api/datasets/affordability.csv"
       ],
-      "contentHash": "05a2fbb40638c7e173f0cfbd303b18e4700c0cd36b29931bcc04df087bfea046",
-      "updatedAt": "2026-03-10T18:46:48.543Z",
+      "contentHash": "69f6b0628a66554763926e0d3b777021826689f56ad57f1216bf904f973daf6f",
+      "updatedAt": "2025-12-15T00:00:00.000Z",
       "sourceVersion": "v2",
-      "freshnessStatus": "aging",
+      "freshnessStatus": "fresh",
       "datasetUpdatedAt": "2025-12-15T00:00:00.000Z",
-      "qualityScore": 90
+      "qualityScore": 100
     },
     {
       "id": "knowledge:state:texas",
@@ -1224,26 +1224,26 @@
       "slug": "texas",
       "title": "Texas Electricity Price Knowledge",
       "description": "Machine-readable summary for Texas electricity rates and ranking metrics.",
-      "url": "http://localhost:3000/knowledge/state/texas",
-      "canonicalUrl": "http://localhost:3000/knowledge/state/texas",
-      "jsonUrl": "http://localhost:3000/knowledge/state/texas.json",
+      "url": "https://priceofelectricity.com/knowledge/state/texas",
+      "canonicalUrl": "https://priceofelectricity.com/knowledge/state/texas",
+      "jsonUrl": "https://priceofelectricity.com/knowledge/state/texas.json",
       "relatedMethodologyUrls": [
-        "http://localhost:3000/knowledge/methodology/epi",
-        "http://localhost:3000/knowledge/methodology/value-score",
-        "http://localhost:3000/knowledge/methodology/freshness"
+        "https://priceofelectricity.com/knowledge/methodology/epi",
+        "https://priceofelectricity.com/knowledge/methodology/value-score",
+        "https://priceofelectricity.com/knowledge/methodology/freshness"
       ],
       "relatedDataEndpoints": [
-        "http://localhost:3000/api/datasets/states.json",
-        "http://localhost:3000/api/datasets/states.csv",
-        "http://localhost:3000/api/datasets/value-ranking.csv",
-        "http://localhost:3000/api/datasets/affordability.csv"
+        "https://priceofelectricity.com/api/datasets/states.json",
+        "https://priceofelectricity.com/api/datasets/states.csv",
+        "https://priceofelectricity.com/api/datasets/value-ranking.csv",
+        "https://priceofelectricity.com/api/datasets/affordability.csv"
       ],
-      "contentHash": "0dbce600ecc049f02b9fceea218928ba9837412b7e4806be61c874238b921469",
-      "updatedAt": "2026-03-10T18:46:48.543Z",
+      "contentHash": "7b3af59bf60df86b8aab1c2a463609dbf22e21430a4794fd2482c20228b756d7",
+      "updatedAt": "2025-12-15T00:00:00.000Z",
       "sourceVersion": "v2",
-      "freshnessStatus": "aging",
+      "freshnessStatus": "fresh",
       "datasetUpdatedAt": "2025-12-15T00:00:00.000Z",
-      "qualityScore": 90
+      "qualityScore": 100
     },
     {
       "id": "knowledge:state:utah",
@@ -1251,26 +1251,26 @@
       "slug": "utah",
       "title": "Utah Electricity Price Knowledge",
       "description": "Machine-readable summary for Utah electricity rates and ranking metrics.",
-      "url": "http://localhost:3000/knowledge/state/utah",
-      "canonicalUrl": "http://localhost:3000/knowledge/state/utah",
-      "jsonUrl": "http://localhost:3000/knowledge/state/utah.json",
+      "url": "https://priceofelectricity.com/knowledge/state/utah",
+      "canonicalUrl": "https://priceofelectricity.com/knowledge/state/utah",
+      "jsonUrl": "https://priceofelectricity.com/knowledge/state/utah.json",
       "relatedMethodologyUrls": [
-        "http://localhost:3000/knowledge/methodology/epi",
-        "http://localhost:3000/knowledge/methodology/value-score",
-        "http://localhost:3000/knowledge/methodology/freshness"
+        "https://priceofelectricity.com/knowledge/methodology/epi",
+        "https://priceofelectricity.com/knowledge/methodology/value-score",
+        "https://priceofelectricity.com/knowledge/methodology/freshness"
       ],
       "relatedDataEndpoints": [
-        "http://localhost:3000/api/datasets/states.json",
-        "http://localhost:3000/api/datasets/states.csv",
-        "http://localhost:3000/api/datasets/value-ranking.csv",
-        "http://localhost:3000/api/datasets/affordability.csv"
+        "https://priceofelectricity.com/api/datasets/states.json",
+        "https://priceofelectricity.com/api/datasets/states.csv",
+        "https://priceofelectricity.com/api/datasets/value-ranking.csv",
+        "https://priceofelectricity.com/api/datasets/affordability.csv"
       ],
-      "contentHash": "31c9c25fac06114a3eb35fffde62f9382ea885e298fafbce3cb359016d1a5d0d",
-      "updatedAt": "2026-03-10T18:46:48.543Z",
+      "contentHash": "1fcf75e2c399c28b9de8608989ad164d326ee5f715de156b7144b65c4db95423",
+      "updatedAt": "2025-12-15T00:00:00.000Z",
       "sourceVersion": "v2",
-      "freshnessStatus": "aging",
+      "freshnessStatus": "fresh",
       "datasetUpdatedAt": "2025-12-15T00:00:00.000Z",
-      "qualityScore": 90
+      "qualityScore": 100
     },
     {
       "id": "knowledge:state:vermont",
@@ -1278,26 +1278,26 @@
       "slug": "vermont",
       "title": "Vermont Electricity Price Knowledge",
       "description": "Machine-readable summary for Vermont electricity rates and ranking metrics.",
-      "url": "http://localhost:3000/knowledge/state/vermont",
-      "canonicalUrl": "http://localhost:3000/knowledge/state/vermont",
-      "jsonUrl": "http://localhost:3000/knowledge/state/vermont.json",
+      "url": "https://priceofelectricity.com/knowledge/state/vermont",
+      "canonicalUrl": "https://priceofelectricity.com/knowledge/state/vermont",
+      "jsonUrl": "https://priceofelectricity.com/knowledge/state/vermont.json",
       "relatedMethodologyUrls": [
-        "http://localhost:3000/knowledge/methodology/epi",
-        "http://localhost:3000/knowledge/methodology/value-score",
-        "http://localhost:3000/knowledge/methodology/freshness"
+        "https://priceofelectricity.com/knowledge/methodology/epi",
+        "https://priceofelectricity.com/knowledge/methodology/value-score",
+        "https://priceofelectricity.com/knowledge/methodology/freshness"
       ],
       "relatedDataEndpoints": [
-        "http://localhost:3000/api/datasets/states.json",
-        "http://localhost:3000/api/datasets/states.csv",
-        "http://localhost:3000/api/datasets/value-ranking.csv",
-        "http://localhost:3000/api/datasets/affordability.csv"
+        "https://priceofelectricity.com/api/datasets/states.json",
+        "https://priceofelectricity.com/api/datasets/states.csv",
+        "https://priceofelectricity.com/api/datasets/value-ranking.csv",
+        "https://priceofelectricity.com/api/datasets/affordability.csv"
       ],
-      "contentHash": "d6e1df4a7429574badc45657a8287671b83f8bb6db54ccedb4049a2675e1b7b3",
-      "updatedAt": "2026-03-10T18:46:48.543Z",
+      "contentHash": "5da02e17f39912bfe4c548fa67951dc1c552b557159660f111ab7422386d1e67",
+      "updatedAt": "2025-12-15T00:00:00.000Z",
       "sourceVersion": "v2",
-      "freshnessStatus": "aging",
+      "freshnessStatus": "fresh",
       "datasetUpdatedAt": "2025-12-15T00:00:00.000Z",
-      "qualityScore": 90
+      "qualityScore": 100
     },
     {
       "id": "knowledge:state:virginia",
@@ -1305,26 +1305,26 @@
       "slug": "virginia",
       "title": "Virginia Electricity Price Knowledge",
       "description": "Machine-readable summary for Virginia electricity rates and ranking metrics.",
-      "url": "http://localhost:3000/knowledge/state/virginia",
-      "canonicalUrl": "http://localhost:3000/knowledge/state/virginia",
-      "jsonUrl": "http://localhost:3000/knowledge/state/virginia.json",
+      "url": "https://priceofelectricity.com/knowledge/state/virginia",
+      "canonicalUrl": "https://priceofelectricity.com/knowledge/state/virginia",
+      "jsonUrl": "https://priceofelectricity.com/knowledge/state/virginia.json",
       "relatedMethodologyUrls": [
-        "http://localhost:3000/knowledge/methodology/epi",
-        "http://localhost:3000/knowledge/methodology/value-score",
-        "http://localhost:3000/knowledge/methodology/freshness"
+        "https://priceofelectricity.com/knowledge/methodology/epi",
+        "https://priceofelectricity.com/knowledge/methodology/value-score",
+        "https://priceofelectricity.com/knowledge/methodology/freshness"
       ],
       "relatedDataEndpoints": [
-        "http://localhost:3000/api/datasets/states.json",
-        "http://localhost:3000/api/datasets/states.csv",
-        "http://localhost:3000/api/datasets/value-ranking.csv",
-        "http://localhost:3000/api/datasets/affordability.csv"
+        "https://priceofelectricity.com/api/datasets/states.json",
+        "https://priceofelectricity.com/api/datasets/states.csv",
+        "https://priceofelectricity.com/api/datasets/value-ranking.csv",
+        "https://priceofelectricity.com/api/datasets/affordability.csv"
       ],
-      "contentHash": "46e2af96a675b6c2e46f4608cf40962852e785306b31bce2645df186a0883ba1",
-      "updatedAt": "2026-03-10T18:46:48.543Z",
+      "contentHash": "046b028072eb8f52a80bb4766c77429dc96596f8b0d401611643743f5c0c5676",
+      "updatedAt": "2025-12-15T00:00:00.000Z",
       "sourceVersion": "v2",
-      "freshnessStatus": "aging",
+      "freshnessStatus": "fresh",
       "datasetUpdatedAt": "2025-12-15T00:00:00.000Z",
-      "qualityScore": 90
+      "qualityScore": 100
     },
     {
       "id": "knowledge:state:washington",
@@ -1332,26 +1332,26 @@
       "slug": "washington",
       "title": "Washington Electricity Price Knowledge",
       "description": "Machine-readable summary for Washington electricity rates and ranking metrics.",
-      "url": "http://localhost:3000/knowledge/state/washington",
-      "canonicalUrl": "http://localhost:3000/knowledge/state/washington",
-      "jsonUrl": "http://localhost:3000/knowledge/state/washington.json",
+      "url": "https://priceofelectricity.com/knowledge/state/washington",
+      "canonicalUrl": "https://priceofelectricity.com/knowledge/state/washington",
+      "jsonUrl": "https://priceofelectricity.com/knowledge/state/washington.json",
       "relatedMethodologyUrls": [
-        "http://localhost:3000/knowledge/methodology/epi",
-        "http://localhost:3000/knowledge/methodology/value-score",
-        "http://localhost:3000/knowledge/methodology/freshness"
+        "https://priceofelectricity.com/knowledge/methodology/epi",
+        "https://priceofelectricity.com/knowledge/methodology/value-score",
+        "https://priceofelectricity.com/knowledge/methodology/freshness"
       ],
       "relatedDataEndpoints": [
-        "http://localhost:3000/api/datasets/states.json",
-        "http://localhost:3000/api/datasets/states.csv",
-        "http://localhost:3000/api/datasets/value-ranking.csv",
-        "http://localhost:3000/api/datasets/affordability.csv"
+        "https://priceofelectricity.com/api/datasets/states.json",
+        "https://priceofelectricity.com/api/datasets/states.csv",
+        "https://priceofelectricity.com/api/datasets/value-ranking.csv",
+        "https://priceofelectricity.com/api/datasets/affordability.csv"
       ],
-      "contentHash": "31c8574941cbd8e68a36b546a1f7f07044b4a81bf137ad0b1b304f8602cdb336",
-      "updatedAt": "2026-03-10T18:46:48.543Z",
+      "contentHash": "6f04ce70b6fc8527f545697bc2f2db580cc3a5d9b3331a9630cdd18633a1db98",
+      "updatedAt": "2025-12-15T00:00:00.000Z",
       "sourceVersion": "v2",
-      "freshnessStatus": "aging",
+      "freshnessStatus": "fresh",
       "datasetUpdatedAt": "2025-12-15T00:00:00.000Z",
-      "qualityScore": 90
+      "qualityScore": 100
     },
     {
       "id": "knowledge:state:west-virginia",
@@ -1359,26 +1359,26 @@
       "slug": "west-virginia",
       "title": "West Virginia Electricity Price Knowledge",
       "description": "Machine-readable summary for West Virginia electricity rates and ranking metrics.",
-      "url": "http://localhost:3000/knowledge/state/west-virginia",
-      "canonicalUrl": "http://localhost:3000/knowledge/state/west-virginia",
-      "jsonUrl": "http://localhost:3000/knowledge/state/west-virginia.json",
+      "url": "https://priceofelectricity.com/knowledge/state/west-virginia",
+      "canonicalUrl": "https://priceofelectricity.com/knowledge/state/west-virginia",
+      "jsonUrl": "https://priceofelectricity.com/knowledge/state/west-virginia.json",
       "relatedMethodologyUrls": [
-        "http://localhost:3000/knowledge/methodology/epi",
-        "http://localhost:3000/knowledge/methodology/value-score",
-        "http://localhost:3000/knowledge/methodology/freshness"
+        "https://priceofelectricity.com/knowledge/methodology/epi",
+        "https://priceofelectricity.com/knowledge/methodology/value-score",
+        "https://priceofelectricity.com/knowledge/methodology/freshness"
       ],
       "relatedDataEndpoints": [
-        "http://localhost:3000/api/datasets/states.json",
-        "http://localhost:3000/api/datasets/states.csv",
-        "http://localhost:3000/api/datasets/value-ranking.csv",
-        "http://localhost:3000/api/datasets/affordability.csv"
+        "https://priceofelectricity.com/api/datasets/states.json",
+        "https://priceofelectricity.com/api/datasets/states.csv",
+        "https://priceofelectricity.com/api/datasets/value-ranking.csv",
+        "https://priceofelectricity.com/api/datasets/affordability.csv"
       ],
-      "contentHash": "b70d09233bec0d81f413b9e6b328af7646259244af59148022ba229edfb2e7a4",
-      "updatedAt": "2026-03-10T18:46:48.543Z",
+      "contentHash": "ed6089b23b032577798399b86436b961e50e6fd5c0805d2464de812484143641",
+      "updatedAt": "2025-12-15T00:00:00.000Z",
       "sourceVersion": "v2",
-      "freshnessStatus": "aging",
+      "freshnessStatus": "fresh",
       "datasetUpdatedAt": "2025-12-15T00:00:00.000Z",
-      "qualityScore": 90
+      "qualityScore": 100
     },
     {
       "id": "knowledge:state:wisconsin",
@@ -1386,26 +1386,26 @@
       "slug": "wisconsin",
       "title": "Wisconsin Electricity Price Knowledge",
       "description": "Machine-readable summary for Wisconsin electricity rates and ranking metrics.",
-      "url": "http://localhost:3000/knowledge/state/wisconsin",
-      "canonicalUrl": "http://localhost:3000/knowledge/state/wisconsin",
-      "jsonUrl": "http://localhost:3000/knowledge/state/wisconsin.json",
+      "url": "https://priceofelectricity.com/knowledge/state/wisconsin",
+      "canonicalUrl": "https://priceofelectricity.com/knowledge/state/wisconsin",
+      "jsonUrl": "https://priceofelectricity.com/knowledge/state/wisconsin.json",
       "relatedMethodologyUrls": [
-        "http://localhost:3000/knowledge/methodology/epi",
-        "http://localhost:3000/knowledge/methodology/value-score",
-        "http://localhost:3000/knowledge/methodology/freshness"
+        "https://priceofelectricity.com/knowledge/methodology/epi",
+        "https://priceofelectricity.com/knowledge/methodology/value-score",
+        "https://priceofelectricity.com/knowledge/methodology/freshness"
       ],
       "relatedDataEndpoints": [
-        "http://localhost:3000/api/datasets/states.json",
-        "http://localhost:3000/api/datasets/states.csv",
-        "http://localhost:3000/api/datasets/value-ranking.csv",
-        "http://localhost:3000/api/datasets/affordability.csv"
+        "https://priceofelectricity.com/api/datasets/states.json",
+        "https://priceofelectricity.com/api/datasets/states.csv",
+        "https://priceofelectricity.com/api/datasets/value-ranking.csv",
+        "https://priceofelectricity.com/api/datasets/affordability.csv"
       ],
-      "contentHash": "f48f23487ca761e66d3d410b2a06cb76d3c4e01df56d97acc1387f26a0547ed0",
-      "updatedAt": "2026-03-10T18:46:48.543Z",
+      "contentHash": "3728ee81cd8755be4874870a2b1272c10f77ebba1a5cf168601046562dd0c35e",
+      "updatedAt": "2025-12-15T00:00:00.000Z",
       "sourceVersion": "v2",
-      "freshnessStatus": "aging",
+      "freshnessStatus": "fresh",
       "datasetUpdatedAt": "2025-12-15T00:00:00.000Z",
-      "qualityScore": 90
+      "qualityScore": 100
     },
     {
       "id": "knowledge:state:wyoming",
@@ -1413,26 +1413,26 @@
       "slug": "wyoming",
       "title": "Wyoming Electricity Price Knowledge",
       "description": "Machine-readable summary for Wyoming electricity rates and ranking metrics.",
-      "url": "http://localhost:3000/knowledge/state/wyoming",
-      "canonicalUrl": "http://localhost:3000/knowledge/state/wyoming",
-      "jsonUrl": "http://localhost:3000/knowledge/state/wyoming.json",
+      "url": "https://priceofelectricity.com/knowledge/state/wyoming",
+      "canonicalUrl": "https://priceofelectricity.com/knowledge/state/wyoming",
+      "jsonUrl": "https://priceofelectricity.com/knowledge/state/wyoming.json",
       "relatedMethodologyUrls": [
-        "http://localhost:3000/knowledge/methodology/epi",
-        "http://localhost:3000/knowledge/methodology/value-score",
-        "http://localhost:3000/knowledge/methodology/freshness"
+        "https://priceofelectricity.com/knowledge/methodology/epi",
+        "https://priceofelectricity.com/knowledge/methodology/value-score",
+        "https://priceofelectricity.com/knowledge/methodology/freshness"
       ],
       "relatedDataEndpoints": [
-        "http://localhost:3000/api/datasets/states.json",
-        "http://localhost:3000/api/datasets/states.csv",
-        "http://localhost:3000/api/datasets/value-ranking.csv",
-        "http://localhost:3000/api/datasets/affordability.csv"
+        "https://priceofelectricity.com/api/datasets/states.json",
+        "https://priceofelectricity.com/api/datasets/states.csv",
+        "https://priceofelectricity.com/api/datasets/value-ranking.csv",
+        "https://priceofelectricity.com/api/datasets/affordability.csv"
       ],
-      "contentHash": "797bfc647c6c51ecabb8b80f66e694bd9d00f5c372119582a86cfe1c83871d16",
-      "updatedAt": "2026-03-10T18:46:48.543Z",
+      "contentHash": "c4fc2e87b99725e9492a06a51046f52b5f9615fa47de05d67b56864641a7e565",
+      "updatedAt": "2025-12-15T00:00:00.000Z",
       "sourceVersion": "v2",
-      "freshnessStatus": "aging",
+      "freshnessStatus": "fresh",
       "datasetUpdatedAt": "2025-12-15T00:00:00.000Z",
-      "qualityScore": 90
+      "qualityScore": 100
     },
     {
       "id": "knowledge:methodology:epi",
@@ -1440,23 +1440,23 @@
       "slug": "epi",
       "title": "Electricity Price Index Methodology",
       "description": "Methodology for Electricity Price Index calculations and interpretation.",
-      "url": "http://localhost:3000/knowledge/methodology/epi",
-      "canonicalUrl": "http://localhost:3000/knowledge/methodology/epi",
-      "jsonUrl": "http://localhost:3000/knowledge/methodology/epi.json",
+      "url": "https://priceofelectricity.com/knowledge/methodology/epi",
+      "canonicalUrl": "https://priceofelectricity.com/knowledge/methodology/epi",
+      "jsonUrl": "https://priceofelectricity.com/knowledge/methodology/epi.json",
       "relatedMethodologyUrls": [
-        "http://localhost:3000/knowledge/methodology/epi",
-        "http://localhost:3000/knowledge/methodology/value-score",
-        "http://localhost:3000/knowledge/methodology/freshness"
+        "https://priceofelectricity.com/knowledge/methodology/epi",
+        "https://priceofelectricity.com/knowledge/methodology/value-score",
+        "https://priceofelectricity.com/knowledge/methodology/freshness"
       ],
       "relatedDataEndpoints": [
-        "http://localhost:3000/api/datasets/states.json"
+        "https://priceofelectricity.com/api/datasets/states.json"
       ],
-      "contentHash": "1d0837b1fdf7c2c08dc4ff57e67ea8d41b10487df394a203db31b3ad081aa2d8",
-      "updatedAt": "2026-03-10T18:46:48.543Z",
+      "contentHash": "2c4595f19b0a1975611f82124ab4624d779b274723d9097b732417b06e409305",
+      "updatedAt": "2025-12-15T00:00:00.000Z",
       "sourceVersion": "v2",
-      "freshnessStatus": "aging",
+      "freshnessStatus": "fresh",
       "datasetUpdatedAt": "2025-12-15T00:00:00.000Z",
-      "qualityScore": 90
+      "qualityScore": 100
     },
     {
       "id": "knowledge:methodology:value-score",
@@ -1464,23 +1464,23 @@
       "slug": "value-score",
       "title": "Value Score Methodology",
       "description": "Methodology for Value Score composition and tier assignment.",
-      "url": "http://localhost:3000/knowledge/methodology/value-score",
-      "canonicalUrl": "http://localhost:3000/knowledge/methodology/value-score",
-      "jsonUrl": "http://localhost:3000/knowledge/methodology/value-score.json",
+      "url": "https://priceofelectricity.com/knowledge/methodology/value-score",
+      "canonicalUrl": "https://priceofelectricity.com/knowledge/methodology/value-score",
+      "jsonUrl": "https://priceofelectricity.com/knowledge/methodology/value-score.json",
       "relatedMethodologyUrls": [
-        "http://localhost:3000/knowledge/methodology/epi",
-        "http://localhost:3000/knowledge/methodology/value-score",
-        "http://localhost:3000/knowledge/methodology/freshness"
+        "https://priceofelectricity.com/knowledge/methodology/epi",
+        "https://priceofelectricity.com/knowledge/methodology/value-score",
+        "https://priceofelectricity.com/knowledge/methodology/freshness"
       ],
       "relatedDataEndpoints": [
-        "http://localhost:3000/api/datasets/states.json"
+        "https://priceofelectricity.com/api/datasets/states.json"
       ],
-      "contentHash": "232998e5067cec4adaae3aae4587689ff244c35864155a8f9a3784f4771de7c2",
-      "updatedAt": "2026-03-10T18:46:48.543Z",
+      "contentHash": "302c255ba97745349cdbf1df00a445371e3ee82b4636c098bb3e850f1c283fe8",
+      "updatedAt": "2025-12-15T00:00:00.000Z",
       "sourceVersion": "v2",
-      "freshnessStatus": "aging",
+      "freshnessStatus": "fresh",
       "datasetUpdatedAt": "2025-12-15T00:00:00.000Z",
-      "qualityScore": 90
+      "qualityScore": 100
     },
     {
       "id": "knowledge:methodology:freshness",
@@ -1488,23 +1488,23 @@
       "slug": "freshness",
       "title": "Freshness Scoring Methodology",
       "description": "Methodology for data freshness status and recency labels.",
-      "url": "http://localhost:3000/knowledge/methodology/freshness",
-      "canonicalUrl": "http://localhost:3000/knowledge/methodology/freshness",
-      "jsonUrl": "http://localhost:3000/knowledge/methodology/freshness.json",
+      "url": "https://priceofelectricity.com/knowledge/methodology/freshness",
+      "canonicalUrl": "https://priceofelectricity.com/knowledge/methodology/freshness",
+      "jsonUrl": "https://priceofelectricity.com/knowledge/methodology/freshness.json",
       "relatedMethodologyUrls": [
-        "http://localhost:3000/knowledge/methodology/epi",
-        "http://localhost:3000/knowledge/methodology/value-score",
-        "http://localhost:3000/knowledge/methodology/freshness"
+        "https://priceofelectricity.com/knowledge/methodology/epi",
+        "https://priceofelectricity.com/knowledge/methodology/value-score",
+        "https://priceofelectricity.com/knowledge/methodology/freshness"
       ],
       "relatedDataEndpoints": [
-        "http://localhost:3000/api/datasets/states.json"
+        "https://priceofelectricity.com/api/datasets/states.json"
       ],
-      "contentHash": "00b0d34313db50c058af03b7b366135b4b4224bbbb0e3104559dc0be0bb02710",
-      "updatedAt": "2026-03-10T18:46:48.543Z",
+      "contentHash": "c8cd9f1f35216261efd1a8581886ecbe927ba78be2914893f79740ac083060c4",
+      "updatedAt": "2025-12-15T00:00:00.000Z",
       "sourceVersion": "v2",
-      "freshnessStatus": "aging",
+      "freshnessStatus": "fresh",
       "datasetUpdatedAt": "2025-12-15T00:00:00.000Z",
-      "qualityScore": 90
+      "qualityScore": 100
     },
     {
       "id": "knowledge:methodology:cagr",
@@ -1512,23 +1512,23 @@
       "slug": "cagr",
       "title": "CAGR Methodology",
       "description": "Compound annual growth rate methodology for long-horizon rate trends.",
-      "url": "http://localhost:3000/knowledge/methodology/cagr",
-      "canonicalUrl": "http://localhost:3000/knowledge/methodology/cagr",
-      "jsonUrl": "http://localhost:3000/knowledge/methodology/cagr.json",
+      "url": "https://priceofelectricity.com/knowledge/methodology/cagr",
+      "canonicalUrl": "https://priceofelectricity.com/knowledge/methodology/cagr",
+      "jsonUrl": "https://priceofelectricity.com/knowledge/methodology/cagr.json",
       "relatedMethodologyUrls": [
-        "http://localhost:3000/knowledge/methodology/epi",
-        "http://localhost:3000/knowledge/methodology/value-score",
-        "http://localhost:3000/knowledge/methodology/freshness"
+        "https://priceofelectricity.com/knowledge/methodology/epi",
+        "https://priceofelectricity.com/knowledge/methodology/value-score",
+        "https://priceofelectricity.com/knowledge/methodology/freshness"
       ],
       "relatedDataEndpoints": [
-        "http://localhost:3000/api/datasets/states.json"
+        "https://priceofelectricity.com/api/datasets/states.json"
       ],
-      "contentHash": "7c72d74dfbc0cabb4e05f5ac09c84d8f169dcda591e34ebc63be64d48603b4f3",
-      "updatedAt": "2026-03-10T18:46:48.543Z",
+      "contentHash": "cacd4bb27ef7ff2ad5a4209b1a13615567198c609554bd1b38ca337fe321851d",
+      "updatedAt": "2025-12-15T00:00:00.000Z",
       "sourceVersion": "v2",
-      "freshnessStatus": "aging",
+      "freshnessStatus": "fresh",
       "datasetUpdatedAt": "2025-12-15T00:00:00.000Z",
-      "qualityScore": 90
+      "qualityScore": 100
     },
     {
       "id": "knowledge:methodology:volatility",
@@ -1536,23 +1536,23 @@
       "slug": "volatility",
       "title": "Volatility Index Methodology",
       "description": "Coefficient of variation methodology for rate volatility over a window.",
-      "url": "http://localhost:3000/knowledge/methodology/volatility",
-      "canonicalUrl": "http://localhost:3000/knowledge/methodology/volatility",
-      "jsonUrl": "http://localhost:3000/knowledge/methodology/volatility.json",
+      "url": "https://priceofelectricity.com/knowledge/methodology/volatility",
+      "canonicalUrl": "https://priceofelectricity.com/knowledge/methodology/volatility",
+      "jsonUrl": "https://priceofelectricity.com/knowledge/methodology/volatility.json",
       "relatedMethodologyUrls": [
-        "http://localhost:3000/knowledge/methodology/epi",
-        "http://localhost:3000/knowledge/methodology/value-score",
-        "http://localhost:3000/knowledge/methodology/freshness"
+        "https://priceofelectricity.com/knowledge/methodology/epi",
+        "https://priceofelectricity.com/knowledge/methodology/value-score",
+        "https://priceofelectricity.com/knowledge/methodology/freshness"
       ],
       "relatedDataEndpoints": [
-        "http://localhost:3000/api/datasets/states.json"
+        "https://priceofelectricity.com/api/datasets/states.json"
       ],
-      "contentHash": "a8cd29a7e2b015acfd1941af57abec0897ff68c3177f2780f7714bfc8c484774",
-      "updatedAt": "2026-03-10T18:46:48.543Z",
+      "contentHash": "82cf8eaf2aa6492c6365047cf567bd2df7ba93ee9a16e3c4910630ae198807b0",
+      "updatedAt": "2025-12-15T00:00:00.000Z",
       "sourceVersion": "v2",
-      "freshnessStatus": "aging",
+      "freshnessStatus": "fresh",
       "datasetUpdatedAt": "2025-12-15T00:00:00.000Z",
-      "qualityScore": 90
+      "qualityScore": 100
     },
     {
       "id": "knowledge:methodology:price-trend",
@@ -1560,23 +1560,23 @@
       "slug": "price-trend",
       "title": "Price Trend Methodology",
       "description": "Annualized linear trend methodology for electricity price growth.",
-      "url": "http://localhost:3000/knowledge/methodology/price-trend",
-      "canonicalUrl": "http://localhost:3000/knowledge/methodology/price-trend",
-      "jsonUrl": "http://localhost:3000/knowledge/methodology/price-trend.json",
+      "url": "https://priceofelectricity.com/knowledge/methodology/price-trend",
+      "canonicalUrl": "https://priceofelectricity.com/knowledge/methodology/price-trend",
+      "jsonUrl": "https://priceofelectricity.com/knowledge/methodology/price-trend.json",
       "relatedMethodologyUrls": [
-        "http://localhost:3000/knowledge/methodology/epi",
-        "http://localhost:3000/knowledge/methodology/value-score",
-        "http://localhost:3000/knowledge/methodology/freshness"
+        "https://priceofelectricity.com/knowledge/methodology/epi",
+        "https://priceofelectricity.com/knowledge/methodology/value-score",
+        "https://priceofelectricity.com/knowledge/methodology/freshness"
       ],
       "relatedDataEndpoints": [
-        "http://localhost:3000/api/datasets/states.json"
+        "https://priceofelectricity.com/api/datasets/states.json"
       ],
-      "contentHash": "eebf5b9de98466c63056965eb0fe3d6677b5e605ffa3f01748c33914dfb8a7fe",
-      "updatedAt": "2026-03-10T18:46:48.543Z",
+      "contentHash": "0815246cd6cf832fe67640ec4cb468f8315fc602c5f8961683ff3e302b632d77",
+      "updatedAt": "2025-12-15T00:00:00.000Z",
       "sourceVersion": "v2",
-      "freshnessStatus": "aging",
+      "freshnessStatus": "fresh",
       "datasetUpdatedAt": "2025-12-15T00:00:00.000Z",
-      "qualityScore": 90
+      "qualityScore": 100
     },
     {
       "id": "knowledge:methodology:momentum-signal",
@@ -1584,23 +1584,23 @@
       "slug": "momentum-signal",
       "title": "Momentum Signal Methodology",
       "description": "Directional historical signal for electricity price trend direction.",
-      "url": "http://localhost:3000/knowledge/methodology/momentum-signal",
-      "canonicalUrl": "http://localhost:3000/knowledge/methodology/momentum-signal",
-      "jsonUrl": "http://localhost:3000/knowledge/methodology/momentum-signal.json",
+      "url": "https://priceofelectricity.com/knowledge/methodology/momentum-signal",
+      "canonicalUrl": "https://priceofelectricity.com/knowledge/methodology/momentum-signal",
+      "jsonUrl": "https://priceofelectricity.com/knowledge/methodology/momentum-signal.json",
       "relatedMethodologyUrls": [
-        "http://localhost:3000/knowledge/methodology/epi",
-        "http://localhost:3000/knowledge/methodology/value-score",
-        "http://localhost:3000/knowledge/methodology/freshness"
+        "https://priceofelectricity.com/knowledge/methodology/epi",
+        "https://priceofelectricity.com/knowledge/methodology/value-score",
+        "https://priceofelectricity.com/knowledge/methodology/freshness"
       ],
       "relatedDataEndpoints": [
-        "http://localhost:3000/api/datasets/states.json"
+        "https://priceofelectricity.com/api/datasets/states.json"
       ],
-      "contentHash": "b1310c3be01006020acd433c6e778e6a5e3056f04ecd58013143e92911d3df12",
-      "updatedAt": "2026-03-10T18:46:48.543Z",
+      "contentHash": "aeff7a7715b8f702cbd2fca833bb6da5b33d466670e31215669c31dc68bce3c5",
+      "updatedAt": "2025-12-15T00:00:00.000Z",
       "sourceVersion": "v2",
-      "freshnessStatus": "aging",
+      "freshnessStatus": "fresh",
       "datasetUpdatedAt": "2025-12-15T00:00:00.000Z",
-      "qualityScore": 90
+      "qualityScore": 100
     },
     {
       "id": "knowledge:rankings:affordability",
@@ -1608,24 +1608,24 @@
       "slug": "affordability",
       "title": "Affordability Rankings",
       "description": "Deterministic affordability ranking across normalized states.",
-      "url": "http://localhost:3000/knowledge/rankings/affordability",
-      "canonicalUrl": "http://localhost:3000/knowledge/rankings/affordability",
-      "jsonUrl": "http://localhost:3000/knowledge/rankings/affordability.json",
+      "url": "https://priceofelectricity.com/knowledge/rankings/affordability",
+      "canonicalUrl": "https://priceofelectricity.com/knowledge/rankings/affordability",
+      "jsonUrl": "https://priceofelectricity.com/knowledge/rankings/affordability.json",
       "relatedMethodologyUrls": [
-        "http://localhost:3000/knowledge/methodology/epi",
-        "http://localhost:3000/knowledge/methodology/value-score",
-        "http://localhost:3000/knowledge/methodology/freshness"
+        "https://priceofelectricity.com/knowledge/methodology/epi",
+        "https://priceofelectricity.com/knowledge/methodology/value-score",
+        "https://priceofelectricity.com/knowledge/methodology/freshness"
       ],
       "relatedDataEndpoints": [
-        "http://localhost:3000/api/datasets/states.json",
-        "http://localhost:3000/api/datasets/affordability.csv"
+        "https://priceofelectricity.com/api/datasets/states.json",
+        "https://priceofelectricity.com/api/datasets/affordability.csv"
       ],
-      "contentHash": "12a04d6c13275400fafc56be05f570d3244b00972a49d3203a4de0aafeb77fed",
-      "updatedAt": "2026-03-10T18:46:48.543Z",
+      "contentHash": "5cc1ebd73d3db8414df0e6685c6d52780f0d0fa079ce11f3406f13f9298f7b9c",
+      "updatedAt": "2025-12-15T00:00:00.000Z",
       "sourceVersion": "v2",
-      "freshnessStatus": "aging",
+      "freshnessStatus": "fresh",
       "datasetUpdatedAt": "2025-12-15T00:00:00.000Z",
-      "qualityScore": 90
+      "qualityScore": 100
     },
     {
       "id": "knowledge:rankings:value-score",
@@ -1633,24 +1633,24 @@
       "slug": "value-score",
       "title": "Value Score Rankings",
       "description": "Deterministic value score ranking across normalized states.",
-      "url": "http://localhost:3000/knowledge/rankings/value-score",
-      "canonicalUrl": "http://localhost:3000/knowledge/rankings/value-score",
-      "jsonUrl": "http://localhost:3000/knowledge/rankings/value-score.json",
+      "url": "https://priceofelectricity.com/knowledge/rankings/value-score",
+      "canonicalUrl": "https://priceofelectricity.com/knowledge/rankings/value-score",
+      "jsonUrl": "https://priceofelectricity.com/knowledge/rankings/value-score.json",
       "relatedMethodologyUrls": [
-        "http://localhost:3000/knowledge/methodology/epi",
-        "http://localhost:3000/knowledge/methodology/value-score",
-        "http://localhost:3000/knowledge/methodology/freshness"
+        "https://priceofelectricity.com/knowledge/methodology/epi",
+        "https://priceofelectricity.com/knowledge/methodology/value-score",
+        "https://priceofelectricity.com/knowledge/methodology/freshness"
       ],
       "relatedDataEndpoints": [
-        "http://localhost:3000/api/datasets/states.json",
-        "http://localhost:3000/api/datasets/affordability.csv"
+        "https://priceofelectricity.com/api/datasets/states.json",
+        "https://priceofelectricity.com/api/datasets/affordability.csv"
       ],
-      "contentHash": "57461f079145887c246e44028f19dbf881edb01822fa6f6c2cfd49047ce9fe0c",
-      "updatedAt": "2026-03-10T18:46:48.543Z",
+      "contentHash": "64d7f4b15b1fa6268c9dd6f48906d347e56a80ca4a530c55def402b6bcc16ee4",
+      "updatedAt": "2025-12-15T00:00:00.000Z",
       "sourceVersion": "v2",
-      "freshnessStatus": "aging",
+      "freshnessStatus": "fresh",
       "datasetUpdatedAt": "2025-12-15T00:00:00.000Z",
-      "qualityScore": 90
+      "qualityScore": 100
     },
     {
       "id": "knowledge:rankings:rate-low-to-high",
@@ -1658,24 +1658,24 @@
       "slug": "rate-low-to-high",
       "title": "Rate Rankings (Low to High)",
       "description": "Deterministic ranking of average state rates from lowest to highest.",
-      "url": "http://localhost:3000/knowledge/rankings/rate-low-to-high",
-      "canonicalUrl": "http://localhost:3000/knowledge/rankings/rate-low-to-high",
-      "jsonUrl": "http://localhost:3000/knowledge/rankings/rate-low-to-high.json",
+      "url": "https://priceofelectricity.com/knowledge/rankings/rate-low-to-high",
+      "canonicalUrl": "https://priceofelectricity.com/knowledge/rankings/rate-low-to-high",
+      "jsonUrl": "https://priceofelectricity.com/knowledge/rankings/rate-low-to-high.json",
       "relatedMethodologyUrls": [
-        "http://localhost:3000/knowledge/methodology/epi",
-        "http://localhost:3000/knowledge/methodology/value-score",
-        "http://localhost:3000/knowledge/methodology/freshness"
+        "https://priceofelectricity.com/knowledge/methodology/epi",
+        "https://priceofelectricity.com/knowledge/methodology/value-score",
+        "https://priceofelectricity.com/knowledge/methodology/freshness"
       ],
       "relatedDataEndpoints": [
-        "http://localhost:3000/api/datasets/states.json",
-        "http://localhost:3000/api/datasets/affordability.csv"
+        "https://priceofelectricity.com/api/datasets/states.json",
+        "https://priceofelectricity.com/api/datasets/affordability.csv"
       ],
-      "contentHash": "2676ba9d40e7ffb26a5c40b4fe99993397deb13d63e148d865a2dad18851d053",
-      "updatedAt": "2026-03-10T18:46:48.543Z",
+      "contentHash": "c3670fa810ce3b2df1aaa6ffd2fed7b626f30693b28d6ee5ad1237f0fc5197fe",
+      "updatedAt": "2025-12-15T00:00:00.000Z",
       "sourceVersion": "v2",
-      "freshnessStatus": "aging",
+      "freshnessStatus": "fresh",
       "datasetUpdatedAt": "2025-12-15T00:00:00.000Z",
-      "qualityScore": 90
+      "qualityScore": 100
     },
     {
       "id": "knowledge:rankings:rate-high-to-low",
@@ -1683,24 +1683,24 @@
       "slug": "rate-high-to-low",
       "title": "Rate Rankings (High to Low)",
       "description": "Deterministic ranking of average state rates from highest to lowest.",
-      "url": "http://localhost:3000/knowledge/rankings/rate-high-to-low",
-      "canonicalUrl": "http://localhost:3000/knowledge/rankings/rate-high-to-low",
-      "jsonUrl": "http://localhost:3000/knowledge/rankings/rate-high-to-low.json",
+      "url": "https://priceofelectricity.com/knowledge/rankings/rate-high-to-low",
+      "canonicalUrl": "https://priceofelectricity.com/knowledge/rankings/rate-high-to-low",
+      "jsonUrl": "https://priceofelectricity.com/knowledge/rankings/rate-high-to-low.json",
       "relatedMethodologyUrls": [
-        "http://localhost:3000/knowledge/methodology/epi",
-        "http://localhost:3000/knowledge/methodology/value-score",
-        "http://localhost:3000/knowledge/methodology/freshness"
+        "https://priceofelectricity.com/knowledge/methodology/epi",
+        "https://priceofelectricity.com/knowledge/methodology/value-score",
+        "https://priceofelectricity.com/knowledge/methodology/freshness"
       ],
       "relatedDataEndpoints": [
-        "http://localhost:3000/api/datasets/states.json",
-        "http://localhost:3000/api/datasets/affordability.csv"
+        "https://priceofelectricity.com/api/datasets/states.json",
+        "https://priceofelectricity.com/api/datasets/affordability.csv"
       ],
-      "contentHash": "c5a52cdd2aae587cb30f89ecc609dd6e054feecff59d6b1062464d39afce9b0e",
-      "updatedAt": "2026-03-10T18:46:48.543Z",
+      "contentHash": "667e16e63d872d7b00f4f25a092b47786b3c16cc0841c2b9a4b37a1d4b083bcd",
+      "updatedAt": "2025-12-15T00:00:00.000Z",
       "sourceVersion": "v2",
-      "freshnessStatus": "aging",
+      "freshnessStatus": "fresh",
       "datasetUpdatedAt": "2025-12-15T00:00:00.000Z",
-      "qualityScore": 90
+      "qualityScore": 100
     },
     {
       "id": "knowledge:rankings:electricity-affordability",
@@ -1708,24 +1708,24 @@
       "slug": "electricity-affordability",
       "title": "Most Affordable Electricity by State",
       "description": "States ranked by estimated monthly electricity bill at 900 kWh. Lower bill = more affordable.",
-      "url": "http://localhost:3000/knowledge/rankings/electricity-affordability",
-      "canonicalUrl": "http://localhost:3000/knowledge/rankings/electricity-affordability",
-      "jsonUrl": "http://localhost:3000/knowledge/rankings/electricity-affordability.json",
+      "url": "https://priceofelectricity.com/knowledge/rankings/electricity-affordability",
+      "canonicalUrl": "https://priceofelectricity.com/knowledge/rankings/electricity-affordability",
+      "jsonUrl": "https://priceofelectricity.com/knowledge/rankings/electricity-affordability.json",
       "relatedMethodologyUrls": [
-        "http://localhost:3000/knowledge/methodology/epi",
-        "http://localhost:3000/knowledge/methodology/value-score",
-        "http://localhost:3000/knowledge/methodology/freshness"
+        "https://priceofelectricity.com/knowledge/methodology/epi",
+        "https://priceofelectricity.com/knowledge/methodology/value-score",
+        "https://priceofelectricity.com/knowledge/methodology/freshness"
       ],
       "relatedDataEndpoints": [
-        "http://localhost:3000/api/datasets/states.json",
-        "http://localhost:3000/api/datasets/affordability.csv"
+        "https://priceofelectricity.com/api/datasets/states.json",
+        "https://priceofelectricity.com/api/datasets/affordability.csv"
       ],
-      "contentHash": "2d513b3fa446e47055032cee583ecfbcf72c368ad3c5fbf68d41ce4627ddd8d4",
-      "updatedAt": "2026-03-10T18:46:48.543Z",
+      "contentHash": "c17181c380d9c0c83365d1a62d06d59c18ebfd0c06796759c9784abfffbe2509",
+      "updatedAt": "2025-12-15T00:00:00.000Z",
       "sourceVersion": "v2",
-      "freshnessStatus": "aging",
+      "freshnessStatus": "fresh",
       "datasetUpdatedAt": "2025-12-15T00:00:00.000Z",
-      "qualityScore": 90
+      "qualityScore": 100
     },
     {
       "id": "knowledge:rankings:most-expensive-electricity",
@@ -1733,24 +1733,24 @@
       "slug": "most-expensive-electricity",
       "title": "Least Affordable Electricity by State",
       "description": "States ranked by estimated monthly electricity bill at 900 kWh. Higher bill = less affordable.",
-      "url": "http://localhost:3000/knowledge/rankings/most-expensive-electricity",
-      "canonicalUrl": "http://localhost:3000/knowledge/rankings/most-expensive-electricity",
-      "jsonUrl": "http://localhost:3000/knowledge/rankings/most-expensive-electricity.json",
+      "url": "https://priceofelectricity.com/knowledge/rankings/most-expensive-electricity",
+      "canonicalUrl": "https://priceofelectricity.com/knowledge/rankings/most-expensive-electricity",
+      "jsonUrl": "https://priceofelectricity.com/knowledge/rankings/most-expensive-electricity.json",
       "relatedMethodologyUrls": [
-        "http://localhost:3000/knowledge/methodology/epi",
-        "http://localhost:3000/knowledge/methodology/value-score",
-        "http://localhost:3000/knowledge/methodology/freshness"
+        "https://priceofelectricity.com/knowledge/methodology/epi",
+        "https://priceofelectricity.com/knowledge/methodology/value-score",
+        "https://priceofelectricity.com/knowledge/methodology/freshness"
       ],
       "relatedDataEndpoints": [
-        "http://localhost:3000/api/datasets/states.json",
-        "http://localhost:3000/api/datasets/affordability.csv"
+        "https://priceofelectricity.com/api/datasets/states.json",
+        "https://priceofelectricity.com/api/datasets/affordability.csv"
       ],
-      "contentHash": "7ffc0f989d4c2d51176bb95e90acd37c86335e0669e4fb6a79d8a11334d76f47",
-      "updatedAt": "2026-03-10T18:46:48.543Z",
+      "contentHash": "8b5fb4ce25be71548f12b99839a865202f4c8a9d202fee34a5c23d97129c8c11",
+      "updatedAt": "2025-12-15T00:00:00.000Z",
       "sourceVersion": "v2",
-      "freshnessStatus": "aging",
+      "freshnessStatus": "fresh",
       "datasetUpdatedAt": "2025-12-15T00:00:00.000Z",
-      "qualityScore": 90
+      "qualityScore": 100
     },
     {
       "id": "knowledge:rankings:cagr-25y",
@@ -1758,24 +1758,24 @@
       "slug": "cagr-25y",
       "title": "25-Year Rate Growth (CAGR)",
       "description": "Compound annual growth rate of residential electricity rates over ~25 years. Higher = faster rate growth.",
-      "url": "http://localhost:3000/knowledge/rankings/cagr-25y",
-      "canonicalUrl": "http://localhost:3000/knowledge/rankings/cagr-25y",
-      "jsonUrl": "http://localhost:3000/knowledge/rankings/cagr-25y.json",
+      "url": "https://priceofelectricity.com/knowledge/rankings/cagr-25y",
+      "canonicalUrl": "https://priceofelectricity.com/knowledge/rankings/cagr-25y",
+      "jsonUrl": "https://priceofelectricity.com/knowledge/rankings/cagr-25y.json",
       "relatedMethodologyUrls": [
-        "http://localhost:3000/knowledge/methodology/epi",
-        "http://localhost:3000/knowledge/methodology/value-score",
-        "http://localhost:3000/knowledge/methodology/freshness"
+        "https://priceofelectricity.com/knowledge/methodology/epi",
+        "https://priceofelectricity.com/knowledge/methodology/value-score",
+        "https://priceofelectricity.com/knowledge/methodology/freshness"
       ],
       "relatedDataEndpoints": [
-        "http://localhost:3000/api/datasets/states.json",
-        "http://localhost:3000/api/datasets/affordability.csv"
+        "https://priceofelectricity.com/api/datasets/states.json",
+        "https://priceofelectricity.com/api/datasets/affordability.csv"
       ],
-      "contentHash": "f638a7be0721ac8517aeeb49704f23747ea00ff5ca7c371bf6748357060d0bde",
-      "updatedAt": "2026-03-10T18:46:48.543Z",
+      "contentHash": "6be627ebb9f9482c9e663fff741160255cba449eae20d45f6d0a7f4508ef4a00",
+      "updatedAt": "2025-12-15T00:00:00.000Z",
       "sourceVersion": "v2",
-      "freshnessStatus": "aging",
+      "freshnessStatus": "fresh",
       "datasetUpdatedAt": "2025-12-15T00:00:00.000Z",
-      "qualityScore": 90
+      "qualityScore": 100
     },
     {
       "id": "knowledge:rankings:volatility-5y",
@@ -1783,24 +1783,24 @@
       "slug": "volatility-5y",
       "title": "5-Year Rate Volatility",
       "description": "Coefficient of variation (stdev/mean) of monthly rates over the last 5 years. Higher = more volatile.",
-      "url": "http://localhost:3000/knowledge/rankings/volatility-5y",
-      "canonicalUrl": "http://localhost:3000/knowledge/rankings/volatility-5y",
-      "jsonUrl": "http://localhost:3000/knowledge/rankings/volatility-5y.json",
+      "url": "https://priceofelectricity.com/knowledge/rankings/volatility-5y",
+      "canonicalUrl": "https://priceofelectricity.com/knowledge/rankings/volatility-5y",
+      "jsonUrl": "https://priceofelectricity.com/knowledge/rankings/volatility-5y.json",
       "relatedMethodologyUrls": [
-        "http://localhost:3000/knowledge/methodology/epi",
-        "http://localhost:3000/knowledge/methodology/value-score",
-        "http://localhost:3000/knowledge/methodology/freshness"
+        "https://priceofelectricity.com/knowledge/methodology/epi",
+        "https://priceofelectricity.com/knowledge/methodology/value-score",
+        "https://priceofelectricity.com/knowledge/methodology/freshness"
       ],
       "relatedDataEndpoints": [
-        "http://localhost:3000/api/datasets/states.json",
-        "http://localhost:3000/api/datasets/affordability.csv"
+        "https://priceofelectricity.com/api/datasets/states.json",
+        "https://priceofelectricity.com/api/datasets/affordability.csv"
       ],
-      "contentHash": "82dad1fc3e690ab09e159e669b635d87261d0630a6f1afad13b95034887f88ba",
-      "updatedAt": "2026-03-10T18:46:48.543Z",
+      "contentHash": "ffa2bb0ac3a6d04e414d2bab5bf9e1c44633d955e0b6608fe89dec5a5c36b938",
+      "updatedAt": "2025-12-15T00:00:00.000Z",
       "sourceVersion": "v2",
-      "freshnessStatus": "aging",
+      "freshnessStatus": "fresh",
       "datasetUpdatedAt": "2025-12-15T00:00:00.000Z",
-      "qualityScore": 90
+      "qualityScore": 100
     },
     {
       "id": "knowledge:rankings:price-trend",
@@ -1808,24 +1808,24 @@
       "slug": "price-trend",
       "title": "Electricity Price Trend Ranking",
       "description": "States where electricity prices are rising the fastest.",
-      "url": "http://localhost:3000/knowledge/rankings/price-trend",
-      "canonicalUrl": "http://localhost:3000/knowledge/rankings/price-trend",
-      "jsonUrl": "http://localhost:3000/knowledge/rankings/price-trend.json",
+      "url": "https://priceofelectricity.com/knowledge/rankings/price-trend",
+      "canonicalUrl": "https://priceofelectricity.com/knowledge/rankings/price-trend",
+      "jsonUrl": "https://priceofelectricity.com/knowledge/rankings/price-trend.json",
       "relatedMethodologyUrls": [
-        "http://localhost:3000/knowledge/methodology/epi",
-        "http://localhost:3000/knowledge/methodology/value-score",
-        "http://localhost:3000/knowledge/methodology/freshness"
+        "https://priceofelectricity.com/knowledge/methodology/epi",
+        "https://priceofelectricity.com/knowledge/methodology/value-score",
+        "https://priceofelectricity.com/knowledge/methodology/freshness"
       ],
       "relatedDataEndpoints": [
-        "http://localhost:3000/api/datasets/states.json",
-        "http://localhost:3000/api/datasets/affordability.csv"
+        "https://priceofelectricity.com/api/datasets/states.json",
+        "https://priceofelectricity.com/api/datasets/affordability.csv"
       ],
-      "contentHash": "5d5d991eb8f7857623cf51d9ec4ff468c6c0dc6c9c184b79b8c9ab44f5e06aed",
-      "updatedAt": "2026-03-10T18:46:48.543Z",
+      "contentHash": "d2570ac4f32df953d0b3505c3da19c666d581c6b745dce3514185336a2cadb25",
+      "updatedAt": "2025-12-15T00:00:00.000Z",
       "sourceVersion": "v2",
-      "freshnessStatus": "aging",
+      "freshnessStatus": "fresh",
       "datasetUpdatedAt": "2025-12-15T00:00:00.000Z",
-      "qualityScore": 90
+      "qualityScore": 100
     },
     {
       "id": "knowledge:rankings:momentum-signal",
@@ -1833,24 +1833,24 @@
       "slug": "momentum-signal",
       "title": "Electricity Price Momentum Signal Ranking",
       "description": "States where electricity prices are accelerating, rising, stable, or falling.",
-      "url": "http://localhost:3000/knowledge/rankings/momentum-signal",
-      "canonicalUrl": "http://localhost:3000/knowledge/rankings/momentum-signal",
-      "jsonUrl": "http://localhost:3000/knowledge/rankings/momentum-signal.json",
+      "url": "https://priceofelectricity.com/knowledge/rankings/momentum-signal",
+      "canonicalUrl": "https://priceofelectricity.com/knowledge/rankings/momentum-signal",
+      "jsonUrl": "https://priceofelectricity.com/knowledge/rankings/momentum-signal.json",
       "relatedMethodologyUrls": [
-        "http://localhost:3000/knowledge/methodology/epi",
-        "http://localhost:3000/knowledge/methodology/value-score",
-        "http://localhost:3000/knowledge/methodology/freshness"
+        "https://priceofelectricity.com/knowledge/methodology/epi",
+        "https://priceofelectricity.com/knowledge/methodology/value-score",
+        "https://priceofelectricity.com/knowledge/methodology/freshness"
       ],
       "relatedDataEndpoints": [
-        "http://localhost:3000/api/datasets/states.json",
-        "http://localhost:3000/api/datasets/affordability.csv"
+        "https://priceofelectricity.com/api/datasets/states.json",
+        "https://priceofelectricity.com/api/datasets/affordability.csv"
       ],
-      "contentHash": "637b432f7b8ddce34d9f63dc68ff39cf32c3cd19954c2f3e177eb8067c0c6508",
-      "updatedAt": "2026-03-10T18:46:48.543Z",
+      "contentHash": "ad9fde64d1cd9fed284141b5ccaaa1df807fe647cfe1967b515dc825473fec33",
+      "updatedAt": "2025-12-15T00:00:00.000Z",
       "sourceVersion": "v2",
-      "freshnessStatus": "aging",
+      "freshnessStatus": "fresh",
       "datasetUpdatedAt": "2025-12-15T00:00:00.000Z",
-      "qualityScore": 90
+      "qualityScore": 100
     },
     {
       "id": "knowledge:rankings:electricity-inflation-1y",
@@ -1858,24 +1858,24 @@
       "slug": "electricity-inflation-1y",
       "title": "1-Year Electricity Inflation Ranking",
       "description": "States ranked by 1-year electricity price increase. Higher = faster price growth.",
-      "url": "http://localhost:3000/knowledge/rankings/electricity-inflation-1y",
-      "canonicalUrl": "http://localhost:3000/knowledge/rankings/electricity-inflation-1y",
-      "jsonUrl": "http://localhost:3000/knowledge/rankings/electricity-inflation-1y.json",
+      "url": "https://priceofelectricity.com/knowledge/rankings/electricity-inflation-1y",
+      "canonicalUrl": "https://priceofelectricity.com/knowledge/rankings/electricity-inflation-1y",
+      "jsonUrl": "https://priceofelectricity.com/knowledge/rankings/electricity-inflation-1y.json",
       "relatedMethodologyUrls": [
-        "http://localhost:3000/knowledge/methodology/epi",
-        "http://localhost:3000/knowledge/methodology/value-score",
-        "http://localhost:3000/knowledge/methodology/freshness"
+        "https://priceofelectricity.com/knowledge/methodology/epi",
+        "https://priceofelectricity.com/knowledge/methodology/value-score",
+        "https://priceofelectricity.com/knowledge/methodology/freshness"
       ],
       "relatedDataEndpoints": [
-        "http://localhost:3000/api/datasets/states.json",
-        "http://localhost:3000/api/datasets/affordability.csv"
+        "https://priceofelectricity.com/api/datasets/states.json",
+        "https://priceofelectricity.com/api/datasets/affordability.csv"
       ],
-      "contentHash": "7bd7e2aac834d0d58139b232404cdf426a60feb6ba0d0c476919955353de1586",
-      "updatedAt": "2026-03-10T18:46:48.543Z",
+      "contentHash": "85c4efb837eb8ec2d5973c86e322e44ea2c3d5daf35e180b91811ca99237bbf8",
+      "updatedAt": "2025-12-15T00:00:00.000Z",
       "sourceVersion": "v2",
-      "freshnessStatus": "aging",
+      "freshnessStatus": "fresh",
       "datasetUpdatedAt": "2025-12-15T00:00:00.000Z",
-      "qualityScore": 90
+      "qualityScore": 100
     },
     {
       "id": "knowledge:rankings:electricity-inflation-5y",
@@ -1883,24 +1883,24 @@
       "slug": "electricity-inflation-5y",
       "title": "5-Year Electricity Inflation Ranking",
       "description": "States ranked by 5-year electricity price increase. Higher = faster price growth.",
-      "url": "http://localhost:3000/knowledge/rankings/electricity-inflation-5y",
-      "canonicalUrl": "http://localhost:3000/knowledge/rankings/electricity-inflation-5y",
-      "jsonUrl": "http://localhost:3000/knowledge/rankings/electricity-inflation-5y.json",
+      "url": "https://priceofelectricity.com/knowledge/rankings/electricity-inflation-5y",
+      "canonicalUrl": "https://priceofelectricity.com/knowledge/rankings/electricity-inflation-5y",
+      "jsonUrl": "https://priceofelectricity.com/knowledge/rankings/electricity-inflation-5y.json",
       "relatedMethodologyUrls": [
-        "http://localhost:3000/knowledge/methodology/epi",
-        "http://localhost:3000/knowledge/methodology/value-score",
-        "http://localhost:3000/knowledge/methodology/freshness"
+        "https://priceofelectricity.com/knowledge/methodology/epi",
+        "https://priceofelectricity.com/knowledge/methodology/value-score",
+        "https://priceofelectricity.com/knowledge/methodology/freshness"
       ],
       "relatedDataEndpoints": [
-        "http://localhost:3000/api/datasets/states.json",
-        "http://localhost:3000/api/datasets/affordability.csv"
+        "https://priceofelectricity.com/api/datasets/states.json",
+        "https://priceofelectricity.com/api/datasets/affordability.csv"
       ],
-      "contentHash": "f5a403f54f538840fb56703810c45a7a26e0da55573f3fdb06b7920cf56099c1",
-      "updatedAt": "2026-03-10T18:46:48.543Z",
+      "contentHash": "a20e8a42c4e558e9b647c8f1abe643f6a3a4a480de92823bad02c1369acd0c0f",
+      "updatedAt": "2025-12-15T00:00:00.000Z",
       "sourceVersion": "v2",
-      "freshnessStatus": "aging",
+      "freshnessStatus": "fresh",
       "datasetUpdatedAt": "2025-12-15T00:00:00.000Z",
-      "qualityScore": 90
+      "qualityScore": 100
     },
     {
       "id": "knowledge:vertical:ai-energy",
@@ -1908,24 +1908,24 @@
       "slug": "ai-energy",
       "title": "AI Energy Vertical Knowledge",
       "description": "Stub machine-readable page for AI-energy vertical navigation and references.",
-      "url": "http://localhost:3000/knowledge/vertical/ai-energy",
-      "canonicalUrl": "http://localhost:3000/knowledge/vertical/ai-energy",
-      "jsonUrl": "http://localhost:3000/knowledge/vertical/ai-energy.json",
+      "url": "https://priceofelectricity.com/knowledge/vertical/ai-energy",
+      "canonicalUrl": "https://priceofelectricity.com/knowledge/vertical/ai-energy",
+      "jsonUrl": "https://priceofelectricity.com/knowledge/vertical/ai-energy.json",
       "relatedMethodologyUrls": [
-        "http://localhost:3000/knowledge/methodology/epi",
-        "http://localhost:3000/knowledge/methodology/value-score",
-        "http://localhost:3000/knowledge/methodology/freshness"
+        "https://priceofelectricity.com/knowledge/methodology/epi",
+        "https://priceofelectricity.com/knowledge/methodology/value-score",
+        "https://priceofelectricity.com/knowledge/methodology/freshness"
       ],
       "relatedDataEndpoints": [
-        "http://localhost:3000/api/datasets/states.json"
+        "https://priceofelectricity.com/api/datasets/states.json"
       ],
       "verticalGroup": "ai-energy",
-      "contentHash": "adcadf88ab7354eed04b66de32eb9371b55f9610f358174d895c18e6b5428de8",
-      "updatedAt": "2026-03-10T18:46:48.543Z",
+      "contentHash": "6e1551729ebf7a4487f743c0c746cf2fa84509fbd7de5c0b346b3eee8d1c0b4e",
+      "updatedAt": "2025-12-15T00:00:00.000Z",
       "sourceVersion": "v2",
-      "freshnessStatus": "aging",
+      "freshnessStatus": "fresh",
       "datasetUpdatedAt": "2025-12-15T00:00:00.000Z",
-      "qualityScore": 90
+      "qualityScore": 100
     }
   ]
 }

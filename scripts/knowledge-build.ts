@@ -12,6 +12,7 @@ const BUDGETS_MS = {
   generateIndexes: 15000,
   writeFiles: 20000,
 };
+const writtenJsonPaths: string[] = [];
 
 function bigintToMs(b: bigint): number {
   return Math.round(Number(b) / 1e6);
@@ -25,7 +26,6 @@ function checkBudget(phase: keyof typeof BUDGETS_MS, durationMs: number): void {
   }
 }
 import { gzipSync } from "node:zlib";
-import { SITE_URL } from "../src/lib/site";
 import { buildKnowledgePack } from "../src/lib/knowledgePack";
 import { buildContentRegistry } from "../src/lib/contentRegistry";
 import { RAW_STATES } from "../src/data/raw/states.raw";
@@ -36,6 +36,7 @@ import {
 } from "../src/lib/knowledge/common";
 import { buildRegionMapping } from "./regions";
 import { getCurrentSnapshot, getAllSnapshots } from "../src/lib/snapshotLoader";
+import { getEnabledProviderCatalogEntries } from "../src/lib/providers/providerCatalog";
 import type {
   ChangeSummary,
   FieldProvenance,
@@ -1024,12 +1025,19 @@ const PROVENANCE_SOURCES: Readonly<Record<string, Omit<ProvenanceRef, "retrieved
   },
 };
 
+/**
+ * Production-only origin for generated artifacts.
+ * Generated knowledge/search-index/discovery assets must always use the
+ * production canonical origin regardless of the build environment.
+ * Policy ref: docs/CANONICAL_ARCHITECTURE_POLICY.md § B.2
+ */
+const ARTIFACT_ORIGIN = "https://priceofelectricity.com";
+
 function ensureAbsoluteUrl(relativeOrAbsoluteUrl: string): string {
   if (relativeOrAbsoluteUrl.startsWith("http://") || relativeOrAbsoluteUrl.startsWith("https://")) {
     return relativeOrAbsoluteUrl;
   }
-  const base = SITE_URL.endsWith("/") ? SITE_URL.slice(0, -1) : SITE_URL;
-  return `${base}${relativeOrAbsoluteUrl.startsWith("/") ? "" : "/"}${relativeOrAbsoluteUrl}`;
+  return `${ARTIFACT_ORIGIN}${relativeOrAbsoluteUrl.startsWith("/") ? "" : "/"}${relativeOrAbsoluteUrl}`;
 }
 
 function makeJsonPath(relativeJsonUrl: string): string {
@@ -1617,8 +1625,21 @@ async function writeJson(relativeJsonUrl: string, body: unknown): Promise<void> 
   await mkdir(path.dirname(outPath), { recursive: true });
   const content = `${JSON.stringify(body, null, 2)}\n`;
   await writeFile(outPath, content, "utf8");
+  writtenJsonPaths.push(`/${relativeJsonUrl.replace(/^\/+/, "").replace(/\\/g, "/")}`);
   await checkSizeBudget(relativeJsonUrl, outPath);
   await maybeGzip(relativeJsonUrl, outPath);
+}
+
+function summarizeGeneratedOutput(paths: string[]): string[] {
+  const groups = new Map<string, number>();
+  for (const p of [...paths].sort((a, b) => a.localeCompare(b))) {
+    const segments = p.replace(/^\/+/, "").split("/").filter(Boolean);
+    const group = segments.length >= 2 ? `${segments[0]}/${segments[1]}` : (segments[0] ?? "root");
+    groups.set(group, (groups.get(group) ?? 0) + 1);
+  }
+  return [...groups.entries()]
+    .sort((a, b) => a[0].localeCompare(b[0]))
+    .map(([group, count]) => `${group}: ${count}`);
 }
 
 function stableRankedStates(
@@ -1741,8 +1762,6 @@ async function main(): Promise<void> {
   let tPhase = process.hrtime.bigint();
   const pack = buildKnowledgePack();
   const sourceVersion = pack.site.dataVersion;
-  const now = new Date();
-  const generatedAt = now.toISOString();
   const contractVersion = CONTRACT_VERSION;
   const offersConfig = {
     enabled: false,
@@ -1759,6 +1778,11 @@ async function main(): Promise<void> {
   const datasetUpdatedAt = snapshot.releasedAt.includes("T")
     ? snapshot.releasedAt
     : `${snapshot.releasedAt}T00:00:00.000Z`;
+  // Deterministic generated timestamp: keep stable across repeated builds for
+  // the same snapshot version unless explicitly overridden by env.
+  const generatedAt =
+    process.env.KNOWLEDGE_GENERATED_AT?.trim() ||
+    datasetUpdatedAt;
   const { statesBySlug: previousStatesBySlug, national: previousNational, comparedToVersion } =
     await loadPreviousPages(sourceVersion);
   const eiaHistory = await loadEiaHistory();
@@ -9402,6 +9426,57 @@ export function t(key: string): string {
   await writeJson("/knowledge/history/index.json", historyIndexBody);
   await writeJson("/graph.json", graphBody);
 
+  const enabledProviderEntries = getEnabledProviderCatalogEntries();
+  const providerDiscoveryNodes = enabledProviderEntries.map((entry) => ({
+    id: `provider-${entry.providerId}`,
+    type: "topic" as const,
+    title: entry.providerName,
+    url: "/electricity-providers",
+    keywords: ["provider onboarding", "provider discovery", entry.offerType],
+  }));
+
+  function assertDiscoveryGraphIntegrity(graph: {
+    nodes: Array<{ id: string }>;
+    edges: Array<{ relationship: string }>;
+  }): void {
+    const nodeIds = new Set(graph.nodes.map((node) => node.id));
+    const relationships = new Set(graph.edges.map((edge) => edge.relationship));
+    const requiredNodeIds = [
+      "electricity-cost",
+      "energy-comparison",
+      "electricity-hubs",
+      "provider-marketplace",
+      "provider-information",
+      "commercial-surfaces",
+      "electricity-cost-comparison",
+      "electricity-bill-estimator",
+      "appliance-cost",
+    ];
+    const requiredRelationships = [
+      "provider_to_state_cluster",
+      "provider_to_comparison_cluster",
+      "provider_to_estimator_discovery",
+      "provider_marketplace_to_state_cluster",
+      "provider_marketplace_to_comparison_cluster",
+      "provider_marketplace_to_estimator_cluster",
+      "provider_to_commercial_discovery",
+      "commercial_surface_to_provider_marketplace",
+      "comparison_to_provider_discovery",
+      "hub_to_provider_discovery",
+    ];
+
+    for (const nodeId of requiredNodeIds) {
+      if (!nodeIds.has(nodeId)) {
+        throw new Error(`discovery graph required node missing: ${nodeId}`);
+      }
+    }
+    for (const relationship of requiredRelationships) {
+      if (!relationships.has(relationship)) {
+        throw new Error(`discovery graph required relationship missing: ${relationship}`);
+      }
+    }
+  }
+
   const discoveryGraphBody = {
     schemaVersion: "1.0" as const,
     generatedAt,
@@ -9429,6 +9504,20 @@ export function t(key: string): string {
       { id: "solar-vs-grid-electricity-cost", type: "topic" as const, title: "Solar vs Grid Electricity Cost", url: "/solar-vs-grid-electricity-cost", keywords: ["solar", "grid", "energy transition"] },
       { id: "battery-backup-electricity-cost", type: "topic" as const, title: "Battery Backup Electricity Cost", url: "/battery-backup-electricity-cost", keywords: ["battery", "backup", "energy transition"] },
       { id: "business-electricity-cost-decisions", type: "topic" as const, title: "Business Electricity Cost Decisions", url: "/business-electricity-cost-decisions", keywords: ["business", "location", "decisions"] },
+      { id: "average-electricity-bill", type: "topic" as const, title: "Average Electricity Bill", url: "/average-electricity-bill", keywords: ["average bill", "benchmark"] },
+      { id: "electricity-bill-estimator", type: "topic" as const, title: "Electricity Bill Estimator", url: "/electricity-bill-estimator", keywords: ["bill estimator", "household profiles"] },
+      { id: "electricity-cost-calculator", type: "topic" as const, title: "Electricity Cost Calculator", url: "/electricity-cost-calculator", keywords: ["calculator", "kwh cost"] },
+      { id: "electricity-usage", type: "topic" as const, title: "Electricity Usage", url: "/electricity-usage", keywords: ["usage", "kwh", "household"] },
+      { id: "electricity-usage-cost", type: "topic" as const, title: "Fixed Usage Cost", url: "/electricity-usage-cost/1000/texas", keywords: ["fixed kwh", "usage cost"] },
+      { id: "electricity-cost-comparison", type: "topic" as const, title: "Electricity Cost Comparison", url: "/electricity-cost-comparison", keywords: ["state comparison", "cost comparison"] },
+      { id: "appliance-cost", type: "topic" as const, title: "Appliance Cost to Run", url: "/cost-to-run/refrigerator/texas", keywords: ["appliance cost", "cost to run"] },
+      { id: "city-electricity-context", type: "topic" as const, title: "City Electricity Context", url: "/electricity-cost/texas/houston", keywords: ["city electricity", "state city context"] },
+      { id: "electricity-hubs", type: "discovery" as const, title: "Electricity Hubs", url: "/electricity-hubs", keywords: ["hubs", "discovery"] },
+      { id: "energy-comparison", type: "discovery" as const, title: "Energy Comparison Hub", url: "/energy-comparison", keywords: ["comparison hub", "state usage appliance"] },
+      { id: "provider-marketplace", type: "topic" as const, title: "Electricity Provider Marketplace", url: "/electricity-providers", keywords: ["providers", "marketplace", "state provider context"] },
+      { id: "provider-information", type: "topic" as const, title: "Provider Information Cluster", url: "/electricity-providers", keywords: ["provider information", "provider differentiation", "market structure"] },
+      { id: "commercial-surfaces", type: "discovery" as const, title: "Commercial Discovery Surfaces", url: "/offers", keywords: ["commercial surfaces", "provider discovery", "marketplace pathways"] },
+      ...providerDiscoveryNodes,
       { id: "discovery-graph", type: "discovery" as const, title: "Discovery Graph", url: "/discovery-graph", keywords: ["discovery graph", "topic graph", "knowledge graph"] },
       { id: "data-registry", type: "discovery" as const, title: "Data Registry", url: "/data-registry", keywords: ["data registry", "datasets"] },
       { id: "page-index", type: "discovery" as const, title: "Page Index", url: "/page-index", keywords: ["page index", "navigation"] },
@@ -9451,10 +9540,78 @@ export function t(key: string): string {
       { from: "ai-energy-demand", to: "grid-capacity-and-electricity-demand", relationship: "related_topic" },
       { from: "power-generation-mix", to: "electricity-markets", relationship: "related_topic" },
       { from: "power-generation-mix", to: "electricity-generation-cost-drivers", relationship: "related_topic" },
+      { from: "electricity-cost", to: "city-electricity-context", relationship: "state_to_city_pathway" },
+      { from: "electricity-cost", to: "appliance-cost", relationship: "state_to_appliance_pathway" },
+      { from: "electricity-cost", to: "electricity-bill-estimator", relationship: "state_to_estimator_pathway" },
+      { from: "city-electricity-context", to: "appliance-cost", relationship: "city_to_appliance_pathway" },
+      { from: "average-electricity-bill", to: "electricity-bill-estimator", relationship: "estimator_pathway" },
+      { from: "average-electricity-bill", to: "appliance-cost", relationship: "bill_to_appliance_pathway" },
+      { from: "electricity-bill-estimator", to: "electricity-cost-calculator", relationship: "estimator_to_calculator_pathway" },
+      { from: "electricity-usage", to: "electricity-usage-cost", relationship: "usage_pathway" },
+      { from: "energy-comparison", to: "electricity-cost-comparison", relationship: "comparison_pathway" },
+      { from: "electricity-hubs", to: "electricity-cost", relationship: "hub_to_canonical_cluster" },
+      { from: "electricity-hubs", to: "average-electricity-bill", relationship: "hub_to_canonical_cluster" },
+      { from: "electricity-hubs", to: "electricity-bill-estimator", relationship: "hub_to_canonical_cluster" },
+      { from: "electricity-hubs", to: "appliance-cost", relationship: "hub_to_canonical_cluster" },
+      { from: "electricity-hubs", to: "city-electricity-context", relationship: "hub_to_canonical_cluster" },
+      { from: "electricity-hubs", to: "electricity-cost-calculator", relationship: "hub_to_canonical_cluster" },
+      { from: "electricity-hubs", to: "electricity-usage-cost", relationship: "hub_to_canonical_cluster" },
+      { from: "electricity-hubs", to: "electricity-cost-comparison", relationship: "hub_to_canonical_cluster" },
+      { from: "electricity-hubs", to: "energy-comparison", relationship: "hub_to_canonical_cluster" },
+      { from: "energy-comparison", to: "appliance-cost", relationship: "comparison_pathway" },
+      { from: "energy-comparison", to: "electricity-usage-cost", relationship: "comparison_pathway" },
+      { from: "energy-comparison", to: "electricity-bill-estimator", relationship: "comparison_pathway" },
+      { from: "energy-comparison", to: "city-electricity-context", relationship: "comparison_pathway" },
+      { from: "energy-comparison", to: "average-electricity-bill", relationship: "comparison_pathway" },
+      { from: "energy-comparison", to: "electricity-cost-calculator", relationship: "comparison_pathway" },
+      { from: "electricity-bill-estimator", to: "appliance-cost", relationship: "estimator_to_appliance_pathway" },
+      { from: "appliance-cost", to: "electricity-bill-estimator", relationship: "appliance_to_estimator_pathway" },
+      { from: "appliance-cost", to: "electricity-cost-comparison", relationship: "appliance_to_comparison_pathway" },
+      { from: "appliance-cost", to: "electricity-usage", relationship: "appliance_to_usage_pathway" },
+      { from: "provider-marketplace", to: "electricity-cost-comparison", relationship: "provider_to_comparison_cluster" },
+      { from: "provider-marketplace", to: "electricity-cost", relationship: "provider_to_state_cluster" },
+      { from: "provider-marketplace", to: "electricity-bill-estimator", relationship: "provider_to_estimator_discovery" },
+      { from: "provider-marketplace", to: "electricity-cost", relationship: "provider_marketplace_to_state_cluster" },
+      { from: "provider-marketplace", to: "electricity-cost-comparison", relationship: "provider_marketplace_to_comparison_cluster" },
+      { from: "provider-marketplace", to: "electricity-bill-estimator", relationship: "provider_marketplace_to_estimator_cluster" },
+      { from: "provider-marketplace", to: "electricity-hubs", relationship: "provider_to_hub_discovery" },
+      { from: "provider-marketplace", to: "energy-comparison", relationship: "provider_to_hub_discovery" },
+      { from: "provider-marketplace", to: "provider-information", relationship: "provider_to_provider_information_cluster" },
+      { from: "provider-marketplace", to: "commercial-surfaces", relationship: "provider_to_commercial_discovery" },
+      { from: "commercial-surfaces", to: "provider-marketplace", relationship: "commercial_surface_to_provider_marketplace" },
+      { from: "commercial-surfaces", to: "energy-comparison", relationship: "commercial_surface_to_provider_marketplace" },
+      { from: "commercial-surfaces", to: "electricity-hubs", relationship: "commercial_surface_to_provider_marketplace" },
+      { from: "energy-comparison", to: "provider-marketplace", relationship: "comparison_to_provider_discovery" },
+      { from: "electricity-hubs", to: "provider-marketplace", relationship: "hub_to_provider_discovery" },
+      ...enabledProviderEntries.flatMap((entry) => {
+        const providerNodeId = `provider-${entry.providerId}`;
+        const stateEdges =
+          entry.serviceStates === "all"
+            ? []
+            : entry.serviceStates.map(() => ({
+                from: providerNodeId,
+                to: "electricity-cost",
+                relationship: "provider_to_state_cluster",
+              }));
+        return [
+          { from: providerNodeId, to: "provider-marketplace", relationship: "provider_to_provider_marketplace_hub" },
+          { from: providerNodeId, to: "provider-information", relationship: "provider_to_provider_information_cluster" },
+          { from: providerNodeId, to: "commercial-surfaces", relationship: "provider_to_commercial_discovery" },
+          { from: providerNodeId, to: "electricity-cost-comparison", relationship: "provider_to_comparison_cluster" },
+          { from: providerNodeId, to: "electricity-bill-estimator", relationship: "provider_to_estimator_discovery" },
+          { from: providerNodeId, to: "energy-comparison", relationship: "provider_to_hub_discovery_cluster" },
+          { from: providerNodeId, to: "electricity-hubs", relationship: "provider_to_hub_discovery_cluster" },
+          { from: providerNodeId, to: "appliance-cost", relationship: "provider_to_appliance_cluster" },
+          ...stateEdges,
+        ];
+      }),
       { from: "discovery-graph", to: "entity-registry", relationship: "grouped_in_discovery" },
       { from: "discovery-graph", to: "electricity-topics", relationship: "grouped_in_discovery" },
+      { from: "discovery-graph", to: "energy-comparison", relationship: "grouped_in_discovery" },
+      { from: "discovery-graph", to: "electricity-hubs", relationship: "grouped_in_discovery" },
     ],
   };
+  assertDiscoveryGraphIntegrity(discoveryGraphBody);
   await writeJson("/discovery-graph.json", discoveryGraphBody);
 
   const contentHashByPath = new Map<string, string>();
@@ -9930,6 +10087,11 @@ export function t(key: string): string {
   console.log(`Knowledge pages generated: ${pageWrites.length + 1}`);
   console.log(`State JSON files: ${registryStates.length}`);
   console.log(`Source version: ${sourceVersion}`);
+  console.log(`Generated JSON writes: ${writtenJsonPaths.length}`);
+  console.log("Generated output groups:");
+  for (const line of summarizeGeneratedOutput(writtenJsonPaths)) {
+    console.log(`  - ${line}`);
+  }
   console.log(`Output root: ${KNOWLEDGE_ROOT}`);
 }
 

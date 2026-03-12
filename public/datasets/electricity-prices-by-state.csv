@@ -1,52 +1,52 @@
 slug,state,avgRateCentsPerKwh,nationalAverage,differencePercent,momentumSignal,generatedAt,sourceVersion
-alabama,Alabama,16.55,17.57,-5.8,rising,2026-03-10T18:46:48.543Z,v2
-alaska,Alaska,25.01,17.57,42.3,accelerating,2026-03-10T18:46:48.543Z,v2
-arizona,Arizona,15.7,17.57,-10.6,rising,2026-03-10T18:46:48.543Z,v2
-arkansas,Arkansas,12.83,17.57,-27,accelerating,2026-03-10T18:46:48.543Z,v2
-california,California,31.14,17.57,77.2,accelerating,2026-03-10T18:46:48.543Z,v2
-colorado,Colorado,15.79,17.57,-10.1,rising,2026-03-10T18:46:48.543Z,v2
-connecticut,Connecticut,30.35,17.57,72.7,falling,2026-03-10T18:46:48.543Z,v2
-delaware,Delaware,17.18,17.57,-2.2,rising,2026-03-10T18:46:48.543Z,v2
-florida,Florida,15.27,17.57,-13.1,accelerating,2026-03-10T18:46:48.543Z,v2
-georgia,Georgia,15.22,17.57,-13.4,rising,2026-03-10T18:46:48.543Z,v2
-hawaii,Hawaii,41.3,17.57,135.1,falling,2026-03-10T18:46:48.543Z,v2
-idaho,Idaho,11.74,17.57,-33.2,accelerating,2026-03-10T18:46:48.543Z,v2
-illinois,Illinois,16.96,17.57,-3.5,rising,2026-03-10T18:46:48.543Z,v2
-indiana,Indiana,16.12,17.57,-8.3,accelerating,2026-03-10T18:46:48.543Z,v2
-iowa,Iowa,13.18,17.57,-25,rising,2026-03-10T18:46:48.543Z,v2
-kansas,Kansas,14.48,17.57,-17.6,rising,2026-03-10T18:46:48.543Z,v2
-kentucky,Kentucky,13.2,17.57,-24.9,stable,2026-03-10T18:46:48.543Z,v2
-louisiana,Louisiana,12.34,17.57,-29.8,rising,2026-03-10T18:46:48.543Z,v2
-maine,Maine,27.24,17.57,55,accelerating,2026-03-10T18:46:48.543Z,v2
-maryland,Maryland,19.29,17.57,9.8,accelerating,2026-03-10T18:46:48.543Z,v2
-massachusetts,Massachusetts,26.01,17.57,48,stable,2026-03-10T18:46:48.543Z,v2
-michigan,Michigan,19.91,17.57,13.3,accelerating,2026-03-10T18:46:48.543Z,v2
-minnesota,Minnesota,16.04,17.57,-8.7,accelerating,2026-03-10T18:46:48.543Z,v2
-mississippi,Mississippi,13.91,17.57,-20.8,rising,2026-03-10T18:46:48.543Z,v2
-missouri,Missouri,13.37,17.57,-23.9,rising,2026-03-10T18:46:48.543Z,v2
-montana,Montana,13.12,17.57,-25.3,accelerating,2026-03-10T18:46:48.543Z,v2
-nebraska,Nebraska,12.19,17.57,-30.6,accelerating,2026-03-10T18:46:48.543Z,v2
-nevada,Nevada,13.16,17.57,-25.1,falling,2026-03-10T18:46:48.543Z,v2
-new-hampshire,New Hampshire,23.35,17.57,32.9,accelerating,2026-03-10T18:46:48.543Z,v2
-new-jersey,New Jersey,22.15,17.57,26.1,accelerating,2026-03-10T18:46:48.543Z,v2
-new-mexico,New Mexico,15.29,17.57,-13,rising,2026-03-10T18:46:48.543Z,v2
-new-york,New York,23.87,17.57,35.9,accelerating,2026-03-10T18:46:48.543Z,v2
-north-carolina,North Carolina,14.08,17.57,-19.9,stable,2026-03-10T18:46:48.543Z,v2
-north-dakota,North Dakota,11.92,17.57,-32.2,accelerating,2026-03-10T18:46:48.543Z,v2
-ohio,Ohio,16.9,17.57,-3.8,accelerating,2026-03-10T18:46:48.543Z,v2
-oklahoma,Oklahoma,13.05,17.57,-25.7,rising,2026-03-10T18:46:48.543Z,v2
-oregon,Oregon,15,17.57,-14.6,rising,2026-03-10T18:46:48.543Z,v2
-pennsylvania,Pennsylvania,17.78,17.57,1.2,accelerating,2026-03-10T18:46:48.543Z,v2
-rhode-island,Rhode Island,28.42,17.57,61.8,accelerating,2026-03-10T18:46:48.543Z,v2
-south-carolina,South Carolina,14.72,17.57,-16.2,rising,2026-03-10T18:46:48.543Z,v2
-south-dakota,South Dakota,13.14,17.57,-25.2,rising,2026-03-10T18:46:48.543Z,v2
-tennessee,Tennessee,13.28,17.57,-24.4,stable,2026-03-10T18:46:48.543Z,v2
-texas,Texas,15.83,17.57,-9.9,rising,2026-03-10T18:46:48.543Z,v2
-utah,Utah,12.97,17.57,-26.2,rising,2026-03-10T18:46:48.543Z,v2
-vermont,Vermont,22.58,17.57,28.5,rising,2026-03-10T18:46:48.543Z,v2
-virginia,Virginia,15.26,17.57,-13.1,rising,2026-03-10T18:46:48.543Z,v2
-washington,Washington,12.86,17.57,-26.8,accelerating,2026-03-10T18:46:48.543Z,v2
-west-virginia,West Virginia,15.39,17.57,-12.4,stable,2026-03-10T18:46:48.543Z,v2
-wisconsin,Wisconsin,18.04,17.57,2.7,accelerating,2026-03-10T18:46:48.543Z,v2
-wyoming,Wyoming,14.02,17.57,-20.2,accelerating,2026-03-10T18:46:48.543Z,v2
-district-of-columbia,District of Columbia,,17.57,0,accelerating,2026-03-10T18:46:48.543Z,v2
+alabama,Alabama,16.55,17.57,-5.8,rising,2025-12-15T00:00:00.000Z,v2
+alaska,Alaska,25.01,17.57,42.3,accelerating,2025-12-15T00:00:00.000Z,v2
+arizona,Arizona,15.7,17.57,-10.6,rising,2025-12-15T00:00:00.000Z,v2
+arkansas,Arkansas,12.83,17.57,-27,accelerating,2025-12-15T00:00:00.000Z,v2
+california,California,31.14,17.57,77.2,accelerating,2025-12-15T00:00:00.000Z,v2
+colorado,Colorado,15.79,17.57,-10.1,rising,2025-12-15T00:00:00.000Z,v2
+connecticut,Connecticut,30.35,17.57,72.7,falling,2025-12-15T00:00:00.000Z,v2
+delaware,Delaware,17.18,17.57,-2.2,rising,2025-12-15T00:00:00.000Z,v2
+florida,Florida,15.27,17.57,-13.1,accelerating,2025-12-15T00:00:00.000Z,v2
+georgia,Georgia,15.22,17.57,-13.4,rising,2025-12-15T00:00:00.000Z,v2
+hawaii,Hawaii,41.3,17.57,135.1,falling,2025-12-15T00:00:00.000Z,v2
+idaho,Idaho,11.74,17.57,-33.2,accelerating,2025-12-15T00:00:00.000Z,v2
+illinois,Illinois,16.96,17.57,-3.5,rising,2025-12-15T00:00:00.000Z,v2
+indiana,Indiana,16.12,17.57,-8.3,accelerating,2025-12-15T00:00:00.000Z,v2
+iowa,Iowa,13.18,17.57,-25,rising,2025-12-15T00:00:00.000Z,v2
+kansas,Kansas,14.48,17.57,-17.6,rising,2025-12-15T00:00:00.000Z,v2
+kentucky,Kentucky,13.2,17.57,-24.9,stable,2025-12-15T00:00:00.000Z,v2
+louisiana,Louisiana,12.34,17.57,-29.8,rising,2025-12-15T00:00:00.000Z,v2
+maine,Maine,27.24,17.57,55,accelerating,2025-12-15T00:00:00.000Z,v2
+maryland,Maryland,19.29,17.57,9.8,accelerating,2025-12-15T00:00:00.000Z,v2
+massachusetts,Massachusetts,26.01,17.57,48,stable,2025-12-15T00:00:00.000Z,v2
+michigan,Michigan,19.91,17.57,13.3,accelerating,2025-12-15T00:00:00.000Z,v2
+minnesota,Minnesota,16.04,17.57,-8.7,accelerating,2025-12-15T00:00:00.000Z,v2
+mississippi,Mississippi,13.91,17.57,-20.8,rising,2025-12-15T00:00:00.000Z,v2
+missouri,Missouri,13.37,17.57,-23.9,rising,2025-12-15T00:00:00.000Z,v2
+montana,Montana,13.12,17.57,-25.3,accelerating,2025-12-15T00:00:00.000Z,v2
+nebraska,Nebraska,12.19,17.57,-30.6,accelerating,2025-12-15T00:00:00.000Z,v2
+nevada,Nevada,13.16,17.57,-25.1,falling,2025-12-15T00:00:00.000Z,v2
+new-hampshire,New Hampshire,23.35,17.57,32.9,accelerating,2025-12-15T00:00:00.000Z,v2
+new-jersey,New Jersey,22.15,17.57,26.1,accelerating,2025-12-15T00:00:00.000Z,v2
+new-mexico,New Mexico,15.29,17.57,-13,rising,2025-12-15T00:00:00.000Z,v2
+new-york,New York,23.87,17.57,35.9,accelerating,2025-12-15T00:00:00.000Z,v2
+north-carolina,North Carolina,14.08,17.57,-19.9,stable,2025-12-15T00:00:00.000Z,v2
+north-dakota,North Dakota,11.92,17.57,-32.2,accelerating,2025-12-15T00:00:00.000Z,v2
+ohio,Ohio,16.9,17.57,-3.8,accelerating,2025-12-15T00:00:00.000Z,v2
+oklahoma,Oklahoma,13.05,17.57,-25.7,rising,2025-12-15T00:00:00.000Z,v2
+oregon,Oregon,15,17.57,-14.6,rising,2025-12-15T00:00:00.000Z,v2
+pennsylvania,Pennsylvania,17.78,17.57,1.2,accelerating,2025-12-15T00:00:00.000Z,v2
+rhode-island,Rhode Island,28.42,17.57,61.8,accelerating,2025-12-15T00:00:00.000Z,v2
+south-carolina,South Carolina,14.72,17.57,-16.2,rising,2025-12-15T00:00:00.000Z,v2
+south-dakota,South Dakota,13.14,17.57,-25.2,rising,2025-12-15T00:00:00.000Z,v2
+tennessee,Tennessee,13.28,17.57,-24.4,stable,2025-12-15T00:00:00.000Z,v2
+texas,Texas,15.83,17.57,-9.9,rising,2025-12-15T00:00:00.000Z,v2
+utah,Utah,12.97,17.57,-26.2,rising,2025-12-15T00:00:00.000Z,v2
+vermont,Vermont,22.58,17.57,28.5,rising,2025-12-15T00:00:00.000Z,v2
+virginia,Virginia,15.26,17.57,-13.1,rising,2025-12-15T00:00:00.000Z,v2
+washington,Washington,12.86,17.57,-26.8,accelerating,2025-12-15T00:00:00.000Z,v2
+west-virginia,West Virginia,15.39,17.57,-12.4,stable,2025-12-15T00:00:00.000Z,v2
+wisconsin,Wisconsin,18.04,17.57,2.7,accelerating,2025-12-15T00:00:00.000Z,v2
+wyoming,Wyoming,14.02,17.57,-20.2,accelerating,2025-12-15T00:00:00.000Z,v2
+district-of-columbia,District of Columbia,,17.57,0,accelerating,2025-12-15T00:00:00.000Z,v2

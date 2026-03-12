@@ -5,6 +5,7 @@ import {
   type ApplianceConfig,
   type ApplianceSlug,
 } from "@/lib/longtail/applianceConfig";
+import { getActiveApplianceSlugs } from "@/lib/longtail/rollout";
 import { calculateUsageCost, getLongtailStateStaticParams } from "@/lib/longtail/stateLongtail";
 
 const DAYS_PER_MONTH = 30;
@@ -23,7 +24,8 @@ export type ApplianceOperatingCost = {
 
 export async function getApplianceLongtailStaticParams(): Promise<Array<{ appliance: string; state: string }>> {
   const states = await getLongtailStateStaticParams();
-  return APPLIANCE_CONFIGS.flatMap((appliance) =>
+  const activeSlugs = new Set(getActiveApplianceSlugs());
+  return APPLIANCE_CONFIGS.filter((appliance) => activeSlugs.has(appliance.slug)).flatMap((appliance) =>
     states.map(({ state }) => ({ appliance: appliance.slug, state })),
   );
 }
@@ -68,12 +70,19 @@ export function formatKwh(value: number): string {
 }
 
 export function getRelatedAppliances(current: ApplianceSlug, limit = 4): ApplianceConfig[] {
+  const activeSlugs = new Set(getActiveApplianceSlugs());
   const currentConfig = getApplianceConfig(current);
   const sameCategory = APPLIANCE_CONFIGS.filter(
-    (appliance) => appliance.slug !== current && appliance.category === currentConfig.category,
+    (appliance) =>
+      appliance.slug !== current &&
+      activeSlugs.has(appliance.slug) &&
+      appliance.category === currentConfig.category,
   );
   const others = APPLIANCE_CONFIGS.filter(
-    (appliance) => appliance.slug !== current && appliance.category !== currentConfig.category,
+    (appliance) =>
+      appliance.slug !== current &&
+      activeSlugs.has(appliance.slug) &&
+      appliance.category !== currentConfig.category,
   );
 
   return [...sameCategory, ...others].slice(0, limit);

@@ -1,92 +1,92 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-03-10T18:46:48.543Z",
+  "generatedAt": "2025-12-15T00:00:00.000Z",
   "sourceVersion": "v2",
   "contractVersion": "1.0.0",
   "algorithm": "sha256",
   "files": [
     {
       "url": "/knowledge/bundles/index.json",
-      "contentHash": "88014934956fd07ced7892962b4b6b7e72dc0a9428571ad3523e5a87ec47ca5d",
+      "contentHash": "060bcc333e0cf7c7f1bdb1fbe5d54b38409bed61ac8ac824e99c8e78eb8c5610",
       "bytes": 888
     },
     {
       "url": "/knowledge/capabilities.json",
-      "contentHash": "51945a3ee710a39c8b8a055904b930398cf4ff4f8cb0900b6681d63beb24f26e",
+      "contentHash": "fdc69012763c94c4d58f34a548cbb92b8939416ccc092a88b8a3f6971429c868",
       "bytes": 1019
     },
     {
       "url": "/knowledge/contract.json",
-      "contentHash": "4beac56cd9f5e006bcdf3a42ee7e3ccddcea2fdfa3e0b6632175ff3e4b17026e",
+      "contentHash": "369ea2d26d9c819010964f182ce6d768b71f5d67ba4bc8bc187ca140e075eb4b",
       "bytes": 7859
     },
     {
       "url": "/knowledge/glossary/fields.json",
-      "contentHash": "ad962520dc3c62bfcac545b5343613d8ee0e60b4cb617ff5f24cf0d469020df0",
+      "contentHash": "7534c9f06a9b184d622e316d0c59010d08ade3bd5ea40bc7e141c1a89e27b9f4",
       "bytes": 3114
     },
     {
       "url": "/knowledge/index.json",
-      "contentHash": "3124426a3bd52a85b37fa957f5804cf4ac4186f8aa1d686d176905943641729a",
-      "bytes": 90322
+      "contentHash": "5b00db45a72fa15003be2afc7de38413e2220ed200070f79757f332112d23fd1",
+      "bytes": 96406
     },
     {
       "url": "/knowledge/ingest/starter-pack.json",
-      "contentHash": "44a14f8cfcd380d58b4a7b9f421ce25aabb143aa72e0996a1ce0054684545f68",
+      "contentHash": "ba1d365865265fa8d6224acad708829a5a7490f4918cfe007d6c3a002ee70b4e",
       "bytes": 1547
     },
     {
       "url": "/knowledge/leaderboards/states.json",
-      "contentHash": "034697912614ff0a16008a188a7a951fa09dcc9853d304e0d422fbf42f1e350c",
+      "contentHash": "a5e13a0c761d558b89f22b1950630957401b00800df552bd8ccb716d09bf25d8",
       "bytes": 3805
     },
     {
       "url": "/knowledge/offers/index.json",
-      "contentHash": "c3b2d86eec62600d0ecf91a8b2e5cb378dadb850323bd4f008ceab9726254700",
+      "contentHash": "60c742b11d0c884cee0c8971980b5a2f5735abeceeae74ec237452128d0c0040",
       "bytes": 22247
     },
     {
       "url": "/knowledge/policy/deprecations.json",
-      "contentHash": "f25f75fb47711becd648293ffc6265fb945d0d50c0f0592f452ac721ef6221b5",
+      "contentHash": "479c37b2b7b86d5541ab69179a42c975cf2c3bc97aca1babb7e13e49cf0f1c14",
       "bytes": 144
     },
     {
       "url": "/knowledge/policy/disclaimers.json",
-      "contentHash": "90cd52d5059e7460223b66cc96cad1b936aeaa01231247e39c96c4ace9e9ccaa",
+      "contentHash": "ce4e2b63483b49c506baee0a4ec83f01ef8cb06b05cc3bd5e2195a9773b34489",
       "bytes": 1743
     },
     {
       "url": "/knowledge/policy/offers-config.json",
-      "contentHash": "b2618d8db83dba2d9e14d621a97b79c8afa60bd8898ac5f8fce62692e140a703",
+      "contentHash": "7d007c99b30a46adaa6069e860dfe85c62fdb4f50891dda8a5275a96637cb81f",
       "bytes": 295
     },
     {
       "url": "/knowledge/provenance.json",
-      "contentHash": "eb7006bc4c48db2b1f5ab8682be49ee581f9780152bc239b2b45d348128da3ad",
-      "bytes": 3962
+      "contentHash": "49d06e5aa0afe922c7f39007c27dde49a330c43a577e4f81d93413c860cc807f",
+      "bytes": 4070
     },
     {
       "url": "/knowledge/public-endpoints.json",
-      "contentHash": "6f31421258cc04338fecc7b7e3e2370f4682e12cfd192207365cfbce4a86b9fc",
+      "contentHash": "5314bd5870c82dbbe04c824cb6209b41558a9b81f633eb3095fbecabb18366eb",
       "bytes": 5101
     },
     {
       "url": "/knowledge/related/index.json",
-      "contentHash": "cfd8a230c615d8600aa4211726e20882d9d14c297791a431bc38ea6b0b2004fb",
-      "bytes": 1699245
+      "contentHash": "fcd6f4d1a3eef7ca050c0785506ce4c40f66c9d75f2f838809f3c34bbc078263",
+      "bytes": 1754250
     },
     {
       "url": "/knowledge/schema-map.json",
-      "contentHash": "8cfdbb2aa1123f946e5d3d1c333f311295d5ab27fa38ab14ccca5183d63347ba",
+      "contentHash": "318dab348596bc4e23c55d3ad18b6a67ca7b2eab8d0111f6eea24c5c515c30fa",
       "bytes": 6699
     },
     {
       "url": "/knowledge/search-index.json",
-      "contentHash": "e9ced53776d06ec2d47af17f121c92c446aa2ad41f65d04d69ffcdcabff656b2",
-      "bytes": 966528
+      "contentHash": "d8de64aa2d11cbf3bba79fffd91fa9e434d1c6298541b6790bfb591797f52c27",
+      "bytes": 975744
     }
   ],
-  "manifestHash": "10fc18455818dcb3bc97e85ebd1d2a6573ab05dc656ff87916a4a2bae0bae752",
+  "manifestHash": "166974771cc70b282cdd1ad0650d761fd2deb4c63559bdea5d967d92bb34f5fc",
   "signature": {
     "enabled": false,
     "method": null,

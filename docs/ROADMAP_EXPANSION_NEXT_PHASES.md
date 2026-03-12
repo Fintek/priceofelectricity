@@ -22,8 +22,8 @@ Future families must preserve intent separation and avoid overlap with existing 
 
 - Keep appliance **cost intent** canonical in `cost-to-run/[appliance]/[state]`.
 - Keep fixed-kWh **cost intent** canonical in `electricity-usage-cost/[kwh]/[state]`.
-- Keep calculator **interactive/scenario intent** canonical in `electricity-cost-calculator/*`.
-- Keep bill **benchmark intent** canonical in `average-electricity-bill/*`.
+- Keep calculator **interactive/scenario intent** canonical in `electricity-cost-calculator/`*.
+- Keep bill **benchmark intent** canonical in `average-electricity-bill/`*.
 
 Before implementing any new family, document:
 
@@ -243,10 +243,10 @@ Create a consolidated internal discovery framework for cross-system comparisons 
 
 ## Future Implementation Sequence (Concise)
 
-1. Appliance Cost Engine expansion  
-2. City Electricity Pages  
-3. Appliance × State pages  
-4. Appliance × City pages  
+1. Appliance Cost Engine expansion
+2. City Electricity Pages
+3. Appliance × State pages
+4. Appliance × City pages
 5. Energy Comparison Hub
 
 ---

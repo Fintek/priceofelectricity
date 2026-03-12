@@ -6,9 +6,9 @@
     "slug": "value-score",
     "title": "Value Score Methodology",
     "description": "Methodology for Value Score composition and tier assignment.",
-    "canonicalUrl": "http://localhost:3000/knowledge/methodology/value-score",
-    "jsonUrl": "http://localhost:3000/knowledge/methodology/value-score.json",
-    "updatedAt": "2026-03-10T18:46:48.543Z",
+    "canonicalUrl": "https://priceofelectricity.com/knowledge/methodology/value-score",
+    "jsonUrl": "https://priceofelectricity.com/knowledge/methodology/value-score.json",
+    "updatedAt": "2025-12-15T00:00:00.000Z",
     "sourceVersion": "v2",
     "temporalContext": {
       "sourceVersion": "v2",
@@ -18,10 +18,10 @@
       {
         "id": "poe-methodology-value-score",
         "sourceName": "PriceOfElectricity.com methodology: Value Score",
-        "sourceUrl": "http://localhost:3000/methodology/value-score",
+        "sourceUrl": "https://priceofelectricity.com/methodology/value-score",
         "publisher": "PriceOfElectricity.com",
         "license": "Site content license",
-        "retrievedAt": "2026-03-10T18:46:48.543Z"
+        "retrievedAt": "2025-12-15T00:00:00.000Z"
       }
     ],
     "fieldProvenance": [
@@ -59,8 +59,8 @@
     "citations": [
       {
         "sourceName": "PriceOfElectricity.com methodology: Value Score",
-        "sourceUrl": "http://localhost:3000/methodology/value-score",
-        "retrievedAt": "2026-03-10T18:46:48.543Z"
+        "sourceUrl": "https://priceofelectricity.com/methodology/value-score",
+        "retrievedAt": "2025-12-15T00:00:00.000Z"
       }
     ],
     "llmHints": {
@@ -76,14 +76,14 @@
     },
     "freshness": {
       "datasetUpdatedAt": "2025-12-15T00:00:00.000Z",
-      "computedAt": "2026-03-10T18:46:48.543Z",
-      "status": "aging",
-      "ageDays": 85,
+      "computedAt": "2025-12-15T00:00:00.000Z",
+      "status": "fresh",
+      "ageDays": 0,
       "methodology": {
         "id": "freshness",
         "version": "1.0",
-        "url": "http://localhost:3000/knowledge/methodology/freshness.json",
-        "canonicalUrl": "http://localhost:3000/knowledge/methodology/freshness"
+        "url": "https://priceofelectricity.com/knowledge/methodology/freshness.json",
+        "canonicalUrl": "https://priceofelectricity.com/knowledge/methodology/freshness"
       }
     },
     "excerpt": "Value Score Methodology. Defines how value score is computed from inputs and produces derived fields used across state and ranking pages.",
@@ -93,7 +93,7 @@
     "methodology": {
       "id": "value-score",
       "version": "1.0",
-      "lastReviewedAt": "2026-03-10",
+      "lastReviewedAt": "2025-12-15",
       "relatedDerivedFields": [
         "data.derived.valueScore",
         "data.derived.affordabilityIndex",
@@ -102,12 +102,12 @@
         "data.sortedStates"
       ]
     },
-    "qualityScore": 90,
-    "contentHash": "232998e5067cec4adaae3aae4587689ff244c35864155a8f9a3784f4771de7c2",
+    "qualityScore": 100,
+    "contentHash": "302c255ba97745349cdbf1df00a445371e3ee82b4636c098bb3e850f1c283fe8",
     "integrity": {
-      "contentHash": "232998e5067cec4adaae3aae4587689ff244c35864155a8f9a3784f4771de7c2",
+      "contentHash": "302c255ba97745349cdbf1df00a445371e3ee82b4636c098bb3e850f1c283fe8",
       "integrityAlgorithm": "sha256",
-      "signedAtBuild": "2026-03-10T18:46:48.543Z"
+      "signedAtBuild": "2025-12-15T00:00:00.000Z"
     }
   },
   "data": {
@@ -127,8 +127,8 @@
       "Dependent on monthly cadence of source updates."
     ],
     "relatedInternalUrls": [
-      "http://localhost:3000/knowledge/methodology/value-score",
-      "http://localhost:3000/value-ranking"
+      "https://priceofelectricity.com/knowledge/methodology/value-score",
+      "https://priceofelectricity.com/value-ranking"
     ],
     "relatedEntities": {
       "national": true,

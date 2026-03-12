@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-03-09T17:52:22.921Z",
-  "commit": "46ccc3d",
+  "generatedAt": "2026-03-12T14:07:22.531Z",
+  "commit": "04bb523",
   "summary": {
-    "total": 23,
-    "passed": 23,
+    "total": 66,
+    "passed": 66,
     "failed": 0
   },
   "checks": [
@@ -53,23 +53,15 @@
       "passed": true
     },
     {
-      "name": "sitemap.xml reachable",
+      "name": "/sitemap-index.xml reachable",
       "passed": true
     },
     {
-      "name": "sitemap contains /texas",
+      "name": "/sitemap-index.xml contains /sitemap/states.xml",
       "passed": true
     },
     {
-      "name": "sitemap contains /national",
-      "passed": true
-    },
-    {
-      "name": "sitemap contains /offers",
-      "passed": true
-    },
-    {
-      "name": "sitemap contains /drivers",
+      "name": "/sitemap-index.xml contains /sitemap/core.xml",
       "passed": true
     },
     {
@@ -103,7 +95,187 @@
     {
       "name": "/health returns release fields",
       "passed": true,
-      "details": "commit=46ccc3d data=v20260222"
+      "details": "commit=04bb523 data=v20260222"
+    },
+    {
+      "name": "/electricity-hubs reachable",
+      "passed": true
+    },
+    {
+      "name": "electricity-hubs links canonical clusters: /electricity-cost",
+      "passed": true
+    },
+    {
+      "name": "electricity-hubs links canonical clusters: /average-electricity-bill",
+      "passed": true
+    },
+    {
+      "name": "electricity-hubs links canonical clusters: /electricity-bill-estimator",
+      "passed": true
+    },
+    {
+      "name": "electricity-hubs links canonical clusters: /electricity-cost-calculator",
+      "passed": true
+    },
+    {
+      "name": "electricity-hubs links canonical clusters: /electricity-usage",
+      "passed": true
+    },
+    {
+      "name": "electricity-hubs links canonical clusters: /energy-comparison",
+      "passed": true
+    },
+    {
+      "name": "electricity-hubs links canonical clusters: /electricity-providers",
+      "passed": true
+    },
+    {
+      "name": "/energy-comparison reachable",
+      "passed": true
+    },
+    {
+      "name": "energy-comparison links canonical clusters: /electricity-cost-comparison/",
+      "passed": true
+    },
+    {
+      "name": "energy-comparison links canonical clusters: /electricity-usage-cost/",
+      "passed": true
+    },
+    {
+      "name": "energy-comparison links canonical clusters: /cost-to-run/",
+      "passed": true
+    },
+    {
+      "name": "energy-comparison links canonical clusters: /electricity-bill-estimator/",
+      "passed": true
+    },
+    {
+      "name": "energy-comparison links canonical clusters: /average-electricity-bill",
+      "passed": true
+    },
+    {
+      "name": "energy-comparison links canonical clusters: /electricity-cost-calculator",
+      "passed": true
+    },
+    {
+      "name": "energy-comparison links canonical clusters: /electricity-providers",
+      "passed": true
+    },
+    {
+      "name": "/electricity-hubs/comparisons reachable",
+      "passed": true
+    },
+    {
+      "name": "comparison hub links provider discovery: /electricity-cost-comparison",
+      "passed": true
+    },
+    {
+      "name": "comparison hub links provider discovery: /compare",
+      "passed": true
+    },
+    {
+      "name": "comparison hub links provider discovery: /electricity-providers",
+      "passed": true
+    },
+    {
+      "name": "/electricity-cost-comparison reachable",
+      "passed": true
+    },
+    {
+      "name": "comparison index links provider discovery: /electricity-providers",
+      "passed": true
+    },
+    {
+      "name": "comparison index links provider discovery: /electricity-cost",
+      "passed": true
+    },
+    {
+      "name": "/electricity-providers reachable",
+      "passed": true
+    },
+    {
+      "name": "provider index links marketplace clusters: /electricity-providers/texas",
+      "passed": true
+    },
+    {
+      "name": "provider index links marketplace clusters: /electricity-cost-comparison",
+      "passed": true
+    },
+    {
+      "name": "provider index links marketplace clusters: /electricity-cost",
+      "passed": true
+    },
+    {
+      "name": "provider index links marketplace clusters: /energy-comparison",
+      "passed": true
+    },
+    {
+      "name": "provider index links marketplace clusters: /electricity-hubs",
+      "passed": true
+    },
+    {
+      "name": "provider index links marketplace clusters: /offers",
+      "passed": true
+    },
+    {
+      "name": "provider index links marketplace clusters: /electricity-shopping/by-state",
+      "passed": true
+    },
+    {
+      "name": "/electricity-providers/texas reachable",
+      "passed": true
+    },
+    {
+      "name": "provider state links canonical state clusters: /electricity-cost/texas",
+      "passed": true
+    },
+    {
+      "name": "provider state links canonical state clusters: /average-electricity-bill/texas",
+      "passed": true
+    },
+    {
+      "name": "provider state links canonical state clusters: /electricity-bill-estimator/texas",
+      "passed": true
+    },
+    {
+      "name": "provider state links canonical state clusters: /energy-comparison",
+      "passed": true
+    },
+    {
+      "name": "provider state links canonical state clusters: /electricity-hubs",
+      "passed": true
+    },
+    {
+      "name": "provider state links canonical state clusters: /offers/texas",
+      "passed": true
+    },
+    {
+      "name": "provider state links canonical state clusters: /electricity-cost-calculator/texas",
+      "passed": true
+    },
+    {
+      "name": "/texas reachable",
+      "passed": true
+    },
+    {
+      "name": "state page revenue pathway links: /electricity-providers/texas",
+      "passed": true
+    },
+    {
+      "name": "state page revenue pathway links: /offers/texas",
+      "passed": true
+    },
+    {
+      "name": "/electricity-bill-estimator/texas reachable",
+      "passed": true
+    },
+    {
+      "name": "bill estimator revenue pathway links: /electricity-providers/texas",
+      "passed": true
+    },
+    {
+      "name": "bill estimator revenue pathway links: /offers/texas",
+      "passed": true
     }
   ]
 }

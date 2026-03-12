@@ -6,9 +6,9 @@
     "slug": "momentum-signal",
     "title": "Electricity Price Momentum Signal Ranking",
     "description": "States where electricity prices are accelerating, rising, stable, or falling.",
-    "canonicalUrl": "http://localhost:3000/knowledge/rankings/momentum-signal",
-    "jsonUrl": "http://localhost:3000/knowledge/history/v2/rankings/momentum-signal.json",
-    "updatedAt": "2026-03-10T18:46:48.543Z",
+    "canonicalUrl": "https://priceofelectricity.com/knowledge/rankings/momentum-signal",
+    "jsonUrl": "https://priceofelectricity.com/knowledge/history/v2/rankings/momentum-signal.json",
+    "updatedAt": "2025-12-15T00:00:00.000Z",
     "sourceVersion": "v2",
     "temporalContext": {
       "sourceVersion": "v2",
@@ -22,47 +22,47 @@
         "publisher": "U.S. Energy Information Administration",
         "license": "U.S. Government work (public domain)",
         "notes": "Primary source for state residential electricity rate series used by snapshots.",
-        "retrievedAt": "2026-03-10T18:46:48.543Z"
+        "retrievedAt": "2025-12-15T00:00:00.000Z"
       },
       {
         "id": "poe-dataset-affordability-csv",
         "sourceName": "PriceOfElectricity.com dataset endpoint: affordability.csv",
-        "sourceUrl": "http://localhost:3000/api/datasets/affordability.csv",
+        "sourceUrl": "https://priceofelectricity.com/api/datasets/affordability.csv",
         "publisher": "PriceOfElectricity.com",
         "license": "Site content license",
-        "retrievedAt": "2026-03-10T18:46:48.543Z"
+        "retrievedAt": "2025-12-15T00:00:00.000Z"
       },
       {
         "id": "poe-dataset-states-json",
         "sourceName": "PriceOfElectricity.com dataset endpoint: states.json",
-        "sourceUrl": "http://localhost:3000/api/datasets/states.json",
+        "sourceUrl": "https://priceofelectricity.com/api/datasets/states.json",
         "publisher": "PriceOfElectricity.com",
         "license": "Site content license",
-        "retrievedAt": "2026-03-10T18:46:48.543Z"
+        "retrievedAt": "2025-12-15T00:00:00.000Z"
       },
       {
         "id": "poe-dataset-value-ranking-csv",
         "sourceName": "PriceOfElectricity.com dataset endpoint: value-ranking.csv",
-        "sourceUrl": "http://localhost:3000/api/datasets/value-ranking.csv",
+        "sourceUrl": "https://priceofelectricity.com/api/datasets/value-ranking.csv",
         "publisher": "PriceOfElectricity.com",
         "license": "Site content license",
-        "retrievedAt": "2026-03-10T18:46:48.543Z"
+        "retrievedAt": "2025-12-15T00:00:00.000Z"
       },
       {
         "id": "poe-methodology-epi",
         "sourceName": "PriceOfElectricity.com methodology: Electricity Price Index",
-        "sourceUrl": "http://localhost:3000/methodology/electricity-price-index",
+        "sourceUrl": "https://priceofelectricity.com/methodology/electricity-price-index",
         "publisher": "PriceOfElectricity.com",
         "license": "Site content license",
-        "retrievedAt": "2026-03-10T18:46:48.543Z"
+        "retrievedAt": "2025-12-15T00:00:00.000Z"
       },
       {
         "id": "poe-methodology-value-score",
         "sourceName": "PriceOfElectricity.com methodology: Value Score",
-        "sourceUrl": "http://localhost:3000/methodology/value-score",
+        "sourceUrl": "https://priceofelectricity.com/methodology/value-score",
         "publisher": "PriceOfElectricity.com",
         "license": "Site content license",
-        "retrievedAt": "2026-03-10T18:46:48.543Z"
+        "retrievedAt": "2025-12-15T00:00:00.000Z"
       }
     ],
     "fieldProvenance": [
@@ -93,33 +93,33 @@
       {
         "sourceName": "U.S. Energy Information Administration (EIA) Retail Sales of Electricity",
         "sourceUrl": "https://api.eia.gov/v2/electricity/retail-sales/data/",
-        "retrievedAt": "2026-03-10T18:46:48.543Z",
+        "retrievedAt": "2025-12-15T00:00:00.000Z",
         "notes": "Primary source for state residential electricity rate series used by snapshots."
       },
       {
         "sourceName": "PriceOfElectricity.com dataset endpoint: affordability.csv",
-        "sourceUrl": "http://localhost:3000/api/datasets/affordability.csv",
-        "retrievedAt": "2026-03-10T18:46:48.543Z"
+        "sourceUrl": "https://priceofelectricity.com/api/datasets/affordability.csv",
+        "retrievedAt": "2025-12-15T00:00:00.000Z"
       },
       {
         "sourceName": "PriceOfElectricity.com dataset endpoint: states.json",
-        "sourceUrl": "http://localhost:3000/api/datasets/states.json",
-        "retrievedAt": "2026-03-10T18:46:48.543Z"
+        "sourceUrl": "https://priceofelectricity.com/api/datasets/states.json",
+        "retrievedAt": "2025-12-15T00:00:00.000Z"
       },
       {
         "sourceName": "PriceOfElectricity.com dataset endpoint: value-ranking.csv",
-        "sourceUrl": "http://localhost:3000/api/datasets/value-ranking.csv",
-        "retrievedAt": "2026-03-10T18:46:48.543Z"
+        "sourceUrl": "https://priceofelectricity.com/api/datasets/value-ranking.csv",
+        "retrievedAt": "2025-12-15T00:00:00.000Z"
       },
       {
         "sourceName": "PriceOfElectricity.com methodology: Electricity Price Index",
-        "sourceUrl": "http://localhost:3000/methodology/electricity-price-index",
-        "retrievedAt": "2026-03-10T18:46:48.543Z"
+        "sourceUrl": "https://priceofelectricity.com/methodology/electricity-price-index",
+        "retrievedAt": "2025-12-15T00:00:00.000Z"
       },
       {
         "sourceName": "PriceOfElectricity.com methodology: Value Score",
-        "sourceUrl": "http://localhost:3000/methodology/value-score",
-        "retrievedAt": "2026-03-10T18:46:48.543Z"
+        "sourceUrl": "https://priceofelectricity.com/methodology/value-score",
+        "retrievedAt": "2025-12-15T00:00:00.000Z"
       }
     ],
     "llmHints": {
@@ -135,26 +135,26 @@
     },
     "freshness": {
       "datasetUpdatedAt": "2025-12-15T00:00:00.000Z",
-      "computedAt": "2026-03-10T18:46:48.543Z",
-      "status": "aging",
-      "ageDays": 85,
+      "computedAt": "2025-12-15T00:00:00.000Z",
+      "status": "fresh",
+      "ageDays": 0,
       "methodology": {
         "id": "freshness",
         "version": "1.0",
-        "url": "http://localhost:3000/knowledge/methodology/freshness.json",
-        "canonicalUrl": "http://localhost:3000/knowledge/methodology/freshness"
+        "url": "https://priceofelectricity.com/knowledge/methodology/freshness.json",
+        "canonicalUrl": "https://priceofelectricity.com/knowledge/methodology/freshness"
       }
     },
     "excerpt": "Electricity Price Momentum Signal Ranking. Ranks states by momentum score (desc). Top 1: District of Columbia.",
     "disclaimerRefs": [
       "rankings"
     ],
-    "qualityScore": 90,
-    "contentHash": "40d713943e5da0842ef96f8e3762814c082dcd42c06e146b664871a2c1ba3505",
+    "qualityScore": 100,
+    "contentHash": "3ad7bf38244ce1e1a40c4375df2eb1535df257424b44362423553781512d5fa3",
     "integrity": {
-      "contentHash": "40d713943e5da0842ef96f8e3762814c082dcd42c06e146b664871a2c1ba3505",
+      "contentHash": "3ad7bf38244ce1e1a40c4375df2eb1535df257424b44362423553781512d5fa3",
       "integrityAlgorithm": "sha256",
-      "signedAtBuild": "2026-03-10T18:46:48.543Z"
+      "signedAtBuild": "2025-12-15T00:00:00.000Z"
     }
   },
   "data": {
@@ -620,14 +620,14 @@
         "longWindowChangePercent": -17.49
       }
     ],
-    "generatedAt": "2026-03-10T18:46:48.543Z",
+    "generatedAt": "2025-12-15T00:00:00.000Z",
     "enabled": true,
     "derivedMeta": {
       "methodologiesUsed": [
         {
           "id": "momentum-signal",
           "version": "1.0",
-          "url": "http://localhost:3000/knowledge/methodology/momentum-signal.json",
+          "url": "https://priceofelectricity.com/knowledge/methodology/momentum-signal.json",
           "appliesToFields": [
             "data.sortedStates"
           ]
@@ -674,7 +674,7 @@
       },
       {
         "label": "Generated at",
-        "value": "2026-03-10T18:46:48.543Z",
+        "value": "2025-12-15T00:00:00.000Z",
         "sourceField": "data.generatedAt"
       },
       {

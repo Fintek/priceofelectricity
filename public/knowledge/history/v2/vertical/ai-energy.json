@@ -6,9 +6,9 @@
     "slug": "ai-energy",
     "title": "AI Energy Vertical Knowledge",
     "description": "Stub machine-readable page for AI-energy vertical navigation and references.",
-    "canonicalUrl": "http://localhost:3000/knowledge/vertical/ai-energy",
-    "jsonUrl": "http://localhost:3000/knowledge/history/v2/vertical/ai-energy.json",
-    "updatedAt": "2026-03-10T18:46:48.543Z",
+    "canonicalUrl": "https://priceofelectricity.com/knowledge/vertical/ai-energy",
+    "jsonUrl": "https://priceofelectricity.com/knowledge/history/v2/vertical/ai-energy.json",
+    "updatedAt": "2025-12-15T00:00:00.000Z",
     "sourceVersion": "v2",
     "temporalContext": {
       "sourceVersion": "v2",
@@ -22,39 +22,39 @@
         "publisher": "U.S. Energy Information Administration",
         "license": "U.S. Government work (public domain)",
         "notes": "Primary source for state residential electricity rate series used by snapshots.",
-        "retrievedAt": "2026-03-10T18:46:48.543Z"
+        "retrievedAt": "2025-12-15T00:00:00.000Z"
       },
       {
         "id": "poe-methodology-epi",
         "sourceName": "PriceOfElectricity.com methodology: Electricity Price Index",
-        "sourceUrl": "http://localhost:3000/methodology/electricity-price-index",
+        "sourceUrl": "https://priceofelectricity.com/methodology/electricity-price-index",
         "publisher": "PriceOfElectricity.com",
         "license": "Site content license",
-        "retrievedAt": "2026-03-10T18:46:48.543Z"
+        "retrievedAt": "2025-12-15T00:00:00.000Z"
       },
       {
         "id": "poe-methodology-freshness",
         "sourceName": "PriceOfElectricity.com methodology: Freshness Scoring",
-        "sourceUrl": "http://localhost:3000/methodology/freshness-scoring",
+        "sourceUrl": "https://priceofelectricity.com/methodology/freshness-scoring",
         "publisher": "PriceOfElectricity.com",
         "license": "Site content license",
-        "retrievedAt": "2026-03-10T18:46:48.543Z"
+        "retrievedAt": "2025-12-15T00:00:00.000Z"
       },
       {
         "id": "poe-methodology-value-score",
         "sourceName": "PriceOfElectricity.com methodology: Value Score",
-        "sourceUrl": "http://localhost:3000/methodology/value-score",
+        "sourceUrl": "https://priceofelectricity.com/methodology/value-score",
         "publisher": "PriceOfElectricity.com",
         "license": "Site content license",
-        "retrievedAt": "2026-03-10T18:46:48.543Z"
+        "retrievedAt": "2025-12-15T00:00:00.000Z"
       },
       {
         "id": "poe-vertical-ai-energy",
         "sourceName": "PriceOfElectricity.com vertical: AI Energy",
-        "sourceUrl": "http://localhost:3000/v/ai-energy",
+        "sourceUrl": "https://priceofelectricity.com/v/ai-energy",
         "publisher": "PriceOfElectricity.com",
         "license": "Site content license",
-        "retrievedAt": "2026-03-10T18:46:48.543Z"
+        "retrievedAt": "2025-12-15T00:00:00.000Z"
       }
     ],
     "fieldProvenance": [
@@ -115,28 +115,28 @@
       {
         "sourceName": "U.S. Energy Information Administration (EIA) Retail Sales of Electricity",
         "sourceUrl": "https://api.eia.gov/v2/electricity/retail-sales/data/",
-        "retrievedAt": "2026-03-10T18:46:48.543Z",
+        "retrievedAt": "2025-12-15T00:00:00.000Z",
         "notes": "Primary source for state residential electricity rate series used by snapshots."
       },
       {
         "sourceName": "PriceOfElectricity.com methodology: Electricity Price Index",
-        "sourceUrl": "http://localhost:3000/methodology/electricity-price-index",
-        "retrievedAt": "2026-03-10T18:46:48.543Z"
+        "sourceUrl": "https://priceofelectricity.com/methodology/electricity-price-index",
+        "retrievedAt": "2025-12-15T00:00:00.000Z"
       },
       {
         "sourceName": "PriceOfElectricity.com methodology: Freshness Scoring",
-        "sourceUrl": "http://localhost:3000/methodology/freshness-scoring",
-        "retrievedAt": "2026-03-10T18:46:48.543Z"
+        "sourceUrl": "https://priceofelectricity.com/methodology/freshness-scoring",
+        "retrievedAt": "2025-12-15T00:00:00.000Z"
       },
       {
         "sourceName": "PriceOfElectricity.com methodology: Value Score",
-        "sourceUrl": "http://localhost:3000/methodology/value-score",
-        "retrievedAt": "2026-03-10T18:46:48.543Z"
+        "sourceUrl": "https://priceofelectricity.com/methodology/value-score",
+        "retrievedAt": "2025-12-15T00:00:00.000Z"
       },
       {
         "sourceName": "PriceOfElectricity.com vertical: AI Energy",
-        "sourceUrl": "http://localhost:3000/v/ai-energy",
-        "retrievedAt": "2026-03-10T18:46:48.543Z"
+        "sourceUrl": "https://priceofelectricity.com/v/ai-energy",
+        "retrievedAt": "2025-12-15T00:00:00.000Z"
       }
     ],
     "llmHints": {
@@ -152,26 +152,26 @@
     },
     "freshness": {
       "datasetUpdatedAt": "2025-12-15T00:00:00.000Z",
-      "computedAt": "2026-03-10T18:46:48.543Z",
-      "status": "aging",
-      "ageDays": 85,
+      "computedAt": "2025-12-15T00:00:00.000Z",
+      "status": "fresh",
+      "ageDays": 0,
       "methodology": {
         "id": "freshness",
         "version": "1.0",
-        "url": "http://localhost:3000/knowledge/methodology/freshness.json",
-        "canonicalUrl": "http://localhost:3000/knowledge/methodology/freshness"
+        "url": "https://priceofelectricity.com/knowledge/methodology/freshness.json",
+        "canonicalUrl": "https://priceofelectricity.com/knowledge/methodology/freshness"
       }
     },
     "excerpt": "AI Energy Vertical Knowledge. stub vertical summary. Related states: 5.",
     "disclaimerRefs": [
       "general-site"
     ],
-    "qualityScore": 90,
-    "contentHash": "c8833e1637c2906794571207cf24be78209acefc1c39b12b001ded279c8ea4cf",
+    "qualityScore": 100,
+    "contentHash": "434016d66f12b27683b36570a8092bf8f2e2874fdd35446c9dda96ca5113678c",
     "integrity": {
-      "contentHash": "c8833e1637c2906794571207cf24be78209acefc1c39b12b001ded279c8ea4cf",
+      "contentHash": "434016d66f12b27683b36570a8092bf8f2e2874fdd35446c9dda96ca5113678c",
       "integrityAlgorithm": "sha256",
-      "signedAtBuild": "2026-03-10T18:46:48.543Z"
+      "signedAtBuild": "2025-12-15T00:00:00.000Z"
     }
   },
   "data": {
@@ -202,10 +202,10 @@
       "freshness-scoring"
     ],
     "monitoringEndpoints": [
-      "http://localhost:3000/v/ai-energy",
-      "http://localhost:3000/v/ai-energy/watchlist",
-      "http://localhost:3000/v/ai-energy/monitoring",
-      "http://localhost:3000/v/ai-energy/glossary"
+      "https://priceofelectricity.com/v/ai-energy",
+      "https://priceofelectricity.com/v/ai-energy/watchlist",
+      "https://priceofelectricity.com/v/ai-energy/monitoring",
+      "https://priceofelectricity.com/v/ai-energy/glossary"
     ],
     "expansionReadiness": {
       "dataAvailable": false,
@@ -214,7 +214,7 @@
         "Utility interconnection queue additions tied to AI workloads",
         "Substation/feeder congestion indicators by metro"
       ],
-      "lastEvaluated": "2026-03-10T18:46:48.543Z"
+      "lastEvaluated": "2025-12-15T00:00:00.000Z"
     },
     "relatedEntities": {
       "states": [

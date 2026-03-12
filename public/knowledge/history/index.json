@@ -1,14 +1,14 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-03-10T18:46:48.543Z",
+  "generatedAt": "2025-12-15T00:00:00.000Z",
   "snapshots": [
     {
       "sourceVersion": "v2",
       "indexUrl": "/knowledge/history/v2/index.json",
-      "generatedAt": "2026-03-10T18:46:48.543Z",
+      "generatedAt": "2025-12-15T00:00:00.000Z",
       "pageCount": 78,
-      "indexContentHash": "80e940dadc2c445f929a77eb682b7c9d706e4c65896702f150e7cf49968ca672",
-      "registryHash": "e6bc381627f18127e206b36cb88d8b20036c7a2f82d967e8cee96a67d8285db2"
+      "indexContentHash": "2ae0802e19a6235de62ec2cbb1da2ac4cb05ccc1b5c1c2a41463156e3d083684",
+      "registryHash": "2d8119594e21abd62ab115c3b0ddc78a7c15cbafef7ceee6d863ac36aacd5454"
     }
   ]
 }

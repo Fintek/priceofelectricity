@@ -1,0 +1,187 @@
+{
+  "generatedAt": "2026-03-11T00:00:00.000Z",
+  "scope": "full-structural-audit",
+  "issues": [
+    {
+      "errorId": "E-001",
+      "severity": "high",
+      "category": "metadata",
+      "affectedScope": "sitewide",
+      "affectedPaths": [
+        "public/knowledge/search-index.json",
+        "scripts/knowledge-build.ts",
+        "src/lib/site.ts"
+      ],
+      "description": "Generated search-index entities use localhost canonical URLs in current build artifacts.",
+      "observedBehavior": "Sample entities show canonicalUrl values like http://localhost:3000/... in machine-readable output.",
+      "expectedBehavior": "Canonical URLs should use production site origin in generated discovery/search artifacts.",
+      "probableRootCause": "Build-time canonical origin resolution falls back to localhost when production site URL is not enforced.",
+      "deterministicRisk": "Environment-dependent output can differ between local/CI and production builds.",
+      "recommendedFixType": "config-fix",
+      "safeToAutoFixNow": false
+    },
+    {
+      "errorId": "E-002",
+      "severity": "medium",
+      "category": "deterministic-risk",
+      "affectedScope": "sitewide",
+      "affectedPaths": [
+        "src/app/sitemap.ts"
+      ],
+      "description": "Sitemap uses new Date() for many lastModified values.",
+      "observedBehavior": "Sitemap metadata changes every build even when source content may not have changed.",
+      "expectedBehavior": "Stable timestamps should be derived from content/data freshness where possible.",
+      "probableRootCause": "Timestamp convenience pattern used broadly in sitemap generation.",
+      "deterministicRisk": "Repeated churn can affect crawl signaling and reviewability.",
+      "recommendedFixType": "targeted-patch",
+      "safeToAutoFixNow": false
+    },
+    {
+      "errorId": "E-003",
+      "severity": "medium",
+      "category": "build",
+      "affectedScope": "build-system",
+      "affectedPaths": [
+        "src/app/electricity-usage-cost/[kwh]/[state]/page.tsx",
+        "src/app/sitemap.ts",
+        "src/lib/longtail/internalLinks.ts"
+      ],
+      "description": "Lint warnings are present in verify:vercel baseline.",
+      "observedBehavior": "verify:vercel reports unused vars/constants (5 warnings).",
+      "expectedBehavior": "Verification baseline should be warning-clean for clearer regression signal.",
+      "probableRootCause": "Obsolete constants left after route/sitemap rollout changes.",
+      "deterministicRisk": "Warning noise can hide future regressions.",
+      "recommendedFixType": "guardrail-fix",
+      "safeToAutoFixNow": true
+    },
+    {
+      "errorId": "E-004",
+      "severity": "medium",
+      "category": "routing",
+      "affectedScope": "route-family",
+      "affectedPaths": [
+        "src/app/compare/[pair]/page.tsx",
+        "src/app/sitemap.ts"
+      ],
+      "description": "Legacy compare route relies on static pair generation set and redirects to canonical compare pages.",
+      "observedBehavior": "Legacy pair validity depends on static params universe, requiring sync with sitemap eligibility.",
+      "expectedBehavior": "Pair eligibility should have a single source of truth reused by route and sitemap.",
+      "probableRootCause": "Legacy route retained for redirects while canonical route uses knowledge-backed pair set.",
+      "deterministicRisk": "Divergence risk if either pair source changes independently.",
+      "recommendedFixType": "architecture-review",
+      "safeToAutoFixNow": false
+    },
+    {
+      "errorId": "E-005",
+      "severity": "medium",
+      "category": "sitemap",
+      "affectedScope": "route-family",
+      "affectedPaths": [
+        "src/app/sitemap.ts",
+        "src/app/compare/[pair]/page.tsx",
+        "public/knowledge/compare/pairs.json"
+      ],
+      "description": "Compare sitemap correctness currently depends on intersection logic and duplicated generation assumptions.",
+      "observedBehavior": "Sitemap now resolves correctly, but implementation is duplicated and regression-prone.",
+      "expectedBehavior": "Shared helper should define eligible compare pairs once.",
+      "probableRootCause": "Incremental fixes introduced local eligibility logic in sitemap.",
+      "deterministicRisk": "Future edits may reintroduce invalid compare URLs.",
+      "recommendedFixType": "targeted-patch",
+      "safeToAutoFixNow": false
+    },
+    {
+      "errorId": "E-006",
+      "severity": "high",
+      "category": "canonical",
+      "affectedScope": "sitewide",
+      "affectedPaths": [
+        "src/app/compare/[pair]/page.tsx",
+        "src/app/electricity-cost-comparison/[pair]/page.tsx",
+        "src/app/sitemap.ts"
+      ],
+      "description": "Canonical strategy spans legacy and canonical families with redirect dependencies.",
+      "observedBehavior": "Legacy routes redirect cleanly now, but intent ownership is spread across multiple families.",
+      "expectedBehavior": "Canonical ownership and support-route behavior should remain centrally governed.",
+      "probableRootCause": "Historical layering of legacy route surfaces and newer canonical families.",
+      "deterministicRisk": "Future route edits can create canonical drift or duplicate intent.",
+      "recommendedFixType": "architecture-review",
+      "safeToAutoFixNow": false
+    },
+    {
+      "errorId": "E-007",
+      "severity": "low",
+      "category": "internal-linking",
+      "affectedScope": "sitewide",
+      "affectedPaths": [
+        "src/app/site-map/page.tsx",
+        "src/app/page-index/page.tsx",
+        "src/app/discovery-graph/page.tsx",
+        "src/app/entity-registry/page.tsx",
+        "src/app/electricity-data/page.tsx",
+        "src/app/knowledge/page.tsx"
+      ],
+      "description": "Discovery-page navigation is heavily manual and susceptible to drift.",
+      "observedBehavior": "Large hardcoded link lists require continuous manual consistency updates.",
+      "expectedBehavior": "Either generated registries or stronger automated checks for curated links.",
+      "probableRootCause": "Manual discovery UX curation across multiple pages.",
+      "deterministicRisk": "Low-to-moderate link drift risk over time.",
+      "recommendedFixType": "guardrail-fix",
+      "safeToAutoFixNow": true
+    },
+    {
+      "errorId": "E-008",
+      "severity": "low",
+      "category": "content-integrity",
+      "affectedScope": "single-page",
+      "affectedPaths": [
+        "src/app/discovery-graph/page.tsx",
+        "public/discovery-graph.json"
+      ],
+      "description": "Discovery graph page positioning may imply fuller graph coverage than current lightweight JSON provides.",
+      "observedBehavior": "Public graph is concise/curated while page language presents broad relationship mapping.",
+      "expectedBehavior": "Scope language should explicitly frame graph as curated subset unless full graph is provided.",
+      "probableRootCause": "Content framing not updated with current graph footprint.",
+      "deterministicRisk": "Low (interpretation/expectation mismatch).",
+      "recommendedFixType": "guardrail-fix",
+      "safeToAutoFixNow": true
+    },
+    {
+      "errorId": "E-009",
+      "severity": "medium",
+      "category": "data",
+      "affectedScope": "build-system",
+      "affectedPaths": [
+        "public/knowledge",
+        "public/discovery-graph.json",
+        "public/graph.json",
+        "public/release.json",
+        "scripts/knowledge-build.ts",
+        "scripts/release-generate.ts"
+      ],
+      "description": "Regenerated deterministic assets create very large diffs and review burden.",
+      "observedBehavior": "Routine verify/build regenerates many public assets and churn-heavy outputs.",
+      "expectedBehavior": "Review-friendly, intentionally scoped generated-output updates with clear provenance.",
+      "probableRootCause": "Broad regeneration scope and timestamp/version updates in generated artifacts.",
+      "deterministicRisk": "Medium (change noise increases release risk).",
+      "recommendedFixType": "content-regeneration",
+      "safeToAutoFixNow": false
+    },
+    {
+      "errorId": "E-010",
+      "severity": "low",
+      "category": "deterministic-risk",
+      "affectedScope": "sitewide",
+      "affectedPaths": [
+        "src/app/layout.tsx"
+      ],
+      "description": "Global external analytics script is always included in layout head.",
+      "observedBehavior": "Runtime behavior depends on third-party availability for all pages.",
+      "expectedBehavior": "Explicit policy/environment control for optional external runtime dependencies.",
+      "probableRootCause": "Unconditional script include in layout.",
+      "deterministicRisk": "Low for build determinism, moderate for runtime variance.",
+      "recommendedFixType": "architecture-review",
+      "safeToAutoFixNow": false
+    }
+  ]
+}
+

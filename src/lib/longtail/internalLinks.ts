@@ -1,13 +1,15 @@
 import { existsSync } from "node:fs";
 import path from "node:path";
 import { loadElectricityComparisonPairs } from "@/lib/knowledge/loadKnowledgePage";
-import { SUPPORTED_INDUSTRY_SLUGS, type IndustrySlug } from "@/lib/longtail/industryConfig";
+import { type IndustrySlug } from "@/lib/longtail/industryConfig";
 import {
+  getActiveCitiesForState,
+  getActiveApplianceSlugs,
   getActiveIndustrySlugs,
   getActiveUsageKwhTiers,
   isLongtailFamilyActive,
 } from "@/lib/longtail/rollout";
-import { LONGTAIL_USAGE_KWH_VALUES, type LongtailStateData, slugToName } from "@/lib/longtail/stateLongtail";
+import { type LongtailStateData, slugToName } from "@/lib/longtail/stateLongtail";
 
 export type LongtailPageType =
   | "state-price"
@@ -45,10 +47,12 @@ const ROUTE_FILE_CANDIDATES = {
   history: [path.join("src", "app", "electricity-price-history", "[slug]", "page.tsx")],
   calculator: [path.join("src", "app", "electricity-cost-calculator", "[slug]", "page.tsx")],
   coreCost: [path.join("src", "app", "electricity-cost", "[slug]", "page.tsx")],
+  cityCost: [path.join("src", "app", "electricity-cost", "[slug]", "[city]", "page.tsx")],
   authorityKnowledge: [path.join("src", "app", "knowledge", "state", "[slug]", "page.tsx")],
   providerPage: [path.join("src", "app", "electricity-providers", "[slug]", "page.tsx")],
   usageInfoHub: [path.join("src", "app", "electricity-usage", "page.tsx")],
   usageInfoState: [path.join("src", "app", "electricity-usage", "[state]", "page.tsx")],
+  billEstimatorState: [path.join("src", "app", "electricity-bill-estimator", "[slug]", "page.tsx")],
   compareHub: [path.join("src", "app", "compare", "page.tsx")],
   compareCostFamily: [path.join("src", "app", "electricity-cost-comparison", "[pair]", "page.tsx")],
   inflation: [path.join("src", "app", "electricity-inflation", "[slug]", "page.tsx")],
@@ -64,6 +68,10 @@ const ROUTE_FILE_CANDIDATES = {
   hubIndustry: [path.join("src", "app", "electricity-hubs", "industry", "page.tsx")],
   hubIndustryDetail: [path.join("src", "app", "electricity-hubs", "industry", "[industry]", "page.tsx")],
   hubComparisons: [path.join("src", "app", "electricity-hubs", "comparisons", "page.tsx")],
+  energyComparisonHub: [path.join("src", "app", "energy-comparison", "page.tsx")],
+  energyComparisonStates: [path.join("src", "app", "energy-comparison", "states", "page.tsx")],
+  energyComparisonUsage: [path.join("src", "app", "energy-comparison", "usage", "page.tsx")],
+  energyComparisonAppliances: [path.join("src", "app", "energy-comparison", "appliances", "page.tsx")],
 } as const;
 
 function hasRoute(routeKey: keyof typeof ROUTE_FILE_CANDIDATES): boolean {
@@ -125,6 +133,19 @@ function buildStateCoreSection(stateData: LongtailStateData, pageType: LongtailP
       description: "State-level cost, affordability, and value overview",
     });
   }
+  if (hasRoute("cityCost")) {
+    const firstActiveCity = getActiveCitiesForState(state)[0];
+    if (firstActiveCity) {
+      links.push({
+        href: `/electricity-cost/${state}/${firstActiveCity.slug}`,
+        label: selectVariant(`${state}-${pageType}-city-cost`, [
+          `Electricity cost in ${firstActiveCity.name}, ${stateName}`,
+          `${firstActiveCity.name} electricity estimate (${stateName})`,
+        ]),
+        description: "Rollout-gated city electricity context page with modeled estimate disclosure",
+      });
+    }
+  }
   if (hasRoute("averageBill")) {
     links.push({
       href: `/average-electricity-bill/${state}`,
@@ -133,6 +154,16 @@ function buildStateCoreSection(stateData: LongtailStateData, pageType: LongtailP
         `${stateName} monthly electricity bill estimate`,
       ]),
       description: "Bill-focused context for household usage",
+    });
+  }
+  if (hasRoute("billEstimatorState")) {
+    links.push({
+      href: `/electricity-bill-estimator/${state}`,
+      label: selectVariant(`${state}-${pageType}-bill-estimator`, [
+        `${stateName} household bill estimator`,
+        `Electric bill estimator scenarios in ${stateName}`,
+      ]),
+      description: "Deterministic household-profile bill scenarios",
     });
   }
   if (hasRoute("authorityKnowledge")) {
@@ -171,6 +202,23 @@ function buildStateCoreSection(stateData: LongtailStateData, pageType: LongtailP
       label: "National electricity usage hub",
       description: "Household usage benchmarks, tiers, and usage intelligence pathways",
     });
+  }
+  if (hasRoute("hubIndex")) {
+    links.push({
+      href: "/electricity-hubs",
+      label: "Electricity discovery hubs",
+      description: "Top-level discovery hub connecting canonical state, usage, and comparison clusters",
+    });
+  }
+  const topApplianceSlugs = getActiveApplianceSlugs().slice(0, 2);
+  if (topApplianceSlugs.length > 0) {
+    for (const applianceSlug of topApplianceSlugs) {
+      links.push({
+        href: `/cost-to-run/${applianceSlug}/${state}`,
+        label: `${slugToName(applianceSlug.replace(/-/g, " "))} cost in ${stateName}`,
+        description: "Canonical appliance operating cost page for this state",
+      });
+    }
   }
 
   return links;
@@ -259,6 +307,51 @@ function buildUsageSection(stateData: LongtailStateData, usageKwh?: number): Lon
   return links;
 }
 
+function buildApplianceEstimatorPathwaySection(stateData: LongtailStateData): LongtailRelatedLinkItem[] {
+  const state = stateData.slug;
+  const stateName = stateData.name;
+  const links: LongtailRelatedLinkItem[] = [];
+  const applianceSlugs = getActiveApplianceSlugs().slice(0, 3);
+
+  for (const applianceSlug of applianceSlugs) {
+    links.push({
+      href: `/cost-to-run/${applianceSlug}/${state}`,
+      label: `${slugToName(applianceSlug.replace(/-/g, " "))} cost in ${stateName}`,
+      description: "Canonical appliance operating-cost page for this state",
+    });
+    if (hasRoute("calculator")) {
+      links.push({
+        href: `/electricity-cost-calculator/${state}/${applianceSlug}`,
+        label: `${slugToName(applianceSlug.replace(/-/g, " "))} calculator in ${stateName}`,
+        description: "Calculator-intent scenario page for this appliance",
+      });
+    }
+  }
+
+  if (hasRoute("billEstimatorState")) {
+    links.push({
+      href: `/electricity-bill-estimator/${state}`,
+      label: `${stateName} bill estimator profiles`,
+      description: "Household-profile estimator scenarios linked to appliance pathways",
+    });
+    links.push({
+      href: `/electricity-bill-estimator/${state}/medium-home`,
+      label: `${stateName} medium-home bill scenario`,
+      description: "Representative estimator profile for appliance-to-bill pathway exploration",
+    });
+  }
+
+  if (hasRoute("energyComparisonHub")) {
+    links.push({
+      href: "/energy-comparison/appliances",
+      label: "Appliance comparison discovery slice",
+      description: "Curated appliance and estimator comparison pathways",
+    });
+  }
+
+  return links;
+}
+
 async function buildComparisonSection(stateData: LongtailStateData): Promise<LongtailRelatedLinkItem[]> {
   const state = stateData.slug;
   const stateName = stateData.name;
@@ -322,6 +415,8 @@ function buildHubSection(
   industry?: IndustrySlug,
 ): LongtailRelatedLinkItem[] {
   const links: LongtailRelatedLinkItem[] = [];
+  const state = stateData.slug;
+  const stateName = stateData.name;
 
   if (hasRoute("hubStateDetail")) {
     links.push({
@@ -336,6 +431,30 @@ function buildHubSection(
       href: "/electricity-hubs/scenarios",
       label: "Electricity cost scenario hub",
       description: "Entry point for residential and industry scenario pages",
+    });
+  }
+
+  if (hasRoute("coreCost")) {
+    links.push({
+      href: `/electricity-cost/${state}`,
+      label: `${stateName} electricity cost authority`,
+      description: "Canonical state electricity cost cluster page",
+    });
+  }
+
+  if (hasRoute("averageBill")) {
+    links.push({
+      href: `/average-electricity-bill/${state}`,
+      label: `${stateName} average electricity bill benchmark`,
+      description: "Canonical benchmark bill cluster page",
+    });
+  }
+
+  if (hasRoute("billEstimatorState")) {
+    links.push({
+      href: `/electricity-bill-estimator/${state}`,
+      label: `${stateName} electricity bill estimator`,
+      description: "Canonical estimator cluster page",
     });
   }
 
@@ -360,6 +479,46 @@ function buildHubSection(
       href: "/electricity-hubs/comparisons",
       label: "Electricity comparison hub",
       description: "Explore state-vs-state electricity discovery pathways",
+    });
+  }
+  if (hasRoute("energyComparisonHub")) {
+    links.push({
+      href: "/energy-comparison",
+      label: "Energy comparison hub",
+      description: "Curated discovery across state, usage, appliance, and city comparison pathways",
+    });
+  }
+  if (hasRoute("energyComparisonStates")) {
+    links.push({
+      href: "/energy-comparison/states",
+      label: "State comparison slice",
+      description: "Curated state-vs-state links into canonical comparison pages",
+    });
+  }
+  if (hasRoute("energyComparisonUsage")) {
+    links.push({
+      href: "/energy-comparison/usage",
+      label: "Usage comparison slice",
+      description: "Curated fixed-kWh comparisons across key states",
+    });
+  }
+  if (hasRoute("energyComparisonAppliances")) {
+    links.push({
+      href: "/energy-comparison/appliances",
+      label: "Appliance comparison slice",
+      description: "Curated appliance-state and pilot appliance-city discovery routes",
+    });
+  }
+  if (hasRoute("providerPage")) {
+    links.push({
+      href: "/electricity-providers",
+      label: "Electricity provider marketplace index",
+      description: "State-by-state provider discovery connected to canonical cost and comparison clusters",
+    });
+    links.push({
+      href: `/electricity-providers/${state}`,
+      label: `${stateName} provider marketplace context`,
+      description: "State-scoped provider discovery page with market-structure context",
     });
   }
 
@@ -416,6 +575,17 @@ export async function buildLongtailLinkSections({
     sections.push({
       title: "More usage-based electricity cost pages",
       links: usageLinks,
+    });
+  }
+
+  const applianceEstimatorLinks = capLinks(
+    buildApplianceEstimatorPathwaySection(stateData),
+    maxLinksPerSection,
+  );
+  if (applianceEstimatorLinks.length > 0) {
+    sections.push({
+      title: "Appliance and estimator pathways",
+      links: applianceEstimatorLinks,
     });
   }
 

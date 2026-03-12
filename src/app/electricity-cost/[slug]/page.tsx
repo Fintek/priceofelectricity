@@ -6,6 +6,7 @@ import {
   loadEntityIndex,
   loadInsights,
 } from "@/lib/knowledge/loadKnowledgePage";
+import { getActiveCitiesForState } from "@/lib/longtail/rollout";
 import { buildMetadata } from "@/lib/seo/metadata";
 import { buildBreadcrumbListJsonLd, buildWebPageJsonLd } from "@/lib/seo/jsonld";
 import JsonLdScript from "@/app/components/seo/JsonLdScript";
@@ -115,6 +116,7 @@ export default async function ElectricityCostStatePage({
   const comparison = derived?.comparison;
   const regionRef = (statePage.data as { regionRef?: { id: string; name: string; href: string } })?.regionRef;
   const compareLinks = (statePage.data as { compareLinks?: Array<{ pairSlug: string; title: string; url: string }> })?.compareLinks ?? [];
+  const activeCities = getActiveCitiesForState(slug).slice(0, 8);
 
   const canonicalPath = `/electricity-cost/${slug}`;
 
@@ -401,6 +403,25 @@ export default async function ElectricityCostStatePage({
             )}
           </ul>
         </section>
+
+        {activeCities.length > 0 && (
+          <section style={{ marginBottom: 32 }}>
+            <h2 style={{ fontSize: 20, marginBottom: 12 }}>Rollout-enabled city electricity pages</h2>
+            <p style={{ marginTop: 0, maxWidth: "70ch", lineHeight: 1.7 }}>
+              These city pages provide deterministic city-level estimate context and methodology disclosure. They are
+              supplemental to the canonical state benchmark and do not replace utility tariff quotes.
+            </p>
+            <ul style={{ margin: 0, paddingLeft: 20, lineHeight: 1.8 }}>
+              {activeCities.map((city) => (
+                <li key={city.slug}>
+                  <Link href={`/electricity-cost/${slug}/${city.slug}`}>
+                    Electricity cost in {city.name}, {stateName}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </section>
+        )}
 
         <ExploreMore
           title="Related electricity pages"

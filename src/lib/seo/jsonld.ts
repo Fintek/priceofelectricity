@@ -102,6 +102,23 @@ export type BreadcrumbItem = {
   url: string;
 };
 
+export type FaqItem = {
+  question: string;
+  answer: string;
+};
+
+export type ItemListEntry = {
+  name: string;
+  url: string;
+  description?: string;
+};
+
+export type CommercialPathwayItemEntry = {
+  name: string;
+  url: string;
+  pathwayType?: "provider-marketplace" | "state-cluster" | "comparison-cluster" | "estimator-cluster" | "offers";
+};
+
 /**
  * Build schema.org BreadcrumbList JSON-LD object.
  */
@@ -117,4 +134,57 @@ export function buildBreadcrumbListJsonLd(items: BreadcrumbItem[]): Record<strin
       item: item.url.startsWith("http") ? item.url : `${base}${item.url.startsWith("/") ? "" : "/"}${item.url}`,
     })),
   };
+}
+
+/**
+ * Build schema.org FAQPage JSON-LD object.
+ */
+export function buildFaqPageJsonLd(items: FaqItem[]): Record<string, unknown> {
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: items.map((item) => ({
+      "@type": "Question",
+      name: item.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: item.answer,
+      },
+    })),
+  };
+}
+
+/**
+ * Build schema.org ItemList JSON-LD object.
+ */
+export function buildItemListJsonLd(name: string, items: ItemListEntry[]): Record<string, unknown> {
+  return {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name,
+    itemListElement: items.map((item, i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      url: ensureAbsoluteUrl(item.url),
+      name: item.name,
+      ...(item.description ? { description: item.description } : {}),
+    })),
+  };
+}
+
+/**
+ * Build ItemList JSON-LD for informational commercial discovery pathways.
+ */
+export function buildCommercialPathwayItemListJsonLd(
+  name: string,
+  items: CommercialPathwayItemEntry[],
+): Record<string, unknown> {
+  const typedItems: ItemListEntry[] = items.map((item) => ({
+    name: item.name,
+    url: item.url,
+    description: item.pathwayType
+      ? `Informational ${item.pathwayType.replace(/-/g, " ")} pathway`
+      : "Informational commercial discovery pathway",
+  }));
+  return buildItemListJsonLd(name, typedItems);
 }

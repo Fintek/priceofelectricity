@@ -3,42 +3,13 @@ import Link from "next/link";
 import { notFound, permanentRedirect } from "next/navigation";
 import { STATES } from "@/data/states";
 import { normalizeSlug } from "@/data/slug";
+import { getLegacyCompareStaticPairs } from "@/lib/compare/legacyComparePairs";
 
 const BASE_URL = "https://priceofelectricity.com";
 export const dynamic = "force-static";
 export const revalidate = 2592000;
 
 type PairParams = Promise<{ pair: string }>;
-
-function getTopHighAndLowSlugs() {
-  const entries = Object.entries(STATES);
-  const topHigh = [...entries]
-    .sort((a, b) => b[1].avgRateCentsPerKwh - a[1].avgRateCentsPerKwh)
-    .slice(0, 10)
-    .map(([slug]) => slug);
-  const topLow = [...entries]
-    .sort((a, b) => a[1].avgRateCentsPerKwh - b[1].avgRateCentsPerKwh)
-    .slice(0, 10)
-    .map(([slug]) => slug);
-  return { topHigh, topLow };
-}
-
-function getGeneratedPairs() {
-  const { topHigh, topLow } = getTopHighAndLowSlugs();
-  const pairs = new Set<string>();
-
-  for (const highSlug of topHigh) {
-    for (const lowSlug of topLow) {
-      if (highSlug === lowSlug) {
-        continue;
-      }
-      const [a, b] = [highSlug, lowSlug].sort((x, y) => x.localeCompare(y));
-      pairs.add(`${a}-vs-${b}`);
-    }
-  }
-
-  return [...pairs].sort((a, b) => a.localeCompare(b));
-}
 
 function parsePair(rawPair: string) {
   const parts = rawPair.split("-vs-");
@@ -60,7 +31,7 @@ function parsePair(rawPair: string) {
 }
 
 export function generateStaticParams() {
-  return getGeneratedPairs().map((pair) => ({ pair }));
+  return getLegacyCompareStaticPairs().map((pair) => ({ pair }));
 }
 
 export async function generateMetadata({

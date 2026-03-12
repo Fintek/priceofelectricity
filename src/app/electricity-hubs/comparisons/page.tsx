@@ -2,6 +2,7 @@ import JsonLdScript from "@/app/components/seo/JsonLdScript";
 import Disclaimers from "@/app/components/policy/Disclaimers";
 import StatusFooter from "@/components/common/StatusFooter";
 import TrafficHubTemplate from "@/components/traffic-hubs/TrafficHubTemplate";
+import CommercialPlacement from "@/components/monetization/CommercialPlacement";
 import { getRelease } from "@/lib/knowledge/fetch";
 import {
   buildFeaturedComparisonCards,
@@ -83,6 +84,13 @@ export default async function ElectricityComparisonHubPage() {
                 description: "Directory of state-specific electricity hubs for deeper comparison pathways.",
                 eyebrow: "Traffic hub",
               },
+              {
+                href: "/electricity-providers",
+                title: "Provider marketplace discovery",
+                description:
+                  "State-by-state provider context that supports comparison research without replacing canonical cost clusters.",
+                eyebrow: "Marketplace discovery",
+              },
             ],
           },
           {
@@ -102,6 +110,14 @@ export default async function ElectricityComparisonHubPage() {
           },
         ]}
       />
+      <div className="container">
+        <CommercialPlacement
+          pageFamily="energy-comparison-hub-pages"
+          context={{
+            pageType: "hub-comparisons",
+          }}
+        />
+      </div>
       <div className="container">
         <Disclaimers disclaimerRefs={["general-site"]} />
         <StatusFooter release={await getRelease()} />

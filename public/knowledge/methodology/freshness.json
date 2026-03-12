@@ -6,9 +6,9 @@
     "slug": "freshness",
     "title": "Freshness Scoring Methodology",
     "description": "Methodology for data freshness status and recency labels.",
-    "canonicalUrl": "http://localhost:3000/knowledge/methodology/freshness",
-    "jsonUrl": "http://localhost:3000/knowledge/methodology/freshness.json",
-    "updatedAt": "2026-03-10T18:46:48.543Z",
+    "canonicalUrl": "https://priceofelectricity.com/knowledge/methodology/freshness",
+    "jsonUrl": "https://priceofelectricity.com/knowledge/methodology/freshness.json",
+    "updatedAt": "2025-12-15T00:00:00.000Z",
     "sourceVersion": "v2",
     "temporalContext": {
       "sourceVersion": "v2",
@@ -18,10 +18,10 @@
       {
         "id": "poe-methodology-freshness",
         "sourceName": "PriceOfElectricity.com methodology: Freshness Scoring",
-        "sourceUrl": "http://localhost:3000/methodology/freshness-scoring",
+        "sourceUrl": "https://priceofelectricity.com/methodology/freshness-scoring",
         "publisher": "PriceOfElectricity.com",
         "license": "Site content license",
-        "retrievedAt": "2026-03-10T18:46:48.543Z"
+        "retrievedAt": "2025-12-15T00:00:00.000Z"
       }
     ],
     "fieldProvenance": [
@@ -59,8 +59,8 @@
     "citations": [
       {
         "sourceName": "PriceOfElectricity.com methodology: Freshness Scoring",
-        "sourceUrl": "http://localhost:3000/methodology/freshness-scoring",
-        "retrievedAt": "2026-03-10T18:46:48.543Z"
+        "sourceUrl": "https://priceofelectricity.com/methodology/freshness-scoring",
+        "retrievedAt": "2025-12-15T00:00:00.000Z"
       }
     ],
     "llmHints": {
@@ -76,14 +76,14 @@
     },
     "freshness": {
       "datasetUpdatedAt": "2025-12-15T00:00:00.000Z",
-      "computedAt": "2026-03-10T18:46:48.543Z",
-      "status": "aging",
-      "ageDays": 85,
+      "computedAt": "2025-12-15T00:00:00.000Z",
+      "status": "fresh",
+      "ageDays": 0,
       "methodology": {
         "id": "freshness",
         "version": "1.0",
-        "url": "http://localhost:3000/knowledge/methodology/freshness.json",
-        "canonicalUrl": "http://localhost:3000/knowledge/methodology/freshness"
+        "url": "https://priceofelectricity.com/knowledge/methodology/freshness.json",
+        "canonicalUrl": "https://priceofelectricity.com/knowledge/methodology/freshness"
       }
     },
     "excerpt": "Freshness Scoring Methodology. Defines how freshness status is computed from inputs and produces derived fields used across state and ranking pages.",
@@ -93,17 +93,17 @@
     "methodology": {
       "id": "freshness",
       "version": "1.0",
-      "lastReviewedAt": "2026-03-10",
+      "lastReviewedAt": "2025-12-15",
       "relatedDerivedFields": [
         "data.derived.freshnessStatus"
       ]
     },
-    "qualityScore": 90,
-    "contentHash": "00b0d34313db50c058af03b7b366135b4b4224bbbb0e3104559dc0be0bb02710",
+    "qualityScore": 100,
+    "contentHash": "c8cd9f1f35216261efd1a8581886ecbe927ba78be2914893f79740ac083060c4",
     "integrity": {
-      "contentHash": "00b0d34313db50c058af03b7b366135b4b4224bbbb0e3104559dc0be0bb02710",
+      "contentHash": "c8cd9f1f35216261efd1a8581886ecbe927ba78be2914893f79740ac083060c4",
       "integrityAlgorithm": "sha256",
-      "signedAtBuild": "2026-03-10T18:46:48.543Z"
+      "signedAtBuild": "2025-12-15T00:00:00.000Z"
     }
   },
   "data": {
@@ -122,8 +122,8 @@
       "Cadence assumptions may vary by external publisher."
     ],
     "relatedInternalUrls": [
-      "http://localhost:3000/knowledge/methodology/freshness",
-      "http://localhost:3000/data-policy"
+      "https://priceofelectricity.com/knowledge/methodology/freshness",
+      "https://priceofelectricity.com/data-policy"
     ],
     "relatedEntities": {
       "national": true
