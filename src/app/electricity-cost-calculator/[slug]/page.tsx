@@ -18,12 +18,10 @@ import { buildBreadcrumbListJsonLd, buildWebPageJsonLd } from "@/lib/seo/jsonld"
 
 const TYPICAL_MONTHLY_KWH = 900;
 
-export const dynamic = "force-static";
+export const dynamic = "force-dynamic";
 export const revalidate = 86400;
 
-export async function generateStaticParams() {
-  return getCalculatorStateStaticParams();
-}
+
 
 export async function generateMetadata({
   params,
