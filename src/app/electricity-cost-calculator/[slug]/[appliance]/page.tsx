@@ -34,9 +34,7 @@ export const dynamic = "force-static";
 export const dynamicParams = false;
 export const revalidate = 86400;
 
-export async function generateStaticParams() {
-  return getCalculatorApplianceStaticParams();
-}
+
 
 export async function generateMetadata({
   params,

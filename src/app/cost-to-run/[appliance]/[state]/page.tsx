@@ -28,13 +28,10 @@ import { formatRate, formatUsd, loadLongtailStateData } from "@/lib/longtail/sta
 import { buildMetadata } from "@/lib/seo/metadata";
 import { buildBreadcrumbListJsonLd, buildDatasetJsonLd, buildFaqPageJsonLd, buildWebPageJsonLd } from "@/lib/seo/jsonld";
 
-export const dynamic = "force-static";
+export const dynamic = "force-dynamic";
 export const dynamicParams = false;
 export const revalidate = 86400;
 
-export async function generateStaticParams() {
-  return getApplianceLongtailStaticParams();
-}
 
 function getIndefiniteArticle(label: string): "a" | "an" {
   return /^[aeiou]/i.test(label) ? "an" : "a";
