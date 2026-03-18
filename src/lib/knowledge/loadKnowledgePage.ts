@@ -1,5 +1,10 @@
 import { readFile } from "node:fs/promises";
 import path from "node:path";
+import {
+  emitKnowledgeArtifactAccess,
+  elapsedMs,
+  startRuntimeTimer,
+} from "@/lib/telemetry/runtime";
 
 const KNOWLEDGE_ROOT = path.join(process.cwd(), "public", "knowledge");
 
@@ -39,6 +44,7 @@ export type KnowledgePageData = {
 export async function loadKnowledgePage(
   type: "national" | "state" | "methodology" | "rankings" | "vertical",
   slug: string,
+  options?: { routeId?: string },
 ): Promise<KnowledgePageData | null> {
   let relPath: string;
   switch (type) {
@@ -62,8 +68,21 @@ export async function loadKnowledgePage(
   }
   const fullPath = path.join(KNOWLEDGE_ROOT, relPath);
   try {
+    const readStartedAt = startRuntimeTimer();
     const raw = await readFile(fullPath, "utf8");
+    const readMs = elapsedMs(readStartedAt);
+    const parseStartedAt = startRuntimeTimer();
     const parsed = JSON.parse(raw) as { meta: KnowledgePageData["meta"]; data: Record<string, unknown> };
+    const parseMs = elapsedMs(parseStartedAt);
+    const artifactPath = `knowledge/${relPath.replace(/\\/g, "/")}`;
+    emitKnowledgeArtifactAccess({
+      artifactPath,
+      routeId: options?.routeId,
+      readMs,
+      parseMs,
+      totalMs: readMs + parseMs,
+      bytes: Buffer.byteLength(raw, "utf8"),
+    });
     return {
       meta: parsed.meta,
       data: parsed.data,

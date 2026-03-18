@@ -467,7 +467,7 @@
       "rankingId": "value-score",
       "rankingTitle": "Value Score Rankings",
       "state": "Idaho",
-      "value": 100,
+      "value": 97,
       "displayValue": null,
       "direction": "desc",
       "metricId": "valueScore"
@@ -476,7 +476,7 @@
       "rankingId": "value-score",
       "rankingTitle": "Value Score Rankings",
       "state": "North Dakota",
-      "value": 99,
+      "value": 96,
       "displayValue": null,
       "direction": "desc",
       "metricId": "valueScore"
@@ -485,7 +485,7 @@
       "rankingId": "value-score",
       "rankingTitle": "Value Score Rankings",
       "state": "Louisiana",
-      "value": 98,
+      "value": 95,
       "displayValue": null,
       "direction": "desc",
       "metricId": "valueScore"
@@ -494,7 +494,7 @@
       "rankingId": "value-score",
       "rankingTitle": "Value Score Rankings",
       "state": "Nebraska",
-      "value": 98,
+      "value": 95,
       "displayValue": null,
       "direction": "desc",
       "metricId": "valueScore"
@@ -503,7 +503,7 @@
       "rankingId": "value-score",
       "rankingTitle": "Value Score Rankings",
       "state": "Arkansas",
-      "value": 96,
+      "value": 93,
       "displayValue": null,
       "direction": "desc",
       "metricId": "valueScore"
@@ -512,7 +512,7 @@
       "rankingId": "value-score",
       "rankingTitle": "Value Score Rankings",
       "state": "Oklahoma",
-      "value": 96,
+      "value": 93,
       "displayValue": null,
       "direction": "desc",
       "metricId": "valueScore"
@@ -521,7 +521,7 @@
       "rankingId": "value-score",
       "rankingTitle": "Value Score Rankings",
       "state": "Utah",
-      "value": 96,
+      "value": 93,
       "displayValue": null,
       "direction": "desc",
       "metricId": "valueScore"
@@ -530,7 +530,7 @@
       "rankingId": "value-score",
       "rankingTitle": "Value Score Rankings",
       "state": "Washington",
-      "value": 96,
+      "value": 93,
       "displayValue": null,
       "direction": "desc",
       "metricId": "valueScore"
@@ -539,87 +539,6 @@
       "rankingId": "value-score",
       "rankingTitle": "Value Score Rankings",
       "state": "Iowa",
-      "value": 95,
-      "displayValue": null,
-      "direction": "desc",
-      "metricId": "valueScore"
-    },
-    {
-      "rankingId": "value-score",
-      "rankingTitle": "Value Score Rankings",
-      "state": "Kentucky",
-      "value": 95,
-      "displayValue": null,
-      "direction": "desc",
-      "metricId": "valueScore"
-    },
-    {
-      "rankingId": "value-score",
-      "rankingTitle": "Value Score Rankings",
-      "state": "Montana",
-      "value": 95,
-      "displayValue": null,
-      "direction": "desc",
-      "metricId": "valueScore"
-    },
-    {
-      "rankingId": "value-score",
-      "rankingTitle": "Value Score Rankings",
-      "state": "Nevada",
-      "value": 95,
-      "displayValue": null,
-      "direction": "desc",
-      "metricId": "valueScore"
-    },
-    {
-      "rankingId": "value-score",
-      "rankingTitle": "Value Score Rankings",
-      "state": "South Dakota",
-      "value": 95,
-      "displayValue": null,
-      "direction": "desc",
-      "metricId": "valueScore"
-    },
-    {
-      "rankingId": "value-score",
-      "rankingTitle": "Value Score Rankings",
-      "state": "Tennessee",
-      "value": 95,
-      "displayValue": null,
-      "direction": "desc",
-      "metricId": "valueScore"
-    },
-    {
-      "rankingId": "value-score",
-      "rankingTitle": "Value Score Rankings",
-      "state": "Missouri",
-      "value": 94,
-      "displayValue": null,
-      "direction": "desc",
-      "metricId": "valueScore"
-    },
-    {
-      "rankingId": "value-score",
-      "rankingTitle": "Value Score Rankings",
-      "state": "Mississippi",
-      "value": 93,
-      "displayValue": null,
-      "direction": "desc",
-      "metricId": "valueScore"
-    },
-    {
-      "rankingId": "value-score",
-      "rankingTitle": "Value Score Rankings",
-      "state": "Wyoming",
-      "value": 93,
-      "displayValue": null,
-      "direction": "desc",
-      "metricId": "valueScore"
-    },
-    {
-      "rankingId": "value-score",
-      "rankingTitle": "Value Score Rankings",
-      "state": "North Carolina",
       "value": 92,
       "displayValue": null,
       "direction": "desc",
@@ -628,7 +547,52 @@
     {
       "rankingId": "value-score",
       "rankingTitle": "Value Score Rankings",
-      "state": "Kansas",
+      "state": "Kentucky",
+      "value": 92,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "valueScore"
+    },
+    {
+      "rankingId": "value-score",
+      "rankingTitle": "Value Score Rankings",
+      "state": "Montana",
+      "value": 92,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "valueScore"
+    },
+    {
+      "rankingId": "value-score",
+      "rankingTitle": "Value Score Rankings",
+      "state": "Nevada",
+      "value": 92,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "valueScore"
+    },
+    {
+      "rankingId": "value-score",
+      "rankingTitle": "Value Score Rankings",
+      "state": "South Dakota",
+      "value": 92,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "valueScore"
+    },
+    {
+      "rankingId": "value-score",
+      "rankingTitle": "Value Score Rankings",
+      "state": "Tennessee",
+      "value": 92,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "valueScore"
+    },
+    {
+      "rankingId": "value-score",
+      "rankingTitle": "Value Score Rankings",
+      "state": "Missouri",
       "value": 91,
       "displayValue": null,
       "direction": "desc",
@@ -637,16 +601,7 @@
     {
       "rankingId": "value-score",
       "rankingTitle": "Value Score Rankings",
-      "state": "South Carolina",
-      "value": 91,
-      "displayValue": null,
-      "direction": "desc",
-      "metricId": "valueScore"
-    },
-    {
-      "rankingId": "value-score",
-      "rankingTitle": "Value Score Rankings",
-      "state": "Oregon",
+      "state": "Mississippi",
       "value": 90,
       "displayValue": null,
       "direction": "desc",
@@ -655,7 +610,7 @@
     {
       "rankingId": "value-score",
       "rankingTitle": "Value Score Rankings",
-      "state": "Florida",
+      "state": "North Carolina",
       "value": 89,
       "displayValue": null,
       "direction": "desc",
@@ -664,7 +619,7 @@
     {
       "rankingId": "value-score",
       "rankingTitle": "Value Score Rankings",
-      "state": "Georgia",
+      "state": "Wyoming",
       "value": 89,
       "displayValue": null,
       "direction": "desc",
@@ -673,34 +628,7 @@
     {
       "rankingId": "value-score",
       "rankingTitle": "Value Score Rankings",
-      "state": "New Mexico",
-      "value": 89,
-      "displayValue": null,
-      "direction": "desc",
-      "metricId": "valueScore"
-    },
-    {
-      "rankingId": "value-score",
-      "rankingTitle": "Value Score Rankings",
-      "state": "Virginia",
-      "value": 89,
-      "displayValue": null,
-      "direction": "desc",
-      "metricId": "valueScore"
-    },
-    {
-      "rankingId": "value-score",
-      "rankingTitle": "Value Score Rankings",
-      "state": "West Virginia",
-      "value": 89,
-      "displayValue": null,
-      "direction": "desc",
-      "metricId": "valueScore"
-    },
-    {
-      "rankingId": "value-score",
-      "rankingTitle": "Value Score Rankings",
-      "state": "Arizona",
+      "state": "Kansas",
       "value": 88,
       "displayValue": null,
       "direction": "desc",
@@ -709,7 +637,7 @@
     {
       "rankingId": "value-score",
       "rankingTitle": "Value Score Rankings",
-      "state": "Colorado",
+      "state": "South Carolina",
       "value": 87,
       "displayValue": null,
       "direction": "desc",
@@ -718,16 +646,7 @@
     {
       "rankingId": "value-score",
       "rankingTitle": "Value Score Rankings",
-      "state": "Texas",
-      "value": 87,
-      "displayValue": null,
-      "direction": "desc",
-      "metricId": "valueScore"
-    },
-    {
-      "rankingId": "value-score",
-      "rankingTitle": "Value Score Rankings",
-      "state": "Indiana",
+      "state": "Georgia",
       "value": 86,
       "displayValue": null,
       "direction": "desc",
@@ -736,7 +655,7 @@
     {
       "rankingId": "value-score",
       "rankingTitle": "Value Score Rankings",
-      "state": "Minnesota",
+      "state": "Oregon",
       "value": 86,
       "displayValue": null,
       "direction": "desc",
@@ -745,7 +664,16 @@
     {
       "rankingId": "value-score",
       "rankingTitle": "Value Score Rankings",
-      "state": "Alabama",
+      "state": "Virginia",
+      "value": 86,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "valueScore"
+    },
+    {
+      "rankingId": "value-score",
+      "rankingTitle": "Value Score Rankings",
+      "state": "Florida",
       "value": 85,
       "displayValue": null,
       "direction": "desc",
@@ -754,7 +682,25 @@
     {
       "rankingId": "value-score",
       "rankingTitle": "Value Score Rankings",
-      "state": "Ohio",
+      "state": "New Mexico",
+      "value": 85,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "valueScore"
+    },
+    {
+      "rankingId": "value-score",
+      "rankingTitle": "Value Score Rankings",
+      "state": "West Virginia",
+      "value": 85,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "valueScore"
+    },
+    {
+      "rankingId": "value-score",
+      "rankingTitle": "Value Score Rankings",
+      "state": "Arizona",
       "value": 84,
       "displayValue": null,
       "direction": "desc",
@@ -763,7 +709,25 @@
     {
       "rankingId": "value-score",
       "rankingTitle": "Value Score Rankings",
-      "state": "Delaware",
+      "state": "Colorado",
+      "value": 84,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "valueScore"
+    },
+    {
+      "rankingId": "value-score",
+      "rankingTitle": "Value Score Rankings",
+      "state": "Texas",
+      "value": 84,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "valueScore"
+    },
+    {
+      "rankingId": "value-score",
+      "rankingTitle": "Value Score Rankings",
+      "state": "Indiana",
       "value": 83,
       "displayValue": null,
       "direction": "desc",
@@ -772,7 +736,7 @@
     {
       "rankingId": "value-score",
       "rankingTitle": "Value Score Rankings",
-      "state": "Illinois",
+      "state": "Minnesota",
       "value": 83,
       "displayValue": null,
       "direction": "desc",
@@ -781,7 +745,16 @@
     {
       "rankingId": "value-score",
       "rankingTitle": "Value Score Rankings",
-      "state": "Pennsylvania",
+      "state": "Alabama",
+      "value": 82,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "valueScore"
+    },
+    {
+      "rankingId": "value-score",
+      "rankingTitle": "Value Score Rankings",
+      "state": "Ohio",
       "value": 81,
       "displayValue": null,
       "direction": "desc",
@@ -790,7 +763,7 @@
     {
       "rankingId": "value-score",
       "rankingTitle": "Value Score Rankings",
-      "state": "Wisconsin",
+      "state": "Delaware",
       "value": 80,
       "displayValue": null,
       "direction": "desc",
@@ -799,8 +772,35 @@
     {
       "rankingId": "value-score",
       "rankingTitle": "Value Score Rankings",
+      "state": "Illinois",
+      "value": 80,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "valueScore"
+    },
+    {
+      "rankingId": "value-score",
+      "rankingTitle": "Value Score Rankings",
+      "state": "Pennsylvania",
+      "value": 78,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "valueScore"
+    },
+    {
+      "rankingId": "value-score",
+      "rankingTitle": "Value Score Rankings",
+      "state": "Wisconsin",
+      "value": 77,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "valueScore"
+    },
+    {
+      "rankingId": "value-score",
+      "rankingTitle": "Value Score Rankings",
       "state": "Maryland",
-      "value": 76,
+      "value": 72,
       "displayValue": null,
       "direction": "desc",
       "metricId": "valueScore"
@@ -809,7 +809,7 @@
       "rankingId": "value-score",
       "rankingTitle": "Value Score Rankings",
       "state": "Michigan",
-      "value": 74,
+      "value": 70,
       "displayValue": null,
       "direction": "desc",
       "metricId": "valueScore"
@@ -818,7 +818,7 @@
       "rankingId": "value-score",
       "rankingTitle": "Value Score Rankings",
       "state": "New Jersey",
-      "value": 67,
+      "value": 64,
       "displayValue": null,
       "direction": "desc",
       "metricId": "valueScore"
@@ -827,7 +827,7 @@
       "rankingId": "value-score",
       "rankingTitle": "Value Score Rankings",
       "state": "Vermont",
-      "value": 65,
+      "value": 62,
       "displayValue": null,
       "direction": "desc",
       "metricId": "valueScore"
@@ -836,7 +836,7 @@
       "rankingId": "value-score",
       "rankingTitle": "Value Score Rankings",
       "state": "New Hampshire",
-      "value": 63,
+      "value": 60,
       "displayValue": null,
       "direction": "desc",
       "metricId": "valueScore"
@@ -845,7 +845,7 @@
       "rankingId": "value-score",
       "rankingTitle": "Value Score Rankings",
       "state": "New York",
-      "value": 61,
+      "value": 58,
       "displayValue": null,
       "direction": "desc",
       "metricId": "valueScore"
@@ -854,15 +854,6 @@
       "rankingId": "value-score",
       "rankingTitle": "Value Score Rankings",
       "state": "Alaska",
-      "value": 57,
-      "displayValue": null,
-      "direction": "desc",
-      "metricId": "valueScore"
-    },
-    {
-      "rankingId": "value-score",
-      "rankingTitle": "Value Score Rankings",
-      "state": "Massachusetts",
       "value": 54,
       "displayValue": null,
       "direction": "desc",
@@ -871,7 +862,7 @@
     {
       "rankingId": "value-score",
       "rankingTitle": "Value Score Rankings",
-      "state": "Maine",
+      "state": "Massachusetts",
       "value": 51,
       "displayValue": null,
       "direction": "desc",
@@ -880,7 +871,7 @@
     {
       "rankingId": "value-score",
       "rankingTitle": "Value Score Rankings",
-      "state": "Rhode Island",
+      "state": "Maine",
       "value": 47,
       "displayValue": null,
       "direction": "desc",
@@ -889,8 +880,17 @@
     {
       "rankingId": "value-score",
       "rankingTitle": "Value Score Rankings",
+      "state": "Rhode Island",
+      "value": 44,
+      "displayValue": null,
+      "direction": "desc",
+      "metricId": "valueScore"
+    },
+    {
+      "rankingId": "value-score",
+      "rankingTitle": "Value Score Rankings",
       "state": "Connecticut",
-      "value": 40,
+      "value": 37,
       "displayValue": null,
       "direction": "desc",
       "metricId": "valueScore"
@@ -899,7 +899,7 @@
       "rankingId": "value-score",
       "rankingTitle": "Value Score Rankings",
       "state": "California",
-      "value": 38,
+      "value": 34,
       "displayValue": null,
       "direction": "desc",
       "metricId": "valueScore"
@@ -908,7 +908,7 @@
       "rankingId": "value-score",
       "rankingTitle": "Value Score Rankings",
       "state": "Hawaii",
-      "value": 5,
+      "value": 2,
       "displayValue": null,
       "direction": "desc",
       "metricId": "valueScore"

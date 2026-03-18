@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { GUIDE_BY_SLUG, GUIDES } from "@/data/guides";
+import { GUIDE_BY_SLUG } from "@/data/guides";
 import { STATES } from "@/data/states";
 import { getTopicsByPrefixMatch } from "@/data/topics";
 import { LAST_REVIEWED, SITE_URL } from "@/lib/site";
@@ -9,14 +9,10 @@ import { getRelatedForGuide } from "@/lib/related";
 import RelatedLinks from "@/app/components/RelatedLinks";
 
 const BASE_URL = SITE_URL;
-export const dynamic = "force-static";
+export const dynamicParams = true;
 export const revalidate = 2592000;
 
 type GuideParams = Promise<{ slug: string }>;
-
-export function generateStaticParams() {
-  return GUIDES.map((guide) => ({ slug: guide.slug }));
-}
 
 export async function generateMetadata({
   params,

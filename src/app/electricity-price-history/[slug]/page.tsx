@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { loadKnowledgePage, loadEntityIndex } from "@/lib/knowledge/loadKnowledgePage";
+import { loadKnowledgePage } from "@/lib/knowledge/loadKnowledgePage";
 import { buildMetadata } from "@/lib/seo/metadata";
 import { buildBreadcrumbListJsonLd, buildWebPageJsonLd } from "@/lib/seo/jsonld";
 import JsonLdScript from "@/app/components/seo/JsonLdScript";
@@ -10,15 +10,8 @@ import Disclaimers from "@/app/components/policy/Disclaimers";
 import { getRelease } from "@/lib/knowledge/fetch";
 import Sparkline from "@/components/charts/Sparkline";
 
-export const dynamic = "force-static";
+export const dynamicParams = true;
 export const revalidate = 86400;
-
-export async function generateStaticParams() {
-  const index = await loadEntityIndex();
-  return index.entities
-    .filter((e) => e.type === "state")
-    .map((e) => ({ slug: e.slug }));
-}
 
 export async function generateMetadata({
   params,
@@ -49,7 +42,11 @@ export async function generateMetadata({
   const description =
     avgRate != null
       ? increase5 != null
-        ? `Electricity price history in ${stateName}: ${avgRate.toFixed(2)}¢/kWh. Prices increased ${increase5.toFixed(1)}% over 5 years.`
+        ? increase5 > 0.05
+          ? `Electricity price history in ${stateName}: ${avgRate.toFixed(2)}¢/kWh. Prices increased ${increase5.toFixed(1)}% over 5 years.`
+          : increase5 < -0.05
+            ? `Electricity price history in ${stateName}: ${avgRate.toFixed(2)}¢/kWh. Prices decreased ${Math.abs(increase5).toFixed(1)}% over 5 years.`
+            : `Electricity price history in ${stateName}: ${avgRate.toFixed(2)}¢/kWh. Prices remained flat over 5 years.`
         : `Electricity price history in ${stateName}: ${avgRate.toFixed(2)}¢/kWh. See rate trends and historical data.`
       : `${stateName} electricity price history and rate trends.`;
   return buildMetadata({
@@ -118,25 +115,35 @@ export default async function ElectricityPriceHistoryStatePage({
     description:
       currentRate != null
         ? increase5YearPercent != null
-          ? `Electricity price history in ${stateName}: ${currentRate.toFixed(2)}¢/kWh. Prices increased ${increase5YearPercent.toFixed(1)}% over 5 years.`
+          ? increase5YearPercent > 0.05
+            ? `Electricity price history in ${stateName}: ${currentRate.toFixed(2)}¢/kWh. Prices increased ${increase5YearPercent.toFixed(1)}% over 5 years.`
+            : increase5YearPercent < -0.05
+              ? `Electricity price history in ${stateName}: ${currentRate.toFixed(2)}¢/kWh. Prices decreased ${Math.abs(increase5YearPercent).toFixed(1)}% over 5 years.`
+              : `Electricity price history in ${stateName}: ${currentRate.toFixed(2)}¢/kWh. Prices remained flat over 5 years.`
           : `Electricity price history in ${stateName}: ${currentRate.toFixed(2)}¢/kWh.`
         : `${stateName} electricity price history.`,
     url: canonicalPath,
-    isPartOf: "/",
+    isPartOf: "/electricity-price-history",
     about: [`electricity price history ${stateName}`, "electricity inflation", "electricity rate history"],
   });
 
   const faqItems: Array<{ question: string; answer: string }> = [];
   if (increase5YearPercent != null) {
-    const parts: string[] = [`Electricity prices in ${stateName} have increased ${increase5YearPercent.toFixed(1)}% over the past 5 years.`];
+    const verb5 = increase5YearPercent > 0.05 ? "increased" : increase5YearPercent < -0.05 ? "decreased" : "remained flat";
+    const pct5 = increase5YearPercent > 0.05 ? increase5YearPercent.toFixed(1) : increase5YearPercent < -0.05 ? Math.abs(increase5YearPercent).toFixed(1) : null;
+    const parts: string[] = [verb5 === "remained flat" ? `Electricity prices in ${stateName} have remained flat over the past 5 years.` : `Electricity prices in ${stateName} have ${verb5} ${pct5}% over the past 5 years.`];
     if (increase1YearPercent != null) {
-      parts.push(`The 1-year increase is ${increase1YearPercent.toFixed(1)}%.`);
+      const verb1 = increase1YearPercent > 0.05 ? "increase" : increase1YearPercent < -0.05 ? "decrease" : "change";
+      const pct1 = increase1YearPercent > 0.05 ? increase1YearPercent.toFixed(1) : increase1YearPercent < -0.05 ? Math.abs(increase1YearPercent).toFixed(1) : "0";
+      parts.push(`The 1-year ${verb1} is ${pct1}%.`);
     }
     if (annualizedIncrease5Year != null) {
-      parts.push(`The annualized 5-year increase is approximately ${annualizedIncrease5Year.toFixed(1)}% per year.`);
+      const verbAnn = annualizedIncrease5Year > 0.05 ? "increase" : annualizedIncrease5Year < -0.05 ? "decrease" : "change";
+      const pctAnn = annualizedIncrease5Year > 0.05 ? annualizedIncrease5Year.toFixed(1) : annualizedIncrease5Year < -0.05 ? Math.abs(annualizedIncrease5Year).toFixed(1) : "0";
+      parts.push(`The annualized 5-year ${verbAnn} is approximately ${pctAnn}% per year.`);
     }
     faqItems.push({
-      question: `How much have electricity prices increased in ${stateName}?`,
+      question: `How much have electricity prices changed in ${stateName}?`,
       answer: parts.join(" "),
     });
   }
@@ -220,7 +227,7 @@ export default async function ElectricityPriceHistoryStatePage({
                 backgroundColor: "var(--color-surface-alt, #f9fafb)",
               }}
             >
-              <div className="muted" style={{ fontSize: 12, marginBottom: 4 }}>1-year increase</div>
+              <div className="muted" style={{ fontSize: 12, marginBottom: 4 }}>1-year {increase1YearPercent > 0.05 ? "increase" : increase1YearPercent < -0.05 ? "decrease" : "change"}</div>
               <div style={{ fontSize: 22, fontWeight: 600 }}>
                 {increase1YearPercent >= 0 ? "+" : ""}{increase1YearPercent.toFixed(1)}%
               </div>
@@ -235,7 +242,7 @@ export default async function ElectricityPriceHistoryStatePage({
                 backgroundColor: "var(--color-surface-alt, #f9fafb)",
               }}
             >
-              <div className="muted" style={{ fontSize: 12, marginBottom: 4 }}>5-year increase</div>
+              <div className="muted" style={{ fontSize: 12, marginBottom: 4 }}>5-year {increase5YearPercent > 0.05 ? "increase" : increase5YearPercent < -0.05 ? "decrease" : "change"}</div>
               <div style={{ fontSize: 22, fontWeight: 600 }}>
                 {increase5YearPercent >= 0 ? "+" : ""}{increase5YearPercent.toFixed(1)}%
               </div>
@@ -276,7 +283,7 @@ export default async function ElectricityPriceHistoryStatePage({
           <section style={{ marginBottom: 32 }}>
             <h2 style={{ fontSize: 20, marginBottom: 12 }}>Summary</h2>
             <p style={{ margin: 0 }}>
-              Electricity prices in {stateName} have increased {increase5YearPercent.toFixed(1)}% over the
+              Electricity prices in {stateName} have {increase5YearPercent > 0.05 ? `increased ${increase5YearPercent.toFixed(1)}%` : increase5YearPercent < -0.05 ? `decreased ${Math.abs(increase5YearPercent).toFixed(1)}%` : "remained flat"} over the
               past 5 years.
               {rate1YearAgo != null && currentRate != null && (
                 <> One year ago the rate was {rate1YearAgo.toFixed(2)}¢/kWh; it is now {currentRate.toFixed(2)}¢/kWh.</>
@@ -292,6 +299,11 @@ export default async function ElectricityPriceHistoryStatePage({
         <section style={{ marginBottom: 32 }}>
           <h2 style={{ fontSize: 20, marginBottom: 12 }}>More Data & Comparisons</h2>
           <ul style={{ margin: 0, paddingLeft: 20, lineHeight: 1.8 }}>
+            <li>
+              <Link href={`/electricity-inflation/${slug}`}>Electricity inflation in {stateName}</Link>
+              {" — "}
+              Price growth, trends, rankings
+            </li>
             <li>
               <Link href={`/electricity-cost/${slug}`}>Electricity cost in {stateName}</Link>
               {" — "}

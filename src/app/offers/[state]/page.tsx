@@ -19,15 +19,10 @@ import RelatedLinks from "@/app/components/RelatedLinks";
 import { recordRevenueEvent } from "@/lib/revenueMetrics";
 
 const BASE_URL = SITE_URL;
-export const dynamic = "force-static";
+export const dynamicParams = true;
 export const revalidate = 2592000;
-export const dynamicParams = false;
 
 type StateOfferParams = Promise<{ state: string }>;
-
-export function generateStaticParams() {
-  return Object.keys(STATES).map((slug) => ({ state: slug }));
-}
 
 function resolveSlug(raw: string): string | null {
   const slug = normalizeSlug(raw);

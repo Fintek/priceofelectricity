@@ -1,21 +1,14 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { loadKnowledgePage, loadEntityIndex } from "@/lib/knowledge/loadKnowledgePage";
+import { loadKnowledgePage } from "@/lib/knowledge/loadKnowledgePage";
 import { buildMetadata } from "@/lib/seo/metadata";
 import { buildBreadcrumbListJsonLd, buildWebPageJsonLd } from "@/lib/seo/jsonld";
 import JsonLdScript from "@/app/components/seo/JsonLdScript";
 import ExploreMore from "@/components/navigation/ExploreMore";
 
-export const dynamic = "force-static";
+export const dynamicParams = true;
 export const revalidate = 86400;
-
-export async function generateStaticParams() {
-  const index = await loadEntityIndex();
-  return index.entities
-    .filter((e) => e.type === "state")
-    .map((e) => ({ slug: e.slug }));
-}
 
 export async function generateMetadata({
   params,
@@ -92,7 +85,11 @@ export default async function ElectricityInflationStatePage({
     description:
       currentRate != null
         ? increase5YearPercent != null
-          ? `Electricity prices in ${stateName}: ${currentRate.toFixed(2)}¢/kWh. Prices increased ${increase5YearPercent.toFixed(1)}% over 5 years.`
+          ? increase5YearPercent > 0.05
+            ? `Electricity prices in ${stateName}: ${currentRate.toFixed(2)}¢/kWh. Prices increased ${increase5YearPercent.toFixed(1)}% over 5 years.`
+            : increase5YearPercent < -0.05
+              ? `Electricity prices in ${stateName}: ${currentRate.toFixed(2)}¢/kWh. Prices decreased ${Math.abs(increase5YearPercent).toFixed(1)}% over 5 years.`
+              : `Electricity prices in ${stateName}: ${currentRate.toFixed(2)}¢/kWh. Prices remained flat over 5 years.`
           : `Electricity prices in ${stateName}: ${currentRate.toFixed(2)}¢/kWh. See rate trends and inflation.`
         : `${stateName} electricity inflation and price trends.`,
     url: canonicalPath,
@@ -152,19 +149,31 @@ export default async function ElectricityInflationStatePage({
                 {increase1YearPercent != null && (
                   <li>
                     <strong>1-year change:</strong>{" "}
-                    {increase1YearPercent >= 0 ? "+" : ""}{increase1YearPercent.toFixed(1)}%
+                    {increase1YearPercent > 0.05
+                      ? `${increase1YearPercent.toFixed(1)}% increase`
+                      : increase1YearPercent < -0.05
+                        ? `${Math.abs(increase1YearPercent).toFixed(1)}% decrease`
+                        : "unchanged"}
                   </li>
                 )}
                 {increase5YearPercent != null && (
                   <li>
                     <strong>5-year change:</strong>{" "}
-                    {increase5YearPercent >= 0 ? "+" : ""}{increase5YearPercent.toFixed(1)}%
+                    {increase5YearPercent > 0.05
+                      ? `${increase5YearPercent.toFixed(1)}% increase`
+                      : increase5YearPercent < -0.05
+                        ? `${Math.abs(increase5YearPercent).toFixed(1)}% decrease`
+                        : "unchanged"}
                   </li>
                 )}
                 {annualizedIncrease5Year != null && (
                   <li>
                     <strong>5-year annualized:</strong>{" "}
-                    {annualizedIncrease5Year >= 0 ? "+" : ""}{annualizedIncrease5Year.toFixed(2)}% per year
+                    {annualizedIncrease5Year > 0.05
+                      ? `${annualizedIncrease5Year.toFixed(2)}% increase per year`
+                      : annualizedIncrease5Year < -0.05
+                        ? `${Math.abs(annualizedIncrease5Year).toFixed(2)}% decrease per year`
+                        : `${annualizedIncrease5Year.toFixed(2)}% per year`}
                   </li>
                 )}
               </ul>

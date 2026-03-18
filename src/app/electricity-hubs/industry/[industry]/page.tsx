@@ -6,7 +6,6 @@ import { getRelease } from "@/lib/knowledge/fetch";
 import { getIndustryConfig } from "@/lib/longtail/industryConfig";
 import {
   buildIndustryCardsForStates,
-  getTrafficHubIndustryStaticParams,
   loadAllTrafficHubStates,
   parseTrafficHubIndustry,
   sortStatesByRate,
@@ -16,12 +15,8 @@ import { buildBreadcrumbListJsonLd, buildWebPageJsonLd } from "@/lib/seo/jsonld"
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 
-export const dynamic = "force-static";
+export const dynamicParams = true;
 export const revalidate = 86400;
-
-export function generateStaticParams() {
-  return getTrafficHubIndustryStaticParams();
-}
 
 export async function generateMetadata({
   params,

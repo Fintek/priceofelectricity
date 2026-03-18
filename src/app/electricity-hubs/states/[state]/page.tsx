@@ -6,7 +6,6 @@ import { getRelease } from "@/lib/knowledge/fetch";
 import { getActiveIndustrySlugs, getActiveUsageKwhTiers, isLongtailFamilyActive } from "@/lib/longtail/rollout";
 import {
   buildStateHubSections,
-  getTrafficHubStateStaticParams,
   type TrafficHubMetric,
 } from "@/lib/longtail/trafficHubs";
 import { formatRate, loadLongtailStateData } from "@/lib/longtail/stateLongtail";
@@ -15,12 +14,8 @@ import { buildBreadcrumbListJsonLd, buildWebPageJsonLd } from "@/lib/seo/jsonld"
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 
-export const dynamic = "force-static";
+export const dynamicParams = true;
 export const revalidate = 86400;
-
-export async function generateStaticParams() {
-  return getTrafficHubStateStaticParams();
-}
 
 export async function generateMetadata({
   params,

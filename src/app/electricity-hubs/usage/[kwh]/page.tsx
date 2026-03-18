@@ -5,7 +5,6 @@ import TrafficHubTemplate from "@/components/traffic-hubs/TrafficHubTemplate";
 import { getRelease } from "@/lib/knowledge/fetch";
 import {
   buildUsageTierCardsForStates,
-  getTrafficHubUsageStaticParams,
   loadAllTrafficHubStates,
   parseTrafficHubUsageKwh,
   sortStatesByRate,
@@ -15,12 +14,8 @@ import { buildBreadcrumbListJsonLd, buildWebPageJsonLd } from "@/lib/seo/jsonld"
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 
-export const dynamic = "force-static";
+export const dynamicParams = true;
 export const revalidate = 86400;
-
-export function generateStaticParams() {
-  return getTrafficHubUsageStaticParams();
-}
 
 export async function generateMetadata({
   params,

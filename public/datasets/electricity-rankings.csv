@@ -49,56 +49,56 @@ affordability,Affordability Rankings,Rhode Island,44,,desc,affordabilityIndex
 affordability,Affordability Rankings,Connecticut,37,,desc,affordabilityIndex
 affordability,Affordability Rankings,California,34,,desc,affordabilityIndex
 affordability,Affordability Rankings,Hawaii,0,,desc,affordabilityIndex
-value-score,Value Score Rankings,Idaho,100,,desc,valueScore
-value-score,Value Score Rankings,North Dakota,99,,desc,valueScore
-value-score,Value Score Rankings,Louisiana,98,,desc,valueScore
-value-score,Value Score Rankings,Nebraska,98,,desc,valueScore
-value-score,Value Score Rankings,Arkansas,96,,desc,valueScore
-value-score,Value Score Rankings,Oklahoma,96,,desc,valueScore
-value-score,Value Score Rankings,Utah,96,,desc,valueScore
-value-score,Value Score Rankings,Washington,96,,desc,valueScore
-value-score,Value Score Rankings,Iowa,95,,desc,valueScore
-value-score,Value Score Rankings,Kentucky,95,,desc,valueScore
-value-score,Value Score Rankings,Montana,95,,desc,valueScore
-value-score,Value Score Rankings,Nevada,95,,desc,valueScore
-value-score,Value Score Rankings,South Dakota,95,,desc,valueScore
-value-score,Value Score Rankings,Tennessee,95,,desc,valueScore
-value-score,Value Score Rankings,Missouri,94,,desc,valueScore
-value-score,Value Score Rankings,Mississippi,93,,desc,valueScore
-value-score,Value Score Rankings,Wyoming,93,,desc,valueScore
-value-score,Value Score Rankings,North Carolina,92,,desc,valueScore
-value-score,Value Score Rankings,Kansas,91,,desc,valueScore
-value-score,Value Score Rankings,South Carolina,91,,desc,valueScore
-value-score,Value Score Rankings,Oregon,90,,desc,valueScore
-value-score,Value Score Rankings,Florida,89,,desc,valueScore
-value-score,Value Score Rankings,Georgia,89,,desc,valueScore
-value-score,Value Score Rankings,New Mexico,89,,desc,valueScore
-value-score,Value Score Rankings,Virginia,89,,desc,valueScore
-value-score,Value Score Rankings,West Virginia,89,,desc,valueScore
-value-score,Value Score Rankings,Arizona,88,,desc,valueScore
-value-score,Value Score Rankings,Colorado,87,,desc,valueScore
-value-score,Value Score Rankings,Texas,87,,desc,valueScore
-value-score,Value Score Rankings,Indiana,86,,desc,valueScore
-value-score,Value Score Rankings,Minnesota,86,,desc,valueScore
-value-score,Value Score Rankings,Alabama,85,,desc,valueScore
-value-score,Value Score Rankings,Ohio,84,,desc,valueScore
-value-score,Value Score Rankings,Delaware,83,,desc,valueScore
-value-score,Value Score Rankings,Illinois,83,,desc,valueScore
-value-score,Value Score Rankings,Pennsylvania,81,,desc,valueScore
-value-score,Value Score Rankings,Wisconsin,80,,desc,valueScore
-value-score,Value Score Rankings,Maryland,76,,desc,valueScore
-value-score,Value Score Rankings,Michigan,74,,desc,valueScore
-value-score,Value Score Rankings,New Jersey,67,,desc,valueScore
-value-score,Value Score Rankings,Vermont,65,,desc,valueScore
-value-score,Value Score Rankings,New Hampshire,63,,desc,valueScore
-value-score,Value Score Rankings,New York,61,,desc,valueScore
-value-score,Value Score Rankings,Alaska,57,,desc,valueScore
-value-score,Value Score Rankings,Massachusetts,54,,desc,valueScore
-value-score,Value Score Rankings,Maine,51,,desc,valueScore
-value-score,Value Score Rankings,Rhode Island,47,,desc,valueScore
-value-score,Value Score Rankings,Connecticut,40,,desc,valueScore
-value-score,Value Score Rankings,California,38,,desc,valueScore
-value-score,Value Score Rankings,Hawaii,5,,desc,valueScore
+value-score,Value Score Rankings,Idaho,97,,desc,valueScore
+value-score,Value Score Rankings,North Dakota,96,,desc,valueScore
+value-score,Value Score Rankings,Louisiana,95,,desc,valueScore
+value-score,Value Score Rankings,Nebraska,95,,desc,valueScore
+value-score,Value Score Rankings,Arkansas,93,,desc,valueScore
+value-score,Value Score Rankings,Oklahoma,93,,desc,valueScore
+value-score,Value Score Rankings,Utah,93,,desc,valueScore
+value-score,Value Score Rankings,Washington,93,,desc,valueScore
+value-score,Value Score Rankings,Iowa,92,,desc,valueScore
+value-score,Value Score Rankings,Kentucky,92,,desc,valueScore
+value-score,Value Score Rankings,Montana,92,,desc,valueScore
+value-score,Value Score Rankings,Nevada,92,,desc,valueScore
+value-score,Value Score Rankings,South Dakota,92,,desc,valueScore
+value-score,Value Score Rankings,Tennessee,92,,desc,valueScore
+value-score,Value Score Rankings,Missouri,91,,desc,valueScore
+value-score,Value Score Rankings,Mississippi,90,,desc,valueScore
+value-score,Value Score Rankings,North Carolina,89,,desc,valueScore
+value-score,Value Score Rankings,Wyoming,89,,desc,valueScore
+value-score,Value Score Rankings,Kansas,88,,desc,valueScore
+value-score,Value Score Rankings,South Carolina,87,,desc,valueScore
+value-score,Value Score Rankings,Georgia,86,,desc,valueScore
+value-score,Value Score Rankings,Oregon,86,,desc,valueScore
+value-score,Value Score Rankings,Virginia,86,,desc,valueScore
+value-score,Value Score Rankings,Florida,85,,desc,valueScore
+value-score,Value Score Rankings,New Mexico,85,,desc,valueScore
+value-score,Value Score Rankings,West Virginia,85,,desc,valueScore
+value-score,Value Score Rankings,Arizona,84,,desc,valueScore
+value-score,Value Score Rankings,Colorado,84,,desc,valueScore
+value-score,Value Score Rankings,Texas,84,,desc,valueScore
+value-score,Value Score Rankings,Indiana,83,,desc,valueScore
+value-score,Value Score Rankings,Minnesota,83,,desc,valueScore
+value-score,Value Score Rankings,Alabama,82,,desc,valueScore
+value-score,Value Score Rankings,Ohio,81,,desc,valueScore
+value-score,Value Score Rankings,Delaware,80,,desc,valueScore
+value-score,Value Score Rankings,Illinois,80,,desc,valueScore
+value-score,Value Score Rankings,Pennsylvania,78,,desc,valueScore
+value-score,Value Score Rankings,Wisconsin,77,,desc,valueScore
+value-score,Value Score Rankings,Maryland,72,,desc,valueScore
+value-score,Value Score Rankings,Michigan,70,,desc,valueScore
+value-score,Value Score Rankings,New Jersey,64,,desc,valueScore
+value-score,Value Score Rankings,Vermont,62,,desc,valueScore
+value-score,Value Score Rankings,New Hampshire,60,,desc,valueScore
+value-score,Value Score Rankings,New York,58,,desc,valueScore
+value-score,Value Score Rankings,Alaska,54,,desc,valueScore
+value-score,Value Score Rankings,Massachusetts,51,,desc,valueScore
+value-score,Value Score Rankings,Maine,47,,desc,valueScore
+value-score,Value Score Rankings,Rhode Island,44,,desc,valueScore
+value-score,Value Score Rankings,Connecticut,37,,desc,valueScore
+value-score,Value Score Rankings,California,34,,desc,valueScore
+value-score,Value Score Rankings,Hawaii,2,,desc,valueScore
 rate-low-to-high,Rate Rankings (Low to High),Idaho,11.74,,asc,avgRateCentsPerKwh
 rate-low-to-high,Rate Rankings (Low to High),North Dakota,11.92,,asc,avgRateCentsPerKwh
 rate-low-to-high,Rate Rankings (Low to High),Nebraska,12.19,,asc,avgRateCentsPerKwh

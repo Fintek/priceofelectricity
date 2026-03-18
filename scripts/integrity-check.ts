@@ -9,6 +9,8 @@ import {
   waitForServerReady,
 } from "./_server";
 
+const COLD_ISR_TIMEOUT_MS = 30_000;
+
 type RegistryError = {
   kind: string;
   detail: string;
@@ -97,10 +99,11 @@ function validateRegistry(): {
 
 async function fetchLocalPath(
   baseUrl: string,
-  path: string
+  path: string,
+  timeoutMs?: number,
 ): Promise<{ ok: true } | { ok: false; status?: number; detail: string }> {
   try {
-    const res = await fetchWithTimeout(`${baseUrl}${path}`);
+    const res = await fetchWithTimeout(`${baseUrl}${path}`, timeoutMs);
     if (res.status >= 500) {
       return { ok: false, status: res.status, detail: "server error" };
     }
@@ -150,7 +153,7 @@ async function collectInternalLinksFromHubs(baseUrl: string): Promise<string[]> 
   const links = new Set<string>();
 
   for (const hub of hubs) {
-    const res = await fetchWithTimeout(`${baseUrl}${hub}`);
+    const res = await fetchWithTimeout(`${baseUrl}${hub}`, COLD_ISR_TIMEOUT_MS);
     if (res.status !== 200) continue;
     const html = await res.text();
     let match: RegExpExecArray | null;
@@ -221,11 +224,17 @@ async function main(): Promise<void> {
       }
     }
 
-    // Optional hub-link sanity check for obvious broken internal hrefs.
+    const alreadyChecked = new Set<string>([
+      ...registryValidation.internalPaths,
+      ...sitemapPaths,
+    ]);
     const hubLinks = await collectInternalLinksFromHubs(baseUrl);
-    console.log(`Hub internal links checked: ${hubLinks.length}`);
-    for (const path of hubLinks) {
-      const result = await fetchLocalPath(baseUrl, path);
+    const newHubLinks = hubLinks.filter((p) => !alreadyChecked.has(p));
+    console.log(
+      `Hub internal links: ${hubLinks.length} total, ${newHubLinks.length} new (${hubLinks.length - newHubLinks.length} already checked)`,
+    );
+    for (const path of newHubLinks) {
+      const result = await fetchLocalPath(baseUrl, path, COLD_ISR_TIMEOUT_MS);
       if (result.ok) {
         passCount++;
       } else {

@@ -78,7 +78,19 @@ export default async function ElectricityInflationPage() {
   const webPageJsonLd = buildWebPageJsonLd({
     title: "Electricity Inflation in the United States",
     description:
-      "How electricity prices have increased historically and why they vary by state. National trends, state price growth, and inflation rankings.",
+      increase5YearPercent != null
+        ? increase5YearPercent > 0.05
+          ? `Electricity prices have increased approximately ${increase5YearPercent.toFixed(1)}% over the past five years nationally. National trends, state price growth, and inflation rankings.`
+          : increase5YearPercent < -0.05
+            ? `Electricity prices have decreased approximately ${Math.abs(increase5YearPercent).toFixed(1)}% over the past five years nationally. National trends, state price growth, and inflation rankings.`
+            : "Electricity prices have remained roughly flat over the past five years nationally. National trends, state price growth, and inflation rankings."
+        : increase1YearPercent != null
+          ? increase1YearPercent > 0.05
+            ? `Electricity prices have increased approximately ${increase1YearPercent.toFixed(1)}% over the past year nationally. National trends, state price growth, and inflation rankings.`
+            : increase1YearPercent < -0.05
+              ? `Electricity prices have decreased approximately ${Math.abs(increase1YearPercent).toFixed(1)}% over the past year nationally. National trends, state price growth, and inflation rankings.`
+              : "Electricity prices have remained roughly flat over the past year nationally. National trends, state price growth, and inflation rankings."
+          : "How electricity prices have changed historically and why they vary by state. National trends, state price growth, and inflation rankings.",
     url: "/electricity-inflation",
     isPartOf: "/",
     about: ["electricity inflation", "electricity price growth", "electricity price history"],
@@ -125,20 +137,41 @@ export default async function ElectricityInflationPage() {
         <section style={{ marginBottom: 32 }}>
           <h2 style={{ fontSize: 22, marginBottom: 12 }}>National Electricity Price Trend</h2>
           <p style={{ margin: 0, marginBottom: 16, maxWidth: "65ch", fontSize: 16, lineHeight: 1.6 }}>
-            Nationally, electricity prices have generally trended upward over the past decade. Grid modernization, fuel costs, renewable mandates, and policy changes all influence the rate of change.
+            {increase5YearPercent != null
+              ? increase5YearPercent > 0.05
+                ? `Electricity prices in the United States have increased approximately ${increase5YearPercent.toFixed(1)}% over the past five years.`
+                : increase5YearPercent < -0.05
+                  ? `Electricity prices in the United States have decreased approximately ${Math.abs(increase5YearPercent).toFixed(1)}% over the past five years.`
+                  : "Electricity prices in the United States have remained roughly flat over the past five years."
+              : increase1YearPercent != null
+                ? increase1YearPercent > 0.05
+                  ? `Electricity prices in the United States have increased approximately ${increase1YearPercent.toFixed(1)}% over the past year.`
+                  : increase1YearPercent < -0.05
+                    ? `Electricity prices in the United States have decreased approximately ${Math.abs(increase1YearPercent).toFixed(1)}% over the past year.`
+                    : "Electricity prices in the United States have remained roughly flat over the past year."
+                : "Nationally, electricity prices have generally trended upward over the past decade."}{" "}
+            Grid modernization, fuel costs, renewable mandates, and policy changes all influence the rate of change.
           </p>
           {(increase1YearPercent != null || increase5YearPercent != null) && (
             <ul style={{ margin: 0, paddingLeft: 20, lineHeight: 2 }}>
               {increase1YearPercent != null && (
                 <li>
                   <strong>1-year change:</strong>{" "}
-                  {increase1YearPercent >= 0 ? "+" : ""}{increase1YearPercent.toFixed(1)}%
+                  {increase1YearPercent > 0.05
+                    ? `${increase1YearPercent.toFixed(1)}% increase`
+                    : increase1YearPercent < -0.05
+                      ? `${Math.abs(increase1YearPercent).toFixed(1)}% decrease`
+                      : "unchanged"}
                 </li>
               )}
               {increase5YearPercent != null && (
                 <li>
                   <strong>5-year change:</strong>{" "}
-                  {increase5YearPercent >= 0 ? "+" : ""}{increase5YearPercent.toFixed(1)}%
+                  {increase5YearPercent > 0.05
+                    ? `${increase5YearPercent.toFixed(1)}% increase`
+                    : increase5YearPercent < -0.05
+                      ? `${Math.abs(increase5YearPercent).toFixed(1)}% decrease`
+                      : "unchanged"}
                 </li>
               )}
             </ul>

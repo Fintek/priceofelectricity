@@ -8,15 +8,10 @@ import { isValidStateSlug } from "@/lib/slugGuard";
 import { getTimelineForState, EVENT_TYPE_LABELS } from "@/content/regulatory";
 
 const BASE_URL = SITE_URL;
-export const dynamic = "force-static";
-export const dynamicParams = false;
+export const dynamicParams = true;
 export const revalidate = 2592000;
 
 type PageParams = Promise<{ state: string }>;
-
-export function generateStaticParams() {
-  return Object.keys(STATES).map((state) => ({ state }));
-}
 
 export async function generateMetadata({
   params,

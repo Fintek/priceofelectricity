@@ -50,3 +50,9 @@ See `docs/DEPLOYMENT_READINESS.md` for full details.
 ### Vercel Build
 
 Vercel runs `npm run verify:vercel` (full validation without LHCI). LHCI requires Chrome; run it in GitHub Actions.
+
+### Knowledge Artifact Policy
+
+- Canonical machine-consumed knowledge artifact paths are non-`.gz` `/knowledge/*.json` endpoints.
+- Legacy `.json.gz` sidecar artifacts are not part of the active artifact contract.
+- For policy details and implementation-adjacent references, see `docs/DEPLOYMENT_VERCEL.md`, plus comments in `scripts/knowledge-build.ts` and `scripts/verify-knowledge.js`.

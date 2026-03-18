@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { loadComparePair, loadComparePairs } from "@/lib/knowledge/loadKnowledgePage";
+import { loadComparePair } from "@/lib/knowledge/loadKnowledgePage";
 import KnowledgeHeader from "@/app/components/knowledge/KnowledgeHeader";
 import MiniBarChart from "@/components/charts/MiniBarChart";
 import Section from "@/components/common/Section";
@@ -13,14 +13,8 @@ import { buildMetadata } from "@/lib/seo/metadata";
 import { getRelease } from "@/lib/knowledge/fetch";
 
 const BASE_URL = SITE_URL;
-export const dynamic = "force-static";
+export const dynamicParams = true;
 export const revalidate = 86400;
-
-export async function generateStaticParams() {
-  const pairsData = await loadComparePairs();
-  if (!pairsData?.pairs?.length) return [];
-  return pairsData.pairs.map((pair) => ({ pair }));
-}
 
 export async function generateMetadata({
   params,

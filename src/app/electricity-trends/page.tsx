@@ -102,9 +102,17 @@ export default async function ElectricityTrendsPage() {
       question: "Are electricity prices increasing?",
       answer:
         increase5YearPercent != null
-          ? `Yes. Electricity prices have increased approximately ${increase5YearPercent.toFixed(1)}% over the past five years nationally.`
+          ? increase5YearPercent > 0.05
+            ? `Yes. Electricity prices have increased approximately ${increase5YearPercent.toFixed(1)}% over the past five years nationally.`
+            : increase5YearPercent < -0.05
+              ? `No. Electricity prices have decreased approximately ${Math.abs(increase5YearPercent).toFixed(1)}% over the past five years nationally.`
+              : "Electricity prices have remained roughly flat over the past five years nationally."
           : increase1YearPercent != null
-            ? `Yes. Recent data shows electricity prices increased about ${increase1YearPercent.toFixed(1)}% over the past year.`
+            ? increase1YearPercent > 0.05
+              ? `Yes. Recent data shows electricity prices increased about ${increase1YearPercent.toFixed(1)}% over the past year.`
+              : increase1YearPercent < -0.05
+                ? `No. Recent data shows electricity prices decreased about ${Math.abs(increase1YearPercent).toFixed(1)}% over the past year.`
+                : "Electricity prices have remained roughly flat over the past year. State-level trends vary significantly."
             : "Electricity prices have generally trended upward over the past decade due to grid modernization, fuel costs, and policy changes. State-level trends vary significantly.",
     },
     {
@@ -136,9 +144,17 @@ export default async function ElectricityTrendsPage() {
 
   const insightText =
     increase5YearPercent != null
-      ? `Electricity prices in the United States have increased approximately ${increase5YearPercent.toFixed(1)}% over the past five years.`
+      ? increase5YearPercent > 0.05
+        ? `Electricity prices in the United States have increased approximately ${increase5YearPercent.toFixed(1)}% over the past five years.`
+        : increase5YearPercent < -0.05
+          ? `Electricity prices in the United States have decreased approximately ${Math.abs(increase5YearPercent).toFixed(1)}% over the past five years.`
+          : `Electricity prices in the United States have remained roughly flat over the past five years.`
       : increase1YearPercent != null
-        ? `Electricity prices in the United States have increased approximately ${increase1YearPercent.toFixed(1)}% over the past year.`
+        ? increase1YearPercent > 0.05
+          ? `Electricity prices in the United States have increased approximately ${increase1YearPercent.toFixed(1)}% over the past year.`
+          : increase1YearPercent < -0.05
+            ? `Electricity prices in the United States have decreased approximately ${Math.abs(increase1YearPercent).toFixed(1)}% over the past year.`
+            : `Electricity prices in the United States have remained roughly flat over the past year.`
         : nationalAvgRate != null
           ? `The national average electricity rate is ${nationalAvgRate.toFixed(2)}¢/kWh. State-level rates vary widely.`
           : "Electricity prices vary significantly by state. Explore state-level data for detailed trends.";

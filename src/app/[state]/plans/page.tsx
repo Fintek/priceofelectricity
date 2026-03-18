@@ -10,7 +10,7 @@ import { createPartnerLink } from "@/lib/outbound";
 import { LAST_REVIEWED, SITE_URL, UPDATE_CADENCE_TEXT } from "@/lib/site";
 
 const BASE_URL = SITE_URL;
-export const dynamic = "force-static";
+export const dynamicParams = true;
 export const revalidate = 2592000;
 
 type SortMode = "low" | "high" | "provider";
@@ -33,10 +33,6 @@ function resolveState(rawState: string) {
   }
 
   return { stateSlug, stateInfo };
-}
-
-export function generateStaticParams() {
-  return Object.keys(STATES).map((state) => ({ state }));
 }
 
 export async function generateMetadata({

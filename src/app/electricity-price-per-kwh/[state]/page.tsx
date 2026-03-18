@@ -11,19 +11,13 @@ import {
   calculateUsageCost,
   formatRate,
   formatUsd,
-  getLongtailStateStaticParams,
   loadLongtailStateData,
 } from "@/lib/longtail/stateLongtail";
 import { buildLongtailLinkSections } from "@/lib/longtail/internalLinks";
 import { isLongtailFamilyActive } from "@/lib/longtail/rollout";
 
-export const dynamic = "force-static";
+export const dynamicParams = true;
 export const revalidate = 86400;
-
-export async function generateStaticParams() {
-  if (!isLongtailFamilyActive("state-price-per-kwh")) return [];
-  return getLongtailStateStaticParams();
-}
 
 export async function generateMetadata({
   params,

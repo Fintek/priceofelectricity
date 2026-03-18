@@ -10,7 +10,6 @@ import {
   buildAverageBillApplianceLinks,
   buildAverageBillComparisonSummary,
   buildAverageBillUsageExamples,
-  getAverageBillStaticParams,
   loadAverageBillStateSummary,
 } from "@/lib/longtail/averageBill";
 import { getRelease } from "@/lib/knowledge/fetch";
@@ -19,12 +18,8 @@ import { formatRate, formatUsd } from "@/lib/longtail/stateLongtail";
 import { buildMetadata } from "@/lib/seo/metadata";
 import { buildBreadcrumbListJsonLd, buildWebPageJsonLd } from "@/lib/seo/jsonld";
 
-export const dynamic = "force-static";
+export const dynamicParams = true;
 export const revalidate = 86400;
-
-export async function generateStaticParams() {
-  return getAverageBillStaticParams();
-}
 
 export async function generateMetadata({
   params,

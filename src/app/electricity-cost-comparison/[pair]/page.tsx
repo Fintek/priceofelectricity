@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { loadComparePair, loadComparePairs } from "@/lib/knowledge/loadKnowledgePage";
+import { loadComparePair } from "@/lib/knowledge/loadKnowledgePage";
 import { buildMetadata } from "@/lib/seo/metadata";
 import { buildBreadcrumbListJsonLd, buildWebPageJsonLd } from "@/lib/seo/jsonld";
 import JsonLdScript from "@/app/components/seo/JsonLdScript";
@@ -12,14 +12,8 @@ import MiniBarChart from "@/components/charts/MiniBarChart";
 
 const MONTHLY_USAGE_KWH = 900;
 
-export const dynamic = "force-static";
+export const dynamicParams = true;
 export const revalidate = 86400;
-
-export async function generateStaticParams() {
-  const pairsData = await loadComparePairs();
-  if (!pairsData?.pairs?.length) return [];
-  return pairsData.pairs.map((pair) => ({ pair }));
-}
 
 export async function generateMetadata({
   params,

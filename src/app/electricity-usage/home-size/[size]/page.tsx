@@ -9,18 +9,13 @@ import {
   buildHomeSizeCostRows,
   formatKwh,
   getHomeSizeScenario,
-  getHomeSizeStaticParams,
 } from "@/lib/longtail/usageIntelligence";
 import { getRelease } from "@/lib/knowledge/fetch";
 import { buildMetadata } from "@/lib/seo/metadata";
 import { buildBreadcrumbListJsonLd, buildWebPageJsonLd } from "@/lib/seo/jsonld";
 
-export const dynamic = "force-static";
+export const dynamicParams = true;
 export const revalidate = 86400;
-
-export async function generateStaticParams() {
-  return getHomeSizeStaticParams();
-}
 
 export async function generateMetadata({
   params,

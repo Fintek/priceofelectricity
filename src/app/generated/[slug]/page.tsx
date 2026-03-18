@@ -2,21 +2,13 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { SITE_URL, LAST_REVIEWED } from "@/lib/site";
-import {
-  generateTemplatePages,
-  getGeneratedPage,
-} from "@/lib/templateGenerator";
+import { getGeneratedPage } from "@/lib/templateGenerator";
 
 const BASE_URL = SITE_URL;
-export const dynamic = "force-static";
-export const dynamicParams = false;
+export const dynamicParams = true;
 export const revalidate = 2592000;
 
 type PageParams = Promise<{ slug: string }>;
-
-export function generateStaticParams() {
-  return generateTemplatePages().map((p) => ({ slug: p.slug }));
-}
 
 export async function generateMetadata({
   params,

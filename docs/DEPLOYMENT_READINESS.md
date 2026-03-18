@@ -53,10 +53,21 @@ See `docs/DEPLOYMENT_VERCEL.md` for full deployment flow.
 
 ## Vercel Readiness
 
-- Build uses `npm run verify:vercel` (data:validate → lint → typecheck → build → canonical:check → smoke → integrity → api:contract → indexing:check → readiness:audit → seo:check)
+- Build uses `npm run verify:vercel` (data:validate → lint → typecheck → build → payload:audit → canonical:check → smoke → integrity → api:contract → indexing:check → readiness:audit → seo:check)
 - Next.js 16 with App Router
 - Sitemap, robots, discovery assets generated at build time
 - `robots.ts` is environment-aware (production allows indexing; preview/development disallows)
+- Knowledge machine artifact contract uses non-`.gz` `/knowledge/*.json` endpoints; `.json.gz` sidecars are not part of the active contract. See `README.md` (Knowledge Artifact Policy) and `docs/DEPLOYMENT_VERCEL.md` for policy details, plus comments in `scripts/knowledge-build.ts` and `scripts/verify-knowledge.js` for implementation-adjacent context.
+
+## Integrity check behavior
+
+`npm run integrity` validates three URL sources against a local production server:
+
+1. **Registry paths** — all internal URLs from `contentRegistry` (default 10s timeout)
+2. **Sitemap paths** — URLs from the sitemap endpoint (default 10s timeout)
+3. **Hub-link paths** — internal links scraped from hub pages, deduplicated against registry and sitemap paths already checked (30s timeout for cold ISR pages)
+
+The hub-link deduplication and extended timeout prevent false abort failures when the server is under sustained ISR rendering load.
 
 ## Remaining Non-Blocking Cautions
 

@@ -15,19 +15,13 @@ import {
 import { loadLongtailStateData } from "@/lib/longtail/stateLongtail";
 import {
   getApplianceUsageReference,
-  getUsageApplianceStaticParams,
   parseUsageApplianceSlug,
 } from "@/lib/longtail/usageIntelligence";
 import { buildMetadata } from "@/lib/seo/metadata";
 import { buildBreadcrumbListJsonLd, buildWebPageJsonLd } from "@/lib/seo/jsonld";
 
-export const dynamic = "force-static";
-export const dynamicParams = false;
+export const dynamicParams = true;
 export const revalidate = 86400;
-
-export async function generateStaticParams() {
-  return getUsageApplianceStaticParams();
-}
 
 export async function generateMetadata({
   params,

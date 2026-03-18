@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-03-12T14:07:22.531Z",
-  "commit": "04bb523",
+  "generatedAt": "2026-03-18T14:35:01.480Z",
+  "commit": "347843b",
   "summary": {
     "total": 66,
     "passed": 66,
@@ -95,7 +95,7 @@
     {
       "name": "/health returns release fields",
       "passed": true,
-      "details": "commit=04bb523 data=v20260222"
+      "details": "commit=347843b data=v20260222"
     },
     {
       "name": "/electricity-hubs reachable",

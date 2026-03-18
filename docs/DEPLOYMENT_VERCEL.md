@@ -8,8 +8,15 @@ This project uses an engineering-first deployment flow with deterministic checks
 2. Trigger deployment (push or manual deploy).
 3. Vercel runs:
    - `npm ci`
-   - `npm run verify` (via `vercel.json` build command)
+   - `npm run verify:vercel` (via `vercel.json` build command)
 4. Deployment succeeds only if all quality gates pass.
+
+## Knowledge artifact policy
+
+- Canonical machine-consumed knowledge endpoints are non-`.gz` `/knowledge/*.json` files.
+- Legacy `.json.gz` sidecar artifacts are not part of the active artifact contract.
+- Compression is handled at the deployment/transport layer (platform config), not by shipping committed or generated sidecar `.gz` artifacts.
+- Implementation-adjacent source of truth: see policy comments in `scripts/knowledge-build.ts` and `scripts/verify-knowledge.js`.
 
 ## Required environment variables
 

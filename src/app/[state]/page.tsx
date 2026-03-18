@@ -28,14 +28,10 @@ import { getTopDriversForState, DRIVER_CATEGORY_LABELS } from "@/content/drivers
 import { getActiveCitiesForState } from "@/lib/longtail/rollout";
 
 const BASE_URL = SITE_URL;
-export const dynamic = "force-static";
+export const dynamicParams = true;
 export const revalidate = 2592000;
 
 type StateParams = Promise<{ state: string }>;
-
-export function generateStaticParams() {
-  return Object.keys(STATES).map((state) => ({ state }));
-}
 
 function resolveSlug(rawState: string): string | null {
   const slug = normalizeSlug(rawState);

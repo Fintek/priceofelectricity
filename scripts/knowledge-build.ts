@@ -25,7 +25,6 @@ function checkBudget(phase: keyof typeof BUDGETS_MS, durationMs: number): void {
     process.exit(1);
   }
 }
-import { gzipSync } from "node:zlib";
 import { buildKnowledgePack } from "../src/lib/knowledgePack";
 import { buildContentRegistry } from "../src/lib/contentRegistry";
 import { RAW_STATES } from "../src/data/raw/states.raw";
@@ -921,15 +920,6 @@ const SIZE_BUDGETS_BYTES: Record<string, number> = {
   "knowledge/vertical/*.json": 200_000,
 };
 
-const COMPRESSION_TARGETS = [
-  "knowledge/search-index.json",
-  "knowledge/entity-index.json",
-  "knowledge/schema-map.json",
-  "knowledge/provenance.json",
-];
-
-const GZIP_THRESHOLD_BYTES = 100_000;
-
 const PROVENANCE_SOURCES: Readonly<Record<string, Omit<ProvenanceRef, "retrievedAt">>> = {
   "eia-retail-sales-923": {
     id: "eia-retail-sales-923",
@@ -1608,26 +1598,19 @@ async function checkSizeBudget(relativeJsonUrl: string, outPath: string): Promis
   }
 }
 
-async function maybeGzip(relativeJsonUrl: string, outPath: string): Promise<void> {
-  if (!COMPRESSION_TARGETS.includes(relativeJsonUrl.replace(/^\/+/, "").replace(/\\/g, "/"))) {
-    return;
-  }
-  const st = await stat(outPath);
-  if (st.size <= GZIP_THRESHOLD_BYTES) return;
-  const raw = await readFile(outPath);
-  const compressed = gzipSync(raw, { level: 6 });
-  const gzPath = outPath + ".gz";
-  await writeFile(gzPath, compressed);
-}
-
-async function writeJson(relativeJsonUrl: string, body: unknown): Promise<void> {
+async function writeJson(
+  relativeJsonUrl: string,
+  body: unknown,
+  options?: { minify?: boolean },
+): Promise<void> {
   const outPath = makeJsonPath(relativeJsonUrl);
   await mkdir(path.dirname(outPath), { recursive: true });
-  const content = `${JSON.stringify(body, null, 2)}\n`;
+  const content = options?.minify
+    ? `${JSON.stringify(body)}\n`
+    : `${JSON.stringify(body, null, 2)}\n`;
   await writeFile(outPath, content, "utf8");
   writtenJsonPaths.push(`/${relativeJsonUrl.replace(/^\/+/, "").replace(/\\/g, "/")}`);
   await checkSizeBudget(relativeJsonUrl, outPath);
-  await maybeGzip(relativeJsonUrl, outPath);
 }
 
 function summarizeGeneratedOutput(paths: string[]): string[] {
@@ -8754,7 +8737,7 @@ async function main(): Promise<void> {
     },
     provenanceCatalogUrl: `${snapshotBaseUrl}/provenance.json`,
     querySurfaces: {
-      searchIndexUrl: `${snapshotBaseUrl}/search-index.json`,
+      searchIndexUrl: "/knowledge/search-index.json",
       schemaMapUrl: `${snapshotBaseUrl}/schema-map.json`,
       entityIndexUrl: `${snapshotBaseUrl}/entity-index.json`,
       methodologyIndexUrl: `${snapshotBaseUrl}/methodology/index.json`,
@@ -8799,11 +8782,8 @@ async function main(): Promise<void> {
       },
     })),
   };
-  const snapshotSearchIndexBody: KnowledgeSearchIndex = {
-    ...searchIndexBody,
-    generatedAt,
-    entities: searchIndexBody.entities,
-  };
+  // Snapshot search-index omitted: identical to root search-index (~953KB) and never read from the snapshot path.
+  // Consumers use /knowledge/search-index.json directly.
   const historyIndexEntry: KnowledgeHistorySnapshot = {
     sourceVersion,
     indexUrl: `${snapshotBaseUrl}/index.json`,
@@ -8939,14 +8919,20 @@ async function main(): Promise<void> {
   for (const subdir of ["state", "methodology", "rankings", "vertical"]) {
     await rm(path.join(KNOWLEDGE_ROOT, subdir), { recursive: true, force: true });
   }
+  // Keep removing legacy *.json.gz artifacts from older branches/worktrees.
+  // Canonical machine endpoints are the non-.gz /knowledge/*.json files.
   for (const file of [
     "index.json",
     "contract.json",
     "changelog.json",
     "provenance.json",
+    "provenance.json.gz",
     "schema-map.json",
+    "schema-map.json.gz",
     "entity-index.json",
+    "entity-index.json.gz",
     "search-index.json",
+    "search-index.json.gz",
     "national.json",
   ]) {
     await rm(path.join(KNOWLEDGE_ROOT, file), { force: true });
@@ -8973,13 +8959,13 @@ export function t(key: string): string {
 }
 `;
   await writeFile(labelsTsPath, labelsTsContent, "utf8");
-  await writeJson("/knowledge/index.json", indexBody);
+  await writeJson("/knowledge/index.json", indexBody, { minify: true });
   await writeJson("/knowledge/contract.json", contractBody);
-  await writeJson("/knowledge/changelog.json", changelogBody);
+  await writeJson("/knowledge/changelog.json", changelogBody, { minify: true });
   await writeJson("/knowledge/provenance.json", provenanceBody);
   await writeJson("/knowledge/schema-map.json", schemaMapBody);
-  await writeJson("/knowledge/entity-index.json", entityIndexBody);
-  await writeJson("/knowledge/search-index.json", searchIndexBody);
+  await writeJson("/knowledge/entity-index.json", entityIndexBody, { minify: true });
+  await writeJson("/knowledge/search-index.json", searchIndexBody, { minify: true });
   await writeJson("/knowledge/methodology/index.json", methodologyIndexBody);
   await writeJson("/knowledge/policy/disclaimers.json", disclaimersBody);
   const deprecationsBody = {
@@ -8997,8 +8983,8 @@ export function t(key: string): string {
     }>,
   };
   await writeJson("/knowledge/policy/deprecations.json", deprecationsBody);
-  await writeJson("/knowledge/offers/index.json", offersIndexBody);
-  await writeJson("/knowledge/compare/states.json", compareStatesBody);
+  await writeJson("/knowledge/offers/index.json", offersIndexBody, { minify: true });
+  await writeJson("/knowledge/compare/states.json", compareStatesBody, { minify: true });
   const pairsBody = {
     schemaVersion: "1.0" as const,
     generatedAt,
@@ -9119,7 +9105,7 @@ export function t(key: string): string {
   await mkdir(path.join(KNOWLEDGE_ROOT, "ingest"), { recursive: true });
   await writeJson("/knowledge/ingest/starter-pack.json", starterPackBody);
   await mkdir(path.join(KNOWLEDGE_ROOT, "related"), { recursive: true });
-  await writeJson("/knowledge/related/index.json", relatedBody);
+  await writeJson("/knowledge/related/index.json", relatedBody, { minify: true });
 
   const DATASETS_ROOT = path.join(process.cwd(), "public", "datasets");
   await mkdir(DATASETS_ROOT, { recursive: true });
@@ -9298,15 +9284,14 @@ export function t(key: string): string {
   await writeJson("/knowledge/regression.json", regressionBody);
   for (const write of snapshotPageWrites) {
     validatePage(write.page, sourceVersion);
-    await writeJson(write.jsonUrl, write.page);
+    await writeJson(write.jsonUrl, write.page, { minify: true });
   }
-  await writeJson(`${snapshotBaseUrl}/index.json`, snapshotIndexBody);
-  await writeJson(`${snapshotBaseUrl}/contract.json`, snapshotContractBody);
-  await writeJson(`${snapshotBaseUrl}/changelog.json`, snapshotChangelogBody);
-  await writeJson(`${snapshotBaseUrl}/provenance.json`, snapshotProvenanceBody);
-  await writeJson(`${snapshotBaseUrl}/schema-map.json`, snapshotSchemaMapBody);
-  await writeJson(`${snapshotBaseUrl}/entity-index.json`, snapshotEntityIndexBody);
-  await writeJson(`${snapshotBaseUrl}/search-index.json`, snapshotSearchIndexBody);
+  await writeJson(`${snapshotBaseUrl}/index.json`, snapshotIndexBody, { minify: true });
+  await writeJson(`${snapshotBaseUrl}/contract.json`, snapshotContractBody, { minify: true });
+  await writeJson(`${snapshotBaseUrl}/changelog.json`, snapshotChangelogBody, { minify: true });
+  await writeJson(`${snapshotBaseUrl}/provenance.json`, snapshotProvenanceBody, { minify: true });
+  await writeJson(`${snapshotBaseUrl}/schema-map.json`, snapshotSchemaMapBody, { minify: true });
+  await writeJson(`${snapshotBaseUrl}/entity-index.json`, snapshotEntityIndexBody, { minify: true });
   const snapshotMethodologyIndexBody: KnowledgeMethodologyIndex = {
     ...methodologyIndexBody,
     generatedAt,
@@ -9318,7 +9303,9 @@ export function t(key: string): string {
       ),
     })),
   };
-  await writeJson(`${snapshotBaseUrl}/methodology/index.json`, snapshotMethodologyIndexBody);
+  await writeJson(`${snapshotBaseUrl}/methodology/index.json`, snapshotMethodologyIndexBody, {
+    minify: true,
+  });
   const snapshotRankingsIndexBody: KnowledgeRankingsIndex = {
     ...rankingsIndexBody,
     generatedAt,
@@ -9327,7 +9314,9 @@ export function t(key: string): string {
       jsonUrl: ensureAbsoluteUrl(`${snapshotBaseUrl}/rankings/${item.id}.json`),
     })),
   };
-  await writeJson(`${snapshotBaseUrl}/rankings/index.json`, snapshotRankingsIndexBody);
+  await writeJson(`${snapshotBaseUrl}/rankings/index.json`, snapshotRankingsIndexBody, {
+    minify: true,
+  });
 
   const snapshotContentHashByPath = new Map<string, string>();
   for (const item of snapshotItems) {
@@ -9337,7 +9326,6 @@ export function t(key: string): string {
     snapshotContentHashByPath.set(pathname, item.contentHash);
   }
   const snapshotCoreFiles: Array<{ url: string; contentHash?: string }> = [
-    `${snapshotBaseUrl}/search-index.json`,
     `${snapshotBaseUrl}/index.json`,
     `${snapshotBaseUrl}/contract.json`,
     `${snapshotBaseUrl}/schema-map.json`,
@@ -9372,14 +9360,16 @@ export function t(key: string): string {
     ...rankingPages.map((r) => `${snapshotBaseUrl}/rankings/${r.slug}.json`),
   ].sort((a, b) => a.localeCompare(b));
   await mkdir(path.join(KNOWLEDGE_ROOT, "history", sourceVersion, "bundles"), { recursive: true });
-  await writeJson(`${snapshotBaseUrl}/bundles/index.json`, snapshotBundlesIndexBody);
+  await writeJson(`${snapshotBaseUrl}/bundles/index.json`, snapshotBundlesIndexBody, {
+    minify: true,
+  });
   await writeJson(`${snapshotBaseUrl}/bundles/core.json`, {
     schemaVersion: "1.0",
     generatedAt,
     sourceVersion,
     bundleId: "core",
     files: snapshotCoreFiles,
-  } as KnowledgeBundleManifest);
+  } as KnowledgeBundleManifest, { minify: true });
   await writeJson(`${snapshotBaseUrl}/bundles/states-all.json`, {
     schemaVersion: "1.0",
     generatedAt,
@@ -9389,7 +9379,7 @@ export function t(key: string): string {
       const h = snapshotContentHashByPath.get(url);
       return h ? { url, contentHash: h } : { url };
     }),
-  } as KnowledgeBundleManifest);
+  } as KnowledgeBundleManifest, { minify: true });
   await writeJson(`${snapshotBaseUrl}/bundles/methodologies.json`, {
     schemaVersion: "1.0",
     generatedAt,
@@ -9399,7 +9389,7 @@ export function t(key: string): string {
       const h = snapshotContentHashByPath.get(url);
       return h ? { url, contentHash: h } : { url };
     }),
-  } as KnowledgeBundleManifest);
+  } as KnowledgeBundleManifest, { minify: true });
   await writeJson(`${snapshotBaseUrl}/bundles/rankings.json`, {
     schemaVersion: "1.0",
     generatedAt,
@@ -9409,7 +9399,7 @@ export function t(key: string): string {
       const h = snapshotContentHashByPath.get(url);
       return h ? { url, contentHash: h } : { url };
     }),
-  } as KnowledgeBundleManifest);
+  } as KnowledgeBundleManifest, { minify: true });
 
   const historyBundlesIndexBody = {
     schemaVersion: "1.0" as const,

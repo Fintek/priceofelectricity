@@ -2,19 +2,15 @@ import type { Metadata } from "next";
 import { use } from "react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { REGION_BY_SLUG, REGIONS } from "@/data/regions";
+import { REGION_BY_SLUG } from "@/data/regions";
 import { STATES } from "@/data/states";
 import { normalizeSlug } from "@/data/slug";
 
 const BASE_URL = "https://priceofelectricity.com";
-export const dynamic = "force-static";
+export const dynamicParams = true;
 export const revalidate = 2592000;
 
 type RegionParams = Promise<{ regionSlug: string }>;
-
-export function generateStaticParams() {
-  return REGIONS.map((region) => ({ regionSlug: region.slug }));
-}
 
 function resolveRegion(rawRegionSlug: string) {
   const regionSlug = normalizeSlug(rawRegionSlug);

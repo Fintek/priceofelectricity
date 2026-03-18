@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { STATES } from "@/data/states";
 import { normalizeSlug } from "@/data/slug";
 import { isValidStateSlug } from "@/lib/slugGuard";
 import { buildNormalizedState } from "@/lib/stateBuilder";
@@ -9,23 +8,10 @@ import { buildBillSchema } from "@/lib/schema";
 import { SITE_URL } from "@/lib/site";
 
 const BASE_URL = SITE_URL;
-export const dynamic = "force-static";
-export const dynamicParams = false;
+export const dynamicParams = true;
 export const revalidate = 2592000;
 
-const BILL_KWH_VALUES = [500, 750, 1000, 1250, 1500, 2000] as const;
-
 type BillParams = Promise<{ state: string; kwh: string }>;
-
-export function generateStaticParams() {
-  const params: { state: string; kwh: string }[] = [];
-  for (const stateSlug of Object.keys(STATES)) {
-    for (const kwh of BILL_KWH_VALUES) {
-      params.push({ state: stateSlug, kwh: String(kwh) });
-    }
-  }
-  return params;
-}
 
 function resolveSlug(rawState: string): string | null {
   const slug = normalizeSlug(rawState);

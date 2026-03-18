@@ -272,7 +272,6 @@ export default async function KnowledgeNationalPage() {
           <Section title="JSON preview" defaultCollapsed collapseSummary="Show JSON">
           <JsonPreview
             jsonUrl={page.meta.jsonUrl}
-            jsonPreview={JSON.stringify({ meta: page.meta, data: page.data }, null, 2)}
             copyValue={page.meta.jsonUrl?.startsWith("http") ? page.meta.jsonUrl : `${BASE_URL}/knowledge/national.json`}
           />
           </Section>

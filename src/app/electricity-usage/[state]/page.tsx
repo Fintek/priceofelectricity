@@ -13,19 +13,14 @@ import {
   buildUsageNarrativeForState,
   buildUsageTierCostRows,
   formatKwh,
-  getUsageStateStaticParams,
   loadUsageStateSummary,
   NATIONAL_AVERAGE_HOUSEHOLD_USAGE_KWH,
 } from "@/lib/longtail/usageIntelligence";
 import { buildMetadata } from "@/lib/seo/metadata";
 import { buildBreadcrumbListJsonLd, buildWebPageJsonLd } from "@/lib/seo/jsonld";
 
-export const dynamic = "force-static";
+export const dynamicParams = true;
 export const revalidate = 86400;
-
-export async function generateStaticParams() {
-  return getUsageStateStaticParams();
-}
 
 export async function generateMetadata({
   params,

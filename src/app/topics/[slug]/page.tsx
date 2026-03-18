@@ -3,20 +3,15 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { GUIDES } from "@/data/guides";
 import { STATES } from "@/data/states";
-import { TOPIC_BY_SLUG, TOPICS } from "@/data/topics";
+import { TOPIC_BY_SLUG } from "@/data/topics";
 import { getQuestionSlugs, parseQuestionSlug } from "@/lib/questions";
 import { SITE_URL } from "@/lib/site";
 
 const BASE_URL = SITE_URL;
-export const dynamic = "force-static";
-export const dynamicParams = false;
+export const dynamicParams = true;
 export const revalidate = 2592000;
 
 type TopicParams = Promise<{ slug: string }>;
-
-export function generateStaticParams() {
-  return TOPICS.map((topic) => ({ slug: topic.slug }));
-}
 
 export async function generateMetadata({
   params,

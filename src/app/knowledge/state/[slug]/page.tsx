@@ -3,16 +3,19 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import {
   loadKnowledgePage,
-  loadEntityIndex,
-  loadOffersIndex,
-  loadOffersConfig,
-  loadRelatedIndex,
-  loadCompareStates,
-  loadInsights,
   resolveEntityRefs,
 } from "@/lib/knowledge/loadKnowledgePage";
 import { getGlossaryMap } from "@/lib/knowledge/glossary";
-import { getGlossary, getRelease } from "@/lib/knowledge/fetch";
+import {
+  getCompareStates,
+  getEntityIndex,
+  getGlossary,
+  getOffersConfig,
+  getOffersIndex,
+  getRelatedIndex,
+  getRelease,
+  getStateInsights,
+} from "@/lib/knowledge/fetch";
 import KnowledgeHeader from "@/app/components/knowledge/KnowledgeHeader";
 import FreshnessBox from "@/app/components/knowledge/FreshnessBox";
 import KeyStatsGrid from "@/app/components/knowledge/KeyStatsGrid";
@@ -37,16 +40,62 @@ import { t } from "@/lib/knowledge/labels";
 import { compareSnapshots, getSnapshotVersions } from "@/lib/snapshotLoader";
 import { buildWebPageJsonLd, buildDatasetJsonLd, buildBreadcrumbListJsonLd } from "@/lib/seo/jsonld";
 import JsonLdScript from "@/app/components/seo/JsonLdScript";
+import { emitRouteRuntimeProfile, elapsedMs, startRuntimeTimer } from "@/lib/telemetry/runtime";
 
 const BASE_URL = SITE_URL;
-export const dynamic = "force-static";
+export const dynamicParams = true;
 export const revalidate = 86400;
+const SNAPSHOT_VERSIONS = getSnapshotVersions();
+const SNAPSHOT_BASE_VERSION =
+  SNAPSHOT_VERSIONS.length >= 2 ? SNAPSHOT_VERSIONS[SNAPSHOT_VERSIONS.length - 2] : null;
+const SNAPSHOT_LATEST_VERSION =
+  SNAPSHOT_VERSIONS.length >= 2 ? SNAPSHOT_VERSIONS[SNAPSHOT_VERSIONS.length - 1] : null;
+const LATEST_SNAPSHOT_DELTAS_BY_SLUG =
+  SNAPSHOT_BASE_VERSION && SNAPSHOT_LATEST_VERSION
+    ? new Map(
+        (compareSnapshots(SNAPSHOT_BASE_VERSION, SNAPSHOT_LATEST_VERSION) ?? []).map((delta) => [
+          delta.slug,
+          delta,
+        ]),
+      )
+    : null;
+type KnowledgeStateSharedData = {
+  entityIndex: Awaited<ReturnType<typeof getEntityIndex>>;
+  offersIndex: Awaited<ReturnType<typeof getOffersIndex>>;
+  offersConfig: Awaited<ReturnType<typeof getOffersConfig>>;
+  glossary: Awaited<ReturnType<typeof getGlossary>>;
+  release: Awaited<ReturnType<typeof getRelease>>;
+  relatedMap: Awaited<ReturnType<typeof getRelatedIndex>>;
+  compareData: Awaited<ReturnType<typeof getCompareStates>>;
+};
+let memoizedKnowledgeStateSharedDataPromise: Promise<KnowledgeStateSharedData> | null = null;
 
-export async function generateStaticParams() {
-  const index = await loadEntityIndex();
-  return index.entities
-    .filter((e) => e.type === "state")
-    .map((e) => ({ slug: e.slug }));
+function getMemoizedKnowledgeStateSharedData(): Promise<KnowledgeStateSharedData> {
+  if (!memoizedKnowledgeStateSharedDataPromise) {
+    memoizedKnowledgeStateSharedDataPromise = Promise.all([
+      getEntityIndex(),
+      getOffersIndex(),
+      getOffersConfig(),
+      getGlossary(),
+      getRelease(),
+      getRelatedIndex(),
+      getCompareStates(),
+    ])
+      .then(([entityIndex, offersIndex, offersConfig, glossary, release, relatedMap, compareData]) => ({
+        entityIndex,
+        offersIndex,
+        offersConfig,
+        glossary,
+        release,
+        relatedMap,
+        compareData,
+      }))
+      .catch((error) => {
+        memoizedKnowledgeStateSharedDataPromise = null;
+        throw error;
+      });
+  }
+  return memoizedKnowledgeStateSharedDataPromise;
 }
 
 export async function generateMetadata({
@@ -77,18 +126,15 @@ export default async function KnowledgeStatePage({
 }: {
   params: Promise<{ slug: string }>;
 }) {
+  const startedAt = startRuntimeTimer();
   const { slug } = await params;
-  const [page, entityIndex, offersIndex, offersConfig, glossary, release, relatedMap, compareData, insights] = await Promise.all([
-    loadKnowledgePage("state", slug),
-    loadEntityIndex(),
-    loadOffersIndex(),
-    loadOffersConfig(),
-    getGlossary(),
-    getRelease(),
-    loadRelatedIndex(),
-    loadCompareStates(),
-    loadInsights("state", slug),
-  ]);
+  try {
+    const [page, insights, sharedData] = await Promise.all([
+      loadKnowledgePage("state", slug, { routeId: "knowledge/state/[slug]" }),
+      getStateInsights(slug),
+      getMemoizedKnowledgeStateSharedData(),
+    ]);
+  const { entityIndex, offersIndex, offersConfig, glossary, release, relatedMap, compareData } = sharedData;
   const glossaryMap = getGlossaryMap(glossary);
 
   if (!page) notFound();
@@ -190,21 +236,19 @@ export default async function KnowledgeStatePage({
       affordabilityMax = Math.max(...aff);
     }
   }
-  const versions = getSnapshotVersions();
   let rateTrend: "up" | "down" | "flat" | null = null;
   let rateTrendLabel: string | undefined;
-  if (versions.length >= 2 && typeof avgRate === "number") {
-    const deltas = compareSnapshots(versions[versions.length - 2], versions[versions.length - 1]);
-    const stateDelta = deltas?.find((d) => d.slug === slug);
+  if (LATEST_SNAPSHOT_DELTAS_BY_SLUG && SNAPSHOT_BASE_VERSION && typeof avgRate === "number") {
+    const stateDelta = LATEST_SNAPSHOT_DELTAS_BY_SLUG.get(slug);
     if (stateDelta) {
       if (stateDelta.delta > 0) rateTrend = "up";
       else if (stateDelta.delta < 0) rateTrend = "down";
       else rateTrend = "flat";
-      rateTrendLabel = `vs ${versions[versions.length - 2]}`;
+      rateTrendLabel = `vs ${SNAPSHOT_BASE_VERSION}`;
     }
   }
 
-  return (
+    return (
     <>
       <JsonLdScript data={[breadcrumbJsonLd, webPageJsonLd, datasetJsonLd]} />
       <main className="container">
@@ -531,7 +575,6 @@ export default async function KnowledgeStatePage({
           <Section title="JSON preview" defaultCollapsed collapseSummary="Show JSON">
           <JsonPreview
             jsonUrl={page.meta.jsonUrl}
-            jsonPreview={JSON.stringify({ meta: page.meta, data: page.data }, null, 2)}
             copyValue={page.meta.jsonUrl?.startsWith("http") ? page.meta.jsonUrl : `${BASE_URL}${jsonUrlPath}`}
           />
           </Section>
@@ -581,4 +624,12 @@ export default async function KnowledgeStatePage({
     </main>
     </>
   );
+  } finally {
+    emitRouteRuntimeProfile({
+      routeId: "knowledge/state/[slug]",
+      phase: "render",
+      durationMs: elapsedMs(startedAt),
+      artifactCount: 8,
+    });
+  }
 }

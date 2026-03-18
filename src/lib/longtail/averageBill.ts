@@ -1,4 +1,5 @@
 import { FEATURED_APPLIANCE_SLUGS, getApplianceConfig } from "@/lib/longtail/applianceConfig";
+import { loadKnowledgePage } from "@/lib/knowledge/loadKnowledgePage";
 import {
   calculateUsageCost,
   formatRate,
@@ -7,6 +8,11 @@ import {
   loadLongtailStateData,
   type LongtailStateData,
 } from "@/lib/longtail/stateLongtail";
+import {
+  emitLongtailData,
+  elapsedMs,
+  startRuntimeTimer,
+} from "@/lib/telemetry/runtime";
 import { getCanonicalUsageCostPath } from "@/lib/longtail/usageEntryRoutes";
 
 export const AVERAGE_ELECTRICITY_BILL_USAGE_KWH = 900;
@@ -33,9 +39,42 @@ export type AverageBillStateSummary = LongtailStateData & {
   monthlyDifferencePercent: number | null;
 };
 
-export async function getAverageBillStaticParams(): Promise<Array<{ slug: string }>> {
-  const states = await getLongtailStateStaticParams();
-  return states.map(({ state }) => ({ slug: state }));
+type AverageBillTelemetryOptions = {
+  contextLabel?: string;
+};
+type AllAverageBillSummariesComputation = {
+  rows: AverageBillStateSummary[];
+  staticParamsMs: number;
+  fanoutLoadMs: number;
+  finalizeMs: number;
+  fanoutCount: number;
+};
+let memoizedAllAverageBillSummariesPromise: Promise<AllAverageBillSummariesComputation> | null = null;
+
+export async function getAverageBillStaticParams(
+  options?: AverageBillTelemetryOptions,
+): Promise<Array<{ slug: string }>> {
+  const startedAt = startRuntimeTimer();
+  let longtailParamsMs = 0;
+  let mapMs = 0;
+  const longtailStartedAt = startRuntimeTimer();
+  const states = await getLongtailStateStaticParams({ contextLabel: options?.contextLabel });
+  longtailParamsMs = elapsedMs(longtailStartedAt);
+  const mapStartedAt = startRuntimeTimer();
+  const rows = states.map(({ state }) => ({ slug: state }));
+  mapMs = elapsedMs(mapStartedAt);
+  emitLongtailData({
+    targetId: "averageBill",
+    operation: "getAverageBillStaticParams",
+    durationMs: elapsedMs(startedAt),
+    contextLabel: options?.contextLabel,
+    sampleMeta: {
+      longtail_params_ms: longtailParamsMs,
+      map_ms: mapMs,
+      state_count: rows.length,
+    },
+  });
+  return rows;
 }
 
 export function calculateAverageElectricityBill(
@@ -68,10 +107,133 @@ export function buildAverageBillApplianceLinks(
   });
 }
 
-export async function loadAverageBillStateSummary(slug: string): Promise<AverageBillStateSummary | null> {
-  const state = await loadLongtailStateData(slug);
-  if (!state) return null;
+async function computeAllAverageBillStateSummaries(
+  options?: AverageBillTelemetryOptions,
+): Promise<AllAverageBillSummariesComputation> {
+  let staticParamsMs = 0;
+  let fanoutLoadMs = 0;
+  let finalizeMs = 0;
+  const staticParamsStartedAt = startRuntimeTimer();
+  const states = await getLongtailStateStaticParams({ contextLabel: options?.contextLabel });
+  staticParamsMs = elapsedMs(staticParamsStartedAt);
+  const sharedNationalPagePromise = loadKnowledgePage("national", "national");
+  const fanoutLoadStartedAt = startRuntimeTimer();
+  const rows = await Promise.all(
+    states.map(async ({ state }) => {
+      const startedAtForState = startRuntimeTimer();
+      const longtailState = await loadLongtailStateData(
+        state,
+        { contextLabel: options?.contextLabel },
+        { nationalPagePromise: sharedNationalPagePromise },
+      );
+      const stateLoadMs = elapsedMs(startedAtForState);
+      if (!longtailState) {
+        emitLongtailData({
+          targetId: "averageBill",
+          operation: "loadAverageBillStateSummary",
+          durationMs: stateLoadMs,
+          contextLabel: options?.contextLabel,
+          stateSlug: state,
+          sampleMeta: {
+            state_load_ms: stateLoadMs,
+            compute_ms: 0,
+            found_state: false,
+          },
+        });
+        return null;
+      }
+      const computeStartedAt = startRuntimeTimer();
+      const monthlyBill = calculateAverageElectricityBill(longtailState.avgRateCentsPerKwh);
+      const annualBill =
+        monthlyBill != null
+          ? monthlyBill * 12
+          : calculateAverageElectricityBill(longtailState.avgRateCentsPerKwh, 10800);
+      const nationalMonthlyBill = calculateAverageElectricityBill(longtailState.nationalAverageCentsPerKwh);
+      const monthlyDifference =
+        monthlyBill != null && nationalMonthlyBill != null ? monthlyBill - nationalMonthlyBill : null;
+      const monthlyDifferencePercent =
+        monthlyDifference != null && nationalMonthlyBill != null && nationalMonthlyBill > 0
+          ? (monthlyDifference / nationalMonthlyBill) * 100
+          : null;
+      const computeMs = elapsedMs(computeStartedAt);
+      const result: AverageBillStateSummary = {
+        ...longtailState,
+        monthlyBill,
+        annualBill,
+        nationalMonthlyBill,
+        monthlyDifference,
+        monthlyDifferencePercent,
+      };
+      emitLongtailData({
+        targetId: "averageBill",
+        operation: "loadAverageBillStateSummary",
+        durationMs: elapsedMs(startedAtForState),
+        contextLabel: options?.contextLabel,
+        stateSlug: state,
+        sampleMeta: {
+          state_load_ms: stateLoadMs,
+          compute_ms: computeMs,
+          found_state: true,
+        },
+      });
+      return result;
+    }),
+  );
+  fanoutLoadMs = elapsedMs(fanoutLoadStartedAt);
+  const finalizeStartedAt = startRuntimeTimer();
+  const result = rows
+    .filter((row): row is AverageBillStateSummary => row != null)
+    .sort((a, b) => a.name.localeCompare(b.name));
+  finalizeMs = elapsedMs(finalizeStartedAt);
+  return {
+    rows: result,
+    staticParamsMs,
+    fanoutLoadMs,
+    finalizeMs,
+    fanoutCount: states.length,
+  };
+}
 
+function getMemoizedAllAverageBillStateSummaries(
+  options?: AverageBillTelemetryOptions,
+): { promise: Promise<AllAverageBillSummariesComputation>; cacheHit: boolean } {
+  if (!memoizedAllAverageBillSummariesPromise) {
+    memoizedAllAverageBillSummariesPromise = computeAllAverageBillStateSummaries(options).catch((error) => {
+      memoizedAllAverageBillSummariesPromise = null;
+      throw error;
+    });
+    return { promise: memoizedAllAverageBillSummariesPromise, cacheHit: false };
+  }
+  return { promise: memoizedAllAverageBillSummariesPromise, cacheHit: true };
+}
+
+export async function loadAverageBillStateSummary(
+  slug: string,
+  options?: AverageBillTelemetryOptions,
+): Promise<AverageBillStateSummary | null> {
+  const startedAt = startRuntimeTimer();
+  let stateLoadMs = 0;
+  let computeMs = 0;
+  const stateLoadStartedAt = startRuntimeTimer();
+  const state = await loadLongtailStateData(slug, { contextLabel: options?.contextLabel });
+  stateLoadMs = elapsedMs(stateLoadStartedAt);
+  if (!state) {
+    emitLongtailData({
+      targetId: "averageBill",
+      operation: "loadAverageBillStateSummary",
+      durationMs: elapsedMs(startedAt),
+      contextLabel: options?.contextLabel,
+      stateSlug: slug,
+      sampleMeta: {
+        state_load_ms: stateLoadMs,
+        compute_ms: computeMs,
+        found_state: false,
+      },
+    });
+    return null;
+  }
+
+  const computeStartedAt = startRuntimeTimer();
   const monthlyBill = calculateAverageElectricityBill(state.avgRateCentsPerKwh);
   const annualBill =
     monthlyBill != null ? monthlyBill * 12 : calculateAverageElectricityBill(state.avgRateCentsPerKwh, 10800);
@@ -82,8 +244,9 @@ export async function loadAverageBillStateSummary(slug: string): Promise<Average
     monthlyDifference != null && nationalMonthlyBill != null && nationalMonthlyBill > 0
       ? (monthlyDifference / nationalMonthlyBill) * 100
       : null;
+  computeMs = elapsedMs(computeStartedAt);
 
-  return {
+  const result = {
     ...state,
     monthlyBill,
     annualBill,
@@ -91,14 +254,45 @@ export async function loadAverageBillStateSummary(slug: string): Promise<Average
     monthlyDifference,
     monthlyDifferencePercent,
   };
+  emitLongtailData({
+    targetId: "averageBill",
+    operation: "loadAverageBillStateSummary",
+    durationMs: elapsedMs(startedAt),
+    contextLabel: options?.contextLabel,
+    stateSlug: slug,
+    sampleMeta: {
+      state_load_ms: stateLoadMs,
+      compute_ms: computeMs,
+      found_state: true,
+    },
+  });
+  return result;
 }
 
-export async function loadAllAverageBillStateSummaries(): Promise<AverageBillStateSummary[]> {
-  const states = await getLongtailStateStaticParams();
-  const rows = await Promise.all(states.map(({ state }) => loadAverageBillStateSummary(state)));
-  return rows
-    .filter((row): row is AverageBillStateSummary => row != null)
-    .sort((a, b) => a.name.localeCompare(b.name));
+export async function loadAllAverageBillStateSummaries(
+  options?: AverageBillTelemetryOptions,
+): Promise<AverageBillStateSummary[]> {
+  const startedAt = startRuntimeTimer();
+  const delegateStartedAt = startRuntimeTimer();
+  const { promise, cacheHit } = getMemoizedAllAverageBillStateSummaries(options);
+  const computed = await promise;
+  const delegateMs = elapsedMs(delegateStartedAt);
+  emitLongtailData({
+    targetId: "averageBill",
+    operation: "loadAllAverageBillStateSummaries",
+    durationMs: elapsedMs(startedAt),
+    contextLabel: options?.contextLabel,
+    sampleMeta: {
+      static_params_ms: computed.staticParamsMs,
+      fanout_load_ms: computed.fanoutLoadMs,
+      finalize_ms: computed.finalizeMs,
+      fanout_count: computed.fanoutCount,
+      result_count: computed.rows.length,
+      delegate_ms: delegateMs,
+      cache_hit: cacheHit,
+    },
+  });
+  return computed.rows;
 }
 
 export function sortAverageBillStates(

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { loadKnowledgePage, loadEntityIndex } from "@/lib/knowledge/loadKnowledgePage";
+import { loadKnowledgePage } from "@/lib/knowledge/loadKnowledgePage";
 import { buildMetadata } from "@/lib/seo/metadata";
 import { buildBreadcrumbListJsonLd } from "@/lib/seo/jsonld";
 import JsonLdScript from "@/app/components/seo/JsonLdScript";
@@ -9,18 +9,11 @@ import StatusFooter from "@/components/common/StatusFooter";
 import Disclaimers from "@/app/components/policy/Disclaimers";
 import { getRelease } from "@/lib/knowledge/fetch";
 
-export const dynamic = "force-static";
+export const dynamicParams = true;
 export const revalidate = 86400;
 
 function slugToDisplayName(slug: string): string {
   return slug.replace(/-/g, " ").replace(/\b\w/g, (c) => c.toUpperCase());
-}
-
-export async function generateStaticParams() {
-  const index = await loadEntityIndex();
-  return index.entities
-    .filter((e) => e.type === "state")
-    .map((e) => ({ slug: e.slug }));
 }
 
 export async function generateMetadata({

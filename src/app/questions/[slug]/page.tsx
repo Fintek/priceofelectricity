@@ -6,7 +6,6 @@ import { TOPICS } from "@/data/topics";
 import { isValidQuestionSlug } from "@/lib/slugGuard";
 import {
   getQuestionBodyContext,
-  getQuestionSlugs,
   parseQuestionSlug,
 } from "@/lib/questions";
 import { SITE_URL } from "@/lib/site";
@@ -14,15 +13,10 @@ import { getRelatedForQuestion } from "@/lib/related";
 import RelatedLinks from "@/app/components/RelatedLinks";
 
 const BASE_URL = SITE_URL;
-export const dynamic = "force-static";
-export const dynamicParams = false;
+export const dynamicParams = true;
 export const revalidate = 2592000;
 
 type QuestionParams = Promise<{ slug: string }>;
-
-export function generateStaticParams() {
-  return getQuestionSlugs(STATES).map((slug) => ({ slug }));
-}
 
 export async function generateMetadata({
   params,

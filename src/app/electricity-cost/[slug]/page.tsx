@@ -3,7 +3,6 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import {
   loadKnowledgePage,
-  loadEntityIndex,
   loadInsights,
 } from "@/lib/knowledge/loadKnowledgePage";
 import { getActiveCitiesForState } from "@/lib/longtail/rollout";
@@ -18,15 +17,8 @@ import ExploreMore from "@/components/navigation/ExploreMore";
 const MONTHLY_USAGE_KWH = 900;
 const ANNUAL_USAGE_KWH = 10800;
 
-export const dynamic = "force-static";
+export const dynamicParams = true;
 export const revalidate = 86400;
-
-export async function generateStaticParams() {
-  const index = await loadEntityIndex();
-  return index.entities
-    .filter((e) => e.type === "state")
-    .map((e) => ({ slug: e.slug }));
-}
 
 export async function generateMetadata({
   params,

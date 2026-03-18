@@ -3,7 +3,6 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import {
   loadKnowledgePage,
-  loadEntityIndex,
 } from "@/lib/knowledge/loadKnowledgePage";
 import { buildMetadata } from "@/lib/seo/metadata";
 import { buildBreadcrumbListJsonLd } from "@/lib/seo/jsonld";
@@ -12,17 +11,10 @@ import StatusFooter from "@/components/common/StatusFooter";
 import Disclaimers from "@/app/components/policy/Disclaimers";
 import { getRelease } from "@/lib/knowledge/fetch";
 
-export const dynamic = "force-static";
+export const dynamicParams = true;
 export const revalidate = 86400;
 
 type VolatilityState = { slug: string; name: string; metricValue: number; rank: number };
-
-export async function generateStaticParams() {
-  const index = await loadEntityIndex();
-  return index.entities
-    .filter((e) => e.type === "state")
-    .map((e) => ({ slug: e.slug }));
-}
 
 export async function generateMetadata({
   params,

@@ -11,28 +11,17 @@ import {
   calculateUsageCost,
   formatRate,
   formatUsd,
-  getLongtailStateStaticParams,
   isValidLongtailUsageKwh,
   loadLongtailStateData,
 } from "@/lib/longtail/stateLongtail";
 import { buildLongtailLinkSections } from "@/lib/longtail/internalLinks";
 import {
-  getActiveUsageKwhTiers,
   isActiveUsageKwhTier,
   isLongtailFamilyActive,
 } from "@/lib/longtail/rollout";
 
-export const dynamic = "force-static";
+export const dynamicParams = true;
 export const revalidate = 86400;
-
-export async function generateStaticParams() {
-  if (!isLongtailFamilyActive("usage-cost")) return [];
-  const states = await getLongtailStateStaticParams();
-  const tiers = getActiveUsageKwhTiers();
-  return tiers.flatMap((kwh) =>
-    states.map(({ state }) => ({ kwh: String(kwh), state })),
-  );
-}
 
 function parseUsageKwh(kwhParam: string): number | null {
   const parsed = Number(kwhParam);

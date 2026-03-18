@@ -2,14 +2,17 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import {
   loadKnowledgePage,
-  loadEntityIndex,
-  loadRankingsIndex,
-  loadRelatedIndex,
-  loadInsights,
   resolveEntityRefs,
 } from "@/lib/knowledge/loadKnowledgePage";
 import { getGlossaryMap } from "@/lib/knowledge/glossary";
-import { getGlossary, getRelease } from "@/lib/knowledge/fetch";
+import {
+  getEntityIndex,
+  getGlossary,
+  getRankingInsights,
+  getRankingsIndex,
+  getRelatedIndex,
+  getRelease,
+} from "@/lib/knowledge/fetch";
 import KnowledgeHeader from "@/app/components/knowledge/KnowledgeHeader";
 import RankingHeader from "@/components/knowledge/RankingHeader";
 import RankingDetailClient from "./RankingDetailClient";
@@ -29,16 +32,46 @@ import { SITE_URL } from "@/lib/site";
 import { buildMetadata } from "@/lib/seo/metadata";
 import { buildWebPageJsonLd, buildDatasetJsonLd, buildBreadcrumbListJsonLd } from "@/lib/seo/jsonld";
 import JsonLdScript from "@/app/components/seo/JsonLdScript";
+import { emitRouteRuntimeProfile, elapsedMs, startRuntimeTimer } from "@/lib/telemetry/runtime";
 
 const BASE_URL = SITE_URL;
-export const dynamic = "force-static";
+export const dynamicParams = true;
 export const revalidate = 86400;
+const RANKINGS_INDEX_ITEM_BY_ID_PROMISE = getRankingsIndex().then((index) => {
+  const byId = new Map<string, NonNullable<typeof index>["items"][number]>();
+  for (const item of index?.items ?? []) {
+    byId.set(item.id, item);
+  }
+  return byId;
+});
+type KnowledgeRankingsSharedData = {
+  entityIndex: Awaited<ReturnType<typeof getEntityIndex>>;
+  glossary: Awaited<ReturnType<typeof getGlossary>>;
+  release: Awaited<ReturnType<typeof getRelease>>;
+  relatedMap: Awaited<ReturnType<typeof getRelatedIndex>>;
+};
+let memoizedKnowledgeRankingsSharedDataPromise: Promise<KnowledgeRankingsSharedData> | null = null;
 
-export async function generateStaticParams() {
-  const index = await loadEntityIndex();
-  return index.entities
-    .filter((e) => e.type === "rankings")
-    .map((e) => ({ id: e.slug }));
+function getMemoizedKnowledgeRankingsSharedData(): Promise<KnowledgeRankingsSharedData> {
+  if (!memoizedKnowledgeRankingsSharedDataPromise) {
+    memoizedKnowledgeRankingsSharedDataPromise = Promise.all([
+      getEntityIndex(),
+      getGlossary(),
+      getRelease(),
+      getRelatedIndex(),
+    ])
+      .then(([entityIndex, glossary, release, relatedMap]) => ({
+        entityIndex,
+        glossary,
+        release,
+        relatedMap,
+      }))
+      .catch((error) => {
+        memoizedKnowledgeRankingsSharedDataPromise = null;
+        throw error;
+      });
+  }
+  return memoizedKnowledgeRankingsSharedDataPromise;
 }
 
 export async function generateMetadata({
@@ -67,20 +100,20 @@ export default async function KnowledgeRankingsPage({
 }: {
   params: Promise<{ id: string }>;
 }) {
+  const startedAt = startRuntimeTimer();
   const { id } = await params;
-  const [page, entityIndex, rankingsIndex, glossary, release, relatedMap, insights] = await Promise.all([
-    loadKnowledgePage("rankings", id),
-    loadEntityIndex(),
-    loadRankingsIndex(),
-    getGlossary(),
-    getRelease(),
-    loadRelatedIndex(),
-    loadInsights("ranking", id),
-  ]);
+  try {
+    const [page, rankingsIndexById, insights, sharedData] = await Promise.all([
+      loadKnowledgePage("rankings", id, { routeId: "knowledge/rankings/[id]" }),
+      RANKINGS_INDEX_ITEM_BY_ID_PROMISE,
+      getRankingInsights(id),
+      getMemoizedKnowledgeRankingsSharedData(),
+    ]);
+  const { entityIndex, glossary, release, relatedMap } = sharedData;
 
   if (!page) notFound();
 
-  const indexItem = rankingsIndex?.items.find((i) => i.id === id);
+  const indexItem = rankingsIndexById.get(id);
   const metricField = indexItem?.metricField ?? "";
   const metricId = metricField.split(".").pop() ?? undefined;
   const direction = indexItem?.sortDirection;
@@ -132,7 +165,7 @@ export default async function KnowledgeRankingsPage({
     metricValue: number;
   }>) ?? [];
 
-  return (
+    return (
     <>
       <JsonLdScript data={[breadcrumbJsonLd, webPageJsonLd, datasetJsonLd]} />
       <main className="container">
@@ -262,7 +295,6 @@ export default async function KnowledgeRankingsPage({
           <Section title="JSON preview" defaultCollapsed collapseSummary="Show JSON">
           <JsonPreview
             jsonUrl={page.meta.jsonUrl}
-            jsonPreview={JSON.stringify({ meta: page.meta, data: page.data }, null, 2)}
             copyValue={page.meta.jsonUrl?.startsWith("http") ? page.meta.jsonUrl : `${BASE_URL}/knowledge/rankings/${id}.json`}
           />
           </Section>
@@ -295,4 +327,12 @@ export default async function KnowledgeRankingsPage({
     </main>
     </>
   );
+  } finally {
+    emitRouteRuntimeProfile({
+      routeId: "knowledge/rankings/[id]",
+      phase: "render",
+      durationMs: elapsedMs(startedAt),
+      artifactCount: 7,
+    });
+  }
 }

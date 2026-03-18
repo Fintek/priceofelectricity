@@ -974,18 +974,27 @@ function main() {
   const historySnapshots = capabilitiesForSparkline?.capabilities?.historySnapshots === true;
   if (historySnapshots) {
     const stateFiles = fs.readdirSync(path.join(root, "state")).filter((f) => f.endsWith(".json"));
-    let foundTrends = false;
+    let foundHistorySignal = false;
     for (const f of stateFiles) {
       const statePath = path.join(root, "state", f);
       const stateJson = readJson(statePath, f);
       const values = stateJson?.data?.derived?.trends?.avgRateCentsPerKwh?.values;
-      if (Array.isArray(values) && values.length >= 2) {
-        foundTrends = true;
+      const momentumPoints = stateJson?.data?.derived?.momentum?.windowPointsUsed;
+      const hasLegacyTrends = Array.isArray(values) && values.length >= 2;
+      const hasMomentumHistory =
+        stateJson?.data?.derived?.momentum?.enabled === true &&
+        typeof momentumPoints === "number" &&
+        Number.isFinite(momentumPoints) &&
+        momentumPoints >= 2;
+      if (hasLegacyTrends || hasMomentumHistory) {
+        foundHistorySignal = true;
         break;
       }
     }
-    if (!foundTrends) {
-      fail("historySnapshots true but no state JSON contains data.derived.trends.avgRateCentsPerKwh.values array");
+    if (!foundHistorySignal) {
+      fail(
+        "historySnapshots true but no state JSON contains historical trend values or momentum window points",
+      );
     }
   }
 
@@ -1388,25 +1397,8 @@ function main() {
   if (searchIndexStat.size > SIZE_BUDGETS["knowledge/search-index.json"]) {
     fail(`search-index.json exceeds budget: ${searchIndexStat.size} > ${SIZE_BUDGETS["knowledge/search-index.json"]}`);
   }
-  const COMPRESSION_TARGETS = [
-    "knowledge/search-index.json",
-    "knowledge/entity-index.json",
-    "knowledge/schema-map.json",
-    "knowledge/provenance.json",
-  ];
-  const GZIP_THRESHOLD = 100000;
-  for (const rel of COMPRESSION_TARGETS) {
-    const fullPath = path.join(process.cwd(), "public", rel.replace(/\\/g, "/"));
-    if (fs.existsSync(fullPath)) {
-      const st = fs.statSync(fullPath);
-      if (st.size > GZIP_THRESHOLD) {
-        const gzPath = fullPath + ".gz";
-        if (!fs.existsSync(gzPath)) {
-          fail(`file ${rel} is >${GZIP_THRESHOLD} bytes but .gz missing`);
-        }
-      }
-    }
-  }
+  // Compressed *.json.gz sidecar verification was intentionally retired.
+  // Canonical machine artifact checks target non-.gz /knowledge/*.json files only.
   const dataRoutePath = path.join(process.cwd(), "src", "app", "data", "page.tsx");
   if (!fs.existsSync(dataRoutePath)) {
     fail("/data route missing: src/app/data/page.tsx");

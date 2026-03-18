@@ -7,7 +7,6 @@ import StatusFooter from "@/components/common/StatusFooter";
 import LongtailStateTemplate from "@/components/longtail/LongtailStateTemplate";
 import { getRelease } from "@/lib/knowledge/fetch";
 import {
-  getApplianceCityRolloutStaticParams,
   loadApplianceCityElectricitySummary,
 } from "@/lib/longtail/cityElectricity";
 import { formatHoursPerDay, formatKwh, formatWattageRange } from "@/lib/longtail/applianceLongtail";
@@ -15,18 +14,13 @@ import { formatRate, formatUsd } from "@/lib/longtail/stateLongtail";
 import { buildMetadata } from "@/lib/seo/metadata";
 import { buildBreadcrumbListJsonLd, buildWebPageJsonLd } from "@/lib/seo/jsonld";
 
-export const dynamic = "force-static";
-export const dynamicParams = false;
+export const dynamicParams = true;
 export const revalidate = 86400;
 
 type PageParams = Promise<{ appliance: string; state: string; city: string }>;
 
 function getIndefiniteArticle(label: string): "a" | "an" {
   return /^[aeiou]/i.test(label) ? "an" : "a";
-}
-
-export async function generateStaticParams() {
-  return getApplianceCityRolloutStaticParams();
 }
 
 export async function generateMetadata({

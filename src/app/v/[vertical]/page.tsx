@@ -7,15 +7,10 @@ import { getRelatedLinks } from "@/lib/related";
 import RelatedLinks from "@/app/components/RelatedLinks";
 
 const BASE_URL = SITE_URL;
-export const dynamic = "force-static";
-export const dynamicParams = false;
+export const dynamicParams = true;
 export const revalidate = 2592000;
 
 type PageParams = Promise<{ vertical: string }>;
-
-export function generateStaticParams() {
-  return VERTICALS.map((v) => ({ vertical: v.slug }));
-}
 
 export async function generateMetadata({
   params,

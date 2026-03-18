@@ -8,15 +8,10 @@ import { PLAN_TYPES } from "@/data/planTypes";
 import { SITE_URL } from "@/lib/site";
 
 const BASE_URL = SITE_URL;
-export const dynamic = "force-static";
-export const dynamicParams = false;
+export const dynamicParams = true;
 export const revalidate = 2592000;
 
 type PlanTypesParams = Promise<{ state: string }>;
-
-export function generateStaticParams() {
-  return Object.keys(STATES).map((state) => ({ state }));
-}
 
 function resolveState(rawState: string) {
   const stateSlug = normalizeSlug(rawState);

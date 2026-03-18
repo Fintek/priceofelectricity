@@ -95,9 +95,12 @@ export async function stopServer(proc: ChildProcess): Promise<void> {
   }
 }
 
-export async function fetchWithTimeout(url: string): Promise<Response> {
+export async function fetchWithTimeout(
+  url: string,
+  timeoutMs: number = REQUEST_TIMEOUT_MS,
+): Promise<Response> {
   const controller = new AbortController();
-  const timeout = setTimeout(() => controller.abort(), REQUEST_TIMEOUT_MS);
+  const timeout = setTimeout(() => controller.abort(), timeoutMs);
   try {
     return await fetch(url, { signal: controller.signal, redirect: "follow" });
   } finally {

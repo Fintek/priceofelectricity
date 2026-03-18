@@ -32,11 +32,25 @@ Configured in `lighthouserc.json`:
 
 These are intentionally realistic for CI. They should catch major regressions while avoiding unnecessary flakiness.
 
+## Deployment payload budgets
+
+Runtime route latency and frontend quality are now complemented by a lightweight deployment payload gate.
+
+`npm run payload:audit` enforces these output-size ceilings after build:
+
+- `.next/standalone` <= `85 MiB`
+- `.next/server/app` <= `40 MiB`
+- `public/knowledge` <= `6 MiB`
+
+The script also prints top subfolders for `.next/server/app` and `public/knowledge` to make growth concentration visible during reviews.
+
 ## How to run locally
 
 1. Build production assets:
    - `npm run build`
-2. Run Lighthouse CI:
+2. Run payload governance audit:
+   - `npm run payload:audit`
+3. Run Lighthouse CI:
    - `npm run lhci`
 
 `lhci autorun` will start a production server and run audits with one run per URL.
@@ -44,6 +58,7 @@ These are intentionally realistic for CI. They should catch major regressions wh
 ## CI behavior
 
 - `npm run verify` includes LHCI at the end of the pipeline.
+- `npm run verify` and `npm run verify:vercel` include `npm run payload:audit` immediately after `npm run build`.
 - GitHub Actions uploads `.lighthouseci` as an artifact (`lhci-reports`) for debugging, even when verification fails.
 
 ## Interpreting failures
@@ -67,3 +82,12 @@ If a threshold needs adjustment:
 - Change thresholds only with evidence from repeated runs.
 - Keep thresholds strict enough to detect meaningful regressions.
 - Update this document and `lighthouserc.json` together.
+
+### Payload threshold update policy
+
+For deployment payload thresholds (`.next/standalone`, `.next/server/app`, `public/knowledge`):
+
+- Raise a payload budget only after at least 2 repeated runs show a stable overage from intentional changes.
+- Include measured evidence in the PR (before/after MiB from `npm run payload:audit` output).
+- Update `scripts/payload-audit.ts` and this document in the same PR.
+- Keep `verify` and `verify:vercel` wiring intact so enforcement remains automatic.

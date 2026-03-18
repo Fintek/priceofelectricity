@@ -4,19 +4,13 @@ import { notFound } from "next/navigation";
 import { SITE_URL, LAST_REVIEWED } from "@/lib/site";
 import {
   getSnapshot,
-  getSnapshotVersions,
   getCurrentSnapshot,
 } from "@/lib/snapshotLoader";
 import { STATES } from "@/data/states";
 
 const BASE_URL = SITE_URL;
-export const dynamic = "force-static";
-export const dynamicParams = false;
+export const dynamicParams = true;
 export const revalidate = 2592000;
-
-export function generateStaticParams() {
-  return getSnapshotVersions().map((version) => ({ version }));
-}
 
 export async function generateMetadata({
   params,

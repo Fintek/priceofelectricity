@@ -4,21 +4,15 @@ import { notFound } from "next/navigation";
 import { STATES } from "@/data/states";
 import {
   getSource,
-  SOURCES,
   getStatesBySourceSlug,
 } from "@/data/sources";
 import { SITE_URL } from "@/lib/site";
 
 const BASE_URL = SITE_URL;
-export const dynamic = "force-static";
-export const dynamicParams = false;
+export const dynamicParams = true;
 export const revalidate = 2592000;
 
 type SourceParams = Promise<{ slug: string }>;
-
-export function generateStaticParams() {
-  return SOURCES.map((s) => ({ slug: s.slug }));
-}
 
 export async function generateMetadata({
   params,

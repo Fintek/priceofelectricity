@@ -8,7 +8,6 @@ import LongtailStateTemplate from "@/components/longtail/LongtailStateTemplate";
 import { getRelease } from "@/lib/knowledge/fetch";
 import {
   CITY_REFERENCE_USAGE_KWH,
-  getCityRolloutStaticParams,
   loadCityElectricitySummary,
 } from "@/lib/longtail/cityElectricity";
 import { getActiveApplianceSlugs, getActiveCitiesForState } from "@/lib/longtail/rollout";
@@ -16,16 +15,8 @@ import { formatRate, formatUsd, slugToName } from "@/lib/longtail/stateLongtail"
 import { buildMetadata } from "@/lib/seo/metadata";
 import { buildBreadcrumbListJsonLd, buildDatasetJsonLd, buildFaqPageJsonLd, buildWebPageJsonLd } from "@/lib/seo/jsonld";
 
-export const dynamic = "force-static";
-export const dynamicParams = false;
+export const dynamicParams = true;
 export const revalidate = 86400;
-
-export async function generateStaticParams() {
-  return getCityRolloutStaticParams().map(({ state, city }) => ({
-    slug: state,
-    city,
-  }));
-}
 
 export async function generateMetadata({
   params,

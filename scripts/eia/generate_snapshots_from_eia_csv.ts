@@ -42,6 +42,12 @@ const OUTPUT_HISTORY_GENERATED_PATH = path.join(
   "data",
   "history.generated.ts",
 );
+const OUTPUT_HISTORY_GENERATED_JSON_PATH = path.join(
+  process.cwd(),
+  "src",
+  "data",
+  "history.generated.json",
+);
 const OUTPUT_SNAPSHOT_V1_PATH = path.join(
   process.cwd(),
   "src",
@@ -332,6 +338,11 @@ async function main(): Promise<void> {
     "utf8",
   );
   await writeFile(
+    OUTPUT_HISTORY_GENERATED_JSON_PATH,
+    `${JSON.stringify(history, null, 2)}\n`,
+    "utf8",
+  );
+  await writeFile(
     OUTPUT_SNAPSHOT_V1_PATH,
     `${JSON.stringify(v1Snapshot, null, 2)}\n`,
     "utf8",
@@ -348,6 +359,7 @@ async function main(): Promise<void> {
   console.log(`latest_period=${v2Period}`);
   console.log(`snapshot_periods=v1:${v1Period}, v2:${v2Period}`);
   console.log(`wrote=${OUTPUT_HISTORY_GENERATED_PATH}`);
+  console.log(`wrote=${OUTPUT_HISTORY_GENERATED_JSON_PATH}`);
   console.log(`wrote=${OUTPUT_SNAPSHOT_V1_PATH}`);
   console.log(`wrote=${OUTPUT_SNAPSHOT_V2_PATH}`);
 }

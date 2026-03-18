@@ -4,7 +4,6 @@ import { notFound } from "next/navigation";
 import {
   loadRegionDetail,
   loadRegionRankings,
-  loadRegionsIndex,
 } from "@/lib/knowledge/loadKnowledgePage";
 import KnowledgeHeader from "@/app/components/knowledge/KnowledgeHeader";
 import MiniBarChart from "@/components/charts/MiniBarChart";
@@ -17,14 +16,8 @@ import { buildMetadata } from "@/lib/seo/metadata";
 import { getRelease } from "@/lib/knowledge/fetch";
 
 const BASE_URL = SITE_URL;
-export const dynamic = "force-static";
+export const dynamicParams = true;
 export const revalidate = 86400;
-
-export async function generateStaticParams() {
-  const index = await loadRegionsIndex();
-  if (!index?.regions?.length) return [];
-  return index.regions.map((r) => ({ id: r.id }));
-}
 
 export async function generateMetadata({
   params,

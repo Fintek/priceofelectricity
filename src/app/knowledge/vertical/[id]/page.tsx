@@ -22,15 +22,8 @@ import { buildWebPageJsonLd } from "@/lib/seo/jsonld";
 import JsonLdScript from "@/app/components/seo/JsonLdScript";
 
 const BASE_URL = SITE_URL;
-export const dynamic = "force-static";
+export const dynamicParams = true;
 export const revalidate = 86400;
-
-export async function generateStaticParams() {
-  const index = await loadEntityIndex();
-  return index.entities
-    .filter((e) => e.type === "vertical")
-    .map((e) => ({ id: e.slug }));
-}
 
 export async function generateMetadata({
   params,
@@ -125,7 +118,6 @@ export default async function KnowledgeVerticalPage({
           <Section title="JSON preview" defaultCollapsed collapseSummary="Show JSON">
           <JsonPreview
             jsonUrl={page.meta.jsonUrl}
-            jsonPreview={JSON.stringify({ meta: page.meta, data: page.data }, null, 2)}
             copyValue={page.meta.jsonUrl?.startsWith("http") ? page.meta.jsonUrl : `${BASE_URL}/knowledge/vertical/${id}.json`}
           />
           </Section>

@@ -11,7 +11,6 @@ import {
   buildBillEstimatorMethodologyNote,
   calculateBillEstimatorProfileMonthlyCost,
   getBillEstimatorProfile,
-  getBillEstimatorProfileStaticParams,
   isBillEstimatorProfileSlug,
   loadBillEstimatorStateSummary,
 } from "@/lib/longtail/billEstimator";
@@ -25,13 +24,8 @@ import {
 } from "@/lib/seo/jsonld";
 import { formatRate, formatUsd } from "@/lib/longtail/stateLongtail";
 
-export const dynamic = "force-static";
-export const dynamicParams = false;
+export const dynamicParams = true;
 export const revalidate = 86400;
-
-export async function generateStaticParams() {
-  return getBillEstimatorProfileStaticParams();
-}
 
 export async function generateMetadata({
   params,

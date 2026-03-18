@@ -4,23 +4,15 @@ import { notFound } from "next/navigation";
 import { STATES } from "@/data/states";
 import { normalizeSlug } from "@/data/slug";
 import { isValidStateSlug } from "@/lib/slugGuard";
-import { getUtility, UTILITIES } from "@/data/utilities";
+import { getUtility } from "@/data/utilities";
 import { buildNormalizedState } from "@/lib/stateBuilder";
 import { SITE_URL } from "@/lib/site";
 
 const BASE_URL = SITE_URL;
-export const dynamic = "force-static";
-export const dynamicParams = false;
+export const dynamicParams = true;
 export const revalidate = 2592000;
 
 type UtilityParams = Promise<{ state: string; utilitySlug: string }>;
-
-export function generateStaticParams() {
-  return UTILITIES.map((utility) => ({
-    state: utility.stateSlug,
-    utilitySlug: utility.slug,
-  }));
-}
 
 function resolveSlug(rawState: string): string | null {
   const stateSlug = normalizeSlug(rawState);

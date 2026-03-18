@@ -5,19 +5,13 @@ import { SITE_URL, LAST_REVIEWED } from "@/lib/site";
 import {
   getVertical,
   getVerticalPillar,
-  getAllVerticalPillarParams,
 } from "@/content/verticals";
 
 const BASE_URL = SITE_URL;
-export const dynamic = "force-static";
-export const dynamicParams = false;
+export const dynamicParams = true;
 export const revalidate = 2592000;
 
 type PageParams = Promise<{ vertical: string; pillar: string }>;
-
-export function generateStaticParams() {
-  return getAllVerticalPillarParams();
-}
 
 export async function generateMetadata({
   params,
