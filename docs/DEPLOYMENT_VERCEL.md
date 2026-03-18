@@ -64,6 +64,6 @@ This checks:
 After deployment, verify:
 
 - `/robots.txt` behavior is correct for the environment
-- `/sitemap.xml` is reachable
+- `/sitemap-index.xml` is reachable (canonical sitemap entrypoint)
 - `/health` returns status with release metadata
 - `/status` shows release metadata and data version

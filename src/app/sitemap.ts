@@ -1779,7 +1779,10 @@ export function generateSitemaps(): Array<{ id: SitemapSegmentId }> {
   return SITEMAP_SEGMENT_IDS.map((id) => ({ id }));
 }
 
-export default function sitemap({ id }: { id: SitemapSegmentId }): MetadataRoute.Sitemap {
+export default async function sitemap(props: {
+  id: Promise<SitemapSegmentId>;
+}): Promise<MetadataRoute.Sitemap> {
+  const id = await props.id;
   const grouped = getSegmentedSitemapEntries();
   return grouped[id] ?? grouped.core;
 }
