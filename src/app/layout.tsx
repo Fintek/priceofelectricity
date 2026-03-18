@@ -178,14 +178,16 @@ export default function RootLayout({
             <Link href="/attribution">Attribution</Link> <span>|</span>{" "}
             <Link href="/index">Site Index</Link>
           </div>
-          <div className="container muted" style={{ textAlign: "center", fontSize: 11, paddingTop: 6, opacity: 0.7 }}>
-            Admin:{" "}
-            <Link href="/launch-checklist">Checklist</Link> {" | "}
-            <Link href="/metrics">Metrics</Link> {" | "}
-            <Link href="/submit-urls">Submit URLs</Link> {" | "}
-            <Link href="/readiness">Readiness</Link> {" | "}
-            <Link href="/revenue">Revenue</Link>
-          </div>
+          {process.env.NODE_ENV !== "production" && (
+            <div className="container muted" style={{ textAlign: "center", fontSize: 11, paddingTop: 6, opacity: 0.7 }}>
+              Admin:{" "}
+              <Link href="/launch-checklist">Checklist</Link> {" | "}
+              <Link href="/metrics">Metrics</Link> {" | "}
+              <Link href="/submit-urls">Submit URLs</Link> {" | "}
+              <Link href="/readiness">Readiness</Link> {" | "}
+              <Link href="/revenue">Revenue</Link>
+            </div>
+          )}
           <div className="container muted" style={{ textAlign: "center", fontSize: 12, paddingTop: 4, paddingBottom: 8 }}>
             Data version: {getCurrentSnapshot().version}
           </div>
