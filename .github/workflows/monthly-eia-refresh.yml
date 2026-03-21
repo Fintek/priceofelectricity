@@ -1,0 +1,64 @@
+name: Monthly EIA Price Refresh
+
+# Runs on the 28th of each month at 10:00 UTC (06:00 ET / 07:00 EDT).
+# EIA typically publishes monthly residential data by mid-month; the 28th
+# provides a comfortable buffer for late releases and revisions.
+on:
+  schedule:
+    - cron: "0 10 28 * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update-eia:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Fetch latest EIA residential prices
+        id: fetch
+        run: |
+          set -o pipefail
+          npm run data:update:eia:res 2>&1 | tee /tmp/eia-output.log
+          if grep -q "No new or changed data" /tmp/eia-output.log; then
+            echo "skip=true" >> "$GITHUB_OUTPUT"
+          fi
+        env:
+          EIA_API_KEY: ${{ secrets.EIA_API_KEY }}
+
+      - name: Regenerate snapshot and history artifacts
+        if: steps.fetch.outputs.skip != 'true'
+        run: npm run data:build:snapshots:eia
+
+      - name: Check for changes
+        if: steps.fetch.outputs.skip != 'true'
+        id: changes
+        run: |
+          git diff --quiet || echo "changed=true" >> "$GITHUB_OUTPUT"
+
+      - name: Commit and push
+        if: steps.changes.outputs.changed == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add \
+            data/normalized/eia/retail_res_monthly_2000_present.csv \
+            data/raw/eia/retail_res_monthly_latest_refresh.json \
+            src/data/history.generated.ts \
+            src/data/history.generated.json \
+            src/data/snapshots/
+          git diff --cached --quiet && echo "Nothing staged, skipping commit." && exit 0
+          git commit -m "chore: update EIA residential electricity prices (monthly refresh)"
+          git push

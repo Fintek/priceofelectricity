@@ -25,6 +25,7 @@
     "data:validate": "tsx scripts/data-validate.ts",
     "data:build": "tsx scripts/data-build.ts",
     "data:diff": "tsx scripts/data-diff.ts",
+    "data:update:eia:res": "tsx scripts/eia/update_residential_monthly.ts",
     "data:backfill:eia:res": "tsx scripts/eia/backfill_residential_monthly.ts",
     "data:build:snapshots:eia": "tsx scripts/eia/generate_snapshots_from_eia_csv.ts",
     "knowledge:build": "tsx scripts/knowledge-build.ts",
