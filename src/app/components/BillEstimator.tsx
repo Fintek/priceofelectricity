@@ -9,13 +9,17 @@ export default function BillEstimator({
   rateCentsPerKwh: number;
   stateSlug: string;
 }) {
-  const [kwh, setKwh] = useState<number>(900);
+  const [kwhInput, setKwhInput] = useState("900");
   const hasTrackedEstimatorUse = useRef(false);
 
-  const estimate = useMemo(() => {
-    const dollars = (kwh * rateCentsPerKwh) / 100;
-    return dollars;
-  }, [kwh, rateCentsPerKwh]);
+  /** Parsed only for display; input stays string so clearing/editing never coerces to 0 mid-keystroke. */
+  const estimateDollars = useMemo(() => {
+    const trimmed = kwhInput.trim();
+    if (trimmed === "") return null;
+    const kwh = Number(trimmed);
+    if (!Number.isFinite(kwh) || kwh < 0) return null;
+    return (kwh * rateCentsPerKwh) / 100;
+  }, [kwhInput, rateCentsPerKwh]);
 
   const handleKwhChange = (value: string) => {
     if (!hasTrackedEstimatorUse.current) {
@@ -27,7 +31,7 @@ export default function BillEstimator({
       });
       hasTrackedEstimatorUse.current = true;
     }
-    setKwh(Number(value || 0));
+    setKwhInput(value);
   };
 
   return (
@@ -40,7 +44,7 @@ export default function BillEstimator({
 
       <input
         type="number"
-        value={kwh}
+        value={kwhInput}
         min={0}
         step={50}
         onChange={(e) => handleKwhChange(e.target.value)}
@@ -48,7 +52,8 @@ export default function BillEstimator({
       />
 
       <p style={{ marginTop: 12, fontSize: 18 }}>
-        Est. energy charge: <b>${estimate.toFixed(2)}</b>
+        Est. energy charge:{" "}
+        <b>{estimateDollars == null ? "—" : `$${estimateDollars.toFixed(2)}`}</b>
       </p>
 
       <p style={{ color: "#777", marginTop: 6 }}>
