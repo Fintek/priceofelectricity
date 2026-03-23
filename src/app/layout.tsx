@@ -67,6 +67,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        <link rel="dns-prefetch" href="https://plausible.io" />
         <script
           defer
           data-domain="priceofelectricity.com"
