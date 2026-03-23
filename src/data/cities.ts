@@ -70,6 +70,52 @@ export const CITIES: City[] = [
   { stateSlug: "georgia", slug: "macon", name: "Macon", population: 157000 },
   { stateSlug: "georgia", slug: "savannah", name: "Savannah", population: 148000 },
   { stateSlug: "georgia", slug: "athens", name: "Athens", population: 128000 },
+
+  // Arizona
+  { stateSlug: "arizona", slug: "phoenix", name: "Phoenix", population: 1640000, avgRateCentsPerKwh: 14.6 },
+  { stateSlug: "arizona", slug: "tucson", name: "Tucson", population: 545000 },
+
+  // North Carolina
+  { stateSlug: "north-carolina", slug: "charlotte", name: "Charlotte", population: 880000 },
+  { stateSlug: "north-carolina", slug: "raleigh", name: "Raleigh", population: 470000 },
+
+  // Michigan
+  { stateSlug: "michigan", slug: "detroit", name: "Detroit", population: 620000, avgRateCentsPerKwh: 21.3 },
+
+  // Washington
+  { stateSlug: "washington", slug: "seattle", name: "Seattle", population: 740000, avgRateCentsPerKwh: 11.5 },
+
+  // Massachusetts
+  { stateSlug: "massachusetts", slug: "boston", name: "Boston", population: 680000, avgRateCentsPerKwh: 28.6 },
+
+  // Colorado
+  { stateSlug: "colorado", slug: "denver", name: "Denver", population: 710000, avgRateCentsPerKwh: 16.5 },
+
+  // Tennessee
+  { stateSlug: "tennessee", slug: "nashville", name: "Nashville", population: 680000, avgRateCentsPerKwh: 12.8 },
+  { stateSlug: "tennessee", slug: "memphis", name: "Memphis", population: 630000 },
+
+  // Maryland
+  { stateSlug: "maryland", slug: "baltimore", name: "Baltimore", population: 570000, avgRateCentsPerKwh: 20.4 },
+
+  // Indiana
+  { stateSlug: "indiana", slug: "indianapolis", name: "Indianapolis", population: 880000, avgRateCentsPerKwh: 16.9 },
+
+  // Minnesota
+  { stateSlug: "minnesota", slug: "minneapolis", name: "Minneapolis", population: 430000 },
+
+  // Missouri
+  { stateSlug: "missouri", slug: "kansas-city", name: "Kansas City", population: 510000 },
+  { stateSlug: "missouri", slug: "st-louis", name: "St. Louis", population: 290000 },
+
+  // Nevada
+  { stateSlug: "nevada", slug: "las-vegas", name: "Las Vegas", population: 650000, avgRateCentsPerKwh: 13.8 },
+
+  // Virginia
+  { stateSlug: "virginia", slug: "virginia-beach", name: "Virginia Beach", population: 460000 },
+
+  // Wisconsin
+  { stateSlug: "wisconsin", slug: "milwaukee", name: "Milwaukee", population: 570000, avgRateCentsPerKwh: 18.8 },
 ];
 
 export const CITIES_BY_STATE: Record<string, City[]> = CITIES.reduce(

@@ -89,6 +89,7 @@ export const ACTIVE_APPLIANCE_SLUGS: readonly string[] = [...SUPPORTED_APPLIANCE
  * This limits initial fan-out while city methodology and operations mature.
  */
 export const ACTIVE_CITY_PAGE_KEYS: readonly string[] = [
+  // Original 10 cities
   "california/los-angeles",
   "california/san-diego",
   "texas/houston",
@@ -99,6 +100,36 @@ export const ACTIVE_CITY_PAGE_KEYS: readonly string[] = [
   "pennsylvania/philadelphia",
   "ohio/columbus",
   "georgia/atlanta",
+  // Phase 1 expansion — existing cities activated
+  "california/san-jose",
+  "california/san-francisco",
+  "texas/dallas",
+  "texas/san-antonio",
+  "florida/jacksonville",
+  "florida/tampa",
+  "florida/orlando",
+  "ohio/cleveland",
+  "ohio/cincinnati",
+  "pennsylvania/pittsburgh",
+  // Phase 1 expansion — new high-population cities
+  "arizona/phoenix",
+  "arizona/tucson",
+  "north-carolina/charlotte",
+  "north-carolina/raleigh",
+  "michigan/detroit",
+  "washington/seattle",
+  "massachusetts/boston",
+  "colorado/denver",
+  "tennessee/nashville",
+  "tennessee/memphis",
+  "maryland/baltimore",
+  "indiana/indianapolis",
+  "minnesota/minneapolis",
+  "missouri/kansas-city",
+  "missouri/st-louis",
+  "nevada/las-vegas",
+  "virginia/virginia-beach",
+  "wisconsin/milwaukee",
 ];
 
 /**
@@ -108,18 +139,41 @@ export const ACTIVE_CITY_PAGE_KEYS: readonly string[] = [
  *
  * This is intentionally separate from appliance-only and city-only rollout so
  * we can cap fan-out and pilot safely before broader expansion.
+ *
+ * Expansion policy (see docs/ROADMAP_EXPANSION_NEXT_PHASES.md §3):
+ * - Keys must only reference appliances in ACTIVE_APPLIANCE_SLUGS
+ * - Keys must only reference cities in ACTIVE_CITY_PAGE_KEYS
+ * - Hard caps below are enforced at runtime by assertApplianceCityRolloutLimits()
+ * - Caps may only be raised after: build passes, payload audit passes,
+ *   sitemap diff is reviewed, and no thin-content or duplicate-intent risk exists
  */
 export const ACTIVE_APPLIANCE_CITY_PAGE_KEYS: readonly string[] = [
+  // Original pilot keys
   "refrigerator/california/los-angeles",
   "space-heater/texas/houston",
   "window-ac/florida/miami",
   "electric-vehicle-charger/california/san-diego",
+  // Phase 1 expansion appliances × existing pilot cities
+  "heat-pump/new-york/new-york-city",
+  "pool-pump/florida/miami",
+  "hot-tub/texas/austin",
+  "central-ac/georgia/atlanta",
+  // Phase 2 expansion — configured-reference cities, geographic diversity
+  "central-ac/arizona/phoenix",
+  "space-heater/massachusetts/boston",
+  "electric-vehicle-charger/colorado/denver",
+  "heat-pump/washington/seattle",
+  "pool-pump/nevada/las-vegas",
+  "window-ac/maryland/baltimore",
+  // Final 2 keys — fill remaining pilot capacity
+  "hot-tub/michigan/detroit",
+  "refrigerator/wisconsin/milwaukee",
 ];
 
 export const APPLIANCE_CITY_ROLLOUT_LIMITS = {
-  maxAppliances: 4,
-  maxCities: 4,
-  maxKeys: 8,
+  maxAppliances: 8,
+  maxCities: 16,
+  maxKeys: 16,
 } as const;
 
 export type ApplianceCityRolloutPage = {

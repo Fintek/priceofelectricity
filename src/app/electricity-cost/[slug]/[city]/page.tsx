@@ -33,9 +33,10 @@ export async function generateMetadata({
     });
   }
 
+  const basisLabel = summary.estimateBasis === "city-config-reference" ? "configured reference rate" : "modeled estimate";
   const description = `Estimated electricity cost context for ${summary.city.name}, ${summary.state.name}: ${summary.cityRateCentsPerKwh.toFixed(
     2,
-  )} cents per kWh and ${formatUsd(summary.monthlyCostEstimate)} per month at ${CITY_REFERENCE_USAGE_KWH.toLocaleString()} kWh. Modeled city estimate with methodology disclosure.`;
+  )} cents per kWh and ${formatUsd(summary.monthlyCostEstimate)} per month at ${CITY_REFERENCE_USAGE_KWH.toLocaleString()} kWh. City ${basisLabel} with methodology disclosure.`;
 
   return buildMetadata({
     title: `Electricity Cost in ${summary.city.name}, ${summary.state.name} | PriceOfElectricity.com`,
@@ -68,13 +69,15 @@ export default async function ElectricityCostCityPage({
 
   const webPageJsonLd = buildWebPageJsonLd({
     title: `Electricity Cost in ${summary.city.name}, ${summary.state.name}`,
-    description: `City electricity estimate page for ${summary.city.name}, ${summary.state.name}. Values are deterministic modeled estimates with disclosure and source attribution.`,
+    description: `City electricity estimate page for ${summary.city.name}, ${summary.state.name}. Values are deterministic ${summary.estimateBasis === "city-config-reference" ? "configured reference rates" : "modeled estimates"} with disclosure and source attribution.`,
     url: canonicalPath,
     isPartOf: "/",
     about: [
       `electricity cost in ${summary.city.name}`,
       `${summary.state.name} city electricity estimate`,
-      "city electricity cost modeled estimate",
+      summary.estimateBasis === "city-config-reference"
+        ? "city electricity cost configured reference"
+        : "city electricity cost modeled estimate",
     ],
   });
   const datasetJsonLd = buildDatasetJsonLd({
@@ -116,7 +119,7 @@ export default async function ElectricityCostCityPage({
           { label: summary.city.name },
         ]}
         title={`Electricity Cost in ${summary.city.name}, ${summary.state.name}`}
-        intro={`This city page provides deterministic electricity-cost context for ${summary.city.name} using a modeled estimate framework. It is designed for local authority intent and remains distinct from calculator and average-bill benchmark intent.`}
+        intro={`This city page provides deterministic electricity-cost context for ${summary.city.name} using ${summary.estimateBasis === "city-config-reference" ? "a configured reference rate" : "a modeled estimate framework"}. It is designed for local authority intent and remains distinct from calculator and average-bill benchmark intent.`}
         stats={[
           { label: "Estimated city rate", value: formatRate(summary.cityRateCentsPerKwh) },
           {

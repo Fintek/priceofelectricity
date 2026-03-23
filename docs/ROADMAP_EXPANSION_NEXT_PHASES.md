@@ -67,6 +67,10 @@ Expand appliance coverage and scenario depth to capture additional consumer appl
 
 - **Priority: High** (first expansion step)
 
+### Rollout Status
+
+- **Phase 1 complete:** 12 new appliances added (freezer, instant-pot, air-fryer, heat-pump, electric-blanket, pool-pump, hot-tub, iron, vacuum-cleaner, desktop-computer, electric-stove-top, garage-door-opener), bringing the total from 22 to 34. All use existing ISR route families and auto-propagate through sitemap, internal links, and discovery systems.
+
 ### Dependencies On Current Systems
 
 - `LongtailStateTemplate`
@@ -109,6 +113,11 @@ Introduce city-level electricity cost context for high-intent local queries wher
 
 - **Priority: High** (after appliance engine expansion)
 
+### Rollout Status
+
+- **Phase 1 complete:** expanded from 10 to 38 active city pages across 21 states. Added 18 new cities in 14 previously unrepresented states (AZ, NC, MI, WA, MA, CO, TN, MD, IN, MN, MO, NV, VA, WI) and activated 10 existing high-population cities (San Jose, San Francisco, Dallas, San Antonio, Jacksonville, Tampa, Orlando, Cleveland, Cincinnati, Pittsburgh). All use the existing `/electricity-cost/{state}/{city}` canonical family with ISR and deterministic modeling.
+- **Reference rate upgrade (Phase 1):** 10 cities upgraded from `modeled-from-state` to `city-config-reference` with explicit `avgRateCentsPerKwh` values: Phoenix (14.6), Seattle (11.5), Boston (28.6), Denver (16.5), Detroit (21.3), Nashville (12.8), Baltimore (20.4), Indianapolis (16.9), Las Vegas (13.8), Milwaukee (18.8). Total configured-reference cities: 20 of 38 active. Disclosure copy on city and appliance×city pages updated to be basis-aware.
+
 ### Dependencies On Current Systems
 
 - Existing `CITIES` routing surface and state/city page patterns
@@ -127,20 +136,20 @@ Extend appliance economics beyond state-level by combining appliance profiles wi
 
 - Appliance x state:
   - `/cost-to-run/[appliance]/[state]` (existing canonical family, expanded)
-- Appliance x city (future, if approved):
+- Appliance x city (pilot-gated):
   - `/cost-to-run/[appliance]/[state]/[city]`
-  - `/electricity-cost-calculator/[state]/[city]/[appliance]` (only if intent remains calculator-specific)
+  - No calculator × city × appliance family during pilot phase (per canonical policy §A.5)
 
 ### Estimated Page Families
 
-- Family A: appliance x state (`N_appliances * 51`) — primary near-term.
-- Family B: appliance x city (`N_appliances * N_cities`) — large-scale, gated rollout required.
+- Family A: appliance x state (`N_appliances * 51`) — live, ISR.
+- Family B: appliance x city — pilot-gated, explicit allowlist only.
 
 ### Data Requirements / Assumptions
 
 - Appliance assumptions reused from `applianceConfig`.
-- City-level rate inputs likely modeled initially.
-- Rollout controls required to cap page volume and avoid thin inventory.
+- City-level rate inputs use modeled estimates (population-based modifier from state baseline) or configured reference rates where available.
+- Methodology disclosure is required on every appliance × city page.
 
 ### SEO Rationale
 
@@ -151,11 +160,43 @@ Extend appliance economics beyond state-level by combining appliance profiles wi
 
 - **Priority: Medium-High** (state first, city later)
 
+### Rollout Status
+
+- **Pilot complete:** 16/16 appliance × city keys active (see `ACTIVE_APPLIANCE_CITY_PAGE_KEYS` in `rollout.ts`).
+- **Hard caps enforced:** maxAppliances=8, maxCities=16, maxKeys=16 (runtime assertion). All caps fully utilized.
+- **Sitemap:** pilot pages included at priority 0.52 via `getActiveApplianceCityPages()`.
+- **Cross-linking:** parent appliance-state pages conditionally link to pilot city pages.
+- **Phase 2 expansion:** Added 6 new keys using configured-reference cities across 6 new states (AZ, MA, CO, WA, NV, MD). maxCities cap raised from 8 to 16.
+- **Pilot finalization:** Added final 2 keys (hot-tub/michigan/detroit, refrigerator/wisconsin/milwaukee). All 16 pilot keys use configured reference rates. Each of the 8 pilot appliance types has exactly 2 geographically diverse keys across 15 cities in 13 states. Pilot is quality-complete and ready for production monitoring.
+
+### Appliance × City Expansion Policy
+
+Before raising caps or adding keys beyond the current pilot:
+
+1. **Build safety:** `npm run verify:vercel` must pass with no payload budget regression.
+2. **Sitemap review:** diff the sitemap output before and after to confirm only intended URLs are added.
+3. **Content quality:** each new key must have a city with either a configured reference rate or a population-based model that produces a meaningfully different estimate from the state baseline.
+4. **Canonical safety:** no appliance × city × calculator family may be created during pilot phase. Calculator intent remains canonical at `/electricity-cost-calculator/{state}/{appliance}`.
+5. **Thin content guard:** do not add keys where the city rate is identical to the state rate (no population modifier, no configured rate). These would produce duplicate content.
+6. **Cap increases:** caps may only be raised in increments of 8 (keys) or 4 (appliances/cities), with full verification after each increase.
+
+### Conditions for Full Appliance × City Launch
+
+Full launch (removing the allowlist gate) requires:
+
+1. City rate methodology is validated with real utility data for at least 5 cities.
+2. Build payload remains within budget at projected full scale.
+3. Canonical architecture policy is updated to reflect full-family status.
+4. Sitemap segmentation is reviewed for the expanded URL volume.
+5. Internal linking caps are reviewed to prevent link bloat.
+
 ### Dependencies On Current Systems
 
 - Rollout config (`src/lib/longtail/rollout.ts`) for volume gating
+- City electricity modeling (`src/lib/longtail/cityElectricity.ts`)
 - Existing appliance cost/calc templates
 - Internal linking + sitemap safeguards
+- Canonical architecture policy §A.5
 
 ---
 

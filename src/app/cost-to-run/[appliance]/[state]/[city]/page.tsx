@@ -71,14 +71,15 @@ export default async function ApplianceCityCostPage({
 
   const webPageJsonLd = buildWebPageJsonLd({
     title: `Cost to Run ${article} ${summary.applianceConfig.displayName} in ${summary.citySummary.city.name}, ${summary.citySummary.state.name}`,
-    description:
-      "Appliance x city pilot page with deterministic modeled city-rate context and methodology disclosure.",
+    description: `Appliance x city pilot page with deterministic ${summary.citySummary.estimateBasis === "city-config-reference" ? "configured reference" : "modeled"} city-rate context and methodology disclosure.`,
     url: canonicalPath,
     isPartOf: "/",
     about: [
       `${summary.applianceConfig.displayName} cost in ${summary.citySummary.city.name}`,
       "appliance city electricity estimate",
-      "modeled electricity cost context",
+      summary.citySummary.estimateBasis === "city-config-reference"
+        ? "configured reference electricity cost context"
+        : "modeled electricity cost context",
     ],
   });
 
@@ -131,7 +132,7 @@ export default async function ApplianceCityCostPage({
             value: formatUsd(summary.nationalMonthlyCostEstimate),
           },
         ]}
-        comparisonSummary="City values on this page are deterministic modeled estimates for context. They are not utility tariff quotes or exact bill predictions."
+        comparisonSummary={`City values on this page are deterministic ${summary.citySummary.estimateBasis === "city-config-reference" ? "configured reference estimates" : "modeled estimates"} for context. They are not utility tariff quotes or exact bill predictions.`}
         relatedLinks={[]}
         relatedLinkSections={[
           {
