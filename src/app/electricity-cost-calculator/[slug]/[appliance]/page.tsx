@@ -9,7 +9,6 @@ import {
   buildApplianceCalculatorSummary,
   buildApplianceScenarioRows,
   buildCalculatorApplianceLinks,
-  getCalculatorApplianceStaticParams,
   parseApplianceCalculatorSlug,
 } from "@/lib/longtail/calculatorCluster";
 import { getRelease } from "@/lib/knowledge/fetch";
@@ -30,13 +29,8 @@ import { formatRate, formatUsd, loadLongtailStateData } from "@/lib/longtail/sta
 import { buildMetadata } from "@/lib/seo/metadata";
 import { buildBreadcrumbListJsonLd, buildWebPageJsonLd } from "@/lib/seo/jsonld";
 
-export const dynamic = "force-static";
-export const dynamicParams = false;
+export const dynamic = "force-dynamic";
 export const revalidate = 86400;
-
-export async function generateStaticParams() {
-  return getCalculatorApplianceStaticParams();
-}
 
 export async function generateMetadata({
   params,
