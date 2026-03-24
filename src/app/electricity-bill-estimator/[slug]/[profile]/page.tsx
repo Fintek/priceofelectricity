@@ -11,6 +11,8 @@ import {
   buildBillEstimatorMethodologyNote,
   calculateBillEstimatorProfileMonthlyCost,
   getBillEstimatorProfile,
+  getBillEstimatorProfileRolloutSummary,
+  getActiveBillEstimatorProfileStaticParams,
   isBillEstimatorProfileSlug,
   loadBillEstimatorStateSummary,
 } from "@/lib/longtail/billEstimator";
@@ -24,8 +26,15 @@ import {
 } from "@/lib/seo/jsonld";
 import { formatRate, formatUsd } from "@/lib/longtail/stateLongtail";
 
-export const dynamicParams = true;
+export const dynamic = "force-static";
+export const dynamicParams = false;
 export const revalidate = 86400;
+
+export async function generateStaticParams(): Promise<Array<{ slug: string; profile: string }>> {
+  return getActiveBillEstimatorProfileStaticParams({
+    contextLabel: "electricity-bill-estimator-profile-page",
+  });
+}
 
 export async function generateMetadata({
   params,
@@ -78,6 +87,7 @@ export default async function ElectricityBillEstimatorProfilePage({
   const monthlyEstimate = calculateBillEstimatorProfileMonthlyCost(state.avgRateCentsPerKwh, profileConfig);
   const annualEstimate = monthlyEstimate != null ? monthlyEstimate * 12 : null;
   const benchmarkDifference = buildBillEstimatorDifferenceVsBenchmark(monthlyEstimate, state.monthlyBill);
+  const profileRollout = getBillEstimatorProfileRolloutSummary();
   const featuredApplianceSlugs = getActiveApplianceSlugs().slice(0, 2);
   const canonicalPath = `/electricity-bill-estimator/${slug}/${profile}`;
 
@@ -194,6 +204,11 @@ export default async function ElectricityBillEstimatorProfilePage({
 
         <section style={{ marginBottom: 24 }}>
           <h2 style={{ fontSize: 20, marginBottom: 12 }}>Methodology and disclosure</h2>
+          <p className="muted" style={{ marginTop: 0, lineHeight: 1.7 }}>
+            Pilot scope: this profile route is a rollout-gated scenario surface. State estimator routes remain the
+            canonical entry point for broad estimator intent. Current active pilot coverage is{" "}
+            {profileRollout.activeKeyCount} routes across {profileRollout.activeStateCount} states.
+          </p>
           <p style={{ marginTop: 0, lineHeight: 1.7 }}>
             Estimates on this route are deterministic scenarios for planning context. They are not utility quotes.
             Calculations are energy-only and exclude delivery charges, taxes, and fixed monthly fees.

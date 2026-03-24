@@ -185,6 +185,10 @@ export default async function ElectricityCostStatePage({
           This page summarizes average residential electricity rates and estimated costs for {stateName}.
           All figures are based on EIA data and use a standard 900 kWh monthly usage for cost estimates.
         </p>
+        <p className="muted" style={{ marginTop: -8, marginBottom: 24, maxWidth: "65ch" }}>
+          Authority signals: deterministic state benchmark methodology, machine-readable dataset references, and
+          canonical linkage to city context, estimator, and comparison families.
+        </p>
 
         {/* Key stat cards */}
         <div

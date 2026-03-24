@@ -6,10 +6,12 @@ import Disclaimers from "@/app/components/policy/Disclaimers";
 import StatusFooter from "@/components/common/StatusFooter";
 import LongtailStateTemplate from "@/components/longtail/LongtailStateTemplate";
 import CommercialPlacement from "@/components/monetization/CommercialPlacement";
-import ProviderDiscoverySection from "@/components/providers/ProviderDiscoverySection";
 import { getRelease } from "@/lib/knowledge/fetch";
 import {
   buildBillEstimatorProfileRows,
+  getActiveBillEstimatorProfilesForState,
+  getBillEstimatorProfileRolloutSummary,
+  isActiveBillEstimatorProfilePage,
   loadBillEstimatorStateSummary,
 } from "@/lib/longtail/billEstimator";
 import { AVERAGE_ELECTRICITY_BILL_USAGE_KWH, buildAverageBillComparisonSummary } from "@/lib/longtail/averageBill";
@@ -20,15 +22,11 @@ import {
   buildBreadcrumbListJsonLd,
   buildDatasetJsonLd,
   buildFaqPageJsonLd,
-  buildItemListJsonLd,
   buildWebPageJsonLd,
 } from "@/lib/seo/jsonld";
 import { formatRate, formatUsd } from "@/lib/longtail/stateLongtail";
-import {
-  buildProviderDiscoveryItemListEntries,
-  buildProviderDiscoveryLinks,
-} from "@/lib/providers/providerDiscovery";
 
+export const dynamic = "auto";
 export const dynamicParams = true;
 export const revalidate = 86400;
 
@@ -63,11 +61,15 @@ export default async function ElectricityBillEstimatorStatePage({
   if (!state) notFound();
 
   const profileRows = buildBillEstimatorProfileRows(state);
+  const profileRollout = getBillEstimatorProfileRolloutSummary();
+  const activeProfiles = getActiveBillEstimatorProfilesForState(slug);
+  const activeProfileCount = profileRows.filter((row) => isActiveBillEstimatorProfilePage(slug, row.profile.slug)).length;
   const featuredApplianceSlugs = getActiveApplianceSlugs().slice(0, 3);
   const relatedLinkSections = await buildLongtailLinkSections({
     pageType: "average-bill",
     stateData: state,
     usageKwh: AVERAGE_ELECTRICITY_BILL_USAGE_KWH,
+    maxLinksPerSection: 2,
   });
   const canonicalPath = `/electricity-bill-estimator/${slug}`;
 
@@ -111,20 +113,10 @@ export default async function ElectricityBillEstimatorStatePage({
       answer: `Use /cost-to-run/refrigerator/${slug} (and related appliance routes) for canonical appliance operating-cost intent.`,
     },
   ]);
-  const providerDiscoveryItemListJsonLd = buildItemListJsonLd(
-    `${state.name} provider discovery pathways`,
-    [
-      ...buildProviderDiscoveryItemListEntries([{ slug, name: state.name }], 1),
-      { name: `${state.name} electricity cost authority`, url: `/electricity-cost/${slug}` },
-      { name: `${state.name} average bill benchmark`, url: `/average-electricity-bill/${slug}` },
-    ],
-  );
-  const providerDiscoveryLinks = buildProviderDiscoveryLinks([{ slug, name: state.name }], 1);
-
   return (
     <>
       <JsonLdScript
-        data={[breadcrumbJsonLd, webPageJsonLd, datasetJsonLd, faqJsonLd, providerDiscoveryItemListJsonLd]}
+        data={[breadcrumbJsonLd, webPageJsonLd, datasetJsonLd, faqJsonLd]}
       />
       <LongtailStateTemplate
         breadcrumbs={[
@@ -164,6 +156,26 @@ export default async function ElectricityBillEstimatorStatePage({
       >
         <section style={{ marginBottom: 32 }}>
           <h2 style={{ fontSize: 20, marginBottom: 12 }}>Household profile scenarios</h2>
+          <p className="muted" style={{ marginTop: 0, marginBottom: 12, maxWidth: "75ch" }}>
+            Rollout note: this state page is the canonical estimator owner for {state.name}. Profile scenario pages are
+            linked only when explicitly allowlisted ({activeProfileCount} active in this state).
+          </p>
+          <p className="muted" style={{ marginTop: 0, marginBottom: 12, maxWidth: "75ch" }}>
+            Family scope: active profile pilot coverage is currently {profileRollout.activeKeyCount} routes across{" "}
+            {profileRollout.activeStateCount} states, with all non-allowlisted state-profile routes deferred.
+          </p>
+          {activeProfiles.length > 0 && (
+            <p style={{ marginTop: 0, marginBottom: 12, lineHeight: 1.7 }}>
+              Active profile pilot routes for {state.name}:{" "}
+              {activeProfiles.map((profile, index) => (
+                <span key={profile.slug}>
+                  {index > 0 ? " · " : ""}
+                  <Link href={`/electricity-bill-estimator/${slug}/${profile.slug}`}>{profile.label}</Link>
+                </span>
+              ))}
+              .
+            </p>
+          )}
           <div style={{ overflowX: "auto" }}>
             <table
               style={{
@@ -174,7 +186,7 @@ export default async function ElectricityBillEstimatorStatePage({
             >
               <thead>
                 <tr>
-                  {["Profile", "Monthly usage", "Monthly estimate", "Annual estimate", "Profile page"].map((label) => (
+                  {["Profile", "Monthly usage", "Monthly estimate", "Annual estimate", "Profile scenario"].map((label) => (
                     <th
                       key={label}
                       style={{
@@ -205,7 +217,11 @@ export default async function ElectricityBillEstimatorStatePage({
                       {formatUsd(row.annualCost)}
                     </td>
                     <td style={{ padding: 10, borderBottom: "1px solid var(--color-border, #e5e7eb)" }}>
-                      <Link href={row.href}>Open {row.profile.label.toLowerCase()} scenario</Link>
+                      {isActiveBillEstimatorProfilePage(slug, row.profile.slug) ? (
+                        <Link href={row.href}>{row.profile.label} scenario page</Link>
+                      ) : (
+                        <span className="muted">{row.profile.label} (rollout-deferred)</span>
+                      )}
                     </td>
                   </tr>
                 ))}
@@ -245,6 +261,10 @@ export default async function ElectricityBillEstimatorStatePage({
             <li>
               <Link href={`/offers/${slug}`}>Offers and savings in {state.name}</Link> (supplemental marketplace pathway).
             </li>
+            <li>
+              <Link href={`/electricity-providers/${slug}`}>Electricity providers in {state.name}</Link> (provider
+              discovery pathway).
+            </li>
           </ul>
         </section>
 
@@ -267,22 +287,6 @@ export default async function ElectricityBillEstimatorStatePage({
             </li>
           </ul>
         </section>
-
-        <ProviderDiscoverySection
-          links={[
-            ...providerDiscoveryLinks,
-            {
-              href: "/energy-comparison",
-              label: "Energy comparison discovery hub",
-            },
-            {
-              href: `/offers/${slug}`,
-              label: `Offers and savings in ${state.name}`,
-            },
-          ]}
-          headingSize={20}
-          marginBottom={32}
-        />
 
         <CommercialPlacement
           pageFamily="bill-estimator-pages"

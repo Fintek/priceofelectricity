@@ -93,9 +93,11 @@ async function main(): Promise<void> {
     console.log("Payload governance audit:");
     for (const target of measuredTargets) {
       const pct = (target.sizeBytes / target.maxBytes) * 100;
+      const headroomBytes = Math.max(target.maxBytes - target.sizeBytes, 0);
       console.log(
         `  - ${target.id}: ${formatMiB(target.sizeBytes)} / ${formatMiB(target.maxBytes)} (${pct.toFixed(1)}%)`,
       );
+      console.log(`    headroom: ${formatMiB(headroomBytes)}`);
       if (target.sizeBytes > target.maxBytes) {
         failures.push(
           `${target.id} exceeds budget: ${formatMiB(target.sizeBytes)} > ${formatMiB(target.maxBytes)}`,

@@ -9,6 +9,10 @@ import StatusFooter from "@/components/common/StatusFooter";
 import Disclaimers from "@/app/components/policy/Disclaimers";
 import { getRelease } from "@/lib/knowledge/fetch";
 import MiniBarChart from "@/components/charts/MiniBarChart";
+import {
+  getBillEstimatorProfileRolloutSummary,
+  getFirstActiveBillEstimatorProfileForState,
+} from "@/lib/longtail/billEstimator";
 
 const MONTHLY_USAGE_KWH = 900;
 
@@ -74,6 +78,9 @@ export default async function ElectricityCostComparisonPairPage({
 
   const higherCostName = monthlyCostA >= monthlyCostB ? nameA : nameB;
   const lowerCostName = monthlyCostA < monthlyCostB ? nameA : nameB;
+  const estimatorRollout = getBillEstimatorProfileRolloutSummary();
+  const activeProfileA = getFirstActiveBillEstimatorProfileForState(stateA);
+  const activeProfileB = getFirstActiveBillEstimatorProfileForState(stateB);
 
   const canonicalPath = `/electricity-cost-comparison/${pair}`;
 
@@ -153,6 +160,15 @@ export default async function ElectricityCostComparisonPairPage({
         <h1 style={{ fontSize: 32, marginBottom: 24 }}>
           Electricity Cost: {nameA} vs {nameB}
         </h1>
+        <p className="muted" style={{ marginTop: -8, marginBottom: 24, maxWidth: "70ch" }}>
+          Authority scope: this canonical pair page uses deterministic state-rate inputs and a fixed 900 kWh baseline
+          to keep comparisons consistent across all pair routes.
+        </p>
+        <p className="muted" style={{ marginTop: -16, marginBottom: 24, maxWidth: "70ch" }}>
+          This route compares standardized state benchmarks only; for profile scenarios and custom usage pathways, use
+          estimator and calculator families linked below. Estimator profile links remain allowlist-gated (
+          {estimatorRollout.activeKeyCount} active keys across {estimatorRollout.activeStateCount} states).
+        </p>
 
         {/* Summary cards */}
         <div
@@ -298,6 +314,12 @@ export default async function ElectricityCostComparisonPairPage({
           <h2 style={{ fontSize: 20, marginBottom: 12 }}>Related Pages</h2>
           <ul style={{ margin: 0, paddingLeft: 20, lineHeight: 1.8 }}>
             <li>
+              <Link href="/energy-comparison">Energy comparison hub</Link>
+            </li>
+            <li>
+              <Link href="/energy-comparison/states">State comparison discovery slice</Link>
+            </li>
+            <li>
               <Link href={`/electricity-cost/${stateA}`}>Electricity cost in {nameA}</Link>
             </li>
             <li>
@@ -310,10 +332,38 @@ export default async function ElectricityCostComparisonPairPage({
               <Link href={`/average-electricity-bill/${stateB}`}>Average electricity bill in {nameB}</Link>
             </li>
             <li>
+              <Link href={`/electricity-bill-estimator/${stateA}`}>Electricity bill estimator in {nameA}</Link>
+              {activeProfileA ? (
+                <>
+                  {" · "}
+                  <Link href={`/electricity-bill-estimator/${stateA}/${activeProfileA}`}>
+                    {nameA} {activeProfileA.replace(/-/g, " ")} profile scenario
+                  </Link>
+                </>
+              ) : null}
+            </li>
+            <li>
+              <Link href={`/electricity-bill-estimator/${stateB}`}>Electricity bill estimator in {nameB}</Link>
+              {activeProfileB ? (
+                <>
+                  {" · "}
+                  <Link href={`/electricity-bill-estimator/${stateB}/${activeProfileB}`}>
+                    {nameB} {activeProfileB.replace(/-/g, " ")} profile scenario
+                  </Link>
+                </>
+              ) : null}
+            </li>
+            <li>
               <Link href={`/electricity-affordability/${stateA}`}>Electricity affordability in {nameA}</Link>
             </li>
             <li>
               <Link href={`/electricity-affordability/${stateB}`}>Electricity affordability in {nameB}</Link>
+            </li>
+            <li>
+              <Link href={`/cost-to-run/refrigerator/${stateA}`}>Appliance operating-cost pages in {nameA}</Link>
+            </li>
+            <li>
+              <Link href={`/cost-to-run/refrigerator/${stateB}`}>Appliance operating-cost pages in {nameB}</Link>
             </li>
             <li>
               <Link href="/electricity-cost-comparison">Compare electricity prices between states</Link>

@@ -1,6 +1,7 @@
 import JsonLdScript from "@/app/components/seo/JsonLdScript";
 import Disclaimers from "@/app/components/policy/Disclaimers";
 import StatusFooter from "@/components/common/StatusFooter";
+import Link from "next/link";
 import TrafficHubTemplate from "@/components/traffic-hubs/TrafficHubTemplate";
 import CommercialPlacement from "@/components/monetization/CommercialPlacement";
 import { getRelease } from "@/lib/knowledge/fetch";
@@ -19,6 +20,7 @@ import {
   getActiveUsageKwhTiers,
   isLongtailFamilyActive,
 } from "@/lib/longtail/rollout";
+import { getBillEstimatorProfileRolloutSummary } from "@/lib/longtail/billEstimator";
 import { buildMetadata } from "@/lib/seo/metadata";
 import {
   buildBreadcrumbListJsonLd,
@@ -43,6 +45,7 @@ export const metadata: Metadata = buildMetadata({
 });
 
 export default async function ElectricityHubsIndexPage() {
+  const estimatorRollout = getBillEstimatorProfileRolloutSummary();
   const [states, compareManifest] = await Promise.all([
     loadAllTrafficHubStates(),
     loadElectricityComparisonPairs(),
@@ -276,6 +279,32 @@ export default async function ElectricityHubsIndexPage() {
             entry points. That keeps the site crawlable as inventory grows, while giving visitors a clear path from
             broad discovery pages into specific state, usage, trend, and comparison pages.
           </p>
+          <p className="muted" style={{ marginTop: 10, marginBottom: 0, maxWidth: "65ch" }}>
+            Discovery boundary: this page is orchestration-only and does not replace canonical ownership of state,
+            city, usage, estimator, appliance, or comparison destination routes.
+          </p>
+          <p className="muted" style={{ marginTop: 10, marginBottom: 0, maxWidth: "65ch" }}>
+            Estimator pilot boundary: profile scenarios remain explicitly allowlisted (
+            {estimatorRollout.activeKeyCount} active keys across {estimatorRollout.activeStateCount} states).
+          </p>
+          <ul style={{ marginTop: 12, marginBottom: 0, paddingLeft: 20, lineHeight: 1.8 }}>
+            <li>
+              <Link href="/electricity-hubs/states">State hub pathways</Link> {" — "}
+              Start from a state-first discovery intent
+            </li>
+            <li>
+              <Link href="/electricity-hubs/scenarios">Scenario hub pathways</Link> {" — "}
+              Route into usage and industry scenario families
+            </li>
+            <li>
+              <Link href="/electricity-hubs/comparisons">Comparison hub pathways</Link> {" — "}
+              Move from single-state lookup into comparison intent
+            </li>
+            <li>
+              <Link href="/energy-comparison">Energy comparison hub</Link> {" — "}
+              Curated cross-cluster discovery across canonical families
+            </li>
+          </ul>
         </section>
       </TrafficHubTemplate>
       <div className="container">

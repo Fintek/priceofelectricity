@@ -15,6 +15,7 @@ import {
   getEnergyComparisonUsageStates,
   getEnergyComparisonUsageTiers,
 } from "@/lib/longtail/energyComparisonHub";
+import { getBillEstimatorProfileRolloutSummary } from "@/lib/longtail/billEstimator";
 import { buildMetadata } from "@/lib/seo/metadata";
 import {
   buildBreadcrumbListJsonLd,
@@ -43,6 +44,7 @@ function toTitle(slug: string): string {
 }
 
 export default async function EnergyComparisonHubPage() {
+  const estimatorRollout = getBillEstimatorProfileRolloutSummary();
   const [pairs] = await Promise.all([getEnergyComparisonPairs(18)]);
   const focusStates = getEnergyComparisonStateFocus();
   const usageTiers = getEnergyComparisonUsageTiers();
@@ -134,9 +136,43 @@ export default async function EnergyComparisonHubPage() {
           comparison dataset; it organizes entry points for state comparisons, usage-tier checks, appliance cost
           pathways, and city electricity context.
         </p>
+        <p className="muted" style={{ marginTop: -12, marginBottom: 24, maxWidth: "75ch" }}>
+          Discovery boundary: canonical ownership remains with destination comparison, estimator, usage, appliance,
+          and state/city cost families.
+        </p>
+        <p className="muted" style={{ marginTop: -12, marginBottom: 24, maxWidth: "75ch" }}>
+          Estimator pilot boundary: profile scenarios remain limited to an explicit allowlist (
+          {estimatorRollout.activeKeyCount} active keys across {estimatorRollout.activeStateCount} states).
+        </p>
 
         <section style={{ marginBottom: 28 }}>
-          <h2 style={{ fontSize: 22, marginBottom: 10 }}>State electricity comparisons</h2>
+          <h2 style={{ fontSize: 22, marginBottom: 10 }}>Choose a comparison pathway by intent</h2>
+          <ul style={{ margin: 0, paddingLeft: 20, lineHeight: 1.8 }}>
+            <li>
+              <a href="#state-comparisons">State vs state prices</a> {" — "}
+              Canonical pair pages and state comparison discovery
+            </li>
+            <li>
+              <a href="#usage-comparisons">Fixed-kWh usage comparisons</a> {" — "}
+              Tiered usage intent across key states
+            </li>
+            <li>
+              <a href="#appliance-comparisons">Appliance operating costs</a> {" — "}
+              Appliance and pilot appliance-city pathways
+            </li>
+            <li>
+              <a href="#city-context-comparisons">City electricity context</a> {" — "}
+              Rollout-enabled city authority routes
+            </li>
+            <li>
+              <a href="#bill-estimator-pathways">Bill estimation and benchmark routes</a> {" — "}
+              Estimator and average-bill intent clusters
+            </li>
+          </ul>
+        </section>
+
+        <section style={{ marginBottom: 28 }}>
+          <h2 id="state-comparisons" style={{ fontSize: 22, marginBottom: 10 }}>State electricity comparisons</h2>
           <p style={{ marginTop: 0, lineHeight: 1.7 }}>
             Canonical ownership remains in the existing state pair family at{" "}
             <Link href="/electricity-cost-comparison">/electricity-cost-comparison</Link>.
@@ -154,7 +190,7 @@ export default async function EnergyComparisonHubPage() {
         </section>
 
         <section style={{ marginBottom: 28 }}>
-          <h2 style={{ fontSize: 22, marginBottom: 10 }}>Usage tier comparisons</h2>
+          <h2 id="usage-comparisons" style={{ fontSize: 22, marginBottom: 10 }}>Usage tier comparisons</h2>
           <p style={{ marginTop: 0, lineHeight: 1.7 }}>
             Compare fixed-kWh cost scenarios using canonical usage intent pages.
           </p>
@@ -173,7 +209,7 @@ export default async function EnergyComparisonHubPage() {
         </section>
 
         <section style={{ marginBottom: 28 }}>
-          <h2 style={{ fontSize: 22, marginBottom: 10 }}>Appliance operating cost comparisons</h2>
+          <h2 id="appliance-comparisons" style={{ fontSize: 22, marginBottom: 10 }}>Appliance operating cost comparisons</h2>
           <p style={{ marginTop: 0, lineHeight: 1.7 }}>
             Appliance cost intent remains canonical at <code>/cost-to-run/[appliance]/[state]</code>. This hub links to
             high-signal appliance/state entries and pilot appliance-city comparisons where enabled.
@@ -198,7 +234,7 @@ export default async function EnergyComparisonHubPage() {
         </section>
 
         <section style={{ marginBottom: 28 }}>
-          <h2 style={{ fontSize: 22, marginBottom: 10 }}>City electricity context comparisons</h2>
+          <h2 id="city-context-comparisons" style={{ fontSize: 22, marginBottom: 10 }}>City electricity context comparisons</h2>
           <p style={{ marginTop: 0, lineHeight: 1.7 }}>
             City authority/context intent remains canonical at <code>/electricity-cost/[state]/[city]</code>.
           </p>
@@ -214,7 +250,7 @@ export default async function EnergyComparisonHubPage() {
         </section>
 
         <section style={{ marginBottom: 28 }}>
-          <h2 style={{ fontSize: 22, marginBottom: 10 }}>Bill estimator and benchmark pathways</h2>
+          <h2 id="bill-estimator-pathways" style={{ fontSize: 22, marginBottom: 10 }}>Bill estimator and benchmark pathways</h2>
           <p style={{ marginTop: 0, lineHeight: 1.7 }}>
             Use estimator and benchmark bill pages to connect comparison discovery with household-intent cost context.
           </p>

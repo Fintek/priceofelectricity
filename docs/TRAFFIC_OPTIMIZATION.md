@@ -2,7 +2,7 @@
 
 **Status:** Active  
 **Scope:** Traffic-flow and authority reinforcement without route-family changes  
-**Last updated:** 2026-03-11
+**Last updated:** 2026-03-16
 
 ## 1) Entry Page Discovery Audit
 
@@ -93,3 +93,23 @@ Traffic optimization guardrails were added to existing verification scripts:
 - Keep rollout gating centralized in rollout helpers.
 - Prefer shared link helper improvements over one-off route logic.
 - Do not introduce new route families for authority labels that can be handled by existing canonical clusters and hubs.
+
+## 7) Phase 3 (Implemented)
+
+Traffic Optimization Phase 3 strengthened live-path discovery into the estimator profile pilot while keeping rollout boundaries explicit.
+
+Implemented:
+
+- Added allowlist-aware helper accessors in `billEstimator.ts` for state-scoped active profile discovery.
+- Added a "Live profile pilot pathways" section on `/electricity-bill-estimator` that links only to explicitly active profile routes.
+- Added an "Active profile pilot routes" cue on `/electricity-bill-estimator/{state}` when the state has allowlisted profile pages.
+- Added state-pair page pathways from `/electricity-cost-comparison/{pair}` into the estimator family, with profile-route links shown only for states that are currently allowlisted.
+- Added a direct estimator pathway in the intent-grouped section on `/{state}`.
+
+Safety posture:
+
+- No new route families.
+- No inventory expansion (city, appliance × city, or estimator profile allowlist).
+- No sitemap architecture changes.
+- Canonical ownership unchanged.
+- Deferred estimator profile inventory remains deferred beyond the active 8-key allowlist.

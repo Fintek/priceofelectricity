@@ -6,6 +6,8 @@ import StatusFooter from "@/components/common/StatusFooter";
 import { getRelease } from "@/lib/knowledge/fetch";
 import {
   BILL_ESTIMATOR_PROFILES,
+  getActiveBillEstimatorProfilePages,
+  getBillEstimatorProfileRolloutSummary,
   buildBillEstimatorProfileRows,
   loadAllBillEstimatorStateSummaries,
 } from "@/lib/longtail/billEstimator";
@@ -31,6 +33,13 @@ export default async function ElectricityBillEstimatorHubPage() {
     return null;
   }
   const profileRows = buildBillEstimatorProfileRows(representativeState);
+  const profileRollout = getBillEstimatorProfileRolloutSummary();
+  const activeProfileGroups = new Map<string, string[]>();
+  for (const entry of getActiveBillEstimatorProfilePages()) {
+    const rows = activeProfileGroups.get(entry.slug) ?? [];
+    rows.push(entry.profile);
+    activeProfileGroups.set(entry.slug, rows);
+  }
 
   const breadcrumbJsonLd = buildBreadcrumbListJsonLd([
     { name: "Home", url: "/" },
@@ -59,6 +68,12 @@ export default async function ElectricityBillEstimatorHubPage() {
         <p style={{ marginTop: 0, marginBottom: 16, maxWidth: "75ch", lineHeight: 1.7 }}>
           This estimator family is designed for household-profile scenario intent. It is distinct from the benchmark
           average-bill family and distinct from the open-ended calculator family.
+        </p>
+        <p className="muted" style={{ marginTop: -6, marginBottom: 16, maxWidth: "75ch" }}>
+          Trust boundary: profile routes are rollout-gated and currently limited to {profileRollout.activeKeyCount}{" "}
+          explicit pilot keys across {profileRollout.activeStateCount} states (
+          {profileRollout.activeStateSlugs.map((slug) => slug.replace(/-/g, " ")).join(", ")}), while this hub and
+          state estimator pages remain the canonical owner for broad estimator discovery intent.
         </p>
         <ul style={{ marginTop: 0, marginBottom: 24, paddingLeft: 20, lineHeight: 1.8 }}>
           <li>
@@ -106,7 +121,7 @@ export default async function ElectricityBillEstimatorHubPage() {
             >
               <thead>
                 <tr>
-                  {["Profile", "Monthly usage", "Estimated monthly bill", "Scenario route"].map((label) => (
+                  {["Profile", "Monthly usage", "Estimated monthly bill", "Scenario profile"].map((label) => (
                     <th
                       key={label}
                       style={{
@@ -134,7 +149,7 @@ export default async function ElectricityBillEstimatorHubPage() {
                       {formatUsd(row.monthlyCost)}
                     </td>
                     <td style={{ padding: 10, borderBottom: "1px solid var(--color-border, #e5e7eb)" }}>
-                      <Link href={row.href}>Open {row.profile.label.toLowerCase()} scenario</Link>
+                      {row.profile.label}
                     </td>
                   </tr>
                 ))}
@@ -173,6 +188,66 @@ export default async function ElectricityBillEstimatorHubPage() {
               </Link>
             ))}
           </div>
+        </section>
+
+        {activeProfileGroups.size > 0 && (
+          <section style={{ marginBottom: 32 }}>
+            <h2 style={{ fontSize: 20, marginBottom: 12 }}>Live profile pilot pathways</h2>
+            <p className="muted" style={{ marginTop: 0, marginBottom: 12, maxWidth: "75ch" }}>
+              Profile-page discovery is intentionally limited to the explicit allowlist below ({profileRollout.activeKeyCount}{" "}
+              routes across {profileRollout.activeStateCount} states). All other state-profile routes remain
+              rollout-deferred.
+            </p>
+            <ul style={{ margin: 0, paddingLeft: 20, lineHeight: 1.8 }}>
+              {Array.from(activeProfileGroups.entries()).map(([stateSlug, profiles]) => {
+                const stateName = states.find((state) => state.slug === stateSlug)?.name ?? stateSlug;
+                return (
+                  <li key={stateSlug}>
+                    <strong>{stateName}:</strong>{" "}
+                    {profiles.map((profile, index) => (
+                      <span key={`${stateSlug}-${profile}`}>
+                        {index > 0 ? " · " : ""}
+                        <Link href={`/electricity-bill-estimator/${stateSlug}/${profile}`}>
+                          {profile.replace(/-/g, " ")} scenario
+                        </Link>
+                      </span>
+                    ))}
+                  </li>
+                );
+              })}
+            </ul>
+          </section>
+        )}
+
+        <section style={{ marginBottom: 32 }}>
+          <h2 style={{ fontSize: 20, marginBottom: 12 }}>Next-step pathways</h2>
+          <ul style={{ margin: 0, paddingLeft: 20, lineHeight: 1.8 }}>
+            <li>
+              <Link href="/average-electricity-bill">Average bill benchmark cluster</Link>
+              {" — "}
+              Fixed benchmark intent for state-level bill comparisons
+            </li>
+            <li>
+              <Link href="/electricity-cost-calculator">Electricity cost calculator cluster</Link>
+              {" — "}
+              Custom scenario intent beyond fixed household profiles
+            </li>
+            <li>
+              <Link href="/electricity-cost-comparison">Electricity cost comparison cluster</Link>
+              {" — "}
+              State-vs-state rate and bill comparison intent
+            </li>
+            <li>
+              <Link href="/energy-comparison">Energy comparison hub</Link>
+              {" — "}
+              Curated discovery across comparison, usage, appliance, and estimator pathways
+            </li>
+            <li>
+              <Link href="/cost-to-run/refrigerator/texas">Appliance operating-cost cluster</Link>
+              {" — "}
+              Appliance intent pages linked to calculator and state context
+            </li>
+          </ul>
         </section>
 
         <Disclaimers disclaimerRefs={["general-site"]} />

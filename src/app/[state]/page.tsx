@@ -314,19 +314,50 @@ export default function StatePage({
         {ns.disclaimer}
       </p>
       <section style={{ marginTop: 8 }}>
-        <h2 style={{ fontSize: 22, marginBottom: 8 }}>More for {ns.name}</h2>
-        <p style={{ marginTop: 0 }}>
-          <Link href={`/${slug}/utilities`}>Utilities in {ns.name}</Link> {" | "}
-          <Link href={`/${slug}/plans`}>Plans in {ns.name}</Link> {" | "}
-          <Link href={`/${slug}/history`}>History in {ns.name}</Link> {" | "}
-          <Link href={`/offers/${slug}`}>Offers in {ns.name}</Link> {" | "}
-          <Link href={`/electricity-providers/${slug}`}>Provider context in {ns.name}</Link> {" | "}
-          <Link href={`/electricity-shopping/by-state`}>Electricity shopping pathways</Link> {" | "}
-          <Link href="/compare">Compare all states</Link> {" | "}
-          <Link href="/energy-comparison/states">State comparison hub</Link> {" | "}
-          <Link href="/electricity-cost-calculator">National calculator</Link> {" | "}
-          <Link href="/affordability">Affordability index</Link>
+        <h2 style={{ fontSize: 22, marginBottom: 8 }}>Choose your next step in {ns.name}</h2>
+        <p className="muted" style={{ marginTop: 0 }}>
+          Use the pathway that matches your intent so you can move faster into the right canonical cluster.
         </p>
+        <h3 style={{ marginTop: 12, marginBottom: 8, fontSize: 18 }}>Compare and benchmark costs</h3>
+        <ul style={{ marginTop: 0, paddingLeft: 20, lineHeight: 1.8 }}>
+          <li>
+            <Link href="/compare">Compare all states</Link> {" · "}
+            <Link href="/energy-comparison/states">State comparison discovery slice</Link>
+          </li>
+          <li>
+            <Link href={`/electricity-bill-estimator/${slug}`}>{ns.name} bill estimator scenarios</Link>
+          </li>
+          <li>
+            <Link href="/affordability">Affordability index</Link>
+          </li>
+          <li>
+            <Link href="/electricity-cost-calculator">National calculator</Link>
+          </li>
+        </ul>
+        <h3 style={{ marginTop: 12, marginBottom: 8, fontSize: 18 }}>Provider and shopping pathways</h3>
+        <ul style={{ marginTop: 0, paddingLeft: 20, lineHeight: 1.8 }}>
+          <li>
+            <Link href={`/electricity-providers/${slug}`}>Provider context in {ns.name}</Link>
+          </li>
+          <li>
+            <Link href={`/offers/${slug}`}>Offers in {ns.name}</Link>
+          </li>
+          <li>
+            <Link href="/electricity-shopping/by-state">Electricity shopping pathways</Link>
+          </li>
+        </ul>
+        <h3 style={{ marginTop: 12, marginBottom: 8, fontSize: 18 }}>Utilities and historical context</h3>
+        <ul style={{ marginTop: 0, paddingLeft: 20, lineHeight: 1.8 }}>
+          <li>
+            <Link href={`/${slug}/utilities`}>Utilities in {ns.name}</Link>
+          </li>
+          <li>
+            <Link href={`/${slug}/plans`}>Plans in {ns.name}</Link>
+          </li>
+          <li>
+            <Link href={`/${slug}/history`}>History in {ns.name}</Link>
+          </li>
+        </ul>
         <p className="muted" style={{ marginTop: 6 }}>
           Learn more:{" "}
           <Link href="/guides/why-electricity-prices-vary-by-state">
@@ -534,22 +565,27 @@ export default function StatePage({
       <RegulatorySignals slug={slug} stateName={ns.name} />
 
       <section style={{ marginTop: 28 }}>
-        <h2 style={{ fontSize: 22, marginBottom: 12 }}>Explore related electricity clusters</h2>
+        <h2 style={{ fontSize: 22, marginBottom: 12 }}>Core canonical clusters for {ns.name}</h2>
         <ul style={{ marginTop: 0, paddingLeft: 20, lineHeight: 1.9 }}>
           <li>
             <Link href={`/electricity-cost/${slug}`}>{ns.name} electricity cost authority page</Link>
+            {" — "}State cost benchmark and context owner
           </li>
           <li>
             <Link href={`/electricity-bill-estimator/${slug}`}>{ns.name} electricity bill estimator</Link>
+            {" — "}Household-profile estimation intent
           </li>
           <li>
             <Link href={`/cost-to-run/refrigerator/${slug}`}>Appliance operating cost pages in {ns.name}</Link>
+            {" — "}Appliance-intent operating cost routes
           </li>
           <li>
             <Link href={`/electricity-providers/${slug}`}>Provider marketplace discovery for {ns.name}</Link>
+            {" — "}Shopping and provider-context discovery
           </li>
           <li>
             <Link href="/energy-comparison">Energy Comparison Hub</Link>
+            {" — "}Curated cross-cluster comparison discovery
           </li>
         </ul>
       </section>

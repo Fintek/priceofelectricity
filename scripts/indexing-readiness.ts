@@ -6,6 +6,7 @@ import {
   waitForServerReady,
   fetchWithTimeout,
 } from "./_server";
+import { getActiveBillEstimatorProfilePages } from "../src/lib/longtail/billEstimator";
 
 let passed = 0;
 let failed = 0;
@@ -34,45 +35,100 @@ async function checkRobotsTxt(base: string): Promise<void> {
 
   const body = await res.text();
   const expectedSitemap = `Sitemap: ${SITE_URL}/sitemap-index.xml`;
-  if (body.includes("Sitemap:") && (body.includes("/sitemap.xml") || body.includes("/sitemap-index.xml"))) {
-    pass(`/robots.txt contains sitemap directive`);
+  if (body.includes(expectedSitemap)) {
+    pass(`/robots.txt sitemap directive uses canonical origin`);
+  } else if (body.includes("Sitemap:") && body.includes("/sitemap-index.xml")) {
+    fail(`/robots.txt sitemap uses canonical origin`, `expected "${expectedSitemap}"`);
   } else {
     fail(`/robots.txt contains sitemap directive`, `expected "${expectedSitemap}"`);
   }
+
+  if (body.includes("www.priceofelectricity.com")) {
+    fail("/robots.txt no www origin", "found www.priceofelectricity.com — canonical is non-www");
+  }
 }
 
-async function checkSitemap(base: string): Promise<void> {
-  const candidates = ["/sitemap.xml", "/sitemap-index.xml", "/sitemap/states.xml"];
-  let body: string | null = null;
-  let selected: string | null = null;
-  for (const candidate of candidates) {
-    const res = await fetchWithTimeout(`${base}${candidate}`);
-    if (res.ok) {
-      body = await res.text();
-      selected = candidate;
-      break;
-    }
-  }
-  if (!body || !selected) {
-    fail("sitemap endpoint reachable", "tried /sitemap.xml, /sitemap-index.xml, /sitemap/states.xml");
-    return;
-  }
-  pass(`${selected} reachable`);
+const EXPECTED_SITEMAP_SEGMENTS = ["core", "states", "cities", "appliances", "estimators"];
 
-  if (selected === "/sitemap-index.xml") {
-    if (body.includes("/sitemap/states.xml")) {
-      pass("/sitemap-index.xml references /sitemap/states.xml");
-    } else {
-      fail("/sitemap-index.xml references /sitemap/states.xml");
-    }
+async function checkSitemap(base: string): Promise<void> {
+  const indexRes = await fetchWithTimeout(`${base}/sitemap-index.xml`);
+  if (!indexRes.ok) {
+    fail("/sitemap-index.xml reachable", `status ${indexRes.status}`);
     return;
   }
-  if (body.includes("<loc>") && body.includes("/texas</loc>")) {
-    pass(`${selected} contains /texas`);
-  } else if (body.includes("/texas")) {
-    pass(`${selected} references /texas`);
+  pass("/sitemap-index.xml reachable");
+
+  const indexBody = await indexRes.text();
+  for (const segment of EXPECTED_SITEMAP_SEGMENTS) {
+    if (indexBody.includes(`/sitemap/${segment}.xml`)) {
+      pass(`/sitemap-index.xml references /sitemap/${segment}.xml`);
+    } else {
+      fail(`/sitemap-index.xml references /sitemap/${segment}.xml`);
+    }
+  }
+
+  const coreRes = await fetchWithTimeout(`${base}/sitemap/core.xml`);
+  if (!coreRes.ok) {
+    fail("/sitemap/core.xml reachable", `status ${coreRes.status}`);
+    return;
+  }
+  pass("/sitemap/core.xml reachable");
+  const coreBody = await coreRes.text();
+
+  if (coreBody.includes("/electricity-cost-comparison/")) {
+    pass("core sitemap includes /electricity-cost-comparison/ canonical family");
   } else {
-    fail(`${selected} contains /texas`);
+    fail("core sitemap includes /electricity-cost-comparison/ canonical family");
+  }
+}
+
+async function checkDeferredRouteLeakage(base: string): Promise<void> {
+  const segmentBodies: string[] = [];
+  for (const segment of EXPECTED_SITEMAP_SEGMENTS) {
+    const res = await fetchWithTimeout(`${base}/sitemap/${segment}.xml`);
+    if (res.ok) {
+      segmentBodies.push(await res.text());
+    }
+  }
+  const allSitemapContent = segmentBodies.join("\n");
+
+  const comparePairPattern = /priceofelectricity\.com\/compare\/[a-z]+-vs-[a-z]+/;
+  if (comparePairPattern.test(allSitemapContent)) {
+    fail("no /compare/{pair} redirect routes in sitemap", "found legacy redirect URLs — these should only appear as /electricity-cost-comparison/{pair}");
+  } else {
+    pass("no /compare/{pair} redirect routes in sitemap");
+  }
+
+  const estimatorProfilePattern = /https:\/\/priceofelectricity\.com\/electricity-bill-estimator\/([a-z-]+)\/(apartment|small-home|medium-home|large-home)/g;
+  const foundProfileUrls = new Set<string>();
+  for (const match of allSitemapContent.matchAll(estimatorProfilePattern)) {
+    if (match[1] && match[2]) {
+      foundProfileUrls.add(`/electricity-bill-estimator/${match[1]}/${match[2]}`);
+    }
+  }
+
+  const expectedProfileUrls = new Set(
+    getActiveBillEstimatorProfilePages().map((entry) => `/electricity-bill-estimator/${entry.slug}/${entry.profile}`),
+  );
+  const unexpectedProfileUrls = [...foundProfileUrls].filter((url) => !expectedProfileUrls.has(url));
+  const missingProfileUrls = [...expectedProfileUrls].filter((url) => !foundProfileUrls.has(url));
+
+  if (unexpectedProfileUrls.length > 0) {
+    fail(
+      "estimator profile sitemap leakage is blocked",
+      `unexpected profile URLs: ${unexpectedProfileUrls.slice(0, 5).join(", ")}`,
+    );
+  } else {
+    pass("estimator profile sitemap leakage is blocked");
+  }
+
+  if (missingProfileUrls.length > 0) {
+    fail(
+      "allowlisted estimator profile URLs are present in sitemap",
+      `missing allowlisted profile URLs: ${missingProfileUrls.slice(0, 5).join(", ")}`,
+    );
+  } else {
+    pass("allowlisted estimator profile URLs are present in sitemap");
   }
 }
 
@@ -232,6 +288,7 @@ async function main(): Promise<void> {
 
     await checkRobotsTxt(base);
     await checkSitemap(base);
+    await checkDeferredRouteLeakage(base);
     await checkCanonical(base, "/");
     await checkCanonical(base, "/texas");
     await checkDiscoveryHubs(base);

@@ -153,6 +153,21 @@ export default async function ApplianceCityCostPage({
                 label: `${summary.applianceConfig.displayName} calculator in ${summary.citySummary.state.name}`,
                 description: "Calculator-intent route for scenario adjustments",
               },
+              {
+                href: `/electricity-bill-estimator/${summary.citySummary.state.slug}`,
+                label: `${summary.citySummary.state.name} electricity bill estimator`,
+                description: "Deterministic household-profile scenarios for this state",
+              },
+              {
+                href: "/energy-comparison/appliances",
+                label: "Appliance comparison discovery slice",
+                description: "Curated appliance and pilot-city comparison pathways",
+              },
+              {
+                href: "/electricity-cost-comparison",
+                label: "Electricity cost comparison index",
+                description: "Canonical state-vs-state comparison family",
+              },
             ],
           },
         ]}

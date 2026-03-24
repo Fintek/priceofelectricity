@@ -43,6 +43,17 @@ Runtime route latency and frontend quality are now complemented by a lightweight
 - `public/knowledge` <= `6 MiB`
 
 The script also prints top subfolders for `.next/server/app` and `public/knowledge` to make growth concentration visible during reviews.
+It now also prints explicit per-target headroom.
+
+### Operating margin policy
+
+Passing the ceiling is necessary but not sufficient for expansion safety.
+
+- Treat `.next/server/app` operating margin as a gating signal before further fan-out.
+- **Preferred operating zone:** <= 90% budget utilization.
+- **Caution zone:** 90-97% (require explicit payload rationale and mitigation plan).
+- **Blocker zone:** >= 97% (run headroom recovery before additional inventory expansion).
+- Large route families should avoid full static fan-out by default unless payload headroom is clearly sufficient.
 
 ## How to run locally
 

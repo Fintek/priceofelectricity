@@ -5,8 +5,9 @@ import {
   loadElectricityComparisonPairs,
 } from "@/lib/knowledge/loadKnowledgePage";
 import { getRelease } from "@/lib/knowledge/fetch";
+import { getBillEstimatorProfileRolloutSummary } from "@/lib/longtail/billEstimator";
 import { buildMetadata } from "@/lib/seo/metadata";
-import { buildBreadcrumbListJsonLd } from "@/lib/seo/jsonld";
+import { buildBreadcrumbListJsonLd, buildWebPageJsonLd } from "@/lib/seo/jsonld";
 import JsonLdScript from "@/app/components/seo/JsonLdScript";
 import StatusFooter from "@/components/common/StatusFooter";
 import Disclaimers from "@/app/components/policy/Disclaimers";
@@ -39,6 +40,7 @@ const ANCHOR_ORDER = ["california", "texas", "florida", "new-york", "pennsylvani
 );
 
 export default async function ElectricityCostComparisonIndexPage() {
+  const estimatorRollout = getBillEstimatorProfileRolloutSummary();
   const [pairsData, manifest] = await Promise.all([
     loadComparePairs(),
     loadElectricityComparisonPairs(),
@@ -76,10 +78,22 @@ export default async function ElectricityCostComparisonIndexPage() {
     { name: "Home", url: "/" },
     { name: "Electricity Cost Comparison", url: "/electricity-cost-comparison" },
   ]);
+  const webPageJsonLd = buildWebPageJsonLd({
+    title: "Electricity Cost Comparison by State",
+    description:
+      "Canonical state-to-state electricity comparison index using deterministic pair data and fixed-usage methodology.",
+    url: "/electricity-cost-comparison",
+    isPartOf: "/",
+    about: [
+      "state electricity comparison",
+      "deterministic rate comparison",
+      "electricity-cost-comparison canonical cluster",
+    ],
+  });
 
   return (
     <>
-      <JsonLdScript data={breadcrumbJsonLd} />
+      <JsonLdScript data={[breadcrumbJsonLd, webPageJsonLd]} />
       <main className="container">
         <nav aria-label="Breadcrumb" className="muted" style={{ marginBottom: 16, fontSize: 14 }}>
           <Link href="/">Home</Link>
@@ -104,6 +118,19 @@ export default async function ElectricityCostComparisonIndexPage() {
           </p>
           <p className="muted" style={{ margin: "0 0 24px 0", maxWidth: "65ch", fontSize: 14 }}>
             All figures are build-generated and deterministic.
+          </p>
+          <p className="muted" style={{ margin: "0 0 8px 0", maxWidth: "65ch", fontSize: 14 }}>
+            Authority scope: this index is the canonical owner for state-pair comparison intent and routes into
+            state cost, benchmark bill, estimator, and appliance canonical clusters.
+          </p>
+          <p className="muted" style={{ margin: "0 0 8px 0", maxWidth: "65ch", fontSize: 14 }}>
+            Methodology scope: pair pages use the same deterministic 900 kWh baseline and state-rate inputs so every
+            comparison remains directly comparable across the full index.
+          </p>
+          <p className="muted" style={{ margin: "0 0 8px 0", maxWidth: "65ch", fontSize: 14 }}>
+            Estimator boundary: comparison routes link into estimator state owners and expose profile routes only when
+            allowlisted ({estimatorRollout.activeKeyCount} active profile keys across{" "}
+            {estimatorRollout.activeStateCount} states).
           </p>
         </section>
 
@@ -197,6 +224,16 @@ export default async function ElectricityCostComparisonIndexPage() {
         <section style={{ marginBottom: 32 }}>
           <h2 style={{ fontSize: 20, marginBottom: 12 }}>Related Pages</h2>
           <ul style={{ margin: 0, paddingLeft: 20, lineHeight: 1.8 }}>
+            <li>
+              <Link href="/energy-comparison">Energy comparison hub</Link>
+              {" — "}
+              Discovery layer across state, usage, appliance, and bill comparison pathways
+            </li>
+            <li>
+              <Link href="/energy-comparison/states">State comparison discovery slice</Link>
+              {" — "}
+              Curated links into canonical pair pages
+            </li>
             <li>
               <Link href="/electricity-cost">Electricity cost by state</Link>
               {" — "}

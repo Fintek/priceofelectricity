@@ -10,6 +10,7 @@ import {
   CITY_REFERENCE_USAGE_KWH,
   loadCityElectricitySummary,
 } from "@/lib/longtail/cityElectricity";
+import { isActiveBillEstimatorProfilePage } from "@/lib/longtail/billEstimator";
 import { getActiveApplianceSlugs, getActiveCitiesForState } from "@/lib/longtail/rollout";
 import { formatRate, formatUsd, slugToName } from "@/lib/longtail/stateLongtail";
 import { buildMetadata } from "@/lib/seo/metadata";
@@ -59,6 +60,15 @@ export default async function ElectricityCostCityPage({
     .filter((item) => item.slug !== summary.city.slug)
     .slice(0, 8);
   const featuredApplianceSlugs = getActiveApplianceSlugs().slice(0, 3);
+  const mediumHomeEstimatorPath = isActiveBillEstimatorProfilePage(summary.state.slug, "medium-home")
+    ? `/electricity-bill-estimator/${summary.state.slug}/medium-home`
+    : `/electricity-bill-estimator/${summary.state.slug}`;
+  const mediumHomeEstimatorLabel = isActiveBillEstimatorProfilePage(summary.state.slug, "medium-home")
+    ? `${summary.state.name} medium-home bill scenario`
+    : `${summary.state.name} household bill estimator`;
+  const mediumHomeEstimatorDescription = isActiveBillEstimatorProfilePage(summary.state.slug, "medium-home")
+    ? "Representative household estimator profile with deterministic assumptions"
+    : "Deterministic household-profile estimator directory for this state";
 
   const breadcrumbJsonLd = buildBreadcrumbListJsonLd([
     { name: "Home", url: "/" },
@@ -96,7 +106,7 @@ export default async function ElectricityCostCityPage({
     {
       question: `Is this ${summary.city.name} electricity rate a utility quote?`,
       answer:
-        "No. This page provides a deterministic modeled estimate for local context and comparison, not a utility tariff quote or enrollment offer.",
+        "No. This page provides a deterministic city estimate for local context and comparison, not a utility tariff quote or enrollment offer.",
     },
     {
       question: `How is the ${summary.city.name} estimate calculated?`,
@@ -183,15 +193,25 @@ export default async function ElectricityCostCityPage({
                 label: "Energy comparison hub",
                 description: "Curated discovery hub linking city, state, usage, and appliance clusters",
               },
+              {
+                href: "/energy-comparison/states",
+                label: "State comparison discovery slice",
+                description: "Curated state-vs-state pathways connected to canonical pair pages",
+              },
+              {
+                href: "/electricity-cost-comparison",
+                label: "Electricity cost comparison index",
+                description: "Canonical state comparison family for head-to-head cost intent",
+              },
               ...featuredApplianceSlugs.map((applianceSlug) => ({
                 href: `/cost-to-run/${applianceSlug}/${summary.state.slug}`,
                 label: `${slugToName(applianceSlug.replace(/-/g, " "))} cost in ${summary.state.name}`,
                 description: "Canonical appliance operating-cost route for this state",
               })),
               {
-                href: `/electricity-bill-estimator/${summary.state.slug}/medium-home`,
-                label: `${summary.state.name} medium-home bill scenario`,
-                description: "Representative household estimator profile with deterministic assumptions",
+                href: mediumHomeEstimatorPath,
+                label: mediumHomeEstimatorLabel,
+                description: mediumHomeEstimatorDescription,
               },
             ],
           },

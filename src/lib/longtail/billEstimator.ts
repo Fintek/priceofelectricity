@@ -60,6 +60,37 @@ type BillEstimatorTelemetryOptions = {
 };
 let memoizedAllStateSummariesPromise: Promise<AverageBillStateSummary[]> | null = null;
 
+/**
+ * Explicit rollout keys for estimator profile pages.
+ *
+ * Key format: `${stateSlug}/${profileSlug}`
+ *
+ * Phase 2 keeps profile routes deferred by default for payload safety.
+ * Add keys intentionally in later phases after verification.
+ */
+export const ACTIVE_BILL_ESTIMATOR_PROFILE_PAGE_KEYS: readonly string[] = [
+  "california/apartment",
+  "california/small-home",
+  "california/medium-home",
+  "california/large-home",
+  "florida/apartment",
+  "florida/small-home",
+  "florida/medium-home",
+  "florida/large-home",
+  "texas/apartment",
+  "texas/small-home",
+  "texas/medium-home",
+  "texas/large-home",
+];
+/**
+ * Phase 4 keeps estimator profile rollout intentionally small and reviewable.
+ * Future expansion should raise these limits only after payload and sitemap review.
+ */
+export const BILL_ESTIMATOR_PROFILE_ROLLOUT_LIMITS = {
+  maxStates: 3,
+  maxKeys: 12,
+} as const;
+
 function getMemoizedAllBillEstimatorStateSummaries(
   options?: BillEstimatorTelemetryOptions,
 ): Promise<AverageBillStateSummary[]> {
@@ -77,6 +108,78 @@ export function isBillEstimatorProfileSlug(value: string): value is BillEstimato
 
 export function getBillEstimatorProfile(slug: string): BillEstimatorProfile | null {
   return BILL_ESTIMATOR_PROFILES.find((profile) => profile.slug === slug) ?? null;
+}
+
+export function buildBillEstimatorProfilePageKey(
+  stateSlug: string,
+  profileSlug: BillEstimatorProfileSlug,
+): string {
+  return `${stateSlug}/${profileSlug}`;
+}
+
+function parseBillEstimatorProfilePageKey(
+  value: string,
+): { slug: string; profile: BillEstimatorProfileSlug } | null {
+  const [slug, profile, extra] = value.split("/");
+  if (!slug || !profile || extra) return null;
+  if (!isBillEstimatorProfileSlug(profile)) return null;
+  return { slug, profile };
+}
+
+export function getActiveBillEstimatorProfilePages(): Array<{
+  slug: string;
+  profile: BillEstimatorProfileSlug;
+}> {
+  const rows = ACTIVE_BILL_ESTIMATOR_PROFILE_PAGE_KEYS
+    .map(parseBillEstimatorProfilePageKey)
+    .filter((item): item is { slug: string; profile: BillEstimatorProfileSlug } => item != null);
+  const activeStateCount = new Set(rows.map((row) => row.slug)).size;
+  if (rows.length > BILL_ESTIMATOR_PROFILE_ROLLOUT_LIMITS.maxKeys) {
+    throw new Error(
+      `ACTIVE_BILL_ESTIMATOR_PROFILE_PAGE_KEYS exceeds key cap (${rows.length} > ${BILL_ESTIMATOR_PROFILE_ROLLOUT_LIMITS.maxKeys})`,
+    );
+  }
+  if (activeStateCount > BILL_ESTIMATOR_PROFILE_ROLLOUT_LIMITS.maxStates) {
+    throw new Error(
+      `ACTIVE_BILL_ESTIMATOR_PROFILE_PAGE_KEYS exceeds state cap (${activeStateCount} > ${BILL_ESTIMATOR_PROFILE_ROLLOUT_LIMITS.maxStates})`,
+    );
+  }
+  return rows;
+}
+
+export function getBillEstimatorProfileRolloutSummary(): {
+  activeKeyCount: number;
+  activeStateCount: number;
+  activeStateSlugs: string[];
+} {
+  const rows = getActiveBillEstimatorProfilePages();
+  const activeStateSlugs = Array.from(new Set(rows.map((row) => row.slug))).sort();
+  return {
+    activeKeyCount: rows.length,
+    activeStateCount: activeStateSlugs.length,
+    activeStateSlugs,
+  };
+}
+
+export function isActiveBillEstimatorProfilePage(
+  stateSlug: string,
+  profileSlug: BillEstimatorProfileSlug,
+): boolean {
+  return ACTIVE_BILL_ESTIMATOR_PROFILE_PAGE_KEYS.includes(
+    buildBillEstimatorProfilePageKey(stateSlug, profileSlug),
+  );
+}
+
+export function getActiveBillEstimatorProfilesForState(stateSlug: string): BillEstimatorProfile[] {
+  return BILL_ESTIMATOR_PROFILES.filter((profile) =>
+    isActiveBillEstimatorProfilePage(stateSlug, profile.slug),
+  );
+}
+
+export function getFirstActiveBillEstimatorProfileForState(
+  stateSlug: string,
+): BillEstimatorProfileSlug | null {
+  return getActiveBillEstimatorProfilesForState(stateSlug)[0]?.slug ?? null;
 }
 
 export async function getBillEstimatorStateStaticParams(
@@ -128,6 +231,27 @@ export async function getBillEstimatorProfileStaticParams(): Promise<
       state_count: states.length,
       profile_count: BILL_ESTIMATOR_PROFILES.length,
       row_count: rows.length,
+    },
+  });
+  return rows;
+}
+
+export async function getActiveBillEstimatorProfileStaticParams(
+  options?: BillEstimatorTelemetryOptions,
+): Promise<Array<{ slug: string; profile: BillEstimatorProfileSlug }>> {
+  const startedAt = startRuntimeTimer();
+  const knownStates = new Set(
+    (await getMemoizedAllBillEstimatorStateSummaries(options)).map((state) => state.slug),
+  );
+  const rows = getActiveBillEstimatorProfilePages().filter((row) => knownStates.has(row.slug));
+  emitLongtailData({
+    targetId: "billEstimator",
+    operation: "getActiveBillEstimatorProfileStaticParams",
+    durationMs: elapsedMs(startedAt),
+    contextLabel: options?.contextLabel,
+    sampleMeta: {
+      configured_key_count: ACTIVE_BILL_ESTIMATOR_PROFILE_PAGE_KEYS.length,
+      valid_row_count: rows.length,
     },
   });
   return rows;
