@@ -24,6 +24,22 @@ function fail(label: string, detail?: string): void {
 const SITE_URL =
   process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/+$/, "") ||
   "https://priceofelectricity.com";
+const CANONICAL_SITE_URL = SITE_URL.replace("://www.", "://");
+
+function extractSitemapPathnames(xml: string): string[] {
+  const locPattern = /<loc>([^<]+)<\/loc>/g;
+  const paths: string[] = [];
+  for (const match of xml.matchAll(locPattern)) {
+    const value = match[1]?.trim();
+    if (!value) continue;
+    try {
+      paths.push(new URL(value).pathname);
+    } catch {
+      // Ignore malformed URL-like values.
+    }
+  }
+  return paths;
+}
 
 async function checkRobotsTxt(base: string): Promise<void> {
   const res = await fetchWithTimeout(`${base}/robots.txt`);
@@ -34,7 +50,7 @@ async function checkRobotsTxt(base: string): Promise<void> {
   pass("/robots.txt reachable");
 
   const body = await res.text();
-  const expectedSitemap = `Sitemap: ${SITE_URL}/sitemap-index.xml`;
+  const expectedSitemap = `Sitemap: ${CANONICAL_SITE_URL}/sitemap-index.xml`;
   if (body.includes(expectedSitemap)) {
     pass(`/robots.txt sitemap directive uses canonical origin`);
   } else if (body.includes("Sitemap:") && body.includes("/sitemap-index.xml")) {
@@ -83,29 +99,28 @@ async function checkSitemap(base: string): Promise<void> {
 }
 
 async function checkDeferredRouteLeakage(base: string): Promise<void> {
-  const segmentBodies: string[] = [];
+  const allPathnames: string[] = [];
   for (const segment of EXPECTED_SITEMAP_SEGMENTS) {
     const res = await fetchWithTimeout(`${base}/sitemap/${segment}.xml`);
     if (res.ok) {
-      segmentBodies.push(await res.text());
+      const xml = await res.text();
+      allPathnames.push(...extractSitemapPathnames(xml));
     }
   }
-  const allSitemapContent = segmentBodies.join("\n");
 
-  const comparePairPattern = /priceofelectricity\.com\/compare\/[a-z]+-vs-[a-z]+/;
-  if (comparePairPattern.test(allSitemapContent)) {
+  const legacyComparePairPath = /^\/compare\/[a-z]+-vs-[a-z]+\/?$/;
+  if (allPathnames.some((pathname) => legacyComparePairPath.test(pathname))) {
     fail("no /compare/{pair} redirect routes in sitemap", "found legacy redirect URLs — these should only appear as /electricity-cost-comparison/{pair}");
   } else {
     pass("no /compare/{pair} redirect routes in sitemap");
   }
 
-  const estimatorProfilePattern = /https:\/\/priceofelectricity\.com\/electricity-bill-estimator\/([a-z-]+)\/(apartment|small-home|medium-home|large-home)/g;
-  const foundProfileUrls = new Set<string>();
-  for (const match of allSitemapContent.matchAll(estimatorProfilePattern)) {
-    if (match[1] && match[2]) {
-      foundProfileUrls.add(`/electricity-bill-estimator/${match[1]}/${match[2]}`);
-    }
-  }
+  const estimatorProfilePath = /^\/electricity-bill-estimator\/([a-z-]+)\/(apartment|small-home|medium-home|large-home)\/?$/;
+  const foundProfileUrls = new Set(
+    allPathnames
+      .filter((pathname) => estimatorProfilePath.test(pathname))
+      .map((pathname) => pathname.replace(/\/+$/, "")),
+  );
 
   const expectedProfileUrls = new Set(
     getActiveBillEstimatorProfilePages().map((entry) => `/electricity-bill-estimator/${entry.slug}/${entry.profile}`),

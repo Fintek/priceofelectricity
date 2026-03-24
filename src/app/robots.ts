@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
-import { SITE_URL } from "@/lib/site";
+
+const CANONICAL_SITEMAP_ORIGIN = "https://priceofelectricity.com";
 
 export default function robots(): MetadataRoute.Robots {
   const isExplicitlyBlocked =
@@ -18,6 +19,6 @@ export default function robots(): MetadataRoute.Robots {
           userAgent: "*",
           disallow: "/",
         },
-    sitemap: `${SITE_URL}/sitemap-index.xml`,
+    sitemap: `${CANONICAL_SITEMAP_ORIGIN}/sitemap-index.xml`,
   };
 }

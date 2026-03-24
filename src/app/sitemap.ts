@@ -21,9 +21,8 @@ import {
   getActiveApplianceCityPages,
   getActiveCityPages,
 } from "@/lib/longtail/rollout";
+import { getActiveBillEstimatorProfilePages } from "@/lib/longtail/billEstimator";
 import { HOME_SIZE_SCENARIOS } from "@/lib/longtail/usageIntelligence";
-import { getLegacyCompareStaticPairs } from "@/lib/compare/legacyComparePairs";
-import { BILL_ESTIMATOR_PROFILES } from "@/lib/longtail/billEstimator";
 import {
   assertNoDuplicateSegmentUrls,
   SITEMAP_SEGMENT_IDS,
@@ -84,6 +83,17 @@ function stripVolatileLastModified(entries: MetadataRoute.Sitemap): MetadataRout
   });
 }
 
+function stripLegacyComparePairRedirectUrls(entries: MetadataRoute.Sitemap): MetadataRoute.Sitemap {
+  const legacyComparePairPath = /^\/compare\/[a-z]+-vs-[a-z]+\/?$/;
+  return entries.filter((entry) => {
+    try {
+      return !legacyComparePairPath.test(new URL(entry.url).pathname);
+    } catch {
+      return true;
+    }
+  });
+}
+
 function getKnowledgeStateSlugs(): string[] {
   if (cachedKnowledgeStateSlugs) {
     return cachedKnowledgeStateSlugs;
@@ -114,14 +124,6 @@ function getKnowledgeRankingIds(): string[] {
   } catch {
     return [];
   }
-}
-
-function hasKnowledgeComparePairPage(pair: string): boolean {
-  if (!pair || !pair.includes("-vs-")) return false;
-  const parts = pair.split("-vs-");
-  if (parts.length !== 2 || !parts[0] || !parts[1] || parts[0] === parts[1]) return false;
-  const comparePairPath = path.join(process.cwd(), "public", "knowledge", "compare", `${pair}.json`);
-  return existsSync(comparePairPath);
 }
 
 
@@ -246,16 +248,6 @@ export function getSegmentedSitemapEntries() {
       priority: 0.52,
     };
   });
-  const legacyCompareStaticPairSet = new Set(getLegacyCompareStaticPairs());
-  const comparisonEntries: MetadataRoute.Sitemap = getKnowledgeComparePairs()
-    .filter((pair) => legacyCompareStaticPairSet.has(pair))
-    .filter(hasKnowledgeComparePairPage)
-    .map((pair) => ({
-    url: `${BASE_URL}/compare/${pair}`,
-    lastModified: new Date(),
-    changeFrequency: "monthly",
-    priority: 0.7,
-    }));
   const guideEntries: MetadataRoute.Sitemap = GUIDES.map((guide) => ({
     url: `${BASE_URL}/guides/${guide.slug}`,
     lastModified: new Date(),
@@ -678,7 +670,6 @@ export function getSegmentedSitemapEntries() {
     ...regionEntries,
     ...cityEntries,
     ...applianceCityPilotEntries,
-    ...comparisonEntries,
     ...guideEntries,
     ...questionEntries,
     ...topicEntries,
@@ -731,14 +722,12 @@ export function getSegmentedSitemapEntries() {
       changeFrequency: "monthly" as const,
       priority: 0.58,
     })),
-    ...getKnowledgeStateSlugs().flatMap((slug) =>
-      BILL_ESTIMATOR_PROFILES.map((profile) => ({
-        url: `${BASE_URL}/electricity-bill-estimator/${slug}/${profile.slug}`,
-        lastModified: new Date(),
-        changeFrequency: "monthly" as const,
-        priority: 0.54,
-      })),
-    ),
+    ...getActiveBillEstimatorProfilePages().map((entry) => ({
+      url: `${BASE_URL}/electricity-bill-estimator/${entry.slug}/${entry.profile}`,
+      lastModified: new Date(),
+      changeFrequency: "monthly" as const,
+      priority: 0.54,
+    })),
     {
       url: `${BASE_URL}/moving-to-electricity-cost`,
       lastModified: new Date(),
@@ -1769,7 +1758,7 @@ export function getSegmentedSitemapEntries() {
     },
   ];
   // Keep lastModified only when backed by stable source dates.
-  const stableEntries = stripVolatileLastModified(entries);
+  const stableEntries = stripLegacyComparePairRedirectUrls(stripVolatileLastModified(entries));
   const grouped = groupSitemapEntriesBySegment(stableEntries);
   assertNoDuplicateSegmentUrls(grouped);
   return grouped;
