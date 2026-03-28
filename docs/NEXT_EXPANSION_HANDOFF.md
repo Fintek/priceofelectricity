@@ -4496,6 +4496,49 @@ Repair the confirmed production 404 for city bill city pages, re-check the repor
 - No `public/knowledge/state/` artifacts were committed.
 - No sitemap duplicate-safety assertions were removed or weakened.
 
-### Next step
+### Production verification (post-push)
 
-Push the scoped fix commit, then re-verify production deployment health on the new commit. If production routes and sitemap stay healthy, this repair series can close with no follow-up prompt.
+Deployment `dpl_4tfSUKKRaMqmYSanp8YTX5eGgmFM` (commit `27ffe3e2d3f9425967873689280213950b4c7d6a`) confirmed **READY**. Live HTTP probes against `https://www.priceofelectricity.com` returned **200** for all of: `/sitemap-index.xml`, `/sitemap/core.xml`, `/sitemap/states.xml`, `/sitemap/cities.xml`, `/sitemap/appliances.xml`, `/sitemap/estimators.xml`, `/average-electricity-bill/ohio/columbus`, `/average-electricity-bill/california/los-angeles`, `/cost-to-run/central-ac/texas/dallas`, `/electricity-bill-estimator/ohio/apartment`, and `/robots.txt`. Vercel runtime logs contained no error or fatal entries. Live `cities.xml` confirmed to include `/average-electricity-bill/ohio/columbus` in the correct segment. **The city bill route and sitemap repair series is closed. No follow-up prompt is required.**
+
+---
+
+## Prompt 95 — Stable-Hold Production Checkpoint and Handoff Closeout
+
+**Date**: 2026-03-26
+
+### Objective
+
+Confirm that the repaired production state from Prompt 94 is the correct stable-hold baseline. Align handoff documentation. No implementation work authorized.
+
+### Stable-hold state confirmed
+
+| Family | Keys | Cap | Status |
+|---|---|---|---|
+| Appliance × city | 60 | maxKeys=60, maxAppliances=8, maxCities=32 | HOLD |
+| City bill benchmark | 16 | maxKeys=16, maxStates=4 | Stable, live |
+| Estimator profile | 16 | maxKeys=16, maxStates=4 | Stable, live |
+| Utilities | 150 / 50 states | — | Complete |
+
+Headroom decision lines: standalone **17.0 MiB** (measured 17.11 MiB ✓), server/app **6.0 MiB** (measured 6.58 MiB ✓). Hard ceilings: 85 MiB standalone, 40 MiB server/app — unchanged.
+
+No deferred family activated. No monitoring sub-series open. Trigger-based hold posture unchanged.
+
+### Doc/handoff alignment
+
+- Prompt 94 outcome bullet in `ROADMAP_EXPANSION_NEXT_PHASES.md` updated to reflect completed production verification (was: "pending").
+- Prompt 94 "Next step" section in this file replaced with confirmed production verification results.
+- No other docs required changes.
+
+### Verification results
+
+| Command | Result |
+|---|---|
+| `git status --short` | Only untracked/modified public data artifacts; no staged code changes |
+| `npm run payload:audit` | Passed — standalone 17.11 MiB, server/app 6.58 MiB |
+| `npm run indexing:check` | **64/0** |
+| `npm run readiness:audit` | **78/0** |
+| `npm run seo:check` | **8/0** |
+
+### Path decision
+
+**PATH A — Stable-hold baseline confirmed.** Production repair is fully absorbed into docs/handoff. No further prompt is needed. The roadmap remains in stable hold until a real trigger fires.
