@@ -1,256 +1,256 @@
 {
   "version": "v1",
-  "releasedAt": "2025-11-15",
+  "releasedAt": "2025-12-15",
   "states": [
     {
       "slug": "alabama",
-      "rate": 16.08,
-      "updated": "November 2025"
+      "rate": 16.01,
+      "updated": "December 2025"
     },
     {
       "slug": "alaska",
-      "rate": 26.18,
-      "updated": "November 2025"
+      "rate": 25.54,
+      "updated": "December 2025"
     },
     {
       "slug": "arizona",
-      "rate": 15.66,
-      "updated": "November 2025"
+      "rate": 15.46,
+      "updated": "December 2025"
     },
     {
       "slug": "arkansas",
-      "rate": 13.22,
-      "updated": "November 2025"
+      "rate": 12.33,
+      "updated": "December 2025"
     },
     {
       "slug": "california",
-      "rate": 31.89,
-      "updated": "November 2025"
+      "rate": 34.71,
+      "updated": "December 2025"
     },
     {
       "slug": "colorado",
-      "rate": 16.35,
-      "updated": "November 2025"
+      "rate": 16.12,
+      "updated": "December 2025"
     },
     {
       "slug": "connecticut",
-      "rate": 27.02,
-      "updated": "November 2025"
+      "rate": 25.3,
+      "updated": "December 2025"
     },
     {
       "slug": "delaware",
-      "rate": 18.81,
-      "updated": "November 2025"
+      "rate": 17.12,
+      "updated": "December 2025"
     },
     {
       "slug": "florida",
-      "rate": 15.78,
-      "updated": "November 2025"
+      "rate": 15.02,
+      "updated": "December 2025"
     },
     {
       "slug": "georgia",
-      "rate": 14.42,
-      "updated": "November 2025"
+      "rate": 13.67,
+      "updated": "December 2025"
     },
     {
       "slug": "hawaii",
-      "rate": 40.2,
-      "updated": "November 2025"
+      "rate": 41.62,
+      "updated": "December 2025"
     },
     {
       "slug": "idaho",
-      "rate": 12.25,
-      "updated": "November 2025"
+      "rate": 11.87,
+      "updated": "December 2025"
     },
     {
       "slug": "illinois",
-      "rate": 18.31,
-      "updated": "November 2025"
+      "rate": 17.07,
+      "updated": "December 2025"
     },
     {
       "slug": "indiana",
-      "rate": 17.41,
-      "updated": "November 2025"
+      "rate": 15.91,
+      "updated": "December 2025"
     },
     {
       "slug": "iowa",
-      "rate": 13.55,
-      "updated": "November 2025"
+      "rate": 12.6,
+      "updated": "December 2025"
     },
     {
       "slug": "kansas",
-      "rate": 15.1,
-      "updated": "November 2025"
+      "rate": 14.43,
+      "updated": "December 2025"
     },
     {
       "slug": "kentucky",
-      "rate": 13.7,
-      "updated": "November 2025"
+      "rate": 13.22,
+      "updated": "December 2025"
     },
     {
       "slug": "louisiana",
-      "rate": 12.74,
-      "updated": "November 2025"
+      "rate": 12.56,
+      "updated": "December 2025"
     },
     {
       "slug": "maine",
-      "rate": 27.85,
-      "updated": "November 2025"
+      "rate": 30.39,
+      "updated": "December 2025"
     },
     {
       "slug": "maryland",
-      "rate": 21.34,
-      "updated": "November 2025"
+      "rate": 19.57,
+      "updated": "December 2025"
     },
     {
       "slug": "massachusetts",
-      "rate": 31.22,
-      "updated": "November 2025"
+      "rate": 30.88,
+      "updated": "December 2025"
     },
     {
       "slug": "michigan",
-      "rate": 19.94,
-      "updated": "November 2025"
+      "rate": 19.53,
+      "updated": "December 2025"
     },
     {
       "slug": "minnesota",
-      "rate": 15.67,
-      "updated": "November 2025"
+      "rate": 14.96,
+      "updated": "December 2025"
     },
     {
       "slug": "mississippi",
-      "rate": 15.33,
-      "updated": "November 2025"
+      "rate": 14.16,
+      "updated": "December 2025"
     },
     {
       "slug": "missouri",
-      "rate": 13.12,
-      "updated": "November 2025"
+      "rate": 11.91,
+      "updated": "December 2025"
     },
     {
       "slug": "montana",
-      "rate": 12.82,
-      "updated": "November 2025"
+      "rate": 12.77,
+      "updated": "December 2025"
     },
     {
       "slug": "nebraska",
-      "rate": 12.52,
-      "updated": "November 2025"
+      "rate": 11.57,
+      "updated": "December 2025"
     },
     {
       "slug": "nevada",
-      "rate": 14.2,
-      "updated": "November 2025"
+      "rate": 12.83,
+      "updated": "December 2025"
     },
     {
       "slug": "new-hampshire",
-      "rate": 27.37,
-      "updated": "November 2025"
+      "rate": 26.28,
+      "updated": "December 2025"
     },
     {
       "slug": "new-jersey",
-      "rate": 22.73,
-      "updated": "November 2025"
+      "rate": 22.98,
+      "updated": "December 2025"
     },
     {
       "slug": "new-mexico",
-      "rate": 15.61,
-      "updated": "November 2025"
+      "rate": 14.66,
+      "updated": "December 2025"
     },
     {
       "slug": "new-york",
-      "rate": 26.42,
-      "updated": "November 2025"
+      "rate": 27.39,
+      "updated": "December 2025"
     },
     {
       "slug": "north-carolina",
-      "rate": 14.64,
-      "updated": "November 2025"
+      "rate": 13.47,
+      "updated": "December 2025"
     },
     {
       "slug": "north-dakota",
-      "rate": 11.93,
-      "updated": "November 2025"
+      "rate": 11.02,
+      "updated": "December 2025"
     },
     {
       "slug": "ohio",
-      "rate": 17.66,
-      "updated": "November 2025"
+      "rate": 17.31,
+      "updated": "December 2025"
     },
     {
       "slug": "oklahoma",
-      "rate": 13.34,
-      "updated": "November 2025"
+      "rate": 12.25,
+      "updated": "December 2025"
     },
     {
       "slug": "oregon",
-      "rate": 15.59,
-      "updated": "November 2025"
+      "rate": 14.94,
+      "updated": "December 2025"
     },
     {
       "slug": "pennsylvania",
-      "rate": 20.16,
-      "updated": "November 2025"
+      "rate": 20.08,
+      "updated": "December 2025"
     },
     {
       "slug": "rhode-island",
-      "rate": 30.82,
-      "updated": "November 2025"
+      "rate": 31.15,
+      "updated": "December 2025"
     },
     {
       "slug": "south-carolina",
-      "rate": 15.53,
-      "updated": "November 2025"
+      "rate": 14.82,
+      "updated": "December 2025"
     },
     {
       "slug": "south-dakota",
-      "rate": 13.81,
-      "updated": "November 2025"
+      "rate": 12.51,
+      "updated": "December 2025"
     },
     {
       "slug": "tennessee",
-      "rate": 13.47,
-      "updated": "November 2025"
+      "rate": 12.87,
+      "updated": "December 2025"
     },
     {
       "slug": "texas",
-      "rate": 16.04,
-      "updated": "November 2025"
+      "rate": 15.87,
+      "updated": "December 2025"
     },
     {
       "slug": "utah",
-      "rate": 13.07,
-      "updated": "November 2025"
+      "rate": 12.99,
+      "updated": "December 2025"
     },
     {
       "slug": "vermont",
-      "rate": 24.17,
-      "updated": "November 2025"
+      "rate": 23.22,
+      "updated": "December 2025"
     },
     {
       "slug": "virginia",
-      "rate": 15.94,
-      "updated": "November 2025"
+      "rate": 15.27,
+      "updated": "December 2025"
     },
     {
       "slug": "washington",
-      "rate": 13.85,
-      "updated": "November 2025"
+      "rate": 13.33,
+      "updated": "December 2025"
     },
     {
       "slug": "west-virginia",
-      "rate": 15.65,
-      "updated": "November 2025"
+      "rate": 14.61,
+      "updated": "December 2025"
     },
     {
       "slug": "wisconsin",
-      "rate": 18.39,
-      "updated": "November 2025"
+      "rate": 17.84,
+      "updated": "December 2025"
     },
     {
       "slug": "wyoming",
-      "rate": 13.91,
-      "updated": "November 2025"
+      "rate": 12.83,
+      "updated": "December 2025"
     }
   ]
 }

@@ -1,0 +1,2504 @@
+{
+  "source_url": "https://api.eia.gov/v2/electricity/retail-sales/data/",
+  "fetched_at": "2026-03-28T10:37:30.767Z",
+  "request": {
+    "frequency": "monthly",
+    "data": [
+      "price"
+    ],
+    "facets": {
+      "sectorid": [
+        "RES"
+      ]
+    },
+    "start": "2025-09",
+    "end": "2026-03",
+    "length": 5000
+  },
+  "totals": {
+    "reported_total": 310,
+    "fetched_rows": 310
+  },
+  "data": [
+    {
+      "period": "2026-01",
+      "stateid": "AK",
+      "sectorid": "RES",
+      "price": 25.52,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2026-01",
+      "stateid": "AL",
+      "sectorid": "RES",
+      "price": 16.06,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2026-01",
+      "stateid": "AR",
+      "sectorid": "RES",
+      "price": 12.35,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2026-01",
+      "stateid": "AZ",
+      "sectorid": "RES",
+      "price": 15.61,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2026-01",
+      "stateid": "CA",
+      "sectorid": "RES",
+      "price": 30.29,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2026-01",
+      "stateid": "CO",
+      "sectorid": "RES",
+      "price": 16.44,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2026-01",
+      "stateid": "CT",
+      "sectorid": "RES",
+      "price": 28.3,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2026-01",
+      "stateid": "DC",
+      "sectorid": "RES",
+      "price": 23.72,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2026-01",
+      "stateid": "DE",
+      "sectorid": "RES",
+      "price": 16.51,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2026-01",
+      "stateid": "ENC",
+      "sectorid": "RES",
+      "price": 17.45,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2026-01",
+      "stateid": "ESC",
+      "sectorid": "RES",
+      "price": 14.34,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2026-01",
+      "stateid": "FL",
+      "sectorid": "RES",
+      "price": 15.92,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2026-01",
+      "stateid": "GA",
+      "sectorid": "RES",
+      "price": 14.46,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2026-01",
+      "stateid": "HI",
+      "sectorid": "RES",
+      "price": 39.79,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2026-01",
+      "stateid": "IA",
+      "sectorid": "RES",
+      "price": 12.83,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2026-01",
+      "stateid": "ID",
+      "sectorid": "RES",
+      "price": 12.07,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2026-01",
+      "stateid": "IL",
+      "sectorid": "RES",
+      "price": 16.36,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2026-01",
+      "stateid": "IN",
+      "sectorid": "RES",
+      "price": 16.19,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2026-01",
+      "stateid": "KS",
+      "sectorid": "RES",
+      "price": 14.29,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2026-01",
+      "stateid": "KY",
+      "sectorid": "RES",
+      "price": 14.27,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2026-01",
+      "stateid": "LA",
+      "sectorid": "RES",
+      "price": 12.46,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2026-01",
+      "stateid": "MA",
+      "sectorid": "RES",
+      "price": 31.16,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2026-01",
+      "stateid": "MAT",
+      "sectorid": "RES",
+      "price": 23.68,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2026-01",
+      "stateid": "MD",
+      "sectorid": "RES",
+      "price": 20.61,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2026-01",
+      "stateid": "ME",
+      "sectorid": "RES",
+      "price": 30.73,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2026-01",
+      "stateid": "MI",
+      "sectorid": "RES",
+      "price": 19.52,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2026-01",
+      "stateid": "MN",
+      "sectorid": "RES",
+      "price": 14.98,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2026-01",
+      "stateid": "MO",
+      "sectorid": "RES",
+      "price": 11.8,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2026-01",
+      "stateid": "MS",
+      "sectorid": "RES",
+      "price": 14.24,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2026-01",
+      "stateid": "MT",
+      "sectorid": "RES",
+      "price": 12.86,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2026-01",
+      "stateid": "MTN",
+      "sectorid": "RES",
+      "price": 14.5,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2026-01",
+      "stateid": "NC",
+      "sectorid": "RES",
+      "price": 13.68,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2026-01",
+      "stateid": "ND",
+      "sectorid": "RES",
+      "price": 10.92,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2026-01",
+      "stateid": "NE",
+      "sectorid": "RES",
+      "price": 11.76,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2026-01",
+      "stateid": "NEW",
+      "sectorid": "RES",
+      "price": 29.36,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2026-01",
+      "stateid": "NH",
+      "sectorid": "RES",
+      "price": 26.32,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2026-01",
+      "stateid": "NJ",
+      "sectorid": "RES",
+      "price": 23.13,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2026-01",
+      "stateid": "NM",
+      "sectorid": "RES",
+      "price": 14.7,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2026-01",
+      "stateid": "NV",
+      "sectorid": "RES",
+      "price": 13.98,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2026-01",
+      "stateid": "NY",
+      "sectorid": "RES",
+      "price": 28.37,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2026-01",
+      "stateid": "OH",
+      "sectorid": "RES",
+      "price": 17.59,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2026-01",
+      "stateid": "OK",
+      "sectorid": "RES",
+      "price": 12.62,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2026-01",
+      "stateid": "OR",
+      "sectorid": "RES",
+      "price": 14.66,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2026-01",
+      "stateid": "PA",
+      "sectorid": "RES",
+      "price": 20.19,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2026-01",
+      "stateid": "PACC",
+      "sectorid": "RES",
+      "price": 23.27,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2026-01",
+      "stateid": "PACN",
+      "sectorid": "RES",
+      "price": 32.66,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2026-01",
+      "stateid": "RI",
+      "sectorid": "RES",
+      "price": 30.14,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2026-01",
+      "stateid": "SAT",
+      "sectorid": "RES",
+      "price": 15.64,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2026-01",
+      "stateid": "SC",
+      "sectorid": "RES",
+      "price": 15.41,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2026-01",
+      "stateid": "SD",
+      "sectorid": "RES",
+      "price": 13.6,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2026-01",
+      "stateid": "TN",
+      "sectorid": "RES",
+      "price": 13.1,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2026-01",
+      "stateid": "TX",
+      "sectorid": "RES",
+      "price": 15.69,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2026-01",
+      "stateid": "US",
+      "sectorid": "RES",
+      "price": 17.45,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2026-01",
+      "stateid": "UT",
+      "sectorid": "RES",
+      "price": 12.88,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2026-01",
+      "stateid": "VA",
+      "sectorid": "RES",
+      "price": 15.87,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2026-01",
+      "stateid": "VT",
+      "sectorid": "RES",
+      "price": 23.29,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2026-01",
+      "stateid": "WA",
+      "sectorid": "RES",
+      "price": 13.81,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2026-01",
+      "stateid": "WI",
+      "sectorid": "RES",
+      "price": 18.2,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2026-01",
+      "stateid": "WNC",
+      "sectorid": "RES",
+      "price": 12.92,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2026-01",
+      "stateid": "WSC",
+      "sectorid": "RES",
+      "price": 14.64,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2026-01",
+      "stateid": "WV",
+      "sectorid": "RES",
+      "price": 14.77,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2026-01",
+      "stateid": "WY",
+      "sectorid": "RES",
+      "price": 12.85,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-12",
+      "stateid": "AK",
+      "sectorid": "RES",
+      "price": 25.54,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-12",
+      "stateid": "AL",
+      "sectorid": "RES",
+      "price": 16.01,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-12",
+      "stateid": "AR",
+      "sectorid": "RES",
+      "price": 12.33,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-12",
+      "stateid": "AZ",
+      "sectorid": "RES",
+      "price": 15.46,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-12",
+      "stateid": "CA",
+      "sectorid": "RES",
+      "price": 34.71,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-12",
+      "stateid": "CO",
+      "sectorid": "RES",
+      "price": 16.12,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-12",
+      "stateid": "CT",
+      "sectorid": "RES",
+      "price": 25.3,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-12",
+      "stateid": "DC",
+      "sectorid": "RES",
+      "price": 23.9,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-12",
+      "stateid": "DE",
+      "sectorid": "RES",
+      "price": 17.12,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-12",
+      "stateid": "ENC",
+      "sectorid": "RES",
+      "price": 17.45,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-12",
+      "stateid": "ESC",
+      "sectorid": "RES",
+      "price": 13.95,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-12",
+      "stateid": "FL",
+      "sectorid": "RES",
+      "price": 15.02,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-12",
+      "stateid": "GA",
+      "sectorid": "RES",
+      "price": 13.67,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-12",
+      "stateid": "HI",
+      "sectorid": "RES",
+      "price": 41.62,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-12",
+      "stateid": "IA",
+      "sectorid": "RES",
+      "price": 12.6,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-12",
+      "stateid": "ID",
+      "sectorid": "RES",
+      "price": 11.87,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-12",
+      "stateid": "IL",
+      "sectorid": "RES",
+      "price": 17.07,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-12",
+      "stateid": "IN",
+      "sectorid": "RES",
+      "price": 15.91,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-12",
+      "stateid": "KS",
+      "sectorid": "RES",
+      "price": 14.43,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-12",
+      "stateid": "KY",
+      "sectorid": "RES",
+      "price": 13.22,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-12",
+      "stateid": "LA",
+      "sectorid": "RES",
+      "price": 12.56,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-12",
+      "stateid": "MA",
+      "sectorid": "RES",
+      "price": 30.88,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-12",
+      "stateid": "MAT",
+      "sectorid": "RES",
+      "price": 23.25,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-12",
+      "stateid": "MD",
+      "sectorid": "RES",
+      "price": 19.57,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-12",
+      "stateid": "ME",
+      "sectorid": "RES",
+      "price": 30.39,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-12",
+      "stateid": "MI",
+      "sectorid": "RES",
+      "price": 19.53,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-12",
+      "stateid": "MN",
+      "sectorid": "RES",
+      "price": 14.96,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-12",
+      "stateid": "MO",
+      "sectorid": "RES",
+      "price": 11.91,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-12",
+      "stateid": "MS",
+      "sectorid": "RES",
+      "price": 14.16,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-12",
+      "stateid": "MT",
+      "sectorid": "RES",
+      "price": 12.77,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-12",
+      "stateid": "MTN",
+      "sectorid": "RES",
+      "price": 14.28,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-12",
+      "stateid": "NC",
+      "sectorid": "RES",
+      "price": 13.47,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-12",
+      "stateid": "ND",
+      "sectorid": "RES",
+      "price": 11.02,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-12",
+      "stateid": "NE",
+      "sectorid": "RES",
+      "price": 11.57,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-12",
+      "stateid": "NEW",
+      "sectorid": "RES",
+      "price": 28.37,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-12",
+      "stateid": "NH",
+      "sectorid": "RES",
+      "price": 26.28,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-12",
+      "stateid": "NJ",
+      "sectorid": "RES",
+      "price": 22.98,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-12",
+      "stateid": "NM",
+      "sectorid": "RES",
+      "price": 14.66,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-12",
+      "stateid": "NV",
+      "sectorid": "RES",
+      "price": 12.83,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-12",
+      "stateid": "NY",
+      "sectorid": "RES",
+      "price": 27.39,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-12",
+      "stateid": "OH",
+      "sectorid": "RES",
+      "price": 17.31,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-12",
+      "stateid": "OK",
+      "sectorid": "RES",
+      "price": 12.25,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-12",
+      "stateid": "OR",
+      "sectorid": "RES",
+      "price": 14.94,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-12",
+      "stateid": "PA",
+      "sectorid": "RES",
+      "price": 20.08,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-12",
+      "stateid": "PACC",
+      "sectorid": "RES",
+      "price": 24.2,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-12",
+      "stateid": "PACN",
+      "sectorid": "RES",
+      "price": 33.72,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-12",
+      "stateid": "RI",
+      "sectorid": "RES",
+      "price": 31.15,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-12",
+      "stateid": "SAT",
+      "sectorid": "RES",
+      "price": 15.03,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-12",
+      "stateid": "SC",
+      "sectorid": "RES",
+      "price": 14.82,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-12",
+      "stateid": "SD",
+      "sectorid": "RES",
+      "price": 12.51,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-12",
+      "stateid": "TN",
+      "sectorid": "RES",
+      "price": 12.87,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-12",
+      "stateid": "TX",
+      "sectorid": "RES",
+      "price": 15.87,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-12",
+      "stateid": "US",
+      "sectorid": "RES",
+      "price": 17.24,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-12",
+      "stateid": "UT",
+      "sectorid": "RES",
+      "price": 12.99,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-12",
+      "stateid": "VA",
+      "sectorid": "RES",
+      "price": 15.27,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-12",
+      "stateid": "VT",
+      "sectorid": "RES",
+      "price": 23.22,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-12",
+      "stateid": "WA",
+      "sectorid": "RES",
+      "price": 13.33,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-12",
+      "stateid": "WI",
+      "sectorid": "RES",
+      "price": 17.84,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-12",
+      "stateid": "WNC",
+      "sectorid": "RES",
+      "price": 12.89,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-12",
+      "stateid": "WSC",
+      "sectorid": "RES",
+      "price": 14.74,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-12",
+      "stateid": "WV",
+      "sectorid": "RES",
+      "price": 14.61,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-12",
+      "stateid": "WY",
+      "sectorid": "RES",
+      "price": 12.83,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-11",
+      "stateid": "AK",
+      "sectorid": "RES",
+      "price": 26.18,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-11",
+      "stateid": "AL",
+      "sectorid": "RES",
+      "price": 16.08,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-11",
+      "stateid": "AR",
+      "sectorid": "RES",
+      "price": 13.22,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-11",
+      "stateid": "AZ",
+      "sectorid": "RES",
+      "price": 15.66,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-11",
+      "stateid": "CA",
+      "sectorid": "RES",
+      "price": 31.89,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-11",
+      "stateid": "CO",
+      "sectorid": "RES",
+      "price": 16.35,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-11",
+      "stateid": "CT",
+      "sectorid": "RES",
+      "price": 27.02,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-11",
+      "stateid": "DC",
+      "sectorid": "RES",
+      "price": 22.72,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-11",
+      "stateid": "DE",
+      "sectorid": "RES",
+      "price": 18.81,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-11",
+      "stateid": "ENC",
+      "sectorid": "RES",
+      "price": 18.28,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-11",
+      "stateid": "ESC",
+      "sectorid": "RES",
+      "price": 14.51,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-11",
+      "stateid": "FL",
+      "sectorid": "RES",
+      "price": 15.78,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-11",
+      "stateid": "GA",
+      "sectorid": "RES",
+      "price": 14.42,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-11",
+      "stateid": "HI",
+      "sectorid": "RES",
+      "price": 40.2,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-11",
+      "stateid": "IA",
+      "sectorid": "RES",
+      "price": 13.55,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-11",
+      "stateid": "ID",
+      "sectorid": "RES",
+      "price": 12.25,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-11",
+      "stateid": "IL",
+      "sectorid": "RES",
+      "price": 18.31,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-11",
+      "stateid": "IN",
+      "sectorid": "RES",
+      "price": 17.41,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-11",
+      "stateid": "KS",
+      "sectorid": "RES",
+      "price": 15.1,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-11",
+      "stateid": "KY",
+      "sectorid": "RES",
+      "price": 13.7,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-11",
+      "stateid": "LA",
+      "sectorid": "RES",
+      "price": 12.74,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-11",
+      "stateid": "MA",
+      "sectorid": "RES",
+      "price": 31.22,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-11",
+      "stateid": "MAT",
+      "sectorid": "RES",
+      "price": 23.03,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-11",
+      "stateid": "MD",
+      "sectorid": "RES",
+      "price": 21.34,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-11",
+      "stateid": "ME",
+      "sectorid": "RES",
+      "price": 27.85,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-11",
+      "stateid": "MI",
+      "sectorid": "RES",
+      "price": 19.94,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-11",
+      "stateid": "MN",
+      "sectorid": "RES",
+      "price": 15.67,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-11",
+      "stateid": "MO",
+      "sectorid": "RES",
+      "price": 13.12,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-11",
+      "stateid": "MS",
+      "sectorid": "RES",
+      "price": 15.33,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-11",
+      "stateid": "MT",
+      "sectorid": "RES",
+      "price": 12.82,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-11",
+      "stateid": "MTN",
+      "sectorid": "RES",
+      "price": 14.74,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-11",
+      "stateid": "NC",
+      "sectorid": "RES",
+      "price": 14.64,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-11",
+      "stateid": "ND",
+      "sectorid": "RES",
+      "price": 11.93,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-11",
+      "stateid": "NE",
+      "sectorid": "RES",
+      "price": 12.52,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-11",
+      "stateid": "NEW",
+      "sectorid": "RES",
+      "price": 28.86,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-11",
+      "stateid": "NH",
+      "sectorid": "RES",
+      "price": 27.37,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-11",
+      "stateid": "NJ",
+      "sectorid": "RES",
+      "price": 22.73,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-11",
+      "stateid": "NM",
+      "sectorid": "RES",
+      "price": 15.61,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-11",
+      "stateid": "NV",
+      "sectorid": "RES",
+      "price": 14.2,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-11",
+      "stateid": "NY",
+      "sectorid": "RES",
+      "price": 26.42,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-11",
+      "stateid": "OH",
+      "sectorid": "RES",
+      "price": 17.66,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-11",
+      "stateid": "OK",
+      "sectorid": "RES",
+      "price": 13.34,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-11",
+      "stateid": "OR",
+      "sectorid": "RES",
+      "price": 15.59,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-11",
+      "stateid": "PA",
+      "sectorid": "RES",
+      "price": 20.16,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-11",
+      "stateid": "PACC",
+      "sectorid": "RES",
+      "price": 24.07,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-11",
+      "stateid": "PACN",
+      "sectorid": "RES",
+      "price": 34.08,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-11",
+      "stateid": "RI",
+      "sectorid": "RES",
+      "price": 30.82,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-11",
+      "stateid": "SAT",
+      "sectorid": "RES",
+      "price": 15.86,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-11",
+      "stateid": "SC",
+      "sectorid": "RES",
+      "price": 15.53,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-11",
+      "stateid": "SD",
+      "sectorid": "RES",
+      "price": 13.81,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-11",
+      "stateid": "TN",
+      "sectorid": "RES",
+      "price": 13.47,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-11",
+      "stateid": "TX",
+      "sectorid": "RES",
+      "price": 16.04,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-11",
+      "stateid": "US",
+      "sectorid": "RES",
+      "price": 17.78,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-11",
+      "stateid": "UT",
+      "sectorid": "RES",
+      "price": 13.07,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-11",
+      "stateid": "VA",
+      "sectorid": "RES",
+      "price": 15.94,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-11",
+      "stateid": "VT",
+      "sectorid": "RES",
+      "price": 24.17,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-11",
+      "stateid": "WA",
+      "sectorid": "RES",
+      "price": 13.85,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-11",
+      "stateid": "WI",
+      "sectorid": "RES",
+      "price": 18.39,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-11",
+      "stateid": "WNC",
+      "sectorid": "RES",
+      "price": 13.89,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-11",
+      "stateid": "WSC",
+      "sectorid": "RES",
+      "price": 15.13,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-11",
+      "stateid": "WV",
+      "sectorid": "RES",
+      "price": 15.65,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-11",
+      "stateid": "WY",
+      "sectorid": "RES",
+      "price": 13.91,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-10",
+      "stateid": "AK",
+      "sectorid": "RES",
+      "price": 26.46,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-10",
+      "stateid": "AL",
+      "sectorid": "RES",
+      "price": 16.72,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-10",
+      "stateid": "AR",
+      "sectorid": "RES",
+      "price": 13.26,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-10",
+      "stateid": "AZ",
+      "sectorid": "RES",
+      "price": 15.55,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-10",
+      "stateid": "CA",
+      "sectorid": "RES",
+      "price": 33.6,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-10",
+      "stateid": "CO",
+      "sectorid": "RES",
+      "price": 16.26,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-10",
+      "stateid": "CT",
+      "sectorid": "RES",
+      "price": 27.72,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-10",
+      "stateid": "DC",
+      "sectorid": "RES",
+      "price": 23.92,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-10",
+      "stateid": "DE",
+      "sectorid": "RES",
+      "price": 18.31,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-10",
+      "stateid": "ENC",
+      "sectorid": "RES",
+      "price": 18.53,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-10",
+      "stateid": "ESC",
+      "sectorid": "RES",
+      "price": 14.39,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-10",
+      "stateid": "FL",
+      "sectorid": "RES",
+      "price": 15.7,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-10",
+      "stateid": "GA",
+      "sectorid": "RES",
+      "price": 14.53,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-10",
+      "stateid": "HI",
+      "sectorid": "RES",
+      "price": 39.74,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-10",
+      "stateid": "IA",
+      "sectorid": "RES",
+      "price": 13.48,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-10",
+      "stateid": "ID",
+      "sectorid": "RES",
+      "price": 12.46,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-10",
+      "stateid": "IL",
+      "sectorid": "RES",
+      "price": 18.74,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-10",
+      "stateid": "IN",
+      "sectorid": "RES",
+      "price": 17.34,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-10",
+      "stateid": "KS",
+      "sectorid": "RES",
+      "price": 15.17,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-10",
+      "stateid": "KY",
+      "sectorid": "RES",
+      "price": 13.62,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-10",
+      "stateid": "LA",
+      "sectorid": "RES",
+      "price": 12.39,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-10",
+      "stateid": "MA",
+      "sectorid": "RES",
+      "price": 31.37,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-10",
+      "stateid": "MAT",
+      "sectorid": "RES",
+      "price": 23.47,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-10",
+      "stateid": "MD",
+      "sectorid": "RES",
+      "price": 22.3,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-10",
+      "stateid": "ME",
+      "sectorid": "RES",
+      "price": 26.63,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-10",
+      "stateid": "MI",
+      "sectorid": "RES",
+      "price": 20.46,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-10",
+      "stateid": "MN",
+      "sectorid": "RES",
+      "price": 16.37,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-10",
+      "stateid": "MO",
+      "sectorid": "RES",
+      "price": 12.95,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-10",
+      "stateid": "MS",
+      "sectorid": "RES",
+      "price": 14.47,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-10",
+      "stateid": "MT",
+      "sectorid": "RES",
+      "price": 14.27,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-10",
+      "stateid": "MTN",
+      "sectorid": "RES",
+      "price": 14.91,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-10",
+      "stateid": "NC",
+      "sectorid": "RES",
+      "price": 15.05,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-10",
+      "stateid": "ND",
+      "sectorid": "RES",
+      "price": 12.82,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-10",
+      "stateid": "NE",
+      "sectorid": "RES",
+      "price": 13.13,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-10",
+      "stateid": "NEW",
+      "sectorid": "RES",
+      "price": 29.22,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-10",
+      "stateid": "NH",
+      "sectorid": "RES",
+      "price": 27.27,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-10",
+      "stateid": "NJ",
+      "sectorid": "RES",
+      "price": 22.55,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-10",
+      "stateid": "NM",
+      "sectorid": "RES",
+      "price": 14.95,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-10",
+      "stateid": "NV",
+      "sectorid": "RES",
+      "price": 13.77,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-10",
+      "stateid": "NY",
+      "sectorid": "RES",
+      "price": 26.95,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-10",
+      "stateid": "OH",
+      "sectorid": "RES",
+      "price": 17.85,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-10",
+      "stateid": "OK",
+      "sectorid": "RES",
+      "price": 14.42,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-10",
+      "stateid": "OR",
+      "sectorid": "RES",
+      "price": 16.16,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-10",
+      "stateid": "PA",
+      "sectorid": "RES",
+      "price": 20.49,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-10",
+      "stateid": "PACC",
+      "sectorid": "RES",
+      "price": 26.38,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-10",
+      "stateid": "PACN",
+      "sectorid": "RES",
+      "price": 34.56,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-10",
+      "stateid": "RI",
+      "sectorid": "RES",
+      "price": 31.16,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-10",
+      "stateid": "SAT",
+      "sectorid": "RES",
+      "price": 15.96,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-10",
+      "stateid": "SC",
+      "sectorid": "RES",
+      "price": 15.65,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-10",
+      "stateid": "SD",
+      "sectorid": "RES",
+      "price": 14.09,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-10",
+      "stateid": "TN",
+      "sectorid": "RES",
+      "price": 13.06,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-10",
+      "stateid": "TX",
+      "sectorid": "RES",
+      "price": 16.1,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-10",
+      "stateid": "US",
+      "sectorid": "RES",
+      "price": 17.97,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-10",
+      "stateid": "UT",
+      "sectorid": "RES",
+      "price": 13.69,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-10",
+      "stateid": "VA",
+      "sectorid": "RES",
+      "price": 16.36,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-10",
+      "stateid": "VT",
+      "sectorid": "RES",
+      "price": 24.78,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-10",
+      "stateid": "WA",
+      "sectorid": "RES",
+      "price": 14.06,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-10",
+      "stateid": "WI",
+      "sectorid": "RES",
+      "price": 18.37,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-10",
+      "stateid": "WNC",
+      "sectorid": "RES",
+      "price": 14.15,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-10",
+      "stateid": "WSC",
+      "sectorid": "RES",
+      "price": 15.28,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-10",
+      "stateid": "WV",
+      "sectorid": "RES",
+      "price": 16.19,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-10",
+      "stateid": "WY",
+      "sectorid": "RES",
+      "price": 15.11,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-09",
+      "stateid": "AK",
+      "sectorid": "RES",
+      "price": 27.16,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-09",
+      "stateid": "AL",
+      "sectorid": "RES",
+      "price": 16.43,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-09",
+      "stateid": "AR",
+      "sectorid": "RES",
+      "price": 13.79,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-09",
+      "stateid": "AZ",
+      "sectorid": "RES",
+      "price": 15.27,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-09",
+      "stateid": "CA",
+      "sectorid": "RES",
+      "price": 32.04,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-09",
+      "stateid": "CO",
+      "sectorid": "RES",
+      "price": 16.7,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-09",
+      "stateid": "CT",
+      "sectorid": "RES",
+      "price": 30.48,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-09",
+      "stateid": "DC",
+      "sectorid": "RES",
+      "price": 23.67,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-09",
+      "stateid": "DE",
+      "sectorid": "RES",
+      "price": 18.12,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-09",
+      "stateid": "ENC",
+      "sectorid": "RES",
+      "price": 18.69,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-09",
+      "stateid": "ESC",
+      "sectorid": "RES",
+      "price": 14.33,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-09",
+      "stateid": "FL",
+      "sectorid": "RES",
+      "price": 15.76,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-09",
+      "stateid": "GA",
+      "sectorid": "RES",
+      "price": 15.3,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-09",
+      "stateid": "HI",
+      "sectorid": "RES",
+      "price": 39.54,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-09",
+      "stateid": "IA",
+      "sectorid": "RES",
+      "price": 14.79,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-09",
+      "stateid": "ID",
+      "sectorid": "RES",
+      "price": 12.5,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-09",
+      "stateid": "IL",
+      "sectorid": "RES",
+      "price": 19.05,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-09",
+      "stateid": "IN",
+      "sectorid": "RES",
+      "price": 17.33,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-09",
+      "stateid": "KS",
+      "sectorid": "RES",
+      "price": 15.2,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-09",
+      "stateid": "KY",
+      "sectorid": "RES",
+      "price": 13.56,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-09",
+      "stateid": "LA",
+      "sectorid": "RES",
+      "price": 12.36,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-09",
+      "stateid": "MA",
+      "sectorid": "RES",
+      "price": 30.41,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-09",
+      "stateid": "MAT",
+      "sectorid": "RES",
+      "price": 23.84,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-09",
+      "stateid": "MD",
+      "sectorid": "RES",
+      "price": 21.05,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-09",
+      "stateid": "ME",
+      "sectorid": "RES",
+      "price": 27.98,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-09",
+      "stateid": "MI",
+      "sectorid": "RES",
+      "price": 21.2,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-09",
+      "stateid": "MN",
+      "sectorid": "RES",
+      "price": 17.1,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-09",
+      "stateid": "MO",
+      "sectorid": "RES",
+      "price": 15.84,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-09",
+      "stateid": "MS",
+      "sectorid": "RES",
+      "price": 13.97,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-09",
+      "stateid": "MT",
+      "sectorid": "RES",
+      "price": 14.64,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-09",
+      "stateid": "MTN",
+      "sectorid": "RES",
+      "price": 14.95,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-09",
+      "stateid": "NC",
+      "sectorid": "RES",
+      "price": 15.12,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-09",
+      "stateid": "ND",
+      "sectorid": "RES",
+      "price": 13.66,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-09",
+      "stateid": "NE",
+      "sectorid": "RES",
+      "price": 13.85,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-09",
+      "stateid": "NEW",
+      "sectorid": "RES",
+      "price": 29.54,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-09",
+      "stateid": "NH",
+      "sectorid": "RES",
+      "price": 27.82,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-09",
+      "stateid": "NJ",
+      "sectorid": "RES",
+      "price": 23.39,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-09",
+      "stateid": "NM",
+      "sectorid": "RES",
+      "price": 16.52,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-09",
+      "stateid": "NV",
+      "sectorid": "RES",
+      "price": 13.05,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-09",
+      "stateid": "NY",
+      "sectorid": "RES",
+      "price": 27.23,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-09",
+      "stateid": "OH",
+      "sectorid": "RES",
+      "price": 17.61,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-09",
+      "stateid": "OK",
+      "sectorid": "RES",
+      "price": 14.79,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-09",
+      "stateid": "OR",
+      "sectorid": "RES",
+      "price": 15.96,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-09",
+      "stateid": "PA",
+      "sectorid": "RES",
+      "price": 20.46,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-09",
+      "stateid": "PACC",
+      "sectorid": "RES",
+      "price": 26.76,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-09",
+      "stateid": "PACN",
+      "sectorid": "RES",
+      "price": 34.99,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-09",
+      "stateid": "RI",
+      "sectorid": "RES",
+      "price": 28.3,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-09",
+      "stateid": "SAT",
+      "sectorid": "RES",
+      "price": 16.05,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-09",
+      "stateid": "SC",
+      "sectorid": "RES",
+      "price": 15.34,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-09",
+      "stateid": "SD",
+      "sectorid": "RES",
+      "price": 14.76,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-09",
+      "stateid": "TN",
+      "sectorid": "RES",
+      "price": 13.29,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-09",
+      "stateid": "TX",
+      "sectorid": "RES",
+      "price": 15.83,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-09",
+      "stateid": "US",
+      "sectorid": "RES",
+      "price": 18.08,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-09",
+      "stateid": "UT",
+      "sectorid": "RES",
+      "price": 14.12,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-09",
+      "stateid": "VA",
+      "sectorid": "RES",
+      "price": 16.62,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-09",
+      "stateid": "VT",
+      "sectorid": "RES",
+      "price": 23.92,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-09",
+      "stateid": "WA",
+      "sectorid": "RES",
+      "price": 13.79,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-09",
+      "stateid": "WI",
+      "sectorid": "RES",
+      "price": 18.73,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-09",
+      "stateid": "WNC",
+      "sectorid": "RES",
+      "price": 15.54,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-09",
+      "stateid": "WSC",
+      "sectorid": "RES",
+      "price": 15.14,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-09",
+      "stateid": "WV",
+      "sectorid": "RES",
+      "price": 16.14,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    },
+    {
+      "period": "2025-09",
+      "stateid": "WY",
+      "sectorid": "RES",
+      "price": 15,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-03-28T10:37:30.767Z"
+    }
+  ]
+}

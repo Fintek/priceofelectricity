@@ -1211,9 +1211,13 @@ export const HISTORY: StateHistory[] = [
       {
         "ym": "2025-12",
         "avgRateCentsPerKwh": 16.01
+      },
+      {
+        "ym": "2026-01",
+        "avgRateCentsPerKwh": 16.06
       }
     ],
-    "updated": "December 2025",
+    "updated": "January 2026",
     "sourceName": "U.S. Energy Information Administration (EIA)",
     "sourceUrl": "https://api.eia.gov/v2/electricity/retail-sales/data/"
   },
@@ -2419,9 +2423,13 @@ export const HISTORY: StateHistory[] = [
       {
         "ym": "2025-12",
         "avgRateCentsPerKwh": 25.54
+      },
+      {
+        "ym": "2026-01",
+        "avgRateCentsPerKwh": 25.52
       }
     ],
-    "updated": "December 2025",
+    "updated": "January 2026",
     "sourceName": "U.S. Energy Information Administration (EIA)",
     "sourceUrl": "https://api.eia.gov/v2/electricity/retail-sales/data/"
   },
@@ -3627,9 +3635,13 @@ export const HISTORY: StateHistory[] = [
       {
         "ym": "2025-12",
         "avgRateCentsPerKwh": 15.46
+      },
+      {
+        "ym": "2026-01",
+        "avgRateCentsPerKwh": 15.61
       }
     ],
-    "updated": "December 2025",
+    "updated": "January 2026",
     "sourceName": "U.S. Energy Information Administration (EIA)",
     "sourceUrl": "https://api.eia.gov/v2/electricity/retail-sales/data/"
   },
@@ -4835,9 +4847,13 @@ export const HISTORY: StateHistory[] = [
       {
         "ym": "2025-12",
         "avgRateCentsPerKwh": 12.33
+      },
+      {
+        "ym": "2026-01",
+        "avgRateCentsPerKwh": 12.35
       }
     ],
-    "updated": "December 2025",
+    "updated": "January 2026",
     "sourceName": "U.S. Energy Information Administration (EIA)",
     "sourceUrl": "https://api.eia.gov/v2/electricity/retail-sales/data/"
   },
@@ -6043,9 +6059,13 @@ export const HISTORY: StateHistory[] = [
       {
         "ym": "2025-12",
         "avgRateCentsPerKwh": 34.71
+      },
+      {
+        "ym": "2026-01",
+        "avgRateCentsPerKwh": 30.29
       }
     ],
-    "updated": "December 2025",
+    "updated": "January 2026",
     "sourceName": "U.S. Energy Information Administration (EIA)",
     "sourceUrl": "https://api.eia.gov/v2/electricity/retail-sales/data/"
   },
@@ -7251,9 +7271,13 @@ export const HISTORY: StateHistory[] = [
       {
         "ym": "2025-12",
         "avgRateCentsPerKwh": 16.12
+      },
+      {
+        "ym": "2026-01",
+        "avgRateCentsPerKwh": 16.44
       }
     ],
-    "updated": "December 2025",
+    "updated": "January 2026",
     "sourceName": "U.S. Energy Information Administration (EIA)",
     "sourceUrl": "https://api.eia.gov/v2/electricity/retail-sales/data/"
   },
@@ -8459,9 +8483,13 @@ export const HISTORY: StateHistory[] = [
       {
         "ym": "2025-12",
         "avgRateCentsPerKwh": 25.3
+      },
+      {
+        "ym": "2026-01",
+        "avgRateCentsPerKwh": 28.3
       }
     ],
-    "updated": "December 2025",
+    "updated": "January 2026",
     "sourceName": "U.S. Energy Information Administration (EIA)",
     "sourceUrl": "https://api.eia.gov/v2/electricity/retail-sales/data/"
   },
@@ -9667,9 +9695,13 @@ export const HISTORY: StateHistory[] = [
       {
         "ym": "2025-12",
         "avgRateCentsPerKwh": 17.12
+      },
+      {
+        "ym": "2026-01",
+        "avgRateCentsPerKwh": 16.51
       }
     ],
-    "updated": "December 2025",
+    "updated": "January 2026",
     "sourceName": "U.S. Energy Information Administration (EIA)",
     "sourceUrl": "https://api.eia.gov/v2/electricity/retail-sales/data/"
   },
@@ -10875,9 +10907,13 @@ export const HISTORY: StateHistory[] = [
       {
         "ym": "2025-12",
         "avgRateCentsPerKwh": 15.02
+      },
+      {
+        "ym": "2026-01",
+        "avgRateCentsPerKwh": 15.92
       }
     ],
-    "updated": "December 2025",
+    "updated": "January 2026",
     "sourceName": "U.S. Energy Information Administration (EIA)",
     "sourceUrl": "https://api.eia.gov/v2/electricity/retail-sales/data/"
   },
@@ -12083,9 +12119,13 @@ export const HISTORY: StateHistory[] = [
       {
         "ym": "2025-12",
         "avgRateCentsPerKwh": 13.67
+      },
+      {
+        "ym": "2026-01",
+        "avgRateCentsPerKwh": 14.46
       }
     ],
-    "updated": "December 2025",
+    "updated": "January 2026",
     "sourceName": "U.S. Energy Information Administration (EIA)",
     "sourceUrl": "https://api.eia.gov/v2/electricity/retail-sales/data/"
   },
@@ -13291,9 +13331,13 @@ export const HISTORY: StateHistory[] = [
       {
         "ym": "2025-12",
         "avgRateCentsPerKwh": 41.62
+      },
+      {
+        "ym": "2026-01",
+        "avgRateCentsPerKwh": 39.79
       }
     ],
-    "updated": "December 2025",
+    "updated": "January 2026",
     "sourceName": "U.S. Energy Information Administration (EIA)",
     "sourceUrl": "https://api.eia.gov/v2/electricity/retail-sales/data/"
   },
@@ -14499,9 +14543,13 @@ export const HISTORY: StateHistory[] = [
       {
         "ym": "2025-12",
         "avgRateCentsPerKwh": 11.87
+      },
+      {
+        "ym": "2026-01",
+        "avgRateCentsPerKwh": 12.07
       }
     ],
-    "updated": "December 2025",
+    "updated": "January 2026",
     "sourceName": "U.S. Energy Information Administration (EIA)",
     "sourceUrl": "https://api.eia.gov/v2/electricity/retail-sales/data/"
   },
@@ -15707,9 +15755,13 @@ export const HISTORY: StateHistory[] = [
       {
         "ym": "2025-12",
         "avgRateCentsPerKwh": 17.07
+      },
+      {
+        "ym": "2026-01",
+        "avgRateCentsPerKwh": 16.36
       }
     ],
-    "updated": "December 2025",
+    "updated": "January 2026",
     "sourceName": "U.S. Energy Information Administration (EIA)",
     "sourceUrl": "https://api.eia.gov/v2/electricity/retail-sales/data/"
   },
@@ -16915,9 +16967,13 @@ export const HISTORY: StateHistory[] = [
       {
         "ym": "2025-12",
         "avgRateCentsPerKwh": 15.91
+      },
+      {
+        "ym": "2026-01",
+        "avgRateCentsPerKwh": 16.19
       }
     ],
-    "updated": "December 2025",
+    "updated": "January 2026",
     "sourceName": "U.S. Energy Information Administration (EIA)",
     "sourceUrl": "https://api.eia.gov/v2/electricity/retail-sales/data/"
   },
@@ -18123,9 +18179,13 @@ export const HISTORY: StateHistory[] = [
       {
         "ym": "2025-12",
         "avgRateCentsPerKwh": 12.6
+      },
+      {
+        "ym": "2026-01",
+        "avgRateCentsPerKwh": 12.83
       }
     ],
-    "updated": "December 2025",
+    "updated": "January 2026",
     "sourceName": "U.S. Energy Information Administration (EIA)",
     "sourceUrl": "https://api.eia.gov/v2/electricity/retail-sales/data/"
   },
@@ -19331,9 +19391,13 @@ export const HISTORY: StateHistory[] = [
       {
         "ym": "2025-12",
         "avgRateCentsPerKwh": 14.43
+      },
+      {
+        "ym": "2026-01",
+        "avgRateCentsPerKwh": 14.29
       }
     ],
-    "updated": "December 2025",
+    "updated": "January 2026",
     "sourceName": "U.S. Energy Information Administration (EIA)",
     "sourceUrl": "https://api.eia.gov/v2/electricity/retail-sales/data/"
   },
@@ -20539,9 +20603,13 @@ export const HISTORY: StateHistory[] = [
       {
         "ym": "2025-12",
         "avgRateCentsPerKwh": 13.22
+      },
+      {
+        "ym": "2026-01",
+        "avgRateCentsPerKwh": 14.27
       }
     ],
-    "updated": "December 2025",
+    "updated": "January 2026",
     "sourceName": "U.S. Energy Information Administration (EIA)",
     "sourceUrl": "https://api.eia.gov/v2/electricity/retail-sales/data/"
   },
@@ -21747,9 +21815,13 @@ export const HISTORY: StateHistory[] = [
       {
         "ym": "2025-12",
         "avgRateCentsPerKwh": 12.56
+      },
+      {
+        "ym": "2026-01",
+        "avgRateCentsPerKwh": 12.46
       }
     ],
-    "updated": "December 2025",
+    "updated": "January 2026",
     "sourceName": "U.S. Energy Information Administration (EIA)",
     "sourceUrl": "https://api.eia.gov/v2/electricity/retail-sales/data/"
   },
@@ -22955,9 +23027,13 @@ export const HISTORY: StateHistory[] = [
       {
         "ym": "2025-12",
         "avgRateCentsPerKwh": 30.39
+      },
+      {
+        "ym": "2026-01",
+        "avgRateCentsPerKwh": 30.73
       }
     ],
-    "updated": "December 2025",
+    "updated": "January 2026",
     "sourceName": "U.S. Energy Information Administration (EIA)",
     "sourceUrl": "https://api.eia.gov/v2/electricity/retail-sales/data/"
   },
@@ -24163,9 +24239,13 @@ export const HISTORY: StateHistory[] = [
       {
         "ym": "2025-12",
         "avgRateCentsPerKwh": 19.57
+      },
+      {
+        "ym": "2026-01",
+        "avgRateCentsPerKwh": 20.61
       }
     ],
-    "updated": "December 2025",
+    "updated": "January 2026",
     "sourceName": "U.S. Energy Information Administration (EIA)",
     "sourceUrl": "https://api.eia.gov/v2/electricity/retail-sales/data/"
   },
@@ -25371,9 +25451,13 @@ export const HISTORY: StateHistory[] = [
       {
         "ym": "2025-12",
         "avgRateCentsPerKwh": 30.88
+      },
+      {
+        "ym": "2026-01",
+        "avgRateCentsPerKwh": 31.16
       }
     ],
-    "updated": "December 2025",
+    "updated": "January 2026",
     "sourceName": "U.S. Energy Information Administration (EIA)",
     "sourceUrl": "https://api.eia.gov/v2/electricity/retail-sales/data/"
   },
@@ -26579,9 +26663,13 @@ export const HISTORY: StateHistory[] = [
       {
         "ym": "2025-12",
         "avgRateCentsPerKwh": 19.53
+      },
+      {
+        "ym": "2026-01",
+        "avgRateCentsPerKwh": 19.52
       }
     ],
-    "updated": "December 2025",
+    "updated": "January 2026",
     "sourceName": "U.S. Energy Information Administration (EIA)",
     "sourceUrl": "https://api.eia.gov/v2/electricity/retail-sales/data/"
   },
@@ -27787,9 +27875,13 @@ export const HISTORY: StateHistory[] = [
       {
         "ym": "2025-12",
         "avgRateCentsPerKwh": 14.96
+      },
+      {
+        "ym": "2026-01",
+        "avgRateCentsPerKwh": 14.98
       }
     ],
-    "updated": "December 2025",
+    "updated": "January 2026",
     "sourceName": "U.S. Energy Information Administration (EIA)",
     "sourceUrl": "https://api.eia.gov/v2/electricity/retail-sales/data/"
   },
@@ -28995,9 +29087,13 @@ export const HISTORY: StateHistory[] = [
       {
         "ym": "2025-12",
         "avgRateCentsPerKwh": 14.16
+      },
+      {
+        "ym": "2026-01",
+        "avgRateCentsPerKwh": 14.24
       }
     ],
-    "updated": "December 2025",
+    "updated": "January 2026",
     "sourceName": "U.S. Energy Information Administration (EIA)",
     "sourceUrl": "https://api.eia.gov/v2/electricity/retail-sales/data/"
   },
@@ -30203,9 +30299,13 @@ export const HISTORY: StateHistory[] = [
       {
         "ym": "2025-12",
         "avgRateCentsPerKwh": 11.91
+      },
+      {
+        "ym": "2026-01",
+        "avgRateCentsPerKwh": 11.8
       }
     ],
-    "updated": "December 2025",
+    "updated": "January 2026",
     "sourceName": "U.S. Energy Information Administration (EIA)",
     "sourceUrl": "https://api.eia.gov/v2/electricity/retail-sales/data/"
   },
@@ -31411,9 +31511,13 @@ export const HISTORY: StateHistory[] = [
       {
         "ym": "2025-12",
         "avgRateCentsPerKwh": 12.77
+      },
+      {
+        "ym": "2026-01",
+        "avgRateCentsPerKwh": 12.86
       }
     ],
-    "updated": "December 2025",
+    "updated": "January 2026",
     "sourceName": "U.S. Energy Information Administration (EIA)",
     "sourceUrl": "https://api.eia.gov/v2/electricity/retail-sales/data/"
   },
@@ -32619,9 +32723,13 @@ export const HISTORY: StateHistory[] = [
       {
         "ym": "2025-12",
         "avgRateCentsPerKwh": 11.57
+      },
+      {
+        "ym": "2026-01",
+        "avgRateCentsPerKwh": 11.76
       }
     ],
-    "updated": "December 2025",
+    "updated": "January 2026",
     "sourceName": "U.S. Energy Information Administration (EIA)",
     "sourceUrl": "https://api.eia.gov/v2/electricity/retail-sales/data/"
   },
@@ -33827,9 +33935,13 @@ export const HISTORY: StateHistory[] = [
       {
         "ym": "2025-12",
         "avgRateCentsPerKwh": 12.83
+      },
+      {
+        "ym": "2026-01",
+        "avgRateCentsPerKwh": 13.98
       }
     ],
-    "updated": "December 2025",
+    "updated": "January 2026",
     "sourceName": "U.S. Energy Information Administration (EIA)",
     "sourceUrl": "https://api.eia.gov/v2/electricity/retail-sales/data/"
   },
@@ -35035,9 +35147,13 @@ export const HISTORY: StateHistory[] = [
       {
         "ym": "2025-12",
         "avgRateCentsPerKwh": 26.28
+      },
+      {
+        "ym": "2026-01",
+        "avgRateCentsPerKwh": 26.32
       }
     ],
-    "updated": "December 2025",
+    "updated": "January 2026",
     "sourceName": "U.S. Energy Information Administration (EIA)",
     "sourceUrl": "https://api.eia.gov/v2/electricity/retail-sales/data/"
   },
@@ -36243,9 +36359,13 @@ export const HISTORY: StateHistory[] = [
       {
         "ym": "2025-12",
         "avgRateCentsPerKwh": 22.98
+      },
+      {
+        "ym": "2026-01",
+        "avgRateCentsPerKwh": 23.13
       }
     ],
-    "updated": "December 2025",
+    "updated": "January 2026",
     "sourceName": "U.S. Energy Information Administration (EIA)",
     "sourceUrl": "https://api.eia.gov/v2/electricity/retail-sales/data/"
   },
@@ -37451,9 +37571,13 @@ export const HISTORY: StateHistory[] = [
       {
         "ym": "2025-12",
         "avgRateCentsPerKwh": 14.66
+      },
+      {
+        "ym": "2026-01",
+        "avgRateCentsPerKwh": 14.7
       }
     ],
-    "updated": "December 2025",
+    "updated": "January 2026",
     "sourceName": "U.S. Energy Information Administration (EIA)",
     "sourceUrl": "https://api.eia.gov/v2/electricity/retail-sales/data/"
   },
@@ -38659,9 +38783,13 @@ export const HISTORY: StateHistory[] = [
       {
         "ym": "2025-12",
         "avgRateCentsPerKwh": 27.39
+      },
+      {
+        "ym": "2026-01",
+        "avgRateCentsPerKwh": 28.37
       }
     ],
-    "updated": "December 2025",
+    "updated": "January 2026",
     "sourceName": "U.S. Energy Information Administration (EIA)",
     "sourceUrl": "https://api.eia.gov/v2/electricity/retail-sales/data/"
   },
@@ -39867,9 +39995,13 @@ export const HISTORY: StateHistory[] = [
       {
         "ym": "2025-12",
         "avgRateCentsPerKwh": 13.47
+      },
+      {
+        "ym": "2026-01",
+        "avgRateCentsPerKwh": 13.68
       }
     ],
-    "updated": "December 2025",
+    "updated": "January 2026",
     "sourceName": "U.S. Energy Information Administration (EIA)",
     "sourceUrl": "https://api.eia.gov/v2/electricity/retail-sales/data/"
   },
@@ -41075,9 +41207,13 @@ export const HISTORY: StateHistory[] = [
       {
         "ym": "2025-12",
         "avgRateCentsPerKwh": 11.02
+      },
+      {
+        "ym": "2026-01",
+        "avgRateCentsPerKwh": 10.92
       }
     ],
-    "updated": "December 2025",
+    "updated": "January 2026",
     "sourceName": "U.S. Energy Information Administration (EIA)",
     "sourceUrl": "https://api.eia.gov/v2/electricity/retail-sales/data/"
   },
@@ -42283,9 +42419,13 @@ export const HISTORY: StateHistory[] = [
       {
         "ym": "2025-12",
         "avgRateCentsPerKwh": 17.31
+      },
+      {
+        "ym": "2026-01",
+        "avgRateCentsPerKwh": 17.59
       }
     ],
-    "updated": "December 2025",
+    "updated": "January 2026",
     "sourceName": "U.S. Energy Information Administration (EIA)",
     "sourceUrl": "https://api.eia.gov/v2/electricity/retail-sales/data/"
   },
@@ -43491,9 +43631,13 @@ export const HISTORY: StateHistory[] = [
       {
         "ym": "2025-12",
         "avgRateCentsPerKwh": 12.25
+      },
+      {
+        "ym": "2026-01",
+        "avgRateCentsPerKwh": 12.62
       }
     ],
-    "updated": "December 2025",
+    "updated": "January 2026",
     "sourceName": "U.S. Energy Information Administration (EIA)",
     "sourceUrl": "https://api.eia.gov/v2/electricity/retail-sales/data/"
   },
@@ -44699,9 +44843,13 @@ export const HISTORY: StateHistory[] = [
       {
         "ym": "2025-12",
         "avgRateCentsPerKwh": 14.94
+      },
+      {
+        "ym": "2026-01",
+        "avgRateCentsPerKwh": 14.66
       }
     ],
-    "updated": "December 2025",
+    "updated": "January 2026",
     "sourceName": "U.S. Energy Information Administration (EIA)",
     "sourceUrl": "https://api.eia.gov/v2/electricity/retail-sales/data/"
   },
@@ -45907,9 +46055,13 @@ export const HISTORY: StateHistory[] = [
       {
         "ym": "2025-12",
         "avgRateCentsPerKwh": 20.08
+      },
+      {
+        "ym": "2026-01",
+        "avgRateCentsPerKwh": 20.19
       }
     ],
-    "updated": "December 2025",
+    "updated": "January 2026",
     "sourceName": "U.S. Energy Information Administration (EIA)",
     "sourceUrl": "https://api.eia.gov/v2/electricity/retail-sales/data/"
   },
@@ -47115,9 +47267,13 @@ export const HISTORY: StateHistory[] = [
       {
         "ym": "2025-12",
         "avgRateCentsPerKwh": 31.15
+      },
+      {
+        "ym": "2026-01",
+        "avgRateCentsPerKwh": 30.14
       }
     ],
-    "updated": "December 2025",
+    "updated": "January 2026",
     "sourceName": "U.S. Energy Information Administration (EIA)",
     "sourceUrl": "https://api.eia.gov/v2/electricity/retail-sales/data/"
   },
@@ -48323,9 +48479,13 @@ export const HISTORY: StateHistory[] = [
       {
         "ym": "2025-12",
         "avgRateCentsPerKwh": 14.82
+      },
+      {
+        "ym": "2026-01",
+        "avgRateCentsPerKwh": 15.41
       }
     ],
-    "updated": "December 2025",
+    "updated": "January 2026",
     "sourceName": "U.S. Energy Information Administration (EIA)",
     "sourceUrl": "https://api.eia.gov/v2/electricity/retail-sales/data/"
   },
@@ -49531,9 +49691,13 @@ export const HISTORY: StateHistory[] = [
       {
         "ym": "2025-12",
         "avgRateCentsPerKwh": 12.51
+      },
+      {
+        "ym": "2026-01",
+        "avgRateCentsPerKwh": 13.6
       }
     ],
-    "updated": "December 2025",
+    "updated": "January 2026",
     "sourceName": "U.S. Energy Information Administration (EIA)",
     "sourceUrl": "https://api.eia.gov/v2/electricity/retail-sales/data/"
   },
@@ -50739,9 +50903,13 @@ export const HISTORY: StateHistory[] = [
       {
         "ym": "2025-12",
         "avgRateCentsPerKwh": 12.87
+      },
+      {
+        "ym": "2026-01",
+        "avgRateCentsPerKwh": 13.1
       }
     ],
-    "updated": "December 2025",
+    "updated": "January 2026",
     "sourceName": "U.S. Energy Information Administration (EIA)",
     "sourceUrl": "https://api.eia.gov/v2/electricity/retail-sales/data/"
   },
@@ -51947,9 +52115,13 @@ export const HISTORY: StateHistory[] = [
       {
         "ym": "2025-12",
         "avgRateCentsPerKwh": 15.87
+      },
+      {
+        "ym": "2026-01",
+        "avgRateCentsPerKwh": 15.69
       }
     ],
-    "updated": "December 2025",
+    "updated": "January 2026",
     "sourceName": "U.S. Energy Information Administration (EIA)",
     "sourceUrl": "https://api.eia.gov/v2/electricity/retail-sales/data/"
   },
@@ -53155,9 +53327,13 @@ export const HISTORY: StateHistory[] = [
       {
         "ym": "2025-12",
         "avgRateCentsPerKwh": 12.99
+      },
+      {
+        "ym": "2026-01",
+        "avgRateCentsPerKwh": 12.88
       }
     ],
-    "updated": "December 2025",
+    "updated": "January 2026",
     "sourceName": "U.S. Energy Information Administration (EIA)",
     "sourceUrl": "https://api.eia.gov/v2/electricity/retail-sales/data/"
   },
@@ -54363,9 +54539,13 @@ export const HISTORY: StateHistory[] = [
       {
         "ym": "2025-12",
         "avgRateCentsPerKwh": 23.22
+      },
+      {
+        "ym": "2026-01",
+        "avgRateCentsPerKwh": 23.29
       }
     ],
-    "updated": "December 2025",
+    "updated": "January 2026",
     "sourceName": "U.S. Energy Information Administration (EIA)",
     "sourceUrl": "https://api.eia.gov/v2/electricity/retail-sales/data/"
   },
@@ -55571,9 +55751,13 @@ export const HISTORY: StateHistory[] = [
       {
         "ym": "2025-12",
         "avgRateCentsPerKwh": 15.27
+      },
+      {
+        "ym": "2026-01",
+        "avgRateCentsPerKwh": 15.87
       }
     ],
-    "updated": "December 2025",
+    "updated": "January 2026",
     "sourceName": "U.S. Energy Information Administration (EIA)",
     "sourceUrl": "https://api.eia.gov/v2/electricity/retail-sales/data/"
   },
@@ -56779,9 +56963,13 @@ export const HISTORY: StateHistory[] = [
       {
         "ym": "2025-12",
         "avgRateCentsPerKwh": 13.33
+      },
+      {
+        "ym": "2026-01",
+        "avgRateCentsPerKwh": 13.81
       }
     ],
-    "updated": "December 2025",
+    "updated": "January 2026",
     "sourceName": "U.S. Energy Information Administration (EIA)",
     "sourceUrl": "https://api.eia.gov/v2/electricity/retail-sales/data/"
   },
@@ -57987,9 +58175,13 @@ export const HISTORY: StateHistory[] = [
       {
         "ym": "2025-12",
         "avgRateCentsPerKwh": 14.61
+      },
+      {
+        "ym": "2026-01",
+        "avgRateCentsPerKwh": 14.77
       }
     ],
-    "updated": "December 2025",
+    "updated": "January 2026",
     "sourceName": "U.S. Energy Information Administration (EIA)",
     "sourceUrl": "https://api.eia.gov/v2/electricity/retail-sales/data/"
   },
@@ -59195,9 +59387,13 @@ export const HISTORY: StateHistory[] = [
       {
         "ym": "2025-12",
         "avgRateCentsPerKwh": 17.84
+      },
+      {
+        "ym": "2026-01",
+        "avgRateCentsPerKwh": 18.2
       }
     ],
-    "updated": "December 2025",
+    "updated": "January 2026",
     "sourceName": "U.S. Energy Information Administration (EIA)",
     "sourceUrl": "https://api.eia.gov/v2/electricity/retail-sales/data/"
   },
@@ -60403,9 +60599,13 @@ export const HISTORY: StateHistory[] = [
       {
         "ym": "2025-12",
         "avgRateCentsPerKwh": 12.83
+      },
+      {
+        "ym": "2026-01",
+        "avgRateCentsPerKwh": 12.85
       }
     ],
-    "updated": "December 2025",
+    "updated": "January 2026",
     "sourceName": "U.S. Energy Information Administration (EIA)",
     "sourceUrl": "https://api.eia.gov/v2/electricity/retail-sales/data/"
   }
