@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-03-24T18:42:20.843Z",
-  "commit": "4262a38",
+  "generatedAt": "2026-03-28T21:56:01.785Z",
+  "commit": "1e38fda",
   "summary": {
-    "total": 66,
-    "passed": 66,
+    "total": 78,
+    "passed": 78,
     "failed": 0
   },
   "checks": [
@@ -65,6 +65,54 @@
       "passed": true
     },
     {
+      "name": "/sitemap/core.xml reachable",
+      "passed": true
+    },
+    {
+      "name": "/sitemap/states.xml reachable",
+      "passed": true
+    },
+    {
+      "name": "/sitemap/cities.xml reachable",
+      "passed": true
+    },
+    {
+      "name": "/sitemap/appliances.xml reachable",
+      "passed": true
+    },
+    {
+      "name": "/sitemap/estimators.xml reachable",
+      "passed": true
+    },
+    {
+      "name": "estimator profile sitemap leakage is blocked",
+      "passed": true
+    },
+    {
+      "name": "allowlisted estimator profile URLs are present in sitemap",
+      "passed": true
+    },
+    {
+      "name": "city bill sitemap leakage is blocked",
+      "passed": true
+    },
+    {
+      "name": "allowlisted city bill URLs are present in sitemap",
+      "passed": true
+    },
+    {
+      "name": "appliance city sitemap leakage is blocked",
+      "passed": true
+    },
+    {
+      "name": "allowlisted appliance city URLs are present in sitemap",
+      "passed": true
+    },
+    {
+      "name": "all sitemap utilities pages have backing data",
+      "passed": true
+    },
+    {
       "name": "header x-content-type-options",
       "passed": true,
       "details": "nosniff"
@@ -95,7 +143,7 @@
     {
       "name": "/health returns release fields",
       "passed": true,
-      "details": "commit=4262a38 data=v20260222"
+      "details": "commit=1e38fda data=v20260222"
     },
     {
       "name": "/electricity-hubs reachable",

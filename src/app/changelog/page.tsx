@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { SITE_URL } from "@/lib/site";
 
 const BASE_URL = SITE_URL;
+const CHANGELOG_META_DESCRIPTION =
+  "Product and data update log for PriceOfElectricity.com, including new route launches, methodology improvements, and indexing-hardening changes.";
 
 export const dynamic = "force-static";
 export const revalidate = 2592000;
@@ -59,13 +61,13 @@ const CHANGELOG_ENTRIES = [
 
 export const metadata: Metadata = {
   title: "Changelog | PriceOfElectricity.com",
-  description: "Updates and improvements to PriceOfElectricity.com.",
+  description: CHANGELOG_META_DESCRIPTION,
   alternates: {
     canonical: `${BASE_URL}/changelog`,
   },
   openGraph: {
     title: "Changelog | PriceOfElectricity.com",
-    description: "Updates and improvements to PriceOfElectricity.com.",
+    description: CHANGELOG_META_DESCRIPTION,
     url: `${BASE_URL}/changelog`,
     siteName: "PriceOfElectricity.com",
     type: "website",
@@ -73,7 +75,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary",
     title: "Changelog | PriceOfElectricity.com",
-    description: "Updates and improvements to PriceOfElectricity.com.",
+    description: CHANGELOG_META_DESCRIPTION,
   },
 };
 
@@ -83,7 +85,7 @@ export default function ChangelogPage() {
     "@type": "WebPage",
     name: "Changelog",
     url: `${BASE_URL}/changelog`,
-    description: "Updates and improvements to PriceOfElectricity.com.",
+    description: CHANGELOG_META_DESCRIPTION,
   };
   const itemListStructuredData = {
     "@context": "https://schema.org",

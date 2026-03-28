@@ -142,7 +142,7 @@ function buildStateCoreSection(stateData: LongtailStateData, pageType: LongtailP
           `Electricity cost in ${firstActiveCity.name}, ${stateName}`,
           `${firstActiveCity.name} electricity estimate (${stateName})`,
         ]),
-        description: "Rollout-gated city electricity context page with modeled estimate disclosure",
+        description: "Rollout-gated city electricity context page with deterministic methodology disclosure",
       });
     }
   }
@@ -333,11 +333,6 @@ function buildApplianceEstimatorPathwaySection(stateData: LongtailStateData): Lo
       href: `/electricity-bill-estimator/${state}`,
       label: `${stateName} bill estimator profiles`,
       description: "Household-profile estimator scenarios linked to appliance pathways",
-    });
-    links.push({
-      href: `/electricity-bill-estimator/${state}/medium-home`,
-      label: `${stateName} medium-home bill scenario`,
-      description: "Representative estimator profile for appliance-to-bill pathway exploration",
     });
   }
 
@@ -557,7 +552,7 @@ export async function buildLongtailLinkSections({
   const coreLinks = capLinks(buildStateCoreSection(stateData, pageType), maxLinksPerSection);
   if (coreLinks.length > 0) {
     sections.push({
-      title: `Related electricity pages for ${stateData.name}`,
+      title: `State cost and bill pathways for ${stateData.name}`,
       links: coreLinks,
     });
   }
@@ -573,7 +568,7 @@ export async function buildLongtailLinkSections({
   const usageLinks = capLinks(buildUsageSection(stateData, usageKwh), maxLinksPerSection);
   if (usageLinks.length > 0) {
     sections.push({
-      title: "More usage-based electricity cost pages",
+      title: "Fixed-usage and calculator pathways",
       links: usageLinks,
     });
   }
@@ -592,7 +587,7 @@ export async function buildLongtailLinkSections({
   const compareLinks = capLinks(await buildComparisonSection(stateData), maxLinksPerSection);
   if (compareLinks.length > 0) {
     sections.push({
-      title: `Compare ${stateData.name} electricity costs`,
+      title: `State comparison pathways for ${stateData.name}`,
       links: compareLinks,
     });
   }
@@ -613,14 +608,14 @@ export async function buildLongtailLinkSections({
   const hubLinks = capLinks(buildHubSection(stateData, usageKwh, industry), maxLinksPerSection);
   if (hubLinks.length > 0) {
     sections.push({
-      title: "Discovery hubs",
+      title: "Discovery and navigation hubs",
       links: hubLinks,
     });
   }
 
   if (hasRoute("drivers")) {
     sections.push({
-      title: "Consumer electricity cost tools",
+      title: "Consumer electricity drivers",
       links: capLinks(
         [
           {

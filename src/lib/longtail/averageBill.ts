@@ -1,4 +1,5 @@
 import { FEATURED_APPLIANCE_SLUGS, getApplianceConfig } from "@/lib/longtail/applianceConfig";
+import { loadCityElectricitySummary, type CityEstimateBasis } from "@/lib/longtail/cityElectricity";
 import { loadKnowledgePage } from "@/lib/knowledge/loadKnowledgePage";
 import {
   calculateUsageCost,
@@ -8,6 +9,7 @@ import {
   loadLongtailStateData,
   type LongtailStateData,
 } from "@/lib/longtail/stateLongtail";
+import { getActiveCityBillPages, isActiveCityBillPageKey } from "@/lib/longtail/rollout";
 import {
   emitLongtailData,
   elapsedMs,
@@ -37,6 +39,21 @@ export type AverageBillStateSummary = LongtailStateData & {
   nationalMonthlyBill: number | null;
   monthlyDifference: number | null;
   monthlyDifferencePercent: number | null;
+};
+
+export type AverageBillCitySummary = {
+  state: AverageBillStateSummary;
+  city: {
+    slug: string;
+    name: string;
+  };
+  cityRateCentsPerKwh: number;
+  stateRateCentsPerKwh: number;
+  cityMonthlyBill: number;
+  cityAnnualBill: number;
+  monthlyDifferenceVsState: number;
+  estimateBasis: CityEstimateBasis;
+  estimateMethodNote: string;
 };
 
 type AverageBillTelemetryOptions = {
@@ -293,6 +310,58 @@ export async function loadAllAverageBillStateSummaries(
     },
   });
   return computed.rows;
+}
+
+export function getAverageBillCityStaticParams(): Array<{ slug: string; city: string }> {
+  return getActiveCityBillPages().map((entry) => ({
+    slug: entry.stateSlug,
+    city: entry.citySlug,
+  }));
+}
+
+export async function loadAverageBillCitySummary(
+  stateSlug: string,
+  citySlug: string,
+  options?: AverageBillTelemetryOptions,
+): Promise<AverageBillCitySummary | null> {
+  const startedAt = startRuntimeTimer();
+  if (!isActiveCityBillPageKey(stateSlug, citySlug)) {
+    return null;
+  }
+  const [stateSummary, citySummary] = await Promise.all([
+    loadAverageBillStateSummary(stateSlug, options),
+    loadCityElectricitySummary(stateSlug, citySlug),
+  ]);
+  if (!stateSummary || !citySummary) {
+    return null;
+  }
+  const result: AverageBillCitySummary = {
+    state: stateSummary,
+    city: {
+      slug: citySummary.city.slug,
+      name: citySummary.city.name,
+    },
+    cityRateCentsPerKwh: citySummary.cityRateCentsPerKwh,
+    stateRateCentsPerKwh: citySummary.stateRateCentsPerKwh,
+    cityMonthlyBill: citySummary.monthlyCostEstimate,
+    cityAnnualBill: citySummary.annualCostEstimate,
+    monthlyDifferenceVsState: citySummary.monthlyDifferenceVsState,
+    estimateBasis: citySummary.estimateBasis,
+    estimateMethodNote: citySummary.estimateMethodNote,
+  };
+  emitLongtailData({
+    targetId: "averageBill",
+    operation: "loadAverageBillCitySummary",
+    durationMs: elapsedMs(startedAt),
+    contextLabel: options?.contextLabel,
+    stateSlug,
+    sampleMeta: {
+      found_city: true,
+      city_slug: citySlug,
+      estimate_basis: result.estimateBasis,
+    },
+  });
+  return result;
 }
 
 export function sortAverageBillStates(

@@ -7,6 +7,7 @@ import {
   fetchWithTimeout,
 } from "./_server";
 import { getActiveBillEstimatorProfilePages } from "../src/lib/longtail/billEstimator";
+import { getActiveApplianceCityPages, getActiveCityBillPages } from "../src/lib/longtail/rollout";
 
 let passed = 0;
 let failed = 0;
@@ -144,6 +145,74 @@ async function checkDeferredRouteLeakage(base: string): Promise<void> {
     );
   } else {
     pass("allowlisted estimator profile URLs are present in sitemap");
+  }
+
+  const cityBillPath = /^\/average-electricity-bill\/([a-z-]+)\/([a-z-]+)\/?$/;
+  const foundCityBillUrls = new Set(
+    allPathnames
+      .filter((pathname) => cityBillPath.test(pathname))
+      .map((pathname) => pathname.replace(/\/+$/, "")),
+  );
+  const expectedCityBillUrls = new Set(
+    getActiveCityBillPages().map(
+      (entry) => `/average-electricity-bill/${entry.stateSlug}/${entry.citySlug}`,
+    ),
+  );
+  const unexpectedCityBillUrls = [...foundCityBillUrls].filter((url) => !expectedCityBillUrls.has(url));
+  const missingCityBillUrls = [...expectedCityBillUrls].filter((url) => !foundCityBillUrls.has(url));
+
+  if (unexpectedCityBillUrls.length > 0) {
+    fail(
+      "city bill sitemap leakage is blocked",
+      `unexpected city bill URLs: ${unexpectedCityBillUrls.slice(0, 5).join(", ")}`,
+    );
+  } else {
+    pass("city bill sitemap leakage is blocked");
+  }
+
+  if (missingCityBillUrls.length > 0) {
+    fail(
+      "allowlisted city bill URLs are present in sitemap",
+      `missing allowlisted city bill URLs: ${missingCityBillUrls.slice(0, 5).join(", ")}`,
+    );
+  } else {
+    pass("allowlisted city bill URLs are present in sitemap");
+  }
+
+  const applianceCityPath = /^\/cost-to-run\/([a-z0-9-]+)\/([a-z-]+)\/([a-z0-9-]+)\/?$/;
+  const foundApplianceCityUrls = new Set(
+    allPathnames
+      .filter((pathname) => applianceCityPath.test(pathname))
+      .map((pathname) => pathname.replace(/\/+$/, "")),
+  );
+  const expectedApplianceCityUrls = new Set(
+    getActiveApplianceCityPages().map(
+      (entry) => `/cost-to-run/${entry.applianceSlug}/${entry.stateSlug}/${entry.citySlug}`,
+    ),
+  );
+  const unexpectedApplianceCityUrls = [...foundApplianceCityUrls].filter(
+    (url) => !expectedApplianceCityUrls.has(url),
+  );
+  const missingApplianceCityUrls = [...expectedApplianceCityUrls].filter(
+    (url) => !foundApplianceCityUrls.has(url),
+  );
+
+  if (unexpectedApplianceCityUrls.length > 0) {
+    fail(
+      "appliance city sitemap leakage is blocked",
+      `unexpected appliance city URLs: ${unexpectedApplianceCityUrls.slice(0, 5).join(", ")}`,
+    );
+  } else {
+    pass("appliance city sitemap leakage is blocked");
+  }
+
+  if (missingApplianceCityUrls.length > 0) {
+    fail(
+      "allowlisted appliance city URLs are present in sitemap",
+      `missing allowlisted appliance city URLs: ${missingApplianceCityUrls.slice(0, 5).join(", ")}`,
+    );
+  } else {
+    pass("allowlisted appliance city URLs are present in sitemap");
   }
 }
 

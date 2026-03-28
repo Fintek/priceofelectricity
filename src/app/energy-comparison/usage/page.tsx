@@ -55,6 +55,10 @@ export default async function EnergyComparisonUsagePage() {
         <p style={{ marginTop: 0, marginBottom: 24, maxWidth: "75ch", lineHeight: 1.7 }}>
           This curated directory links to canonical fixed-kWh routes at <code>/electricity-usage-cost/[kwh]/[state]</code>.
         </p>
+        <p style={{ marginTop: 0, marginBottom: 24, maxWidth: "75ch", lineHeight: 1.7 }}>
+          It is intentionally lightweight and discovery-focused: no new usage datasets and no competing canonical usage
+          family are introduced here.
+        </p>
 
         {tiers.map((tier) => (
           <section key={tier} style={{ marginBottom: 24 }}>
@@ -70,6 +74,16 @@ export default async function EnergyComparisonUsagePage() {
             </ul>
           </section>
         ))}
+
+        <section style={{ marginBottom: 24 }}>
+          <h2 style={{ fontSize: 20, marginBottom: 10 }}>Related comparison pathways</h2>
+          <ul style={{ margin: 0, paddingLeft: 20, lineHeight: 1.8 }}>
+            <li><Link href="/energy-comparison">Back to Energy Comparison Hub</Link></li>
+            <li><Link href="/energy-comparison/states">State comparison slice</Link></li>
+            <li><Link href="/energy-comparison/appliances">Appliance comparison slice</Link></li>
+            <li><Link href="/electricity-usage">National electricity usage hub</Link></li>
+          </ul>
+        </section>
 
         <Disclaimers disclaimerRefs={["general-site"]} />
         <StatusFooter release={await getRelease()} />

@@ -1,8 +1,7 @@
 import { NextResponse } from "next/server";
 import { buildContentRegistry } from "@/lib/contentRegistry";
 
-export const dynamic = "force-static";
-export const revalidate = 86400;
+export const dynamic = "force-dynamic";
 
 type GraphNode = { id: string; type: string; url: string };
 type GraphEdge = { from: string; to: string; rel: string };

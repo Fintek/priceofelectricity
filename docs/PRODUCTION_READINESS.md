@@ -32,8 +32,8 @@ Verifies that key pages return HTTP 200:
 
 ### D) Sitemap correctness
 
-- `/sitemap.xml` returns 200
-- Contains at least: `/texas`, `/national`, `/offers`, `/drivers`
+- `/sitemap-index.xml` returns 200 (canonical sitemap submission target)
+- References expected segment files (for example `/sitemap/core.xml` and `/sitemap/states.xml`)
 
 ### E) Security headers
 

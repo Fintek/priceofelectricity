@@ -63,6 +63,10 @@ export default async function EnergyComparisonAppliancesPage() {
           Appliance cost intent remains canonical in <code>/cost-to-run/[appliance]/[state]</code>. This page is a
           curated discovery layer with a controlled set of appliance-state and pilot appliance-city links.
         </p>
+        <p style={{ marginTop: 0, marginBottom: 24, maxWidth: "75ch", lineHeight: 1.7 }}>
+          This slice does not create a new appliance comparison matrix. It routes discovery into existing canonical
+          appliance-state routes and rollout-gated appliance-city pilot pages only.
+        </p>
 
         <section style={{ marginBottom: 26 }}>
           <h2 style={{ fontSize: 20, marginBottom: 10 }}>Appliance-state comparisons</h2>
@@ -106,6 +110,16 @@ export default async function EnergyComparisonAppliancesPage() {
             </ul>
           </section>
         )}
+
+        <section style={{ marginBottom: 24 }}>
+          <h2 style={{ fontSize: 20, marginBottom: 10 }}>Related comparison pathways</h2>
+          <ul style={{ margin: 0, paddingLeft: 20, lineHeight: 1.8 }}>
+            <li><Link href="/energy-comparison">Back to Energy Comparison Hub</Link></li>
+            <li><Link href="/energy-comparison/states">State comparison slice</Link></li>
+            <li><Link href="/energy-comparison/usage">Usage comparison slice</Link></li>
+            <li><Link href="/electricity-bill-estimator">Bill estimator cluster</Link></li>
+          </ul>
+        </section>
 
         <Disclaimers disclaimerRefs={["general-site"]} />
         <StatusFooter release={await getRelease()} />

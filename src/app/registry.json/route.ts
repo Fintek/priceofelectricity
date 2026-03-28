@@ -4,8 +4,7 @@ import { NextResponse } from "next/server";
 import { buildContentRegistry } from "@/lib/contentRegistry";
 import { buildKnowledgePack } from "@/lib/knowledgePack";
 
-export const dynamic = "force-static";
-export const revalidate = 86400;
+export const dynamic = "force-dynamic";
 
 function urlById(pe: { groups: Array<{ items: Array<{ id: string; url: string }> }> }, id: string): string | null {
   for (const g of pe.groups) {

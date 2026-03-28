@@ -81,14 +81,19 @@ export const ACTIVE_BILL_ESTIMATOR_PROFILE_PAGE_KEYS: readonly string[] = [
   "texas/small-home",
   "texas/medium-home",
   "texas/large-home",
+  // Wave 2 — Ohio (4th state, Midwest geographic diversity, aligns with city bill Wave 2)
+  "ohio/apartment",
+  "ohio/small-home",
+  "ohio/medium-home",
+  "ohio/large-home",
 ];
 /**
  * Phase 4 keeps estimator profile rollout intentionally small and reviewable.
  * Future expansion should raise these limits only after payload and sitemap review.
  */
 export const BILL_ESTIMATOR_PROFILE_ROLLOUT_LIMITS = {
-  maxStates: 3,
-  maxKeys: 12,
+  maxStates: 4,
+  maxKeys: 16,
 } as const;
 
 function getMemoizedAllBillEstimatorStateSummaries(

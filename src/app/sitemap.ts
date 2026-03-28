@@ -20,6 +20,7 @@ import {
   getActiveApplianceSlugs,
   getActiveApplianceCityPages,
   getActiveCityPages,
+  getActiveCityBillPages,
 } from "@/lib/longtail/rollout";
 import { getActiveBillEstimatorProfilePages } from "@/lib/longtail/billEstimator";
 import { HOME_SIZE_SCENARIOS } from "@/lib/longtail/usageIntelligence";
@@ -29,6 +30,8 @@ import {
   groupSitemapEntriesBySegment,
   type SitemapSegmentId,
 } from "@/lib/seo/sitemapSegments";
+
+export const dynamic = "force-dynamic";
 
 const BASE_URL = SITE_URL.replace(/\/+$/, "");
 let cachedKnowledgeStateSlugs: string[] | null = null;
@@ -709,6 +712,12 @@ export function getSegmentedSitemapEntries() {
       lastModified: new Date(),
       changeFrequency: "monthly" as const,
       priority: 0.6,
+    })),
+    ...getActiveCityBillPages().map((entry) => ({
+      url: `${BASE_URL}/average-electricity-bill/${entry.stateSlug}/${entry.citySlug}`,
+      lastModified: new Date(),
+      changeFrequency: "monthly" as const,
+      priority: 0.56,
     })),
     {
       url: `${BASE_URL}/electricity-bill-estimator`,

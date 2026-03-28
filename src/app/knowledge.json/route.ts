@@ -1,8 +1,7 @@
 import { NextResponse } from "next/server";
 import { buildKnowledgePack } from "@/lib/knowledgePack";
 
-export const dynamic = "force-static";
-export const revalidate = 86400;
+export const dynamic = "force-dynamic";
 
 export function GET() {
   const body = buildKnowledgePack();

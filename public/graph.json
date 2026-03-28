@@ -1,8 +1,8 @@
 {
   "version": "1.0",
   "generatedAt": "2025-12-15T00:00:00.000Z",
-  "totalNodes": 1232,
-  "totalEdges": 1990,
+  "totalNodes": 1391,
+  "totalEdges": 2149,
   "nodes": [
     {
       "id": "alerts:ai-energy",
@@ -1770,9 +1770,29 @@
       "url": "http://localhost:3000/wyoming/bill/750"
     },
     {
+      "id": "city:arizona:phoenix",
+      "type": "city",
+      "url": "http://localhost:3000/electricity-cost/arizona/phoenix"
+    },
+    {
+      "id": "city:arizona:tucson",
+      "type": "city",
+      "url": "http://localhost:3000/electricity-cost/arizona/tucson"
+    },
+    {
+      "id": "city:california:fresno",
+      "type": "city",
+      "url": "http://localhost:3000/electricity-cost/california/fresno"
+    },
+    {
       "id": "city:california:los-angeles",
       "type": "city",
       "url": "http://localhost:3000/electricity-cost/california/los-angeles"
+    },
+    {
+      "id": "city:california:sacramento",
+      "type": "city",
+      "url": "http://localhost:3000/electricity-cost/california/sacramento"
     },
     {
       "id": "city:california:san-diego",
@@ -1780,9 +1800,49 @@
       "url": "http://localhost:3000/electricity-cost/california/san-diego"
     },
     {
+      "id": "city:california:san-francisco",
+      "type": "city",
+      "url": "http://localhost:3000/electricity-cost/california/san-francisco"
+    },
+    {
+      "id": "city:california:san-jose",
+      "type": "city",
+      "url": "http://localhost:3000/electricity-cost/california/san-jose"
+    },
+    {
+      "id": "city:colorado:denver",
+      "type": "city",
+      "url": "http://localhost:3000/electricity-cost/colorado/denver"
+    },
+    {
+      "id": "city:florida:hialeah",
+      "type": "city",
+      "url": "http://localhost:3000/electricity-cost/florida/hialeah"
+    },
+    {
+      "id": "city:florida:jacksonville",
+      "type": "city",
+      "url": "http://localhost:3000/electricity-cost/florida/jacksonville"
+    },
+    {
       "id": "city:florida:miami",
       "type": "city",
       "url": "http://localhost:3000/electricity-cost/florida/miami"
+    },
+    {
+      "id": "city:florida:orlando",
+      "type": "city",
+      "url": "http://localhost:3000/electricity-cost/florida/orlando"
+    },
+    {
+      "id": "city:florida:st-petersburg",
+      "type": "city",
+      "url": "http://localhost:3000/electricity-cost/florida/st-petersburg"
+    },
+    {
+      "id": "city:florida:tampa",
+      "type": "city",
+      "url": "http://localhost:3000/electricity-cost/florida/tampa"
     },
     {
       "id": "city:georgia:atlanta",
@@ -1790,9 +1850,69 @@
       "url": "http://localhost:3000/electricity-cost/georgia/atlanta"
     },
     {
+      "id": "city:georgia:augusta",
+      "type": "city",
+      "url": "http://localhost:3000/electricity-cost/georgia/augusta"
+    },
+    {
+      "id": "city:georgia:columbus",
+      "type": "city",
+      "url": "http://localhost:3000/electricity-cost/georgia/columbus"
+    },
+    {
+      "id": "city:illinois:aurora",
+      "type": "city",
+      "url": "http://localhost:3000/electricity-cost/illinois/aurora"
+    },
+    {
       "id": "city:illinois:chicago",
       "type": "city",
       "url": "http://localhost:3000/electricity-cost/illinois/chicago"
+    },
+    {
+      "id": "city:indiana:indianapolis",
+      "type": "city",
+      "url": "http://localhost:3000/electricity-cost/indiana/indianapolis"
+    },
+    {
+      "id": "city:maryland:baltimore",
+      "type": "city",
+      "url": "http://localhost:3000/electricity-cost/maryland/baltimore"
+    },
+    {
+      "id": "city:massachusetts:boston",
+      "type": "city",
+      "url": "http://localhost:3000/electricity-cost/massachusetts/boston"
+    },
+    {
+      "id": "city:michigan:detroit",
+      "type": "city",
+      "url": "http://localhost:3000/electricity-cost/michigan/detroit"
+    },
+    {
+      "id": "city:minnesota:minneapolis",
+      "type": "city",
+      "url": "http://localhost:3000/electricity-cost/minnesota/minneapolis"
+    },
+    {
+      "id": "city:missouri:kansas-city",
+      "type": "city",
+      "url": "http://localhost:3000/electricity-cost/missouri/kansas-city"
+    },
+    {
+      "id": "city:missouri:st-louis",
+      "type": "city",
+      "url": "http://localhost:3000/electricity-cost/missouri/st-louis"
+    },
+    {
+      "id": "city:nevada:las-vegas",
+      "type": "city",
+      "url": "http://localhost:3000/electricity-cost/nevada/las-vegas"
+    },
+    {
+      "id": "city:new-york:buffalo",
+      "type": "city",
+      "url": "http://localhost:3000/electricity-cost/new-york/buffalo"
     },
     {
       "id": "city:new-york:new-york-city",
@@ -1800,9 +1920,39 @@
       "url": "http://localhost:3000/electricity-cost/new-york/new-york-city"
     },
     {
+      "id": "city:north-carolina:charlotte",
+      "type": "city",
+      "url": "http://localhost:3000/electricity-cost/north-carolina/charlotte"
+    },
+    {
+      "id": "city:north-carolina:raleigh",
+      "type": "city",
+      "url": "http://localhost:3000/electricity-cost/north-carolina/raleigh"
+    },
+    {
+      "id": "city:ohio:cincinnati",
+      "type": "city",
+      "url": "http://localhost:3000/electricity-cost/ohio/cincinnati"
+    },
+    {
+      "id": "city:ohio:cleveland",
+      "type": "city",
+      "url": "http://localhost:3000/electricity-cost/ohio/cleveland"
+    },
+    {
       "id": "city:ohio:columbus",
       "type": "city",
       "url": "http://localhost:3000/electricity-cost/ohio/columbus"
+    },
+    {
+      "id": "city:ohio:toledo",
+      "type": "city",
+      "url": "http://localhost:3000/electricity-cost/ohio/toledo"
+    },
+    {
+      "id": "city:pennsylvania:allentown",
+      "type": "city",
+      "url": "http://localhost:3000/electricity-cost/pennsylvania/allentown"
     },
     {
       "id": "city:pennsylvania:philadelphia",
@@ -1810,14 +1960,64 @@
       "url": "http://localhost:3000/electricity-cost/pennsylvania/philadelphia"
     },
     {
+      "id": "city:pennsylvania:pittsburgh",
+      "type": "city",
+      "url": "http://localhost:3000/electricity-cost/pennsylvania/pittsburgh"
+    },
+    {
+      "id": "city:tennessee:memphis",
+      "type": "city",
+      "url": "http://localhost:3000/electricity-cost/tennessee/memphis"
+    },
+    {
+      "id": "city:tennessee:nashville",
+      "type": "city",
+      "url": "http://localhost:3000/electricity-cost/tennessee/nashville"
+    },
+    {
       "id": "city:texas:austin",
       "type": "city",
       "url": "http://localhost:3000/electricity-cost/texas/austin"
     },
     {
+      "id": "city:texas:dallas",
+      "type": "city",
+      "url": "http://localhost:3000/electricity-cost/texas/dallas"
+    },
+    {
+      "id": "city:texas:el-paso",
+      "type": "city",
+      "url": "http://localhost:3000/electricity-cost/texas/el-paso"
+    },
+    {
+      "id": "city:texas:fort-worth",
+      "type": "city",
+      "url": "http://localhost:3000/electricity-cost/texas/fort-worth"
+    },
+    {
       "id": "city:texas:houston",
       "type": "city",
       "url": "http://localhost:3000/electricity-cost/texas/houston"
+    },
+    {
+      "id": "city:texas:san-antonio",
+      "type": "city",
+      "url": "http://localhost:3000/electricity-cost/texas/san-antonio"
+    },
+    {
+      "id": "city:virginia:virginia-beach",
+      "type": "city",
+      "url": "http://localhost:3000/electricity-cost/virginia/virginia-beach"
+    },
+    {
+      "id": "city:washington:seattle",
+      "type": "city",
+      "url": "http://localhost:3000/electricity-cost/washington/seattle"
+    },
+    {
+      "id": "city:wisconsin:milwaukee",
+      "type": "city",
+      "url": "http://localhost:3000/electricity-cost/wisconsin/milwaukee"
     },
     {
       "id": "drivers:alabama",
@@ -5960,6 +6160,66 @@
       "url": "http://localhost:3000/topics/electricity-prices"
     },
     {
+      "id": "utility:alabama:alabama-power",
+      "type": "utility",
+      "url": "http://localhost:3000/alabama/utility/alabama-power"
+    },
+    {
+      "id": "utility:alabama:alagasco-electric",
+      "type": "utility",
+      "url": "http://localhost:3000/alabama/utility/alagasco-electric"
+    },
+    {
+      "id": "utility:alabama:huntsville-utilities",
+      "type": "utility",
+      "url": "http://localhost:3000/alabama/utility/huntsville-utilities"
+    },
+    {
+      "id": "utility:alaska:chugach-electric",
+      "type": "utility",
+      "url": "http://localhost:3000/alaska/utility/chugach-electric"
+    },
+    {
+      "id": "utility:alaska:golden-valley-electric",
+      "type": "utility",
+      "url": "http://localhost:3000/alaska/utility/golden-valley-electric"
+    },
+    {
+      "id": "utility:alaska:matanuska-electric",
+      "type": "utility",
+      "url": "http://localhost:3000/alaska/utility/matanuska-electric"
+    },
+    {
+      "id": "utility:arizona:arizona-public-service",
+      "type": "utility",
+      "url": "http://localhost:3000/arizona/utility/arizona-public-service"
+    },
+    {
+      "id": "utility:arizona:salt-river-project",
+      "type": "utility",
+      "url": "http://localhost:3000/arizona/utility/salt-river-project"
+    },
+    {
+      "id": "utility:arizona:tucson-electric-power",
+      "type": "utility",
+      "url": "http://localhost:3000/arizona/utility/tucson-electric-power"
+    },
+    {
+      "id": "utility:arkansas:entergy-arkansas",
+      "type": "utility",
+      "url": "http://localhost:3000/arkansas/utility/entergy-arkansas"
+    },
+    {
+      "id": "utility:arkansas:ozarks-electric",
+      "type": "utility",
+      "url": "http://localhost:3000/arkansas/utility/ozarks-electric"
+    },
+    {
+      "id": "utility:arkansas:swepco-arkansas",
+      "type": "utility",
+      "url": "http://localhost:3000/arkansas/utility/swepco-arkansas"
+    },
+    {
       "id": "utility:california:ladwp",
       "type": "utility",
       "url": "http://localhost:3000/california/utility/ladwp"
@@ -5978,6 +6238,41 @@
       "id": "utility:california:southern-california-edison",
       "type": "utility",
       "url": "http://localhost:3000/california/utility/southern-california-edison"
+    },
+    {
+      "id": "utility:colorado:black-hills-energy-colorado",
+      "type": "utility",
+      "url": "http://localhost:3000/colorado/utility/black-hills-energy-colorado"
+    },
+    {
+      "id": "utility:colorado:colorado-springs-utilities",
+      "type": "utility",
+      "url": "http://localhost:3000/colorado/utility/colorado-springs-utilities"
+    },
+    {
+      "id": "utility:colorado:xcel-energy-colorado",
+      "type": "utility",
+      "url": "http://localhost:3000/colorado/utility/xcel-energy-colorado"
+    },
+    {
+      "id": "utility:connecticut:eversource-ct",
+      "type": "utility",
+      "url": "http://localhost:3000/connecticut/utility/eversource-ct"
+    },
+    {
+      "id": "utility:connecticut:united-illuminating",
+      "type": "utility",
+      "url": "http://localhost:3000/connecticut/utility/united-illuminating"
+    },
+    {
+      "id": "utility:delaware:delaware-electric-coop",
+      "type": "utility",
+      "url": "http://localhost:3000/delaware/utility/delaware-electric-coop"
+    },
+    {
+      "id": "utility:delaware:delmarva-power",
+      "type": "utility",
+      "url": "http://localhost:3000/delaware/utility/delmarva-power"
     },
     {
       "id": "utility:florida:duke-energy-florida",
@@ -6020,6 +6315,36 @@
       "url": "http://localhost:3000/georgia/utility/savannah-electric-power"
     },
     {
+      "id": "utility:hawaii:hawaii-electric-light",
+      "type": "utility",
+      "url": "http://localhost:3000/hawaii/utility/hawaii-electric-light"
+    },
+    {
+      "id": "utility:hawaii:hawaiian-electric",
+      "type": "utility",
+      "url": "http://localhost:3000/hawaii/utility/hawaiian-electric"
+    },
+    {
+      "id": "utility:hawaii:maui-electric",
+      "type": "utility",
+      "url": "http://localhost:3000/hawaii/utility/maui-electric"
+    },
+    {
+      "id": "utility:idaho:avista-idaho",
+      "type": "utility",
+      "url": "http://localhost:3000/idaho/utility/avista-idaho"
+    },
+    {
+      "id": "utility:idaho:idaho-power",
+      "type": "utility",
+      "url": "http://localhost:3000/idaho/utility/idaho-power"
+    },
+    {
+      "id": "utility:idaho:rocky-mountain-power-idaho",
+      "type": "utility",
+      "url": "http://localhost:3000/idaho/utility/rocky-mountain-power-idaho"
+    },
+    {
       "id": "utility:illinois:ameren-illinois",
       "type": "utility",
       "url": "http://localhost:3000/illinois/utility/ameren-illinois"
@@ -6033,6 +6358,266 @@
       "id": "utility:illinois:midamerican-illinois",
       "type": "utility",
       "url": "http://localhost:3000/illinois/utility/midamerican-illinois"
+    },
+    {
+      "id": "utility:indiana:aes-indiana",
+      "type": "utility",
+      "url": "http://localhost:3000/indiana/utility/aes-indiana"
+    },
+    {
+      "id": "utility:indiana:duke-energy-indiana",
+      "type": "utility",
+      "url": "http://localhost:3000/indiana/utility/duke-energy-indiana"
+    },
+    {
+      "id": "utility:indiana:indiana-michigan-power",
+      "type": "utility",
+      "url": "http://localhost:3000/indiana/utility/indiana-michigan-power"
+    },
+    {
+      "id": "utility:iowa:alliant-energy-iowa",
+      "type": "utility",
+      "url": "http://localhost:3000/iowa/utility/alliant-energy-iowa"
+    },
+    {
+      "id": "utility:iowa:iowa-lakes-electric",
+      "type": "utility",
+      "url": "http://localhost:3000/iowa/utility/iowa-lakes-electric"
+    },
+    {
+      "id": "utility:iowa:midamerican-energy-iowa",
+      "type": "utility",
+      "url": "http://localhost:3000/iowa/utility/midamerican-energy-iowa"
+    },
+    {
+      "id": "utility:kansas:evergy-kansas",
+      "type": "utility",
+      "url": "http://localhost:3000/kansas/utility/evergy-kansas"
+    },
+    {
+      "id": "utility:kansas:kansas-gas-electric",
+      "type": "utility",
+      "url": "http://localhost:3000/kansas/utility/kansas-gas-electric"
+    },
+    {
+      "id": "utility:kansas:midwest-energy-kansas",
+      "type": "utility",
+      "url": "http://localhost:3000/kansas/utility/midwest-energy-kansas"
+    },
+    {
+      "id": "utility:kentucky:duke-energy-kentucky",
+      "type": "utility",
+      "url": "http://localhost:3000/kentucky/utility/duke-energy-kentucky"
+    },
+    {
+      "id": "utility:kentucky:kentucky-utilities",
+      "type": "utility",
+      "url": "http://localhost:3000/kentucky/utility/kentucky-utilities"
+    },
+    {
+      "id": "utility:kentucky:louisville-gas-electric",
+      "type": "utility",
+      "url": "http://localhost:3000/kentucky/utility/louisville-gas-electric"
+    },
+    {
+      "id": "utility:louisiana:cleco",
+      "type": "utility",
+      "url": "http://localhost:3000/louisiana/utility/cleco"
+    },
+    {
+      "id": "utility:louisiana:entergy-louisiana",
+      "type": "utility",
+      "url": "http://localhost:3000/louisiana/utility/entergy-louisiana"
+    },
+    {
+      "id": "utility:louisiana:swepco-louisiana",
+      "type": "utility",
+      "url": "http://localhost:3000/louisiana/utility/swepco-louisiana"
+    },
+    {
+      "id": "utility:maine:central-maine-power",
+      "type": "utility",
+      "url": "http://localhost:3000/maine/utility/central-maine-power"
+    },
+    {
+      "id": "utility:maine:versant-power",
+      "type": "utility",
+      "url": "http://localhost:3000/maine/utility/versant-power"
+    },
+    {
+      "id": "utility:maryland:bge",
+      "type": "utility",
+      "url": "http://localhost:3000/maryland/utility/bge"
+    },
+    {
+      "id": "utility:maryland:delmarva-power-maryland",
+      "type": "utility",
+      "url": "http://localhost:3000/maryland/utility/delmarva-power-maryland"
+    },
+    {
+      "id": "utility:maryland:pepco-maryland",
+      "type": "utility",
+      "url": "http://localhost:3000/maryland/utility/pepco-maryland"
+    },
+    {
+      "id": "utility:massachusetts:eversource-ma",
+      "type": "utility",
+      "url": "http://localhost:3000/massachusetts/utility/eversource-ma"
+    },
+    {
+      "id": "utility:massachusetts:national-grid-ma",
+      "type": "utility",
+      "url": "http://localhost:3000/massachusetts/utility/national-grid-ma"
+    },
+    {
+      "id": "utility:massachusetts:unitil-ma",
+      "type": "utility",
+      "url": "http://localhost:3000/massachusetts/utility/unitil-ma"
+    },
+    {
+      "id": "utility:michigan:consumers-energy",
+      "type": "utility",
+      "url": "http://localhost:3000/michigan/utility/consumers-energy"
+    },
+    {
+      "id": "utility:michigan:dte-energy",
+      "type": "utility",
+      "url": "http://localhost:3000/michigan/utility/dte-energy"
+    },
+    {
+      "id": "utility:michigan:indiana-michigan-power-mi",
+      "type": "utility",
+      "url": "http://localhost:3000/michigan/utility/indiana-michigan-power-mi"
+    },
+    {
+      "id": "utility:minnesota:minnesota-power",
+      "type": "utility",
+      "url": "http://localhost:3000/minnesota/utility/minnesota-power"
+    },
+    {
+      "id": "utility:minnesota:otter-tail-power",
+      "type": "utility",
+      "url": "http://localhost:3000/minnesota/utility/otter-tail-power"
+    },
+    {
+      "id": "utility:minnesota:xcel-energy-minnesota",
+      "type": "utility",
+      "url": "http://localhost:3000/minnesota/utility/xcel-energy-minnesota"
+    },
+    {
+      "id": "utility:mississippi:coast-electric-power",
+      "type": "utility",
+      "url": "http://localhost:3000/mississippi/utility/coast-electric-power"
+    },
+    {
+      "id": "utility:mississippi:entergy-mississippi",
+      "type": "utility",
+      "url": "http://localhost:3000/mississippi/utility/entergy-mississippi"
+    },
+    {
+      "id": "utility:mississippi:mississippi-power",
+      "type": "utility",
+      "url": "http://localhost:3000/mississippi/utility/mississippi-power"
+    },
+    {
+      "id": "utility:missouri:ameren-missouri",
+      "type": "utility",
+      "url": "http://localhost:3000/missouri/utility/ameren-missouri"
+    },
+    {
+      "id": "utility:missouri:empire-district-electric",
+      "type": "utility",
+      "url": "http://localhost:3000/missouri/utility/empire-district-electric"
+    },
+    {
+      "id": "utility:missouri:evergy-missouri",
+      "type": "utility",
+      "url": "http://localhost:3000/missouri/utility/evergy-missouri"
+    },
+    {
+      "id": "utility:montana:flathead-electric",
+      "type": "utility",
+      "url": "http://localhost:3000/montana/utility/flathead-electric"
+    },
+    {
+      "id": "utility:montana:montana-dakota-utilities",
+      "type": "utility",
+      "url": "http://localhost:3000/montana/utility/montana-dakota-utilities"
+    },
+    {
+      "id": "utility:montana:northwestern-energy-mt",
+      "type": "utility",
+      "url": "http://localhost:3000/montana/utility/northwestern-energy-mt"
+    },
+    {
+      "id": "utility:nebraska:lincoln-electric-system",
+      "type": "utility",
+      "url": "http://localhost:3000/nebraska/utility/lincoln-electric-system"
+    },
+    {
+      "id": "utility:nebraska:nppd",
+      "type": "utility",
+      "url": "http://localhost:3000/nebraska/utility/nppd"
+    },
+    {
+      "id": "utility:nebraska:oppd",
+      "type": "utility",
+      "url": "http://localhost:3000/nebraska/utility/oppd"
+    },
+    {
+      "id": "utility:nevada:nv-energy",
+      "type": "utility",
+      "url": "http://localhost:3000/nevada/utility/nv-energy"
+    },
+    {
+      "id": "utility:nevada:valley-electric-association",
+      "type": "utility",
+      "url": "http://localhost:3000/nevada/utility/valley-electric-association"
+    },
+    {
+      "id": "utility:new-hampshire:eversource-nh",
+      "type": "utility",
+      "url": "http://localhost:3000/new-hampshire/utility/eversource-nh"
+    },
+    {
+      "id": "utility:new-hampshire:liberty-utilities-nh",
+      "type": "utility",
+      "url": "http://localhost:3000/new-hampshire/utility/liberty-utilities-nh"
+    },
+    {
+      "id": "utility:new-hampshire:unitil-nh",
+      "type": "utility",
+      "url": "http://localhost:3000/new-hampshire/utility/unitil-nh"
+    },
+    {
+      "id": "utility:new-jersey:atlantic-city-electric",
+      "type": "utility",
+      "url": "http://localhost:3000/new-jersey/utility/atlantic-city-electric"
+    },
+    {
+      "id": "utility:new-jersey:jcp-l",
+      "type": "utility",
+      "url": "http://localhost:3000/new-jersey/utility/jcp-l"
+    },
+    {
+      "id": "utility:new-jersey:pseg",
+      "type": "utility",
+      "url": "http://localhost:3000/new-jersey/utility/pseg"
+    },
+    {
+      "id": "utility:new-mexico:el-paso-electric-nm",
+      "type": "utility",
+      "url": "http://localhost:3000/new-mexico/utility/el-paso-electric-nm"
+    },
+    {
+      "id": "utility:new-mexico:pnm",
+      "type": "utility",
+      "url": "http://localhost:3000/new-mexico/utility/pnm"
+    },
+    {
+      "id": "utility:new-mexico:xcel-energy-nm",
+      "type": "utility",
+      "url": "http://localhost:3000/new-mexico/utility/xcel-energy-nm"
     },
     {
       "id": "utility:new-york:con-edison",
@@ -6055,6 +6640,36 @@
       "url": "http://localhost:3000/new-york/utility/rge"
     },
     {
+      "id": "utility:north-carolina:dominion-energy-nc",
+      "type": "utility",
+      "url": "http://localhost:3000/north-carolina/utility/dominion-energy-nc"
+    },
+    {
+      "id": "utility:north-carolina:duke-energy-carolinas",
+      "type": "utility",
+      "url": "http://localhost:3000/north-carolina/utility/duke-energy-carolinas"
+    },
+    {
+      "id": "utility:north-carolina:duke-energy-progress-nc",
+      "type": "utility",
+      "url": "http://localhost:3000/north-carolina/utility/duke-energy-progress-nc"
+    },
+    {
+      "id": "utility:north-dakota:montana-dakota-utilities-nd",
+      "type": "utility",
+      "url": "http://localhost:3000/north-dakota/utility/montana-dakota-utilities-nd"
+    },
+    {
+      "id": "utility:north-dakota:nodak-electric",
+      "type": "utility",
+      "url": "http://localhost:3000/north-dakota/utility/nodak-electric"
+    },
+    {
+      "id": "utility:north-dakota:xcel-energy-nd",
+      "type": "utility",
+      "url": "http://localhost:3000/north-dakota/utility/xcel-energy-nd"
+    },
+    {
       "id": "utility:ohio:aep-ohio",
       "type": "utility",
       "url": "http://localhost:3000/ohio/utility/aep-ohio"
@@ -6073,6 +6688,36 @@
       "id": "utility:ohio:firstenergy-ohio-edison",
       "type": "utility",
       "url": "http://localhost:3000/ohio/utility/firstenergy-ohio-edison"
+    },
+    {
+      "id": "utility:oklahoma:oge-energy",
+      "type": "utility",
+      "url": "http://localhost:3000/oklahoma/utility/oge-energy"
+    },
+    {
+      "id": "utility:oklahoma:oklahoma-electric-coop",
+      "type": "utility",
+      "url": "http://localhost:3000/oklahoma/utility/oklahoma-electric-coop"
+    },
+    {
+      "id": "utility:oklahoma:public-service-oklahoma",
+      "type": "utility",
+      "url": "http://localhost:3000/oklahoma/utility/public-service-oklahoma"
+    },
+    {
+      "id": "utility:oregon:eugene-water-electric",
+      "type": "utility",
+      "url": "http://localhost:3000/oregon/utility/eugene-water-electric"
+    },
+    {
+      "id": "utility:oregon:pacificorp-oregon",
+      "type": "utility",
+      "url": "http://localhost:3000/oregon/utility/pacificorp-oregon"
+    },
+    {
+      "id": "utility:oregon:portland-general-electric",
+      "type": "utility",
+      "url": "http://localhost:3000/oregon/utility/portland-general-electric"
     },
     {
       "id": "utility:pennsylvania:duquesne-light",
@@ -6095,6 +6740,61 @@
       "url": "http://localhost:3000/pennsylvania/utility/ppl-electric"
     },
     {
+      "id": "utility:rhode-island:block-island-power",
+      "type": "utility",
+      "url": "http://localhost:3000/rhode-island/utility/block-island-power"
+    },
+    {
+      "id": "utility:rhode-island:rhode-island-energy",
+      "type": "utility",
+      "url": "http://localhost:3000/rhode-island/utility/rhode-island-energy"
+    },
+    {
+      "id": "utility:south-carolina:dominion-energy-sc",
+      "type": "utility",
+      "url": "http://localhost:3000/south-carolina/utility/dominion-energy-sc"
+    },
+    {
+      "id": "utility:south-carolina:duke-energy-progress-sc",
+      "type": "utility",
+      "url": "http://localhost:3000/south-carolina/utility/duke-energy-progress-sc"
+    },
+    {
+      "id": "utility:south-carolina:santee-cooper",
+      "type": "utility",
+      "url": "http://localhost:3000/south-carolina/utility/santee-cooper"
+    },
+    {
+      "id": "utility:south-dakota:black-hills-energy-sd",
+      "type": "utility",
+      "url": "http://localhost:3000/south-dakota/utility/black-hills-energy-sd"
+    },
+    {
+      "id": "utility:south-dakota:northwestern-energy-sd",
+      "type": "utility",
+      "url": "http://localhost:3000/south-dakota/utility/northwestern-energy-sd"
+    },
+    {
+      "id": "utility:south-dakota:xcel-energy-sd",
+      "type": "utility",
+      "url": "http://localhost:3000/south-dakota/utility/xcel-energy-sd"
+    },
+    {
+      "id": "utility:tennessee:memphis-light-gas-water",
+      "type": "utility",
+      "url": "http://localhost:3000/tennessee/utility/memphis-light-gas-water"
+    },
+    {
+      "id": "utility:tennessee:nashville-electric-service",
+      "type": "utility",
+      "url": "http://localhost:3000/tennessee/utility/nashville-electric-service"
+    },
+    {
+      "id": "utility:tennessee:tva",
+      "type": "utility",
+      "url": "http://localhost:3000/tennessee/utility/tva"
+    },
+    {
       "id": "utility:texas:aep-texas",
       "type": "utility",
       "url": "http://localhost:3000/texas/utility/aep-texas"
@@ -6113,6 +6813,101 @@
       "id": "utility:texas:tnmp",
       "type": "utility",
       "url": "http://localhost:3000/texas/utility/tnmp"
+    },
+    {
+      "id": "utility:utah:murray-city-power",
+      "type": "utility",
+      "url": "http://localhost:3000/utah/utility/murray-city-power"
+    },
+    {
+      "id": "utility:utah:rocky-mountain-power-utah",
+      "type": "utility",
+      "url": "http://localhost:3000/utah/utility/rocky-mountain-power-utah"
+    },
+    {
+      "id": "utility:vermont:green-mountain-power",
+      "type": "utility",
+      "url": "http://localhost:3000/vermont/utility/green-mountain-power"
+    },
+    {
+      "id": "utility:vermont:vermont-electric-coop",
+      "type": "utility",
+      "url": "http://localhost:3000/vermont/utility/vermont-electric-coop"
+    },
+    {
+      "id": "utility:virginia:appalachian-power-va",
+      "type": "utility",
+      "url": "http://localhost:3000/virginia/utility/appalachian-power-va"
+    },
+    {
+      "id": "utility:virginia:dominion-energy-virginia",
+      "type": "utility",
+      "url": "http://localhost:3000/virginia/utility/dominion-energy-virginia"
+    },
+    {
+      "id": "utility:virginia:rappahannock-electric",
+      "type": "utility",
+      "url": "http://localhost:3000/virginia/utility/rappahannock-electric"
+    },
+    {
+      "id": "utility:washington:avista-washington",
+      "type": "utility",
+      "url": "http://localhost:3000/washington/utility/avista-washington"
+    },
+    {
+      "id": "utility:washington:puget-sound-energy",
+      "type": "utility",
+      "url": "http://localhost:3000/washington/utility/puget-sound-energy"
+    },
+    {
+      "id": "utility:washington:seattle-city-light",
+      "type": "utility",
+      "url": "http://localhost:3000/washington/utility/seattle-city-light"
+    },
+    {
+      "id": "utility:west-virginia:appalachian-power-wv",
+      "type": "utility",
+      "url": "http://localhost:3000/west-virginia/utility/appalachian-power-wv"
+    },
+    {
+      "id": "utility:west-virginia:mon-power",
+      "type": "utility",
+      "url": "http://localhost:3000/west-virginia/utility/mon-power"
+    },
+    {
+      "id": "utility:west-virginia:wheeling-power",
+      "type": "utility",
+      "url": "http://localhost:3000/west-virginia/utility/wheeling-power"
+    },
+    {
+      "id": "utility:wisconsin:alliant-energy-wisconsin",
+      "type": "utility",
+      "url": "http://localhost:3000/wisconsin/utility/alliant-energy-wisconsin"
+    },
+    {
+      "id": "utility:wisconsin:madison-gas-electric",
+      "type": "utility",
+      "url": "http://localhost:3000/wisconsin/utility/madison-gas-electric"
+    },
+    {
+      "id": "utility:wisconsin:we-energies",
+      "type": "utility",
+      "url": "http://localhost:3000/wisconsin/utility/we-energies"
+    },
+    {
+      "id": "utility:wyoming:black-hills-energy-wyoming",
+      "type": "utility",
+      "url": "http://localhost:3000/wyoming/utility/black-hills-energy-wyoming"
+    },
+    {
+      "id": "utility:wyoming:lower-valley-energy",
+      "type": "utility",
+      "url": "http://localhost:3000/wyoming/utility/lower-valley-energy"
+    },
+    {
+      "id": "utility:wyoming:rocky-mountain-power-wyoming",
+      "type": "utility",
+      "url": "http://localhost:3000/wyoming/utility/rocky-mountain-power-wyoming"
     },
     {
       "id": "vertical:ai-energy",
@@ -7937,7 +8732,27 @@
       "rel": "parent"
     },
     {
+      "from": "city:arizona:phoenix",
+      "to": "state:arizona",
+      "rel": "parent"
+    },
+    {
+      "from": "city:arizona:tucson",
+      "to": "state:arizona",
+      "rel": "parent"
+    },
+    {
+      "from": "city:california:fresno",
+      "to": "state:california",
+      "rel": "parent"
+    },
+    {
       "from": "city:california:los-angeles",
+      "to": "state:california",
+      "rel": "parent"
+    },
+    {
+      "from": "city:california:sacramento",
       "to": "state:california",
       "rel": "parent"
     },
@@ -7947,7 +8762,47 @@
       "rel": "parent"
     },
     {
+      "from": "city:california:san-francisco",
+      "to": "state:california",
+      "rel": "parent"
+    },
+    {
+      "from": "city:california:san-jose",
+      "to": "state:california",
+      "rel": "parent"
+    },
+    {
+      "from": "city:colorado:denver",
+      "to": "state:colorado",
+      "rel": "parent"
+    },
+    {
+      "from": "city:florida:hialeah",
+      "to": "state:florida",
+      "rel": "parent"
+    },
+    {
+      "from": "city:florida:jacksonville",
+      "to": "state:florida",
+      "rel": "parent"
+    },
+    {
       "from": "city:florida:miami",
+      "to": "state:florida",
+      "rel": "parent"
+    },
+    {
+      "from": "city:florida:orlando",
+      "to": "state:florida",
+      "rel": "parent"
+    },
+    {
+      "from": "city:florida:st-petersburg",
+      "to": "state:florida",
+      "rel": "parent"
+    },
+    {
+      "from": "city:florida:tampa",
       "to": "state:florida",
       "rel": "parent"
     },
@@ -7957,8 +8812,68 @@
       "rel": "parent"
     },
     {
+      "from": "city:georgia:augusta",
+      "to": "state:georgia",
+      "rel": "parent"
+    },
+    {
+      "from": "city:georgia:columbus",
+      "to": "state:georgia",
+      "rel": "parent"
+    },
+    {
+      "from": "city:illinois:aurora",
+      "to": "state:illinois",
+      "rel": "parent"
+    },
+    {
       "from": "city:illinois:chicago",
       "to": "state:illinois",
+      "rel": "parent"
+    },
+    {
+      "from": "city:indiana:indianapolis",
+      "to": "state:indiana",
+      "rel": "parent"
+    },
+    {
+      "from": "city:maryland:baltimore",
+      "to": "state:maryland",
+      "rel": "parent"
+    },
+    {
+      "from": "city:massachusetts:boston",
+      "to": "state:massachusetts",
+      "rel": "parent"
+    },
+    {
+      "from": "city:michigan:detroit",
+      "to": "state:michigan",
+      "rel": "parent"
+    },
+    {
+      "from": "city:minnesota:minneapolis",
+      "to": "state:minnesota",
+      "rel": "parent"
+    },
+    {
+      "from": "city:missouri:kansas-city",
+      "to": "state:missouri",
+      "rel": "parent"
+    },
+    {
+      "from": "city:missouri:st-louis",
+      "to": "state:missouri",
+      "rel": "parent"
+    },
+    {
+      "from": "city:nevada:las-vegas",
+      "to": "state:nevada",
+      "rel": "parent"
+    },
+    {
+      "from": "city:new-york:buffalo",
+      "to": "state:new-york",
       "rel": "parent"
     },
     {
@@ -7967,8 +8882,38 @@
       "rel": "parent"
     },
     {
+      "from": "city:north-carolina:charlotte",
+      "to": "state:north-carolina",
+      "rel": "parent"
+    },
+    {
+      "from": "city:north-carolina:raleigh",
+      "to": "state:north-carolina",
+      "rel": "parent"
+    },
+    {
+      "from": "city:ohio:cincinnati",
+      "to": "state:ohio",
+      "rel": "parent"
+    },
+    {
+      "from": "city:ohio:cleveland",
+      "to": "state:ohio",
+      "rel": "parent"
+    },
+    {
       "from": "city:ohio:columbus",
       "to": "state:ohio",
+      "rel": "parent"
+    },
+    {
+      "from": "city:ohio:toledo",
+      "to": "state:ohio",
+      "rel": "parent"
+    },
+    {
+      "from": "city:pennsylvania:allentown",
+      "to": "state:pennsylvania",
       "rel": "parent"
     },
     {
@@ -7977,13 +8922,63 @@
       "rel": "parent"
     },
     {
+      "from": "city:pennsylvania:pittsburgh",
+      "to": "state:pennsylvania",
+      "rel": "parent"
+    },
+    {
+      "from": "city:tennessee:memphis",
+      "to": "state:tennessee",
+      "rel": "parent"
+    },
+    {
+      "from": "city:tennessee:nashville",
+      "to": "state:tennessee",
+      "rel": "parent"
+    },
+    {
       "from": "city:texas:austin",
+      "to": "state:texas",
+      "rel": "parent"
+    },
+    {
+      "from": "city:texas:dallas",
+      "to": "state:texas",
+      "rel": "parent"
+    },
+    {
+      "from": "city:texas:el-paso",
+      "to": "state:texas",
+      "rel": "parent"
+    },
+    {
+      "from": "city:texas:fort-worth",
       "to": "state:texas",
       "rel": "parent"
     },
     {
       "from": "city:texas:houston",
       "to": "state:texas",
+      "rel": "parent"
+    },
+    {
+      "from": "city:texas:san-antonio",
+      "to": "state:texas",
+      "rel": "parent"
+    },
+    {
+      "from": "city:virginia:virginia-beach",
+      "to": "state:virginia",
+      "rel": "parent"
+    },
+    {
+      "from": "city:washington:seattle",
+      "to": "state:washington",
+      "rel": "parent"
+    },
+    {
+      "from": "city:wisconsin:milwaukee",
+      "to": "state:wisconsin",
       "rel": "parent"
     },
     {
@@ -15902,6 +16897,66 @@
       "rel": "parent"
     },
     {
+      "from": "utility:alabama:alabama-power",
+      "to": "state:alabama",
+      "rel": "parent"
+    },
+    {
+      "from": "utility:alabama:alagasco-electric",
+      "to": "state:alabama",
+      "rel": "parent"
+    },
+    {
+      "from": "utility:alabama:huntsville-utilities",
+      "to": "state:alabama",
+      "rel": "parent"
+    },
+    {
+      "from": "utility:alaska:chugach-electric",
+      "to": "state:alaska",
+      "rel": "parent"
+    },
+    {
+      "from": "utility:alaska:golden-valley-electric",
+      "to": "state:alaska",
+      "rel": "parent"
+    },
+    {
+      "from": "utility:alaska:matanuska-electric",
+      "to": "state:alaska",
+      "rel": "parent"
+    },
+    {
+      "from": "utility:arizona:arizona-public-service",
+      "to": "state:arizona",
+      "rel": "parent"
+    },
+    {
+      "from": "utility:arizona:salt-river-project",
+      "to": "state:arizona",
+      "rel": "parent"
+    },
+    {
+      "from": "utility:arizona:tucson-electric-power",
+      "to": "state:arizona",
+      "rel": "parent"
+    },
+    {
+      "from": "utility:arkansas:entergy-arkansas",
+      "to": "state:arkansas",
+      "rel": "parent"
+    },
+    {
+      "from": "utility:arkansas:ozarks-electric",
+      "to": "state:arkansas",
+      "rel": "parent"
+    },
+    {
+      "from": "utility:arkansas:swepco-arkansas",
+      "to": "state:arkansas",
+      "rel": "parent"
+    },
+    {
       "from": "utility:california:ladwp",
       "to": "state:california",
       "rel": "parent"
@@ -15919,6 +16974,41 @@
     {
       "from": "utility:california:southern-california-edison",
       "to": "state:california",
+      "rel": "parent"
+    },
+    {
+      "from": "utility:colorado:black-hills-energy-colorado",
+      "to": "state:colorado",
+      "rel": "parent"
+    },
+    {
+      "from": "utility:colorado:colorado-springs-utilities",
+      "to": "state:colorado",
+      "rel": "parent"
+    },
+    {
+      "from": "utility:colorado:xcel-energy-colorado",
+      "to": "state:colorado",
+      "rel": "parent"
+    },
+    {
+      "from": "utility:connecticut:eversource-ct",
+      "to": "state:connecticut",
+      "rel": "parent"
+    },
+    {
+      "from": "utility:connecticut:united-illuminating",
+      "to": "state:connecticut",
+      "rel": "parent"
+    },
+    {
+      "from": "utility:delaware:delaware-electric-coop",
+      "to": "state:delaware",
+      "rel": "parent"
+    },
+    {
+      "from": "utility:delaware:delmarva-power",
+      "to": "state:delaware",
       "rel": "parent"
     },
     {
@@ -15962,6 +17052,36 @@
       "rel": "parent"
     },
     {
+      "from": "utility:hawaii:hawaii-electric-light",
+      "to": "state:hawaii",
+      "rel": "parent"
+    },
+    {
+      "from": "utility:hawaii:hawaiian-electric",
+      "to": "state:hawaii",
+      "rel": "parent"
+    },
+    {
+      "from": "utility:hawaii:maui-electric",
+      "to": "state:hawaii",
+      "rel": "parent"
+    },
+    {
+      "from": "utility:idaho:avista-idaho",
+      "to": "state:idaho",
+      "rel": "parent"
+    },
+    {
+      "from": "utility:idaho:idaho-power",
+      "to": "state:idaho",
+      "rel": "parent"
+    },
+    {
+      "from": "utility:idaho:rocky-mountain-power-idaho",
+      "to": "state:idaho",
+      "rel": "parent"
+    },
+    {
       "from": "utility:illinois:ameren-illinois",
       "to": "state:illinois",
       "rel": "parent"
@@ -15974,6 +17094,266 @@
     {
       "from": "utility:illinois:midamerican-illinois",
       "to": "state:illinois",
+      "rel": "parent"
+    },
+    {
+      "from": "utility:indiana:aes-indiana",
+      "to": "state:indiana",
+      "rel": "parent"
+    },
+    {
+      "from": "utility:indiana:duke-energy-indiana",
+      "to": "state:indiana",
+      "rel": "parent"
+    },
+    {
+      "from": "utility:indiana:indiana-michigan-power",
+      "to": "state:indiana",
+      "rel": "parent"
+    },
+    {
+      "from": "utility:iowa:alliant-energy-iowa",
+      "to": "state:iowa",
+      "rel": "parent"
+    },
+    {
+      "from": "utility:iowa:iowa-lakes-electric",
+      "to": "state:iowa",
+      "rel": "parent"
+    },
+    {
+      "from": "utility:iowa:midamerican-energy-iowa",
+      "to": "state:iowa",
+      "rel": "parent"
+    },
+    {
+      "from": "utility:kansas:evergy-kansas",
+      "to": "state:kansas",
+      "rel": "parent"
+    },
+    {
+      "from": "utility:kansas:kansas-gas-electric",
+      "to": "state:kansas",
+      "rel": "parent"
+    },
+    {
+      "from": "utility:kansas:midwest-energy-kansas",
+      "to": "state:kansas",
+      "rel": "parent"
+    },
+    {
+      "from": "utility:kentucky:duke-energy-kentucky",
+      "to": "state:kentucky",
+      "rel": "parent"
+    },
+    {
+      "from": "utility:kentucky:kentucky-utilities",
+      "to": "state:kentucky",
+      "rel": "parent"
+    },
+    {
+      "from": "utility:kentucky:louisville-gas-electric",
+      "to": "state:kentucky",
+      "rel": "parent"
+    },
+    {
+      "from": "utility:louisiana:cleco",
+      "to": "state:louisiana",
+      "rel": "parent"
+    },
+    {
+      "from": "utility:louisiana:entergy-louisiana",
+      "to": "state:louisiana",
+      "rel": "parent"
+    },
+    {
+      "from": "utility:louisiana:swepco-louisiana",
+      "to": "state:louisiana",
+      "rel": "parent"
+    },
+    {
+      "from": "utility:maine:central-maine-power",
+      "to": "state:maine",
+      "rel": "parent"
+    },
+    {
+      "from": "utility:maine:versant-power",
+      "to": "state:maine",
+      "rel": "parent"
+    },
+    {
+      "from": "utility:maryland:bge",
+      "to": "state:maryland",
+      "rel": "parent"
+    },
+    {
+      "from": "utility:maryland:delmarva-power-maryland",
+      "to": "state:maryland",
+      "rel": "parent"
+    },
+    {
+      "from": "utility:maryland:pepco-maryland",
+      "to": "state:maryland",
+      "rel": "parent"
+    },
+    {
+      "from": "utility:massachusetts:eversource-ma",
+      "to": "state:massachusetts",
+      "rel": "parent"
+    },
+    {
+      "from": "utility:massachusetts:national-grid-ma",
+      "to": "state:massachusetts",
+      "rel": "parent"
+    },
+    {
+      "from": "utility:massachusetts:unitil-ma",
+      "to": "state:massachusetts",
+      "rel": "parent"
+    },
+    {
+      "from": "utility:michigan:consumers-energy",
+      "to": "state:michigan",
+      "rel": "parent"
+    },
+    {
+      "from": "utility:michigan:dte-energy",
+      "to": "state:michigan",
+      "rel": "parent"
+    },
+    {
+      "from": "utility:michigan:indiana-michigan-power-mi",
+      "to": "state:michigan",
+      "rel": "parent"
+    },
+    {
+      "from": "utility:minnesota:minnesota-power",
+      "to": "state:minnesota",
+      "rel": "parent"
+    },
+    {
+      "from": "utility:minnesota:otter-tail-power",
+      "to": "state:minnesota",
+      "rel": "parent"
+    },
+    {
+      "from": "utility:minnesota:xcel-energy-minnesota",
+      "to": "state:minnesota",
+      "rel": "parent"
+    },
+    {
+      "from": "utility:mississippi:coast-electric-power",
+      "to": "state:mississippi",
+      "rel": "parent"
+    },
+    {
+      "from": "utility:mississippi:entergy-mississippi",
+      "to": "state:mississippi",
+      "rel": "parent"
+    },
+    {
+      "from": "utility:mississippi:mississippi-power",
+      "to": "state:mississippi",
+      "rel": "parent"
+    },
+    {
+      "from": "utility:missouri:ameren-missouri",
+      "to": "state:missouri",
+      "rel": "parent"
+    },
+    {
+      "from": "utility:missouri:empire-district-electric",
+      "to": "state:missouri",
+      "rel": "parent"
+    },
+    {
+      "from": "utility:missouri:evergy-missouri",
+      "to": "state:missouri",
+      "rel": "parent"
+    },
+    {
+      "from": "utility:montana:flathead-electric",
+      "to": "state:montana",
+      "rel": "parent"
+    },
+    {
+      "from": "utility:montana:montana-dakota-utilities",
+      "to": "state:montana",
+      "rel": "parent"
+    },
+    {
+      "from": "utility:montana:northwestern-energy-mt",
+      "to": "state:montana",
+      "rel": "parent"
+    },
+    {
+      "from": "utility:nebraska:lincoln-electric-system",
+      "to": "state:nebraska",
+      "rel": "parent"
+    },
+    {
+      "from": "utility:nebraska:nppd",
+      "to": "state:nebraska",
+      "rel": "parent"
+    },
+    {
+      "from": "utility:nebraska:oppd",
+      "to": "state:nebraska",
+      "rel": "parent"
+    },
+    {
+      "from": "utility:nevada:nv-energy",
+      "to": "state:nevada",
+      "rel": "parent"
+    },
+    {
+      "from": "utility:nevada:valley-electric-association",
+      "to": "state:nevada",
+      "rel": "parent"
+    },
+    {
+      "from": "utility:new-hampshire:eversource-nh",
+      "to": "state:new-hampshire",
+      "rel": "parent"
+    },
+    {
+      "from": "utility:new-hampshire:liberty-utilities-nh",
+      "to": "state:new-hampshire",
+      "rel": "parent"
+    },
+    {
+      "from": "utility:new-hampshire:unitil-nh",
+      "to": "state:new-hampshire",
+      "rel": "parent"
+    },
+    {
+      "from": "utility:new-jersey:atlantic-city-electric",
+      "to": "state:new-jersey",
+      "rel": "parent"
+    },
+    {
+      "from": "utility:new-jersey:jcp-l",
+      "to": "state:new-jersey",
+      "rel": "parent"
+    },
+    {
+      "from": "utility:new-jersey:pseg",
+      "to": "state:new-jersey",
+      "rel": "parent"
+    },
+    {
+      "from": "utility:new-mexico:el-paso-electric-nm",
+      "to": "state:new-mexico",
+      "rel": "parent"
+    },
+    {
+      "from": "utility:new-mexico:pnm",
+      "to": "state:new-mexico",
+      "rel": "parent"
+    },
+    {
+      "from": "utility:new-mexico:xcel-energy-nm",
+      "to": "state:new-mexico",
       "rel": "parent"
     },
     {
@@ -15997,6 +17377,36 @@
       "rel": "parent"
     },
     {
+      "from": "utility:north-carolina:dominion-energy-nc",
+      "to": "state:north-carolina",
+      "rel": "parent"
+    },
+    {
+      "from": "utility:north-carolina:duke-energy-carolinas",
+      "to": "state:north-carolina",
+      "rel": "parent"
+    },
+    {
+      "from": "utility:north-carolina:duke-energy-progress-nc",
+      "to": "state:north-carolina",
+      "rel": "parent"
+    },
+    {
+      "from": "utility:north-dakota:montana-dakota-utilities-nd",
+      "to": "state:north-dakota",
+      "rel": "parent"
+    },
+    {
+      "from": "utility:north-dakota:nodak-electric",
+      "to": "state:north-dakota",
+      "rel": "parent"
+    },
+    {
+      "from": "utility:north-dakota:xcel-energy-nd",
+      "to": "state:north-dakota",
+      "rel": "parent"
+    },
+    {
       "from": "utility:ohio:aep-ohio",
       "to": "state:ohio",
       "rel": "parent"
@@ -16014,6 +17424,36 @@
     {
       "from": "utility:ohio:firstenergy-ohio-edison",
       "to": "state:ohio",
+      "rel": "parent"
+    },
+    {
+      "from": "utility:oklahoma:oge-energy",
+      "to": "state:oklahoma",
+      "rel": "parent"
+    },
+    {
+      "from": "utility:oklahoma:oklahoma-electric-coop",
+      "to": "state:oklahoma",
+      "rel": "parent"
+    },
+    {
+      "from": "utility:oklahoma:public-service-oklahoma",
+      "to": "state:oklahoma",
+      "rel": "parent"
+    },
+    {
+      "from": "utility:oregon:eugene-water-electric",
+      "to": "state:oregon",
+      "rel": "parent"
+    },
+    {
+      "from": "utility:oregon:pacificorp-oregon",
+      "to": "state:oregon",
+      "rel": "parent"
+    },
+    {
+      "from": "utility:oregon:portland-general-electric",
+      "to": "state:oregon",
       "rel": "parent"
     },
     {
@@ -16037,6 +17477,61 @@
       "rel": "parent"
     },
     {
+      "from": "utility:rhode-island:block-island-power",
+      "to": "state:rhode-island",
+      "rel": "parent"
+    },
+    {
+      "from": "utility:rhode-island:rhode-island-energy",
+      "to": "state:rhode-island",
+      "rel": "parent"
+    },
+    {
+      "from": "utility:south-carolina:dominion-energy-sc",
+      "to": "state:south-carolina",
+      "rel": "parent"
+    },
+    {
+      "from": "utility:south-carolina:duke-energy-progress-sc",
+      "to": "state:south-carolina",
+      "rel": "parent"
+    },
+    {
+      "from": "utility:south-carolina:santee-cooper",
+      "to": "state:south-carolina",
+      "rel": "parent"
+    },
+    {
+      "from": "utility:south-dakota:black-hills-energy-sd",
+      "to": "state:south-dakota",
+      "rel": "parent"
+    },
+    {
+      "from": "utility:south-dakota:northwestern-energy-sd",
+      "to": "state:south-dakota",
+      "rel": "parent"
+    },
+    {
+      "from": "utility:south-dakota:xcel-energy-sd",
+      "to": "state:south-dakota",
+      "rel": "parent"
+    },
+    {
+      "from": "utility:tennessee:memphis-light-gas-water",
+      "to": "state:tennessee",
+      "rel": "parent"
+    },
+    {
+      "from": "utility:tennessee:nashville-electric-service",
+      "to": "state:tennessee",
+      "rel": "parent"
+    },
+    {
+      "from": "utility:tennessee:tva",
+      "to": "state:tennessee",
+      "rel": "parent"
+    },
+    {
       "from": "utility:texas:aep-texas",
       "to": "state:texas",
       "rel": "parent"
@@ -16054,6 +17549,101 @@
     {
       "from": "utility:texas:tnmp",
       "to": "state:texas",
+      "rel": "parent"
+    },
+    {
+      "from": "utility:utah:murray-city-power",
+      "to": "state:utah",
+      "rel": "parent"
+    },
+    {
+      "from": "utility:utah:rocky-mountain-power-utah",
+      "to": "state:utah",
+      "rel": "parent"
+    },
+    {
+      "from": "utility:vermont:green-mountain-power",
+      "to": "state:vermont",
+      "rel": "parent"
+    },
+    {
+      "from": "utility:vermont:vermont-electric-coop",
+      "to": "state:vermont",
+      "rel": "parent"
+    },
+    {
+      "from": "utility:virginia:appalachian-power-va",
+      "to": "state:virginia",
+      "rel": "parent"
+    },
+    {
+      "from": "utility:virginia:dominion-energy-virginia",
+      "to": "state:virginia",
+      "rel": "parent"
+    },
+    {
+      "from": "utility:virginia:rappahannock-electric",
+      "to": "state:virginia",
+      "rel": "parent"
+    },
+    {
+      "from": "utility:washington:avista-washington",
+      "to": "state:washington",
+      "rel": "parent"
+    },
+    {
+      "from": "utility:washington:puget-sound-energy",
+      "to": "state:washington",
+      "rel": "parent"
+    },
+    {
+      "from": "utility:washington:seattle-city-light",
+      "to": "state:washington",
+      "rel": "parent"
+    },
+    {
+      "from": "utility:west-virginia:appalachian-power-wv",
+      "to": "state:west-virginia",
+      "rel": "parent"
+    },
+    {
+      "from": "utility:west-virginia:mon-power",
+      "to": "state:west-virginia",
+      "rel": "parent"
+    },
+    {
+      "from": "utility:west-virginia:wheeling-power",
+      "to": "state:west-virginia",
+      "rel": "parent"
+    },
+    {
+      "from": "utility:wisconsin:alliant-energy-wisconsin",
+      "to": "state:wisconsin",
+      "rel": "parent"
+    },
+    {
+      "from": "utility:wisconsin:madison-gas-electric",
+      "to": "state:wisconsin",
+      "rel": "parent"
+    },
+    {
+      "from": "utility:wisconsin:we-energies",
+      "to": "state:wisconsin",
+      "rel": "parent"
+    },
+    {
+      "from": "utility:wyoming:black-hills-energy-wyoming",
+      "to": "state:wyoming",
+      "rel": "parent"
+    },
+    {
+      "from": "utility:wyoming:lower-valley-energy",
+      "to": "state:wyoming",
+      "rel": "parent"
+    },
+    {
+      "from": "utility:wyoming:rocky-mountain-power-wyoming",
+      "to": "state:wyoming",
       "rel": "parent"
     },
     {

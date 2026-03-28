@@ -21,7 +21,8 @@ Each search intent has exactly one canonical route family that owns indexable st
 | State electricity cost | `/electricity-cost/{state}` | Yes |
 | City electricity cost context | `/electricity-cost/{state}/{city}` | Yes (rollout-gated) |
 | Average electricity bill | `/average-electricity-bill/{state}` | Yes |
-| Electricity bill estimator | `/electricity-bill-estimator/{state}` and `/electricity-bill-estimator/{state}/{profile}` | Yes |
+| Average electricity bill (city benchmark, rollout-gated) | `/average-electricity-bill/{state}/{city}` | Yes (rollout-gated) |
+| Electricity bill estimator | `/electricity-bill-estimator/{state}` | Yes |
 | Electricity cost calculator | `/electricity-cost-calculator/{state}` | Yes |
 | Appliance calculator | `/electricity-cost-calculator/{state}/{appliance}` | Yes |
 | Fixed-kWh cost | `/electricity-usage-cost/{kwh}/{state}` | Yes |
@@ -33,6 +34,9 @@ Each search intent has exactly one canonical route family that owns indexable st
 | Industry cost | `/industry-electricity-cost/{industry}/{state}` | Yes (rollout-gated) |
 | State-to-state comparison | `/electricity-cost-comparison/{pair}` | Yes |
 | Knowledge state page | `/knowledge/state/{state}` | Yes |
+
+Electricity bill estimator profile routes (`/electricity-bill-estimator/{state}/{profile}`) are rollout-gated supporting surfaces and are only sitemap-eligible when explicitly allowlisted.
+Energy comparison hub routes (`/energy-comparison`, `/energy-comparison/states`, `/energy-comparison/usage`, `/energy-comparison/appliances`) are curated supporting discovery surfaces and must not replace canonical ownership of comparison, calculator, usage-cost, estimator, or appliance route families.
 
 ### 2. Support, redirect, and legacy route families
 

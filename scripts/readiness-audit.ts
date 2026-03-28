@@ -8,6 +8,12 @@ import {
   waitForServerReady,
   fetchWithTimeout,
 } from "./_server";
+import {
+  getActiveApplianceCityPages,
+  getActiveCityBillPages,
+} from "../src/lib/longtail/rollout";
+import { getActiveBillEstimatorProfilePages } from "../src/lib/longtail/billEstimator";
+import { getUtilitiesByState } from "../src/data/utilities";
 
 type CheckResult = {
   name: string;
@@ -47,6 +53,21 @@ function pass(name: string, details?: string): CheckResult {
 function fail(name: string, details?: string): CheckResult {
   console.error(`  ✗ ${name}${details ? ` — ${details}` : ""}`);
   return { name, passed: false, details };
+}
+
+function extractSitemapPathnames(xml: string): string[] {
+  const locPattern = /<loc>([^<]+)<\/loc>/g;
+  const paths: string[] = [];
+  for (const match of xml.matchAll(locPattern)) {
+    const value = match[1]?.trim();
+    if (!value) continue;
+    try {
+      paths.push(new URL(value).pathname);
+    } catch {
+      // Ignore malformed URL-like values.
+    }
+  }
+  return paths;
 }
 
 // ── A) Core availability ──────────────────────────────────────────────
@@ -160,6 +181,7 @@ async function checkRobots(base: string): Promise<CheckResult[]> {
 async function checkSitemap(base: string): Promise<CheckResult[]> {
   const results: CheckResult[] = [];
   const required = ["/sitemap/states.xml", "/sitemap/core.xml"];
+  const segmentPaths = ["/sitemap/core.xml", "/sitemap/states.xml", "/sitemap/cities.xml", "/sitemap/appliances.xml", "/sitemap/estimators.xml"];
   try {
     const candidates = ["/sitemap.xml", "/sitemap-index.xml", "/sitemap/core.xml"];
     let selected: string | null = null;
@@ -183,6 +205,159 @@ async function checkSitemap(base: string): Promise<CheckResult[]> {
       } else {
         results.push(fail(`${selected} contains ${slug}`));
       }
+    }
+
+    const allPathnames: string[] = [];
+    for (const segmentPath of segmentPaths) {
+      const segmentRes = await fetchWithTimeout(`${base}${segmentPath}`);
+      if (!segmentRes.ok) {
+        results.push(fail(`${segmentPath} reachable`, `status ${segmentRes.status}`));
+        continue;
+      }
+      results.push(pass(`${segmentPath} reachable`));
+      const xml = await segmentRes.text();
+      allPathnames.push(...extractSitemapPathnames(xml));
+    }
+
+    const estimatorProfilePath =
+      /^\/electricity-bill-estimator\/([a-z-]+)\/(apartment|small-home|medium-home|large-home)\/?$/;
+    const foundEstimatorProfileUrls = new Set(
+      allPathnames
+        .filter((pathname) => estimatorProfilePath.test(pathname))
+        .map((pathname) => pathname.replace(/\/+$/, "")),
+    );
+    const expectedEstimatorProfileUrls = new Set(
+      getActiveBillEstimatorProfilePages().map(
+        (entry) => `/electricity-bill-estimator/${entry.slug}/${entry.profile}`,
+      ),
+    );
+    const unexpectedEstimatorProfileUrls = [...foundEstimatorProfileUrls].filter(
+      (url) => !expectedEstimatorProfileUrls.has(url),
+    );
+    const missingEstimatorProfileUrls = [...expectedEstimatorProfileUrls].filter(
+      (url) => !foundEstimatorProfileUrls.has(url),
+    );
+
+    if (unexpectedEstimatorProfileUrls.length > 0) {
+      results.push(
+        fail(
+          "estimator profile sitemap leakage is blocked",
+          `unexpected profile URLs: ${unexpectedEstimatorProfileUrls.slice(0, 5).join(", ")}`,
+        ),
+      );
+    } else {
+      results.push(pass("estimator profile sitemap leakage is blocked"));
+    }
+
+    if (missingEstimatorProfileUrls.length > 0) {
+      results.push(
+        fail(
+          "allowlisted estimator profile URLs are present in sitemap",
+          `missing allowlisted profile URLs: ${missingEstimatorProfileUrls.slice(0, 5).join(", ")}`,
+        ),
+      );
+    } else {
+      results.push(pass("allowlisted estimator profile URLs are present in sitemap"));
+    }
+
+    const cityBillPath = /^\/average-electricity-bill\/([a-z-]+)\/([a-z-]+)\/?$/;
+    const foundCityBillUrls = new Set(
+      allPathnames
+        .filter((pathname) => cityBillPath.test(pathname))
+        .map((pathname) => pathname.replace(/\/+$/, "")),
+    );
+    const expectedCityBillUrls = new Set(
+      getActiveCityBillPages().map(
+        (entry) => `/average-electricity-bill/${entry.stateSlug}/${entry.citySlug}`,
+      ),
+    );
+    const unexpectedCityBillUrls = [...foundCityBillUrls].filter(
+      (url) => !expectedCityBillUrls.has(url),
+    );
+    const missingCityBillUrls = [...expectedCityBillUrls].filter(
+      (url) => !foundCityBillUrls.has(url),
+    );
+
+    if (unexpectedCityBillUrls.length > 0) {
+      results.push(
+        fail(
+          "city bill sitemap leakage is blocked",
+          `unexpected city bill URLs: ${unexpectedCityBillUrls.slice(0, 5).join(", ")}`,
+        ),
+      );
+    } else {
+      results.push(pass("city bill sitemap leakage is blocked"));
+    }
+
+    if (missingCityBillUrls.length > 0) {
+      results.push(
+        fail(
+          "allowlisted city bill URLs are present in sitemap",
+          `missing allowlisted city bill URLs: ${missingCityBillUrls.slice(0, 5).join(", ")}`,
+        ),
+      );
+    } else {
+      results.push(pass("allowlisted city bill URLs are present in sitemap"));
+    }
+
+    const applianceCityPath = /^\/cost-to-run\/([a-z0-9-]+)\/([a-z-]+)\/([a-z0-9-]+)\/?$/;
+    const foundApplianceCityUrls = new Set(
+      allPathnames
+        .filter((pathname) => applianceCityPath.test(pathname))
+        .map((pathname) => pathname.replace(/\/+$/, "")),
+    );
+    const expectedApplianceCityUrls = new Set(
+      getActiveApplianceCityPages().map(
+        (entry) => `/cost-to-run/${entry.applianceSlug}/${entry.stateSlug}/${entry.citySlug}`,
+      ),
+    );
+    const unexpectedApplianceCityUrls = [...foundApplianceCityUrls].filter(
+      (url) => !expectedApplianceCityUrls.has(url),
+    );
+    const missingApplianceCityUrls = [...expectedApplianceCityUrls].filter(
+      (url) => !foundApplianceCityUrls.has(url),
+    );
+
+    if (unexpectedApplianceCityUrls.length > 0) {
+      results.push(
+        fail(
+          "appliance city sitemap leakage is blocked",
+          `unexpected appliance city URLs: ${unexpectedApplianceCityUrls.slice(0, 5).join(", ")}`,
+        ),
+      );
+    } else {
+      results.push(pass("appliance city sitemap leakage is blocked"));
+    }
+
+    if (missingApplianceCityUrls.length > 0) {
+      results.push(
+        fail(
+          "allowlisted appliance city URLs are present in sitemap",
+          `missing allowlisted appliance city URLs: ${missingApplianceCityUrls.slice(0, 5).join(", ")}`,
+        ),
+      );
+    } else {
+      results.push(pass("allowlisted appliance city URLs are present in sitemap"));
+    }
+
+    const utilitiesListPath = /^\/([a-z-]+)\/utilities\/?$/;
+    const statesWithUtilitiesInSitemap = new Set(
+      allPathnames
+        .filter((p) => utilitiesListPath.test(p))
+        .map((p) => p.match(utilitiesListPath)![1]),
+    );
+    const statesWithNoUtilityData = [...statesWithUtilitiesInSitemap].filter(
+      (stateSlug) => getUtilitiesByState(stateSlug).length === 0,
+    );
+    if (statesWithNoUtilityData.length > 0) {
+      results.push(
+        fail(
+          "all sitemap utilities pages have backing data",
+          `${statesWithNoUtilityData.length} state(s) with no utility records: ${statesWithNoUtilityData.slice(0, 5).join(", ")}`,
+        ),
+      );
+    } else {
+      results.push(pass("all sitemap utilities pages have backing data"));
     }
   } catch (err) {
     const msg = err instanceof Error ? err.message : String(err);

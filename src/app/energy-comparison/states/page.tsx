@@ -53,6 +53,10 @@ export default async function EnergyComparisonStatesPage() {
         <p style={{ marginTop: 0, marginBottom: 24, maxWidth: "75ch", lineHeight: 1.7 }}>
           This curated slice links into the canonical pair system at <Link href="/electricity-cost-comparison">/electricity-cost-comparison</Link>.
         </p>
+        <p style={{ marginTop: 0, marginBottom: 24, maxWidth: "75ch", lineHeight: 1.7 }}>
+          This page is a discovery directory only. It does not create new state-pair data and does not replace canonical
+          ownership of pair pages.
+        </p>
 
         <ul style={{ margin: 0, paddingLeft: 20, lineHeight: 1.9, columns: 2 }}>
           {pairs.map((item) => (
@@ -63,6 +67,16 @@ export default async function EnergyComparisonStatesPage() {
             </li>
           ))}
         </ul>
+
+        <section style={{ marginTop: 28, marginBottom: 24 }}>
+          <h2 style={{ fontSize: 20, marginBottom: 10 }}>Related comparison pathways</h2>
+          <ul style={{ margin: 0, paddingLeft: 20, lineHeight: 1.8 }}>
+            <li><Link href="/energy-comparison">Back to Energy Comparison Hub</Link></li>
+            <li><Link href="/energy-comparison/usage">Usage tier comparison slice</Link></li>
+            <li><Link href="/energy-comparison/appliances">Appliance comparison slice</Link></li>
+            <li><Link href="/electricity-cost-calculator">Electricity cost calculator cluster</Link></li>
+          </ul>
+        </section>
 
         <Disclaimers disclaimerRefs={["general-site"]} />
         <StatusFooter release={await getRelease()} />
