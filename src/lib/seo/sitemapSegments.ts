@@ -38,6 +38,7 @@ function isStateScopedPath(segments: string[]): boolean {
 
 function isCityScopedPath(segments: string[]): boolean {
   if (segments.length === 3 && segments[0] === "electricity-cost" && STATE_SLUG_SET.has(segments[1])) return true;
+  if (segments.length === 3 && segments[0] === "average-electricity-bill" && STATE_SLUG_SET.has(segments[1])) return true;
   if (segments.length === 4 && segments[0] === "cost-to-run" && STATE_SLUG_SET.has(segments[2])) return true;
   return false;
 }
