@@ -147,7 +147,6 @@ export default function RootLayout({
             <Link href="/about">About</Link> <span>|</span>{" "}
             <Link href="/compare">Compare</Link> <span>|</span>{" "}
             <Link href="/electricity-cost-calculator">Calculator</Link> <span>|</span>{" "}
-            <Link href="/changelog">Changelog</Link> <span>|</span>{" "}
             <Link href="/contact">Contact</Link> <span>|</span>{" "}
             <Link href="/newsletter">Newsletter</Link> <span>|</span>{" "}
             <Link href="/data-policy">Data Policy</Link> <span>|</span>{" "}
@@ -170,7 +169,6 @@ export default function RootLayout({
             <Link href="/site-map">Site Map</Link> <span>|</span>{" "}
             <Link href="/knowledge.json" prefetch={false}>Knowledge JSON</Link> <span>|</span>{" "}
             <Link href="/registry.json" prefetch={false}>Registry</Link> <span>|</span>{" "}
-            <Link href="/graph.json" prefetch={false}>Graph</Link> <span>|</span>{" "}
             <Link href="/data-history">Data History</Link> <span>|</span>{" "}
             <Link href="/v/ai-energy">AI &amp; Energy</Link> <span>|</span>{" "}
             <Link href="/drivers">Price Drivers</Link> <span>|</span>{" "}

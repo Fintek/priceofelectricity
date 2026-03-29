@@ -9140,10 +9140,9 @@ export function t(key: string): string {
     data: pricesByStateRows,
   };
   await writeJson("/datasets/electricity-prices-by-state.json", pricesByStateBody);
-  const pricesCsvHeader = "slug,state,avgRateCentsPerKwh,nationalAverage,differencePercent,momentumSignal,generatedAt,sourceVersion";
+  const pricesCsvHeader = "state,avgRateCentsPerKwh,nationalAverage,differencePercent,momentumSignal,generatedAt,sourceVersion";
   const pricesCsvRows = pricesByStateRows.map((r) =>
     [
-      String(r.slug ?? ""),
       String(r.state ?? "").replace(/"/g, '""'),
       r.avgRateCentsPerKwh ?? "",
       r.nationalAverage ?? "",
