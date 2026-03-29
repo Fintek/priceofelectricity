@@ -4623,3 +4623,45 @@ DC is **not** a first-class supported state. It should not appear in the homepag
 ### Path decision
 
 **DC consistency issue fully repaired.** The roadmap returns to stable hold.
+
+---
+
+## Prompt 100 — Public-Facing Cleanup / Internal-Surface Exposure Repair
+
+### Root causes
+
+1. **Changelog footer link**: `src/app/layout.tsx` line 150 linked to `/changelog` in the public footer. The changelog page is a product/data update log (internal development history) — not user-facing content.
+2. **Graph JSON footer link**: `src/app/layout.tsx` line 173 linked to `/graph.json` in the public footer. This is a machine-readable content registry graph (nodes + edges) — useful for LLM/structured access but confusing for human visitors.
+3. **CSV `slug` column**: `scripts/knowledge-build.ts` included `slug` as the first column in `public/datasets/electricity-prices-by-state.csv`. `slug` is an internal URL path segment (e.g., "alabama") — not meaningful to end users downloading electricity price data.
+
+### Repair applied
+
+1. Removed `<Link href="/changelog">Changelog</Link>` and its separator from the public footer in `src/app/layout.tsx`. The `/changelog` page remains accessible by direct URL.
+2. Removed `<Link href="/graph.json">Graph</Link>` and its separator from the public footer in `src/app/layout.tsx`. The `/graph.json` route remains live as a machine-readable endpoint.
+3. Removed `slug` from the CSV header and row generation in `scripts/knowledge-build.ts`. The JSON dataset (`electricity-prices-by-state.json`) retains `slug` as a structured identifier.
+
+### Verification results
+
+| Command | Result |
+|---|---|
+| `npm run knowledge:build` | 73 pages, 559 writes |
+| `npm run knowledge:verify` | Passed |
+| `npm run build` | Passed |
+| `npm run verify:vercel` | Full pass (1429/0 integrity, 27/0 smoke) |
+| `npm run indexing:check` | **64/0** |
+| `npm run readiness:audit` | **78/0** |
+| `npm run seo:check` | **8/0** |
+| `npm run payload:audit` | Passed — standalone 69.56 MiB, server/app 34.15 MiB |
+
+### Production verification
+
+Commit `aa6ece2` deployed to production. Confirmed:
+- Footer does not contain Changelog or Graph links
+- `/graph.json` still returns 200 with valid JSON (nodes + edges)
+- CSV download header is `state,avgRateCentsPerKwh,nationalAverage,...` (no `slug`)
+- Previously-fixed pages (`/knowledge/rankings/electricity-inflation-1y`, `/knowledge/state/texas`, homepage) remain correct
+- DC absent from homepage state list
+
+### Path decision
+
+**Cleanup batch fully closed.** The roadmap returns to stable hold.
