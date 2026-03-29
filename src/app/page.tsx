@@ -108,22 +108,11 @@ export default function HomePage() {
             >
               {entry.label}
             </Link>
-            {entry.avgRateCentsPerKwh != null ? (
-              <>
-                <span className="chip">
-                  {getRateTierLabel(getRateTier(entry.avgRateCentsPerKwh))}
-                </span>
-                <span className="muted" style={{ marginLeft: 12 }}>
-                  {entry.avgRateCentsPerKwh}¢/kWh
-                </span>
-              </>
-            ) : (
-              <span className="chip">Knowledge</span>
-            )}
+            <span className="chip">
+              {getRateTierLabel(getRateTier(entry.avgRateCentsPerKwh))}
+            </span>
             <span className="muted" style={{ marginLeft: 12 }}>
-              {entry.avgRateCentsPerKwh != null
-                ? null
-                : "State-like knowledge coverage"}
+              {entry.avgRateCentsPerKwh}¢/kWh
             </span>
           </li>
         ))}

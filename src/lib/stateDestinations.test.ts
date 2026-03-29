@@ -12,17 +12,25 @@ test("uses state overview routes for the 50-state dataset", () => {
   });
 });
 
-test("routes district of columbia to its supported public destination", () => {
+test("routes district of columbia to its knowledge destination", () => {
   assert.deepEqual(getPublicStateDestination("district-of-columbia"), {
     href: "/knowledge/state/district-of-columbia",
     label: "District of Columbia",
   });
 });
 
-test("includes district of columbia in homepage coverage entries", () => {
+test("excludes district of columbia from homepage coverage entries", () => {
   const entries = getHomepageCoverageEntries();
   const dcEntry = entries.find((entry) => entry.slug === "district-of-columbia");
 
-  assert.ok(dcEntry, "expected homepage coverage entries to include District of Columbia");
-  assert.equal(dcEntry?.href, "/knowledge/state/district-of-columbia");
+  assert.equal(dcEntry, undefined, "DC should not appear in homepage state list");
+});
+
+test("homepage coverage entries only contain states with rate data", () => {
+  const entries = getHomepageCoverageEntries();
+
+  assert.equal(entries.length, 50);
+  for (const entry of entries) {
+    assert.equal(typeof entry.avgRateCentsPerKwh, "number", `${entry.slug} should have numeric rate`);
+  }
 });

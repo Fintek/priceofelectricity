@@ -4542,3 +4542,84 @@ No deferred family activated. No monitoring sub-series open. Trigger-based hold 
 ### Path decision
 
 **PATH A — Stable-hold baseline confirmed.** Production repair is fully absorbed into docs/handoff. No further prompt is needed. The roadmap remains in stable hold until a real trigger fires.
+
+---
+
+## Prompt 98 — Build-Lock Closeout (2026-03-29)
+
+### Lock root cause
+
+Two orphaned `node.exe` processes (PIDs 24820, 12748) were still running `.next/standalone/server.js` from Prompt 97 debugging sessions. They held open directory handles on `.next/standalone`, preventing `rmdir` during `next build`. Standard `Get-Process node` did not surface them; Sysinternals `handle.exe` identified the exact PIDs.
+
+### Resolution
+
+Killed both orphaned processes, removed `.next` entirely, and completed a clean rebuild.
+
+### Verification results
+
+| Command | Result |
+|---|---|
+| Unit tests (snapshotLoader, stateDestinations, rankingCharts) | **6/6** |
+| `npm run knowledge:build` | 73 pages, 559 writes |
+| `npm run knowledge:verify` | Passed |
+| `npm run build` | 269 static pages |
+| `npm run verify:vercel` | Full pass |
+| `npm run indexing:check` | **64/0** |
+| `npm run readiness:audit` | **78/0** |
+| `npm run seo:check` | **8/0** |
+| `npm run payload:audit` | Passed — standalone 69.77 MiB, server/app 34.36 MiB |
+
+### Rendered-output verification (local + production)
+
+| Page | Check | Local | Production |
+|---|---|---|---|
+| `/knowledge/rankings/electricity-inflation-1y` | Old sparkline absent | PASS | PASS |
+| `/knowledge/rankings/electricity-inflation-1y` | Explanatory note present | PASS | PASS |
+| `/knowledge/rankings/electricity-inflation-1y` | Bar chart present | PASS | PASS |
+| `/knowledge/state/texas` | Feb 2026 freshness | PASS | PASS |
+| `/` | DC link present | PASS | PASS |
+
+### Commit
+
+`705c52e` — "Fix rendered inflation ranking chart output" — pushed to `main`, deployed to production.
+
+### Path decision
+
+**Trust/correctness batch fully closed.** Prompts 96–98 are complete. The roadmap returns to stable hold until a real trigger fires.
+
+---
+
+## Prompt 99 — District of Columbia Consistency Repair (2026-03-29)
+
+### Root cause
+
+Prompt 96 added DC to the homepage state coverage list as a "Knowledge" entry linking to `/knowledge/state/district-of-columbia`. While this prevented 404s, DC appeared alongside 50 fully-supported states despite having no rate data (`avgRateCentsPerKwh: null`), no standard state page (`/district-of-columbia` would 404), and a knowledge page that is essentially a machine-readable placeholder with "values are unavailable in current normalized pipeline." This created a misleading user experience.
+
+### Policy decision
+
+DC is **not** a first-class supported state. It should not appear in the homepage state coverage list. It remains a valid entity in the knowledge layer (rankings, comparisons, knowledge state page) because EIA data includes DC in historical series.
+
+### Repair applied
+
+1. Removed DC from `getHomepageCoverageEntries()` in `src/lib/stateDestinations.ts`
+2. Simplified homepage rendering in `src/app/page.tsx` — removed the "Knowledge" chip and "State-like knowledge coverage" conditional
+3. Updated tests in `src/lib/stateDestinations.test.ts` — DC is now asserted absent from homepage entries; added test verifying all 50 entries have numeric rate data
+4. Preserved `getPublicStateDestination("district-of-columbia")` routing for ranking pages
+
+### Verification results
+
+| Command | Result |
+|---|---|
+| Unit tests | **7/7** |
+| `npm run knowledge:build` | 73 pages, 559 writes |
+| `npm run knowledge:verify` | Passed |
+| `npm run build` | 269 static pages |
+| `npm run verify:vercel` | Full pass |
+| `npm run indexing:check` | **64/0** |
+| `npm run readiness:audit` | **78/0** |
+| `npm run seo:check` | **8/0** |
+| `npm run payload:audit` | Passed — standalone 69.75 MiB, server/app 34.34 MiB |
+
+### Path decision
+
+**DC consistency issue fully repaired.** The roadmap returns to stable hold.

@@ -9,14 +9,7 @@ export type HomepageCoverageEntry = {
   slug: string;
   label: string;
   href: string;
-  avgRateCentsPerKwh: number | null;
-};
-
-const DISTRICT_OF_COLUMBIA_ENTRY: HomepageCoverageEntry = {
-  slug: "district-of-columbia",
-  label: "District of Columbia",
-  href: "/knowledge/state/district-of-columbia",
-  avgRateCentsPerKwh: null,
+  avgRateCentsPerKwh: number;
 };
 
 export function getPublicStateDestination(slug: string): PublicStateDestination {
@@ -29,10 +22,10 @@ export function getPublicStateDestination(slug: string): PublicStateDestination 
     };
   }
 
-  if (slug === DISTRICT_OF_COLUMBIA_ENTRY.slug) {
+  if (slug === "district-of-columbia") {
     return {
-      label: DISTRICT_OF_COLUMBIA_ENTRY.label,
-      href: DISTRICT_OF_COLUMBIA_ENTRY.href,
+      label: "District of Columbia",
+      href: "/knowledge/state/district-of-columbia",
     };
   }
 
@@ -43,13 +36,10 @@ export function getPublicStateDestination(slug: string): PublicStateDestination 
 }
 
 export function getHomepageCoverageEntries(): HomepageCoverageEntry[] {
-  return [
-    ...STATE_LIST.map((state) => ({
-      slug: state.slug,
-      label: state.name,
-      href: `/${state.slug}`,
-      avgRateCentsPerKwh: state.avgRateCentsPerKwh,
-    })),
-    DISTRICT_OF_COLUMBIA_ENTRY,
-  ].sort((left, right) => left.label.localeCompare(right.label));
+  return STATE_LIST.map((state) => ({
+    slug: state.slug,
+    label: state.name,
+    href: `/${state.slug}`,
+    avgRateCentsPerKwh: state.avgRateCentsPerKwh,
+  })).sort((left, right) => left.label.localeCompare(right.label));
 }
