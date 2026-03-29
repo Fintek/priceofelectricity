@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { STATE_LIST, STATES } from "@/data/states";
+import { STATES } from "@/data/states";
 import HomepagePersonalization from "@/app/components/HomepagePersonalization";
 import AboutThisSite from "@/components/navigation/AboutThisSite";
 import { getRateTier, getRateTierLabel } from "@/lib/insights";
 import { LAST_REVIEWED, SITE_URL, UPDATE_CADENCE_TEXT } from "@/lib/site";
 import { buildMetadata } from "@/lib/seo/metadata";
+import { getHomepageCoverageEntries } from "@/lib/stateDestinations";
 
 const BASE_URL = SITE_URL;
 export const dynamic = "force-static";
@@ -19,6 +20,8 @@ export const metadata: Metadata = buildMetadata({
 });
 
 export default function HomePage() {
+  const coverageEntries = getHomepageCoverageEntries();
+
   const websiteStructuredData = {
     "@context": "https://schema.org",
     "@type": "WebSite",
@@ -96,20 +99,31 @@ export default function HomePage() {
       />
 
       <ul className="list-unstyled" style={{ marginTop: 24 }}>
-        {STATE_LIST.map((state) => (
-          <li key={state.slug} style={{ marginBottom: 12 }}>
+        {coverageEntries.map((entry) => (
+          <li key={entry.slug} style={{ marginBottom: 12 }}>
             <Link
-              href={`/${encodeURIComponent(state.slug)}`}
+              href={entry.href}
               prefetch={false}
               style={{ fontSize: 18, textDecoration: "underline" }}
             >
-              {state.name}
+              {entry.label}
             </Link>
-            <span className="chip">
-              {getRateTierLabel(getRateTier(state.avgRateCentsPerKwh))}
-            </span>
+            {entry.avgRateCentsPerKwh != null ? (
+              <>
+                <span className="chip">
+                  {getRateTierLabel(getRateTier(entry.avgRateCentsPerKwh))}
+                </span>
+                <span className="muted" style={{ marginLeft: 12 }}>
+                  {entry.avgRateCentsPerKwh}¢/kWh
+                </span>
+              </>
+            ) : (
+              <span className="chip">Knowledge</span>
+            )}
             <span className="muted" style={{ marginLeft: 12 }}>
-              {state.avgRateCentsPerKwh}¢/kWh
+              {entry.avgRateCentsPerKwh != null
+                ? null
+                : "State-like knowledge coverage"}
             </span>
           </li>
         ))}

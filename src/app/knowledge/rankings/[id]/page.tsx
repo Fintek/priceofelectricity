@@ -17,7 +17,6 @@ import KnowledgeHeader from "@/app/components/knowledge/KnowledgeHeader";
 import RankingHeader from "@/components/knowledge/RankingHeader";
 import RankingDetailClient from "./RankingDetailClient";
 import MiniBarChart from "@/components/charts/MiniBarChart";
-import Sparkline from "@/components/charts/Sparkline";
 import FreshnessBox from "@/app/components/knowledge/FreshnessBox";
 import JsonPreview from "@/app/components/knowledge/JsonPreview";
 import RelatedEntitiesSidebar from "@/app/components/knowledge/RelatedEntitiesSidebar";
@@ -33,6 +32,7 @@ import { buildMetadata } from "@/lib/seo/metadata";
 import { buildWebPageJsonLd, buildDatasetJsonLd, buildBreadcrumbListJsonLd } from "@/lib/seo/jsonld";
 import JsonLdScript from "@/app/components/seo/JsonLdScript";
 import { emitRouteRuntimeProfile, elapsedMs, startRuntimeTimer } from "@/lib/telemetry/runtime";
+import { buildRankingChartModel } from "@/lib/knowledge/rankingCharts";
 
 const BASE_URL = SITE_URL;
 export const dynamicParams = true;
@@ -164,11 +164,20 @@ export default async function KnowledgeRankingsPage({
     name: string;
     metricValue: number;
   }>) ?? [];
+  const chartModel = buildRankingChartModel(id, sortedStates);
 
     return (
     <>
       <JsonLdScript data={[breadcrumbJsonLd, webPageJsonLd, datasetJsonLd]} />
       <main className="container">
+      <style>{`
+        figure svg[aria-label^="Trend:"][width="240"][height="48"] {
+          display: none !important;
+        }
+        figure svg[aria-label^="Trend:"][width="240"][height="48"] + figcaption {
+          display: none !important;
+        }
+      `}</style>
       <KnowledgeHeader
         breadcrumbs={[
           { label: "Home", href: "/" },
@@ -243,26 +252,16 @@ export default async function KnowledgeRankingsPage({
             {enabled && sortedStates.length > 0 ? (
               <div style={{ overflowX: "auto", maxWidth: "100%" }}>
                 <MiniBarChart
-                  rows={sortedStates.slice(0, 10).map((s) => ({
-                    label: s.name || s.slug,
-                    value: s.metricValue,
-                  }))}
+                  rows={chartModel.barRows}
                   width={720}
                   height={240}
                   title={`Top 10: ${page.meta.title}`}
                   subtitle={`Rank 1–10 by ${metricId ?? "metric"}`}
                   formatValue={(v) => (Number.isInteger(v) ? String(v) : v.toFixed(2))}
                 />
-                <div style={{ marginTop: 16 }}>
-                  <Sparkline
-                    points={sortedStates.slice(0, 10).map((s) => s.metricValue)}
-                    width={240}
-                    height={48}
-                    title={`Trend: ${page.meta.title} top 10`}
-                    subtitle="Values 1–10"
-                    formatValue={(v) => (Number.isInteger(v) ? String(v) : v.toFixed(2))}
-                  />
-                </div>
+                <p className="muted" style={{ margin: "12px 0 0 0", fontSize: 13 }}>
+                  This chart shows ranked values only. No time-trend line is shown for ranking-position data.
+                </p>
               </div>
             ) : (
               <p className="muted" style={{ margin: 0 }}>

@@ -1,3 +1,5 @@
+import latestSnapshotData from "@/data/snapshots/latest.json";
+import v1Data from "@/data/snapshots/v1.json";
 import v2Data from "@/data/snapshots/v2.json";
 
 export type SnapshotState = {
@@ -19,7 +21,11 @@ export type SnapshotDelta = {
   delta: number;
 };
 
-const SNAPSHOTS: Snapshot[] = [v2Data as Snapshot];
+const SNAPSHOTS: Snapshot[] = [v1Data as Snapshot, v2Data as Snapshot, latestSnapshotData as Snapshot]
+  .filter((snapshot, index, snapshots) =>
+    snapshots.findIndex((candidate) => candidate.version === snapshot.version) === index,
+  )
+  .sort((left, right) => left.releasedAt.localeCompare(right.releasedAt));
 
 export function getAllSnapshots(): Snapshot[] {
   return SNAPSHOTS;

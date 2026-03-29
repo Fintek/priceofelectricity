@@ -4,6 +4,7 @@ import { useState, useMemo } from "react";
 import Link from "next/link";
 import Section from "@/components/common/Section";
 import BulletBar from "@/components/knowledge/BulletBar";
+import { getPublicStateDestination } from "@/lib/stateDestinations";
 
 type StateRow = {
   rank: number;
@@ -40,6 +41,10 @@ function StateList({
   return (
     <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
       {states.map((row) => (
+        (() => {
+          const destination = getPublicStateDestination(row.slug);
+
+          return (
         <li
           key={row.slug}
           style={{
@@ -52,7 +57,7 @@ function StateList({
           }}
         >
           <span style={{ fontWeight: 500, minWidth: 20 }}>{row.rank}.</span>
-          <Link href={`/${row.slug}`} style={{ flex: 1, minWidth: 0 }}>
+          <Link href={destination.href} style={{ flex: 1, minWidth: 0 }}>
             {row.name}
           </Link>
           {maxVal > minVal ? (
@@ -68,6 +73,8 @@ function StateList({
             <span className="muted" style={{ fontSize: 12 }}>{format(row.metricValue)}</span>
           )}
         </li>
+          );
+        })()
       ))}
     </ul>
   );
@@ -278,15 +285,79 @@ export default function RankingDetailClient({
             </thead>
             <tbody>
               {filtered.map((row) => (
-                <tr key={row.slug}>
-                  <td style={{ padding: "8px 12px", borderBottom: "1px solid #eee" }}>
-                    {row.rank}
-                  </td>
-                  <td style={{ padding: "8px 12px", borderBottom: "1px solid #eee" }}>
-                    <Link href={`/${row.slug}`}>{row.name}</Link>
-                  </td>
-                  {pageId === "price-trend" && (
-                    <>
+                (() => {
+                  const destination = getPublicStateDestination(row.slug);
+
+                  return (
+                    <tr key={row.slug}>
+                      <td style={{ padding: "8px 12px", borderBottom: "1px solid #eee" }}>
+                        {row.rank}
+                      </td>
+                      <td style={{ padding: "8px 12px", borderBottom: "1px solid #eee" }}>
+                        <Link href={destination.href}>{row.name}</Link>
+                      </td>
+                      {pageId === "price-trend" && (
+                        <>
+                          <td
+                            style={{
+                              padding: "8px 12px",
+                              borderBottom: "1px solid #eee",
+                              textAlign: "right",
+                            }}
+                          >
+                            {typeof row.startRate === "number" ? row.startRate.toFixed(2) : "—"}
+                          </td>
+                          <td
+                            style={{
+                              padding: "8px 12px",
+                              borderBottom: "1px solid #eee",
+                              textAlign: "right",
+                            }}
+                          >
+                            {typeof row.endRate === "number" ? row.endRate.toFixed(2) : "—"}
+                          </td>
+                          <td
+                            style={{
+                              padding: "8px 12px",
+                              borderBottom: "1px solid #eee",
+                              textAlign: "right",
+                            }}
+                          >
+                            {typeof row.changePercent === "number" ? `${row.changePercent.toFixed(2)}%` : "—"}
+                          </td>
+                        </>
+                      )}
+                      {pageId === "momentum-signal" && (
+                        <>
+                          <td
+                            style={{
+                              padding: "8px 12px",
+                              borderBottom: "1px solid #eee",
+                              textAlign: "left",
+                            }}
+                          >
+                            {row.signal ? row.signal.charAt(0).toUpperCase() + row.signal.slice(1) : "—"}
+                          </td>
+                          <td
+                            style={{
+                              padding: "8px 12px",
+                              borderBottom: "1px solid #eee",
+                              textAlign: "right",
+                            }}
+                          >
+                            {typeof row.shortWindowChangePercent === "number" ? `${row.shortWindowChangePercent >= 0 ? "+" : ""}${row.shortWindowChangePercent.toFixed(2)}%` : "—"}
+                          </td>
+                          <td
+                            style={{
+                              padding: "8px 12px",
+                              borderBottom: "1px solid #eee",
+                              textAlign: "right",
+                            }}
+                          >
+                            {typeof row.longWindowChangePercent === "number" ? `${row.longWindowChangePercent >= 0 ? "+" : ""}${row.longWindowChangePercent.toFixed(2)}%` : "—"}
+                          </td>
+                        </>
+                      )}
                       <td
                         style={{
                           padding: "8px 12px",
@@ -294,69 +365,11 @@ export default function RankingDetailClient({
                           textAlign: "right",
                         }}
                       >
-                        {typeof row.startRate === "number" ? row.startRate.toFixed(2) : "—"}
+                        {row.metricValue}
                       </td>
-                      <td
-                        style={{
-                          padding: "8px 12px",
-                          borderBottom: "1px solid #eee",
-                          textAlign: "right",
-                        }}
-                      >
-                        {typeof row.endRate === "number" ? row.endRate.toFixed(2) : "—"}
-                      </td>
-                      <td
-                        style={{
-                          padding: "8px 12px",
-                          borderBottom: "1px solid #eee",
-                          textAlign: "right",
-                        }}
-                      >
-                        {typeof row.changePercent === "number" ? `${row.changePercent.toFixed(2)}%` : "—"}
-                      </td>
-                    </>
-                  )}
-                  {pageId === "momentum-signal" && (
-                    <>
-                      <td
-                        style={{
-                          padding: "8px 12px",
-                          borderBottom: "1px solid #eee",
-                          textAlign: "left",
-                        }}
-                      >
-                        {row.signal ? row.signal.charAt(0).toUpperCase() + row.signal.slice(1) : "—"}
-                      </td>
-                      <td
-                        style={{
-                          padding: "8px 12px",
-                          borderBottom: "1px solid #eee",
-                          textAlign: "right",
-                        }}
-                      >
-                        {typeof row.shortWindowChangePercent === "number" ? `${row.shortWindowChangePercent >= 0 ? "+" : ""}${row.shortWindowChangePercent.toFixed(2)}%` : "—"}
-                      </td>
-                      <td
-                        style={{
-                          padding: "8px 12px",
-                          borderBottom: "1px solid #eee",
-                          textAlign: "right",
-                        }}
-                      >
-                        {typeof row.longWindowChangePercent === "number" ? `${row.longWindowChangePercent >= 0 ? "+" : ""}${row.longWindowChangePercent.toFixed(2)}%` : "—"}
-                      </td>
-                    </>
-                  )}
-                  <td
-                    style={{
-                      padding: "8px 12px",
-                      borderBottom: "1px solid #eee",
-                      textAlign: "right",
-                    }}
-                  >
-                    {row.metricValue}
-                  </td>
-                </tr>
+                    </tr>
+                  );
+                })()
               ))}
           </tbody>
         </table>
