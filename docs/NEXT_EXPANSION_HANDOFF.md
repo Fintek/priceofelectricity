@@ -4711,4 +4711,36 @@ Audit complete. Recommended next prompt: **public-surface trust cleanup batch** 
 3. Added `robots: { index: false, follow: false }` to `/readiness` metadata.
 4. Removed all 17 internal operational page entries from `src/app/sitemap.ts` (contiguous block, lines 402–503).
 5. Deleted `public/robots.txt` — `src/app/robots.ts` is the sole authoritative source.
-6. Documented payload headroom drift as a monitoring item (this section).
+6. Updated `scripts/verify-knowledge.js` to check noindex instead of sitemap presence for internal pages, and to validate `robots.ts` instead of `public/robots.txt`.
+7. Documented payload headroom drift as a monitoring item (this section).
+
+### Verification results
+
+| Command | Result |
+|---|---|
+| `npm run build` | Passed |
+| `npm run verify:vercel` | Full pass |
+| `npm run indexing:check` | **64/0** |
+| `npm run readiness:audit` | **78/0** |
+| `npm run seo:check` | **8/0** |
+| `npm run payload:audit` | Passed — standalone 69.56 MiB, server/app 34.16 MiB |
+| Spot check: noindex on internal pages | All 6 families confirmed |
+| Spot check: sitemap exclusion | All 5 families confirmed removed |
+| Spot check: robots.txt from App Router | 200, correct content |
+| Spot check: public pages (/, /knowledge/rankings/electricity-inflation-1y, /knowledge/state/texas) | All 200 |
+
+### Commit
+
+`d5d0bc2` — "Hide internal operational pages from public indexing"
+
+### Production verification
+
+Pending Vercel deployment of `d5d0bc2`. After deployment, verify:
+- `robots.txt` serves correctly from App Router source
+- One representative internal page (e.g. `/operating-playbook`) carries `noindex`
+- Sitemap no longer exposes internal/operational pages
+- Previously repaired public pages remain correct
+
+### Path decision
+
+**Trust cleanup batch fully closed.** The roadmap returns to stable hold. Payload headroom drift remains a documented monitoring item for future investigation.
