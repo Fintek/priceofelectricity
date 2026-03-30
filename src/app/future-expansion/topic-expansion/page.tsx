@@ -14,6 +14,7 @@ export const metadata: Metadata = buildMetadata({
   description:
     "How new electricity topic clusters should be added. Hub pages, supporting pages, and links into adjacent clusters.",
   canonicalPath: "/future-expansion/topic-expansion",
+  robots: { index: false, follow: false },
 });
 
 export default async function FutureExpansionTopicPage() {

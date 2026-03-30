@@ -14,6 +14,7 @@ export const metadata: Metadata = buildMetadata({
   description:
     "Build checks, knowledge verification scripts, sitemap and discovery validation, and launch checklist reviews for maintaining a structured site.",
   canonicalPath: "/operating-playbook/quality-and-verification",
+  robots: { index: false, follow: false },
 });
 
 export default async function OperatingPlaybookQualityPage() {

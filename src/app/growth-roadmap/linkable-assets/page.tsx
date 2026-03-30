@@ -14,6 +14,7 @@ export const metadata: Metadata = buildMetadata({
   description:
     "Datasets, methodology, topic hubs, comparison pages, rankings, and discovery pages that create durable value for researchers, journalists, and AI systems.",
   canonicalPath: "/growth-roadmap/linkable-assets",
+  robots: { index: false, follow: false },
 });
 
 export default async function LinkableAssetsPage() {

@@ -14,6 +14,7 @@ export const metadata: Metadata = buildMetadata({
   description:
     "Major electricity topic clusters: consumer economics, affordability, business, AI infrastructure, market structure, energy transition, and data methodology.",
   canonicalPath: "/growth-roadmap/topic-clusters",
+  robots: { index: false, follow: false },
 });
 
 export default async function TopicClustersPage() {

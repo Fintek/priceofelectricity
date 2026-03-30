@@ -14,6 +14,7 @@ export const metadata: Metadata = buildMetadata({
   description:
     "Operational documentation for maintaining and expanding the site: data updates, content expansion, and quality verification.",
   canonicalPath: "/operating-playbook",
+  robots: { index: false, follow: false },
 });
 
 export default async function OperatingPlaybookHubPage() {

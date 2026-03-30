@@ -14,6 +14,7 @@ export const metadata: Metadata = buildMetadata({
   description:
     "How the site can scale over time while preserving structure, clarity, and data integrity. Programmatic scaling, topic expansion, and data discovery principles.",
   canonicalPath: "/future-expansion",
+  robots: { index: false, follow: false },
 });
 
 export default async function FutureExpansionHubPage() {

@@ -14,6 +14,7 @@ export const metadata: Metadata = buildMetadata({
   description:
     "Types of checks that help keep a structured electricity analysis site reliable: build checks, verification, sitemap, and discovery checks.",
   canonicalPath: "/site-maintenance/quality-checks",
+  robots: { index: false, follow: false },
 });
 
 export default async function QualityChecksPage() {

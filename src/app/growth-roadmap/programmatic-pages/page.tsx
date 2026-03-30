@@ -14,6 +14,7 @@ export const metadata: Metadata = buildMetadata({
   description:
     "Types of programmatic electricity pages: state cost pages, average bill pages, cost-of-living pages, inflation pages, comparison pages, and fixed-kWh pages.",
   canonicalPath: "/growth-roadmap/programmatic-pages",
+  robots: { index: false, follow: false },
 });
 
 export default async function ProgrammaticPagesPage() {

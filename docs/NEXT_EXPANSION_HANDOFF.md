@@ -4665,3 +4665,50 @@ Commit `aa6ece2` deployed to production. Confirmed:
 ### Path decision
 
 **Cleanup batch fully closed.** The roadmap returns to stable hold.
+
+---
+
+## Prompt 101 — Full Public-Site Trust / Readiness Audit (Inventory Only)
+
+Audit-only prompt. No code changes. Identified the single highest-priority remaining trust-cleanup batch.
+
+### Audit findings
+
+1. **14 internal/operational pages indexed and in sitemap** — `/operating-playbook/**` (4), `/site-maintenance/**` (4), `/growth-roadmap/**` (4), `/future-expansion/**` (4), `/launch-checklist` (1). No `noindex`, no robots block, all emitted in `sitemap.ts` core segment.
+2. **`/readiness` publicly indexable** — no `noindex` metadata, exposes CI-style audit data.
+3. **Dual `robots.txt` sources** — `src/app/robots.ts` (authoritative, env-aware) and `public/robots.txt` (static, always permissive, redundant).
+4. **Payload headroom drift** — standalone headroom 15.44 MiB (below 17.0 MiB decision line), server/app headroom 5.85 MiB (below 6.0 MiB decision line). Hard ceilings still pass. Drift likely from framework/dependency build-profile change, not new content. No expansion was authorized. Requires investigation before any policy action.
+
+### Verification results (audit-time)
+
+| Command | Result |
+|---|---|
+| `npm run build` | Passed |
+| `npm run payload:audit` | Passed — standalone 69.56 MiB / 85.00 MiB, server/app 34.15 MiB / 40.00 MiB |
+| `npm run indexing:check` | **64/0** |
+| `npm run readiness:audit` | **78/0** |
+| `npm run seo:check` | **8/0** |
+
+### Path decision
+
+Audit complete. Recommended next prompt: **public-surface trust cleanup batch** (Prompt 102).
+
+---
+
+## Prompt 102 — Public-Surface Trust Cleanup (Internal Pages, Readiness, Robots Source Unification)
+
+### Root causes
+
+1. **Internal operational pages** (17 URLs across 5 route families) used `buildMetadata()` which did not support a `robots` option. All 17 were emitted in `sitemap.ts` lines 402–503. No `noindex` tag on any page.
+2. **`/readiness`** used manual metadata with no `robots` field. Not in sitemap but publicly routable and indexable.
+3. **`public/robots.txt`** duplicated `src/app/robots.ts` with extra explicit `Allow` lines and no environment-aware blocking. Redundant and a maintenance risk.
+4. **Payload headroom drift** — documented in Prompt 101 findings above. Not addressed in this prompt; requires separate investigation.
+
+### Changes applied
+
+1. Extended `buildMetadata()` in `src/lib/seo/metadata.ts` with an optional `robots` parameter.
+2. Added `robots: { index: false, follow: false }` to all 17 internal operational page metadata exports.
+3. Added `robots: { index: false, follow: false }` to `/readiness` metadata.
+4. Removed all 17 internal operational page entries from `src/app/sitemap.ts` (contiguous block, lines 402–503).
+5. Deleted `public/robots.txt` — `src/app/robots.ts` is the sole authoritative source.
+6. Documented payload headroom drift as a monitoring item (this section).

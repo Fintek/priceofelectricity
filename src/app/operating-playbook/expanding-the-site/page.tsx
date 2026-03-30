@@ -14,6 +14,7 @@ export const metadata: Metadata = buildMetadata({
   description:
     "How the site expands: topic hubs, programmatic state pages, comparison pages, discovery layers, and marketplace-ready educational pages.",
   canonicalPath: "/operating-playbook/expanding-the-site",
+  robots: { index: false, follow: false },
 });
 
 export default async function OperatingPlaybookExpandingPage() {

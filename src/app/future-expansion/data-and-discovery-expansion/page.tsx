@@ -14,6 +14,7 @@ export const metadata: Metadata = buildMetadata({
   description:
     "How data assets, discovery systems, and methodology should evolve as the site expands. Data layer, discovery layer, and trust principles.",
   canonicalPath: "/future-expansion/data-and-discovery-expansion",
+  robots: { index: false, follow: false },
 });
 
 export default async function FutureExpansionDataDiscoveryPage() {

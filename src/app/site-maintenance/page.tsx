@@ -14,6 +14,7 @@ export const metadata: Metadata = buildMetadata({
   description:
     "Maintenance model: data refresh, quality checks, and content expansion.",
   canonicalPath: "/site-maintenance",
+  robots: { index: false, follow: false },
 });
 
 export default async function SiteMaintenancePage() {

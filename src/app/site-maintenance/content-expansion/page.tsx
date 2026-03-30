@@ -14,6 +14,7 @@ export const metadata: Metadata = buildMetadata({
   description:
     "How the site's content model can grow while staying organized. Topic clusters, programmatic pages, and data assets fit into a consistent architecture.",
   canonicalPath: "/site-maintenance/content-expansion",
+  robots: { index: false, follow: false },
 });
 
 export default async function ContentExpansionPage() {

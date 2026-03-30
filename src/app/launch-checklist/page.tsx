@@ -10,6 +10,7 @@ export const metadata: Metadata = buildMetadata({
   description:
     "Pre-launch verification checklist: content, data, discovery, and technical readiness.",
   canonicalPath: "/launch-checklist",
+  robots: { index: false, follow: false },
 });
 
 export default function LaunchChecklistPage() {

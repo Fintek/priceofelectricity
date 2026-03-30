@@ -14,6 +14,7 @@ export const metadata: Metadata = buildMetadata({
   description:
     "How the site's data-driven pages depend on updating build-time datasets. State pages, rankings, and datasets are built from structured data.",
   canonicalPath: "/site-maintenance/data-refresh",
+  robots: { index: false, follow: false },
 });
 
 export default async function DataRefreshPage() {

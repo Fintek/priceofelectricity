@@ -39,6 +39,7 @@ export type BuildMetadataInput = {
   ogType?: "website" | "article";
   imageUrl?: string | null;
   siteName?: string | null;
+  robots?: Metadata["robots"];
 };
 
 export function buildMetadata({
@@ -48,6 +49,7 @@ export function buildMetadata({
   ogType = "website",
   imageUrl,
   siteName = SITE_NAME,
+  robots,
 }: BuildMetadataInput): Metadata {
   const desc = truncateDescription(description ?? FALLBACK_DESCRIPTION);
   const baseUrl = SITE_URL.replace(/\/+$/, "");
@@ -82,5 +84,6 @@ export function buildMetadata({
     alternates: { canonical: canonicalUrl },
     openGraph,
     twitter,
+    ...(robots ? { robots } : {}),
   };
 }

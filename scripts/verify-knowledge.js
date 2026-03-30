@@ -462,29 +462,17 @@ function main() {
   const insightsNationalPath = path.join(root, "insights", "national.json");
   ensureFileExists(insightsNationalPath, "insights/national.json");
 
-  const robotsPath = path.join(process.cwd(), "public", "robots.txt");
-  if (!fs.existsSync(robotsPath)) {
-    fail("public/robots.txt missing");
-  }
-  const robotsContent = fs.readFileSync(robotsPath, "utf8");
-  const robotsAllows = [
-    "/knowledge/index.json",
-    "/knowledge/search-index.json",
-    "/knowledge/contract.json",
-    "/data",
-  ];
-  for (const allow of robotsAllows) {
-    if (!robotsContent.includes(`Allow: ${allow}`) && !robotsContent.includes(`Allow:${allow}`)) {
-      fail(`robots.txt must Allow: ${allow}`);
-    }
-  }
-  if (/Disallow:\s*\/knowledge\/\s*$/m.test(robotsContent)) {
-    fail("robots.txt must not contain blanket Disallow: /knowledge/ (too broad)");
-  }
   const sitemapPath = path.join(process.cwd(), "src", "app", "sitemap.ts");
   ensureFileExists(sitemapPath, "sitemap.ts");
   const robotsTsPath = path.join(process.cwd(), "src", "app", "robots.ts");
   ensureFileExists(robotsTsPath, "robots.ts");
+  const robotsTsContent = fs.readFileSync(robotsTsPath, "utf8");
+  if (!robotsTsContent.includes('allow: "/"')) {
+    fail("robots.ts must contain broad allow: \"/\" rule");
+  }
+  if (robotsTsContent.includes('disallow: "/knowledge/"') || robotsTsContent.includes('disallow: "/knowledge"')) {
+    fail("robots.ts must not contain blanket disallow for /knowledge/ (too broad)");
+  }
   const sitemapSource = fs.readFileSync(sitemapPath, "utf8");
   if (!sitemapSource.includes("/data")) {
     fail("sitemap must include /data");
@@ -3162,15 +3150,13 @@ const KNOWN_STATIC_ROUTES = new Set([
   "/index",
   "/launch-checklist",
   "/growth-roadmap",
+  "/growth-roadmap/programmatic-pages",
+  "/growth-roadmap/topic-clusters",
+  "/growth-roadmap/linkable-assets",
   "/site-maintenance",
   "/site-maintenance/data-refresh",
   "/site-maintenance/quality-checks",
   "/site-maintenance/content-expansion",
-  "/electricity-shopping",
-  "/electricity-shopping/by-state",
-  "/electricity-shopping/how-electricity-shopping-works",
-  "/shop-electricity",
-  "/business-electricity-options",
   "/future-expansion",
   "/future-expansion/programmatic-scaling",
   "/future-expansion/topic-expansion",
@@ -3179,9 +3165,11 @@ const KNOWN_STATIC_ROUTES = new Set([
   "/operating-playbook/data-updates",
   "/operating-playbook/expanding-the-site",
   "/operating-playbook/quality-and-verification",
-  "/growth-roadmap/programmatic-pages",
-  "/growth-roadmap/topic-clusters",
-  "/growth-roadmap/linkable-assets",
+  "/electricity-shopping",
+  "/electricity-shopping/by-state",
+  "/electricity-shopping/how-electricity-shopping-works",
+  "/shop-electricity",
+  "/business-electricity-options",
   "/metrics",
   "/submit-urls",
   "/readiness",
@@ -3299,7 +3287,7 @@ const PRODUCTION_SUMMARY_GROUPS = {
   "Schema layer": ["Schema layer"],
   "Launch checklist page": ["Launch checklist page"],
   "Launch checklist document": ["Launch checklist document"],
-  "Launch checklist sitemap": ["Launch checklist sitemap"],
+  "Launch checklist noindex": ["Launch checklist noindex"],
   "Launch checklist search index": ["Launch checklist search index"],
   "Launch command": ["Launch command"],
   "State electricity inflation pages": ["State electricity inflation pages"],
@@ -4201,10 +4189,10 @@ function runPreLaunchVerification(root, sitemapSource, layoutSource) {
     if (!fs.existsSync(docPath)) throw new Error("FINAL_LAUNCH_CHECKLIST.md must exist");
   });
 
-  runCheck("Launch checklist sitemap", () => {
-    const sitemapPath = path.join(process.cwd(), "src", "app", "sitemap.ts");
-    const src = sitemapSource || fs.readFileSync(sitemapPath, "utf8");
-    if (!src.includes("/launch-checklist")) throw new Error("sitemap must include /launch-checklist");
+  runCheck("Launch checklist noindex", () => {
+    const pagePath = path.join(process.cwd(), "src", "app", "launch-checklist", "page.tsx");
+    const src = fs.readFileSync(pagePath, "utf8");
+    if (!src.includes("index: false")) throw new Error("launch-checklist must have noindex robots directive");
   });
 
   runCheck("Launch checklist search index", () => {
@@ -4531,12 +4519,8 @@ function runPreLaunchVerification(root, sitemapSource, layoutSource) {
     if (!fs.existsSync(programmaticPath)) throw new Error("src/app/future-expansion/programmatic-scaling/page.tsx must exist");
     if (!fs.existsSync(topicPath)) throw new Error("src/app/future-expansion/topic-expansion/page.tsx must exist");
     if (!fs.existsSync(dataDiscoveryPath)) throw new Error("src/app/future-expansion/data-and-discovery-expansion/page.tsx must exist");
-    const sitemapPath = path.join(process.cwd(), "src", "app", "sitemap.ts");
-    const sitemapSrc = sitemapSource || fs.readFileSync(sitemapPath, "utf8");
-    if (!sitemapSrc.includes("/future-expansion")) throw new Error("sitemap must include /future-expansion");
-    const searchIndexPath = path.join(root, "search-index.json");
-    const searchContent = fs.readFileSync(searchIndexPath, "utf8");
-    if (!searchContent.includes("/future-expansion")) throw new Error("search-index must include /future-expansion coverage");
+    const hubSrc = fs.readFileSync(hubPath, "utf8");
+    if (!hubSrc.includes("index: false")) throw new Error("future-expansion must have noindex robots directive");
   });
 
   runCheck("Post-launch traffic expansion framework", () => {
@@ -4548,12 +4532,8 @@ function runPreLaunchVerification(root, sitemapSource, layoutSource) {
     if (!fs.existsSync(programmaticPath)) throw new Error("src/app/growth-roadmap/programmatic-pages/page.tsx must exist");
     if (!fs.existsSync(topicClustersPath)) throw new Error("src/app/growth-roadmap/topic-clusters/page.tsx must exist");
     if (!fs.existsSync(linkablePath)) throw new Error("src/app/growth-roadmap/linkable-assets/page.tsx must exist");
-    const sitemapPath = path.join(process.cwd(), "src", "app", "sitemap.ts");
-    const sitemapSrc = sitemapSource || fs.readFileSync(sitemapPath, "utf8");
-    if (!sitemapSrc.includes("/growth-roadmap")) throw new Error("sitemap must include /growth-roadmap");
-    const searchIndexPath = path.join(root, "search-index.json");
-    const searchContent = fs.readFileSync(searchIndexPath, "utf8");
-    if (!searchContent.includes("/growth-roadmap")) throw new Error("search-index must include growth-roadmap coverage");
+    const hubSrc = fs.readFileSync(hubPath, "utf8");
+    if (!hubSrc.includes("index: false")) throw new Error("growth-roadmap must have noindex robots directive");
   });
 
   runCheck("Sitewide content architecture refinement", () => {
@@ -4564,8 +4544,6 @@ function runPreLaunchVerification(root, sitemapSource, layoutSource) {
       "site-map",
       "entity-registry",
       "discovery-graph",
-      "growth-roadmap",
-      "launch-checklist",
     ];
     for (const p of pages) {
       const pagePath = path.join(process.cwd(), "src", "app", p, "page.tsx");
@@ -4768,13 +4746,8 @@ function runPreLaunchVerification(root, sitemapSource, layoutSource) {
     if (!fs.existsSync(dataUpdatesPath)) throw new Error("src/app/operating-playbook/data-updates/page.tsx must exist");
     if (!fs.existsSync(expandingPath)) throw new Error("src/app/operating-playbook/expanding-the-site/page.tsx must exist");
     if (!fs.existsSync(qualityPath)) throw new Error("src/app/operating-playbook/quality-and-verification/page.tsx must exist");
-    const sitemapPath = path.join(process.cwd(), "src", "app", "sitemap.ts");
-    const sitemapSrc = fs.readFileSync(sitemapPath, "utf8");
-    if (!sitemapSrc.includes("/operating-playbook")) throw new Error("sitemap must include /operating-playbook");
-    const searchIndexPath = path.join(root, "search-index.json");
-    if (!fs.existsSync(searchIndexPath)) throw new Error("public/knowledge/search-index.json must exist (run knowledge:build first)");
-    const searchContent = fs.readFileSync(searchIndexPath, "utf8");
-    if (!searchContent.includes("/operating-playbook")) throw new Error("search-index must include /operating-playbook entries");
+    const hubSrc = fs.readFileSync(hubPath, "utf8");
+    if (!hubSrc.includes("index: false")) throw new Error("operating-playbook must have noindex robots directive");
   });
 
   runCheck("Final full-roadmap quality sweep", () => {
@@ -4851,16 +4824,8 @@ function runPreLaunchVerification(root, sitemapSource, layoutSource) {
     if (!fs.existsSync(dataRefreshPath)) throw new Error("src/app/site-maintenance/data-refresh/page.tsx must exist");
     if (!fs.existsSync(qualityChecksPath)) throw new Error("src/app/site-maintenance/quality-checks/page.tsx must exist");
     if (!fs.existsSync(contentExpansionPath)) throw new Error("src/app/site-maintenance/content-expansion/page.tsx must exist");
-    const sitemapPath = path.join(process.cwd(), "src", "app", "sitemap.ts");
-    const sitemapSrc = fs.readFileSync(sitemapPath, "utf8");
-    if (!sitemapSrc.includes("/site-maintenance")) throw new Error("sitemap must include /site-maintenance");
-    if (!sitemapSrc.includes("/site-maintenance/data-refresh")) throw new Error("sitemap must include /site-maintenance/data-refresh");
-    if (!sitemapSrc.includes("/site-maintenance/quality-checks")) throw new Error("sitemap must include /site-maintenance/quality-checks");
-    if (!sitemapSrc.includes("/site-maintenance/content-expansion")) throw new Error("sitemap must include /site-maintenance/content-expansion");
-    const searchIndexPath = path.join(root, "search-index.json");
-    if (!fs.existsSync(searchIndexPath)) throw new Error("public/knowledge/search-index.json must exist (run knowledge:build first)");
-    const searchContent = fs.readFileSync(searchIndexPath, "utf8");
-    if (!searchContent.includes("/site-maintenance")) throw new Error("search-index must include /site-maintenance entries");
+    const hubSrc = fs.readFileSync(hubPath, "utf8");
+    if (!hubSrc.includes("index: false")) throw new Error("site-maintenance must have noindex robots directive");
   });
 
   runCheck("Provider plan comparison foundation pages", () => {

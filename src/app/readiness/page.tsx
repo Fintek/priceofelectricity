@@ -13,6 +13,7 @@ export const metadata: Metadata = {
   title: "Production Readiness | PriceOfElectricity.com",
   description:
     "Automated production readiness audit for PriceOfElectricity.com covering availability, SEO, security, and API contract checks.",
+  robots: { index: false, follow: false },
   alternates: { canonical: `${BASE_URL}/readiness` },
   openGraph: {
     title: "Production Readiness | PriceOfElectricity.com",

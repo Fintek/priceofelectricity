@@ -14,6 +14,7 @@ export const metadata: Metadata = buildMetadata({
   description:
     "Expansion model: programmatic pages, topic clusters, and linkable assets.",
   canonicalPath: "/growth-roadmap",
+  robots: { index: false, follow: false },
 });
 
 export default async function GrowthRoadmapPage() {

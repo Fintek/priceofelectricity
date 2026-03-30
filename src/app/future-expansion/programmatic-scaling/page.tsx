@@ -14,6 +14,7 @@ export const metadata: Metadata = buildMetadata({
   description:
     "How to safely expand programmatic page families. State-based, comparison, and fixed-usage families with clear guardrails.",
   canonicalPath: "/future-expansion/programmatic-scaling",
+  robots: { index: false, follow: false },
 });
 
 export default async function FutureExpansionProgrammaticPage() {

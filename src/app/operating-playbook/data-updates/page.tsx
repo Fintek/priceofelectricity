@@ -14,6 +14,7 @@ export const metadata: Metadata = buildMetadata({
   description:
     "How electricity datasets power programmatic pages. Refreshing data, rebuilds, and derived outputs for state pages, rankings, and comparisons.",
   canonicalPath: "/operating-playbook/data-updates",
+  robots: { index: false, follow: false },
 });
 
 export default async function OperatingPlaybookDataUpdatesPage() {
