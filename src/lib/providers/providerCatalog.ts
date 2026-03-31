@@ -28,7 +28,7 @@ export const PROVIDER_CATALOG_VERSION = "2026-03-11";
 export const PROVIDER_CATALOG: ProviderCatalogEntry[] = [
   {
     providerId: "pilot-choice-marketplace-sample",
-    providerName: "Pilot Choice Marketplace (Sample)",
+    providerName: "Choice Marketplace",
     serviceStates: [
       "illinois",
       "new-jersey",
@@ -38,15 +38,15 @@ export const PROVIDER_CATALOG: ProviderCatalogEntry[] = [
     ],
     offerType: "marketplace",
     offerDescription:
-      "Pilot sample marketplace routing for electricity plan shopping in selected retail-choice states.",
+      "Compare electricity plans from multiple providers in retail-choice states.",
     coverageAreaDescription:
-      "Multi-state marketplace context focused on high-interest deregulated states in the current rollout set.",
+      "Available in select deregulated states including Texas, New York, Pennsylvania, and more.",
     planTypeSummary:
-      "Supports informational comparison pathways for fixed-rate, variable-rate, and term-based retail offers.",
+      "Compare fixed-rate, variable-rate, and term-based residential plans.",
     featureHighlights: [
-      "Multi-state marketplace routing",
-      "Plan comparison orientation",
-      "Deterministic rollout eligibility",
+      "Compare plans across providers",
+      "Fixed and variable rate options",
+      "Available in multiple states",
     ],
     signupUrl: "https://example.com/choice-marketplace",
     trackingParams: {
@@ -55,7 +55,7 @@ export const PROVIDER_CATALOG: ProviderCatalogEntry[] = [
       utm_campaign: "state-marketplace",
     },
     regulatoryNotes:
-      "Pilot sample listing for controlled rollout. Availability varies by state utility-choice rules; this is informational referral placement, not utility enrollment.",
+      "Availability varies by state. This is an informational referral, not utility enrollment.",
     enabled: true,
     allowedPageFamilies: [
       "state-electricity-pages",
@@ -67,7 +67,7 @@ export const PROVIDER_CATALOG: ProviderCatalogEntry[] = [
   },
   {
     providerId: "pilot-northeast-marketplace-sample",
-    providerName: "Pilot Northeast Marketplace (Sample)",
+    providerName: "Northeast Energy Marketplace",
     serviceStates: [
       "connecticut",
       "delaware",
@@ -78,15 +78,15 @@ export const PROVIDER_CATALOG: ProviderCatalogEntry[] = [
     ],
     offerType: "marketplace",
     offerDescription:
-      "Pilot sample regional marketplace listing focused on northeastern retail-choice and comparison-shopping pathways.",
+      "Compare electricity plans from providers in northeastern states with retail choice.",
     coverageAreaDescription:
-      "Regional northeast-focused marketplace footprint aligned with tiered rollout policy states.",
+      "Focused on northeastern states including Connecticut, Massachusetts, New York, and more.",
     planTypeSummary:
-      "Highlights retail-choice plan shopping context for common residential market structures in supported states.",
+      "Browse residential plan options across common market structures in supported states.",
     featureHighlights: [
-      "Regional marketplace specialization",
-      "Northeast coverage emphasis",
-      "Comparison-hub compatible listing",
+      "Northeast regional coverage",
+      "Multiple provider options",
+      "Residential plan comparison",
     ],
     signupUrl: "https://example.com/northeast-marketplace",
     trackingParams: {
@@ -95,7 +95,7 @@ export const PROVIDER_CATALOG: ProviderCatalogEntry[] = [
       utm_campaign: "northeast-marketplace",
     },
     regulatoryNotes:
-      "Pilot sample listing for controlled expansion. Offer availability and enrollment pathways vary by local market rules.",
+      "Offer availability varies by local market rules.",
     enabled: true,
     allowedPageFamilies: [
       "state-electricity-pages",
@@ -107,7 +107,7 @@ export const PROVIDER_CATALOG: ProviderCatalogEntry[] = [
   },
   {
     providerId: "pilot-regional-supplier-sample",
-    providerName: "Pilot Regional Supplier (Sample)",
+    providerName: "Regional Energy Supplier",
     serviceStates: [
       "illinois",
       "ohio",
@@ -115,15 +115,15 @@ export const PROVIDER_CATALOG: ProviderCatalogEntry[] = [
       "texas",
     ],
     offerType: "affiliate",
-    offerDescription: "Pilot sample supplier-style referral for selected deregulated markets.",
+    offerDescription: "Explore electricity plan options in deregulated markets.",
     coverageAreaDescription:
-      "Supplier-style referral context across selected midwest and northeast competitive electricity markets.",
+      "Available in select midwest and northeast states with competitive electricity markets.",
     planTypeSummary:
-      "Informational supplier referral context for state-scoped retail plan comparisons where customer choice exists.",
+      "Compare retail plan options in states where customers can choose their provider.",
     featureHighlights: [
-      "Supplier-style referral context",
-      "State-targeted market coverage",
-      "Commercial module compatibility",
+      "Available in competitive markets",
+      "Residential plan options",
+      "State-specific coverage",
     ],
     signupUrl: "https://example.com/retail-supplier-affiliate",
     trackingParams: {
@@ -132,7 +132,7 @@ export const PROVIDER_CATALOG: ProviderCatalogEntry[] = [
       utm_campaign: "supplier-offers",
     },
     regulatoryNotes:
-      "Pilot sample referral. Provider offers are not endorsements and should be verified against local utility and commission guidance.",
+      "Provider offers are not endorsements. Verify details with your local utility.",
     enabled: true,
     allowedPageFamilies: [
       "state-electricity-pages",
@@ -145,7 +145,7 @@ export const PROVIDER_CATALOG: ProviderCatalogEntry[] = [
   },
   {
     providerId: "pilot-multi-state-supplier-sample",
-    providerName: "Pilot Multi-State Supplier (Sample)",
+    providerName: "Multi-State Energy Provider",
     serviceStates: [
       "illinois",
       "new-jersey",
@@ -156,15 +156,15 @@ export const PROVIDER_CATALOG: ProviderCatalogEntry[] = [
     ],
     offerType: "supplier",
     offerDescription:
-      "Pilot sample supplier listing for deterministic state-level provider comparison coverage.",
+      "Compare electricity plans across multiple states with retail choice.",
     coverageAreaDescription:
-      "Broad multi-state supplier context designed for deterministic comparison coverage in active rollout states.",
+      "Available in Illinois, New Jersey, New York, Ohio, Pennsylvania, and Texas.",
     planTypeSummary:
-      "Supports informational supplier comparisons for common fixed/variable plan categories in eligible states.",
+      "Fixed-rate and variable-rate residential plan options in eligible states.",
     featureHighlights: [
-      "Multi-state supplier context",
-      "Deterministic ranking compatibility",
-      "Comparison section friendly",
+      "Available in 6+ states",
+      "Fixed and variable rate plans",
+      "Residential coverage",
     ],
     signupUrl: "https://example.com/multi-state-supplier",
     trackingParams: {
@@ -173,7 +173,7 @@ export const PROVIDER_CATALOG: ProviderCatalogEntry[] = [
       utm_campaign: "supplier-expansion",
     },
     regulatoryNotes:
-      "Pilot sample supplier listing for informational marketplace discovery. Plan terms and enrollment eligibility vary by state and utility territory.",
+      "Plan terms and enrollment eligibility vary by state and utility territory.",
     enabled: true,
     allowedPageFamilies: [
       "state-electricity-pages",
@@ -185,18 +185,18 @@ export const PROVIDER_CATALOG: ProviderCatalogEntry[] = [
   },
   {
     providerId: "pilot-efficiency-affiliate-sample",
-    providerName: "Pilot Efficiency Affiliate (Sample)",
+    providerName: "Home Energy Savings",
     serviceStates: ["ohio", "pennsylvania", "texas"],
     offerType: "affiliate",
-    offerDescription: "Pilot sample affiliate pathway for energy efficiency and bill-savings products.",
+    offerDescription: "Explore energy efficiency products and bill-savings options.",
     coverageAreaDescription:
-      "State-scoped affiliate context concentrated on efficiency and savings pathways in active pilot states.",
+      "Available in Ohio, Pennsylvania, and Texas.",
     planTypeSummary:
-      "Emphasizes informational savings pathways rather than direct utility tariffs or transactional quoting.",
+      "Energy efficiency and savings-focused options for residential customers.",
     featureHighlights: [
-      "Efficiency-oriented pathway",
-      "Bill-savings educational context",
-      "Supplemental provider differentiation",
+      "Energy efficiency products",
+      "Bill reduction options",
+      "Home energy savings",
     ],
     signupUrl: "https://example.com/energy-savings",
     trackingParams: {
@@ -205,7 +205,7 @@ export const PROVIDER_CATALOG: ProviderCatalogEntry[] = [
       utm_campaign: "savings-products",
     },
     regulatoryNotes:
-      "Pilot sample affiliate listing. Products and projected savings are scenario-based and may not reflect individual utility tariff outcomes.",
+      "Projected savings are estimates and may not reflect individual utility tariff outcomes.",
     enabled: true,
     allowedPageFamilies: [
       "state-electricity-pages",

@@ -371,7 +371,7 @@
     {
       "id": "provider-pilot-choice-marketplace-sample",
       "type": "topic",
-      "title": "Pilot Choice Marketplace (Sample)",
+      "title": "Choice Marketplace",
       "url": "/electricity-providers",
       "keywords": [
         "provider onboarding",
@@ -382,7 +382,7 @@
     {
       "id": "provider-pilot-northeast-marketplace-sample",
       "type": "topic",
-      "title": "Pilot Northeast Marketplace (Sample)",
+      "title": "Northeast Energy Marketplace",
       "url": "/electricity-providers",
       "keywords": [
         "provider onboarding",
@@ -393,7 +393,7 @@
     {
       "id": "provider-pilot-regional-supplier-sample",
       "type": "topic",
-      "title": "Pilot Regional Supplier (Sample)",
+      "title": "Regional Energy Supplier",
       "url": "/electricity-providers",
       "keywords": [
         "provider onboarding",
@@ -404,7 +404,7 @@
     {
       "id": "provider-pilot-multi-state-supplier-sample",
       "type": "topic",
-      "title": "Pilot Multi-State Supplier (Sample)",
+      "title": "Multi-State Energy Provider",
       "url": "/electricity-providers",
       "keywords": [
         "provider onboarding",
@@ -415,7 +415,7 @@
     {
       "id": "provider-pilot-efficiency-affiliate-sample",
       "type": "topic",
-      "title": "Pilot Efficiency Affiliate (Sample)",
+      "title": "Home Energy Savings",
       "url": "/electricity-providers",
       "keywords": [
         "provider onboarding",

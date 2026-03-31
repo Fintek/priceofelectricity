@@ -132,17 +132,17 @@ function buildPlanComparisonBlock(context: MonetizationContext): ResolvedMonetiz
       ? `Compare electricity options in ${stateName}`
       : "Compare electricity options by state",
     description: supportsRetailPlanChoice
-      ? `If you're shopping in ${stateName}, compare retail electricity plans and provider options without leaving the site's research flow.`
+      ? `Compare retail electricity plans and provider options available in ${stateName}.`
       : isStateSpecific
-        ? `Use the site's comparison and offers pages to explore savings options, plan types, and partner-supported opportunities for ${stateName}.`
-        : "Use the site's comparison and offers pages to explore plans, providers, and savings opportunities by state.",
+        ? `Explore savings options, plan types, and provider offers for ${stateName}.`
+        : "Explore plans, providers, and savings opportunities by state.",
     primary: {
       href: supportsRetailPlanChoice && state ? `/${state}/plans` : state ? `/offers/${state}` : "/compare-electricity-plans/by-state",
-      label: supportsRetailPlanChoice && state ? `View plans in ${stateName}` : state ? `View offers in ${stateName}` : "Browse plan comparison by state",
+      label: supportsRetailPlanChoice && state ? `View plans in ${stateName}` : state ? `View offers in ${stateName}` : "Compare plans by state",
     },
     secondary: {
       href: state ? `/electricity-cost-calculator/${state}` : "/offers",
-      label: state ? `${stateName} calculator` : "Browse offers & savings",
+      label: state ? `${stateName} calculator` : "Browse offers",
     },
   };
 }
@@ -155,10 +155,10 @@ function buildCallToActionBlock(context: MonetizationContext): ResolvedMonetizat
       kind: "cta",
       title: "Need commercial electricity support?",
       description:
-        "Use the site's contact flow to request partnership or marketplace-style help for larger commercial or infrastructure energy use cases.",
+        "Get help with larger commercial or infrastructure energy needs.",
       primary: {
         href: "/contact",
-        label: "Contact the team",
+        label: "Contact us",
       },
       secondary: {
         href: "/offers",
@@ -169,13 +169,13 @@ function buildCallToActionBlock(context: MonetizationContext): ResolvedMonetizat
 
   return {
     kind: "cta",
-    title: context.state ? `Savings paths for ${stateName}` : "Next monetization-ready paths",
+    title: context.state ? `Ways to save in ${stateName}` : "Ways to lower your bill",
     description: context.state
-      ? `Move from research into action with state-specific offers, plan shopping pathways, and bill-reduction tools for ${stateName}.`
-      : "Move from informational pages into plan comparison, offers, and savings-oriented tools without disrupting the research experience.",
+      ? `Explore offers, plan options, and bill-reduction tools for ${stateName}.`
+      : "Explore plan comparisons, offers, and savings tools.",
     primary: {
       href: context.state ? `/offers/${context.state}` : "/offers",
-      label: context.state ? `Browse ${stateName} offers` : "Browse offers & savings",
+      label: context.state ? `Browse ${stateName} offers` : "Browse offers",
     },
     secondary: {
       href: context.state ? `/${context.state}/plans` : "/compare-electricity-plans/by-state",
@@ -190,10 +190,10 @@ function buildLeadCaptureBlock(context: MonetizationContext): ResolvedMonetizati
 
   return {
     kind: "lead-capture",
-    title: context.state ? `Track ${stateName} electricity changes` : "Stay updated on electricity cost changes",
+    title: context.state ? `Track ${stateName} electricity changes` : "Stay updated on electricity costs",
     description: context.state
-      ? `If you're researching ${usageLabel} or state pricing in ${stateName}, join the newsletter or set alerts to stay on top of rate changes and savings opportunities.`
-      : "Join the newsletter or use alerts to stay on top of electricity cost changes, comparisons, and future plan-shopping opportunities.",
+      ? `Get notified about ${usageLabel} rate changes and savings opportunities in ${stateName}.`
+      : "Get notified about electricity cost changes and new savings opportunities.",
     primary: {
       href: "/newsletter",
       label: "Join the newsletter",
@@ -221,15 +221,15 @@ function buildPartnerBlock(
     return {
       kind,
       title: context.state ? `Partner offers for ${getStateDisplayName(context)}` : "Featured partner offers",
-      intro: "These partner cards are optional monetization modules. They are configuration-driven and only render when an eligible partner is enabled for the page context.",
+      intro: "These partner offers may help you compare plans or find savings opportunities.",
       partners: filtered.slice(0, 3),
     };
   }
 
   return {
     kind,
-    title: "Partner referrals",
-    intro: "Optional referral links related to this page's savings or energy-use context.",
+    title: "Related offers",
+    intro: "Referral links related to savings and energy options for your area.",
     partners: filtered.slice(0, 4),
   };
 }

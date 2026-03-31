@@ -4,6 +4,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { SITE_NAME, SITE_URL, LAUNCH_MODE } from "@/lib/site";
 import { reportWebVitals as reportWebVitalsImpl } from "@/lib/performance";
+import MobileNav from "@/app/components/MobileNav";
 import SearchBox from "@/app/components/SearchBox";
 import CommandPalette from "@/components/common/CommandPalette";
 import PreferredStateBanner from "@/app/components/PreferredStateBanner";
@@ -110,26 +111,21 @@ export default function RootLayout({
         )}
 
         <header className="site-header">
-          <nav
-            className="header-nav container"
-            style={{ display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: 12 }}
-          >
+          <nav className="header-nav container" aria-label="Main navigation">
             <Link href="/" className="site-title-link">
               {SITE_NAME}
             </Link>
-            <div style={{ display: "flex", alignItems: "center", gap: 16, flexWrap: "wrap" }}>
-              <Link href="/knowledge" style={{ fontSize: 14 }}>Knowledge</Link>
-              <Link href="/electricity-trends" style={{ fontSize: 14 }}>Trends</Link>
-              <Link href="/electricity-insights" style={{ fontSize: 14 }}>Insights</Link>
-              <Link href="/datasets" style={{ fontSize: 14 }}>Data</Link>
-              <Link href="/methodology" style={{ fontSize: 14 }}>Methodology</Link>
-              <Link href="/site-map" style={{ fontSize: 14 }}>Site Map</Link>
+
+            <div className="header-desktop-nav">
+              <Link href="/compare">Compare</Link>
+              <Link href="/electricity-cost-calculator">Calculator</Link>
+              <Link href="/datasets">Data</Link>
+              <Link href="/methodology">Methodology</Link>
               <SearchBox />
               <CommandPalette />
-              <Link href="/about" className="chip" style={{ marginLeft: 0 }}>
-                Trust & Methodology
-              </Link>
             </div>
+
+            <MobileNav />
           </nav>
         </header>
 
@@ -142,40 +138,45 @@ export default function RootLayout({
         <div id="main" style={{ flex: "1 0 auto", minHeight: "calc(100vh - 140px)" }}>
           {children}
         </div>
+
         <footer className="site-footer">
-          <div className="container footer-links">
-            <Link href="/about">About</Link> <span>|</span>{" "}
-            <Link href="/compare">Compare</Link> <span>|</span>{" "}
-            <Link href="/electricity-cost-calculator">Calculator</Link> <span>|</span>{" "}
-            <Link href="/contact">Contact</Link> <span>|</span>{" "}
-            <Link href="/newsletter">Newsletter</Link> <span>|</span>{" "}
-            <Link href="/data-policy">Data Policy</Link> <span>|</span>{" "}
-            <Link href="/performance">Performance</Link> <span>|</span>{" "}
-            <Link href="/licensing">Licensing</Link> <span>|</span>{" "}
-            <Link href="/api-docs">API</Link> <span>|</span>{" "}
-            <Link href="/status">Status</Link> <span>|</span>{" "}
-            <Link href="/datasets">Data</Link> <span>|</span>{" "}
-            <Link href="/press">Press</Link> <span>|</span>{" "}
-            <Link href="/research">Research</Link> <span>|</span>{" "}
-            <Link href="/methodology">Methodology</Link> <span>|</span>{" "}
-            <Link href="/offers">Offers</Link> <span>|</span>{" "}
-            <Link href="/disclosures">Disclosures</Link> <span>|</span>{" "}
-            <Link href="/regulatory">Regulatory</Link> <span>|</span>{" "}
-            <Link href="/regulatory/queue">Regulatory Queue</Link> <span>|</span>{" "}
-            <Link href="/alerts">Alerts</Link> <span>|</span>{" "}
-            <Link href="/knowledge">Knowledge</Link> <span>|</span>{" "}
-            <Link href="/electricity-trends">Electricity Trends</Link> <span>|</span>{" "}
-            <Link href="/electricity-insights">Electricity Insights</Link> <span>|</span>{" "}
-            <Link href="/site-map">Site Map</Link> <span>|</span>{" "}
-            <Link href="/knowledge.json" prefetch={false}>Knowledge JSON</Link> <span>|</span>{" "}
-            <Link href="/registry.json" prefetch={false}>Registry</Link> <span>|</span>{" "}
-            <Link href="/data-history">Data History</Link> <span>|</span>{" "}
-            <Link href="/v/ai-energy">AI &amp; Energy</Link> <span>|</span>{" "}
-            <Link href="/drivers">Price Drivers</Link> <span>|</span>{" "}
-            <Link href="/citations">Citations</Link> <span>|</span>{" "}
-            <Link href="/press-kit">Press Kit</Link> <span>|</span>{" "}
-            <Link href="/attribution">Attribution</Link> <span>|</span>{" "}
-            <Link href="/index">Site Index</Link>
+          <div className="container footer-grid">
+            <div className="footer-group">
+              <p className="footer-group-title">Explore</p>
+              <Link href="/compare">Compare States</Link>
+              <Link href="/electricity-cost-calculator">Calculator</Link>
+              <Link href="/electricity-bill-estimator">Bill Estimator</Link>
+              <Link href="/electricity-cost-comparison">Comparisons</Link>
+              <Link href="/electricity-trends">Trends</Link>
+              <Link href="/electricity-insights">Insights</Link>
+            </div>
+            <div className="footer-group">
+              <p className="footer-group-title">Data</p>
+              <Link href="/datasets">Datasets</Link>
+              <Link href="/methodology">Methodology</Link>
+              <Link href="/knowledge">Knowledge</Link>
+              <Link href="/research">Research</Link>
+              <Link href="/drivers">Price Drivers</Link>
+              <Link href="/data-history">Data History</Link>
+            </div>
+            <div className="footer-group">
+              <p className="footer-group-title">About</p>
+              <Link href="/about">About &amp; Trust</Link>
+              <Link href="/contact">Contact</Link>
+              <Link href="/newsletter">Newsletter</Link>
+              <Link href="/press">Press</Link>
+              <Link href="/citations">Citations</Link>
+              <Link href="/site-map">Site Map</Link>
+            </div>
+            <div className="footer-group">
+              <p className="footer-group-title">Legal</p>
+              <Link href="/data-policy">Data Policy</Link>
+              <Link href="/disclosures">Disclosures</Link>
+              <Link href="/licensing">Licensing</Link>
+              <Link href="/regulatory">Regulatory</Link>
+              <Link href="/attribution">Attribution</Link>
+              <Link href="/offers">Offers</Link>
+            </div>
           </div>
           {process.env.NODE_ENV !== "production" && (
             <div className="container muted" style={{ textAlign: "center", fontSize: 11, paddingTop: 6, opacity: 0.7 }}>

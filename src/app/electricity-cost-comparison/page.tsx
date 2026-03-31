@@ -5,7 +5,6 @@ import {
   loadElectricityComparisonPairs,
 } from "@/lib/knowledge/loadKnowledgePage";
 import { getRelease } from "@/lib/knowledge/fetch";
-import { getBillEstimatorProfileRolloutSummary } from "@/lib/longtail/billEstimator";
 import { buildMetadata } from "@/lib/seo/metadata";
 import { buildBreadcrumbListJsonLd, buildWebPageJsonLd } from "@/lib/seo/jsonld";
 import JsonLdScript from "@/app/components/seo/JsonLdScript";
@@ -40,7 +39,6 @@ const ANCHOR_ORDER = ["california", "texas", "florida", "new-york", "pennsylvani
 );
 
 export default async function ElectricityCostComparisonIndexPage() {
-  const estimatorRollout = getBillEstimatorProfileRolloutSummary();
   const [pairsData, manifest] = await Promise.all([
     loadComparePairs(),
     loadElectricityComparisonPairs(),
@@ -98,82 +96,39 @@ export default async function ElectricityCostComparisonIndexPage() {
         <nav aria-label="Breadcrumb" className="muted" style={{ marginBottom: 16, fontSize: 14 }}>
           <Link href="/">Home</Link>
           {" · "}
-          <Link href="/data">Data Hub</Link>
-          {" · "}
           <span aria-current="page">Electricity Cost Comparison</span>
         </nav>
 
-        <h1 style={{ fontSize: 32, marginBottom: 12 }}>Electricity Cost Comparison by State</h1>
+        <h1 style={{ fontSize: 32, marginBottom: 12 }}>Compare Electricity Costs by State</h1>
 
-        {/* A) Intro */}
-        <section style={{ marginBottom: 32 }}>
-          <p style={{ marginTop: 0, marginBottom: 16, maxWidth: "65ch", fontSize: 16, lineHeight: 1.6 }}>
-            Comparing electricity prices between states helps you understand cost differences when relocating,
-            planning a move, or evaluating where to live. Electricity rates vary widely across the U.S.—some
-            states pay nearly three times more per kilowatt-hour than others.
-          </p>
-          <p style={{ marginTop: 0, marginBottom: 16, maxWidth: "65ch", fontSize: 16, lineHeight: 1.6 }}>
-            Comparisons use each state&apos;s average residential rate and a typical monthly usage of 900 kWh.
-            The difference is shown in dollars and as a percentage. Rates come from EIA data.
-          </p>
-          <p className="muted" style={{ margin: "0 0 24px 0", maxWidth: "65ch", fontSize: 14 }}>
-            All figures are build-generated and deterministic.
-          </p>
-          <p className="muted" style={{ margin: "0 0 8px 0", maxWidth: "65ch", fontSize: 14 }}>
-            Authority scope: this index is the canonical owner for state-pair comparison intent and routes into
-            state cost, benchmark bill, estimator, and appliance canonical clusters.
-          </p>
-          <p className="muted" style={{ margin: "0 0 8px 0", maxWidth: "65ch", fontSize: 14 }}>
-            Methodology scope: pair pages use the same deterministic 900 kWh baseline and state-rate inputs so every
-            comparison remains directly comparable across the full index.
-          </p>
-          <p className="muted" style={{ margin: "0 0 8px 0", maxWidth: "65ch", fontSize: 14 }}>
-            Estimator boundary: comparison routes link into estimator state owners and expose profile routes only when
-            allowlisted ({estimatorRollout.activeKeyCount} active profile keys across{" "}
-            {estimatorRollout.activeStateCount} states).
-          </p>
-        </section>
+        <p style={{ marginTop: 0, marginBottom: 16, maxWidth: "65ch", lineHeight: 1.6 }}>
+          See how electricity prices differ between U.S. states. Each comparison uses average
+          residential rates and a standard 900 kWh monthly usage, showing the difference in
+          dollars and percentage.
+        </p>
+        <p className="muted" style={{ marginTop: 0, marginBottom: 24, fontSize: 13 }}>
+          Rates from EIA data · <Link href="/methodology">Methodology</Link>
+        </p>
 
-        {/* B) Featured Comparisons */}
+        {/* ── FEATURED COMPARISONS ── */}
         {featuredPairs.length > 0 && (
-          <section style={{ marginBottom: 32 }}>
-            <h2 style={{ fontSize: 20, marginBottom: 12 }}>Featured Comparisons</h2>
-            <div
-              style={{
-                display: "grid",
-                gridTemplateColumns: "repeat(auto-fill, minmax(200px, 1fr))",
-                gap: 12,
-              }}
-            >
+          <section style={{ marginBottom: 28 }}>
+            <h2 style={{ fontSize: 20, marginBottom: 12 }}>Popular comparisons</h2>
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(200px, 1fr))", gap: 12 }}>
               {featuredPairs.map((pair) => (
-                <Link
-                  key={pair}
-                  href={`/electricity-cost-comparison/${pair}`}
-                  style={{
-                    display: "block",
-                    padding: 16,
-                    border: "1px solid var(--color-border, #e5e7eb)",
-                    borderRadius: 8,
-                    backgroundColor: "var(--color-surface-alt, #f9fafb)",
-                    textDecoration: "none",
-                    color: "inherit",
-                  }}
-                >
-                  {pairToDisplayLabel(pair)}
+                <Link key={pair} href={`/electricity-cost-comparison/${pair}`} className="stat-card" style={{ textDecoration: "none", color: "inherit", textAlign: "center" }}>
+                  <div style={{ fontWeight: 600 }}>{pairToDisplayLabel(pair)}</div>
                 </Link>
               ))}
             </div>
           </section>
         )}
 
-        {/* C) Compare by Popular States */}
+        {/* ── COMPARE BY STATE ── */}
         {byAnchor.size > 0 && (
-          <section style={{ marginBottom: 32 }}>
-            <h2 style={{ fontSize: 20, marginBottom: 12 }}>Compare by Popular States</h2>
-            <p className="muted" style={{ margin: "0 0 16px 0", maxWidth: "65ch", fontSize: 14 }}>
-              Select a high-interest state to see how it compares to others.
-            </p>
-            <div style={{ display: "flex", flexDirection: "column", gap: 24 }}>
+          <section style={{ marginBottom: 28 }}>
+            <h2 style={{ fontSize: 20, marginBottom: 12 }}>Compare by state</h2>
+            <div style={{ display: "flex", flexDirection: "column", gap: 20 }}>
               {ANCHOR_ORDER.filter((a) => byAnchor.has(a.slug)).map((anchor) => {
                 const list = byAnchor.get(anchor.slug) ?? [];
                 if (list.length === 0) return null;
@@ -182,29 +137,10 @@ export default async function ElectricityCostComparisonIndexPage() {
                     <h3 style={{ fontSize: 16, marginBottom: 8, fontWeight: 600 }}>
                       {anchor.name} vs other states
                     </h3>
-                    <div
-                      style={{
-                        display: "grid",
-                        gridTemplateColumns: "repeat(auto-fill, minmax(160px, 1fr))",
-                        gap: 8,
-                      }}
-                    >
+                    <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(160px, 1fr))", gap: 8 }}>
                       {list.slice(0, 12).map(({ pair, otherSlug }) => (
-                        <Link
-                          key={pair}
-                          href={`/electricity-cost-comparison/${pair}`}
-                          style={{
-                            display: "block",
-                            padding: 10,
-                            border: "1px solid var(--color-border, #e5e7eb)",
-                            borderRadius: 6,
-                            backgroundColor: "var(--color-surface-alt, #f9fafb)",
-                            textDecoration: "none",
-                            color: "inherit",
-                            fontSize: 14,
-                          }}
-                        >
-                          {anchor.name} vs {slugToDisplayName(otherSlug)}
+                        <Link key={pair} href={`/electricity-cost-comparison/${pair}`} className="stat-card" style={{ textDecoration: "none", color: "inherit", fontSize: 14, padding: 10 }}>
+                          vs {slugToDisplayName(otherSlug)}
                         </Link>
                       ))}
                       {list.length > 12 && (
@@ -220,58 +156,40 @@ export default async function ElectricityCostComparisonIndexPage() {
           </section>
         )}
 
-        {/* D) Related Pages */}
-        <section style={{ marginBottom: 32 }}>
-          <h2 style={{ fontSize: 20, marginBottom: 12 }}>Related Pages</h2>
-          <ul style={{ margin: 0, paddingLeft: 20, lineHeight: 1.8 }}>
-            <li>
-              <Link href="/energy-comparison">Energy comparison hub</Link>
-              {" — "}
-              Discovery layer across state, usage, appliance, and bill comparison pathways
-            </li>
-            <li>
-              <Link href="/energy-comparison/states">State comparison discovery slice</Link>
-              {" — "}
-              Curated links into canonical pair pages
-            </li>
-            <li>
-              <Link href="/electricity-cost">Electricity cost by state</Link>
-              {" — "}
-              Average electricity price per kWh and estimated costs
-            </li>
-            <li>
-              <Link href="/average-electricity-bill">Average Electricity Bill</Link>
-              {" — "}
-              Monthly and annual bill estimates
-            </li>
-            <li>
-              <Link href="/electricity-affordability">Electricity Affordability</Link>
-              {" — "}
-              Cost burden and affordability by state
-            </li>
-            <li>
-              <Link href="/electricity-providers">Electricity providers by state</Link>
-              {" — "}
-              Provider context and market structure
-            </li>
-            <li>
-              <Link href="/electricity-cost-of-living">Electricity Cost of Living</Link>
-              {" — "}
-              How electricity fits into cost of living
-            </li>
-            <li>
-              <Link href="/moving-to-electricity-cost">Electricity Costs When Moving</Link>
-              {" — "}
-              Cost differences when relocating
-            </li>
-          </ul>
+        {/* ── RELATED ── */}
+        <section style={{ marginBottom: 28 }}>
+          <h2 style={{ fontSize: 20, marginBottom: 12 }}>Related tools &amp; data</h2>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))", gap: 12, fontSize: 14 }}>
+            <div>
+              <p style={{ margin: "0 0 6px", fontWeight: 600 }}>Cost data</p>
+              <ul style={{ margin: 0, paddingLeft: 18, lineHeight: 2 }}>
+                <li><Link href="/electricity-cost">Electricity cost by state</Link></li>
+                <li><Link href="/average-electricity-bill">Average electricity bills</Link></li>
+                <li><Link href="/electricity-affordability">Affordability rankings</Link></li>
+              </ul>
+            </div>
+            <div>
+              <p style={{ margin: "0 0 6px", fontWeight: 600 }}>Tools</p>
+              <ul style={{ margin: 0, paddingLeft: 18, lineHeight: 2 }}>
+                <li><Link href="/energy-comparison">Energy comparison hub</Link></li>
+                <li><Link href="/energy-comparison/states">State comparison index</Link></li>
+                <li><Link href="/electricity-bill-estimator">Bill estimator</Link></li>
+              </ul>
+            </div>
+            <div>
+              <p style={{ margin: "0 0 6px", fontWeight: 600 }}>Context</p>
+              <ul style={{ margin: 0, paddingLeft: 18, lineHeight: 2 }}>
+                <li><Link href="/electricity-providers">Providers by state</Link></li>
+                <li><Link href="/electricity-cost-of-living">Electricity &amp; cost of living</Link></li>
+                <li><Link href="/moving-to-electricity-cost">Costs when moving</Link></li>
+              </ul>
+            </div>
+          </div>
         </section>
 
         <CommercialPlacement
           pageFamily="energy-comparison-hub-pages"
-          context={{
-            pageType: "hub-comparisons",
-          }}
+          context={{ pageType: "hub-comparisons" }}
         />
 
         <Disclaimers disclaimerRefs={["general-site"]} />

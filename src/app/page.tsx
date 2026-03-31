@@ -15,7 +15,7 @@ export const revalidate = 2592000;
 export const metadata: Metadata = buildMetadata({
   title: "Average Electricity Prices by State (¢/kWh) | PriceOfElectricity.com",
   description:
-    "Data-driven electricity analysis: state prices, rankings, comparisons, and datasets. Methodology and downloadable data published for verification.",
+    "Compare average residential electricity prices by state, estimate monthly bills, and track rate changes across the United States.",
   canonicalPath: "/",
 });
 
@@ -42,55 +42,39 @@ export default function HomePage() {
           __html: JSON.stringify(websiteStructuredData),
         }}
       />
+
+      {/* ── HERO ── */}
       <h1>Average Electricity Prices by State</h1>
-      <p className="muted" style={{ marginTop: 0, marginBottom: 8 }}>
-        {UPDATE_CADENCE_TEXT} {"•"} Last reviewed {LAST_REVIEWED} {"•"}{" "}
-        <Link href="/methodology">Methodology</Link>
+      <p style={{ marginTop: 0, marginBottom: 16, maxWidth: "60ch", lineHeight: 1.6 }}>
+        Compare residential electricity rates across all 50 states, estimate your monthly bill, and see how your state ranks.
       </p>
-      <section style={{ marginBottom: 24, padding: "16px 20px", border: "1px solid var(--color-border, #e5e7eb)", borderRadius: 8, backgroundColor: "var(--color-surface-alt, #f9fafb)" }}>
-        <h2 style={{ fontSize: 16, fontWeight: 600, margin: "0 0 12px 0" }}>Explore</h2>
-        <p className="muted" style={{ margin: "0 0 12px 0", fontSize: 14 }}>
-          <Link href="/electricity-topics">Explore electricity topics</Link>
-          {" · "}
-          <Link href="/electricity-cost">Electricity cost by state</Link>
-          {" · "}
-          <Link href="/electricity-cost-comparison">Compare electricity costs</Link>
-          {" · "}
-          <Link href="/electricity-data">Electricity data and datasets</Link>
-          {" · "}
-          <Link href="/electricity-affordability">Electricity affordability</Link>
-          {" · "}
-          <Link href="/methodology">Methodology</Link>
-          {" · "}
-          <Link href="/electricity-inflation">Inflation and volatility</Link>
-        </p>
-        <p style={{ margin: 0, fontSize: 14 }}>
-          <Link href="/electricity-trends">Electricity trends</Link>
-          {" · "}
-          <Link href="/knowledge">Knowledge Hub</Link>
-          {" · "}
-          <Link href="/compare">Compare states</Link>
-          {" · "}
-          <Link href="/electricity-cost-calculator">Calculator</Link>
-          {" · "}
-          <Link href="/about">About</Link>
-        </p>
-      </section>
-      <p className="intro muted">
-        A data-driven electricity analysis site. Compare average electricity price per kWh by state and estimate your monthly bill. Covers state prices, rankings, comparisons, and datasets. Select a state below to see prices (¢/kWh), cost estimates, and how your state compares. Explore methodology and downloadable data for verification.
+      <p className="muted" style={{ marginTop: 0, marginBottom: 20, fontSize: 13 }}>
+        {UPDATE_CADENCE_TEXT} · Last reviewed {LAST_REVIEWED} ·{" "}
+        <Link href="/methodology">Methodology</Link> ·{" "}
+        <Link href="/datasets">Data</Link>
       </p>
 
-      <AboutThisSite
-        title="About this site"
-        description="A data-driven electricity analysis site covering state prices, rankings, comparisons, and datasets. Methodology and downloadable data are published for verification."
-        links={[
-          { href: "/methodology", label: "Methodology" },
-          { href: "/electricity-data", label: "Electricity data" },
-          { href: "/datasets", label: "Datasets" },
-          { href: "/entity-registry", label: "Entity registry" },
-          { href: "/discovery-graph", label: "Discovery graph" },
-        ]}
-      />
+      {/* ── PRIMARY PATHWAYS ── */}
+      <section style={{ marginBottom: 28 }}>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: 12 }}>
+          <Link href="/compare" className="stat-card" style={{ textDecoration: "none", color: "inherit", textAlign: "center" }}>
+            <div style={{ fontSize: 20, fontWeight: 700, marginBottom: 4 }}>Compare States</div>
+            <div className="stat-card-label">Side-by-side rate comparison</div>
+          </Link>
+          <Link href="/electricity-cost-calculator" className="stat-card" style={{ textDecoration: "none", color: "inherit", textAlign: "center" }}>
+            <div style={{ fontSize: 20, fontWeight: 700, marginBottom: 4 }}>Bill Calculator</div>
+            <div className="stat-card-label">Estimate your monthly cost</div>
+          </Link>
+          <Link href="/electricity-bill-estimator" className="stat-card" style={{ textDecoration: "none", color: "inherit", textAlign: "center" }}>
+            <div style={{ fontSize: 20, fontWeight: 700, marginBottom: 4 }}>Bill Estimator</div>
+            <div className="stat-card-label">Household-specific estimates</div>
+          </Link>
+          <Link href="/electricity-cost" className="stat-card" style={{ textDecoration: "none", color: "inherit", textAlign: "center" }}>
+            <div style={{ fontSize: 20, fontWeight: 700, marginBottom: 4 }}>Cost by State</div>
+            <div className="stat-card-label">Detailed state cost data</div>
+          </Link>
+        </div>
+      </section>
 
       <HomepagePersonalization
         statesMap={Object.fromEntries(
@@ -98,25 +82,73 @@ export default function HomePage() {
         )}
       />
 
-      <ul className="list-unstyled" style={{ marginTop: 24 }}>
-        {coverageEntries.map((entry) => (
-          <li key={entry.slug} style={{ marginBottom: 12 }}>
+      {/* ── STATE LIST ── */}
+      <section>
+        <h2 style={{ fontSize: 20, marginBottom: 12 }}>Select your state</h2>
+        <div className="homepage-state-grid">
+          {coverageEntries.map((entry) => (
             <Link
+              key={entry.slug}
               href={entry.href}
               prefetch={false}
-              style={{ fontSize: 18, textDecoration: "underline" }}
+              className="homepage-state-item"
             >
-              {entry.label}
+              <span className="homepage-state-name">{entry.label}</span>
+              <span className="homepage-state-rate">
+                {entry.avgRateCentsPerKwh}¢
+                <span className="chip" style={{ marginLeft: 6 }}>
+                  {getRateTierLabel(getRateTier(entry.avgRateCentsPerKwh))}
+                </span>
+              </span>
             </Link>
-            <span className="chip">
-              {getRateTierLabel(getRateTier(entry.avgRateCentsPerKwh))}
-            </span>
-            <span className="muted" style={{ marginLeft: 12 }}>
-              {entry.avgRateCentsPerKwh}¢/kWh
-            </span>
-          </li>
-        ))}
-      </ul>
+          ))}
+        </div>
+      </section>
+
+      {/* ── EXPLORE MORE ── */}
+      <section style={{ marginTop: 28 }}>
+        <h2 style={{ fontSize: 20, marginBottom: 12 }}>Explore more</h2>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))", gap: 12, fontSize: 14 }}>
+          <div>
+            <p style={{ margin: "0 0 6px", fontWeight: 600 }}>Analysis</p>
+            <ul style={{ margin: 0, paddingLeft: 18, lineHeight: 2 }}>
+              <li><Link href="/electricity-trends">Trends</Link></li>
+              <li><Link href="/electricity-insights">Insights</Link></li>
+              <li><Link href="/electricity-affordability">Affordability</Link></li>
+              <li><Link href="/electricity-inflation">Inflation &amp; volatility</Link></li>
+            </ul>
+          </div>
+          <div>
+            <p style={{ margin: "0 0 6px", fontWeight: 600 }}>Data</p>
+            <ul style={{ margin: 0, paddingLeft: 18, lineHeight: 2 }}>
+              <li><Link href="/datasets">Datasets</Link></li>
+              <li><Link href="/methodology">Methodology</Link></li>
+              <li><Link href="/knowledge">Knowledge</Link></li>
+              <li><Link href="/research">Research</Link></li>
+            </ul>
+          </div>
+          <div>
+            <p style={{ margin: "0 0 6px", fontWeight: 600 }}>Tools</p>
+            <ul style={{ margin: 0, paddingLeft: 18, lineHeight: 2 }}>
+              <li><Link href="/electricity-cost-comparison">Cost comparisons</Link></li>
+              <li><Link href="/energy-comparison">Energy comparison</Link></li>
+              <li><Link href="/electricity-topics">Topics</Link></li>
+              <li><Link href="/about">About &amp; trust</Link></li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <AboutThisSite
+        title="About PriceOfElectricity.com"
+        description="Independent electricity price data covering all 50 states. Methodology and downloadable datasets are published for verification."
+        links={[
+          { href: "/methodology", label: "Methodology" },
+          { href: "/datasets", label: "Datasets" },
+          { href: "/electricity-data", label: "Data" },
+          { href: "/about", label: "About" },
+        ]}
+      />
     </main>
   );
 }

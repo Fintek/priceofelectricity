@@ -24,6 +24,9 @@
 .DS_Store
 *.pem
 
+# MCP (may contain GITHUB_PERSONAL_ACCESS_TOKEN)
+.cursor/mcp.json
+
 # debug
 npm-debug.log*
 yarn-debug.log*

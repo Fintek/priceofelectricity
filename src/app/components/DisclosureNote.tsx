@@ -13,7 +13,7 @@ export default function DisclosureNote({
       : "Disclosure: This page may include referral links and summary estimates.";
 
   return (
-    <p className="muted" style={{ fontSize: 13, marginTop: 10, marginBottom: 10 }}>
+    <p className="muted" style={{ fontSize: "inherit", marginTop: 8, marginBottom: 4 }}>
       {text}{" "}
       <Link href="/disclosures">Read our disclosures</Link>.
     </p>

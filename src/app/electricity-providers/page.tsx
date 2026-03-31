@@ -17,7 +17,6 @@ import {
   getProviderDiscoveryStatesFromCatalog,
 } from "@/lib/providers/providerDiscovery";
 import { getEnabledProviderCatalogEntries } from "@/lib/providers/providerCatalog";
-import { PROVIDER_ONBOARDING_PILOT } from "@/lib/providers/providerPilot";
 import { buildCommercialPathwayItemListJsonLd } from "@/lib/seo/jsonld";
 
 export const dynamic = "force-static";
@@ -32,6 +31,19 @@ export const metadata: Metadata = buildMetadata({
 
 function slugToDisplayName(slug: string): string {
   return slug.replace(/-/g, " ").replace(/\b\w/g, (c) => c.toUpperCase());
+}
+
+function formatProviderType(offerType: string): string {
+  switch (offerType) {
+    case "marketplace":
+      return "Plan marketplace";
+    case "supplier":
+      return "Retail supplier";
+    case "affiliate":
+      return "Savings offer";
+    default:
+      return "Provider option";
+  }
 }
 
 export default async function ElectricityProvidersIndexPage() {
@@ -128,34 +140,35 @@ export default async function ElectricityProvidersIndexPage() {
         </section>
 
         <ProviderHighlightSection
-          title="Featured provider integrations"
-          intro="The marketplace/provider layer supports plan comparison services, state-level listings, sponsored placements, and adjacent energy services. Featured records appear here when provider integrations are enabled."
+          title="Example provider options"
+          intro="These examples show the types of provider marketplaces and energy services consumers may see when comparing electricity options. Availability, plan details, and pricing vary by state."
           providers={featuredProviders}
-          emptyMessage="No provider integrations are enabled yet. The structured provider dataset and display framework are in place for future marketplace rollouts."
+          emptyMessage="No provider examples are available to show right now."
         />
 
         <ProviderComparisonTable
-          title="Provider comparison framework"
+          title="Compare provider features"
           rows={comparisonRows}
         />
 
         <section style={{ marginBottom: 32 }}>
-          <h2 style={{ fontSize: 20, marginBottom: 12 }}>Provider comparison clarity</h2>
+          <h2 style={{ fontSize: 20, marginBottom: 12 }}>How to read provider comparisons</h2>
           <p style={{ marginTop: 0, marginBottom: 12, maxWidth: "70ch", lineHeight: 1.6 }}>
-            Provider comparisons are informational and scenario-based. They summarize configured provider context,
-            coverage, and placement eligibility rather than quoting live utility tariffs or binding plan offers.
+            These summaries are for research and planning. They highlight service areas, plan types, and common offer
+            details without quoting live utility tariffs or binding plan offers.
           </p>
           <ul style={{ margin: 0, paddingLeft: 20, lineHeight: 1.8 }}>
-            <li>Coverage context is state-scoped and rollout-governed.</li>
-            <li>Plan type notes are comparative guidance, not transactional quoting.</li>
-            <li>Ranking is deterministic and policy-constrained for consistency.</li>
+            <li>Availability varies by state and local market rules.</li>
+            <li>Plan type notes are general guidance, not live quotes.</li>
+            <li>Listings are organized consistently to make side-by-side review easier.</li>
           </ul>
         </section>
 
         <section style={{ marginBottom: 32 }}>
-          <h2 style={{ fontSize: 20, marginBottom: 12 }}>Provider differentiation signals</h2>
+          <h2 style={{ fontSize: 20, marginBottom: 12 }}>What to compare</h2>
           <p style={{ marginTop: 0, marginBottom: 12, maxWidth: "70ch", lineHeight: 1.6 }}>
-            Differentiation is represented by stable informational attributes to support research-ready comparison.
+            These provider summaries highlight service areas, common plan types, and a few key features so you can
+            scan differences quickly.
           </p>
           <div
             style={{
@@ -192,55 +205,35 @@ export default async function ElectricityProvidersIndexPage() {
         </section>
 
         <section style={{ marginBottom: 32 }}>
-          <h2 style={{ fontSize: 20, marginBottom: 12 }}>Provider onboarding registry coverage</h2>
+          <h2 style={{ fontSize: 20, marginBottom: 12 }}>Current provider listings</h2>
           <p style={{ marginTop: 0, marginBottom: 12, maxWidth: "70ch", lineHeight: 1.6 }}>
-            The onboarding registry is deterministic and supports multi-provider state expansion. Entries stay
-            rollout-controlled even when configured in the catalog.
+            These are the provider records currently shown on this page. They may include plan marketplaces, retail
+            suppliers, or savings-focused services depending on state availability.
           </p>
           <p className="muted" style={{ marginTop: 0, marginBottom: 8, fontSize: 14 }}>
-            Enabled provider registry entries: {enabledCatalogEntries.length}
+            Provider listings shown here: {enabledCatalogEntries.length}
           </p>
           <ul style={{ margin: 0, paddingLeft: 20, lineHeight: 1.8 }}>
             {enabledCatalogEntries.slice(0, 8).map((entry) => (
               <li key={entry.providerId}>
-                {entry.providerName} ({entry.offerType})
+                {entry.providerName} ({formatProviderType(entry.offerType)})
               </li>
             ))}
           </ul>
         </section>
 
         <section style={{ marginBottom: 32 }}>
-          <h2 style={{ fontSize: 20, marginBottom: 12 }}>Marketplace discovery pathways</h2>
+          <h2 style={{ fontSize: 20, marginBottom: 12 }}>Related tools &amp; data</h2>
           <ul style={{ margin: 0, paddingLeft: 20, lineHeight: 1.8 }}>
-            <li><Link href="/electricity-cost">Electricity cost authority cluster</Link></li>
+            <li><Link href="/electricity-cost">Electricity cost by state</Link></li>
             <li><Link href="/energy-comparison">Energy comparison hub</Link></li>
-            <li><Link href="/electricity-hubs">Electricity hubs discovery index</Link></li>
-            <li><Link href="/electricity-cost-comparison">State comparison authority cluster</Link></li>
-          </ul>
-          <p className="muted" style={{ marginTop: 12, marginBottom: 0, fontSize: 13 }}>
-            Active provider rollout states in pilot scope: {PROVIDER_ONBOARDING_PILOT.stateScopedFamilies["state-electricity-pages"]?.length ?? 0}
-          </p>
-        </section>
-
-        <section style={{ marginBottom: 32 }}>
-          <h2 style={{ fontSize: 20, marginBottom: 12 }}>Commercial pathway visibility</h2>
-          <p style={{ marginTop: 0, marginBottom: 12, maxWidth: "70ch", lineHeight: 1.6 }}>
-            These pathways connect informational provider research to non-transactional next-step discovery surfaces.
-          </p>
-          <ul style={{ margin: 0, paddingLeft: 20, lineHeight: 1.8 }}>
-            <li><Link href="/offers">Offers and savings hub</Link></li>
-            <li><Link href="/compare-electricity-plans/by-state">Compare electricity plans by state</Link></li>
+            <li><Link href="/electricity-hubs">Electricity hubs</Link></li>
+            <li><Link href="/electricity-cost-comparison">State cost comparisons</Link></li>
+            <li><Link href="/offers">Offers and savings</Link></li>
+            <li><Link href="/compare-electricity-plans/by-state">Compare plans by state</Link></li>
             <li><Link href="/electricity-shopping/by-state">Electricity shopping by state</Link></li>
-            <li><Link href="/energy-comparison">Energy comparison discovery hub</Link></li>
           </ul>
         </section>
-
-        <CommercialPlacement
-          pageFamily="provider-marketplace-pages"
-          context={{
-            pageType: "hub-index",
-          }}
-        />
 
         {/* WHY PROVIDER STRUCTURE MATTERS */}
         <section style={{ marginBottom: 32 }}>
@@ -259,8 +252,7 @@ export default async function ElectricityProvidersIndexPage() {
         <section style={{ marginBottom: 32 }}>
           <h2 style={{ fontSize: 20, marginBottom: 12 }}>Explore by State</h2>
           <p style={{ margin: "0 0 16px 0", maxWidth: "65ch", fontSize: 14 }}>
-            Select a state to see electricity provider context and market structure. Each page includes
-            state electricity cost context and what users should check when comparing providers.
+            Select a state to see provider options, market structure, and related electricity cost context.
           </p>
           <div
             style={{
@@ -284,7 +276,7 @@ export default async function ElectricityProvidersIndexPage() {
                   fontSize: 14,
                 }}
               >
-                {e.title ?? slugToDisplayName(e.slug)}
+                {slugToDisplayName(e.slug)}
               </Link>
             ))}
           </div>
@@ -306,6 +298,13 @@ export default async function ElectricityProvidersIndexPage() {
             <li><Link href="/electricity-data">Electricity data</Link></li>
           </ul>
         </section>
+
+        <CommercialPlacement
+          pageFamily="provider-marketplace-pages"
+          context={{
+            pageType: "hub-index",
+          }}
+        />
 
         <Disclaimers disclaimerRefs={["general-site"]} />
         <StatusFooter release={await getRelease()} />

@@ -15,7 +15,6 @@ import {
   getEnergyComparisonUsageStates,
   getEnergyComparisonUsageTiers,
 } from "@/lib/longtail/energyComparisonHub";
-import { getBillEstimatorProfileRolloutSummary } from "@/lib/longtail/billEstimator";
 import { buildMetadata } from "@/lib/seo/metadata";
 import {
   buildBreadcrumbListJsonLd,
@@ -35,7 +34,7 @@ export const revalidate = 86400;
 export const metadata: Metadata = buildMetadata({
   title: "Energy Comparison Hub: State, Usage, Appliance & Bill Paths | PriceOfElectricity.com",
   description:
-    "Compare electricity pathways across state-vs-state prices, usage tiers, appliance operating costs, city context, and bill-estimator routes using curated links to canonical pages.",
+    "Compare electricity costs across states, usage levels, appliances, and cities. Find side-by-side rate comparisons, usage-based cost estimates, and appliance running costs.",
   canonicalPath: "/energy-comparison",
 });
 
@@ -44,7 +43,6 @@ function toTitle(slug: string): string {
 }
 
 export default async function EnergyComparisonHubPage() {
-  const estimatorRollout = getBillEstimatorProfileRolloutSummary();
   const [pairs] = await Promise.all([getEnergyComparisonPairs(18)]);
   const focusStates = getEnergyComparisonStateFocus();
   const usageTiers = getEnergyComparisonUsageTiers();
@@ -131,159 +129,143 @@ export default async function EnergyComparisonHubPage() {
         </nav>
 
         <h1 style={{ fontSize: 32, marginBottom: 12 }}>Energy Comparison Hub</h1>
-        <p style={{ marginTop: 0, marginBottom: 24, maxWidth: "75ch", lineHeight: 1.7 }}>
-          This hub is a curated comparison index that links into existing canonical systems. It does not create a new
-          comparison dataset; it organizes entry points for state comparisons, usage-tier checks, appliance cost
-          pathways, and city electricity context.
-        </p>
-        <p className="muted" style={{ marginTop: -12, marginBottom: 24, maxWidth: "75ch" }}>
-          Discovery boundary: canonical ownership remains with destination comparison, estimator, usage, appliance,
-          and state/city cost families.
-        </p>
-        <p className="muted" style={{ marginTop: -12, marginBottom: 24, maxWidth: "75ch" }}>
-          Estimator pilot boundary: profile scenarios remain limited to an explicit allowlist (
-          {estimatorRollout.activeKeyCount} active keys across {estimatorRollout.activeStateCount} states).
+        <p style={{ marginTop: 0, marginBottom: 20, maxWidth: "65ch", lineHeight: 1.7 }}>
+          Compare electricity costs across states, usage levels, appliances, and cities.
+          Choose a comparison type below to find the data that matters to you.
         </p>
 
+        {/* ── COMPARISON PATHWAYS ── */}
         <section style={{ marginBottom: 28 }}>
-          <h2 style={{ fontSize: 22, marginBottom: 10 }}>Choose a comparison pathway by intent</h2>
-          <ul style={{ margin: 0, paddingLeft: 20, lineHeight: 1.8 }}>
-            <li>
-              <a href="#state-comparisons">State vs state prices</a> {" — "}
-              Canonical pair pages and state comparison discovery
-            </li>
-            <li>
-              <a href="#usage-comparisons">Fixed-kWh usage comparisons</a> {" — "}
-              Tiered usage intent across key states
-            </li>
-            <li>
-              <a href="#appliance-comparisons">Appliance operating costs</a> {" — "}
-              Appliance and pilot appliance-city pathways
-            </li>
-            <li>
-              <a href="#city-context-comparisons">City electricity context</a> {" — "}
-              Rollout-enabled city authority routes
-            </li>
-            <li>
-              <a href="#bill-estimator-pathways">Bill estimation and benchmark routes</a> {" — "}
-              Estimator and average-bill intent clusters
-            </li>
-          </ul>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: 12 }}>
+            <a href="#state-comparisons" className="stat-card" style={{ textDecoration: "none", color: "inherit", textAlign: "center" }}>
+              <div style={{ fontSize: 18, fontWeight: 700, marginBottom: 4 }}>State vs State</div>
+              <div className="stat-card-label">Side-by-side rate comparisons</div>
+            </a>
+            <a href="#usage-comparisons" className="stat-card" style={{ textDecoration: "none", color: "inherit", textAlign: "center" }}>
+              <div style={{ fontSize: 18, fontWeight: 700, marginBottom: 4 }}>By Usage Level</div>
+              <div className="stat-card-label">Cost at specific kWh amounts</div>
+            </a>
+            <a href="#appliance-comparisons" className="stat-card" style={{ textDecoration: "none", color: "inherit", textAlign: "center" }}>
+              <div style={{ fontSize: 18, fontWeight: 700, marginBottom: 4 }}>Appliance Costs</div>
+              <div className="stat-card-label">Running cost by appliance</div>
+            </a>
+            <a href="#city-comparisons" className="stat-card" style={{ textDecoration: "none", color: "inherit", textAlign: "center" }}>
+              <div style={{ fontSize: 18, fontWeight: 700, marginBottom: 4 }}>City Costs</div>
+              <div className="stat-card-label">Electricity prices by city</div>
+            </a>
+          </div>
         </section>
 
-        <section style={{ marginBottom: 28 }}>
-          <h2 id="state-comparisons" style={{ fontSize: 22, marginBottom: 10 }}>State electricity comparisons</h2>
-          <p style={{ marginTop: 0, lineHeight: 1.7 }}>
-            Canonical ownership remains in the existing state pair family at{" "}
-            <Link href="/electricity-cost-comparison">/electricity-cost-comparison</Link>.
+        {/* ── STATE COMPARISONS ── */}
+        <section id="state-comparisons" style={{ marginBottom: 28 }}>
+          <h2 style={{ fontSize: 20, marginBottom: 10 }}>State electricity comparisons</h2>
+          <p style={{ marginTop: 0, marginBottom: 12, maxWidth: "65ch", lineHeight: 1.6 }}>
+            Compare average residential electricity rates between any two states.
           </p>
-          <ul style={{ margin: 0, paddingLeft: 20, lineHeight: 1.8 }}>
-            <li><Link href="/energy-comparison/states">Browse curated state comparison routes</Link></li>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(200px, 1fr))", gap: 10, marginBottom: 12 }}>
             {pairs.slice(0, 6).map((item) => (
-              <li key={item.pair}>
-                <Link href={`/electricity-cost-comparison/${item.pair}`}>
-                  {toTitle(item.stateA)} vs {toTitle(item.stateB)}
-                </Link>
-              </li>
+              <Link key={item.pair} href={`/electricity-cost-comparison/${item.pair}`} className="stat-card" style={{ textDecoration: "none", color: "inherit", textAlign: "center" }}>
+                <div style={{ fontWeight: 600 }}>{toTitle(item.stateA)} vs {toTitle(item.stateB)}</div>
+              </Link>
             ))}
-          </ul>
+          </div>
+          <p className="muted" style={{ marginTop: 0, fontSize: 13 }}>
+            <Link href="/energy-comparison/states">Browse all state comparisons</Link>
+            {" · "}
+            <Link href="/electricity-cost-comparison">Full comparison index</Link>
+          </p>
         </section>
 
-        <section style={{ marginBottom: 28 }}>
-          <h2 id="usage-comparisons" style={{ fontSize: 22, marginBottom: 10 }}>Usage tier comparisons</h2>
-          <p style={{ marginTop: 0, lineHeight: 1.7 }}>
-            Compare fixed-kWh cost scenarios using canonical usage intent pages.
+        {/* ── USAGE COMPARISONS ── */}
+        <section id="usage-comparisons" style={{ marginBottom: 28 }}>
+          <h2 style={{ fontSize: 20, marginBottom: 10 }}>Cost by usage level</h2>
+          <p style={{ marginTop: 0, marginBottom: 12, maxWidth: "65ch", lineHeight: 1.6 }}>
+            See what a specific monthly usage costs in different states.
           </p>
-          <ul style={{ margin: 0, paddingLeft: 20, lineHeight: 1.8 }}>
-            <li><Link href="/energy-comparison/usage">Open usage comparison slice</Link></li>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(180px, 1fr))", gap: 10, marginBottom: 12 }}>
             {usageTiers.slice(0, 3).map((tier) =>
               usageStates.slice(0, 2).map((state) => (
-                <li key={`${tier}-${state.slug}`}>
-                  <Link href={`/electricity-usage-cost/${tier}/${state.slug}`}>
-                    {tier.toLocaleString()} kWh in {state.name}
-                  </Link>
-                </li>
+                <Link key={`${tier}-${state.slug}`} href={`/electricity-usage-cost/${tier}/${state.slug}`} className="stat-card" style={{ textDecoration: "none", color: "inherit", textAlign: "center" }}>
+                  <div style={{ fontWeight: 600 }}>{tier.toLocaleString()} kWh</div>
+                  <div className="stat-card-label">{state.name}</div>
+                </Link>
               )),
             )}
-          </ul>
+          </div>
+          <p className="muted" style={{ marginTop: 0, fontSize: 13 }}>
+            <Link href="/energy-comparison/usage">Browse all usage comparisons</Link>
+          </p>
         </section>
 
-        <section style={{ marginBottom: 28 }}>
-          <h2 id="appliance-comparisons" style={{ fontSize: 22, marginBottom: 10 }}>Appliance operating cost comparisons</h2>
-          <p style={{ marginTop: 0, lineHeight: 1.7 }}>
-            Appliance cost intent remains canonical at <code>/cost-to-run/[appliance]/[state]</code>. This hub links to
-            high-signal appliance/state entries and pilot appliance-city comparisons where enabled.
+        {/* ── APPLIANCE COMPARISONS ── */}
+        <section id="appliance-comparisons" style={{ marginBottom: 28 }}>
+          <h2 style={{ fontSize: 20, marginBottom: 10 }}>Appliance running costs</h2>
+          <p style={{ marginTop: 0, marginBottom: 12, maxWidth: "65ch", lineHeight: 1.6 }}>
+            Find out how much it costs to run common household appliances in your state.
           </p>
-          <ul style={{ margin: 0, paddingLeft: 20, lineHeight: 1.8 }}>
-            <li><Link href="/energy-comparison/appliances">Open appliance comparison slice</Link></li>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(180px, 1fr))", gap: 10, marginBottom: 12 }}>
             {applianceSlugs.slice(0, 4).map((slug) => (
-              <li key={slug}>
-                <Link href={`/cost-to-run/${slug}/${focusStates[0]?.slug ?? "california"}`}>
-                  {toTitle(slug)} in {focusStates[0]?.name ?? "California"}
-                </Link>
-              </li>
+              <Link key={slug} href={`/cost-to-run/${slug}/${focusStates[0]?.slug ?? "california"}`} className="stat-card" style={{ textDecoration: "none", color: "inherit", textAlign: "center" }}>
+                <div style={{ fontWeight: 600 }}>{toTitle(slug)}</div>
+                <div className="stat-card-label">in {focusStates[0]?.name ?? "California"}</div>
+              </Link>
             ))}
-            {applianceCityPilotPages.map((page) => (
-              <li key={`${page.applianceSlug}-${page.stateSlug}-${page.citySlug}`}>
-                <Link href={`/cost-to-run/${page.applianceSlug}/${page.stateSlug}/${page.citySlug}`}>
-                  Pilot: {toTitle(page.applianceSlug)} in {toTitle(page.citySlug)}, {toTitle(page.stateSlug)}
-                </Link>
-              </li>
-            ))}
-          </ul>
+          </div>
+          {applianceCityPilotPages.length > 0 && (
+            <ul style={{ margin: "0 0 8px", paddingLeft: 20, lineHeight: 1.8, fontSize: 14 }}>
+              {applianceCityPilotPages.map((page) => (
+                <li key={`${page.applianceSlug}-${page.stateSlug}-${page.citySlug}`}>
+                  <Link href={`/cost-to-run/${page.applianceSlug}/${page.stateSlug}/${page.citySlug}`}>
+                    {toTitle(page.applianceSlug)} in {toTitle(page.citySlug)}, {toTitle(page.stateSlug)}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          )}
+          <p className="muted" style={{ marginTop: 0, fontSize: 13 }}>
+            <Link href="/energy-comparison/appliances">Browse all appliance comparisons</Link>
+          </p>
         </section>
 
-        <section style={{ marginBottom: 28 }}>
-          <h2 id="city-context-comparisons" style={{ fontSize: 22, marginBottom: 10 }}>City electricity context comparisons</h2>
-          <p style={{ marginTop: 0, lineHeight: 1.7 }}>
-            City authority/context intent remains canonical at <code>/electricity-cost/[state]/[city]</code>.
-          </p>
-          <ul style={{ margin: 0, paddingLeft: 20, lineHeight: 1.8 }}>
+        {/* ── CITY COMPARISONS ── */}
+        <section id="city-comparisons" style={{ marginBottom: 28 }}>
+          <h2 style={{ fontSize: 20, marginBottom: 10 }}>City electricity costs</h2>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(200px, 1fr))", gap: 10, marginBottom: 12 }}>
             {cityPages.map((city) => (
-              <li key={`${city.stateSlug}-${city.slug}`}>
-                <Link href={`/electricity-cost/${city.stateSlug}/${city.slug}`}>
-                  Electricity cost in {city.name}, {toTitle(city.stateSlug)}
-                </Link>
-              </li>
+              <Link key={`${city.stateSlug}-${city.slug}`} href={`/electricity-cost/${city.stateSlug}/${city.slug}`} className="stat-card" style={{ textDecoration: "none", color: "inherit", textAlign: "center" }}>
+                <div style={{ fontWeight: 600 }}>{city.name}</div>
+                <div className="stat-card-label">{toTitle(city.stateSlug)}</div>
+              </Link>
             ))}
-          </ul>
+          </div>
         </section>
 
+        {/* ── BILL ESTIMATORS ── */}
         <section style={{ marginBottom: 28 }}>
-          <h2 id="bill-estimator-pathways" style={{ fontSize: 22, marginBottom: 10 }}>Bill estimator and benchmark pathways</h2>
-          <p style={{ marginTop: 0, lineHeight: 1.7 }}>
-            Use estimator and benchmark bill pages to connect comparison discovery with household-intent cost context.
-          </p>
-          <ul style={{ margin: 0, paddingLeft: 20, lineHeight: 1.8 }}>
+          <h2 style={{ fontSize: 20, marginBottom: 10 }}>Bill estimators &amp; benchmarks</h2>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(200px, 1fr))", gap: 10, marginBottom: 12 }}>
             {focusStates.slice(0, 4).map((state) => (
-              <li key={`estimator-${state.slug}`}>
-                <Link href={`/electricity-bill-estimator/${state.slug}`}>
-                  {state.name} bill estimator scenarios
-                </Link>
-                {" · "}
-                <Link href={`/average-electricity-bill/${state.slug}`}>
-                  {state.name} average bill benchmark
-                </Link>
-              </li>
+              <div key={`estimator-${state.slug}`} className="stat-card">
+                <div style={{ fontWeight: 600, marginBottom: 6 }}>{state.name}</div>
+                <div style={{ fontSize: 13 }}>
+                  <Link href={`/electricity-bill-estimator/${state.slug}`}>Bill estimator</Link>
+                  {" · "}
+                  <Link href={`/average-electricity-bill/${state.slug}`}>Average bill</Link>
+                </div>
+              </div>
             ))}
-            <li>
-              <Link href="/electricity-hubs">Electricity hubs discovery index</Link>
-            </li>
-          </ul>
+          </div>
         </section>
 
+        {/* ── RELATED ── */}
         <section style={{ marginBottom: 28 }}>
-          <h2 style={{ fontSize: 22, marginBottom: 10 }}>Authority cluster map</h2>
-          <p style={{ marginTop: 0, lineHeight: 1.7 }}>
-            Use these cluster entry pages to move from comparison intent into state authority, benchmark bill context,
-            and calculator/scenario routes without changing canonical ownership.
-          </p>
+          <h2 style={{ fontSize: 20, marginBottom: 10 }}>Related pages</h2>
           <ul style={{ margin: 0, paddingLeft: 20, lineHeight: 1.8 }}>
-            <li><Link href="/electricity-cost">State electricity cost authority cluster</Link></li>
-            <li><Link href="/average-electricity-bill">Average electricity bill benchmark cluster</Link></li>
-            <li><Link href="/electricity-bill-estimator">Electricity bill estimator cluster</Link></li>
-            <li><Link href="/electricity-cost-calculator">Electricity cost calculator cluster</Link></li>
-            <li><Link href="/electricity-hubs">Electricity hubs discovery cluster</Link></li>
+            <li><Link href="/electricity-cost">Electricity cost by state</Link></li>
+            <li><Link href="/average-electricity-bill">Average electricity bills</Link></li>
+            <li><Link href="/electricity-bill-estimator">Bill estimator hub</Link></li>
+            <li><Link href="/electricity-cost-calculator">Electricity cost calculator</Link></li>
+            <li><Link href="/electricity-hubs">Electricity hubs</Link></li>
           </ul>
         </section>
 
@@ -291,9 +273,7 @@ export default async function EnergyComparisonHubPage() {
 
         <CommercialPlacement
           pageFamily="energy-comparison-hub-pages"
-          context={{
-            pageType: "hub-comparisons",
-          }}
+          context={{ pageType: "hub-comparisons" }}
         />
 
         <Disclaimers disclaimerRefs={["general-site"]} />

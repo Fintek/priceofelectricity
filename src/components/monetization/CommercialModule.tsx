@@ -1,3 +1,4 @@
+import Link from "next/link";
 import {
   AffiliateReferralLinks,
   CallToActionBlock,
@@ -13,39 +14,11 @@ import type {
 } from "@/lib/monetization/placementConfig";
 import { resolveMonetizationBlocks } from "@/lib/monetization/resolve";
 import { resolveProviderMarketplaceOffers } from "@/lib/providers/providerResolver";
-import { PROVIDER_DISCOVERY_SECTION_INTRO } from "@/lib/providers/providerDiscovery";
-
-const PROVIDER_COMPARISON_HEADING = "Provider marketplace comparison";
-const MARKETPLACE_PATHWAY_HEADING = "Marketplace pathways";
-const COMMERCIAL_DISCOVERY_NOTE =
-  PROVIDER_DISCOVERY_SECTION_INTRO;
-
-function getOfferTypeLabel(type: "supplier" | "marketplace" | "affiliate"): string {
-  if (type === "marketplace") return "Marketplace";
-  if (type === "supplier") return "Supplier";
-  return "Affiliate";
-}
 
 function getOfferCtaLabel(type: "supplier" | "marketplace" | "affiliate"): string {
-  if (type === "marketplace") return "View marketplace options";
-  if (type === "supplier") return "View supplier details";
-  return "View partner offer";
-}
-
-function buildOfferMixSummary(offers: Array<{ offerType: "supplier" | "marketplace" | "affiliate" }>): string {
-  const counts = {
-    marketplace: 0,
-    supplier: 0,
-    affiliate: 0,
-  };
-  for (const offer of offers) {
-    counts[offer.offerType] += 1;
-  }
-  const parts: string[] = [];
-  if (counts.marketplace > 0) parts.push(`${counts.marketplace} marketplace`);
-  if (counts.supplier > 0) parts.push(`${counts.supplier} supplier`);
-  if (counts.affiliate > 0) parts.push(`${counts.affiliate} affiliate`);
-  return parts.join(" · ");
+  if (type === "marketplace") return "Compare plans";
+  if (type === "supplier") return "View provider details";
+  return "See offer";
 }
 
 function renderProviderComparison(
@@ -61,24 +34,17 @@ function renderProviderComparison(
   if (offers.length === 0) return null;
 
   const hasAffiliate = offers.some((offer) => offer.hasAffiliateDisclosure);
+  const heading = context.stateName
+    ? `Compare providers in ${context.stateName}`
+    : "Compare electricity providers";
 
   return (
-    <section style={{ marginBottom: 32 }}>
-      <h2 style={{ fontSize: 20, marginBottom: 12 }}>
-        {context.stateName
-          ? `${PROVIDER_COMPARISON_HEADING} for ${context.stateName}`
-          : PROVIDER_COMPARISON_HEADING}
-      </h2>
-      <p style={{ marginTop: 0, marginBottom: 12, maxWidth: "70ch", lineHeight: 1.6 }}>
-        These provider offers are commercial placements shown in approved contexts. They do not change the
-        informational/canonical purpose of this page and do not imply utility affiliation or official endorsement.
-      </p>
-      <p className="muted" style={{ marginTop: 0, marginBottom: 12, fontSize: 13, lineHeight: 1.5 }}>
-        {COMMERCIAL_DISCOVERY_NOTE}
-      </p>
-      <p className="muted" style={{ marginTop: 0, marginBottom: 12, fontSize: 13 }}>
-        Comparison summary: {buildOfferMixSummary(offers)}. Ranked deterministically by rollout eligibility,
-        provider priority, and offer-type diversity.
+    <section className="commercial-module">
+      <span className="commercial-module-label">Partner offers</span>
+      <h2>{heading}</h2>
+      <p style={{ marginTop: 0, marginBottom: 16, maxWidth: "65ch", lineHeight: 1.6, fontSize: 14 }}>
+        These offers are from partner providers shown alongside our independent data.
+        They do not imply utility affiliation or endorsement.
       </p>
       <div
         style={{
@@ -94,37 +60,26 @@ function renderProviderComparison(
               padding: 16,
               border: "1px solid var(--color-border, #e5e7eb)",
               borderRadius: 8,
-              backgroundColor: "var(--color-surface-alt, #f9fafb)",
+              backgroundColor: "#fff",
             }}
           >
-            <p className="muted" style={{ marginTop: 0, marginBottom: 6, fontSize: 12 }}>
-              {getOfferTypeLabel(offer.offerType)}
-            </p>
-            <h3 style={{ marginTop: 0, marginBottom: 8, fontSize: 17 }}>{offer.providerName}</h3>
-            <p style={{ marginTop: 0, marginBottom: 10, lineHeight: 1.6 }}>{offer.offerDescription}</p>
+            <h3 style={{ marginTop: 0, marginBottom: 6, fontSize: 17 }}>{offer.providerName}</h3>
+            <p style={{ marginTop: 0, marginBottom: 10, lineHeight: 1.6, fontSize: 14 }}>{offer.offerDescription}</p>
             <p className="muted" style={{ marginTop: 0, marginBottom: 10, fontSize: 13, lineHeight: 1.5 }}>
-              <strong>Coverage:</strong> {offer.coverageAreaDescription}
-            </p>
-            <p className="muted" style={{ marginTop: 0, marginBottom: 10, fontSize: 13, lineHeight: 1.5 }}>
-              <strong>Plan context:</strong> {offer.planTypeSummary}
+              {offer.coverageAreaDescription}
             </p>
             {offer.featureHighlights.length > 0 ? (
-              <ul style={{ marginTop: 0, marginBottom: 10, paddingLeft: 18, lineHeight: 1.6 }}>
+              <ul style={{ marginTop: 0, marginBottom: 10, paddingLeft: 18, lineHeight: 1.6, fontSize: 14 }}>
                 {offer.featureHighlights.slice(0, 3).map((highlight) => (
                   <li key={`${offer.providerId}-${highlight}`}>{highlight}</li>
                 ))}
               </ul>
             ) : null}
-            {offer.regulatoryNotes ? (
-              <p className="muted" style={{ marginTop: 0, marginBottom: 10, fontSize: 13, lineHeight: 1.5 }}>
-                {offer.regulatoryNotes}
-              </p>
-            ) : null}
             <a
               href={offer.signupUrl}
               target="_blank"
               rel="sponsored nofollow noopener noreferrer"
-              style={{ fontWeight: 600 }}
+              className="commercial-cta-primary"
             >
               {getOfferCtaLabel(offer.offerType)}
             </a>
@@ -149,33 +104,33 @@ function renderMarketplaceCta(
   if (offers.length > 0) {
     const offer = offers[0];
     return (
-      <section style={{ marginBottom: 32 }}>
-        <h2 style={{ fontSize: 20, marginBottom: 12 }}>{MARKETPLACE_PATHWAY_HEADING}</h2>
-        <p style={{ marginTop: 0, marginBottom: 8, maxWidth: "68ch", lineHeight: 1.6 }}>
-          Optional marketplace pathway for users who want next-step provider shopping after reviewing this
-          informational page.
+      <section className="commercial-module">
+        <span className="commercial-module-label">Partner offers</span>
+        <h2>
+          {context.stateName
+            ? `Explore provider options in ${context.stateName}`
+            : "Explore provider options"}
+        </h2>
+        <p style={{ marginTop: 0, marginBottom: 12, maxWidth: "65ch", lineHeight: 1.6, fontSize: 14 }}>
+          Ready to explore provider options? This partner link connects you to plans available in your area.
         </p>
-        <p className="muted" style={{ marginTop: 0, marginBottom: 8, fontSize: 13, lineHeight: 1.5 }}>
-          {COMMERCIAL_DISCOVERY_NOTE}
-        </p>
-        <p style={{ marginTop: 0, marginBottom: 8 }}>
+        <p style={{ marginTop: 0, marginBottom: 12, fontSize: 14 }}>
           <strong>{offer.providerName}</strong>: {offer.offerDescription}
         </p>
-        <p className="muted" style={{ marginTop: 0, marginBottom: 8, fontSize: 13, lineHeight: 1.5 }}>
-          <strong>Coverage:</strong> {offer.coverageAreaDescription}
-        </p>
-        <p className="muted" style={{ marginTop: 0, marginBottom: 8, fontSize: 13, lineHeight: 1.5 }}>
-          <strong>Plan context:</strong> {offer.planTypeSummary}
+        <p className="muted" style={{ marginTop: 0, marginBottom: 12, fontSize: 13 }}>
+          {offer.coverageAreaDescription}
         </p>
         <p style={{ marginTop: 0, marginBottom: 0 }}>
           <a
             href={offer.signupUrl}
             target="_blank"
             rel="sponsored nofollow noopener noreferrer"
-            style={{ fontWeight: 600 }}
+            className="commercial-cta-primary"
           >
-            {offer.offerType === "marketplace" ? "Continue to marketplace" : getOfferCtaLabel(offer.offerType)}
+            {offer.offerType === "marketplace" ? "Compare plans" : getOfferCtaLabel(offer.offerType)}
           </a>
+          {" · "}
+          <Link href="/electricity-providers" className="commercial-cta-secondary">Browse all providers</Link>
         </p>
         <CommercialComplianceNote hasAffiliateOffer={offer.hasAffiliateDisclosure} />
       </section>

@@ -14,7 +14,7 @@ import { isValidStateSlug } from "@/lib/slugGuard";
 import { buildNormalizedState } from "@/lib/stateBuilder";
 import { buildStateSchema } from "@/lib/schema";
 import { getElectricityPriceIndexForState } from "@/lib/priceIndex";
-import { LAST_REVIEWED, SITE_URL, UPDATE_CADENCE_TEXT } from "@/lib/site";
+import { SITE_URL } from "@/lib/site";
 import {
   getPrevNextByName,
   getRelatedByRate,
@@ -213,6 +213,11 @@ export default function StatePage({
     ns.exampleBills.map((b) => [b.kwh, b.estimated])
   ) as Record<number, number>;
 
+  const momLabel =
+    momDeltaCents !== null && momDeltaPct !== null
+      ? `${momDeltaCents >= 0 ? "+" : ""}${momDeltaCents.toFixed(2)}¢ (${momDeltaPct >= 0 ? "+" : ""}${momDeltaPct.toFixed(2)}%)`
+      : null;
+
   return (
     <main className="container">
       <script
@@ -233,41 +238,43 @@ export default function StatePage({
           __html: JSON.stringify(schema.breadcrumb),
         }}
       />
+
+      {/* Breadcrumb */}
       <p className="muted" style={{ marginBottom: 8 }}>
         <Link href="/">Home</Link> {"→"} <Link href="/compare">Compare</Link>{" "}
         {"→"} <span>{ns.name}</span>
       </p>
-      <div style={{ display: "flex", alignItems: "center", flexWrap: "wrap", gap: 8 }}>
-        <h1 style={{ margin: 0 }}>{ns.name}</h1>
+
+      {/* Heading + personalization */}
+      <div style={{ display: "flex", alignItems: "center", flexWrap: "wrap", gap: 8, marginBottom: 4 }}>
+        <h1 style={{ margin: 0 }}>{ns.name} Electricity Rates</h1>
         <SetPreferredStateButton stateSlug={slug} />
       </div>
 
-      <p className="intro muted" style={{ marginTop: 0 }}>
-        Avg residential rate (manual MVP): <b>{ns.avgRateCentsPerKwh}¢/kWh</b>
-      </p>
-      <p className="muted" style={{ marginTop: 0, marginBottom: 8 }}>
-        {UPDATE_CADENCE_TEXT} {"•"} Last reviewed {LAST_REVIEWED} {"•"}{" "}
-        <Link href="/about">Methodology</Link>
-      </p>
-
-      <p className="muted">Last updated: {ns.updated}</p>
-      <p className="muted" style={{ marginTop: 6 }}>
-        Previous month:{" "}
-        {previousSeries ? (
-          <>
-            {previousSeries.ym} ({previousSeries.avgRateCentsPerKwh.toFixed(2)}¢/kWh) {"•"}{" "}
-            MoM: {momDeltaCents !== null ? (momDeltaCents >= 0 ? "+" : "") : ""}
-            {momDeltaCents !== null ? `${momDeltaCents.toFixed(2)}¢` : "N/A"} (
-            {momDeltaPct !== null
-              ? `${momDeltaPct >= 0 ? "+" : ""}${momDeltaPct.toFixed(2)}%`
-              : "N/A"}
-            )
-          </>
-        ) : (
-          "N/A"
+      {/* ── ANSWER BLOCK ── */}
+      <div className="stat-panel" style={{ marginTop: 16, marginBottom: 16 }}>
+        <div className="stat-card">
+          <div className="stat-card-value">{ns.avgRateCentsPerKwh}¢</div>
+          <div className="stat-card-label">per kWh (avg residential)</div>
+        </div>
+        <div className="stat-card">
+          <div className="stat-card-value">${billByKwh[1000].toFixed(0)}</div>
+          <div className="stat-card-label">est. monthly bill at 1,000 kWh</div>
+        </div>
+        <div className="stat-card">
+          <div className="stat-card-value">{ns.rateTierLabel}</div>
+          <div className="stat-card-label">rate tier</div>
+        </div>
+        {momLabel && (
+          <div className="stat-card">
+            <div className="stat-card-value">{momLabel}</div>
+            <div className="stat-card-label">month-over-month change</div>
+          </div>
         )}
-      </p>
-      <p className="muted" style={{ marginTop: 6, display: "flex", alignItems: "center", gap: 8 }}>
+      </div>
+
+      {/* Source / freshness line */}
+      <p className="muted" style={{ marginTop: 0, marginBottom: 16, fontSize: 13, display: "flex", alignItems: "center", gap: 8, flexWrap: "wrap" }}>
         <span
           aria-hidden
           style={{
@@ -276,24 +283,12 @@ export default function StatePage({
             borderRadius: "50%",
             backgroundColor: freshnessDotColor,
             display: "inline-block",
+            flexShrink: 0,
           }}
         />
-        <span>{ns.freshnessLabel}</span>
-      </p>
-      <p className="muted" style={{ marginTop: 6 }}>
-        Source:{" "}
+        Updated {ns.updated} · Source:{" "}
         {ns.source.slug ? (
-          <>
-            <Link href={`/sources/${ns.source.slug}`}>{ns.source.name}</Link>
-            {" · "}
-            <TrackedOutboundLink
-              href={ns.source.url}
-              eventName="SourceLinkClick"
-              props={{ state: slug }}
-            >
-              External data
-            </TrackedOutboundLink>
-          </>
+          <Link href={`/sources/${ns.source.slug}`}>{ns.source.name}</Link>
         ) : (
           <TrackedOutboundLink
             href={ns.source.url}
@@ -303,88 +298,53 @@ export default function StatePage({
             {ns.source.name}
           </TrackedOutboundLink>
         )}
+        {" · "}
+        <Link href="/methodology">Methodology</Link>
       </p>
-      <p className="muted" style={{ marginTop: 6 }}>
-        Methodology: {ns.methodology}
+
+      {/* Context paragraph */}
+      <p style={{ marginTop: 0, marginBottom: 20, maxWidth: "65ch", lineHeight: 1.6 }}>
+        {ns.shortSummary}
       </p>
-      <p className="muted" style={{ marginTop: 6 }}>
-        <Link href="/data-policy">Data policy</Link>
-      </p>
-      <p className="muted" style={{ fontSize: 14, marginTop: 6 }}>
-        {ns.disclaimer}
-      </p>
-      <section style={{ marginTop: 8 }}>
-        <h2 style={{ fontSize: 22, marginBottom: 8 }}>Choose your next step in {ns.name}</h2>
-        <p className="muted" style={{ marginTop: 0 }}>
-          Use the pathway that matches your intent so you can move faster into the right canonical cluster.
-        </p>
-        <h3 style={{ marginTop: 12, marginBottom: 8, fontSize: 18 }}>Compare and benchmark costs</h3>
-        <ul style={{ marginTop: 0, paddingLeft: 20, lineHeight: 1.8 }}>
-          <li>
-            <Link href="/compare">Compare all states</Link> {" · "}
-            <Link href="/energy-comparison/states">State comparison discovery slice</Link>
-          </li>
-          <li>
-            <Link href={`/electricity-bill-estimator/${slug}`}>{ns.name} bill estimator scenarios</Link>
-          </li>
-          <li>
-            <Link href="/affordability">Affordability index</Link>
-          </li>
-          <li>
-            <Link href="/electricity-cost-calculator">National calculator</Link>
-          </li>
-        </ul>
-        <h3 style={{ marginTop: 12, marginBottom: 8, fontSize: 18 }}>Provider and shopping pathways</h3>
-        <ul style={{ marginTop: 0, paddingLeft: 20, lineHeight: 1.8 }}>
-          <li>
-            <Link href={`/electricity-providers/${slug}`}>Provider context in {ns.name}</Link>
-          </li>
-          <li>
-            <Link href={`/offers/${slug}`}>Offers in {ns.name}</Link>
-          </li>
-          <li>
-            <Link href="/electricity-shopping/by-state">Electricity shopping pathways</Link>
-          </li>
-        </ul>
-        <h3 style={{ marginTop: 12, marginBottom: 8, fontSize: 18 }}>Utilities and historical context</h3>
-        <ul style={{ marginTop: 0, paddingLeft: 20, lineHeight: 1.8 }}>
-          <li>
-            <Link href={`/${slug}/utilities`}>Utilities in {ns.name}</Link>
-          </li>
-          <li>
-            <Link href={`/${slug}/plans`}>Plans in {ns.name}</Link>
-          </li>
-          <li>
-            <Link href={`/${slug}/history`}>History in {ns.name}</Link>
-          </li>
-        </ul>
-        <p className="muted" style={{ marginTop: 6 }}>
-          Learn more:{" "}
-          <Link href="/guides/why-electricity-prices-vary-by-state">
-            Why electricity prices vary by state
-          </Link>
-          .
-        </p>
-        <p className="muted" style={{ marginTop: 6 }}>
-          <Link href={`/questions/average-electric-bill-in-${slug}`}>
-            Common questions about electricity in {ns.name}
-          </Link>
-          .
-        </p>
-        <p className="muted" style={{ marginTop: 6 }}>
-          <Link href={`/${slug}/plan-types`}>Explore plan types in {ns.name}</Link>.
-        </p>
-        <p className="muted" style={{ marginTop: 6 }}>
-          Common usage scenarios:{" "}
-          <Link href={`/${slug}/bill/1000`}>1000 kWh bill</Link>
-          {" | "}
-          <Link href={`/${slug}/bill/1500`}>1500 kWh bill</Link>
-        </p>
+
+      {/* ── NEXT STEPS ── */}
+      <section className="section-gap">
+        <h2 style={{ fontSize: 20, marginBottom: 12 }}>What would you like to do?</h2>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))", gap: 12 }}>
+          <div className="stat-card" style={{ textAlign: "left" }}>
+            <p style={{ margin: "0 0 8px", fontWeight: 600, fontSize: 15 }}>Compare costs</p>
+            <ul style={{ margin: 0, paddingLeft: 18, lineHeight: 1.8, fontSize: 14 }}>
+              <li><Link href="/compare">Compare all states</Link></li>
+              <li><Link href={`/electricity-bill-estimator/${slug}`}>Estimate your {ns.name} bill</Link></li>
+              <li><Link href="/affordability">Affordability rankings</Link></li>
+            </ul>
+          </div>
+          <div className="stat-card" style={{ textAlign: "left" }}>
+            <p style={{ margin: "0 0 8px", fontWeight: 600, fontSize: 15 }}>Shop for providers</p>
+            <ul style={{ margin: 0, paddingLeft: 18, lineHeight: 1.8, fontSize: 14 }}>
+              <li><Link href={`/electricity-providers/${slug}`}>Providers in {ns.name}</Link></li>
+              <li><Link href={`/offers/${slug}`}>Current offers</Link></li>
+              <li><Link href={`/${slug}/plans`}>Plan types</Link></li>
+            </ul>
+          </div>
+          <div className="stat-card" style={{ textAlign: "left" }}>
+            <p style={{ margin: "0 0 8px", fontWeight: 600, fontSize: 15 }}>Explore data</p>
+            <ul style={{ margin: 0, paddingLeft: 18, lineHeight: 1.8, fontSize: 14 }}>
+              <li><Link href={`/electricity-cost/${slug}`}>{ns.name} cost details</Link></li>
+              <li><Link href={`/${slug}/history`}>Price history</Link></li>
+              <li><Link href={`/drivers/${slug}`}>Price drivers</Link></li>
+            </ul>
+          </div>
+        </div>
       </section>
 
-      <section style={{ marginTop: 20 }}>
-        <h2 style={{ fontSize: 22, marginBottom: 8 }}>Major utilities in {ns.name}</h2>
-        {majorUtilities.length > 0 ? (
+      {/* ── BILL ESTIMATOR ── */}
+      <BillEstimator rateCentsPerKwh={ns.avgRateCentsPerKwh} stateSlug={slug} />
+
+      {/* ── UTILITIES ── */}
+      {majorUtilities.length > 0 && (
+        <section style={{ marginTop: 24 }}>
+          <h2 style={{ fontSize: 20, marginBottom: 8 }}>Major utilities in {ns.name}</h2>
           <ul style={{ marginTop: 0, paddingLeft: 20 }}>
             {majorUtilities.map((utility) => (
               <li key={utility.slug} style={{ marginBottom: 6 }}>
@@ -392,121 +352,55 @@ export default function StatePage({
               </li>
             ))}
           </ul>
-        ) : (
-          <p className="muted" style={{ marginTop: 0 }}>
-            Utility-specific pages are coming soon for {ns.name}.
-          </p>
-        )}
-      </section>
-
-      <h2 style={{ fontSize: 24, marginTop: 24, marginBottom: 8 }}>
-        Average electricity price in {ns.name}
-      </h2>
-      <p style={{ marginTop: 0 }}>
-        {ns.name}'s average residential electricity rate is{" "}
-        <b>{ns.avgRateCentsPerKwh}¢/kWh</b> (updated {ns.updated}) based on {ns.source.name}.
-      </p>
-      <p>
-        The estimator is energy-only and excludes delivery fees, taxes, fixed
-        charges, and other utility fees.
-      </p>
-
-      <section style={{ marginTop: 24 }}>
-        <h2 style={{ fontSize: 24, marginBottom: 8 }}>Electricity Affordability Index</h2>
-        <p style={{ marginTop: 0 }}>
-          Score: <b>{ns.affordabilityIndex}</b> / 100
-        </p>
-        <p style={{ marginTop: 6 }}>
-          Category: <b>{ns.affordabilityCategory}</b>
-        </p>
-        <p className="muted" style={{ marginTop: 6 }}>
-          Higher score means lower electricity price relative to other states.
-        </p>
-      </section>
-
-      <section style={{ marginTop: 24 }}>
-        <h2 style={{ fontSize: 24, marginBottom: 8 }}>Electricity Value Score™</h2>
-        <p style={{ marginTop: 0 }}>
-          Score: <b>{ns.valueScore}</b> / 100
-        </p>
-        <p style={{ marginTop: 6 }}>
-          Tier: <b>{ns.valueTier}</b>
-        </p>
-        <p className="muted" style={{ marginTop: 6 }}>
-          Composite score based on price, affordability, and data freshness.
-        </p>
-        <p className="muted" style={{ marginTop: 6 }}>
-          <Link href="/value-ranking">View full value ranking</Link>
-        </p>
-      </section>
-
-      {epi && (
-        <section style={{ marginTop: 24 }}>
-          <h2 style={{ fontSize: 24, marginBottom: 8 }}>
-            Electricity Price Index™
-          </h2>
-          <p style={{ marginTop: 0 }}>
-            Index: <b>{epi.indexValue}</b> (Base = 100 national average)
-          </p>
-          <p style={{ marginTop: 6 }}>
-            Position: <b>{epi.relativePosition}</b>
-          </p>
-          <p className="muted" style={{ marginTop: 6 }}>
-            An index above 100 indicates higher-than-average electricity prices.
-          </p>
-          <p className="muted" style={{ marginTop: 6 }}>
-            <Link href="/index-ranking">
-              View full Electricity Price Index™ ranking
-            </Link>
-          </p>
         </section>
       )}
 
+      {/* ── SCORES & INDEXES ── */}
       <section style={{ marginTop: 24 }}>
-        <h2 style={{ fontSize: 24, marginBottom: 8 }}>State snapshot</h2>
-        <ul style={{ marginTop: 0, paddingLeft: 20 }}>
-          <li>Rate tier: {ns.rateTierLabel}</li>
-          <li>
-            Example monthly energy cost at 500 kWh: $
-            {billByKwh[500].toFixed(2)}
-          </li>
-          <li>
-            Example monthly energy cost at 1000 kWh: $
-            {billByKwh[1000].toFixed(2)}
-          </li>
-          <li>
-            Example monthly energy cost at 1500 kWh: $
-            {billByKwh[1500].toFixed(2)}
-          </li>
-        </ul>
-        <p style={{ marginTop: 8 }}>
-          <b>What this means:</b> {ns.shortSummary}
+        <h2 style={{ fontSize: 20, marginBottom: 12 }}>Scores &amp; rankings</h2>
+        <div className="stat-panel">
+          <div className="stat-card">
+            <div className="stat-card-value">{ns.affordabilityIndex}</div>
+            <div className="stat-card-label">Affordability ({ns.affordabilityCategory})</div>
+          </div>
+          <div className="stat-card">
+            <div className="stat-card-value">{ns.valueScore}</div>
+            <div className="stat-card-label">Value Score™ ({ns.valueTier})</div>
+          </div>
+          {epi && (
+            <div className="stat-card">
+              <div className="stat-card-value">{epi.indexValue}</div>
+              <div className="stat-card-label">Price Index™ ({epi.relativePosition})</div>
+            </div>
+          )}
+        </div>
+        <p className="muted" style={{ marginTop: 8, fontSize: 13 }}>
+          <Link href="/value-ranking">Value ranking</Link>
+          {epi && <>{" · "}<Link href="/index-ranking">Price Index ranking</Link></>}
+          {" · "}<Link href="/affordability">Affordability index</Link>
         </p>
       </section>
 
-      <hr style={{ margin: "24px 0" }} />
-
-      <BillEstimator rateCentsPerKwh={ns.avgRateCentsPerKwh} stateSlug={slug} />
-
+      {/* ── NEARBY & SIMILAR ── */}
       <section style={{ marginTop: 24 }}>
-        <h2 style={{ fontSize: 22, marginBottom: 8 }}>Browse nearby states</h2>
+        <h2 style={{ fontSize: 20, marginBottom: 8 }}>Browse nearby states</h2>
         <p style={{ marginTop: 0 }}>
           {prev ? (
-            <Link href={`/${prev.slug}`}>{"←"} Previous: {prev.name}</Link>
+            <Link href={`/${prev.slug}`}>{"←"} {prev.name}</Link>
           ) : (
-            <span className="muted">{"←"} Previous: None</span>
+            <span className="muted">{"←"} None</span>
           )}
           {" | "}
           {next ? (
-            <Link href={`/${next.slug}`}>Next: {next.name} {"→"}</Link>
+            <Link href={`/${next.slug}`}>{next.name} {"→"}</Link>
           ) : (
-            <span className="muted">Next: None {"→"}</span>
+            <span className="muted">None {"→"}</span>
           )}
         </p>
       </section>
 
       <section style={{ marginTop: 20 }}>
-        <h2 style={{ fontSize: 22, marginBottom: 8 }}>Similar-priced states</h2>
+        <h2 style={{ fontSize: 20, marginBottom: 8 }}>Similar-priced states</h2>
         <ul style={{ marginTop: 0, paddingLeft: 20 }}>
           {relatedStates.map((related) => (
             <li key={related.slug} style={{ marginBottom: 6 }}>
@@ -517,35 +411,23 @@ export default function StatePage({
         </ul>
       </section>
 
-      <section style={{ marginTop: 20 }}>
-        <h2 style={{ fontSize: 22, marginBottom: 8 }}>Region</h2>
-        {region ? (
-          <>
-            <p style={{ marginTop: 0 }}>
-              <Link href={`/region/${region.slug}`}>{region.name}</Link>
-            </p>
-            <h3 style={{ marginTop: 8, marginBottom: 8 }}>
-              Other states in this region
-            </h3>
-            <ul style={{ marginTop: 0, paddingLeft: 20 }}>
-              {otherStatesInRegion.map((state) => (
-                <li key={state.slug} style={{ marginBottom: 6 }}>
-                  <Link href={`/${state.slug}`}>{state.name}</Link> {"—"}{" "}
-                  {state.rate.toFixed(2)}¢/kWh
-                </li>
-              ))}
-            </ul>
-          </>
-        ) : (
-          <p className="muted" style={{ marginTop: 0 }}>
-            Region information coming soon.
-          </p>
-        )}
-      </section>
+      {region && (
+        <section style={{ marginTop: 20 }}>
+          <h2 style={{ fontSize: 20, marginBottom: 8 }}>{region.name} region</h2>
+          <ul style={{ marginTop: 0, paddingLeft: 20 }}>
+            {otherStatesInRegion.map((s) => (
+              <li key={s.slug} style={{ marginBottom: 6 }}>
+                <Link href={`/${s.slug}`}>{s.name}</Link> {"—"}{" "}
+                {s.rate.toFixed(2)}¢/kWh
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
 
-      <section style={{ marginTop: 20 }}>
-        <h2 style={{ fontSize: 22, marginBottom: 8 }}>Major cities in {ns.name}</h2>
-        {majorCities.length > 0 ? (
+      {majorCities.length > 0 && (
+        <section style={{ marginTop: 20 }}>
+          <h2 style={{ fontSize: 20, marginBottom: 8 }}>Cities in {ns.name}</h2>
           <ul style={{ marginTop: 0, paddingLeft: 20 }}>
             {majorCities.map((city) => (
               <li key={city.slug} style={{ marginBottom: 6 }}>
@@ -553,53 +435,71 @@ export default function StatePage({
               </li>
             ))}
           </ul>
-        ) : (
-          <p className="muted" style={{ marginTop: 0 }}>
-            City pages for {ns.name} are coming soon.
-          </p>
-        )}
-      </section>
+        </section>
+      )}
 
       <PriceDriversPanel slug={slug} stateName={ns.name} />
 
       <RegulatorySignals slug={slug} stateName={ns.name} />
 
+      {/* ── FAQ ── */}
       <section style={{ marginTop: 28 }}>
-        <h2 style={{ fontSize: 22, marginBottom: 12 }}>Core canonical clusters for {ns.name}</h2>
-        <ul style={{ marginTop: 0, paddingLeft: 20, lineHeight: 1.9 }}>
-          <li>
-            <Link href={`/electricity-cost/${slug}`}>{ns.name} electricity cost authority page</Link>
-            {" — "}State cost benchmark and context owner
-          </li>
-          <li>
-            <Link href={`/electricity-bill-estimator/${slug}`}>{ns.name} electricity bill estimator</Link>
-            {" — "}Household-profile estimation intent
-          </li>
-          <li>
-            <Link href={`/cost-to-run/refrigerator/${slug}`}>Appliance operating cost pages in {ns.name}</Link>
-            {" — "}Appliance-intent operating cost routes
-          </li>
-          <li>
-            <Link href={`/electricity-providers/${slug}`}>Provider marketplace discovery for {ns.name}</Link>
-            {" — "}Shopping and provider-context discovery
-          </li>
-          <li>
-            <Link href="/energy-comparison">Energy Comparison Hub</Link>
-            {" — "}Curated cross-cluster comparison discovery
-          </li>
-        </ul>
-      </section>
-
-      <section style={{ marginTop: 28 }}>
-        <h2 style={{ fontSize: 22, marginBottom: 12 }}>FAQ</h2>
+        <h2 style={{ fontSize: 20, marginBottom: 12 }}>FAQ</h2>
         {schema.faqItems.map((item, i) => (
           <div key={i} style={i > 0 ? { marginTop: 16 } : undefined}>
-            <p>
-              <b>{item.question}</b>
-            </p>
+            <p><b>{item.question}</b></p>
             <p style={{ marginTop: 6 }}>{item.answer}</p>
           </div>
         ))}
+      </section>
+
+      {/* ── EXPLORE MORE ── */}
+      <section style={{ marginTop: 28 }}>
+        <h2 style={{ fontSize: 20, marginBottom: 12 }}>More about electricity in {ns.name}</h2>
+        <ul style={{ marginTop: 0, paddingLeft: 20, lineHeight: 1.9 }}>
+          <li><Link href={`/electricity-cost/${slug}`}>{ns.name} electricity cost details</Link></li>
+          <li><Link href={`/electricity-bill-estimator/${slug}`}>{ns.name} bill estimator</Link></li>
+          <li><Link href={`/cost-to-run/refrigerator/${slug}`}>Appliance running costs in {ns.name}</Link></li>
+          <li><Link href={`/electricity-providers/${slug}`}>Electricity providers in {ns.name}</Link></li>
+          <li><Link href="/energy-comparison">Energy comparison hub</Link></li>
+        </ul>
+        <p className="muted" style={{ marginTop: 8, fontSize: 13 }}>
+          <Link href="/guides/why-electricity-prices-vary-by-state">Why prices vary by state</Link>
+          {" · "}
+          <Link href={`/questions/average-electric-bill-in-${slug}`}>Common questions</Link>
+          {" · "}
+          <Link href={`/${slug}/bill/1000`}>1,000 kWh bill</Link>
+          {" · "}
+          <Link href={`/${slug}/bill/1500`}>1,500 kWh bill</Link>
+        </p>
+      </section>
+
+      {/* ── METHODOLOGY / DISCLOSURE ── */}
+      <section style={{ marginTop: 28, paddingTop: 16, borderTop: "1px solid var(--color-border)" }}>
+        <h2 style={{ fontSize: 18, marginBottom: 8 }}>Methodology &amp; data</h2>
+        <p className="muted" style={{ marginTop: 0, fontSize: 13, lineHeight: 1.6, maxWidth: "65ch" }}>
+          {ns.methodology}
+        </p>
+        <p className="muted" style={{ marginTop: 6, fontSize: 13 }}>
+          {ns.disclaimer}
+        </p>
+        <p className="muted" style={{ marginTop: 6, fontSize: 13 }}>
+          <Link href="/methodology">Full methodology</Link>
+          {" · "}
+          <Link href="/data-policy">Data policy</Link>
+          {ns.source.slug && (
+            <>
+              {" · "}
+              <TrackedOutboundLink
+                href={ns.source.url}
+                eventName="SourceLinkClick"
+                props={{ state: slug }}
+              >
+                Source data
+              </TrackedOutboundLink>
+            </>
+          )}
+        </p>
       </section>
 
       <CommercialPlacement

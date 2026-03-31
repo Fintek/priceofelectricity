@@ -140,32 +140,189 @@ h3 {
   background-color: var(--color-surface-alt);
 }
 
+/* ------------------------------------------------------------------ */
+/* Header                                                             */
+/* ------------------------------------------------------------------ */
+
 .site-header {
-  border-bottom: 1px solid #f1f1f1;
-  min-height: 72px;
+  border-bottom: 1px solid var(--color-border);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--color-bg);
 }
 
 .header-nav {
-  padding-top: var(--space-4);
-  padding-bottom: var(--space-4);
-  min-height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  padding-top: var(--space-3);
+  padding-bottom: var(--space-3);
+  min-height: 56px;
 }
 
 .site-title-link {
   font-weight: 700;
   font-size: var(--font-size-lg);
+  white-space: nowrap;
+  flex-shrink: 0;
 }
+
+.header-desktop-nav {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  font-size: var(--font-size-sm);
+}
+
+.header-desktop-nav a {
+  white-space: nowrap;
+}
+
+/* ------------------------------------------------------------------ */
+/* Mobile nav toggle + drawer                                         */
+/* ------------------------------------------------------------------ */
+
+.mobile-nav-toggle {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  padding: 6px;
+  cursor: pointer;
+  color: var(--color-text);
+  flex-shrink: 0;
+}
+
+.mobile-nav-backdrop {
+  display: none;
+}
+
+.mobile-nav-drawer {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .header-desktop-nav {
+    display: none;
+  }
+
+  .mobile-nav-toggle {
+    display: flex;
+  }
+
+  .mobile-nav-backdrop {
+    display: block;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 199;
+  }
+
+  .mobile-nav-drawer {
+    display: block;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: min(300px, 80vw);
+    background: var(--color-bg);
+    z-index: 200;
+    transform: translateX(100%);
+    transition: transform 0.2s ease;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    box-shadow: -4px 0 16px rgba(0, 0, 0, 0.08);
+    padding-top: var(--space-5);
+  }
+
+  .mobile-nav-drawer--open {
+    transform: translateX(0);
+  }
+
+  .mobile-nav-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .mobile-nav-link {
+    display: block;
+    padding: var(--space-3) var(--space-5);
+    font-size: var(--font-size-base);
+    text-decoration: none;
+    color: var(--color-text);
+    border-bottom: 1px solid var(--color-surface-alt);
+  }
+
+  .mobile-nav-link:visited {
+    color: var(--color-text);
+  }
+
+  .mobile-nav-link:hover,
+  .mobile-nav-link--active {
+    background: var(--color-surface-alt);
+    color: var(--color-text);
+  }
+}
+
+/* ------------------------------------------------------------------ */
+/* Footer                                                             */
+/* ------------------------------------------------------------------ */
 
 .site-footer {
   margin-top: var(--space-6);
-  min-height: 72px;
+  border-top: 1px solid var(--color-border);
 }
 
-.footer-links {
-  color: var(--color-muted);
-  padding-top: var(--space-3);
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-5);
+  padding-top: var(--space-5);
   padding-bottom: var(--space-5);
 }
+
+@media (max-width: 640px) {
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.footer-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.footer-group a {
+  font-size: var(--font-size-sm);
+  color: var(--color-muted);
+  text-decoration: none;
+}
+
+.footer-group a:hover {
+  color: var(--color-text);
+  text-decoration: underline;
+}
+
+.footer-group a:visited {
+  color: var(--color-muted);
+}
+
+.footer-group-title {
+  font-weight: 600;
+  font-size: var(--font-size-sm);
+  color: var(--color-text);
+  margin: 0 0 var(--space-1) 0;
+}
+
+/* ------------------------------------------------------------------ */
+/* Skip link                                                          */
+/* ------------------------------------------------------------------ */
 
 .skip-link {
   position: absolute;
@@ -187,6 +344,166 @@ h3 {
   border: 1px solid var(--color-border);
   color: #0b57d0;
 }
+
+/* ------------------------------------------------------------------ */
+/* Responsive typography                                              */
+/* ------------------------------------------------------------------ */
+
+@media (max-width: 640px) {
+  h1 {
+    font-size: 1.75rem;
+  }
+
+  h2 {
+    font-size: 1.25rem;
+  }
+
+  .container {
+    padding-left: var(--space-4);
+    padding-right: var(--space-4);
+  }
+}
+
+/* ------------------------------------------------------------------ */
+/* Section spacing                                                    */
+/* ------------------------------------------------------------------ */
+
+.section-gap {
+  margin-top: var(--space-6);
+  margin-bottom: var(--space-6);
+}
+
+/* ------------------------------------------------------------------ */
+/* Stat panel — shared primitive for key metrics                      */
+/* ------------------------------------------------------------------ */
+
+.stat-panel {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: var(--space-3);
+}
+
+.stat-card {
+  padding: var(--space-4);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  background: var(--color-surface-alt);
+  text-align: center;
+}
+
+.stat-card-value {
+  font-size: var(--font-size-xl);
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: var(--space-1);
+}
+
+.stat-card-label {
+  font-size: var(--font-size-sm);
+  color: var(--color-muted);
+}
+
+/* ------------------------------------------------------------------ */
+/* Commercial module primitives                                       */
+/* ------------------------------------------------------------------ */
+
+.commercial-module {
+  margin-top: var(--space-5);
+  margin-bottom: var(--space-5);
+  padding: var(--space-4) var(--space-4) var(--space-3);
+  border: 1px solid var(--color-border);
+  border-left: 3px solid var(--color-muted);
+  border-radius: 8px;
+  background: var(--color-surface-alt);
+}
+
+.commercial-module-label {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+  margin-bottom: var(--space-2);
+}
+
+.commercial-module h2 {
+  font-size: var(--font-size-lg);
+  margin-top: 0;
+  margin-bottom: var(--space-2);
+}
+
+.commercial-module-compliance {
+  font-size: 12px;
+  color: var(--color-muted);
+  line-height: 1.5;
+  margin-top: var(--space-3);
+}
+
+.commercial-module-compliance a {
+  color: var(--color-muted);
+  text-decoration: underline;
+}
+
+.commercial-cta-primary {
+  display: inline-block;
+  font-weight: 600;
+  text-decoration: none;
+  color: var(--color-link);
+}
+
+.commercial-cta-primary:hover {
+  text-decoration: underline;
+}
+
+.commercial-cta-secondary {
+  font-size: var(--font-size-sm);
+  color: var(--color-muted);
+}
+
+/* ------------------------------------------------------------------ */
+/* Homepage state grid                                                */
+/* ------------------------------------------------------------------ */
+
+.homepage-state-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: var(--space-2);
+}
+
+.homepage-state-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-2) var(--space-3);
+  border-radius: 6px;
+  text-decoration: none;
+  color: var(--color-text);
+  transition: background-color 0.1s;
+}
+
+.homepage-state-item:visited {
+  color: var(--color-text);
+}
+
+.homepage-state-item:hover {
+  background: var(--color-surface-alt);
+  color: var(--color-text);
+}
+
+.homepage-state-name {
+  font-weight: 500;
+}
+
+.homepage-state-rate {
+  font-size: var(--font-size-sm);
+  color: var(--color-muted);
+  white-space: nowrap;
+}
+
+/* ------------------------------------------------------------------ */
+/* Utilities                                                          */
+/* ------------------------------------------------------------------ */
 
 @keyframes skeleton-shimmer {
   0% { background-position: 200% 0; }

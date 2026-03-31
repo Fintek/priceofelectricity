@@ -2,10 +2,10 @@ import type { ItemListEntry } from "@/lib/seo/jsonld";
 import { STATES } from "@/data/states";
 import { getProviderCatalogCoverageByState } from "@/lib/providers/providerCatalog";
 
-export const PROVIDER_DISCOVERY_SECTION_TITLE = "Provider marketplace discovery pathways";
+export const PROVIDER_DISCOVERY_SECTION_TITLE = "Compare providers by state";
 
 export const PROVIDER_DISCOVERY_SECTION_INTRO =
-  "Provider marketplace discovery remains informational and supplemental. These pathways connect users to provider context without changing canonical ownership of cost, usage, estimator, or comparison clusters.";
+  "Browse provider options alongside our independent electricity data. These links connect you to provider details and plan information.";
 
 export type ProviderDiscoveryState = {
   slug: string;
@@ -37,13 +37,13 @@ export function buildProviderDiscoveryLinks(
   return [
     {
       href: "/electricity-providers",
-      label: "Electricity providers by state index",
+      label: "Electricity providers by state",
     },
     ...scopedStates.map((state) => ({
       href: `/electricity-providers/${state.slug}`,
-      label: `Provider context for ${state.name}`,
+      label: `Providers in ${state.name}`,
       companionHref: `/electricity-cost/${state.slug}`,
-      companionLabel: `${state.name} electricity cost authority page`,
+      companionLabel: `Electricity cost in ${state.name}`,
     })),
   ];
 }
@@ -57,7 +57,7 @@ export function buildProviderDiscoveryItemListEntries(
     ...states.slice(0, maxStates).map((state) => ({
       name: `${state.name} provider context`,
       url: `/electricity-providers/${state.slug}`,
-      description: "State-scoped provider discovery page with market-structure context",
+      description: "State-level provider options and market details",
     })),
   ];
 }

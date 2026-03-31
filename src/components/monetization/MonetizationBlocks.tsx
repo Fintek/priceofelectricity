@@ -4,23 +4,18 @@ import TrackLink from "@/app/components/TrackLink";
 import type { ResolvedMonetizationBlock, ResolvedPartnerLink } from "@/lib/monetization/resolve";
 
 function MonetizationShell({
+  label,
   title,
   children,
 }: {
+  label?: string;
   title: string;
   children: React.ReactNode;
 }) {
   return (
-    <section
-      style={{
-        marginBottom: 32,
-        padding: 20,
-        border: "1px solid var(--color-border, #e5e7eb)",
-        borderRadius: 8,
-        backgroundColor: "var(--color-surface-alt, #f9fafb)",
-      }}
-    >
-      <h2 style={{ fontSize: 20, marginTop: 0, marginBottom: 12 }}>{title}</h2>
+    <section className="commercial-module">
+      <span className="commercial-module-label">{label ?? "Partner offers"}</span>
+      <h2>{title}</h2>
       {children}
     </section>
   );
@@ -80,18 +75,16 @@ export function ProviderOfferCards({
               backgroundColor: "#fff",
             }}
           >
-            <div className="muted" style={{ fontSize: 12, marginBottom: 6 }}>
-              {partner.name}
-            </div>
-            <div style={{ fontWeight: 600, fontSize: 18, marginBottom: 8 }}>{partner.headline}</div>
+            <div style={{ fontWeight: 600, fontSize: 17, marginBottom: 6 }}>{partner.headline}</div>
             <PartnerBadges badges={partner.badges} />
-            <p style={{ marginTop: 0, marginBottom: 12, lineHeight: 1.6 }}>{partner.description}</p>
+            <p style={{ marginTop: 0, marginBottom: 12, lineHeight: 1.6, fontSize: 14 }}>{partner.description}</p>
             <TrackLink
               href={partner.href}
               eventName="offer_click"
               payload={{ offerId: partner.id }}
               target="_blank"
               rel="sponsored nofollow noopener noreferrer"
+              className="commercial-cta-primary"
             >
               {partner.ctaLabel}
             </TrackLink>
@@ -110,17 +103,17 @@ export function PlanComparisonModule({
   secondary,
 }: Extract<ResolvedMonetizationBlock, { kind: "plan-comparison" }>) {
   return (
-    <MonetizationShell title={title}>
+    <MonetizationShell label="Compare options" title={title}>
       <p style={{ marginTop: 0, marginBottom: 12, maxWidth: "65ch", lineHeight: 1.6 }}>{description}</p>
       <p style={{ margin: 0 }}>
-        <Link href={primary.href} style={{ fontWeight: 600 }}>
+        <Link href={primary.href} className="commercial-cta-primary">
           {primary.label}
         </Link>
         {secondary ? (
-          <>
+          <span className="commercial-cta-secondary">
             {" · "}
             <Link href={secondary.href}>{secondary.label}</Link>
-          </>
+          </span>
         ) : null}
       </p>
     </MonetizationShell>
@@ -134,17 +127,17 @@ export function CallToActionBlock({
   secondary,
 }: Extract<ResolvedMonetizationBlock, { kind: "cta" }>) {
   return (
-    <MonetizationShell title={title}>
+    <MonetizationShell label="Helpful services" title={title}>
       <p style={{ marginTop: 0, marginBottom: 12, maxWidth: "65ch", lineHeight: 1.6 }}>{description}</p>
       <p style={{ margin: 0 }}>
-        <Link href={primary.href} style={{ fontWeight: 600 }}>
+        <Link href={primary.href} className="commercial-cta-primary">
           {primary.label}
         </Link>
         {secondary ? (
-          <>
+          <span className="commercial-cta-secondary">
             {" · "}
             <Link href={secondary.href}>{secondary.label}</Link>
-          </>
+          </span>
         ) : null}
       </p>
     </MonetizationShell>
@@ -158,17 +151,17 @@ export function LeadCapturePrompt({
   secondary,
 }: Extract<ResolvedMonetizationBlock, { kind: "lead-capture" }>) {
   return (
-    <MonetizationShell title={title}>
+    <MonetizationShell label="Stay informed" title={title}>
       <p style={{ marginTop: 0, marginBottom: 12, maxWidth: "65ch", lineHeight: 1.6 }}>{description}</p>
       <p style={{ margin: 0 }}>
-        <Link href={primary.href} style={{ fontWeight: 600 }}>
+        <Link href={primary.href} className="commercial-cta-primary">
           {primary.label}
         </Link>
         {secondary ? (
-          <>
+          <span className="commercial-cta-secondary">
             {" · "}
             <Link href={secondary.href}>{secondary.label}</Link>
-          </>
+          </span>
         ) : null}
       </p>
     </MonetizationShell>
@@ -183,7 +176,7 @@ export function AffiliateReferralLinks({
   if (partners.length === 0) return null;
 
   return (
-    <MonetizationShell title={title}>
+    <MonetizationShell label="Related offers" title={title}>
       <p style={{ marginTop: 0, marginBottom: 12, maxWidth: "65ch", lineHeight: 1.6 }}>{intro}</p>
       <ul style={{ margin: 0, paddingLeft: 20, lineHeight: 1.8 }}>
         {partners.map((partner) => (
@@ -194,10 +187,11 @@ export function AffiliateReferralLinks({
               payload={{ offerId: partner.id }}
               target="_blank"
               rel="sponsored nofollow noopener noreferrer"
+              className="commercial-cta-primary"
             >
               {partner.headline}
             </TrackLink>
-            {partner.description ? ` — ${partner.description}` : ""}
+            {partner.description ? <span className="commercial-cta-secondary"> — {partner.description}</span> : ""}
           </li>
         ))}
       </ul>

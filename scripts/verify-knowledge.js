@@ -3646,14 +3646,15 @@ function runPreLaunchVerification(root, sitemapSource, layoutSource) {
     for (const pagePath of providerPages) {
       const src = fs.readFileSync(pagePath, "utf8");
       const requiredSignals = [
-        "Provider comparison clarity",
-        "Provider differentiation signals",
-        "Commercial pathway visibility",
+        ["Provider comparison clarity", "How to read provider comparisons"],
+        ["Provider differentiation signals", "What to compare"],
+        ["Commercial pathway visibility", "Related tools"],
         "buildCommercialPathwayItemListJsonLd",
       ];
       for (const signal of requiredSignals) {
-        if (!src.includes(signal)) {
-          throw new Error(`provider maturity signal missing in ${path.relative(process.cwd(), pagePath)}: ${signal}`);
+        const alternatives = Array.isArray(signal) ? signal : [signal];
+        if (!alternatives.some((s) => src.includes(s))) {
+          throw new Error(`provider maturity signal missing in ${path.relative(process.cwd(), pagePath)}: ${alternatives[0]}`);
         }
       }
     }

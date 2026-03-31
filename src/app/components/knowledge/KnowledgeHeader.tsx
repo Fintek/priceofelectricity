@@ -76,9 +76,9 @@ export default function KnowledgeHeader({
         {canonicalPath && (
           <>
             <Link href={canonicalPath} className="muted" style={{ fontSize: 14, textDecoration: "underline" }}>
-              Canonical
+              View page
             </Link>
-            <CopyButton value={canonicalUrl!.startsWith("http") ? canonicalUrl! : `${SITE_URL}${canonicalPath}`} label="Copy canonical URL" />
+            <CopyButton value={canonicalUrl!.startsWith("http") ? canonicalUrl! : `${SITE_URL}${canonicalPath}`} label="Copy page URL" />
           </>
         )}
         <Link href="/data" className="muted" style={{ fontSize: 14, textDecoration: "underline" }}>

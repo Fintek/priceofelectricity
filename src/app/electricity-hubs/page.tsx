@@ -20,7 +20,6 @@ import {
   getActiveUsageKwhTiers,
   isLongtailFamilyActive,
 } from "@/lib/longtail/rollout";
-import { getBillEstimatorProfileRolloutSummary } from "@/lib/longtail/billEstimator";
 import { buildMetadata } from "@/lib/seo/metadata";
 import {
   buildBreadcrumbListJsonLd,
@@ -30,7 +29,6 @@ import {
 } from "@/lib/seo/jsonld";
 import {
   buildProviderDiscoveryItemListEntries,
-  PROVIDER_DISCOVERY_SECTION_TITLE,
 } from "@/lib/providers/providerDiscovery";
 import type { Metadata } from "next";
 
@@ -40,12 +38,11 @@ export const revalidate = 86400;
 export const metadata: Metadata = buildMetadata({
   title: "Electricity Hubs: State, Usage, Bill & Appliance Discovery | PriceOfElectricity.com",
   description:
-    "Discovery hubs for state electricity pages, usage scenarios, bill estimators, appliance cost routes, comparison pages, and industry electricity cost pages.",
+    "Explore electricity data by state, usage level, household profile, and appliance. Find rates, compare costs, estimate bills, and browse providers.",
   canonicalPath: "/electricity-hubs",
 });
 
 export default async function ElectricityHubsIndexPage() {
-  const estimatorRollout = getBillEstimatorProfileRolloutSummary();
   const [states, compareManifest] = await Promise.all([
     loadAllTrafficHubStates(),
     loadElectricityComparisonPairs(),
@@ -60,68 +57,63 @@ export default async function ElectricityHubsIndexPage() {
 
   const sections: TrafficHubSection[] = [
     {
-      title: "State electricity hubs",
+      title: "Electricity rates by state",
       intro:
-        "State hubs are the main discovery gateways for each state. They group current price pages, usage scenarios, trend pages, comparison links, and calculators in one place.",
+        "Start with a state to see current rates, usage scenarios, trends, and cost comparisons.",
       cards: [
         {
           href: "/electricity-hubs/states",
-          title: "Browse all state electricity hubs",
-          description: "Directory of all state-level electricity hub pages.",
-          eyebrow: "Traffic hub",
-          meta: `${states.length} state hubs`,
+          title: "Browse all states",
+          description: "Find electricity data for any U.S. state.",
+          meta: `${states.length} states covered`,
         },
         ...stateCards,
       ],
     },
     {
-      title: "Electricity cost scenario hubs",
+      title: "Usage &amp; scenario estimates",
       intro:
-        "Scenario hubs organize the longtail inventory by common residential usage patterns and, when active, by industry-specific electricity use cases.",
+        "See what electricity costs at common usage levels, by household size, and for specific industries.",
       cards: [
         {
           href: "/electricity-hubs/scenarios",
-          title: "Electricity cost scenario hub",
-          description: "Overview hub for residential usage scenarios and industry electricity scenarios.",
-          eyebrow: "Traffic hub",
+          title: "Usage scenarios",
+          description: "Residential and industry electricity cost scenarios.",
         },
         ...usageCards,
         ...industryCards.slice(0, 3),
       ],
     },
     {
-      title: "Comparison hubs",
+      title: "State comparisons",
       intro:
-        "Comparison hubs help users move from a single-state lookup into broader state-vs-state electricity cost discovery paths.",
+        "Compare electricity rates and bills between states side by side.",
       cards: [
         {
           href: "/electricity-hubs/comparisons",
-          title: "Electricity comparison hub",
-          description: "Discovery page for head-to-head state electricity comparison pages and state comparison pathways.",
-          eyebrow: "Traffic hub",
-          meta: `${compareManifest?.pairs.length ?? 0} comparison pairs available`,
+          title: "Comparison index",
+          description: "Head-to-head state electricity cost comparisons.",
+          meta: `${compareManifest?.pairs.length ?? 0} comparison pairs`,
         },
         ...comparisonCards,
       ],
     },
     {
-      title: "State and city authority clusters",
+      title: "Cost data &amp; city details",
       intro:
-        "These pages anchor state-level electricity authority and city context discovery while preserving canonical separation between state, city, and scenario intent families.",
+        "Detailed electricity cost pages for states and cities.",
       cards: [
         {
           href: "/electricity-cost",
-          title: "Electricity cost by state index",
-          description: "Canonical state-cost authority cluster index.",
-          eyebrow: "Canonical cluster",
+          title: "Electricity cost by state",
+          description: "Average residential rates and cost estimates for every state.",
         },
         ...(representativeState
           ? [
               {
                 href: `/electricity-cost/${representativeState.slug}`,
-                title: `${representativeState.name} electricity cost authority page`,
-                description: "Representative state authority route inside the electricity cost cluster.",
-                eyebrow: "Canonical cluster",
+                title: `${representativeState.name} electricity cost`,
+                description: `Detailed cost data for ${representativeState.name}.`,
               },
             ]
           : []),
@@ -129,73 +121,64 @@ export default async function ElectricityHubsIndexPage() {
           ? [
               {
                 href: `/electricity-price-per-kwh/${representativeState.slug}`,
-                title: `${representativeState.name} price-per-kWh page`,
-                description: "Canonical state pricing route for per-kWh search intent.",
-                eyebrow: "Canonical cluster",
+                title: `${representativeState.name} price per kWh`,
+                description: "Per-kWh pricing details.",
               },
             ]
           : []),
         ...activeCities.slice(0, 2).map((city) => ({
           href: `/electricity-cost/${city.stateSlug}/${city.slug}`,
-          title: `${city.name} city electricity context`,
-          description: "Rollout-enabled city authority page with deterministic methodology disclosure.",
-          eyebrow: "Canonical cluster",
+          title: `${city.name} electricity cost`,
+          description: `City-level electricity cost data for ${city.name}.`,
         })),
       ],
     },
     {
-      title: "Bill and appliance clusters",
+      title: "Bills, estimators &amp; calculators",
       intro:
-        "These entry points connect benchmark bill intent, estimator scenarios, appliance operating-cost pages, and calculator pathways into one consumer-intent discovery set.",
+        "Estimate your bill, see average costs, calculate appliance running costs, and compare energy use.",
       cards: [
         {
           href: "/average-electricity-bill",
-          title: "Average electricity bill hub",
-          description: "National and state benchmark bill context pages.",
-          eyebrow: "Canonical cluster",
+          title: "Average electricity bills",
+          description: "Typical monthly bills by state.",
         },
         {
           href: "/electricity-bill-estimator",
-          title: "Electricity bill estimator hub",
-          description: "Household-profile estimator pages with deterministic assumptions.",
-          eyebrow: "Canonical cluster",
+          title: "Bill estimator",
+          description: "Estimate your bill by household profile.",
         },
         {
           href: "/electricity-cost-calculator",
-          title: "Electricity cost calculator hub",
-          description: "Calculator entry points for state and appliance scenarios.",
-          eyebrow: "Canonical cluster",
+          title: "Cost calculator",
+          description: "Calculate costs for any usage amount.",
         },
         {
           href: "/electricity-usage",
-          title: "Electricity usage hub",
-          description: "Usage intelligence pages connecting kWh patterns to cost routes.",
-          eyebrow: "Canonical cluster",
+          title: "Usage data",
+          description: "Electricity usage patterns and costs.",
         },
         {
           href: "/energy-comparison",
           title: "Energy comparison hub",
-          description: "Curated comparison entry point across state, appliance, usage, and city clusters.",
-          eyebrow: "Discovery hub",
+          description: "Compare across states, appliances, usage, and cities.",
         },
       ],
     },
     {
-      title: PROVIDER_DISCOVERY_SECTION_TITLE,
+      title: "Electricity providers",
       intro:
-        "Provider marketplace pages are discovery/support surfaces that help users compare provider context by state without replacing canonical cost, bill, or estimator cluster ownership.",
+        "Explore electricity providers and plans available in your state.",
       cards: [
         {
           href: "/electricity-providers",
-          title: "Electricity providers index",
-          description: "State-by-state provider context and marketplace discovery entry point.",
-          eyebrow: "Marketplace discovery",
+          title: "All providers",
+          description: "Browse electricity providers by state.",
         },
         ...states.slice(0, 3).map((state) => ({
           href: `/electricity-providers/${state.slug}`,
-          title: `${state.name} provider context`,
-          description: "State-scoped provider discovery page connected to canonical cost and comparison clusters.",
-          eyebrow: "Marketplace discovery",
+          title: `${state.name} providers`,
+          description: `Electricity providers and plans in ${state.name}.`,
         })),
       ],
     },
@@ -221,14 +204,14 @@ export default async function ElectricityHubsIndexPage() {
   });
   const faqJsonLd = buildFaqPageJsonLd([
     {
-      question: "Does this hub replace canonical state, city, or appliance routes?",
+      question: "What can I find on the Electricity Hubs page?",
       answer:
-        "No. The hub is a discovery layer that links to canonical clusters and does not replace canonical ownership for state, city, appliance, or comparison intent routes.",
+        "This page is a central directory for all electricity data on the site — state rates, bill estimators, cost comparisons, usage scenarios, and provider information.",
     },
     {
-      question: "How does this hub support authority scaling?",
+      question: "How is the data organized?",
       answer:
-        "It centralizes navigation into core canonical clusters, reinforces cross-cluster pathways, and improves crawl entry depth without adding new route families.",
+        "Data is grouped by topic: state rates, usage scenarios, comparisons, cost details, bill tools, and providers. Each section links to detailed pages.",
     },
   ]);
   const clusterItemListJsonLd = buildItemListJsonLd("Electricity authority clusters", [
@@ -261,48 +244,31 @@ export default async function ElectricityHubsIndexPage() {
           { label: "Electricity Hubs" },
         ]}
         title="Electricity Hubs"
-        intro="This discovery layer helps search engines and users find the site's expanding longtail electricity pages through structured, high-context entry points. Each hub is designed to be useful on its own while routing visitors into deeper state, usage, industry, and comparison pages."
+        intro="Explore electricity data across all 50 states — rates, bills, comparisons, usage scenarios, and provider information. Choose a topic below to get started."
         stats={[
-          { label: "State hubs", value: String(states.length) },
-          { label: "Active city contexts", value: String(activeCities.length) },
-          { label: "Active usage hubs", value: String(getActiveUsageKwhTiers().length) },
-          { label: "Active industry hubs", value: String(getActiveIndustrySlugs().length) },
-          { label: "Comparison pairs", value: String(compareManifest?.pairs.length ?? 0) },
+          { label: "States", value: String(states.length) },
+          { label: "Cities", value: String(activeCities.length) },
+          { label: "Usage scenarios", value: String(getActiveUsageKwhTiers().length) },
+          { label: "Industry sectors", value: String(getActiveIndustrySlugs().length) },
+          { label: "Comparisons", value: String(compareManifest?.pairs.length ?? 0) },
         ]}
         monetizationContext={{ pageType: "hub-index" }}
         sections={sections}
       >
-        <section style={{ marginBottom: 32 }}>
-          <h2 style={{ fontSize: 22, marginBottom: 12 }}>How this traffic engine works</h2>
-          <p style={{ marginTop: 0, maxWidth: "65ch", lineHeight: 1.6 }}>
-            The hub layer sits above the longtail page families and exposes them through a smaller number of structured
-            entry points. That keeps the site crawlable as inventory grows, while giving visitors a clear path from
-            broad discovery pages into specific state, usage, trend, and comparison pages.
-          </p>
-          <p className="muted" style={{ marginTop: 10, marginBottom: 0, maxWidth: "65ch" }}>
-            Discovery boundary: this page is orchestration-only and does not replace canonical ownership of state,
-            city, usage, estimator, appliance, or comparison destination routes.
-          </p>
-          <p className="muted" style={{ marginTop: 10, marginBottom: 0, maxWidth: "65ch" }}>
-            Estimator pilot boundary: profile scenarios remain explicitly allowlisted (
-            {estimatorRollout.activeKeyCount} active keys across {estimatorRollout.activeStateCount} states).
-          </p>
-          <ul style={{ marginTop: 12, marginBottom: 0, paddingLeft: 20, lineHeight: 1.8 }}>
+        <section style={{ marginBottom: 28 }}>
+          <h2 style={{ fontSize: 20, marginBottom: 12 }}>Quick links</h2>
+          <ul style={{ marginTop: 0, marginBottom: 0, paddingLeft: 20, lineHeight: 1.8 }}>
             <li>
-              <Link href="/electricity-hubs/states">State hub pathways</Link> {" — "}
-              Start from a state-first discovery intent
+              <Link href="/electricity-hubs/states">Browse by state</Link> — find rates, bills, and providers for your state
             </li>
             <li>
-              <Link href="/electricity-hubs/scenarios">Scenario hub pathways</Link> {" — "}
-              Route into usage and industry scenario families
+              <Link href="/electricity-hubs/scenarios">Usage scenarios</Link> — see costs at different usage levels
             </li>
             <li>
-              <Link href="/electricity-hubs/comparisons">Comparison hub pathways</Link> {" — "}
-              Move from single-state lookup into comparison intent
+              <Link href="/electricity-hubs/comparisons">State comparisons</Link> — compare rates between states
             </li>
             <li>
-              <Link href="/energy-comparison">Energy comparison hub</Link> {" — "}
-              Curated cross-cluster discovery across canonical families
+              <Link href="/energy-comparison">Energy comparison hub</Link> — compare across states, appliances, and cities
             </li>
           </ul>
         </section>

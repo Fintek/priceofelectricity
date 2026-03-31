@@ -4735,12 +4735,79 @@ Audit complete. Recommended next prompt: **public-surface trust cleanup batch** 
 
 ### Production verification
 
-Pending Vercel deployment of `d5d0bc2`. After deployment, verify:
-- `robots.txt` serves correctly from App Router source
-- One representative internal page (e.g. `/operating-playbook`) carries `noindex`
-- Sitemap no longer exposes internal/operational pages
-- Previously repaired public pages remain correct
+Completed in Prompt 103 on live deployment `dpl_Bw9MGYutJvKRQJtJokKBJNCfCFB4` (commit `d52d3225e40f701a372e8571078beabb864cfc40`), Ready in production.
+
+Verified in production:
+- `robots.txt` returns 200 and matches App Router policy (`Allow: /`, `Disallow: /api/`, `Disallow: /knowledge/state/*.json`, canonical sitemap-index URL)
+- Sitemap index and all segments return 200
+- Internal operational surfaces are absent from sitemap emission (`/operating-playbook/**`, `/site-maintenance/**`, `/growth-roadmap/**`, `/future-expansion/**`, `/launch-checklist`)
+- Representative internal pages and `/readiness` return 200 and emit `noindex`
+- Previously repaired public surfaces remain correct (homepage 200 and no DC in main state list, no footer changelog/graph links, inflation ranking note present with old sparkline absent, Texas freshness markers present, `/graph.json` 200)
 
 ### Path decision
 
-**Trust cleanup batch fully closed.** The roadmap returns to stable hold. Payload headroom drift remains a documented monitoring item for future investigation.
+**Trust cleanup batch fully closed and production-verified.** The roadmap returns to stable hold. Payload headroom drift remains a documented monitoring item for future investigation.
+
+---
+
+## Prompts 106–111 — UI Upgrade Sub-Series Closure (2026-03-30)
+
+### Doctrine
+
+The UI upgrade series used **Answer-First Programmatic Trust** as the controlling doctrine:
+- answer first
+- source and freshness second
+- context and comparison third
+- next-step pathways after that
+- deeper detail later
+- compact trust signals
+- curated discovery instead of directory-like dumps
+- consumer-facing language only on touched public surfaces
+- visually distinct but restrained monetization
+
+### Prompt outcomes
+
+| Prompt | Outcome |
+|---|---|
+| **106** | Shared shell upgrade completed: mobile-safe header/nav, grouped footer, shell-level trust/copy cleanup, shared CSS foundations |
+| **107** | Homepage and `/{state}` entry UX upgrade completed: stronger answer-first structure, clearer value pathways, cleaner CTA integration, internal-language cleanup on touched entry surfaces |
+| **108** | Discovery and hub UX upgrade completed: curated hub sections, grouped pathway cards, cleaner discovery hierarchy, more consumer-facing hub copy |
+| **109** | Monetization presentation refinement completed: distinct commercial modules, clearer labels, compact disclosures, improved CTA hierarchy, placement refinement |
+| **110** | Final UX re-audit completed: doctrine-compliance confirmed, no must-fix blockers found, one bounded copy-only cleanup authorized |
+| **111** | Final consumer-language cleanup completed: remaining internal language removed from targeted provider/discovery surfaces; UI sub-series closed |
+
+### Major issues solved
+
+- Mobile header/nav is now safe and usable on public pages
+- Footer is grouped and easier to scan
+- State pages now deliver the answer earlier with stronger first-screen clarity
+- Homepage pathways are clearer and more task-oriented
+- Hub/discovery surfaces feel curated instead of dumped
+- Commercial modules are visually distinct, clearly labeled, and subordinate to editorial content
+- Internal language was removed from the touched public surfaces in this series
+
+### Intentionally out of scope
+
+The following remain outside the closed UI upgrade series unless revisited later:
+- untouched deeper-detail templates that still carry some internal language
+- optional future polish on templates not included in Prompts 106–111
+- removal of the pre-launch operational banner at actual launch, if still applicable
+
+These were reviewed during Prompt 110 and did **not** justify extending the UI series beyond Prompt 111. They are not active blockers.
+
+### Closure status
+
+**The UI upgrade sub-series is formally closed.**
+
+- Prompts 106–111 are complete
+- Stable-hold roadmap posture remains unchanged
+- No active UI cleanup prompt remains
+- No route-family, rollout, canonical, sitemap, or monetization-scope changes were authorized by the closure pass
+
+### Main-roadmap re-entry posture
+
+The next conversation should start from:
+- UI sub-series closed
+- stable hold preserved
+- no automatic follow-up UI prompt required
+- next step is **main-roadmap re-entry / next-priority determination** or monitoring-trigger evaluation, not another UI-upgrade continuation prompt
