@@ -21,8 +21,15 @@ type RankingRow = {
   value: number | null;
   displayValue: string | null;
   direction: string;
+  directionLabel?: string;
   metricId: string;
 };
+
+function sortOrderPlainLanguage(direction: string): string {
+  if (direction === "asc") return "Lowest to highest";
+  if (direction === "desc") return "Highest to lowest";
+  return direction;
+}
 
 type DatasetBody = {
   schemaVersion: string;
@@ -80,6 +87,11 @@ export default async function ElectricityRankingsDatasetPage() {
         rankings, affordability, value score, inflation (1-year and 5-year),
         and momentum. Derived from the site&apos;s ranking pages.
       </p>
+      <p className="muted" style={{ marginTop: 12, fontSize: "var(--font-size-sm)", maxWidth: 640 }}>
+        <strong>Sort order:</strong> Each ranking orders states by the metric from higher values to lower
+        ones, or the reverse. The dataset includes a plain-language label; <code>direction</code> keeps the
+        short machine values (<code>asc</code> / <code>desc</code>) for tools that already use them.
+      </p>
 
       <section style={{ marginTop: 24 }}>
         <h2 style={{ fontSize: 20, marginBottom: 8 }}>Columns</h2>
@@ -89,7 +101,14 @@ export default async function ElectricityRankingsDatasetPage() {
           <li><code>state</code> — State name</li>
           <li><code>value</code> — Metric value</li>
           <li><code>displayValue</code> — Formatted display value (if present)</li>
-          <li><code>direction</code> — asc or desc</li>
+          <li>
+            <code>direction</code> — Sort direction code: <code>asc</code> (ascending) or <code>desc</code>{" "}
+            (descending), for scripts and spreadsheets
+          </li>
+          <li>
+            <code>directionLabel</code> — Same sort order in plain language: &quot;Lowest to highest&quot; or
+            &quot;Highest to lowest&quot;
+          </li>
           <li><code>metricId</code> — Metric field identifier</li>
         </ul>
       </section>
@@ -123,7 +142,9 @@ export default async function ElectricityRankingsDatasetPage() {
                   <th style={{ textAlign: "left", padding: "8px 12px", borderBottom: "1px solid var(--color-border)" }}>rankingId</th>
                   <th style={{ textAlign: "left", padding: "8px 12px", borderBottom: "1px solid var(--color-border)" }}>state</th>
                   <th style={{ textAlign: "right", padding: "8px 12px", borderBottom: "1px solid var(--color-border)" }}>value</th>
-                  <th style={{ textAlign: "left", padding: "8px 12px", borderBottom: "1px solid var(--color-border)" }}>direction</th>
+                  <th style={{ textAlign: "left", padding: "8px 12px", borderBottom: "1px solid var(--color-border)" }}>
+                    Sort order
+                  </th>
                 </tr>
               </thead>
               <tbody>
@@ -134,7 +155,9 @@ export default async function ElectricityRankingsDatasetPage() {
                     <td style={{ textAlign: "right", padding: "8px 12px", borderBottom: "1px solid var(--color-border)" }}>
                       {r.value != null ? (Number.isInteger(r.value) ? r.value : r.value.toFixed(2)) : "—"}
                     </td>
-                    <td style={{ padding: "8px 12px", borderBottom: "1px solid var(--color-border)" }}>{r.direction}</td>
+                    <td style={{ padding: "8px 12px", borderBottom: "1px solid var(--color-border)" }}>
+                      {r.directionLabel ?? sortOrderPlainLanguage(r.direction)}
+                    </td>
                   </tr>
                 ))}
               </tbody>

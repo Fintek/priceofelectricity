@@ -1,607 +1,607 @@
-rankingId,rankingTitle,state,value,displayValue,direction,metricId
-affordability,Affordability Rankings,Idaho,100,,desc,affordabilityIndex
-affordability,Affordability Rankings,North Dakota,99,,desc,affordabilityIndex
-affordability,Affordability Rankings,Louisiana,98,,desc,affordabilityIndex
-affordability,Affordability Rankings,Nebraska,98,,desc,affordabilityIndex
-affordability,Affordability Rankings,Arkansas,96,,desc,affordabilityIndex
-affordability,Affordability Rankings,Oklahoma,96,,desc,affordabilityIndex
-affordability,Affordability Rankings,Utah,96,,desc,affordabilityIndex
-affordability,Affordability Rankings,Washington,96,,desc,affordabilityIndex
-affordability,Affordability Rankings,Iowa,95,,desc,affordabilityIndex
-affordability,Affordability Rankings,Kentucky,95,,desc,affordabilityIndex
-affordability,Affordability Rankings,Montana,95,,desc,affordabilityIndex
-affordability,Affordability Rankings,Nevada,95,,desc,affordabilityIndex
-affordability,Affordability Rankings,South Dakota,95,,desc,affordabilityIndex
-affordability,Affordability Rankings,Tennessee,95,,desc,affordabilityIndex
-affordability,Affordability Rankings,Missouri,94,,desc,affordabilityIndex
-affordability,Affordability Rankings,Mississippi,93,,desc,affordabilityIndex
-affordability,Affordability Rankings,North Carolina,92,,desc,affordabilityIndex
-affordability,Affordability Rankings,Wyoming,92,,desc,affordabilityIndex
-affordability,Affordability Rankings,Kansas,91,,desc,affordabilityIndex
-affordability,Affordability Rankings,South Carolina,90,,desc,affordabilityIndex
-affordability,Affordability Rankings,Oregon,89,,desc,affordabilityIndex
-affordability,Affordability Rankings,Florida,88,,desc,affordabilityIndex
-affordability,Affordability Rankings,Georgia,88,,desc,affordabilityIndex
-affordability,Affordability Rankings,New Mexico,88,,desc,affordabilityIndex
-affordability,Affordability Rankings,Virginia,88,,desc,affordabilityIndex
-affordability,Affordability Rankings,West Virginia,88,,desc,affordabilityIndex
-affordability,Affordability Rankings,Arizona,87,,desc,affordabilityIndex
-affordability,Affordability Rankings,Colorado,86,,desc,affordabilityIndex
-affordability,Affordability Rankings,Texas,86,,desc,affordabilityIndex
-affordability,Affordability Rankings,Indiana,85,,desc,affordabilityIndex
-affordability,Affordability Rankings,Minnesota,85,,desc,affordabilityIndex
-affordability,Affordability Rankings,Alabama,84,,desc,affordabilityIndex
-affordability,Affordability Rankings,Ohio,83,,desc,affordabilityIndex
-affordability,Affordability Rankings,Delaware,82,,desc,affordabilityIndex
-affordability,Affordability Rankings,Illinois,82,,desc,affordabilityIndex
-affordability,Affordability Rankings,Pennsylvania,80,,desc,affordabilityIndex
-affordability,Affordability Rankings,Wisconsin,79,,desc,affordabilityIndex
-affordability,Affordability Rankings,Maryland,74,,desc,affordabilityIndex
-affordability,Affordability Rankings,Michigan,72,,desc,affordabilityIndex
-affordability,Affordability Rankings,New Jersey,65,,desc,affordabilityIndex
-affordability,Affordability Rankings,Vermont,63,,desc,affordabilityIndex
-affordability,Affordability Rankings,New Hampshire,61,,desc,affordabilityIndex
-affordability,Affordability Rankings,New York,59,,desc,affordabilityIndex
-affordability,Affordability Rankings,Alaska,55,,desc,affordabilityIndex
-affordability,Affordability Rankings,Massachusetts,52,,desc,affordabilityIndex
-affordability,Affordability Rankings,Maine,48,,desc,affordabilityIndex
-affordability,Affordability Rankings,Rhode Island,44,,desc,affordabilityIndex
-affordability,Affordability Rankings,Connecticut,37,,desc,affordabilityIndex
-affordability,Affordability Rankings,California,34,,desc,affordabilityIndex
-affordability,Affordability Rankings,Hawaii,0,,desc,affordabilityIndex
-value-score,Value Score Rankings,Idaho,97,,desc,valueScore
-value-score,Value Score Rankings,North Dakota,96,,desc,valueScore
-value-score,Value Score Rankings,Louisiana,95,,desc,valueScore
-value-score,Value Score Rankings,Nebraska,95,,desc,valueScore
-value-score,Value Score Rankings,Arkansas,93,,desc,valueScore
-value-score,Value Score Rankings,Oklahoma,93,,desc,valueScore
-value-score,Value Score Rankings,Utah,93,,desc,valueScore
-value-score,Value Score Rankings,Washington,93,,desc,valueScore
-value-score,Value Score Rankings,Iowa,92,,desc,valueScore
-value-score,Value Score Rankings,Kentucky,92,,desc,valueScore
-value-score,Value Score Rankings,Montana,92,,desc,valueScore
-value-score,Value Score Rankings,Nevada,92,,desc,valueScore
-value-score,Value Score Rankings,South Dakota,92,,desc,valueScore
-value-score,Value Score Rankings,Tennessee,92,,desc,valueScore
-value-score,Value Score Rankings,Missouri,91,,desc,valueScore
-value-score,Value Score Rankings,Mississippi,90,,desc,valueScore
-value-score,Value Score Rankings,North Carolina,89,,desc,valueScore
-value-score,Value Score Rankings,Wyoming,89,,desc,valueScore
-value-score,Value Score Rankings,Kansas,88,,desc,valueScore
-value-score,Value Score Rankings,South Carolina,87,,desc,valueScore
-value-score,Value Score Rankings,Georgia,86,,desc,valueScore
-value-score,Value Score Rankings,Oregon,86,,desc,valueScore
-value-score,Value Score Rankings,Virginia,86,,desc,valueScore
-value-score,Value Score Rankings,Florida,85,,desc,valueScore
-value-score,Value Score Rankings,New Mexico,85,,desc,valueScore
-value-score,Value Score Rankings,West Virginia,85,,desc,valueScore
-value-score,Value Score Rankings,Arizona,84,,desc,valueScore
-value-score,Value Score Rankings,Colorado,84,,desc,valueScore
-value-score,Value Score Rankings,Texas,84,,desc,valueScore
-value-score,Value Score Rankings,Indiana,83,,desc,valueScore
-value-score,Value Score Rankings,Minnesota,83,,desc,valueScore
-value-score,Value Score Rankings,Alabama,82,,desc,valueScore
-value-score,Value Score Rankings,Ohio,81,,desc,valueScore
-value-score,Value Score Rankings,Delaware,80,,desc,valueScore
-value-score,Value Score Rankings,Illinois,80,,desc,valueScore
-value-score,Value Score Rankings,Pennsylvania,78,,desc,valueScore
-value-score,Value Score Rankings,Wisconsin,77,,desc,valueScore
-value-score,Value Score Rankings,Maryland,72,,desc,valueScore
-value-score,Value Score Rankings,Michigan,70,,desc,valueScore
-value-score,Value Score Rankings,New Jersey,64,,desc,valueScore
-value-score,Value Score Rankings,Vermont,62,,desc,valueScore
-value-score,Value Score Rankings,New Hampshire,60,,desc,valueScore
-value-score,Value Score Rankings,New York,58,,desc,valueScore
-value-score,Value Score Rankings,Alaska,54,,desc,valueScore
-value-score,Value Score Rankings,Massachusetts,51,,desc,valueScore
-value-score,Value Score Rankings,Maine,47,,desc,valueScore
-value-score,Value Score Rankings,Rhode Island,44,,desc,valueScore
-value-score,Value Score Rankings,Connecticut,37,,desc,valueScore
-value-score,Value Score Rankings,California,34,,desc,valueScore
-value-score,Value Score Rankings,Hawaii,2,,desc,valueScore
-rate-low-to-high,Rate Rankings (Low to High),Idaho,11.74,,asc,avgRateCentsPerKwh
-rate-low-to-high,Rate Rankings (Low to High),North Dakota,11.92,,asc,avgRateCentsPerKwh
-rate-low-to-high,Rate Rankings (Low to High),Nebraska,12.19,,asc,avgRateCentsPerKwh
-rate-low-to-high,Rate Rankings (Low to High),Louisiana,12.34,,asc,avgRateCentsPerKwh
-rate-low-to-high,Rate Rankings (Low to High),Arkansas,12.83,,asc,avgRateCentsPerKwh
-rate-low-to-high,Rate Rankings (Low to High),Washington,12.86,,asc,avgRateCentsPerKwh
-rate-low-to-high,Rate Rankings (Low to High),Utah,12.97,,asc,avgRateCentsPerKwh
-rate-low-to-high,Rate Rankings (Low to High),Oklahoma,13.05,,asc,avgRateCentsPerKwh
-rate-low-to-high,Rate Rankings (Low to High),Montana,13.12,,asc,avgRateCentsPerKwh
-rate-low-to-high,Rate Rankings (Low to High),South Dakota,13.14,,asc,avgRateCentsPerKwh
-rate-low-to-high,Rate Rankings (Low to High),Nevada,13.16,,asc,avgRateCentsPerKwh
-rate-low-to-high,Rate Rankings (Low to High),Iowa,13.18,,asc,avgRateCentsPerKwh
-rate-low-to-high,Rate Rankings (Low to High),Kentucky,13.2,,asc,avgRateCentsPerKwh
-rate-low-to-high,Rate Rankings (Low to High),Tennessee,13.28,,asc,avgRateCentsPerKwh
-rate-low-to-high,Rate Rankings (Low to High),Missouri,13.37,,asc,avgRateCentsPerKwh
-rate-low-to-high,Rate Rankings (Low to High),Mississippi,13.91,,asc,avgRateCentsPerKwh
-rate-low-to-high,Rate Rankings (Low to High),Wyoming,14.02,,asc,avgRateCentsPerKwh
-rate-low-to-high,Rate Rankings (Low to High),North Carolina,14.08,,asc,avgRateCentsPerKwh
-rate-low-to-high,Rate Rankings (Low to High),Kansas,14.48,,asc,avgRateCentsPerKwh
-rate-low-to-high,Rate Rankings (Low to High),South Carolina,14.72,,asc,avgRateCentsPerKwh
-rate-low-to-high,Rate Rankings (Low to High),Oregon,15,,asc,avgRateCentsPerKwh
-rate-low-to-high,Rate Rankings (Low to High),Georgia,15.22,,asc,avgRateCentsPerKwh
-rate-low-to-high,Rate Rankings (Low to High),Virginia,15.26,,asc,avgRateCentsPerKwh
-rate-low-to-high,Rate Rankings (Low to High),Florida,15.27,,asc,avgRateCentsPerKwh
-rate-low-to-high,Rate Rankings (Low to High),New Mexico,15.29,,asc,avgRateCentsPerKwh
-rate-low-to-high,Rate Rankings (Low to High),West Virginia,15.39,,asc,avgRateCentsPerKwh
-rate-low-to-high,Rate Rankings (Low to High),Arizona,15.7,,asc,avgRateCentsPerKwh
-rate-low-to-high,Rate Rankings (Low to High),Colorado,15.79,,asc,avgRateCentsPerKwh
-rate-low-to-high,Rate Rankings (Low to High),Texas,15.83,,asc,avgRateCentsPerKwh
-rate-low-to-high,Rate Rankings (Low to High),Minnesota,16.04,,asc,avgRateCentsPerKwh
-rate-low-to-high,Rate Rankings (Low to High),Indiana,16.12,,asc,avgRateCentsPerKwh
-rate-low-to-high,Rate Rankings (Low to High),Alabama,16.55,,asc,avgRateCentsPerKwh
-rate-low-to-high,Rate Rankings (Low to High),Ohio,16.9,,asc,avgRateCentsPerKwh
-rate-low-to-high,Rate Rankings (Low to High),Illinois,16.96,,asc,avgRateCentsPerKwh
-rate-low-to-high,Rate Rankings (Low to High),Delaware,17.18,,asc,avgRateCentsPerKwh
-rate-low-to-high,Rate Rankings (Low to High),Pennsylvania,17.78,,asc,avgRateCentsPerKwh
-rate-low-to-high,Rate Rankings (Low to High),Wisconsin,18.04,,asc,avgRateCentsPerKwh
-rate-low-to-high,Rate Rankings (Low to High),Maryland,19.29,,asc,avgRateCentsPerKwh
-rate-low-to-high,Rate Rankings (Low to High),Michigan,19.91,,asc,avgRateCentsPerKwh
-rate-low-to-high,Rate Rankings (Low to High),New Jersey,22.15,,asc,avgRateCentsPerKwh
-rate-low-to-high,Rate Rankings (Low to High),Vermont,22.58,,asc,avgRateCentsPerKwh
-rate-low-to-high,Rate Rankings (Low to High),New Hampshire,23.35,,asc,avgRateCentsPerKwh
-rate-low-to-high,Rate Rankings (Low to High),New York,23.87,,asc,avgRateCentsPerKwh
-rate-low-to-high,Rate Rankings (Low to High),Alaska,25.01,,asc,avgRateCentsPerKwh
-rate-low-to-high,Rate Rankings (Low to High),Massachusetts,26.01,,asc,avgRateCentsPerKwh
-rate-low-to-high,Rate Rankings (Low to High),Maine,27.24,,asc,avgRateCentsPerKwh
-rate-low-to-high,Rate Rankings (Low to High),Rhode Island,28.42,,asc,avgRateCentsPerKwh
-rate-low-to-high,Rate Rankings (Low to High),Connecticut,30.35,,asc,avgRateCentsPerKwh
-rate-low-to-high,Rate Rankings (Low to High),California,31.14,,asc,avgRateCentsPerKwh
-rate-low-to-high,Rate Rankings (Low to High),Hawaii,41.3,,asc,avgRateCentsPerKwh
-rate-high-to-low,Rate Rankings (High to Low),Hawaii,41.3,,desc,avgRateCentsPerKwh
-rate-high-to-low,Rate Rankings (High to Low),California,31.14,,desc,avgRateCentsPerKwh
-rate-high-to-low,Rate Rankings (High to Low),Connecticut,30.35,,desc,avgRateCentsPerKwh
-rate-high-to-low,Rate Rankings (High to Low),Rhode Island,28.42,,desc,avgRateCentsPerKwh
-rate-high-to-low,Rate Rankings (High to Low),Maine,27.24,,desc,avgRateCentsPerKwh
-rate-high-to-low,Rate Rankings (High to Low),Massachusetts,26.01,,desc,avgRateCentsPerKwh
-rate-high-to-low,Rate Rankings (High to Low),Alaska,25.01,,desc,avgRateCentsPerKwh
-rate-high-to-low,Rate Rankings (High to Low),New York,23.87,,desc,avgRateCentsPerKwh
-rate-high-to-low,Rate Rankings (High to Low),New Hampshire,23.35,,desc,avgRateCentsPerKwh
-rate-high-to-low,Rate Rankings (High to Low),Vermont,22.58,,desc,avgRateCentsPerKwh
-rate-high-to-low,Rate Rankings (High to Low),New Jersey,22.15,,desc,avgRateCentsPerKwh
-rate-high-to-low,Rate Rankings (High to Low),Michigan,19.91,,desc,avgRateCentsPerKwh
-rate-high-to-low,Rate Rankings (High to Low),Maryland,19.29,,desc,avgRateCentsPerKwh
-rate-high-to-low,Rate Rankings (High to Low),Wisconsin,18.04,,desc,avgRateCentsPerKwh
-rate-high-to-low,Rate Rankings (High to Low),Pennsylvania,17.78,,desc,avgRateCentsPerKwh
-rate-high-to-low,Rate Rankings (High to Low),Delaware,17.18,,desc,avgRateCentsPerKwh
-rate-high-to-low,Rate Rankings (High to Low),Illinois,16.96,,desc,avgRateCentsPerKwh
-rate-high-to-low,Rate Rankings (High to Low),Ohio,16.9,,desc,avgRateCentsPerKwh
-rate-high-to-low,Rate Rankings (High to Low),Alabama,16.55,,desc,avgRateCentsPerKwh
-rate-high-to-low,Rate Rankings (High to Low),Indiana,16.12,,desc,avgRateCentsPerKwh
-rate-high-to-low,Rate Rankings (High to Low),Minnesota,16.04,,desc,avgRateCentsPerKwh
-rate-high-to-low,Rate Rankings (High to Low),Texas,15.83,,desc,avgRateCentsPerKwh
-rate-high-to-low,Rate Rankings (High to Low),Colorado,15.79,,desc,avgRateCentsPerKwh
-rate-high-to-low,Rate Rankings (High to Low),Arizona,15.7,,desc,avgRateCentsPerKwh
-rate-high-to-low,Rate Rankings (High to Low),West Virginia,15.39,,desc,avgRateCentsPerKwh
-rate-high-to-low,Rate Rankings (High to Low),New Mexico,15.29,,desc,avgRateCentsPerKwh
-rate-high-to-low,Rate Rankings (High to Low),Florida,15.27,,desc,avgRateCentsPerKwh
-rate-high-to-low,Rate Rankings (High to Low),Virginia,15.26,,desc,avgRateCentsPerKwh
-rate-high-to-low,Rate Rankings (High to Low),Georgia,15.22,,desc,avgRateCentsPerKwh
-rate-high-to-low,Rate Rankings (High to Low),Oregon,15,,desc,avgRateCentsPerKwh
-rate-high-to-low,Rate Rankings (High to Low),South Carolina,14.72,,desc,avgRateCentsPerKwh
-rate-high-to-low,Rate Rankings (High to Low),Kansas,14.48,,desc,avgRateCentsPerKwh
-rate-high-to-low,Rate Rankings (High to Low),North Carolina,14.08,,desc,avgRateCentsPerKwh
-rate-high-to-low,Rate Rankings (High to Low),Wyoming,14.02,,desc,avgRateCentsPerKwh
-rate-high-to-low,Rate Rankings (High to Low),Mississippi,13.91,,desc,avgRateCentsPerKwh
-rate-high-to-low,Rate Rankings (High to Low),Missouri,13.37,,desc,avgRateCentsPerKwh
-rate-high-to-low,Rate Rankings (High to Low),Tennessee,13.28,,desc,avgRateCentsPerKwh
-rate-high-to-low,Rate Rankings (High to Low),Kentucky,13.2,,desc,avgRateCentsPerKwh
-rate-high-to-low,Rate Rankings (High to Low),Iowa,13.18,,desc,avgRateCentsPerKwh
-rate-high-to-low,Rate Rankings (High to Low),Nevada,13.16,,desc,avgRateCentsPerKwh
-rate-high-to-low,Rate Rankings (High to Low),South Dakota,13.14,,desc,avgRateCentsPerKwh
-rate-high-to-low,Rate Rankings (High to Low),Montana,13.12,,desc,avgRateCentsPerKwh
-rate-high-to-low,Rate Rankings (High to Low),Oklahoma,13.05,,desc,avgRateCentsPerKwh
-rate-high-to-low,Rate Rankings (High to Low),Utah,12.97,,desc,avgRateCentsPerKwh
-rate-high-to-low,Rate Rankings (High to Low),Washington,12.86,,desc,avgRateCentsPerKwh
-rate-high-to-low,Rate Rankings (High to Low),Arkansas,12.83,,desc,avgRateCentsPerKwh
-rate-high-to-low,Rate Rankings (High to Low),Louisiana,12.34,,desc,avgRateCentsPerKwh
-rate-high-to-low,Rate Rankings (High to Low),Nebraska,12.19,,desc,avgRateCentsPerKwh
-rate-high-to-low,Rate Rankings (High to Low),North Dakota,11.92,,desc,avgRateCentsPerKwh
-rate-high-to-low,Rate Rankings (High to Low),Idaho,11.74,,desc,avgRateCentsPerKwh
-electricity-affordability,Most Affordable Electricity by State,Idaho,105.66,$105.66,asc,metricValue
-electricity-affordability,Most Affordable Electricity by State,North Dakota,107.28,$107.28,asc,metricValue
-electricity-affordability,Most Affordable Electricity by State,Nebraska,109.71,$109.71,asc,metricValue
-electricity-affordability,Most Affordable Electricity by State,Louisiana,111.06,$111.06,asc,metricValue
-electricity-affordability,Most Affordable Electricity by State,Arkansas,115.47,$115.47,asc,metricValue
-electricity-affordability,Most Affordable Electricity by State,Washington,115.74,$115.74,asc,metricValue
-electricity-affordability,Most Affordable Electricity by State,Utah,116.73,$116.73,asc,metricValue
-electricity-affordability,Most Affordable Electricity by State,Oklahoma,117.45,$117.45,asc,metricValue
-electricity-affordability,Most Affordable Electricity by State,Montana,118.08,$118.08,asc,metricValue
-electricity-affordability,Most Affordable Electricity by State,South Dakota,118.26,$118.26,asc,metricValue
-electricity-affordability,Most Affordable Electricity by State,Nevada,118.44,$118.44,asc,metricValue
-electricity-affordability,Most Affordable Electricity by State,Iowa,118.62,$118.62,asc,metricValue
-electricity-affordability,Most Affordable Electricity by State,Kentucky,118.8,$118.80,asc,metricValue
-electricity-affordability,Most Affordable Electricity by State,Tennessee,119.52,$119.52,asc,metricValue
-electricity-affordability,Most Affordable Electricity by State,Missouri,120.33,$120.33,asc,metricValue
-electricity-affordability,Most Affordable Electricity by State,Mississippi,125.19,$125.19,asc,metricValue
-electricity-affordability,Most Affordable Electricity by State,Wyoming,126.18,$126.18,asc,metricValue
-electricity-affordability,Most Affordable Electricity by State,North Carolina,126.72,$126.72,asc,metricValue
-electricity-affordability,Most Affordable Electricity by State,Kansas,130.32,$130.32,asc,metricValue
-electricity-affordability,Most Affordable Electricity by State,South Carolina,132.48,$132.48,asc,metricValue
-electricity-affordability,Most Affordable Electricity by State,Oregon,135,$135.00,asc,metricValue
-electricity-affordability,Most Affordable Electricity by State,Georgia,136.98,$136.98,asc,metricValue
-electricity-affordability,Most Affordable Electricity by State,Virginia,137.34,$137.34,asc,metricValue
-electricity-affordability,Most Affordable Electricity by State,Florida,137.43,$137.43,asc,metricValue
-electricity-affordability,Most Affordable Electricity by State,New Mexico,137.61,$137.61,asc,metricValue
-electricity-affordability,Most Affordable Electricity by State,West Virginia,138.51,$138.51,asc,metricValue
-electricity-affordability,Most Affordable Electricity by State,Arizona,141.3,$141.30,asc,metricValue
-electricity-affordability,Most Affordable Electricity by State,Colorado,142.11,$142.11,asc,metricValue
-electricity-affordability,Most Affordable Electricity by State,Texas,142.47,$142.47,asc,metricValue
-electricity-affordability,Most Affordable Electricity by State,Minnesota,144.36,$144.36,asc,metricValue
-electricity-affordability,Most Affordable Electricity by State,Indiana,145.08,$145.08,asc,metricValue
-electricity-affordability,Most Affordable Electricity by State,Alabama,148.95,$148.95,asc,metricValue
-electricity-affordability,Most Affordable Electricity by State,Ohio,152.1,$152.10,asc,metricValue
-electricity-affordability,Most Affordable Electricity by State,Illinois,152.64,$152.64,asc,metricValue
-electricity-affordability,Most Affordable Electricity by State,Delaware,154.62,$154.62,asc,metricValue
-electricity-affordability,Most Affordable Electricity by State,Pennsylvania,160.02,$160.02,asc,metricValue
-electricity-affordability,Most Affordable Electricity by State,Wisconsin,162.36,$162.36,asc,metricValue
-electricity-affordability,Most Affordable Electricity by State,Maryland,173.61,$173.61,asc,metricValue
-electricity-affordability,Most Affordable Electricity by State,Michigan,179.19,$179.19,asc,metricValue
-electricity-affordability,Most Affordable Electricity by State,New Jersey,199.35,$199.35,asc,metricValue
-electricity-affordability,Most Affordable Electricity by State,Vermont,203.22,$203.22,asc,metricValue
-electricity-affordability,Most Affordable Electricity by State,New Hampshire,210.15,$210.15,asc,metricValue
-electricity-affordability,Most Affordable Electricity by State,New York,214.83,$214.83,asc,metricValue
-electricity-affordability,Most Affordable Electricity by State,Alaska,225.09,$225.09,asc,metricValue
-electricity-affordability,Most Affordable Electricity by State,Massachusetts,234.09,$234.09,asc,metricValue
-electricity-affordability,Most Affordable Electricity by State,Maine,245.16,$245.16,asc,metricValue
-electricity-affordability,Most Affordable Electricity by State,Rhode Island,255.78,$255.78,asc,metricValue
-electricity-affordability,Most Affordable Electricity by State,Connecticut,273.15,$273.15,asc,metricValue
-electricity-affordability,Most Affordable Electricity by State,California,280.26,$280.26,asc,metricValue
-electricity-affordability,Most Affordable Electricity by State,Hawaii,371.7,$371.70,asc,metricValue
-most-expensive-electricity,Least Affordable Electricity by State,Hawaii,371.7,$371.70,desc,metricValue
-most-expensive-electricity,Least Affordable Electricity by State,California,280.26,$280.26,desc,metricValue
-most-expensive-electricity,Least Affordable Electricity by State,Connecticut,273.15,$273.15,desc,metricValue
-most-expensive-electricity,Least Affordable Electricity by State,Rhode Island,255.78,$255.78,desc,metricValue
-most-expensive-electricity,Least Affordable Electricity by State,Maine,245.16,$245.16,desc,metricValue
-most-expensive-electricity,Least Affordable Electricity by State,Massachusetts,234.09,$234.09,desc,metricValue
-most-expensive-electricity,Least Affordable Electricity by State,Alaska,225.09,$225.09,desc,metricValue
-most-expensive-electricity,Least Affordable Electricity by State,New York,214.83,$214.83,desc,metricValue
-most-expensive-electricity,Least Affordable Electricity by State,New Hampshire,210.15,$210.15,desc,metricValue
-most-expensive-electricity,Least Affordable Electricity by State,Vermont,203.22,$203.22,desc,metricValue
-most-expensive-electricity,Least Affordable Electricity by State,New Jersey,199.35,$199.35,desc,metricValue
-most-expensive-electricity,Least Affordable Electricity by State,Michigan,179.19,$179.19,desc,metricValue
-most-expensive-electricity,Least Affordable Electricity by State,Maryland,173.61,$173.61,desc,metricValue
-most-expensive-electricity,Least Affordable Electricity by State,Wisconsin,162.36,$162.36,desc,metricValue
-most-expensive-electricity,Least Affordable Electricity by State,Pennsylvania,160.02,$160.02,desc,metricValue
-most-expensive-electricity,Least Affordable Electricity by State,Delaware,154.62,$154.62,desc,metricValue
-most-expensive-electricity,Least Affordable Electricity by State,Illinois,152.64,$152.64,desc,metricValue
-most-expensive-electricity,Least Affordable Electricity by State,Ohio,152.1,$152.10,desc,metricValue
-most-expensive-electricity,Least Affordable Electricity by State,Alabama,148.95,$148.95,desc,metricValue
-most-expensive-electricity,Least Affordable Electricity by State,Indiana,145.08,$145.08,desc,metricValue
-most-expensive-electricity,Least Affordable Electricity by State,Minnesota,144.36,$144.36,desc,metricValue
-most-expensive-electricity,Least Affordable Electricity by State,Texas,142.47,$142.47,desc,metricValue
-most-expensive-electricity,Least Affordable Electricity by State,Colorado,142.11,$142.11,desc,metricValue
-most-expensive-electricity,Least Affordable Electricity by State,Arizona,141.3,$141.30,desc,metricValue
-most-expensive-electricity,Least Affordable Electricity by State,West Virginia,138.51,$138.51,desc,metricValue
-most-expensive-electricity,Least Affordable Electricity by State,New Mexico,137.61,$137.61,desc,metricValue
-most-expensive-electricity,Least Affordable Electricity by State,Florida,137.43,$137.43,desc,metricValue
-most-expensive-electricity,Least Affordable Electricity by State,Virginia,137.34,$137.34,desc,metricValue
-most-expensive-electricity,Least Affordable Electricity by State,Georgia,136.98,$136.98,desc,metricValue
-most-expensive-electricity,Least Affordable Electricity by State,Oregon,135,$135.00,desc,metricValue
-most-expensive-electricity,Least Affordable Electricity by State,South Carolina,132.48,$132.48,desc,metricValue
-most-expensive-electricity,Least Affordable Electricity by State,Kansas,130.32,$130.32,desc,metricValue
-most-expensive-electricity,Least Affordable Electricity by State,North Carolina,126.72,$126.72,desc,metricValue
-most-expensive-electricity,Least Affordable Electricity by State,Wyoming,126.18,$126.18,desc,metricValue
-most-expensive-electricity,Least Affordable Electricity by State,Mississippi,125.19,$125.19,desc,metricValue
-most-expensive-electricity,Least Affordable Electricity by State,Missouri,120.33,$120.33,desc,metricValue
-most-expensive-electricity,Least Affordable Electricity by State,Tennessee,119.52,$119.52,desc,metricValue
-most-expensive-electricity,Least Affordable Electricity by State,Kentucky,118.8,$118.80,desc,metricValue
-most-expensive-electricity,Least Affordable Electricity by State,Iowa,118.62,$118.62,desc,metricValue
-most-expensive-electricity,Least Affordable Electricity by State,Nevada,118.44,$118.44,desc,metricValue
-most-expensive-electricity,Least Affordable Electricity by State,South Dakota,118.26,$118.26,desc,metricValue
-most-expensive-electricity,Least Affordable Electricity by State,Montana,118.08,$118.08,desc,metricValue
-most-expensive-electricity,Least Affordable Electricity by State,Oklahoma,117.45,$117.45,desc,metricValue
-most-expensive-electricity,Least Affordable Electricity by State,Utah,116.73,$116.73,desc,metricValue
-most-expensive-electricity,Least Affordable Electricity by State,Washington,115.74,$115.74,desc,metricValue
-most-expensive-electricity,Least Affordable Electricity by State,Arkansas,115.47,$115.47,desc,metricValue
-most-expensive-electricity,Least Affordable Electricity by State,Louisiana,111.06,$111.06,desc,metricValue
-most-expensive-electricity,Least Affordable Electricity by State,Nebraska,109.71,$109.71,desc,metricValue
-most-expensive-electricity,Least Affordable Electricity by State,North Dakota,107.28,$107.28,desc,metricValue
-most-expensive-electricity,Least Affordable Electricity by State,Idaho,105.66,$105.66,desc,metricValue
-cagr-25y,25-Year Rate Growth (CAGR),District of Columbia,5.25,,desc,cagr25y
-cagr-25y,25-Year Rate Growth (CAGR),Maryland,4.45,,desc,cagr25y
-cagr-25y,25-Year Rate Growth (CAGR),California,4.05,,desc,cagr25y
-cagr-25y,25-Year Rate Growth (CAGR),Connecticut,4.03,,desc,cagr25y
-cagr-25y,25-Year Rate Growth (CAGR),Kentucky,3.91,,desc,cagr25y
-cagr-25y,25-Year Rate Growth (CAGR),Massachusetts,3.89,,desc,cagr25y
-cagr-25y,25-Year Rate Growth (CAGR),Rhode Island,3.76,,desc,cagr25y
-cagr-25y,25-Year Rate Growth (CAGR),Oregon,3.73,,desc,cagr25y
-cagr-25y,25-Year Rate Growth (CAGR),Maine,3.64,,desc,cagr25y
-cagr-25y,25-Year Rate Growth (CAGR),Michigan,3.62,,desc,cagr25y
-cagr-25y,25-Year Rate Growth (CAGR),Washington,3.62,,desc,cagr25y
-cagr-25y,25-Year Rate Growth (CAGR),Indiana,3.6,,desc,cagr25y
-cagr-25y,25-Year Rate Growth (CAGR),Hawaii,3.59,,desc,cagr25y
-cagr-25y,25-Year Rate Growth (CAGR),West Virginia,3.55,,desc,cagr25y
-cagr-25y,25-Year Rate Growth (CAGR),New Jersey,3.52,,desc,cagr25y
-cagr-25y,25-Year Rate Growth (CAGR),Colorado,3.48,,desc,cagr25y
-cagr-25y,25-Year Rate Growth (CAGR),Wisconsin,3.48,,desc,cagr25y
-cagr-25y,25-Year Rate Growth (CAGR),Idaho,3.28,,desc,cagr25y
-cagr-25y,25-Year Rate Growth (CAGR),Ohio,3.23,,desc,cagr25y
-cagr-25y,25-Year Rate Growth (CAGR),Alabama,3.18,,desc,cagr25y
-cagr-25y,25-Year Rate Growth (CAGR),Pennsylvania,3.18,,desc,cagr25y
-cagr-25y,25-Year Rate Growth (CAGR),Virginia,3.07,,desc,cagr25y
-cagr-25y,25-Year Rate Growth (CAGR),Arizona,3.05,,desc,cagr25y
-cagr-25y,25-Year Rate Growth (CAGR),Alaska,3.01,,desc,cagr25y
-cagr-25y,25-Year Rate Growth (CAGR),New York,3.01,,desc,cagr25y
-cagr-25y,25-Year Rate Growth (CAGR),Delaware,3,,desc,cagr25y
-cagr-25y,25-Year Rate Growth (CAGR),Tennessee,2.98,,desc,cagr25y
-cagr-25y,25-Year Rate Growth (CAGR),Wyoming,2.98,,desc,cagr25y
-cagr-25y,25-Year Rate Growth (CAGR),Nebraska,2.96,,desc,cagr25y
-cagr-25y,25-Year Rate Growth (CAGR),Minnesota,2.93,,desc,cagr25y
-cagr-25y,25-Year Rate Growth (CAGR),Montana,2.88,,desc,cagr25y
-cagr-25y,25-Year Rate Growth (CAGR),New Hampshire,2.86,,desc,cagr25y
-cagr-25y,25-Year Rate Growth (CAGR),Mississippi,2.82,,desc,cagr25y
-cagr-25y,25-Year Rate Growth (CAGR),South Carolina,2.8,,desc,cagr25y
-cagr-25y,25-Year Rate Growth (CAGR),South Dakota,2.78,,desc,cagr25y
-cagr-25y,25-Year Rate Growth (CAGR),Illinois,2.76,,desc,cagr25y
-cagr-25y,25-Year Rate Growth (CAGR),Utah,2.75,,desc,cagr25y
-cagr-25y,25-Year Rate Growth (CAGR),Georgia,2.69,,desc,cagr25y
-cagr-25y,25-Year Rate Growth (CAGR),Kansas,2.66,,desc,cagr25y
-cagr-25y,25-Year Rate Growth (CAGR),Vermont,2.57,,desc,cagr25y
-cagr-25y,25-Year Rate Growth (CAGR),Florida,2.55,,desc,cagr25y
-cagr-25y,25-Year Rate Growth (CAGR),Texas,2.55,,desc,cagr25y
-cagr-25y,25-Year Rate Growth (CAGR),North Dakota,2.54,,desc,cagr25y
-cagr-25y,25-Year Rate Growth (CAGR),Missouri,2.48,,desc,cagr25y
-cagr-25y,25-Year Rate Growth (CAGR),New Mexico,2.36,,desc,cagr25y
-cagr-25y,25-Year Rate Growth (CAGR),North Carolina,2.17,,desc,cagr25y
-cagr-25y,25-Year Rate Growth (CAGR),Oklahoma,2.15,,desc,cagr25y
-cagr-25y,25-Year Rate Growth (CAGR),Arkansas,2.07,,desc,cagr25y
-cagr-25y,25-Year Rate Growth (CAGR),Iowa,1.89,,desc,cagr25y
-cagr-25y,25-Year Rate Growth (CAGR),Nevada,1.82,,desc,cagr25y
-cagr-25y,25-Year Rate Growth (CAGR),Louisiana,1.24,,desc,cagr25y
-volatility-5y,5-Year Rate Volatility,District Of Columbia,19.98,,desc,volatility5y
-volatility-5y,5-Year Rate Volatility,Maine,17.96,,desc,volatility5y
-volatility-5y,5-Year Rate Volatility,Maryland,15.25,,desc,volatility5y
-volatility-5y,5-Year Rate Volatility,New Hampshire,14.95,,desc,volatility5y
-volatility-5y,5-Year Rate Volatility,Rhode Island,14.36,,desc,volatility5y
-volatility-5y,5-Year Rate Volatility,Connecticut,14.07,,desc,volatility5y
-volatility-5y,5-Year Rate Volatility,California,13.88,,desc,volatility5y
-volatility-5y,5-Year Rate Volatility,New Jersey,13.49,,desc,volatility5y
-volatility-5y,5-Year Rate Volatility,Nevada,13.42,,desc,volatility5y
-volatility-5y,5-Year Rate Volatility,Missouri,13.36,,desc,volatility5y
-volatility-5y,5-Year Rate Volatility,Delaware,13.26,,desc,volatility5y
-volatility-5y,5-Year Rate Volatility,Oregon,13.07,,desc,volatility5y
-volatility-5y,5-Year Rate Volatility,Pennsylvania,12.47,,desc,volatility5y
-volatility-5y,5-Year Rate Volatility,Massachusetts,11.43,,desc,volatility5y
-volatility-5y,5-Year Rate Volatility,North Dakota,11.31,,desc,volatility5y
-volatility-5y,5-Year Rate Volatility,New York,11.31,,desc,volatility5y
-volatility-5y,5-Year Rate Volatility,Illinois,11.18,,desc,volatility5y
-volatility-5y,5-Year Rate Volatility,Ohio,11.14,,desc,volatility5y
-volatility-5y,5-Year Rate Volatility,Washington,10.97,,desc,volatility5y
-volatility-5y,5-Year Rate Volatility,Oklahoma,10.72,,desc,volatility5y
-volatility-5y,5-Year Rate Volatility,North Carolina,10.65,,desc,volatility5y
-volatility-5y,5-Year Rate Volatility,Wyoming,10.59,,desc,volatility5y
-volatility-5y,5-Year Rate Volatility,Iowa,10.26,,desc,volatility5y
-volatility-5y,5-Year Rate Volatility,Hawaii,9.94,,desc,volatility5y
-volatility-5y,5-Year Rate Volatility,West Virginia,9.82,,desc,volatility5y
-volatility-5y,5-Year Rate Volatility,Nebraska,9.71,,desc,volatility5y
-volatility-5y,5-Year Rate Volatility,Virginia,9.7,,desc,volatility5y
-volatility-5y,5-Year Rate Volatility,Utah,9.61,,desc,volatility5y
-volatility-5y,5-Year Rate Volatility,Florida,9.19,,desc,volatility5y
-volatility-5y,5-Year Rate Volatility,Texas,9.07,,desc,volatility5y
-volatility-5y,5-Year Rate Volatility,Georgia,8.87,,desc,volatility5y
-volatility-5y,5-Year Rate Volatility,Alabama,8.77,,desc,volatility5y
-volatility-5y,5-Year Rate Volatility,Montana,8.53,,desc,volatility5y
-volatility-5y,5-Year Rate Volatility,Arizona,8.43,,desc,volatility5y
-volatility-5y,5-Year Rate Volatility,Louisiana,8.38,,desc,volatility5y
-volatility-5y,5-Year Rate Volatility,Indiana,8.27,,desc,volatility5y
-volatility-5y,5-Year Rate Volatility,Wisconsin,8.21,,desc,volatility5y
-volatility-5y,5-Year Rate Volatility,Mississippi,8.13,,desc,volatility5y
-volatility-5y,5-Year Rate Volatility,Minnesota,8.02,,desc,volatility5y
-volatility-5y,5-Year Rate Volatility,Idaho,7.81,,desc,volatility5y
-volatility-5y,5-Year Rate Volatility,South Dakota,7.7,,desc,volatility5y
-volatility-5y,5-Year Rate Volatility,Vermont,7.52,,desc,volatility5y
-volatility-5y,5-Year Rate Volatility,Colorado,7.42,,desc,volatility5y
-volatility-5y,5-Year Rate Volatility,Arkansas,7.07,,desc,volatility5y
-volatility-5y,5-Year Rate Volatility,Tennessee,7.01,,desc,volatility5y
-volatility-5y,5-Year Rate Volatility,South Carolina,6.61,,desc,volatility5y
-volatility-5y,5-Year Rate Volatility,Kentucky,6.42,,desc,volatility5y
-volatility-5y,5-Year Rate Volatility,Alaska,6.38,,desc,volatility5y
-volatility-5y,5-Year Rate Volatility,New Mexico,6.26,,desc,volatility5y
-volatility-5y,5-Year Rate Volatility,Kansas,5.92,,desc,volatility5y
-volatility-5y,5-Year Rate Volatility,Michigan,5.7,,desc,volatility5y
-price-trend,Electricity Price Trend Ranking,Maine,18.05,,desc,annualizedTrend
-price-trend,Electricity Price Trend Ranking,District of Columbia,17.41,,desc,annualizedTrend
-price-trend,Electricity Price Trend Ranking,Maryland,12.68,,desc,annualizedTrend
-price-trend,Electricity Price Trend Ranking,New York,11.85,,desc,annualizedTrend
-price-trend,Electricity Price Trend Ranking,Pennsylvania,10.91,,desc,annualizedTrend
-price-trend,Electricity Price Trend Ranking,New Jersey,9.31,,desc,annualizedTrend
-price-trend,Electricity Price Trend Ranking,Oklahoma,8.81,,desc,annualizedTrend
-price-trend,Electricity Price Trend Ranking,Ohio,8.71,,desc,annualizedTrend
-price-trend,Electricity Price Trend Ranking,Washington,7.97,,desc,annualizedTrend
-price-trend,Electricity Price Trend Ranking,Florida,7.88,,desc,annualizedTrend
-price-trend,Electricity Price Trend Ranking,California,7.74,,desc,annualizedTrend
-price-trend,Electricity Price Trend Ranking,Virginia,7.74,,desc,annualizedTrend
-price-trend,Electricity Price Trend Ranking,New Hampshire,7.64,,desc,annualizedTrend
-price-trend,Electricity Price Trend Ranking,Delaware,7.63,,desc,annualizedTrend
-price-trend,Electricity Price Trend Ranking,Massachusetts,7.24,,desc,annualizedTrend
-price-trend,Electricity Price Trend Ranking,Texas,7.06,,desc,annualizedTrend
-price-trend,Electricity Price Trend Ranking,Colorado,7.05,,desc,annualizedTrend
-price-trend,Electricity Price Trend Ranking,Oregon,6.54,,desc,annualizedTrend
-price-trend,Electricity Price Trend Ranking,Kentucky,6.2,,desc,annualizedTrend
-price-trend,Electricity Price Trend Ranking,Rhode Island,6.03,,desc,annualizedTrend
-price-trend,Electricity Price Trend Ranking,Utah,6.01,,desc,annualizedTrend
-price-trend,Electricity Price Trend Ranking,Arizona,5.89,,desc,annualizedTrend
-price-trend,Electricity Price Trend Ranking,Wisconsin,5.61,,desc,annualizedTrend
-price-trend,Electricity Price Trend Ranking,Mississippi,5.25,,desc,annualizedTrend
-price-trend,Electricity Price Trend Ranking,Connecticut,5.08,,desc,annualizedTrend
-price-trend,Electricity Price Trend Ranking,Vermont,5.06,,desc,annualizedTrend
-price-trend,Electricity Price Trend Ranking,Indiana,5,,desc,annualizedTrend
-price-trend,Electricity Price Trend Ranking,Georgia,4.84,,desc,annualizedTrend
-price-trend,Electricity Price Trend Ranking,Tennessee,4.81,,desc,annualizedTrend
-price-trend,Electricity Price Trend Ranking,Louisiana,4.73,,desc,annualizedTrend
-price-trend,Electricity Price Trend Ranking,Alabama,4.43,,desc,annualizedTrend
-price-trend,Electricity Price Trend Ranking,North Carolina,4.4,,desc,annualizedTrend
-price-trend,Electricity Price Trend Ranking,Idaho,4.38,,desc,annualizedTrend
-price-trend,Electricity Price Trend Ranking,South Dakota,4.28,,desc,annualizedTrend
-price-trend,Electricity Price Trend Ranking,Hawaii,4.2,,desc,annualizedTrend
-price-trend,Electricity Price Trend Ranking,Wyoming,4.02,,desc,annualizedTrend
-price-trend,Electricity Price Trend Ranking,South Carolina,3.91,,desc,annualizedTrend
-price-trend,Electricity Price Trend Ranking,Arkansas,3.9,,desc,annualizedTrend
-price-trend,Electricity Price Trend Ranking,Illinois,3.8,,desc,annualizedTrend
-price-trend,Electricity Price Trend Ranking,West Virginia,3.78,,desc,annualizedTrend
-price-trend,Electricity Price Trend Ranking,Montana,3.7,,desc,annualizedTrend
-price-trend,Electricity Price Trend Ranking,Nebraska,3.57,,desc,annualizedTrend
-price-trend,Electricity Price Trend Ranking,Nevada,3.53,,desc,annualizedTrend
-price-trend,Electricity Price Trend Ranking,New Mexico,3.43,,desc,annualizedTrend
-price-trend,Electricity Price Trend Ranking,Alaska,3.31,,desc,annualizedTrend
-price-trend,Electricity Price Trend Ranking,Minnesota,3.21,,desc,annualizedTrend
-price-trend,Electricity Price Trend Ranking,Missouri,3.11,,desc,annualizedTrend
-price-trend,Electricity Price Trend Ranking,Iowa,2.88,,desc,annualizedTrend
-price-trend,Electricity Price Trend Ranking,Michigan,2.82,,desc,annualizedTrend
-price-trend,Electricity Price Trend Ranking,Kansas,2.19,,desc,annualizedTrend
-price-trend,Electricity Price Trend Ranking,North Dakota,1.46,,desc,annualizedTrend
-momentum-signal,Electricity Price Momentum Signal Ranking,District of Columbia,27.97,,desc,score
-momentum-signal,Electricity Price Momentum Signal Ranking,Maine,19.6,,desc,score
-momentum-signal,Electricity Price Momentum Signal Ranking,New Jersey,19.53,,desc,score
-momentum-signal,Electricity Price Momentum Signal Ranking,Washington,19.23,,desc,score
-momentum-signal,Electricity Price Momentum Signal Ranking,Pennsylvania,16.98,,desc,score
-momentum-signal,Electricity Price Momentum Signal Ranking,Kentucky,16.8,,desc,score
-momentum-signal,Electricity Price Momentum Signal Ranking,Oklahoma,16.42,,desc,score
-momentum-signal,Electricity Price Momentum Signal Ranking,Virginia,15.85,,desc,score
-momentum-signal,Electricity Price Momentum Signal Ranking,Montana,15.01,,desc,score
-momentum-signal,Electricity Price Momentum Signal Ranking,Maryland,14.99,,desc,score
-momentum-signal,Electricity Price Momentum Signal Ranking,Ohio,14.61,,desc,score
-momentum-signal,Electricity Price Momentum Signal Ranking,South Dakota,14.58,,desc,score
-momentum-signal,Electricity Price Momentum Signal Ranking,New Hampshire,14.48,,desc,score
-momentum-signal,Electricity Price Momentum Signal Ranking,Louisiana,14.25,,desc,score
-momentum-signal,Electricity Price Momentum Signal Ranking,New York,13.96,,desc,score
-momentum-signal,Electricity Price Momentum Signal Ranking,Mississippi,13.77,,desc,score
-momentum-signal,Electricity Price Momentum Signal Ranking,Idaho,13.55,,desc,score
-momentum-signal,Electricity Price Momentum Signal Ranking,Indiana,13.27,,desc,score
-momentum-signal,Electricity Price Momentum Signal Ranking,South Carolina,13.02,,desc,score
-momentum-signal,Electricity Price Momentum Signal Ranking,Nebraska,12.68,,desc,score
-momentum-signal,Electricity Price Momentum Signal Ranking,Florida,12.4,,desc,score
-momentum-signal,Electricity Price Momentum Signal Ranking,Colorado,12.11,,desc,score
-momentum-signal,Electricity Price Momentum Signal Ranking,Wyoming,11.92,,desc,score
-momentum-signal,Electricity Price Momentum Signal Ranking,North Dakota,11.75,,desc,score
-momentum-signal,Electricity Price Momentum Signal Ranking,Arkansas,11.49,,desc,score
-momentum-signal,Electricity Price Momentum Signal Ranking,North Carolina,11.35,,desc,score
-momentum-signal,Electricity Price Momentum Signal Ranking,New Mexico,9.61,,desc,score
-momentum-signal,Electricity Price Momentum Signal Ranking,Vermont,9.13,,desc,score
-momentum-signal,Electricity Price Momentum Signal Ranking,Iowa,9.01,,desc,score
-momentum-signal,Electricity Price Momentum Signal Ranking,Kansas,8.96,,desc,score
-momentum-signal,Electricity Price Momentum Signal Ranking,Texas,8.95,,desc,score
-momentum-signal,Electricity Price Momentum Signal Ranking,Delaware,8.31,,desc,score
-momentum-signal,Electricity Price Momentum Signal Ranking,Georgia,8.11,,desc,score
-momentum-signal,Electricity Price Momentum Signal Ranking,Michigan,7.63,,desc,score
-momentum-signal,Electricity Price Momentum Signal Ranking,Alabama,7.43,,desc,score
-momentum-signal,Electricity Price Momentum Signal Ranking,Utah,7.36,,desc,score
-momentum-signal,Electricity Price Momentum Signal Ranking,Arizona,7.05,,desc,score
-momentum-signal,Electricity Price Momentum Signal Ranking,Missouri,6.26,,desc,score
-momentum-signal,Electricity Price Momentum Signal Ranking,Wisconsin,5.84,,desc,score
-momentum-signal,Electricity Price Momentum Signal Ranking,Tennessee,5.13,,desc,score
-momentum-signal,Electricity Price Momentum Signal Ranking,Illinois,4.68,,desc,score
-momentum-signal,Electricity Price Momentum Signal Ranking,Massachusetts,4.62,,desc,score
-momentum-signal,Electricity Price Momentum Signal Ranking,Minnesota,4.24,,desc,score
-momentum-signal,Electricity Price Momentum Signal Ranking,Alaska,4.19,,desc,score
-momentum-signal,Electricity Price Momentum Signal Ranking,West Virginia,3.07,,desc,score
-momentum-signal,Electricity Price Momentum Signal Ranking,Oregon,2.31,,desc,score
-momentum-signal,Electricity Price Momentum Signal Ranking,California,0,,desc,score
-momentum-signal,Electricity Price Momentum Signal Ranking,Nevada,0,,desc,score
-momentum-signal,Electricity Price Momentum Signal Ranking,Hawaii,-2.78,,desc,score
-momentum-signal,Electricity Price Momentum Signal Ranking,Rhode Island,-5.8,,desc,score
-momentum-signal,Electricity Price Momentum Signal Ranking,Connecticut,-6.73,,desc,score
-electricity-inflation-1y,1-Year Electricity Inflation Ranking,District of Columbia,26,26.0%,desc,inflation1yPercent
-electricity-inflation-1y,1-Year Electricity Inflation Ranking,Maine,17.6,17.6%,desc,inflation1yPercent
-electricity-inflation-1y,1-Year Electricity Inflation Ranking,New Jersey,17.5,17.5%,desc,inflation1yPercent
-electricity-inflation-1y,1-Year Electricity Inflation Ranking,Washington,17.2,17.2%,desc,inflation1yPercent
-electricity-inflation-1y,1-Year Electricity Inflation Ranking,Pennsylvania,15,15.0%,desc,inflation1yPercent
-electricity-inflation-1y,1-Year Electricity Inflation Ranking,Kentucky,14.8,14.8%,desc,inflation1yPercent
-electricity-inflation-1y,1-Year Electricity Inflation Ranking,Oklahoma,14.4,14.4%,desc,inflation1yPercent
-electricity-inflation-1y,1-Year Electricity Inflation Ranking,Virginia,13.8,13.8%,desc,inflation1yPercent
-electricity-inflation-1y,1-Year Electricity Inflation Ranking,Maryland,13,13.0%,desc,inflation1yPercent
-electricity-inflation-1y,1-Year Electricity Inflation Ranking,Montana,13,13.0%,desc,inflation1yPercent
-electricity-inflation-1y,1-Year Electricity Inflation Ranking,Ohio,12.6,12.6%,desc,inflation1yPercent
-electricity-inflation-1y,1-Year Electricity Inflation Ranking,South Dakota,12.6,12.6%,desc,inflation1yPercent
-electricity-inflation-1y,1-Year Electricity Inflation Ranking,New Hampshire,12.5,12.5%,desc,inflation1yPercent
-electricity-inflation-1y,1-Year Electricity Inflation Ranking,Louisiana,12.3,12.3%,desc,inflation1yPercent
-electricity-inflation-1y,1-Year Electricity Inflation Ranking,New York,12,12.0%,desc,inflation1yPercent
-electricity-inflation-1y,1-Year Electricity Inflation Ranking,Mississippi,11.8,11.8%,desc,inflation1yPercent
-electricity-inflation-1y,1-Year Electricity Inflation Ranking,Nebraska,11.7,11.7%,desc,inflation1yPercent
-electricity-inflation-1y,1-Year Electricity Inflation Ranking,Idaho,11.6,11.6%,desc,inflation1yPercent
-electricity-inflation-1y,1-Year Electricity Inflation Ranking,Indiana,11.3,11.3%,desc,inflation1yPercent
-electricity-inflation-1y,1-Year Electricity Inflation Ranking,South Carolina,11,11.0%,desc,inflation1yPercent
-electricity-inflation-1y,1-Year Electricity Inflation Ranking,Florida,10.4,10.4%,desc,inflation1yPercent
-electricity-inflation-1y,1-Year Electricity Inflation Ranking,Colorado,10.1,10.1%,desc,inflation1yPercent
-electricity-inflation-1y,1-Year Electricity Inflation Ranking,Wyoming,9.9,9.9%,desc,inflation1yPercent
-electricity-inflation-1y,1-Year Electricity Inflation Ranking,North Dakota,9.7,9.7%,desc,inflation1yPercent
-electricity-inflation-1y,1-Year Electricity Inflation Ranking,Arkansas,9.5,9.5%,desc,inflation1yPercent
-electricity-inflation-1y,1-Year Electricity Inflation Ranking,North Carolina,9.4,9.4%,desc,inflation1yPercent
-electricity-inflation-1y,1-Year Electricity Inflation Ranking,New Mexico,7.6,7.6%,desc,inflation1yPercent
-electricity-inflation-1y,1-Year Electricity Inflation Ranking,Georgia,7.1,7.1%,desc,inflation1yPercent
-electricity-inflation-1y,1-Year Electricity Inflation Ranking,Vermont,7.1,7.1%,desc,inflation1yPercent
-electricity-inflation-1y,1-Year Electricity Inflation Ranking,Iowa,7,7.0%,desc,inflation1yPercent
-electricity-inflation-1y,1-Year Electricity Inflation Ranking,Kansas,7,7.0%,desc,inflation1yPercent
-electricity-inflation-1y,1-Year Electricity Inflation Ranking,Texas,7,7.0%,desc,inflation1yPercent
-electricity-inflation-1y,1-Year Electricity Inflation Ranking,Alabama,6.4,6.4%,desc,inflation1yPercent
-electricity-inflation-1y,1-Year Electricity Inflation Ranking,Utah,6.4,6.4%,desc,inflation1yPercent
-electricity-inflation-1y,1-Year Electricity Inflation Ranking,Delaware,6.3,6.3%,desc,inflation1yPercent
-electricity-inflation-1y,1-Year Electricity Inflation Ranking,Arizona,6,6.0%,desc,inflation1yPercent
-electricity-inflation-1y,1-Year Electricity Inflation Ranking,Michigan,5.6,5.6%,desc,inflation1yPercent
-electricity-inflation-1y,1-Year Electricity Inflation Ranking,Missouri,5.3,5.3%,desc,inflation1yPercent
-electricity-inflation-1y,1-Year Electricity Inflation Ranking,Wisconsin,4.8,4.8%,desc,inflation1yPercent
-electricity-inflation-1y,1-Year Electricity Inflation Ranking,Tennessee,4.1,4.1%,desc,inflation1yPercent
-electricity-inflation-1y,1-Year Electricity Inflation Ranking,Illinois,3.7,3.7%,desc,inflation1yPercent
-electricity-inflation-1y,1-Year Electricity Inflation Ranking,Massachusetts,3.6,3.6%,desc,inflation1yPercent
-electricity-inflation-1y,1-Year Electricity Inflation Ranking,Alaska,3.2,3.2%,desc,inflation1yPercent
-electricity-inflation-1y,1-Year Electricity Inflation Ranking,Minnesota,3.2,3.2%,desc,inflation1yPercent
-electricity-inflation-1y,1-Year Electricity Inflation Ranking,West Virginia,2.1,2.1%,desc,inflation1yPercent
-electricity-inflation-1y,1-Year Electricity Inflation Ranking,Oregon,1.3,1.3%,desc,inflation1yPercent
-electricity-inflation-1y,1-Year Electricity Inflation Ranking,Nevada,0.7,0.7%,desc,inflation1yPercent
-electricity-inflation-1y,1-Year Electricity Inflation Ranking,California,0,0.0%,desc,inflation1yPercent
-electricity-inflation-1y,1-Year Electricity Inflation Ranking,Hawaii,-1.8,-1.8%,desc,inflation1yPercent
-electricity-inflation-1y,1-Year Electricity Inflation Ranking,Rhode Island,-4.8,-4.8%,desc,inflation1yPercent
-electricity-inflation-1y,1-Year Electricity Inflation Ranking,Connecticut,-5.7,-5.7%,desc,inflation1yPercent
-electricity-inflation-5y,5-Year Electricity Inflation Ranking,District of Columbia,94.3,94.3%,desc,inflation5yPercent
-electricity-inflation-5y,5-Year Electricity Inflation Ranking,Maine,86.4,86.4%,desc,inflation5yPercent
-electricity-inflation-5y,5-Year Electricity Inflation Ranking,Maryland,63.6,63.6%,desc,inflation5yPercent
-electricity-inflation-5y,5-Year Electricity Inflation Ranking,New York,54.9,54.9%,desc,inflation5yPercent
-electricity-inflation-5y,5-Year Electricity Inflation Ranking,Pennsylvania,54.5,54.5%,desc,inflation5yPercent
-electricity-inflation-5y,5-Year Electricity Inflation Ranking,Ohio,48.9,48.9%,desc,inflation5yPercent
-electricity-inflation-5y,5-Year Electricity Inflation Ranking,Virginia,45.7,45.7%,desc,inflation5yPercent
-electricity-inflation-5y,5-Year Electricity Inflation Ranking,New Jersey,43.3,43.3%,desc,inflation5yPercent
-electricity-inflation-5y,5-Year Electricity Inflation Ranking,Oklahoma,42.9,42.9%,desc,inflation5yPercent
-electricity-inflation-5y,5-Year Electricity Inflation Ranking,Washington,41.4,41.4%,desc,inflation5yPercent
-electricity-inflation-5y,5-Year Electricity Inflation Ranking,California,41.2,41.2%,desc,inflation5yPercent
-electricity-inflation-5y,5-Year Electricity Inflation Ranking,Delaware,40.8,40.8%,desc,inflation5yPercent
-electricity-inflation-5y,5-Year Electricity Inflation Ranking,Massachusetts,39.7,39.7%,desc,inflation5yPercent
-electricity-inflation-5y,5-Year Electricity Inflation Ranking,New Hampshire,39,39.0%,desc,inflation5yPercent
-electricity-inflation-5y,5-Year Electricity Inflation Ranking,Florida,38.8,38.8%,desc,inflation5yPercent
-electricity-inflation-5y,5-Year Electricity Inflation Ranking,Texas,38.2,38.2%,desc,inflation5yPercent
-electricity-inflation-5y,5-Year Electricity Inflation Ranking,Kentucky,36.4,36.4%,desc,inflation5yPercent
-electricity-inflation-5y,5-Year Electricity Inflation Ranking,Colorado,36.2,36.2%,desc,inflation5yPercent
-electricity-inflation-5y,5-Year Electricity Inflation Ranking,Georgia,34.3,34.3%,desc,inflation5yPercent
-electricity-inflation-5y,5-Year Electricity Inflation Ranking,Illinois,33.8,33.8%,desc,inflation5yPercent
-electricity-inflation-5y,5-Year Electricity Inflation Ranking,Mississippi,33.7,33.7%,desc,inflation5yPercent
-electricity-inflation-5y,5-Year Electricity Inflation Ranking,Arizona,33.5,33.5%,desc,inflation5yPercent
-electricity-inflation-5y,5-Year Electricity Inflation Ranking,Indiana,32.9,32.9%,desc,inflation5yPercent
-electricity-inflation-5y,5-Year Electricity Inflation Ranking,Oregon,32.8,32.8%,desc,inflation5yPercent
-electricity-inflation-5y,5-Year Electricity Inflation Ranking,Connecticut,32.7,32.7%,desc,inflation5yPercent
-electricity-inflation-5y,5-Year Electricity Inflation Ranking,South Carolina,32.3,32.3%,desc,inflation5yPercent
-electricity-inflation-5y,5-Year Electricity Inflation Ranking,West Virginia,32,32.0%,desc,inflation5yPercent
-electricity-inflation-5y,5-Year Electricity Inflation Ranking,North Carolina,31.7,31.7%,desc,inflation5yPercent
-electricity-inflation-5y,5-Year Electricity Inflation Ranking,Alabama,31.5,31.5%,desc,inflation5yPercent
-electricity-inflation-5y,5-Year Electricity Inflation Ranking,Louisiana,31,31.0%,desc,inflation5yPercent
-electricity-inflation-5y,5-Year Electricity Inflation Ranking,Arkansas,30.3,30.3%,desc,inflation5yPercent
-electricity-inflation-5y,5-Year Electricity Inflation Ranking,Hawaii,29.7,29.7%,desc,inflation5yPercent
-electricity-inflation-5y,5-Year Electricity Inflation Ranking,Wisconsin,29.7,29.7%,desc,inflation5yPercent
-electricity-inflation-5y,5-Year Electricity Inflation Ranking,Utah,29.1,29.1%,desc,inflation5yPercent
-electricity-inflation-5y,5-Year Electricity Inflation Ranking,Rhode Island,28.7,28.7%,desc,inflation5yPercent
-electricity-inflation-5y,5-Year Electricity Inflation Ranking,Tennessee,27.1,27.1%,desc,inflation5yPercent
-electricity-inflation-5y,5-Year Electricity Inflation Ranking,Missouri,26.9,26.9%,desc,inflation5yPercent
-electricity-inflation-5y,5-Year Electricity Inflation Ranking,Vermont,26.6,26.6%,desc,inflation5yPercent
-electricity-inflation-5y,5-Year Electricity Inflation Ranking,Nebraska,26.3,26.3%,desc,inflation5yPercent
-electricity-inflation-5y,5-Year Electricity Inflation Ranking,South Dakota,24.1,24.1%,desc,inflation5yPercent
-electricity-inflation-5y,5-Year Electricity Inflation Ranking,Wyoming,23.1,23.1%,desc,inflation5yPercent
-electricity-inflation-5y,5-Year Electricity Inflation Ranking,Nevada,21.4,21.4%,desc,inflation5yPercent
-electricity-inflation-5y,5-Year Electricity Inflation Ranking,Kansas,20.6,20.6%,desc,inflation5yPercent
-electricity-inflation-5y,5-Year Electricity Inflation Ranking,Idaho,20.5,20.5%,desc,inflation5yPercent
-electricity-inflation-5y,5-Year Electricity Inflation Ranking,Montana,20.2,20.2%,desc,inflation5yPercent
-electricity-inflation-5y,5-Year Electricity Inflation Ranking,Minnesota,19.3,19.3%,desc,inflation5yPercent
-electricity-inflation-5y,5-Year Electricity Inflation Ranking,Alaska,19.1,19.1%,desc,inflation5yPercent
-electricity-inflation-5y,5-Year Electricity Inflation Ranking,Iowa,18.2,18.2%,desc,inflation5yPercent
-electricity-inflation-5y,5-Year Electricity Inflation Ranking,New Mexico,18.2,18.2%,desc,inflation5yPercent
-electricity-inflation-5y,5-Year Electricity Inflation Ranking,Michigan,15.4,15.4%,desc,inflation5yPercent
-electricity-inflation-5y,5-Year Electricity Inflation Ranking,North Dakota,15.3,15.3%,desc,inflation5yPercent
+rankingId,rankingTitle,state,value,displayValue,direction,directionLabel,metricId
+affordability,Affordability Rankings,Idaho,100,,desc,Highest to lowest,affordabilityIndex
+affordability,Affordability Rankings,North Dakota,99,,desc,Highest to lowest,affordabilityIndex
+affordability,Affordability Rankings,Louisiana,98,,desc,Highest to lowest,affordabilityIndex
+affordability,Affordability Rankings,Nebraska,98,,desc,Highest to lowest,affordabilityIndex
+affordability,Affordability Rankings,Arkansas,96,,desc,Highest to lowest,affordabilityIndex
+affordability,Affordability Rankings,Oklahoma,96,,desc,Highest to lowest,affordabilityIndex
+affordability,Affordability Rankings,Utah,96,,desc,Highest to lowest,affordabilityIndex
+affordability,Affordability Rankings,Washington,96,,desc,Highest to lowest,affordabilityIndex
+affordability,Affordability Rankings,Iowa,95,,desc,Highest to lowest,affordabilityIndex
+affordability,Affordability Rankings,Kentucky,95,,desc,Highest to lowest,affordabilityIndex
+affordability,Affordability Rankings,Montana,95,,desc,Highest to lowest,affordabilityIndex
+affordability,Affordability Rankings,Nevada,95,,desc,Highest to lowest,affordabilityIndex
+affordability,Affordability Rankings,South Dakota,95,,desc,Highest to lowest,affordabilityIndex
+affordability,Affordability Rankings,Tennessee,95,,desc,Highest to lowest,affordabilityIndex
+affordability,Affordability Rankings,Missouri,94,,desc,Highest to lowest,affordabilityIndex
+affordability,Affordability Rankings,Mississippi,93,,desc,Highest to lowest,affordabilityIndex
+affordability,Affordability Rankings,North Carolina,92,,desc,Highest to lowest,affordabilityIndex
+affordability,Affordability Rankings,Wyoming,92,,desc,Highest to lowest,affordabilityIndex
+affordability,Affordability Rankings,Kansas,91,,desc,Highest to lowest,affordabilityIndex
+affordability,Affordability Rankings,South Carolina,90,,desc,Highest to lowest,affordabilityIndex
+affordability,Affordability Rankings,Oregon,89,,desc,Highest to lowest,affordabilityIndex
+affordability,Affordability Rankings,Florida,88,,desc,Highest to lowest,affordabilityIndex
+affordability,Affordability Rankings,Georgia,88,,desc,Highest to lowest,affordabilityIndex
+affordability,Affordability Rankings,New Mexico,88,,desc,Highest to lowest,affordabilityIndex
+affordability,Affordability Rankings,Virginia,88,,desc,Highest to lowest,affordabilityIndex
+affordability,Affordability Rankings,West Virginia,88,,desc,Highest to lowest,affordabilityIndex
+affordability,Affordability Rankings,Arizona,87,,desc,Highest to lowest,affordabilityIndex
+affordability,Affordability Rankings,Colorado,86,,desc,Highest to lowest,affordabilityIndex
+affordability,Affordability Rankings,Texas,86,,desc,Highest to lowest,affordabilityIndex
+affordability,Affordability Rankings,Indiana,85,,desc,Highest to lowest,affordabilityIndex
+affordability,Affordability Rankings,Minnesota,85,,desc,Highest to lowest,affordabilityIndex
+affordability,Affordability Rankings,Alabama,84,,desc,Highest to lowest,affordabilityIndex
+affordability,Affordability Rankings,Ohio,83,,desc,Highest to lowest,affordabilityIndex
+affordability,Affordability Rankings,Delaware,82,,desc,Highest to lowest,affordabilityIndex
+affordability,Affordability Rankings,Illinois,82,,desc,Highest to lowest,affordabilityIndex
+affordability,Affordability Rankings,Pennsylvania,80,,desc,Highest to lowest,affordabilityIndex
+affordability,Affordability Rankings,Wisconsin,79,,desc,Highest to lowest,affordabilityIndex
+affordability,Affordability Rankings,Maryland,74,,desc,Highest to lowest,affordabilityIndex
+affordability,Affordability Rankings,Michigan,72,,desc,Highest to lowest,affordabilityIndex
+affordability,Affordability Rankings,New Jersey,65,,desc,Highest to lowest,affordabilityIndex
+affordability,Affordability Rankings,Vermont,63,,desc,Highest to lowest,affordabilityIndex
+affordability,Affordability Rankings,New Hampshire,61,,desc,Highest to lowest,affordabilityIndex
+affordability,Affordability Rankings,New York,59,,desc,Highest to lowest,affordabilityIndex
+affordability,Affordability Rankings,Alaska,55,,desc,Highest to lowest,affordabilityIndex
+affordability,Affordability Rankings,Massachusetts,52,,desc,Highest to lowest,affordabilityIndex
+affordability,Affordability Rankings,Maine,48,,desc,Highest to lowest,affordabilityIndex
+affordability,Affordability Rankings,Rhode Island,44,,desc,Highest to lowest,affordabilityIndex
+affordability,Affordability Rankings,Connecticut,37,,desc,Highest to lowest,affordabilityIndex
+affordability,Affordability Rankings,California,34,,desc,Highest to lowest,affordabilityIndex
+affordability,Affordability Rankings,Hawaii,0,,desc,Highest to lowest,affordabilityIndex
+value-score,Value Score Rankings,Idaho,97,,desc,Highest to lowest,valueScore
+value-score,Value Score Rankings,North Dakota,96,,desc,Highest to lowest,valueScore
+value-score,Value Score Rankings,Louisiana,95,,desc,Highest to lowest,valueScore
+value-score,Value Score Rankings,Nebraska,95,,desc,Highest to lowest,valueScore
+value-score,Value Score Rankings,Arkansas,93,,desc,Highest to lowest,valueScore
+value-score,Value Score Rankings,Oklahoma,93,,desc,Highest to lowest,valueScore
+value-score,Value Score Rankings,Utah,93,,desc,Highest to lowest,valueScore
+value-score,Value Score Rankings,Washington,93,,desc,Highest to lowest,valueScore
+value-score,Value Score Rankings,Iowa,92,,desc,Highest to lowest,valueScore
+value-score,Value Score Rankings,Kentucky,92,,desc,Highest to lowest,valueScore
+value-score,Value Score Rankings,Montana,92,,desc,Highest to lowest,valueScore
+value-score,Value Score Rankings,Nevada,92,,desc,Highest to lowest,valueScore
+value-score,Value Score Rankings,South Dakota,92,,desc,Highest to lowest,valueScore
+value-score,Value Score Rankings,Tennessee,92,,desc,Highest to lowest,valueScore
+value-score,Value Score Rankings,Missouri,91,,desc,Highest to lowest,valueScore
+value-score,Value Score Rankings,Mississippi,90,,desc,Highest to lowest,valueScore
+value-score,Value Score Rankings,North Carolina,89,,desc,Highest to lowest,valueScore
+value-score,Value Score Rankings,Wyoming,89,,desc,Highest to lowest,valueScore
+value-score,Value Score Rankings,Kansas,88,,desc,Highest to lowest,valueScore
+value-score,Value Score Rankings,South Carolina,87,,desc,Highest to lowest,valueScore
+value-score,Value Score Rankings,Georgia,86,,desc,Highest to lowest,valueScore
+value-score,Value Score Rankings,Oregon,86,,desc,Highest to lowest,valueScore
+value-score,Value Score Rankings,Virginia,86,,desc,Highest to lowest,valueScore
+value-score,Value Score Rankings,Florida,85,,desc,Highest to lowest,valueScore
+value-score,Value Score Rankings,New Mexico,85,,desc,Highest to lowest,valueScore
+value-score,Value Score Rankings,West Virginia,85,,desc,Highest to lowest,valueScore
+value-score,Value Score Rankings,Arizona,84,,desc,Highest to lowest,valueScore
+value-score,Value Score Rankings,Colorado,84,,desc,Highest to lowest,valueScore
+value-score,Value Score Rankings,Texas,84,,desc,Highest to lowest,valueScore
+value-score,Value Score Rankings,Indiana,83,,desc,Highest to lowest,valueScore
+value-score,Value Score Rankings,Minnesota,83,,desc,Highest to lowest,valueScore
+value-score,Value Score Rankings,Alabama,82,,desc,Highest to lowest,valueScore
+value-score,Value Score Rankings,Ohio,81,,desc,Highest to lowest,valueScore
+value-score,Value Score Rankings,Delaware,80,,desc,Highest to lowest,valueScore
+value-score,Value Score Rankings,Illinois,80,,desc,Highest to lowest,valueScore
+value-score,Value Score Rankings,Pennsylvania,78,,desc,Highest to lowest,valueScore
+value-score,Value Score Rankings,Wisconsin,77,,desc,Highest to lowest,valueScore
+value-score,Value Score Rankings,Maryland,72,,desc,Highest to lowest,valueScore
+value-score,Value Score Rankings,Michigan,70,,desc,Highest to lowest,valueScore
+value-score,Value Score Rankings,New Jersey,64,,desc,Highest to lowest,valueScore
+value-score,Value Score Rankings,Vermont,62,,desc,Highest to lowest,valueScore
+value-score,Value Score Rankings,New Hampshire,60,,desc,Highest to lowest,valueScore
+value-score,Value Score Rankings,New York,58,,desc,Highest to lowest,valueScore
+value-score,Value Score Rankings,Alaska,54,,desc,Highest to lowest,valueScore
+value-score,Value Score Rankings,Massachusetts,51,,desc,Highest to lowest,valueScore
+value-score,Value Score Rankings,Maine,47,,desc,Highest to lowest,valueScore
+value-score,Value Score Rankings,Rhode Island,44,,desc,Highest to lowest,valueScore
+value-score,Value Score Rankings,Connecticut,37,,desc,Highest to lowest,valueScore
+value-score,Value Score Rankings,California,34,,desc,Highest to lowest,valueScore
+value-score,Value Score Rankings,Hawaii,2,,desc,Highest to lowest,valueScore
+rate-low-to-high,Rate Rankings (Low to High),Idaho,11.74,,asc,Lowest to highest,avgRateCentsPerKwh
+rate-low-to-high,Rate Rankings (Low to High),North Dakota,11.92,,asc,Lowest to highest,avgRateCentsPerKwh
+rate-low-to-high,Rate Rankings (Low to High),Nebraska,12.19,,asc,Lowest to highest,avgRateCentsPerKwh
+rate-low-to-high,Rate Rankings (Low to High),Louisiana,12.34,,asc,Lowest to highest,avgRateCentsPerKwh
+rate-low-to-high,Rate Rankings (Low to High),Arkansas,12.83,,asc,Lowest to highest,avgRateCentsPerKwh
+rate-low-to-high,Rate Rankings (Low to High),Washington,12.86,,asc,Lowest to highest,avgRateCentsPerKwh
+rate-low-to-high,Rate Rankings (Low to High),Utah,12.97,,asc,Lowest to highest,avgRateCentsPerKwh
+rate-low-to-high,Rate Rankings (Low to High),Oklahoma,13.05,,asc,Lowest to highest,avgRateCentsPerKwh
+rate-low-to-high,Rate Rankings (Low to High),Montana,13.12,,asc,Lowest to highest,avgRateCentsPerKwh
+rate-low-to-high,Rate Rankings (Low to High),South Dakota,13.14,,asc,Lowest to highest,avgRateCentsPerKwh
+rate-low-to-high,Rate Rankings (Low to High),Nevada,13.16,,asc,Lowest to highest,avgRateCentsPerKwh
+rate-low-to-high,Rate Rankings (Low to High),Iowa,13.18,,asc,Lowest to highest,avgRateCentsPerKwh
+rate-low-to-high,Rate Rankings (Low to High),Kentucky,13.2,,asc,Lowest to highest,avgRateCentsPerKwh
+rate-low-to-high,Rate Rankings (Low to High),Tennessee,13.28,,asc,Lowest to highest,avgRateCentsPerKwh
+rate-low-to-high,Rate Rankings (Low to High),Missouri,13.37,,asc,Lowest to highest,avgRateCentsPerKwh
+rate-low-to-high,Rate Rankings (Low to High),Mississippi,13.91,,asc,Lowest to highest,avgRateCentsPerKwh
+rate-low-to-high,Rate Rankings (Low to High),Wyoming,14.02,,asc,Lowest to highest,avgRateCentsPerKwh
+rate-low-to-high,Rate Rankings (Low to High),North Carolina,14.08,,asc,Lowest to highest,avgRateCentsPerKwh
+rate-low-to-high,Rate Rankings (Low to High),Kansas,14.48,,asc,Lowest to highest,avgRateCentsPerKwh
+rate-low-to-high,Rate Rankings (Low to High),South Carolina,14.72,,asc,Lowest to highest,avgRateCentsPerKwh
+rate-low-to-high,Rate Rankings (Low to High),Oregon,15,,asc,Lowest to highest,avgRateCentsPerKwh
+rate-low-to-high,Rate Rankings (Low to High),Georgia,15.22,,asc,Lowest to highest,avgRateCentsPerKwh
+rate-low-to-high,Rate Rankings (Low to High),Virginia,15.26,,asc,Lowest to highest,avgRateCentsPerKwh
+rate-low-to-high,Rate Rankings (Low to High),Florida,15.27,,asc,Lowest to highest,avgRateCentsPerKwh
+rate-low-to-high,Rate Rankings (Low to High),New Mexico,15.29,,asc,Lowest to highest,avgRateCentsPerKwh
+rate-low-to-high,Rate Rankings (Low to High),West Virginia,15.39,,asc,Lowest to highest,avgRateCentsPerKwh
+rate-low-to-high,Rate Rankings (Low to High),Arizona,15.7,,asc,Lowest to highest,avgRateCentsPerKwh
+rate-low-to-high,Rate Rankings (Low to High),Colorado,15.79,,asc,Lowest to highest,avgRateCentsPerKwh
+rate-low-to-high,Rate Rankings (Low to High),Texas,15.83,,asc,Lowest to highest,avgRateCentsPerKwh
+rate-low-to-high,Rate Rankings (Low to High),Minnesota,16.04,,asc,Lowest to highest,avgRateCentsPerKwh
+rate-low-to-high,Rate Rankings (Low to High),Indiana,16.12,,asc,Lowest to highest,avgRateCentsPerKwh
+rate-low-to-high,Rate Rankings (Low to High),Alabama,16.55,,asc,Lowest to highest,avgRateCentsPerKwh
+rate-low-to-high,Rate Rankings (Low to High),Ohio,16.9,,asc,Lowest to highest,avgRateCentsPerKwh
+rate-low-to-high,Rate Rankings (Low to High),Illinois,16.96,,asc,Lowest to highest,avgRateCentsPerKwh
+rate-low-to-high,Rate Rankings (Low to High),Delaware,17.18,,asc,Lowest to highest,avgRateCentsPerKwh
+rate-low-to-high,Rate Rankings (Low to High),Pennsylvania,17.78,,asc,Lowest to highest,avgRateCentsPerKwh
+rate-low-to-high,Rate Rankings (Low to High),Wisconsin,18.04,,asc,Lowest to highest,avgRateCentsPerKwh
+rate-low-to-high,Rate Rankings (Low to High),Maryland,19.29,,asc,Lowest to highest,avgRateCentsPerKwh
+rate-low-to-high,Rate Rankings (Low to High),Michigan,19.91,,asc,Lowest to highest,avgRateCentsPerKwh
+rate-low-to-high,Rate Rankings (Low to High),New Jersey,22.15,,asc,Lowest to highest,avgRateCentsPerKwh
+rate-low-to-high,Rate Rankings (Low to High),Vermont,22.58,,asc,Lowest to highest,avgRateCentsPerKwh
+rate-low-to-high,Rate Rankings (Low to High),New Hampshire,23.35,,asc,Lowest to highest,avgRateCentsPerKwh
+rate-low-to-high,Rate Rankings (Low to High),New York,23.87,,asc,Lowest to highest,avgRateCentsPerKwh
+rate-low-to-high,Rate Rankings (Low to High),Alaska,25.01,,asc,Lowest to highest,avgRateCentsPerKwh
+rate-low-to-high,Rate Rankings (Low to High),Massachusetts,26.01,,asc,Lowest to highest,avgRateCentsPerKwh
+rate-low-to-high,Rate Rankings (Low to High),Maine,27.24,,asc,Lowest to highest,avgRateCentsPerKwh
+rate-low-to-high,Rate Rankings (Low to High),Rhode Island,28.42,,asc,Lowest to highest,avgRateCentsPerKwh
+rate-low-to-high,Rate Rankings (Low to High),Connecticut,30.35,,asc,Lowest to highest,avgRateCentsPerKwh
+rate-low-to-high,Rate Rankings (Low to High),California,31.14,,asc,Lowest to highest,avgRateCentsPerKwh
+rate-low-to-high,Rate Rankings (Low to High),Hawaii,41.3,,asc,Lowest to highest,avgRateCentsPerKwh
+rate-high-to-low,Rate Rankings (High to Low),Hawaii,41.3,,desc,Highest to lowest,avgRateCentsPerKwh
+rate-high-to-low,Rate Rankings (High to Low),California,31.14,,desc,Highest to lowest,avgRateCentsPerKwh
+rate-high-to-low,Rate Rankings (High to Low),Connecticut,30.35,,desc,Highest to lowest,avgRateCentsPerKwh
+rate-high-to-low,Rate Rankings (High to Low),Rhode Island,28.42,,desc,Highest to lowest,avgRateCentsPerKwh
+rate-high-to-low,Rate Rankings (High to Low),Maine,27.24,,desc,Highest to lowest,avgRateCentsPerKwh
+rate-high-to-low,Rate Rankings (High to Low),Massachusetts,26.01,,desc,Highest to lowest,avgRateCentsPerKwh
+rate-high-to-low,Rate Rankings (High to Low),Alaska,25.01,,desc,Highest to lowest,avgRateCentsPerKwh
+rate-high-to-low,Rate Rankings (High to Low),New York,23.87,,desc,Highest to lowest,avgRateCentsPerKwh
+rate-high-to-low,Rate Rankings (High to Low),New Hampshire,23.35,,desc,Highest to lowest,avgRateCentsPerKwh
+rate-high-to-low,Rate Rankings (High to Low),Vermont,22.58,,desc,Highest to lowest,avgRateCentsPerKwh
+rate-high-to-low,Rate Rankings (High to Low),New Jersey,22.15,,desc,Highest to lowest,avgRateCentsPerKwh
+rate-high-to-low,Rate Rankings (High to Low),Michigan,19.91,,desc,Highest to lowest,avgRateCentsPerKwh
+rate-high-to-low,Rate Rankings (High to Low),Maryland,19.29,,desc,Highest to lowest,avgRateCentsPerKwh
+rate-high-to-low,Rate Rankings (High to Low),Wisconsin,18.04,,desc,Highest to lowest,avgRateCentsPerKwh
+rate-high-to-low,Rate Rankings (High to Low),Pennsylvania,17.78,,desc,Highest to lowest,avgRateCentsPerKwh
+rate-high-to-low,Rate Rankings (High to Low),Delaware,17.18,,desc,Highest to lowest,avgRateCentsPerKwh
+rate-high-to-low,Rate Rankings (High to Low),Illinois,16.96,,desc,Highest to lowest,avgRateCentsPerKwh
+rate-high-to-low,Rate Rankings (High to Low),Ohio,16.9,,desc,Highest to lowest,avgRateCentsPerKwh
+rate-high-to-low,Rate Rankings (High to Low),Alabama,16.55,,desc,Highest to lowest,avgRateCentsPerKwh
+rate-high-to-low,Rate Rankings (High to Low),Indiana,16.12,,desc,Highest to lowest,avgRateCentsPerKwh
+rate-high-to-low,Rate Rankings (High to Low),Minnesota,16.04,,desc,Highest to lowest,avgRateCentsPerKwh
+rate-high-to-low,Rate Rankings (High to Low),Texas,15.83,,desc,Highest to lowest,avgRateCentsPerKwh
+rate-high-to-low,Rate Rankings (High to Low),Colorado,15.79,,desc,Highest to lowest,avgRateCentsPerKwh
+rate-high-to-low,Rate Rankings (High to Low),Arizona,15.7,,desc,Highest to lowest,avgRateCentsPerKwh
+rate-high-to-low,Rate Rankings (High to Low),West Virginia,15.39,,desc,Highest to lowest,avgRateCentsPerKwh
+rate-high-to-low,Rate Rankings (High to Low),New Mexico,15.29,,desc,Highest to lowest,avgRateCentsPerKwh
+rate-high-to-low,Rate Rankings (High to Low),Florida,15.27,,desc,Highest to lowest,avgRateCentsPerKwh
+rate-high-to-low,Rate Rankings (High to Low),Virginia,15.26,,desc,Highest to lowest,avgRateCentsPerKwh
+rate-high-to-low,Rate Rankings (High to Low),Georgia,15.22,,desc,Highest to lowest,avgRateCentsPerKwh
+rate-high-to-low,Rate Rankings (High to Low),Oregon,15,,desc,Highest to lowest,avgRateCentsPerKwh
+rate-high-to-low,Rate Rankings (High to Low),South Carolina,14.72,,desc,Highest to lowest,avgRateCentsPerKwh
+rate-high-to-low,Rate Rankings (High to Low),Kansas,14.48,,desc,Highest to lowest,avgRateCentsPerKwh
+rate-high-to-low,Rate Rankings (High to Low),North Carolina,14.08,,desc,Highest to lowest,avgRateCentsPerKwh
+rate-high-to-low,Rate Rankings (High to Low),Wyoming,14.02,,desc,Highest to lowest,avgRateCentsPerKwh
+rate-high-to-low,Rate Rankings (High to Low),Mississippi,13.91,,desc,Highest to lowest,avgRateCentsPerKwh
+rate-high-to-low,Rate Rankings (High to Low),Missouri,13.37,,desc,Highest to lowest,avgRateCentsPerKwh
+rate-high-to-low,Rate Rankings (High to Low),Tennessee,13.28,,desc,Highest to lowest,avgRateCentsPerKwh
+rate-high-to-low,Rate Rankings (High to Low),Kentucky,13.2,,desc,Highest to lowest,avgRateCentsPerKwh
+rate-high-to-low,Rate Rankings (High to Low),Iowa,13.18,,desc,Highest to lowest,avgRateCentsPerKwh
+rate-high-to-low,Rate Rankings (High to Low),Nevada,13.16,,desc,Highest to lowest,avgRateCentsPerKwh
+rate-high-to-low,Rate Rankings (High to Low),South Dakota,13.14,,desc,Highest to lowest,avgRateCentsPerKwh
+rate-high-to-low,Rate Rankings (High to Low),Montana,13.12,,desc,Highest to lowest,avgRateCentsPerKwh
+rate-high-to-low,Rate Rankings (High to Low),Oklahoma,13.05,,desc,Highest to lowest,avgRateCentsPerKwh
+rate-high-to-low,Rate Rankings (High to Low),Utah,12.97,,desc,Highest to lowest,avgRateCentsPerKwh
+rate-high-to-low,Rate Rankings (High to Low),Washington,12.86,,desc,Highest to lowest,avgRateCentsPerKwh
+rate-high-to-low,Rate Rankings (High to Low),Arkansas,12.83,,desc,Highest to lowest,avgRateCentsPerKwh
+rate-high-to-low,Rate Rankings (High to Low),Louisiana,12.34,,desc,Highest to lowest,avgRateCentsPerKwh
+rate-high-to-low,Rate Rankings (High to Low),Nebraska,12.19,,desc,Highest to lowest,avgRateCentsPerKwh
+rate-high-to-low,Rate Rankings (High to Low),North Dakota,11.92,,desc,Highest to lowest,avgRateCentsPerKwh
+rate-high-to-low,Rate Rankings (High to Low),Idaho,11.74,,desc,Highest to lowest,avgRateCentsPerKwh
+electricity-affordability,Most Affordable Electricity by State,Idaho,105.66,$105.66,asc,Lowest to highest,metricValue
+electricity-affordability,Most Affordable Electricity by State,North Dakota,107.28,$107.28,asc,Lowest to highest,metricValue
+electricity-affordability,Most Affordable Electricity by State,Nebraska,109.71,$109.71,asc,Lowest to highest,metricValue
+electricity-affordability,Most Affordable Electricity by State,Louisiana,111.06,$111.06,asc,Lowest to highest,metricValue
+electricity-affordability,Most Affordable Electricity by State,Arkansas,115.47,$115.47,asc,Lowest to highest,metricValue
+electricity-affordability,Most Affordable Electricity by State,Washington,115.74,$115.74,asc,Lowest to highest,metricValue
+electricity-affordability,Most Affordable Electricity by State,Utah,116.73,$116.73,asc,Lowest to highest,metricValue
+electricity-affordability,Most Affordable Electricity by State,Oklahoma,117.45,$117.45,asc,Lowest to highest,metricValue
+electricity-affordability,Most Affordable Electricity by State,Montana,118.08,$118.08,asc,Lowest to highest,metricValue
+electricity-affordability,Most Affordable Electricity by State,South Dakota,118.26,$118.26,asc,Lowest to highest,metricValue
+electricity-affordability,Most Affordable Electricity by State,Nevada,118.44,$118.44,asc,Lowest to highest,metricValue
+electricity-affordability,Most Affordable Electricity by State,Iowa,118.62,$118.62,asc,Lowest to highest,metricValue
+electricity-affordability,Most Affordable Electricity by State,Kentucky,118.8,$118.80,asc,Lowest to highest,metricValue
+electricity-affordability,Most Affordable Electricity by State,Tennessee,119.52,$119.52,asc,Lowest to highest,metricValue
+electricity-affordability,Most Affordable Electricity by State,Missouri,120.33,$120.33,asc,Lowest to highest,metricValue
+electricity-affordability,Most Affordable Electricity by State,Mississippi,125.19,$125.19,asc,Lowest to highest,metricValue
+electricity-affordability,Most Affordable Electricity by State,Wyoming,126.18,$126.18,asc,Lowest to highest,metricValue
+electricity-affordability,Most Affordable Electricity by State,North Carolina,126.72,$126.72,asc,Lowest to highest,metricValue
+electricity-affordability,Most Affordable Electricity by State,Kansas,130.32,$130.32,asc,Lowest to highest,metricValue
+electricity-affordability,Most Affordable Electricity by State,South Carolina,132.48,$132.48,asc,Lowest to highest,metricValue
+electricity-affordability,Most Affordable Electricity by State,Oregon,135,$135.00,asc,Lowest to highest,metricValue
+electricity-affordability,Most Affordable Electricity by State,Georgia,136.98,$136.98,asc,Lowest to highest,metricValue
+electricity-affordability,Most Affordable Electricity by State,Virginia,137.34,$137.34,asc,Lowest to highest,metricValue
+electricity-affordability,Most Affordable Electricity by State,Florida,137.43,$137.43,asc,Lowest to highest,metricValue
+electricity-affordability,Most Affordable Electricity by State,New Mexico,137.61,$137.61,asc,Lowest to highest,metricValue
+electricity-affordability,Most Affordable Electricity by State,West Virginia,138.51,$138.51,asc,Lowest to highest,metricValue
+electricity-affordability,Most Affordable Electricity by State,Arizona,141.3,$141.30,asc,Lowest to highest,metricValue
+electricity-affordability,Most Affordable Electricity by State,Colorado,142.11,$142.11,asc,Lowest to highest,metricValue
+electricity-affordability,Most Affordable Electricity by State,Texas,142.47,$142.47,asc,Lowest to highest,metricValue
+electricity-affordability,Most Affordable Electricity by State,Minnesota,144.36,$144.36,asc,Lowest to highest,metricValue
+electricity-affordability,Most Affordable Electricity by State,Indiana,145.08,$145.08,asc,Lowest to highest,metricValue
+electricity-affordability,Most Affordable Electricity by State,Alabama,148.95,$148.95,asc,Lowest to highest,metricValue
+electricity-affordability,Most Affordable Electricity by State,Ohio,152.1,$152.10,asc,Lowest to highest,metricValue
+electricity-affordability,Most Affordable Electricity by State,Illinois,152.64,$152.64,asc,Lowest to highest,metricValue
+electricity-affordability,Most Affordable Electricity by State,Delaware,154.62,$154.62,asc,Lowest to highest,metricValue
+electricity-affordability,Most Affordable Electricity by State,Pennsylvania,160.02,$160.02,asc,Lowest to highest,metricValue
+electricity-affordability,Most Affordable Electricity by State,Wisconsin,162.36,$162.36,asc,Lowest to highest,metricValue
+electricity-affordability,Most Affordable Electricity by State,Maryland,173.61,$173.61,asc,Lowest to highest,metricValue
+electricity-affordability,Most Affordable Electricity by State,Michigan,179.19,$179.19,asc,Lowest to highest,metricValue
+electricity-affordability,Most Affordable Electricity by State,New Jersey,199.35,$199.35,asc,Lowest to highest,metricValue
+electricity-affordability,Most Affordable Electricity by State,Vermont,203.22,$203.22,asc,Lowest to highest,metricValue
+electricity-affordability,Most Affordable Electricity by State,New Hampshire,210.15,$210.15,asc,Lowest to highest,metricValue
+electricity-affordability,Most Affordable Electricity by State,New York,214.83,$214.83,asc,Lowest to highest,metricValue
+electricity-affordability,Most Affordable Electricity by State,Alaska,225.09,$225.09,asc,Lowest to highest,metricValue
+electricity-affordability,Most Affordable Electricity by State,Massachusetts,234.09,$234.09,asc,Lowest to highest,metricValue
+electricity-affordability,Most Affordable Electricity by State,Maine,245.16,$245.16,asc,Lowest to highest,metricValue
+electricity-affordability,Most Affordable Electricity by State,Rhode Island,255.78,$255.78,asc,Lowest to highest,metricValue
+electricity-affordability,Most Affordable Electricity by State,Connecticut,273.15,$273.15,asc,Lowest to highest,metricValue
+electricity-affordability,Most Affordable Electricity by State,California,280.26,$280.26,asc,Lowest to highest,metricValue
+electricity-affordability,Most Affordable Electricity by State,Hawaii,371.7,$371.70,asc,Lowest to highest,metricValue
+most-expensive-electricity,Least Affordable Electricity by State,Hawaii,371.7,$371.70,desc,Highest to lowest,metricValue
+most-expensive-electricity,Least Affordable Electricity by State,California,280.26,$280.26,desc,Highest to lowest,metricValue
+most-expensive-electricity,Least Affordable Electricity by State,Connecticut,273.15,$273.15,desc,Highest to lowest,metricValue
+most-expensive-electricity,Least Affordable Electricity by State,Rhode Island,255.78,$255.78,desc,Highest to lowest,metricValue
+most-expensive-electricity,Least Affordable Electricity by State,Maine,245.16,$245.16,desc,Highest to lowest,metricValue
+most-expensive-electricity,Least Affordable Electricity by State,Massachusetts,234.09,$234.09,desc,Highest to lowest,metricValue
+most-expensive-electricity,Least Affordable Electricity by State,Alaska,225.09,$225.09,desc,Highest to lowest,metricValue
+most-expensive-electricity,Least Affordable Electricity by State,New York,214.83,$214.83,desc,Highest to lowest,metricValue
+most-expensive-electricity,Least Affordable Electricity by State,New Hampshire,210.15,$210.15,desc,Highest to lowest,metricValue
+most-expensive-electricity,Least Affordable Electricity by State,Vermont,203.22,$203.22,desc,Highest to lowest,metricValue
+most-expensive-electricity,Least Affordable Electricity by State,New Jersey,199.35,$199.35,desc,Highest to lowest,metricValue
+most-expensive-electricity,Least Affordable Electricity by State,Michigan,179.19,$179.19,desc,Highest to lowest,metricValue
+most-expensive-electricity,Least Affordable Electricity by State,Maryland,173.61,$173.61,desc,Highest to lowest,metricValue
+most-expensive-electricity,Least Affordable Electricity by State,Wisconsin,162.36,$162.36,desc,Highest to lowest,metricValue
+most-expensive-electricity,Least Affordable Electricity by State,Pennsylvania,160.02,$160.02,desc,Highest to lowest,metricValue
+most-expensive-electricity,Least Affordable Electricity by State,Delaware,154.62,$154.62,desc,Highest to lowest,metricValue
+most-expensive-electricity,Least Affordable Electricity by State,Illinois,152.64,$152.64,desc,Highest to lowest,metricValue
+most-expensive-electricity,Least Affordable Electricity by State,Ohio,152.1,$152.10,desc,Highest to lowest,metricValue
+most-expensive-electricity,Least Affordable Electricity by State,Alabama,148.95,$148.95,desc,Highest to lowest,metricValue
+most-expensive-electricity,Least Affordable Electricity by State,Indiana,145.08,$145.08,desc,Highest to lowest,metricValue
+most-expensive-electricity,Least Affordable Electricity by State,Minnesota,144.36,$144.36,desc,Highest to lowest,metricValue
+most-expensive-electricity,Least Affordable Electricity by State,Texas,142.47,$142.47,desc,Highest to lowest,metricValue
+most-expensive-electricity,Least Affordable Electricity by State,Colorado,142.11,$142.11,desc,Highest to lowest,metricValue
+most-expensive-electricity,Least Affordable Electricity by State,Arizona,141.3,$141.30,desc,Highest to lowest,metricValue
+most-expensive-electricity,Least Affordable Electricity by State,West Virginia,138.51,$138.51,desc,Highest to lowest,metricValue
+most-expensive-electricity,Least Affordable Electricity by State,New Mexico,137.61,$137.61,desc,Highest to lowest,metricValue
+most-expensive-electricity,Least Affordable Electricity by State,Florida,137.43,$137.43,desc,Highest to lowest,metricValue
+most-expensive-electricity,Least Affordable Electricity by State,Virginia,137.34,$137.34,desc,Highest to lowest,metricValue
+most-expensive-electricity,Least Affordable Electricity by State,Georgia,136.98,$136.98,desc,Highest to lowest,metricValue
+most-expensive-electricity,Least Affordable Electricity by State,Oregon,135,$135.00,desc,Highest to lowest,metricValue
+most-expensive-electricity,Least Affordable Electricity by State,South Carolina,132.48,$132.48,desc,Highest to lowest,metricValue
+most-expensive-electricity,Least Affordable Electricity by State,Kansas,130.32,$130.32,desc,Highest to lowest,metricValue
+most-expensive-electricity,Least Affordable Electricity by State,North Carolina,126.72,$126.72,desc,Highest to lowest,metricValue
+most-expensive-electricity,Least Affordable Electricity by State,Wyoming,126.18,$126.18,desc,Highest to lowest,metricValue
+most-expensive-electricity,Least Affordable Electricity by State,Mississippi,125.19,$125.19,desc,Highest to lowest,metricValue
+most-expensive-electricity,Least Affordable Electricity by State,Missouri,120.33,$120.33,desc,Highest to lowest,metricValue
+most-expensive-electricity,Least Affordable Electricity by State,Tennessee,119.52,$119.52,desc,Highest to lowest,metricValue
+most-expensive-electricity,Least Affordable Electricity by State,Kentucky,118.8,$118.80,desc,Highest to lowest,metricValue
+most-expensive-electricity,Least Affordable Electricity by State,Iowa,118.62,$118.62,desc,Highest to lowest,metricValue
+most-expensive-electricity,Least Affordable Electricity by State,Nevada,118.44,$118.44,desc,Highest to lowest,metricValue
+most-expensive-electricity,Least Affordable Electricity by State,South Dakota,118.26,$118.26,desc,Highest to lowest,metricValue
+most-expensive-electricity,Least Affordable Electricity by State,Montana,118.08,$118.08,desc,Highest to lowest,metricValue
+most-expensive-electricity,Least Affordable Electricity by State,Oklahoma,117.45,$117.45,desc,Highest to lowest,metricValue
+most-expensive-electricity,Least Affordable Electricity by State,Utah,116.73,$116.73,desc,Highest to lowest,metricValue
+most-expensive-electricity,Least Affordable Electricity by State,Washington,115.74,$115.74,desc,Highest to lowest,metricValue
+most-expensive-electricity,Least Affordable Electricity by State,Arkansas,115.47,$115.47,desc,Highest to lowest,metricValue
+most-expensive-electricity,Least Affordable Electricity by State,Louisiana,111.06,$111.06,desc,Highest to lowest,metricValue
+most-expensive-electricity,Least Affordable Electricity by State,Nebraska,109.71,$109.71,desc,Highest to lowest,metricValue
+most-expensive-electricity,Least Affordable Electricity by State,North Dakota,107.28,$107.28,desc,Highest to lowest,metricValue
+most-expensive-electricity,Least Affordable Electricity by State,Idaho,105.66,$105.66,desc,Highest to lowest,metricValue
+cagr-25y,25-Year Rate Growth (CAGR),District of Columbia,5.25,,desc,Highest to lowest,cagr25y
+cagr-25y,25-Year Rate Growth (CAGR),Maryland,4.36,,desc,Highest to lowest,cagr25y
+cagr-25y,25-Year Rate Growth (CAGR),California,4.12,,desc,Highest to lowest,cagr25y
+cagr-25y,25-Year Rate Growth (CAGR),Connecticut,3.94,,desc,Highest to lowest,cagr25y
+cagr-25y,25-Year Rate Growth (CAGR),Kentucky,3.82,,desc,Highest to lowest,cagr25y
+cagr-25y,25-Year Rate Growth (CAGR),Massachusetts,3.76,,desc,Highest to lowest,cagr25y
+cagr-25y,25-Year Rate Growth (CAGR),Maine,3.76,,desc,Highest to lowest,cagr25y
+cagr-25y,25-Year Rate Growth (CAGR),Hawaii,3.7,,desc,Highest to lowest,cagr25y
+cagr-25y,25-Year Rate Growth (CAGR),Oregon,3.64,,desc,Highest to lowest,cagr25y
+cagr-25y,25-Year Rate Growth (CAGR),Michigan,3.63,,desc,Highest to lowest,cagr25y
+cagr-25y,25-Year Rate Growth (CAGR),Washington,3.63,,desc,Highest to lowest,cagr25y
+cagr-25y,25-Year Rate Growth (CAGR),West Virginia,3.56,,desc,Highest to lowest,cagr25y
+cagr-25y,25-Year Rate Growth (CAGR),New Jersey,3.49,,desc,Highest to lowest,cagr25y
+cagr-25y,25-Year Rate Growth (CAGR),Rhode Island,3.4,,desc,Highest to lowest,cagr25y
+cagr-25y,25-Year Rate Growth (CAGR),Indiana,3.39,,desc,Highest to lowest,cagr25y
+cagr-25y,25-Year Rate Growth (CAGR),Wisconsin,3.37,,desc,Highest to lowest,cagr25y
+cagr-25y,25-Year Rate Growth (CAGR),Colorado,3.24,,desc,Highest to lowest,cagr25y
+cagr-25y,25-Year Rate Growth (CAGR),Idaho,3.22,,desc,Highest to lowest,cagr25y
+cagr-25y,25-Year Rate Growth (CAGR),Alabama,3.21,,desc,Highest to lowest,cagr25y
+cagr-25y,25-Year Rate Growth (CAGR),Pennsylvania,3.15,,desc,Highest to lowest,cagr25y
+cagr-25y,25-Year Rate Growth (CAGR),Alaska,3.1,,desc,Highest to lowest,cagr25y
+cagr-25y,25-Year Rate Growth (CAGR),New York,3.06,,desc,Highest to lowest,cagr25y
+cagr-25y,25-Year Rate Growth (CAGR),Ohio,3.04,,desc,Highest to lowest,cagr25y
+cagr-25y,25-Year Rate Growth (CAGR),Virginia,3.01,,desc,Highest to lowest,cagr25y
+cagr-25y,25-Year Rate Growth (CAGR),Tennessee,2.96,,desc,Highest to lowest,cagr25y
+cagr-25y,25-Year Rate Growth (CAGR),Montana,2.92,,desc,Highest to lowest,cagr25y
+cagr-25y,25-Year Rate Growth (CAGR),Minnesota,2.91,,desc,Highest to lowest,cagr25y
+cagr-25y,25-Year Rate Growth (CAGR),South Carolina,2.85,,desc,Highest to lowest,cagr25y
+cagr-25y,25-Year Rate Growth (CAGR),Delaware,2.84,,desc,Highest to lowest,cagr25y
+cagr-25y,25-Year Rate Growth (CAGR),Nebraska,2.75,,desc,Highest to lowest,cagr25y
+cagr-25y,25-Year Rate Growth (CAGR),Georgia,2.74,,desc,Highest to lowest,cagr25y
+cagr-25y,25-Year Rate Growth (CAGR),Wyoming,2.72,,desc,Highest to lowest,cagr25y
+cagr-25y,25-Year Rate Growth (CAGR),Vermont,2.7,,desc,Highest to lowest,cagr25y
+cagr-25y,25-Year Rate Growth (CAGR),Arizona,2.69,,desc,Highest to lowest,cagr25y
+cagr-25y,25-Year Rate Growth (CAGR),Mississippi,2.67,,desc,Highest to lowest,cagr25y
+cagr-25y,25-Year Rate Growth (CAGR),New Hampshire,2.6,,desc,Highest to lowest,cagr25y
+cagr-25y,25-Year Rate Growth (CAGR),Kansas,2.59,,desc,Highest to lowest,cagr25y
+cagr-25y,25-Year Rate Growth (CAGR),South Dakota,2.59,,desc,Highest to lowest,cagr25y
+cagr-25y,25-Year Rate Growth (CAGR),Utah,2.55,,desc,Highest to lowest,cagr25y
+cagr-25y,25-Year Rate Growth (CAGR),Illinois,2.53,,desc,Highest to lowest,cagr25y
+cagr-25y,25-Year Rate Growth (CAGR),Texas,2.5,,desc,Highest to lowest,cagr25y
+cagr-25y,25-Year Rate Growth (CAGR),Florida,2.41,,desc,Highest to lowest,cagr25y
+cagr-25y,25-Year Rate Growth (CAGR),Missouri,2.41,,desc,Highest to lowest,cagr25y
+cagr-25y,25-Year Rate Growth (CAGR),North Dakota,2.26,,desc,Highest to lowest,cagr25y
+cagr-25y,25-Year Rate Growth (CAGR),North Carolina,2.19,,desc,Highest to lowest,cagr25y
+cagr-25y,25-Year Rate Growth (CAGR),New Mexico,2.12,,desc,Highest to lowest,cagr25y
+cagr-25y,25-Year Rate Growth (CAGR),Oklahoma,2.01,,desc,Highest to lowest,cagr25y
+cagr-25y,25-Year Rate Growth (CAGR),Arkansas,1.77,,desc,Highest to lowest,cagr25y
+cagr-25y,25-Year Rate Growth (CAGR),Nevada,1.64,,desc,Highest to lowest,cagr25y
+cagr-25y,25-Year Rate Growth (CAGR),Iowa,1.6,,desc,Highest to lowest,cagr25y
+cagr-25y,25-Year Rate Growth (CAGR),Louisiana,1.49,,desc,Highest to lowest,cagr25y
+volatility-5y,5-Year Rate Volatility,District Of Columbia,19.98,,desc,Highest to lowest,volatility5y
+volatility-5y,5-Year Rate Volatility,Maine,17.96,,desc,Highest to lowest,volatility5y
+volatility-5y,5-Year Rate Volatility,Maryland,15.25,,desc,Highest to lowest,volatility5y
+volatility-5y,5-Year Rate Volatility,New Hampshire,14.95,,desc,Highest to lowest,volatility5y
+volatility-5y,5-Year Rate Volatility,Rhode Island,14.36,,desc,Highest to lowest,volatility5y
+volatility-5y,5-Year Rate Volatility,Connecticut,14.07,,desc,Highest to lowest,volatility5y
+volatility-5y,5-Year Rate Volatility,California,13.88,,desc,Highest to lowest,volatility5y
+volatility-5y,5-Year Rate Volatility,New Jersey,13.49,,desc,Highest to lowest,volatility5y
+volatility-5y,5-Year Rate Volatility,Nevada,13.42,,desc,Highest to lowest,volatility5y
+volatility-5y,5-Year Rate Volatility,Missouri,13.36,,desc,Highest to lowest,volatility5y
+volatility-5y,5-Year Rate Volatility,Delaware,13.26,,desc,Highest to lowest,volatility5y
+volatility-5y,5-Year Rate Volatility,Oregon,13.07,,desc,Highest to lowest,volatility5y
+volatility-5y,5-Year Rate Volatility,Pennsylvania,12.47,,desc,Highest to lowest,volatility5y
+volatility-5y,5-Year Rate Volatility,Massachusetts,11.43,,desc,Highest to lowest,volatility5y
+volatility-5y,5-Year Rate Volatility,North Dakota,11.31,,desc,Highest to lowest,volatility5y
+volatility-5y,5-Year Rate Volatility,New York,11.31,,desc,Highest to lowest,volatility5y
+volatility-5y,5-Year Rate Volatility,Illinois,11.18,,desc,Highest to lowest,volatility5y
+volatility-5y,5-Year Rate Volatility,Ohio,11.14,,desc,Highest to lowest,volatility5y
+volatility-5y,5-Year Rate Volatility,Washington,10.97,,desc,Highest to lowest,volatility5y
+volatility-5y,5-Year Rate Volatility,Oklahoma,10.72,,desc,Highest to lowest,volatility5y
+volatility-5y,5-Year Rate Volatility,North Carolina,10.65,,desc,Highest to lowest,volatility5y
+volatility-5y,5-Year Rate Volatility,Wyoming,10.59,,desc,Highest to lowest,volatility5y
+volatility-5y,5-Year Rate Volatility,Iowa,10.26,,desc,Highest to lowest,volatility5y
+volatility-5y,5-Year Rate Volatility,Hawaii,9.94,,desc,Highest to lowest,volatility5y
+volatility-5y,5-Year Rate Volatility,West Virginia,9.82,,desc,Highest to lowest,volatility5y
+volatility-5y,5-Year Rate Volatility,Nebraska,9.71,,desc,Highest to lowest,volatility5y
+volatility-5y,5-Year Rate Volatility,Virginia,9.7,,desc,Highest to lowest,volatility5y
+volatility-5y,5-Year Rate Volatility,Utah,9.61,,desc,Highest to lowest,volatility5y
+volatility-5y,5-Year Rate Volatility,Florida,9.19,,desc,Highest to lowest,volatility5y
+volatility-5y,5-Year Rate Volatility,Texas,9.07,,desc,Highest to lowest,volatility5y
+volatility-5y,5-Year Rate Volatility,Georgia,8.87,,desc,Highest to lowest,volatility5y
+volatility-5y,5-Year Rate Volatility,Alabama,8.77,,desc,Highest to lowest,volatility5y
+volatility-5y,5-Year Rate Volatility,Montana,8.53,,desc,Highest to lowest,volatility5y
+volatility-5y,5-Year Rate Volatility,Arizona,8.43,,desc,Highest to lowest,volatility5y
+volatility-5y,5-Year Rate Volatility,Louisiana,8.38,,desc,Highest to lowest,volatility5y
+volatility-5y,5-Year Rate Volatility,Indiana,8.27,,desc,Highest to lowest,volatility5y
+volatility-5y,5-Year Rate Volatility,Wisconsin,8.21,,desc,Highest to lowest,volatility5y
+volatility-5y,5-Year Rate Volatility,Mississippi,8.13,,desc,Highest to lowest,volatility5y
+volatility-5y,5-Year Rate Volatility,Minnesota,8.02,,desc,Highest to lowest,volatility5y
+volatility-5y,5-Year Rate Volatility,Idaho,7.81,,desc,Highest to lowest,volatility5y
+volatility-5y,5-Year Rate Volatility,South Dakota,7.7,,desc,Highest to lowest,volatility5y
+volatility-5y,5-Year Rate Volatility,Vermont,7.52,,desc,Highest to lowest,volatility5y
+volatility-5y,5-Year Rate Volatility,Colorado,7.42,,desc,Highest to lowest,volatility5y
+volatility-5y,5-Year Rate Volatility,Arkansas,7.07,,desc,Highest to lowest,volatility5y
+volatility-5y,5-Year Rate Volatility,Tennessee,7.01,,desc,Highest to lowest,volatility5y
+volatility-5y,5-Year Rate Volatility,South Carolina,6.61,,desc,Highest to lowest,volatility5y
+volatility-5y,5-Year Rate Volatility,Kentucky,6.42,,desc,Highest to lowest,volatility5y
+volatility-5y,5-Year Rate Volatility,Alaska,6.38,,desc,Highest to lowest,volatility5y
+volatility-5y,5-Year Rate Volatility,New Mexico,6.26,,desc,Highest to lowest,volatility5y
+volatility-5y,5-Year Rate Volatility,Kansas,5.92,,desc,Highest to lowest,volatility5y
+volatility-5y,5-Year Rate Volatility,Michigan,5.7,,desc,Highest to lowest,volatility5y
+price-trend,Electricity Price Trend Ranking,Maine,18.28,,desc,Highest to lowest,annualizedTrend
+price-trend,Electricity Price Trend Ranking,District of Columbia,16.47,,desc,Highest to lowest,annualizedTrend
+price-trend,Electricity Price Trend Ranking,Maryland,12.43,,desc,Highest to lowest,annualizedTrend
+price-trend,Electricity Price Trend Ranking,New York,11.14,,desc,Highest to lowest,annualizedTrend
+price-trend,Electricity Price Trend Ranking,Pennsylvania,9.91,,desc,Highest to lowest,annualizedTrend
+price-trend,Electricity Price Trend Ranking,New Jersey,8.46,,desc,Highest to lowest,annualizedTrend
+price-trend,Electricity Price Trend Ranking,Florida,7.64,,desc,Highest to lowest,annualizedTrend
+price-trend,Electricity Price Trend Ranking,Washington,7.62,,desc,Highest to lowest,annualizedTrend
+price-trend,Electricity Price Trend Ranking,Ohio,7.19,,desc,Highest to lowest,annualizedTrend
+price-trend,Electricity Price Trend Ranking,Massachusetts,6.92,,desc,Highest to lowest,annualizedTrend
+price-trend,Electricity Price Trend Ranking,New Hampshire,6.92,,desc,Highest to lowest,annualizedTrend
+price-trend,Electricity Price Trend Ranking,Colorado,6.72,,desc,Highest to lowest,annualizedTrend
+price-trend,Electricity Price Trend Ranking,Delaware,6.34,,desc,Highest to lowest,annualizedTrend
+price-trend,Electricity Price Trend Ranking,Texas,6.29,,desc,Highest to lowest,annualizedTrend
+price-trend,Electricity Price Trend Ranking,California,6.23,,desc,Highest to lowest,annualizedTrend
+price-trend,Electricity Price Trend Ranking,Oregon,6.09,,desc,Highest to lowest,annualizedTrend
+price-trend,Electricity Price Trend Ranking,Utah,6.09,,desc,Highest to lowest,annualizedTrend
+price-trend,Electricity Price Trend Ranking,Rhode Island,5.9,,desc,Highest to lowest,annualizedTrend
+price-trend,Electricity Price Trend Ranking,Idaho,5.36,,desc,Highest to lowest,annualizedTrend
+price-trend,Electricity Price Trend Ranking,Virginia,5.34,,desc,Highest to lowest,annualizedTrend
+price-trend,Electricity Price Trend Ranking,Wisconsin,5.21,,desc,Highest to lowest,annualizedTrend
+price-trend,Electricity Price Trend Ranking,Arizona,5.2,,desc,Highest to lowest,annualizedTrend
+price-trend,Electricity Price Trend Ranking,Hawaii,4.39,,desc,Highest to lowest,annualizedTrend
+price-trend,Electricity Price Trend Ranking,Vermont,4.14,,desc,Highest to lowest,annualizedTrend
+price-trend,Electricity Price Trend Ranking,Georgia,4.04,,desc,Highest to lowest,annualizedTrend
+price-trend,Electricity Price Trend Ranking,Connecticut,4.02,,desc,Highest to lowest,annualizedTrend
+price-trend,Electricity Price Trend Ranking,Mississippi,4.01,,desc,Highest to lowest,annualizedTrend
+price-trend,Electricity Price Trend Ranking,West Virginia,3.98,,desc,Highest to lowest,annualizedTrend
+price-trend,Electricity Price Trend Ranking,North Carolina,3.97,,desc,Highest to lowest,annualizedTrend
+price-trend,Electricity Price Trend Ranking,South Carolina,3.92,,desc,Highest to lowest,annualizedTrend
+price-trend,Electricity Price Trend Ranking,Kentucky,3.8,,desc,Highest to lowest,annualizedTrend
+price-trend,Electricity Price Trend Ranking,Alabama,3.79,,desc,Highest to lowest,annualizedTrend
+price-trend,Electricity Price Trend Ranking,Illinois,3.58,,desc,Highest to lowest,annualizedTrend
+price-trend,Electricity Price Trend Ranking,Indiana,3.57,,desc,Highest to lowest,annualizedTrend
+price-trend,Electricity Price Trend Ranking,Montana,3.43,,desc,Highest to lowest,annualizedTrend
+price-trend,Electricity Price Trend Ranking,Wyoming,3.36,,desc,Highest to lowest,annualizedTrend
+price-trend,Electricity Price Trend Ranking,Nevada,3.15,,desc,Highest to lowest,annualizedTrend
+price-trend,Electricity Price Trend Ranking,Alaska,3.07,,desc,Highest to lowest,annualizedTrend
+price-trend,Electricity Price Trend Ranking,South Dakota,2.95,,desc,Highest to lowest,annualizedTrend
+price-trend,Electricity Price Trend Ranking,Tennessee,2.91,,desc,Highest to lowest,annualizedTrend
+price-trend,Electricity Price Trend Ranking,New Mexico,2.83,,desc,Highest to lowest,annualizedTrend
+price-trend,Electricity Price Trend Ranking,Louisiana,2.75,,desc,Highest to lowest,annualizedTrend
+price-trend,Electricity Price Trend Ranking,Minnesota,2.75,,desc,Highest to lowest,annualizedTrend
+price-trend,Electricity Price Trend Ranking,Arkansas,2.39,,desc,Highest to lowest,annualizedTrend
+price-trend,Electricity Price Trend Ranking,Michigan,2.32,,desc,Highest to lowest,annualizedTrend
+price-trend,Electricity Price Trend Ranking,Oklahoma,2.23,,desc,Highest to lowest,annualizedTrend
+price-trend,Electricity Price Trend Ranking,Missouri,1.37,,desc,Highest to lowest,annualizedTrend
+price-trend,Electricity Price Trend Ranking,Kansas,0.97,,desc,Highest to lowest,annualizedTrend
+price-trend,Electricity Price Trend Ranking,Iowa,0.87,,desc,Highest to lowest,annualizedTrend
+price-trend,Electricity Price Trend Ranking,Nebraska,0.51,,desc,Highest to lowest,annualizedTrend
+price-trend,Electricity Price Trend Ranking,North Dakota,0.19,,desc,Highest to lowest,annualizedTrend
+momentum-signal,Electricity Price Momentum Signal Ranking,District of Columbia,27.97,,desc,Highest to lowest,score
+momentum-signal,Electricity Price Momentum Signal Ranking,Maine,19.6,,desc,Highest to lowest,score
+momentum-signal,Electricity Price Momentum Signal Ranking,New Jersey,19.53,,desc,Highest to lowest,score
+momentum-signal,Electricity Price Momentum Signal Ranking,Washington,19.23,,desc,Highest to lowest,score
+momentum-signal,Electricity Price Momentum Signal Ranking,Pennsylvania,16.98,,desc,Highest to lowest,score
+momentum-signal,Electricity Price Momentum Signal Ranking,Kentucky,16.8,,desc,Highest to lowest,score
+momentum-signal,Electricity Price Momentum Signal Ranking,Oklahoma,16.42,,desc,Highest to lowest,score
+momentum-signal,Electricity Price Momentum Signal Ranking,Virginia,15.85,,desc,Highest to lowest,score
+momentum-signal,Electricity Price Momentum Signal Ranking,Montana,15.01,,desc,Highest to lowest,score
+momentum-signal,Electricity Price Momentum Signal Ranking,Maryland,14.99,,desc,Highest to lowest,score
+momentum-signal,Electricity Price Momentum Signal Ranking,Ohio,14.61,,desc,Highest to lowest,score
+momentum-signal,Electricity Price Momentum Signal Ranking,South Dakota,14.58,,desc,Highest to lowest,score
+momentum-signal,Electricity Price Momentum Signal Ranking,New Hampshire,14.48,,desc,Highest to lowest,score
+momentum-signal,Electricity Price Momentum Signal Ranking,Louisiana,14.25,,desc,Highest to lowest,score
+momentum-signal,Electricity Price Momentum Signal Ranking,New York,13.96,,desc,Highest to lowest,score
+momentum-signal,Electricity Price Momentum Signal Ranking,Mississippi,13.77,,desc,Highest to lowest,score
+momentum-signal,Electricity Price Momentum Signal Ranking,Idaho,13.55,,desc,Highest to lowest,score
+momentum-signal,Electricity Price Momentum Signal Ranking,Indiana,13.27,,desc,Highest to lowest,score
+momentum-signal,Electricity Price Momentum Signal Ranking,South Carolina,13.02,,desc,Highest to lowest,score
+momentum-signal,Electricity Price Momentum Signal Ranking,Nebraska,12.68,,desc,Highest to lowest,score
+momentum-signal,Electricity Price Momentum Signal Ranking,Florida,12.4,,desc,Highest to lowest,score
+momentum-signal,Electricity Price Momentum Signal Ranking,Colorado,12.11,,desc,Highest to lowest,score
+momentum-signal,Electricity Price Momentum Signal Ranking,Wyoming,11.92,,desc,Highest to lowest,score
+momentum-signal,Electricity Price Momentum Signal Ranking,North Dakota,11.75,,desc,Highest to lowest,score
+momentum-signal,Electricity Price Momentum Signal Ranking,Arkansas,11.49,,desc,Highest to lowest,score
+momentum-signal,Electricity Price Momentum Signal Ranking,North Carolina,11.35,,desc,Highest to lowest,score
+momentum-signal,Electricity Price Momentum Signal Ranking,New Mexico,9.61,,desc,Highest to lowest,score
+momentum-signal,Electricity Price Momentum Signal Ranking,Vermont,9.13,,desc,Highest to lowest,score
+momentum-signal,Electricity Price Momentum Signal Ranking,Iowa,9.01,,desc,Highest to lowest,score
+momentum-signal,Electricity Price Momentum Signal Ranking,Kansas,8.96,,desc,Highest to lowest,score
+momentum-signal,Electricity Price Momentum Signal Ranking,Texas,8.95,,desc,Highest to lowest,score
+momentum-signal,Electricity Price Momentum Signal Ranking,Delaware,8.31,,desc,Highest to lowest,score
+momentum-signal,Electricity Price Momentum Signal Ranking,Georgia,8.11,,desc,Highest to lowest,score
+momentum-signal,Electricity Price Momentum Signal Ranking,Michigan,7.63,,desc,Highest to lowest,score
+momentum-signal,Electricity Price Momentum Signal Ranking,Alabama,7.43,,desc,Highest to lowest,score
+momentum-signal,Electricity Price Momentum Signal Ranking,Utah,7.36,,desc,Highest to lowest,score
+momentum-signal,Electricity Price Momentum Signal Ranking,Arizona,7.05,,desc,Highest to lowest,score
+momentum-signal,Electricity Price Momentum Signal Ranking,Missouri,6.26,,desc,Highest to lowest,score
+momentum-signal,Electricity Price Momentum Signal Ranking,Wisconsin,5.84,,desc,Highest to lowest,score
+momentum-signal,Electricity Price Momentum Signal Ranking,Tennessee,5.13,,desc,Highest to lowest,score
+momentum-signal,Electricity Price Momentum Signal Ranking,Illinois,4.68,,desc,Highest to lowest,score
+momentum-signal,Electricity Price Momentum Signal Ranking,Massachusetts,4.62,,desc,Highest to lowest,score
+momentum-signal,Electricity Price Momentum Signal Ranking,Minnesota,4.24,,desc,Highest to lowest,score
+momentum-signal,Electricity Price Momentum Signal Ranking,Alaska,4.19,,desc,Highest to lowest,score
+momentum-signal,Electricity Price Momentum Signal Ranking,West Virginia,3.07,,desc,Highest to lowest,score
+momentum-signal,Electricity Price Momentum Signal Ranking,Oregon,2.31,,desc,Highest to lowest,score
+momentum-signal,Electricity Price Momentum Signal Ranking,California,0,,desc,Highest to lowest,score
+momentum-signal,Electricity Price Momentum Signal Ranking,Nevada,0,,desc,Highest to lowest,score
+momentum-signal,Electricity Price Momentum Signal Ranking,Hawaii,-2.78,,desc,Highest to lowest,score
+momentum-signal,Electricity Price Momentum Signal Ranking,Rhode Island,-5.8,,desc,Highest to lowest,score
+momentum-signal,Electricity Price Momentum Signal Ranking,Connecticut,-6.73,,desc,Highest to lowest,score
+electricity-inflation-1y,1-Year Electricity Inflation Ranking,District of Columbia,26,26.0%,desc,Highest to lowest,inflation1yPercent
+electricity-inflation-1y,1-Year Electricity Inflation Ranking,Maine,17.6,17.6%,desc,Highest to lowest,inflation1yPercent
+electricity-inflation-1y,1-Year Electricity Inflation Ranking,New Jersey,17.5,17.5%,desc,Highest to lowest,inflation1yPercent
+electricity-inflation-1y,1-Year Electricity Inflation Ranking,Washington,17.2,17.2%,desc,Highest to lowest,inflation1yPercent
+electricity-inflation-1y,1-Year Electricity Inflation Ranking,Pennsylvania,15,15.0%,desc,Highest to lowest,inflation1yPercent
+electricity-inflation-1y,1-Year Electricity Inflation Ranking,Kentucky,14.8,14.8%,desc,Highest to lowest,inflation1yPercent
+electricity-inflation-1y,1-Year Electricity Inflation Ranking,Oklahoma,14.4,14.4%,desc,Highest to lowest,inflation1yPercent
+electricity-inflation-1y,1-Year Electricity Inflation Ranking,Virginia,13.8,13.8%,desc,Highest to lowest,inflation1yPercent
+electricity-inflation-1y,1-Year Electricity Inflation Ranking,Maryland,13,13.0%,desc,Highest to lowest,inflation1yPercent
+electricity-inflation-1y,1-Year Electricity Inflation Ranking,Montana,13,13.0%,desc,Highest to lowest,inflation1yPercent
+electricity-inflation-1y,1-Year Electricity Inflation Ranking,Ohio,12.6,12.6%,desc,Highest to lowest,inflation1yPercent
+electricity-inflation-1y,1-Year Electricity Inflation Ranking,South Dakota,12.6,12.6%,desc,Highest to lowest,inflation1yPercent
+electricity-inflation-1y,1-Year Electricity Inflation Ranking,New Hampshire,12.5,12.5%,desc,Highest to lowest,inflation1yPercent
+electricity-inflation-1y,1-Year Electricity Inflation Ranking,Louisiana,12.3,12.3%,desc,Highest to lowest,inflation1yPercent
+electricity-inflation-1y,1-Year Electricity Inflation Ranking,New York,12,12.0%,desc,Highest to lowest,inflation1yPercent
+electricity-inflation-1y,1-Year Electricity Inflation Ranking,Mississippi,11.8,11.8%,desc,Highest to lowest,inflation1yPercent
+electricity-inflation-1y,1-Year Electricity Inflation Ranking,Nebraska,11.7,11.7%,desc,Highest to lowest,inflation1yPercent
+electricity-inflation-1y,1-Year Electricity Inflation Ranking,Idaho,11.6,11.6%,desc,Highest to lowest,inflation1yPercent
+electricity-inflation-1y,1-Year Electricity Inflation Ranking,Indiana,11.3,11.3%,desc,Highest to lowest,inflation1yPercent
+electricity-inflation-1y,1-Year Electricity Inflation Ranking,South Carolina,11,11.0%,desc,Highest to lowest,inflation1yPercent
+electricity-inflation-1y,1-Year Electricity Inflation Ranking,Florida,10.4,10.4%,desc,Highest to lowest,inflation1yPercent
+electricity-inflation-1y,1-Year Electricity Inflation Ranking,Colorado,10.1,10.1%,desc,Highest to lowest,inflation1yPercent
+electricity-inflation-1y,1-Year Electricity Inflation Ranking,Wyoming,9.9,9.9%,desc,Highest to lowest,inflation1yPercent
+electricity-inflation-1y,1-Year Electricity Inflation Ranking,North Dakota,9.7,9.7%,desc,Highest to lowest,inflation1yPercent
+electricity-inflation-1y,1-Year Electricity Inflation Ranking,Arkansas,9.5,9.5%,desc,Highest to lowest,inflation1yPercent
+electricity-inflation-1y,1-Year Electricity Inflation Ranking,North Carolina,9.4,9.4%,desc,Highest to lowest,inflation1yPercent
+electricity-inflation-1y,1-Year Electricity Inflation Ranking,New Mexico,7.6,7.6%,desc,Highest to lowest,inflation1yPercent
+electricity-inflation-1y,1-Year Electricity Inflation Ranking,Georgia,7.1,7.1%,desc,Highest to lowest,inflation1yPercent
+electricity-inflation-1y,1-Year Electricity Inflation Ranking,Vermont,7.1,7.1%,desc,Highest to lowest,inflation1yPercent
+electricity-inflation-1y,1-Year Electricity Inflation Ranking,Iowa,7,7.0%,desc,Highest to lowest,inflation1yPercent
+electricity-inflation-1y,1-Year Electricity Inflation Ranking,Kansas,7,7.0%,desc,Highest to lowest,inflation1yPercent
+electricity-inflation-1y,1-Year Electricity Inflation Ranking,Texas,7,7.0%,desc,Highest to lowest,inflation1yPercent
+electricity-inflation-1y,1-Year Electricity Inflation Ranking,Alabama,6.4,6.4%,desc,Highest to lowest,inflation1yPercent
+electricity-inflation-1y,1-Year Electricity Inflation Ranking,Utah,6.4,6.4%,desc,Highest to lowest,inflation1yPercent
+electricity-inflation-1y,1-Year Electricity Inflation Ranking,Delaware,6.3,6.3%,desc,Highest to lowest,inflation1yPercent
+electricity-inflation-1y,1-Year Electricity Inflation Ranking,Arizona,6,6.0%,desc,Highest to lowest,inflation1yPercent
+electricity-inflation-1y,1-Year Electricity Inflation Ranking,Michigan,5.6,5.6%,desc,Highest to lowest,inflation1yPercent
+electricity-inflation-1y,1-Year Electricity Inflation Ranking,Missouri,5.3,5.3%,desc,Highest to lowest,inflation1yPercent
+electricity-inflation-1y,1-Year Electricity Inflation Ranking,Wisconsin,4.8,4.8%,desc,Highest to lowest,inflation1yPercent
+electricity-inflation-1y,1-Year Electricity Inflation Ranking,Tennessee,4.1,4.1%,desc,Highest to lowest,inflation1yPercent
+electricity-inflation-1y,1-Year Electricity Inflation Ranking,Illinois,3.7,3.7%,desc,Highest to lowest,inflation1yPercent
+electricity-inflation-1y,1-Year Electricity Inflation Ranking,Massachusetts,3.6,3.6%,desc,Highest to lowest,inflation1yPercent
+electricity-inflation-1y,1-Year Electricity Inflation Ranking,Alaska,3.2,3.2%,desc,Highest to lowest,inflation1yPercent
+electricity-inflation-1y,1-Year Electricity Inflation Ranking,Minnesota,3.2,3.2%,desc,Highest to lowest,inflation1yPercent
+electricity-inflation-1y,1-Year Electricity Inflation Ranking,West Virginia,2.1,2.1%,desc,Highest to lowest,inflation1yPercent
+electricity-inflation-1y,1-Year Electricity Inflation Ranking,Oregon,1.3,1.3%,desc,Highest to lowest,inflation1yPercent
+electricity-inflation-1y,1-Year Electricity Inflation Ranking,Nevada,0.7,0.7%,desc,Highest to lowest,inflation1yPercent
+electricity-inflation-1y,1-Year Electricity Inflation Ranking,California,0,0.0%,desc,Highest to lowest,inflation1yPercent
+electricity-inflation-1y,1-Year Electricity Inflation Ranking,Hawaii,-1.8,-1.8%,desc,Highest to lowest,inflation1yPercent
+electricity-inflation-1y,1-Year Electricity Inflation Ranking,Rhode Island,-4.8,-4.8%,desc,Highest to lowest,inflation1yPercent
+electricity-inflation-1y,1-Year Electricity Inflation Ranking,Connecticut,-5.7,-5.7%,desc,Highest to lowest,inflation1yPercent
+electricity-inflation-5y,5-Year Electricity Inflation Ranking,District of Columbia,94.3,94.3%,desc,Highest to lowest,inflation5yPercent
+electricity-inflation-5y,5-Year Electricity Inflation Ranking,Maine,86.4,86.4%,desc,Highest to lowest,inflation5yPercent
+electricity-inflation-5y,5-Year Electricity Inflation Ranking,Maryland,63.6,63.6%,desc,Highest to lowest,inflation5yPercent
+electricity-inflation-5y,5-Year Electricity Inflation Ranking,New York,54.9,54.9%,desc,Highest to lowest,inflation5yPercent
+electricity-inflation-5y,5-Year Electricity Inflation Ranking,Pennsylvania,54.5,54.5%,desc,Highest to lowest,inflation5yPercent
+electricity-inflation-5y,5-Year Electricity Inflation Ranking,Ohio,48.9,48.9%,desc,Highest to lowest,inflation5yPercent
+electricity-inflation-5y,5-Year Electricity Inflation Ranking,Virginia,45.7,45.7%,desc,Highest to lowest,inflation5yPercent
+electricity-inflation-5y,5-Year Electricity Inflation Ranking,New Jersey,43.3,43.3%,desc,Highest to lowest,inflation5yPercent
+electricity-inflation-5y,5-Year Electricity Inflation Ranking,Oklahoma,42.9,42.9%,desc,Highest to lowest,inflation5yPercent
+electricity-inflation-5y,5-Year Electricity Inflation Ranking,Washington,41.4,41.4%,desc,Highest to lowest,inflation5yPercent
+electricity-inflation-5y,5-Year Electricity Inflation Ranking,California,41.2,41.2%,desc,Highest to lowest,inflation5yPercent
+electricity-inflation-5y,5-Year Electricity Inflation Ranking,Delaware,40.8,40.8%,desc,Highest to lowest,inflation5yPercent
+electricity-inflation-5y,5-Year Electricity Inflation Ranking,Massachusetts,39.7,39.7%,desc,Highest to lowest,inflation5yPercent
+electricity-inflation-5y,5-Year Electricity Inflation Ranking,New Hampshire,39,39.0%,desc,Highest to lowest,inflation5yPercent
+electricity-inflation-5y,5-Year Electricity Inflation Ranking,Florida,38.8,38.8%,desc,Highest to lowest,inflation5yPercent
+electricity-inflation-5y,5-Year Electricity Inflation Ranking,Texas,38.2,38.2%,desc,Highest to lowest,inflation5yPercent
+electricity-inflation-5y,5-Year Electricity Inflation Ranking,Kentucky,36.4,36.4%,desc,Highest to lowest,inflation5yPercent
+electricity-inflation-5y,5-Year Electricity Inflation Ranking,Colorado,36.2,36.2%,desc,Highest to lowest,inflation5yPercent
+electricity-inflation-5y,5-Year Electricity Inflation Ranking,Georgia,34.3,34.3%,desc,Highest to lowest,inflation5yPercent
+electricity-inflation-5y,5-Year Electricity Inflation Ranking,Illinois,33.8,33.8%,desc,Highest to lowest,inflation5yPercent
+electricity-inflation-5y,5-Year Electricity Inflation Ranking,Mississippi,33.7,33.7%,desc,Highest to lowest,inflation5yPercent
+electricity-inflation-5y,5-Year Electricity Inflation Ranking,Arizona,33.5,33.5%,desc,Highest to lowest,inflation5yPercent
+electricity-inflation-5y,5-Year Electricity Inflation Ranking,Indiana,32.9,32.9%,desc,Highest to lowest,inflation5yPercent
+electricity-inflation-5y,5-Year Electricity Inflation Ranking,Oregon,32.8,32.8%,desc,Highest to lowest,inflation5yPercent
+electricity-inflation-5y,5-Year Electricity Inflation Ranking,Connecticut,32.7,32.7%,desc,Highest to lowest,inflation5yPercent
+electricity-inflation-5y,5-Year Electricity Inflation Ranking,South Carolina,32.3,32.3%,desc,Highest to lowest,inflation5yPercent
+electricity-inflation-5y,5-Year Electricity Inflation Ranking,West Virginia,32,32.0%,desc,Highest to lowest,inflation5yPercent
+electricity-inflation-5y,5-Year Electricity Inflation Ranking,North Carolina,31.7,31.7%,desc,Highest to lowest,inflation5yPercent
+electricity-inflation-5y,5-Year Electricity Inflation Ranking,Alabama,31.5,31.5%,desc,Highest to lowest,inflation5yPercent
+electricity-inflation-5y,5-Year Electricity Inflation Ranking,Louisiana,31,31.0%,desc,Highest to lowest,inflation5yPercent
+electricity-inflation-5y,5-Year Electricity Inflation Ranking,Arkansas,30.3,30.3%,desc,Highest to lowest,inflation5yPercent
+electricity-inflation-5y,5-Year Electricity Inflation Ranking,Hawaii,29.7,29.7%,desc,Highest to lowest,inflation5yPercent
+electricity-inflation-5y,5-Year Electricity Inflation Ranking,Wisconsin,29.7,29.7%,desc,Highest to lowest,inflation5yPercent
+electricity-inflation-5y,5-Year Electricity Inflation Ranking,Utah,29.1,29.1%,desc,Highest to lowest,inflation5yPercent
+electricity-inflation-5y,5-Year Electricity Inflation Ranking,Rhode Island,28.7,28.7%,desc,Highest to lowest,inflation5yPercent
+electricity-inflation-5y,5-Year Electricity Inflation Ranking,Tennessee,27.1,27.1%,desc,Highest to lowest,inflation5yPercent
+electricity-inflation-5y,5-Year Electricity Inflation Ranking,Missouri,26.9,26.9%,desc,Highest to lowest,inflation5yPercent
+electricity-inflation-5y,5-Year Electricity Inflation Ranking,Vermont,26.6,26.6%,desc,Highest to lowest,inflation5yPercent
+electricity-inflation-5y,5-Year Electricity Inflation Ranking,Nebraska,26.3,26.3%,desc,Highest to lowest,inflation5yPercent
+electricity-inflation-5y,5-Year Electricity Inflation Ranking,South Dakota,24.1,24.1%,desc,Highest to lowest,inflation5yPercent
+electricity-inflation-5y,5-Year Electricity Inflation Ranking,Wyoming,23.1,23.1%,desc,Highest to lowest,inflation5yPercent
+electricity-inflation-5y,5-Year Electricity Inflation Ranking,Nevada,21.4,21.4%,desc,Highest to lowest,inflation5yPercent
+electricity-inflation-5y,5-Year Electricity Inflation Ranking,Kansas,20.6,20.6%,desc,Highest to lowest,inflation5yPercent
+electricity-inflation-5y,5-Year Electricity Inflation Ranking,Idaho,20.5,20.5%,desc,Highest to lowest,inflation5yPercent
+electricity-inflation-5y,5-Year Electricity Inflation Ranking,Montana,20.2,20.2%,desc,Highest to lowest,inflation5yPercent
+electricity-inflation-5y,5-Year Electricity Inflation Ranking,Minnesota,19.3,19.3%,desc,Highest to lowest,inflation5yPercent
+electricity-inflation-5y,5-Year Electricity Inflation Ranking,Alaska,19.1,19.1%,desc,Highest to lowest,inflation5yPercent
+electricity-inflation-5y,5-Year Electricity Inflation Ranking,Iowa,18.2,18.2%,desc,Highest to lowest,inflation5yPercent
+electricity-inflation-5y,5-Year Electricity Inflation Ranking,New Mexico,18.2,18.2%,desc,Highest to lowest,inflation5yPercent
+electricity-inflation-5y,5-Year Electricity Inflation Ranking,Michigan,15.4,15.4%,desc,Highest to lowest,inflation5yPercent
+electricity-inflation-5y,5-Year Electricity Inflation Ranking,North Dakota,15.3,15.3%,desc,Highest to lowest,inflation5yPercent

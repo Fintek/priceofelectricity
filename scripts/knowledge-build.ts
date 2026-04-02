@@ -9160,9 +9160,15 @@ export function t(key: string): string {
 
   const rankingsIndexMeta = rankingsIndexBody.items;
   const rankingsRows: Array<Record<string, string | number | null>> = [];
+  function sortDirectionLabel(sortDirection: string): string {
+    if (sortDirection === "asc") return "Lowest to highest";
+    if (sortDirection === "desc") return "Highest to lowest";
+    return sortDirection;
+  }
   for (const r of rankingPages) {
     const indexItem = rankingsIndexMeta.find((i) => i.id === r.slug);
     const direction = indexItem?.sortDirection ?? "desc";
+    const directionLabel = sortDirectionLabel(direction);
     const metricId = indexItem?.metricField?.split(".").pop() ?? r.slug;
     const sortedStates = r.data.sortedStates ?? [];
     for (const s of sortedStates) {
@@ -9173,6 +9179,7 @@ export function t(key: string): string {
         value: s.metricValue ?? null,
         displayValue: typeof s.displayValue === "string" ? s.displayValue : null,
         direction,
+        directionLabel,
         metricId,
       });
     }
@@ -9182,11 +9189,21 @@ export function t(key: string): string {
     generatedAt,
     sourceVersion,
     rowCount: rankingsRows.length,
-    columns: ["rankingId", "rankingTitle", "state", "value", "displayValue", "direction", "metricId"],
+    columns: [
+      "rankingId",
+      "rankingTitle",
+      "state",
+      "value",
+      "displayValue",
+      "direction",
+      "directionLabel",
+      "metricId",
+    ],
     data: rankingsRows,
   };
   await writeJson("/datasets/electricity-rankings.json", rankingsBodyExport);
-  const rankingsCsvHeader = "rankingId,rankingTitle,state,value,displayValue,direction,metricId";
+  const rankingsCsvHeader =
+    "rankingId,rankingTitle,state,value,displayValue,direction,directionLabel,metricId";
   const rankingsCsvRows = rankingsRows.map((r) =>
     [
       String(r.rankingId ?? ""),
@@ -9195,6 +9212,7 @@ export function t(key: string): string {
       r.value ?? "",
       String(r.displayValue ?? "").replace(/"/g, '""'),
       r.direction ?? "",
+      String(r.directionLabel ?? "").replace(/"/g, '""'),
       r.metricId ?? "",
     ].join(","),
   );
