@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { SITE_URL } from "@/lib/site";
 
 const BASE_URL = SITE_URL;
@@ -69,8 +70,8 @@ export default function ContactPage() {
       <section style={{ marginTop: 24 }}>
         <h2>Prefer a form?</h2>
         <p style={{ marginTop: 0 }}>
-          A short contact form is planned. For now, email works best and helps us route requests
-          quickly.
+          For advertising and partnership briefs, use the{" "}
+          <Link href="/advertise">Advertise with Us</Link> page. For other topics, email works best.
         </p>
       </section>
     </main>

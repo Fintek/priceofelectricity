@@ -169,6 +169,7 @@ export default function RootLayout({
               <p className="footer-group-title">About</p>
               <Link href="/about">About &amp; Trust</Link>
               <Link href="/contact">Contact</Link>
+              <Link href="/advertise">Advertise with Us</Link>
               <Link href="/newsletter">Newsletter</Link>
               <Link href="/press">Press</Link>
               <Link href="/citations">Citations</Link>

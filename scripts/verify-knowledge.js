@@ -3135,6 +3135,7 @@ const KNOWN_STATIC_ROUTES = new Set([
   "/sources",
   "/data-policy",
   "/contact",
+  "/advertise",
   "/newsletter",
   "/changelog",
   "/press",

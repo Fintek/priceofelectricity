@@ -334,6 +334,12 @@ export function getSegmentedSitemapEntries() {
       priority: 0.6,
     },
     {
+      url: `${BASE_URL}/advertise`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.55,
+    },
+    {
       url: `${BASE_URL}/licensing`,
       lastModified: new Date(),
       changeFrequency: "monthly",
