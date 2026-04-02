@@ -7,6 +7,9 @@ type TrackedOutboundLinkProps = {
   children: ReactNode;
   eventName: string;
   props?: Record<string, string | number | boolean>;
+  className?: string;
+  target?: string;
+  rel?: string;
 };
 
 export default function TrackedOutboundLink({
@@ -14,13 +17,16 @@ export default function TrackedOutboundLink({
   children,
   eventName,
   props,
+  className,
+  target = "_blank",
+  rel = "noopener noreferrer",
 }: TrackedOutboundLinkProps) {
   const handleClick = () => {
     (window as any).plausible?.(eventName, { props });
   };
 
   return (
-    <a href={href} target="_blank" rel="noopener noreferrer" onClick={handleClick}>
+    <a href={href} target={target} rel={rel} className={className} onClick={handleClick}>
       {children}
     </a>
   );

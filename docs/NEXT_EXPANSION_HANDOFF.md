@@ -4811,3 +4811,28 @@ The next conversation should start from:
 - stable hold preserved
 - no automatic follow-up UI prompt required
 - next step is **main-roadmap re-entry / next-priority determination** or monitoring-trigger evaluation, not another UI-upgrade continuation prompt
+
+## Prompt 117 update — bounded commercial measurement
+
+- **Status:** implemented.
+- **What was shipped:** centralized commercial click and impression tracking for live provider module types (`provider-comparison`, `marketplace-cta`) via Plausible-compatible events on existing commercial surfaces.
+- **Attribution dimensions now captured:** `moduleType`, `pageFamily`, `pageType`, `state` (when present), `providerId`, `offerType`.
+- **Guardrails preserved:** no route-family growth, no rollout-cap changes, no provider-catalog expansion, no canonical/sitemap ownership changes.
+
+### Recommended next step
+
+- Keep rollout posture unchanged and move to a **measurement readout + bounded placement tuning decision** prompt using newly captured commercial engagement events.
+
+## Prompt 118 update — commercial measurement readout / tuning decision
+
+- **Status:** readout attempted; real analytics data not yet available.
+- **Why:** Prompt 117 measurement code has not yet been committed or deployed to production. The Plausible script is live and correctly wired, and events fire on page load (confirmed via local Playwright verification), but no production event volume exists yet.
+- **Decision:** HOLD / MONITOR. No tuning action is justified without real production engagement data.
+- **Evidence threshold for Prompt 119:** at least 7 days of production event data after the measurement code is deployed, with enough `CommercialOfferImpression` and `CommercialOfferClick` volume to compare across `pageFamily` and `moduleType` dimensions.
+- **Guardrails preserved:** all five held/deferred postures unchanged; no rollout, canonical, provider, or placement changes made.
+
+### Recommended next step
+
+1. **Commit and deploy** the Prompt 117 measurement code to production.
+2. **Wait** for at least 7 days of production data collection.
+3. **Then** run Prompt 119 as a data-informed tuning decision prompt using real Plausible event readout.

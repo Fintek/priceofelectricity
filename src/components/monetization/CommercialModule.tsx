@@ -1,4 +1,5 @@
 import Link from "next/link";
+import TrackedOutboundLink from "@/app/components/TrackedOutboundLink";
 import {
   AffiliateReferralLinks,
   CallToActionBlock,
@@ -7,6 +8,7 @@ import {
   ProviderOfferCards,
 } from "@/components/monetization/MonetizationBlocks";
 import CommercialComplianceNote from "@/components/monetization/CommercialComplianceNote";
+import CommercialImpressionTracker from "@/components/monetization/CommercialImpressionTracker";
 import type { MonetizationContext } from "@/lib/monetization/config";
 import type {
   CommercialModuleType,
@@ -19,6 +21,29 @@ function getOfferCtaLabel(type: "supplier" | "marketplace" | "affiliate"): strin
   if (type === "marketplace") return "Compare plans";
   if (type === "supplier") return "View provider details";
   return "See offer";
+}
+
+function buildCommercialTrackingProps({
+  moduleType,
+  pageFamily,
+  context,
+  providerId,
+  offerType,
+}: {
+  moduleType: "provider-comparison" | "marketplace-cta";
+  pageFamily: CommercialPageFamily;
+  context: MonetizationContext;
+  providerId: string;
+  offerType: "supplier" | "marketplace" | "affiliate";
+}): Record<string, string> {
+  return {
+    moduleType,
+    pageFamily,
+    pageType: context.pageType,
+    providerId,
+    offerType,
+    ...(context.state ? { state: context.state } : {}),
+  };
 }
 
 function renderProviderComparison(
@@ -63,6 +88,16 @@ function renderProviderComparison(
               backgroundColor: "#fff",
             }}
           >
+            <CommercialImpressionTracker
+              eventName="CommercialOfferImpression"
+              props={buildCommercialTrackingProps({
+                moduleType: "provider-comparison",
+                pageFamily,
+                context,
+                providerId: offer.providerId,
+                offerType: offer.offerType,
+              })}
+            />
             <h3 style={{ marginTop: 0, marginBottom: 6, fontSize: 17 }}>{offer.providerName}</h3>
             <p style={{ marginTop: 0, marginBottom: 10, lineHeight: 1.6, fontSize: 14 }}>{offer.offerDescription}</p>
             <p className="muted" style={{ marginTop: 0, marginBottom: 10, fontSize: 13, lineHeight: 1.5 }}>
@@ -75,14 +110,22 @@ function renderProviderComparison(
                 ))}
               </ul>
             ) : null}
-            <a
+            <TrackedOutboundLink
               href={offer.signupUrl}
+              eventName="CommercialOfferClick"
+              props={buildCommercialTrackingProps({
+                moduleType: "provider-comparison",
+                pageFamily,
+                context,
+                providerId: offer.providerId,
+                offerType: offer.offerType,
+              })}
               target="_blank"
               rel="sponsored nofollow noopener noreferrer"
               className="commercial-cta-primary"
             >
               {getOfferCtaLabel(offer.offerType)}
-            </a>
+            </TrackedOutboundLink>
           </article>
         ))}
       </div>
@@ -103,8 +146,19 @@ function renderMarketplaceCta(
   });
   if (offers.length > 0) {
     const offer = offers[0];
+    const trackingProps = buildCommercialTrackingProps({
+      moduleType: "marketplace-cta",
+      pageFamily,
+      context,
+      providerId: offer.providerId,
+      offerType: offer.offerType,
+    });
     return (
       <section className="commercial-module">
+        <CommercialImpressionTracker
+          eventName="CommercialOfferImpression"
+          props={trackingProps}
+        />
         <span className="commercial-module-label">Partner offers</span>
         <h2>
           {context.stateName
@@ -121,14 +175,16 @@ function renderMarketplaceCta(
           {offer.coverageAreaDescription}
         </p>
         <p style={{ marginTop: 0, marginBottom: 0 }}>
-          <a
+          <TrackedOutboundLink
             href={offer.signupUrl}
+            eventName="CommercialOfferClick"
+            props={trackingProps}
             target="_blank"
             rel="sponsored nofollow noopener noreferrer"
             className="commercial-cta-primary"
           >
             {offer.offerType === "marketplace" ? "Compare plans" : getOfferCtaLabel(offer.offerType)}
-          </a>
+          </TrackedOutboundLink>
           {" · "}
           <Link href="/electricity-providers" className="commercial-cta-secondary">Browse all providers</Link>
         </p>
