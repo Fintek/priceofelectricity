@@ -69,10 +69,16 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <link rel="dns-prefetch" href="https://plausible.io" />
+        {/* Privacy-friendly analytics by Plausible */}
         <script
-          defer
-          data-domain="priceofelectricity.com"
-          src="https://plausible.io/js/script.js"
+          async
+          src="https://plausible.io/js/pa-RXARs6-tudW1hny-L8iSK.js"
+        />
+        <script
+          dangerouslySetInnerHTML={{
+            __html:
+              "window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};plausible.init()",
+          }}
         />
         <script
           type="application/ld+json"
