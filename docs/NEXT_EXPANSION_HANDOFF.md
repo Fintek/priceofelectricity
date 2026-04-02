@@ -4826,13 +4826,22 @@ The next conversation should start from:
 ## Prompt 118 update — commercial measurement readout / tuning decision
 
 - **Status:** readout attempted; real analytics data not yet available.
-- **Why:** Prompt 117 measurement code has not yet been committed or deployed to production. The Plausible script is live and correctly wired, and events fire on page load (confirmed via local Playwright verification), but no production event volume exists yet.
-- **Decision:** HOLD / MONITOR. No tuning action is justified without real production engagement data.
-- **Evidence threshold for Prompt 119:** at least 7 days of production event data after the measurement code is deployed, with enough `CommercialOfferImpression` and `CommercialOfferClick` volume to compare across `pageFamily` and `moduleType` dimensions.
+- **Why:** at that time, Prompt 117 measurement code was not yet committed/deployed. Local implementation verification passed, but production event volume did not yet exist.
+- **Decision at Prompt 118:** HOLD / MONITOR.
 - **Guardrails preserved:** all five held/deferred postures unchanged; no rollout, canonical, provider, or placement changes made.
 
-### Recommended next step
+## Prompt 119 update — bounded measurement release/deploy
 
-1. **Commit and deploy** the Prompt 117 measurement code to production.
-2. **Wait** for at least 7 days of production data collection.
-3. **Then** run Prompt 119 as a data-informed tuning decision prompt using real Plausible event readout.
+- **Status:** completed. Prompt 117 commercial measurement has now been committed and deployed to production.
+- **Production deployment:** Vercel production deployment for commit `fb21fd6` reached `READY`.
+- **Production verification:** representative commercial surfaces render correctly and outbound commercial CTAs still open tracked partner URLs with preserved UTM parameters.
+- **Decision:** keep rollout/placement/provider posture unchanged and enter production data-collection hold.
+
+### Prompt 120 gating condition (must be met before any tuning prompt)
+
+Run Prompt 120 only after all of the following are true:
+
+1. At least **7 days** of production commercial measurement data are available.
+2. At least **100 total `CommercialOfferImpression`** events are recorded.
+3. At least **5 total `CommercialOfferClick`** events are recorded.
+4. At least **2 distinct `pageFamily`** values are represented in recorded events.
