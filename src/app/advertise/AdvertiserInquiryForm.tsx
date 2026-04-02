@@ -2,7 +2,7 @@
 
 import type { FormEvent } from "react";
 
-const CONTACT_EMAIL = "contact@priceofelectricity.com";
+const CONTACT_EMAIL = "priceofelectricity@gmail.com";
 
 const formAction = process.env.NEXT_PUBLIC_ADVERTISER_INQUIRY_FORM_ACTION?.trim();
 

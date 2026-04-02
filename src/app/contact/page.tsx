@@ -55,7 +55,7 @@ export default function ContactPage() {
         <p style={{ marginTop: 0 }}>
           For utility partnerships, supplier collaboration, or corrections to published electricity
           data, email{" "}
-          <a href="mailto:contact@priceofelectricity.com">contact@priceofelectricity.com</a>.
+          <a href="mailto:priceofelectricity@gmail.com">priceofelectricity@gmail.com</a>.
         </p>
       </section>
 
@@ -63,7 +63,7 @@ export default function ContactPage() {
         <h2>Advertising</h2>
         <p style={{ marginTop: 0 }}>
           For sponsorships or ad placements, send your brief, target geography, and timeline to{" "}
-          <a href="mailto:contact@priceofelectricity.com">contact@priceofelectricity.com</a>.
+          <a href="mailto:priceofelectricity@gmail.com">priceofelectricity@gmail.com</a>.
         </p>
       </section>
 

@@ -85,7 +85,7 @@ export default function AdvertisePage() {
         <p style={{ marginTop: 0 }}>
           For non-advertising topics (data corrections, general partnerships), see{" "}
           <Link href="/contact">Contact</Link> or email{" "}
-          <a href="mailto:contact@priceofelectricity.com">contact@priceofelectricity.com</a>.
+          <a href="mailto:priceofelectricity@gmail.com">priceofelectricity@gmail.com</a>.
         </p>
       </section>
     </main>
