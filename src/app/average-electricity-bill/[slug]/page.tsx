@@ -139,8 +139,8 @@ export default async function AverageElectricityBillStatePage({
           updatedLabel: state.updatedLabel,
         }}
       >
-        <section style={{ marginBottom: 32 }}>
-          <h2 style={{ fontSize: 20, marginBottom: 12 }}>How to interpret this bill estimate</h2>
+        <section style={{ marginBottom: "var(--space-7)" }}>
+          <h2 className="heading-section">How to interpret this bill estimate</h2>
           <p style={{ marginTop: 0, lineHeight: 1.7 }}>
             The statewide residential rate in {state.name} is {formatRate(state.avgRateCentsPerKwh)}. Applying that
             rate to {AVERAGE_ELECTRICITY_BILL_USAGE_KWH.toLocaleString()} kWh of monthly use produces an estimated bill
@@ -152,43 +152,23 @@ export default async function AverageElectricityBillStatePage({
           </p>
         </section>
 
-        <section style={{ marginBottom: 32 }}>
-          <h2 style={{ fontSize: 20, marginBottom: 12 }}>Usage-level bill examples in {state.name}</h2>
-          <div style={{ overflowX: "auto" }}>
-            <table
-              style={{
-                width: "100%",
-                borderCollapse: "collapse",
-                border: "1px solid var(--color-border, #e5e7eb)",
-              }}
-            >
+        <section style={{ marginBottom: "var(--space-7)" }}>
+          <h2 className="heading-section">Usage-level bill examples in {state.name}</h2>
+          <div className="data-table-wrap">
+            <table className="data-table">
               <thead>
                 <tr>
                   {["Monthly usage", "Estimated cost", "Canonical page"].map((label) => (
-                    <th
-                      key={label}
-                      style={{
-                        textAlign: "left",
-                        padding: 10,
-                        borderBottom: "1px solid var(--color-border, #e5e7eb)",
-                        backgroundColor: "var(--color-surface-alt, #f9fafb)",
-                      }}
-                    >
-                      {label}
-                    </th>
+                    <th key={label}>{label}</th>
                   ))}
                 </tr>
               </thead>
               <tbody>
                 {usageExamples.map((example) => (
                   <tr key={example.kwh}>
-                    <td style={{ padding: 10, borderBottom: "1px solid var(--color-border, #e5e7eb)" }}>
-                      {example.kwh.toLocaleString()} kWh
-                    </td>
-                    <td style={{ padding: 10, borderBottom: "1px solid var(--color-border, #e5e7eb)" }}>
-                      {formatUsd(example.cost)}
-                    </td>
-                    <td style={{ padding: 10, borderBottom: "1px solid var(--color-border, #e5e7eb)" }}>
+                    <td>{example.kwh.toLocaleString()} kWh</td>
+                    <td>{formatUsd(example.cost)}</td>
+                    <td>
                       <Link href={example.href}>{example.consumerLabel}</Link>
                     </td>
                   </tr>
@@ -202,8 +182,8 @@ export default async function AverageElectricityBillStatePage({
           </p>
         </section>
 
-        <section style={{ marginBottom: 32 }}>
-          <h2 style={{ fontSize: 20, marginBottom: 12 }}>What usually moves a household bill?</h2>
+        <section style={{ marginBottom: "var(--space-7)" }}>
+          <h2 className="heading-section">What usually moves a household bill?</h2>
           <p style={{ marginTop: 0, lineHeight: 1.7 }}>
             In practice, the biggest bill drivers are air conditioning, space heating, electric water heating, laundry,
             EV charging, and the length of time high-wattage appliances run each month.

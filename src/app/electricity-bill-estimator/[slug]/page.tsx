@@ -154,8 +154,8 @@ export default async function ElectricityBillEstimatorStatePage({
           updatedLabel: state.updatedLabel,
         }}
       >
-        <section style={{ marginBottom: 32 }}>
-          <h2 style={{ fontSize: 20, marginBottom: 12 }}>Household profile scenarios</h2>
+        <section style={{ marginBottom: "var(--space-7)" }}>
+          <h2 className="heading-section">Household profile scenarios</h2>
           <p className="muted" style={{ marginTop: 0, marginBottom: 12, maxWidth: "75ch" }}>
             Rollout note: this state page is the canonical estimator owner for {state.name}. Profile scenario pages are
             linked only when explicitly allowlisted ({activeProfileCount} active in this state).
@@ -176,47 +176,23 @@ export default async function ElectricityBillEstimatorStatePage({
               .
             </p>
           )}
-          <div style={{ overflowX: "auto" }}>
-            <table
-              style={{
-                width: "100%",
-                borderCollapse: "collapse",
-                border: "1px solid var(--color-border, #e5e7eb)",
-              }}
-            >
+          <div className="data-table-wrap">
+            <table className="data-table">
               <thead>
                 <tr>
                   {["Profile", "Monthly usage", "Monthly estimate", "Annual estimate", "Profile scenario"].map((label) => (
-                    <th
-                      key={label}
-                      style={{
-                        textAlign: "left",
-                        padding: 10,
-                        borderBottom: "1px solid var(--color-border, #e5e7eb)",
-                        backgroundColor: "var(--color-surface-alt, #f9fafb)",
-                      }}
-                    >
-                      {label}
-                    </th>
+                    <th key={label}>{label}</th>
                   ))}
                 </tr>
               </thead>
               <tbody>
                 {profileRows.map((row) => (
                   <tr key={row.profile.slug}>
-                    <td style={{ padding: 10, borderBottom: "1px solid var(--color-border, #e5e7eb)" }}>
-                      {row.profile.label}
-                    </td>
-                    <td style={{ padding: 10, borderBottom: "1px solid var(--color-border, #e5e7eb)" }}>
-                      {row.profile.defaultMonthlyKwh.toLocaleString()} kWh
-                    </td>
-                    <td style={{ padding: 10, borderBottom: "1px solid var(--color-border, #e5e7eb)" }}>
-                      {formatUsd(row.monthlyCost)}
-                    </td>
-                    <td style={{ padding: 10, borderBottom: "1px solid var(--color-border, #e5e7eb)" }}>
-                      {formatUsd(row.annualCost)}
-                    </td>
-                    <td style={{ padding: 10, borderBottom: "1px solid var(--color-border, #e5e7eb)" }}>
+                    <td>{row.profile.label}</td>
+                    <td>{row.profile.defaultMonthlyKwh.toLocaleString()} kWh</td>
+                    <td>{formatUsd(row.monthlyCost)}</td>
+                    <td>{formatUsd(row.annualCost)}</td>
+                    <td>
                       {isActiveBillEstimatorProfilePage(slug, row.profile.slug) ? (
                         <Link href={row.href}>{row.profile.label} scenario page</Link>
                       ) : (
@@ -230,8 +206,8 @@ export default async function ElectricityBillEstimatorStatePage({
           </div>
         </section>
 
-        <section style={{ marginBottom: 32 }}>
-          <h2 style={{ fontSize: 20, marginBottom: 12 }}>Intent separation and related canonical routes</h2>
+        <section style={{ marginBottom: "var(--space-7)" }}>
+          <h2 className="heading-section">Intent separation and related canonical routes</h2>
           <ul style={{ margin: 0, paddingLeft: 20, lineHeight: 1.8 }}>
             <li>
               <Link href={`/average-electricity-bill/${slug}`}>
@@ -268,8 +244,8 @@ export default async function ElectricityBillEstimatorStatePage({
           </ul>
         </section>
 
-        <section style={{ marginBottom: 32 }}>
-          <h2 style={{ fontSize: 20, marginBottom: 12 }}>Appliance and comparison discovery pathways</h2>
+        <section style={{ marginBottom: "var(--space-7)" }}>
+          <h2 className="heading-section">Appliance and comparison discovery pathways</h2>
           <ul style={{ margin: 0, paddingLeft: 20, lineHeight: 1.8 }}>
             {featuredApplianceSlugs.map((applianceSlug) => (
               <li key={applianceSlug}>

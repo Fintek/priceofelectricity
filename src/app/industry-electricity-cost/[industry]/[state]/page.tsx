@@ -183,8 +183,8 @@ export default async function IndustryElectricityCostPage({
           updatedLabel: stateData.updatedLabel,
         }}
       >
-        <section style={{ marginBottom: 32 }}>
-          <h2 style={{ fontSize: 20, marginBottom: 12 }}>{estimate.assumptionsLabel}</h2>
+        <section style={{ marginBottom: "var(--space-7)" }}>
+          <h2 className="heading-section">{estimate.assumptionsLabel}</h2>
           <p style={{ marginTop: 0, lineHeight: 1.7 }}>{estimate.assumptionsNotes}</p>
           <ul style={{ margin: 0, paddingLeft: 20, lineHeight: 1.8 }}>
             {estimate.framingBullets.map((bullet) => (

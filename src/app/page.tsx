@@ -106,9 +106,9 @@ export default function HomePage() {
       </section>
 
       {/* ── EXPLORE MORE ── */}
-      <section style={{ marginTop: 28 }}>
-        <h2 style={{ fontSize: 20, marginBottom: 12 }}>Explore more</h2>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))", gap: 12, fontSize: 14 }}>
+      <section style={{ marginTop: 40 }}>
+        <h2 style={{ fontSize: 20, marginBottom: 20 }}>Explore more</h2>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))", gap: 16, fontSize: 14 }}>
           <div>
             <p style={{ margin: "0 0 6px", fontWeight: 600 }}>Analysis</p>
             <ul style={{ margin: 0, paddingLeft: 18, lineHeight: 2 }}>
@@ -139,16 +139,18 @@ export default function HomePage() {
         </div>
       </section>
 
-      <AboutThisSite
-        title="About PriceOfElectricity.com"
-        description="Independent electricity price data covering all 50 states. Methodology and downloadable datasets are published for verification."
-        links={[
-          { href: "/methodology", label: "Methodology" },
-          { href: "/datasets", label: "Datasets" },
-          { href: "/electricity-data", label: "Data" },
-          { href: "/about", label: "About" },
-        ]}
-      />
+      <div style={{ paddingTop: 24 }}>
+        <AboutThisSite
+          title="About PriceOfElectricity.com"
+          description="Independent electricity price data covering all 50 states. Methodology and downloadable datasets are published for verification."
+          links={[
+            { href: "/methodology", label: "Methodology" },
+            { href: "/datasets", label: "Datasets" },
+            { href: "/electricity-data", label: "Data" },
+            { href: "/about", label: "About" },
+          ]}
+        />
+      </div>
     </main>
   );
 }

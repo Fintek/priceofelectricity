@@ -9,10 +9,15 @@ export default function LongtailRelatedLinks({ sections }: LongtailRelatedLinksP
   if (sections.length === 0) return null;
 
   return (
-    <section style={{ marginBottom: 32 }}>
+    <section style={{ marginBottom: "var(--space-7)" }}>
       {sections.map((section) => (
-        <div key={section.title} style={{ marginBottom: 24 }}>
-          <h2 style={{ fontSize: 20, marginBottom: 12 }}>{section.title}</h2>
+        <div key={section.title} style={{ marginBottom: "var(--space-5)" }}>
+          <h2
+            className="heading-section"
+            style={{ marginTop: 0, marginBottom: "var(--space-3)" }}
+          >
+            {section.title}
+          </h2>
           <ul style={{ margin: 0, paddingLeft: 20, lineHeight: 1.8 }}>
             {section.links.map((link) => (
               <li key={link.href}>

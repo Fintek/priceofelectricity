@@ -181,8 +181,8 @@ export default async function StateApplianceCalculatorPage({
           updatedLabel: state.updatedLabel,
         }}
       >
-        <section style={{ marginBottom: 32 }}>
-          <h2 style={{ fontSize: 20, marginBottom: 12 }}>Calculator assumptions</h2>
+        <section style={{ marginBottom: "var(--space-7)" }}>
+          <h2 className="heading-section">Calculator assumptions</h2>
           <p style={{ marginTop: 0, lineHeight: 1.7 }}>
             This calculator uses a typical wattage range of {formatWattageRange(applianceConfig)}, with a standard
             working assumption of {applianceConfig.averageWattage.toLocaleString()} watts for{" "}
@@ -195,31 +195,15 @@ export default async function StateApplianceCalculatorPage({
           </p>
         </section>
 
-        <section style={{ marginBottom: 32 }}>
-          <h2 style={{ fontSize: 20, marginBottom: 12 }}>Appliance calculator scenarios</h2>
-          <div style={{ overflowX: "auto" }}>
-            <table
-              style={{
-                width: "100%",
-                borderCollapse: "collapse",
-                border: "1px solid var(--color-border, #e5e7eb)",
-              }}
-            >
+        <section style={{ marginBottom: "var(--space-7)" }}>
+          <h2 className="heading-section">Appliance calculator scenarios</h2>
+          <div className="data-table-wrap">
+            <table className="data-table">
               <thead>
                 <tr>
                   {["Scenario", "Hours/day", "Annual energy", `${state.name} monthly`, "U.S. monthly", `${state.name} yearly`].map(
                     (label) => (
-                      <th
-                        key={label}
-                        style={{
-                          textAlign: "left",
-                          padding: 10,
-                          borderBottom: "1px solid var(--color-border, #e5e7eb)",
-                          backgroundColor: "var(--color-surface-alt, #f9fafb)",
-                        }}
-                      >
-                        {label}
-                      </th>
+                      <th key={label}>{label}</th>
                     ),
                   )}
                 </tr>
@@ -227,20 +211,12 @@ export default async function StateApplianceCalculatorPage({
               <tbody>
                 {applianceScenarioRows.map((row) => (
                   <tr key={row.profile.id}>
-                    <td style={{ padding: 10, borderBottom: "1px solid var(--color-border, #e5e7eb)" }}>{row.profile.label}</td>
-                    <td style={{ padding: 10, borderBottom: "1px solid var(--color-border, #e5e7eb)" }}>
-                      {formatHoursPerDay(row.profile.hoursPerDay)}
-                    </td>
-                    <td style={{ padding: 10, borderBottom: "1px solid var(--color-border, #e5e7eb)" }}>{row.annualKwh}</td>
-                    <td style={{ padding: 10, borderBottom: "1px solid var(--color-border, #e5e7eb)" }}>
-                      {formatUsd(row.stateMonthlyCost)}
-                    </td>
-                    <td style={{ padding: 10, borderBottom: "1px solid var(--color-border, #e5e7eb)" }}>
-                      {formatUsd(row.nationalMonthlyCost)}
-                    </td>
-                    <td style={{ padding: 10, borderBottom: "1px solid var(--color-border, #e5e7eb)" }}>
-                      {formatUsd(row.stateYearlyCost)}
-                    </td>
+                    <td>{row.profile.label}</td>
+                    <td>{formatHoursPerDay(row.profile.hoursPerDay)}</td>
+                    <td>{row.annualKwh}</td>
+                    <td>{formatUsd(row.stateMonthlyCost)}</td>
+                    <td>{formatUsd(row.nationalMonthlyCost)}</td>
+                    <td>{formatUsd(row.stateYearlyCost)}</td>
                   </tr>
                 ))}
               </tbody>
@@ -248,8 +224,8 @@ export default async function StateApplianceCalculatorPage({
           </div>
         </section>
 
-        <section style={{ marginBottom: 32 }}>
-          <h2 style={{ fontSize: 20, marginBottom: 12 }}>Canonical appliance cost route</h2>
+        <section style={{ marginBottom: "var(--space-7)" }}>
+          <h2 className="heading-section">Canonical appliance cost route</h2>
           <p style={{ marginTop: 0, lineHeight: 1.7 }}>
             Appliance-intent cost pages remain canonical at the dedicated route below. This calculator page is additive
             for scenario-focused calculator queries and links into the same state rate context.
@@ -266,8 +242,8 @@ export default async function StateApplianceCalculatorPage({
           </ul>
         </section>
 
-        <section style={{ marginBottom: 32 }}>
-          <h2 style={{ fontSize: 20, marginBottom: 12 }}>Comparison discovery routes</h2>
+        <section style={{ marginBottom: "var(--space-7)" }}>
+          <h2 className="heading-section">Comparison discovery routes</h2>
           <p style={{ marginTop: 0, lineHeight: 1.7 }}>
             For comparison-first navigation, use the curated Energy Comparison Hub slices below. These are discovery
             routes and preserve canonical ownership in the existing calculator, appliance-cost, and state-comparison
@@ -287,8 +263,8 @@ export default async function StateApplianceCalculatorPage({
         </section>
 
         {calculatorCityRows.length > 0 && (
-          <section style={{ marginBottom: 32 }}>
-            <h2 style={{ fontSize: 20, marginBottom: 12 }}>
+          <section style={{ marginBottom: "var(--space-7)" }}>
+            <h2 className="heading-section">
               City authority context for {state.name}
             </h2>
             <p style={{ marginTop: 0, lineHeight: 1.7 }}>

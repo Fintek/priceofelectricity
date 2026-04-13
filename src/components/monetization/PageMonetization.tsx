@@ -49,13 +49,22 @@ export default function PageMonetization({
 
   if (blocks.length === 0 && providers.length === 0) return null;
 
+  const providerHighlight = (
+    <ProviderHighlightSection
+      title={context.stateName ? `Provider options for ${context.stateName}` : "Provider marketplace foundation"}
+      intro="This provider section is powered by the structured provider dataset and only appears when matching providers are configured for the page context."
+      providers={providers}
+    />
+  );
+
   return (
     <>
-      <ProviderHighlightSection
-        title={context.stateName ? `Provider options for ${context.stateName}` : "Provider marketplace foundation"}
-        intro="This provider section is powered by the structured provider dataset and only appears when matching providers are configured for the page context."
-        providers={providers}
-      />
+      {providers.length > 0 ? (
+        <section className="commercial-module">
+          <span className="commercial-module-label">Partner offers</span>
+          {providerHighlight}
+        </section>
+      ) : null}
       {blocks.map((block, index) => {
         const key = `${block.kind}-${index}`;
 

@@ -119,31 +119,15 @@ export default async function ElectricityUsageStatePage({
           updatedLabel: data.updatedLabel,
         }}
       >
-        <section style={{ marginBottom: 32 }}>
-          <h2 style={{ fontSize: 20, marginBottom: 12 }}>Usage-to-cost scenarios in {data.name}</h2>
-          <div style={{ overflowX: "auto" }}>
-            <table
-              style={{
-                width: "100%",
-                borderCollapse: "collapse",
-                border: "1px solid var(--color-border, #e5e7eb)",
-              }}
-            >
+        <section style={{ marginBottom: "var(--space-7)" }}>
+          <h2 className="heading-section">Usage-to-cost scenarios in {data.name}</h2>
+          <div className="data-table-wrap">
+            <table className="data-table">
               <thead>
                 <tr>
                   {["Monthly usage", "Estimated monthly cost", "Estimated annual cost", "Canonical cost page"].map(
                     (label) => (
-                      <th
-                        key={label}
-                        style={{
-                          textAlign: "left",
-                          padding: 10,
-                          borderBottom: "1px solid var(--color-border, #e5e7eb)",
-                          backgroundColor: "var(--color-surface-alt, #f9fafb)",
-                        }}
-                      >
-                        {label}
-                      </th>
+                      <th key={label}>{label}</th>
                     ),
                   )}
                 </tr>
@@ -151,16 +135,10 @@ export default async function ElectricityUsageStatePage({
               <tbody>
                 {tierRows.map((row) => (
                   <tr key={row.kwh}>
-                    <td style={{ padding: 10, borderBottom: "1px solid var(--color-border, #e5e7eb)" }}>
-                      {row.kwh.toLocaleString()} kWh
-                    </td>
-                    <td style={{ padding: 10, borderBottom: "1px solid var(--color-border, #e5e7eb)" }}>
-                      {formatUsd(row.monthlyCost)}
-                    </td>
-                    <td style={{ padding: 10, borderBottom: "1px solid var(--color-border, #e5e7eb)" }}>
-                      {formatUsd(row.annualCost)}
-                    </td>
-                    <td style={{ padding: 10, borderBottom: "1px solid var(--color-border, #e5e7eb)" }}>
+                    <td>{row.kwh.toLocaleString()} kWh</td>
+                    <td>{formatUsd(row.monthlyCost)}</td>
+                    <td>{formatUsd(row.annualCost)}</td>
+                    <td>
                       <Link href={row.href}>Open {row.kwh.toLocaleString()} kWh page</Link>
                     </td>
                   </tr>
@@ -170,8 +148,8 @@ export default async function ElectricityUsageStatePage({
           </div>
         </section>
 
-        <section style={{ marginBottom: 32 }}>
-          <h2 style={{ fontSize: 20, marginBottom: 12 }}>Connected electricity tools</h2>
+        <section style={{ marginBottom: "var(--space-7)" }}>
+          <h2 className="heading-section">Connected electricity tools</h2>
           <ul style={{ margin: 0, paddingLeft: 20, lineHeight: 1.8 }}>
             <li><Link href={`/electricity-cost-calculator/${state}`}>{data.name} electricity cost calculator</Link></li>
             <li><Link href={`/average-electricity-bill/${state}`}>Average electricity bill in {data.name}</Link></li>

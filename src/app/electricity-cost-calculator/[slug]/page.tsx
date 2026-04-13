@@ -155,31 +155,15 @@ export default async function ElectricityCostCalculatorStatePage({
           updatedLabel: state.updatedLabel,
         }}
       >
-        <section style={{ marginBottom: 32 }}>
-          <h2 style={{ fontSize: 20, marginBottom: 12 }}>Usage scenario calculator outputs</h2>
-          <div style={{ overflowX: "auto" }}>
-            <table
-              style={{
-                width: "100%",
-                borderCollapse: "collapse",
-                border: "1px solid var(--color-border, #e5e7eb)",
-              }}
-            >
+        <section style={{ marginBottom: "var(--space-7)" }}>
+          <h2 className="heading-section">Usage scenario calculator outputs</h2>
+          <div className="data-table-wrap">
+            <table className="data-table">
               <thead>
                 <tr>
                   {["Monthly usage", "Estimated monthly cost", "Estimated annual cost", "Canonical usage page"].map(
                     (label) => (
-                      <th
-                        key={label}
-                        style={{
-                          textAlign: "left",
-                          padding: 10,
-                          borderBottom: "1px solid var(--color-border, #e5e7eb)",
-                          backgroundColor: "var(--color-surface-alt, #f9fafb)",
-                        }}
-                      >
-                        {label}
-                      </th>
+                      <th key={label}>{label}</th>
                     ),
                   )}
                 </tr>
@@ -187,16 +171,10 @@ export default async function ElectricityCostCalculatorStatePage({
               <tbody>
                 {usageScenarios.map((scenario) => (
                   <tr key={scenario.kwh}>
-                    <td style={{ padding: 10, borderBottom: "1px solid var(--color-border, #e5e7eb)" }}>
-                      {scenario.kwh.toLocaleString()} kWh
-                    </td>
-                    <td style={{ padding: 10, borderBottom: "1px solid var(--color-border, #e5e7eb)" }}>
-                      {formatUsd(scenario.monthlyCost)}
-                    </td>
-                    <td style={{ padding: 10, borderBottom: "1px solid var(--color-border, #e5e7eb)" }}>
-                      {formatUsd(scenario.annualCost)}
-                    </td>
-                    <td style={{ padding: 10, borderBottom: "1px solid var(--color-border, #e5e7eb)" }}>
+                    <td>{scenario.kwh.toLocaleString()} kWh</td>
+                    <td>{formatUsd(scenario.monthlyCost)}</td>
+                    <td>{formatUsd(scenario.annualCost)}</td>
+                    <td>
                       <Link href={scenario.href}>Open {scenario.kwh.toLocaleString()} kWh page</Link>
                     </td>
                   </tr>
@@ -206,8 +184,8 @@ export default async function ElectricityCostCalculatorStatePage({
           </div>
         </section>
 
-        <section style={{ marginBottom: 32 }}>
-          <h2 style={{ fontSize: 20, marginBottom: 12 }}>Calculator-to-bill interpretation</h2>
+        <section style={{ marginBottom: "var(--space-7)" }}>
+          <h2 className="heading-section">Calculator-to-bill interpretation</h2>
           <p style={{ marginTop: 0, lineHeight: 1.7 }}>
             This calculator page focuses on usage-based scenarios. The average-bill page for {state.name} keeps usage
             fixed at 900 kWh to help compare states cleanly, while usage pages let you change the load profile.

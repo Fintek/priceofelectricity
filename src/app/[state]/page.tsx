@@ -94,8 +94,8 @@ function PriceDriversPanel({ slug, stateName }: { slug: string; stateName: strin
   const topDrivers = getTopDriversForState(slug, 3);
 
   return (
-    <section style={{ marginTop: 24 }}>
-      <h2 style={{ fontSize: 22, marginBottom: 8 }}>
+    <section style={{ marginTop: "var(--space-7)" }}>
+      <h2 className="heading-section" style={{ marginBottom: 8 }}>
         Price drivers (qualitative)
       </h2>
       {topDrivers.length > 0 ? (
@@ -129,8 +129,10 @@ function RegulatorySignals({ slug, stateName }: { slug: string; stateName: strin
   const mostRecent = timeline.length > 0 ? timeline[0] : null;
 
   return (
-    <section style={{ marginTop: 24 }}>
-      <h2 style={{ fontSize: 22, marginBottom: 8 }}>Regulatory signals</h2>
+    <section style={{ marginTop: "var(--space-7)" }}>
+      <h2 className="heading-section" style={{ marginBottom: 8 }}>
+        Regulatory signals
+      </h2>
       <ul style={{ marginTop: 0, paddingLeft: 20, lineHeight: 2 }}>
         <li>
           Open rate cases: <b>{openCases.length}</b>
@@ -240,33 +242,55 @@ export default function StatePage({
       />
 
       {/* Breadcrumb */}
-      <p className="muted" style={{ marginBottom: 8 }}>
-        <Link href="/">Home</Link> {"→"} <Link href="/compare">Compare</Link>{" "}
-        {"→"} <span>{ns.name}</span>
-      </p>
+      <nav aria-label="Breadcrumb" className="breadcrumb-nav">
+        <ol className="breadcrumb-list">
+          <li>
+            <Link href="/">Home</Link>
+          </li>
+          <li aria-hidden="true">→</li>
+          <li>
+            <Link href="/compare">Compare</Link>
+          </li>
+          <li aria-hidden="true">→</li>
+          <li>
+            <span aria-current="page">{ns.name}</span>
+          </li>
+        </ol>
+      </nav>
 
       {/* Heading + personalization */}
-      <div style={{ display: "flex", alignItems: "center", flexWrap: "wrap", gap: 8, marginBottom: 4 }}>
+      <div
+        style={{
+          display: "flex",
+          alignItems: "center",
+          flexWrap: "wrap",
+          gap: "var(--space-2)",
+          marginBottom: "var(--space-1)",
+        }}
+      >
         <h1 style={{ margin: 0 }}>{ns.name} Electricity Rates</h1>
         <SetPreferredStateButton stateSlug={slug} />
       </div>
 
       {/* ── ANSWER BLOCK ── */}
-      <div className="stat-panel" style={{ marginTop: 16, marginBottom: 16 }}>
-        <div className="stat-card">
+      <div
+        className="stat-panel"
+        style={{ marginTop: "var(--space-4)", marginBottom: "var(--space-6)" }}
+      >
+        <div className="stat-card stat-card--primary">
           <div className="stat-card-value">{ns.avgRateCentsPerKwh}¢</div>
           <div className="stat-card-label">per kWh (avg residential)</div>
         </div>
-        <div className="stat-card">
+        <div className="stat-card stat-card--primary">
           <div className="stat-card-value">${billByKwh[1000].toFixed(0)}</div>
           <div className="stat-card-label">est. monthly bill at 1,000 kWh</div>
         </div>
-        <div className="stat-card">
+        <div className="stat-card stat-card--secondary">
           <div className="stat-card-value">{ns.rateTierLabel}</div>
           <div className="stat-card-label">rate tier</div>
         </div>
         {momLabel && (
-          <div className="stat-card">
+          <div className="stat-card stat-card--secondary">
             <div className="stat-card-value">{momLabel}</div>
             <div className="stat-card-label">month-over-month change</div>
           </div>
@@ -274,7 +298,18 @@ export default function StatePage({
       </div>
 
       {/* Source / freshness line */}
-      <p className="muted" style={{ marginTop: 0, marginBottom: 16, fontSize: 13, display: "flex", alignItems: "center", gap: 8, flexWrap: "wrap" }}>
+      <p
+        className="muted"
+        style={{
+          marginTop: 0,
+          marginBottom: "var(--space-5)",
+          fontSize: 13,
+          display: "flex",
+          alignItems: "center",
+          gap: "var(--space-2)",
+          flexWrap: "wrap",
+        }}
+      >
         <span
           aria-hidden
           style={{
@@ -286,6 +321,7 @@ export default function StatePage({
             flexShrink: 0,
           }}
         />
+        <span className="sr-only">Data status: {ns.freshnessStatus}</span>
         Updated {ns.updated} · Source:{" "}
         {ns.source.slug ? (
           <Link href={`/sources/${ns.source.slug}`}>{ns.source.name}</Link>
@@ -303,14 +339,29 @@ export default function StatePage({
       </p>
 
       {/* Context paragraph */}
-      <p style={{ marginTop: 0, marginBottom: 20, maxWidth: "65ch", lineHeight: 1.6 }}>
+      <p
+        style={{
+          marginTop: 0,
+          marginBottom: "var(--space-8)",
+          maxWidth: "65ch",
+          lineHeight: 1.6,
+        }}
+      >
         {ns.shortSummary}
       </p>
 
       {/* ── NEXT STEPS ── */}
       <section className="section-gap">
-        <h2 style={{ fontSize: 20, marginBottom: 12 }}>What would you like to do?</h2>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))", gap: 12 }}>
+        <h2 className="heading-section" style={{ marginBottom: "var(--space-3)" }}>
+          What would you like to do?
+        </h2>
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
+            gap: "var(--space-3)",
+          }}
+        >
           <div className="stat-card" style={{ textAlign: "left" }}>
             <p style={{ margin: "0 0 8px", fontWeight: 600, fontSize: 15 }}>Compare costs</p>
             <ul style={{ margin: 0, paddingLeft: 18, lineHeight: 1.8, fontSize: 14 }}>
@@ -343,8 +394,10 @@ export default function StatePage({
 
       {/* ── UTILITIES ── */}
       {majorUtilities.length > 0 && (
-        <section style={{ marginTop: 24 }}>
-          <h2 style={{ fontSize: 20, marginBottom: 8 }}>Major utilities in {ns.name}</h2>
+        <section style={{ marginTop: "var(--space-8)" }}>
+          <h2 className="heading-section" style={{ marginBottom: 8 }}>
+            Major utilities in {ns.name}
+          </h2>
           <ul style={{ marginTop: 0, paddingLeft: 20 }}>
             {majorUtilities.map((utility) => (
               <li key={utility.slug} style={{ marginBottom: 6 }}>
@@ -356,8 +409,16 @@ export default function StatePage({
       )}
 
       {/* ── SCORES & INDEXES ── */}
-      <section style={{ marginTop: 24 }}>
-        <h2 style={{ fontSize: 20, marginBottom: 12 }}>Scores &amp; rankings</h2>
+      <section
+        style={{
+          marginTop:
+            majorUtilities.length > 0 ? "var(--space-7)" : "var(--space-8)",
+          marginBottom: "var(--space-7)",
+        }}
+      >
+        <h2 className="heading-section" style={{ marginBottom: "var(--space-3)" }}>
+          Scores &amp; rankings
+        </h2>
         <div className="stat-panel">
           <div className="stat-card">
             <div className="stat-card-value">{ns.affordabilityIndex}</div>
@@ -374,7 +435,7 @@ export default function StatePage({
             </div>
           )}
         </div>
-        <p className="muted" style={{ marginTop: 8, fontSize: 13 }}>
+        <p className="muted" style={{ marginTop: "var(--space-2)", fontSize: 13 }}>
           <Link href="/value-ranking">Value ranking</Link>
           {epi && <>{" · "}<Link href="/index-ranking">Price Index ranking</Link></>}
           {" · "}<Link href="/affordability">Affordability index</Link>
@@ -382,8 +443,10 @@ export default function StatePage({
       </section>
 
       {/* ── NEARBY & SIMILAR ── */}
-      <section style={{ marginTop: 24 }}>
-        <h2 style={{ fontSize: 20, marginBottom: 8 }}>Browse nearby states</h2>
+      <section style={{ marginTop: "var(--space-7)" }}>
+        <h2 className="heading-section" style={{ marginBottom: 8 }}>
+          Browse nearby states
+        </h2>
         <p style={{ marginTop: 0 }}>
           {prev ? (
             <Link href={`/${prev.slug}`}>{"←"} {prev.name}</Link>
@@ -399,8 +462,10 @@ export default function StatePage({
         </p>
       </section>
 
-      <section style={{ marginTop: 20 }}>
-        <h2 style={{ fontSize: 20, marginBottom: 8 }}>Similar-priced states</h2>
+      <section style={{ marginTop: "var(--space-7)" }}>
+        <h2 className="heading-section" style={{ marginBottom: 8 }}>
+          Similar-priced states
+        </h2>
         <ul style={{ marginTop: 0, paddingLeft: 20 }}>
           {relatedStates.map((related) => (
             <li key={related.slug} style={{ marginBottom: 6 }}>
@@ -412,8 +477,10 @@ export default function StatePage({
       </section>
 
       {region && (
-        <section style={{ marginTop: 20 }}>
-          <h2 style={{ fontSize: 20, marginBottom: 8 }}>{region.name} region</h2>
+        <section style={{ marginTop: "var(--space-7)" }}>
+          <h2 className="heading-section" style={{ marginBottom: 8 }}>
+            {region.name} region
+          </h2>
           <ul style={{ marginTop: 0, paddingLeft: 20 }}>
             {otherStatesInRegion.map((s) => (
               <li key={s.slug} style={{ marginBottom: 6 }}>
@@ -426,8 +493,10 @@ export default function StatePage({
       )}
 
       {majorCities.length > 0 && (
-        <section style={{ marginTop: 20 }}>
-          <h2 style={{ fontSize: 20, marginBottom: 8 }}>Cities in {ns.name}</h2>
+        <section style={{ marginTop: "var(--space-7)" }}>
+          <h2 className="heading-section" style={{ marginBottom: 8 }}>
+            Cities in {ns.name}
+          </h2>
           <ul style={{ marginTop: 0, paddingLeft: 20 }}>
             {majorCities.map((city) => (
               <li key={city.slug} style={{ marginBottom: 6 }}>
@@ -443,10 +512,12 @@ export default function StatePage({
       <RegulatorySignals slug={slug} stateName={ns.name} />
 
       {/* ── FAQ ── */}
-      <section style={{ marginTop: 28 }}>
-        <h2 style={{ fontSize: 20, marginBottom: 12 }}>FAQ</h2>
+      <section style={{ marginTop: "var(--space-6)" }}>
+        <h2 className="heading-section" style={{ marginBottom: "var(--space-3)" }}>
+          FAQ
+        </h2>
         {schema.faqItems.map((item, i) => (
-          <div key={i} style={i > 0 ? { marginTop: 16 } : undefined}>
+          <div key={i} style={i > 0 ? { marginTop: "var(--space-4)" } : undefined}>
             <p><b>{item.question}</b></p>
             <p style={{ marginTop: 6 }}>{item.answer}</p>
           </div>
@@ -454,8 +525,10 @@ export default function StatePage({
       </section>
 
       {/* ── EXPLORE MORE ── */}
-      <section style={{ marginTop: 28 }}>
-        <h2 style={{ fontSize: 20, marginBottom: 12 }}>More about electricity in {ns.name}</h2>
+      <section style={{ marginTop: "var(--space-6)" }}>
+        <h2 className="heading-section" style={{ marginBottom: "var(--space-3)" }}>
+          More about electricity in {ns.name}
+        </h2>
         <ul style={{ marginTop: 0, paddingLeft: 20, lineHeight: 1.9 }}>
           <li><Link href={`/electricity-cost/${slug}`}>{ns.name} electricity cost details</Link></li>
           <li><Link href={`/electricity-bill-estimator/${slug}`}>{ns.name} bill estimator</Link></li>
@@ -463,7 +536,7 @@ export default function StatePage({
           <li><Link href={`/electricity-providers/${slug}`}>Electricity providers in {ns.name}</Link></li>
           <li><Link href="/energy-comparison">Energy comparison hub</Link></li>
         </ul>
-        <p className="muted" style={{ marginTop: 8, fontSize: 13 }}>
+        <p className="muted" style={{ marginTop: "var(--space-2)", fontSize: 13 }}>
           <Link href="/guides/why-electricity-prices-vary-by-state">Why prices vary by state</Link>
           {" · "}
           <Link href={`/questions/average-electric-bill-in-${slug}`}>Common questions</Link>
@@ -475,8 +548,16 @@ export default function StatePage({
       </section>
 
       {/* ── METHODOLOGY / DISCLOSURE ── */}
-      <section style={{ marginTop: 28, paddingTop: 16, borderTop: "1px solid var(--color-border)" }}>
-        <h2 style={{ fontSize: 18, marginBottom: 8 }}>Methodology &amp; data</h2>
+      <section
+        style={{
+          marginTop: "var(--space-8)",
+          paddingTop: "var(--space-4)",
+          borderTop: "1px solid var(--color-border)",
+        }}
+      >
+        <h2 className="heading-subsection" style={{ marginBottom: 8 }}>
+          Methodology &amp; data
+        </h2>
         <p className="muted" style={{ marginTop: 0, fontSize: 13, lineHeight: 1.6, maxWidth: "65ch" }}>
           {ns.methodology}
         </p>

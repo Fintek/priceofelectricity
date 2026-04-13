@@ -196,14 +196,14 @@ export default async function ElectricityBillEstimatorProfilePage({
           updatedLabel: state.updatedLabel,
         }}
       >
-        <section style={{ marginBottom: 24 }}>
-          <h2 style={{ fontSize: 20, marginBottom: 12 }}>Scenario assumptions and variability</h2>
+        <section style={{ marginBottom: "var(--space-7)" }}>
+          <h2 className="heading-section">Scenario assumptions and variability</h2>
           <p style={{ marginTop: 0, lineHeight: 1.7 }}>{profileConfig.usageBehavior}</p>
           <p style={{ marginBottom: 0, lineHeight: 1.7 }}>{profileConfig.variabilityNote}</p>
         </section>
 
-        <section style={{ marginBottom: 24 }}>
-          <h2 style={{ fontSize: 20, marginBottom: 12 }}>Methodology and disclosure</h2>
+        <section style={{ marginBottom: "var(--space-7)" }}>
+          <h2 className="heading-section">Methodology and disclosure</h2>
           <p className="muted" style={{ marginTop: 0, lineHeight: 1.7 }}>
             Pilot scope: this profile route is a rollout-gated scenario surface. State estimator routes remain the
             canonical entry point for broad estimator intent. Current active pilot coverage is{" "}

@@ -35,10 +35,18 @@ export default function BillEstimator({
   };
 
   return (
-    <section style={{ marginTop: 28, paddingTop: 18, borderTop: "1px solid #eee" }}>
-      <h2 style={{ fontSize: 22, marginBottom: 8 }}>Quick bill estimate</h2>
+    <section
+      style={{
+        marginTop: "var(--space-6)",
+        paddingTop: "var(--space-5)",
+        borderTop: "1px solid var(--color-border)",
+      }}
+    >
+      <h2 className="heading-section" style={{ marginTop: 0, marginBottom: "var(--space-3)" }}>
+        Quick bill estimate
+      </h2>
 
-      <label style={{ display: "block", marginBottom: 8 }}>
+      <label style={{ display: "block", marginBottom: "var(--space-2)" }}>
         Monthly usage (kWh):
       </label>
 
@@ -48,15 +56,21 @@ export default function BillEstimator({
         min={0}
         step={50}
         onChange={(e) => handleKwhChange(e.target.value)}
-        style={{ padding: 10, width: 200 }}
+        style={{
+          padding: "var(--space-2) var(--space-3)",
+          width: 200,
+          border: "1px solid var(--color-border)",
+          borderRadius: 6,
+          fontSize: "var(--font-size-base)",
+        }}
       />
 
-      <p style={{ marginTop: 12, fontSize: 18 }}>
+      <p style={{ marginTop: "var(--space-3)", fontSize: "var(--font-size-lg)" }}>
         Est. energy charge:{" "}
         <b>{estimateDollars == null ? "—" : `$${estimateDollars.toFixed(2)}`}</b>
       </p>
 
-      <p style={{ color: "#777", marginTop: 6 }}>
+      <p className="muted" style={{ marginTop: "var(--space-2)" }}>
         Note: this is energy-only (doesn’t include delivery fees, taxes, etc.).
       </p>
     </section>

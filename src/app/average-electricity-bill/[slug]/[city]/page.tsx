@@ -171,8 +171,8 @@ export default async function AverageElectricityBillCityPage({
           updatedLabel: summary.state.updatedLabel,
         }}
       >
-        <section style={{ marginBottom: 24 }}>
-          <h2 style={{ fontSize: 20, marginBottom: 12 }}>How to read this city benchmark bill</h2>
+        <section style={{ marginBottom: "var(--space-7)" }}>
+          <h2 className="heading-section">How to read this city benchmark bill</h2>
           <p style={{ marginTop: 0, lineHeight: 1.7 }}>
             This benchmark applies the city electricity-rate estimate to a standard
             {" "}
@@ -186,8 +186,8 @@ export default async function AverageElectricityBillCityPage({
           </p>
         </section>
 
-        <section style={{ marginBottom: 24 }}>
-          <h2 style={{ fontSize: 20, marginBottom: 12 }}>Intent separation guardrails</h2>
+        <section style={{ marginBottom: "var(--space-7)" }}>
+          <h2 className="heading-section">Intent separation guardrails</h2>
           <ul style={{ margin: 0, paddingLeft: 20, lineHeight: 1.8 }}>
             <li>
               <Link href={`/average-electricity-bill/${summary.state.slug}`}>State bill benchmark route</Link> remains

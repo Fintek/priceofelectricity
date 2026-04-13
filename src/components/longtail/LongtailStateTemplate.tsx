@@ -75,43 +75,40 @@ export default function LongtailStateTemplate({
 }: LongtailStateTemplateProps) {
   return (
     <main className="container">
-      <nav aria-label="Breadcrumb" className="muted" style={{ marginBottom: 16, fontSize: 14 }}>
-        {breadcrumbs.map((item, index) => (
-          <span key={`${item.label}-${index}`}>
-            {item.href ? <Link href={item.href}>{item.label}</Link> : <span aria-current="page">{item.label}</span>}
-            {index < breadcrumbs.length - 1 ? " · " : ""}
-          </span>
-        ))}
+      <nav aria-label="Breadcrumb" className="breadcrumb-nav">
+        <ol className="breadcrumb-list">
+          {breadcrumbs.flatMap((item, index) => {
+            const items = [
+              <li key={`crumb-${index}`}>
+                {item.href ? <Link href={item.href}>{item.label}</Link> : <span aria-current="page">{item.label}</span>}
+              </li>,
+            ];
+            if (index < breadcrumbs.length - 1) {
+              items.push(
+                <li key={`sep-${index}`} aria-hidden="true">
+                  →
+                </li>,
+              );
+            }
+            return items;
+          })}
+        </ol>
       </nav>
 
-      <h1 style={{ fontSize: 32, marginBottom: 16 }}>{title}</h1>
-      <p style={{ marginTop: 0, marginBottom: 24, maxWidth: "65ch", fontSize: 16, lineHeight: 1.6 }}>
+      <h1 style={{ marginBottom: 16 }}>{title}</h1>
+      <p style={{ marginTop: 0, marginBottom: "var(--space-5)", maxWidth: "65ch", lineHeight: 1.6 }}>
         {intro}
       </p>
 
       {stats.length > 0 && (
-        <section style={{ marginBottom: 32 }}>
-          <div
-            style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(auto-fill, minmax(180px, 1fr))",
-              gap: 16,
-            }}
-          >
+        <section style={{ marginBottom: "var(--space-7)" }}>
+          <div className="stat-panel">
             {stats.map((stat) => (
-              <div
-                key={stat.label}
-                style={{
-                  padding: 20,
-                  border: "1px solid var(--color-border, #e5e7eb)",
-                  borderRadius: 8,
-                  backgroundColor: "var(--color-surface-alt, #f9fafb)",
-                }}
-              >
-                <div className="muted" style={{ fontSize: 12, marginBottom: 4 }}>
+              <div key={stat.label} className="stat-card">
+                <div className="stat-card-label" style={{ marginBottom: "var(--space-1)" }}>
                   {stat.label}
                 </div>
-                <div style={{ fontSize: 22, fontWeight: 600 }}>{stat.value}</div>
+                <div className="stat-card-value">{stat.value}</div>
                 {stat.hint ? (
                   <div className="muted" style={{ marginTop: 4, fontSize: 12 }}>
                     {stat.hint}
@@ -121,48 +118,20 @@ export default function LongtailStateTemplate({
             ))}
           </div>
           <div style={{ marginTop: 16 }}>
-            <h2 style={{ fontSize: 20, marginBottom: 12 }}>Key metrics</h2>
-            <div style={{ overflowX: "auto" }}>
-              <table
-                style={{
-                  width: "100%",
-                  borderCollapse: "collapse",
-                  border: "1px solid var(--color-border, #e5e7eb)",
-                }}
-              >
+            <h2 className="heading-section">Key metrics</h2>
+            <div className="data-table-wrap">
+              <table className="data-table">
                 <thead>
                   <tr>
-                    <th
-                      style={{
-                        textAlign: "left",
-                        padding: 10,
-                        borderBottom: "1px solid var(--color-border, #e5e7eb)",
-                        backgroundColor: "var(--color-surface-alt, #f9fafb)",
-                      }}
-                    >
-                      Metric
-                    </th>
-                    <th
-                      style={{
-                        textAlign: "left",
-                        padding: 10,
-                        borderBottom: "1px solid var(--color-border, #e5e7eb)",
-                        backgroundColor: "var(--color-surface-alt, #f9fafb)",
-                      }}
-                    >
-                      Value
-                    </th>
+                    <th>Metric</th>
+                    <th>Value</th>
                   </tr>
                 </thead>
                 <tbody>
                   {stats.map((stat) => (
                     <tr key={`row-${stat.label}`}>
-                      <td style={{ padding: 10, borderBottom: "1px solid var(--color-border, #e5e7eb)" }}>
-                        {stat.label}
-                      </td>
-                      <td style={{ padding: 10, borderBottom: "1px solid var(--color-border, #e5e7eb)" }}>
-                        {stat.value}
-                      </td>
+                      <td>{stat.label}</td>
+                      <td>{stat.value}</td>
                     </tr>
                   ))}
                 </tbody>
@@ -173,8 +142,8 @@ export default function LongtailStateTemplate({
       )}
 
       {(comparisonRows && comparisonRows.length > 0) || comparisonSummary ? (
-        <section style={{ marginBottom: 32 }}>
-          <h2 style={{ fontSize: 20, marginBottom: 12 }}>{comparisonTitle ?? "Comparison"}</h2>
+        <section style={{ marginBottom: "var(--space-7)" }}>
+          <h2 className="heading-section">{comparisonTitle ?? "Comparison"}</h2>
           <div
             style={{
               padding: 20,
@@ -205,8 +174,8 @@ export default function LongtailStateTemplate({
       ) : null}
 
       {trend ? (
-        <section style={{ marginBottom: 32 }}>
-          <h2 style={{ fontSize: 20, marginBottom: 12 }}>{trend.title}</h2>
+        <section style={{ marginBottom: "var(--space-7)" }}>
+          <h2 className="heading-section">{trend.title}</h2>
           {trend.points.length > 0 ? (
             <Sparkline
               points={trend.points}
@@ -232,8 +201,8 @@ export default function LongtailStateTemplate({
       {relatedLinkSections && relatedLinkSections.length > 0 ? (
         <LongtailRelatedLinks sections={relatedLinkSections} />
       ) : (
-        <section style={{ marginBottom: 32 }}>
-          <h2 style={{ fontSize: 20, marginBottom: 12 }}>Related Pages</h2>
+        <section style={{ marginBottom: "var(--space-7)" }}>
+          <h2 className="heading-section">Related Pages</h2>
           <ul style={{ margin: 0, paddingLeft: 20, lineHeight: 1.8 }}>
             {relatedLinks.map((link) => (
               <li key={link.href}>
@@ -245,8 +214,8 @@ export default function LongtailStateTemplate({
         </section>
       )}
 
-      <section style={{ marginBottom: 32 }}>
-        <h2 style={{ fontSize: 20, marginBottom: 12 }}>Source & Method</h2>
+      <section style={{ marginBottom: "var(--space-7)" }}>
+        <h2 className="heading-section">Source & Method</h2>
         <p style={{ margin: 0, lineHeight: 1.7 }}>
           Source:{" "}
           {sourceAttribution.sourceUrl ? (
@@ -257,10 +226,13 @@ export default function LongtailStateTemplate({
             sourceAttribution.sourceName
           )}
           .{" "}
-          {sourceAttribution.updatedLabel
-            ? `Last dataset period: ${sourceAttribution.updatedLabel}.`
-            : "Data period label is currently unavailable."}{" "}
-          Costs are energy-only estimates and exclude delivery charges, taxes, and fixed utility fees.
+          {sourceAttribution.updatedLabel ? (
+            <>Updated: {sourceAttribution.updatedLabel}.</>
+          ) : (
+            <>No dataset update label is available for this page.</>
+          )}{" "}
+          Estimates are energy-only and exclude delivery charges, taxes, and fixed utility fees. For how rates and
+          estimates are defined, see the <Link href="/methodology">methodology</Link> hub.
         </p>
       </section>
     </main>

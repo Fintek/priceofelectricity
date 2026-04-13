@@ -228,8 +228,8 @@ export default async function ApplianceCostToRunPage({
           updatedLabel: stateData.updatedLabel,
         }}
       >
-        <section style={{ marginBottom: 32 }}>
-          <h2 style={{ fontSize: 20, marginBottom: 12 }}>
+        <section style={{ marginBottom: "var(--space-7)" }}>
+          <h2 className="heading-section">
             How much electricity does {article} {applianceConfig.displayName.toLowerCase()} use?
           </h2>
           <p style={{ marginTop: 0, lineHeight: 1.7 }}>
@@ -247,50 +247,17 @@ export default async function ApplianceCostToRunPage({
           </p>
         </section>
 
-        <section style={{ marginBottom: 32 }}>
-          <h2 style={{ fontSize: 20, marginBottom: 12 }}>
+        <section style={{ marginBottom: "var(--space-7)" }}>
+          <h2 className="heading-section">
             {applianceConfig.displayName} operating cost estimate in {stateData.name}
           </h2>
-          <div style={{ overflowX: "auto" }}>
-            <table
-              style={{
-                width: "100%",
-                borderCollapse: "collapse",
-                border: "1px solid var(--color-border, #e5e7eb)",
-              }}
-            >
+          <div className="data-table-wrap">
+            <table className="data-table">
               <thead>
                 <tr>
-                  <th
-                    style={{
-                      textAlign: "left",
-                      padding: 10,
-                      borderBottom: "1px solid var(--color-border, #e5e7eb)",
-                      backgroundColor: "var(--color-surface-alt, #f9fafb)",
-                    }}
-                  >
-                    Time period
-                  </th>
-                  <th
-                    style={{
-                      textAlign: "left",
-                      padding: 10,
-                      borderBottom: "1px solid var(--color-border, #e5e7eb)",
-                      backgroundColor: "var(--color-surface-alt, #f9fafb)",
-                    }}
-                  >
-                    Energy use
-                  </th>
-                  <th
-                    style={{
-                      textAlign: "left",
-                      padding: 10,
-                      borderBottom: "1px solid var(--color-border, #e5e7eb)",
-                      backgroundColor: "var(--color-surface-alt, #f9fafb)",
-                    }}
-                  >
-                    Cost
-                  </th>
+                  <th>Time period</th>
+                  <th>Energy use</th>
+                  <th>Cost</th>
                 </tr>
               </thead>
               <tbody>
@@ -301,15 +268,9 @@ export default async function ApplianceCostToRunPage({
                   { label: "Per year", kwh: stateEstimate.kwhPerYear, cost: stateEstimate.costPerYear },
                 ].map((row) => (
                   <tr key={row.label}>
-                    <td style={{ padding: 10, borderBottom: "1px solid var(--color-border, #e5e7eb)" }}>
-                      {row.label}
-                    </td>
-                    <td style={{ padding: 10, borderBottom: "1px solid var(--color-border, #e5e7eb)" }}>
-                      {formatKwh(row.kwh)}
-                    </td>
-                    <td style={{ padding: 10, borderBottom: "1px solid var(--color-border, #e5e7eb)" }}>
-                      {formatUsd(row.cost)}
-                    </td>
+                    <td>{row.label}</td>
+                    <td>{formatKwh(row.kwh)}</td>
+                    <td>{formatUsd(row.cost)}</td>
                   </tr>
                 ))}
               </tbody>
@@ -321,8 +282,8 @@ export default async function ApplianceCostToRunPage({
           </p>
         </section>
 
-        <section style={{ marginBottom: 32 }}>
-          <h2 style={{ fontSize: 20, marginBottom: 12 }}>What changes the cost the most?</h2>
+        <section style={{ marginBottom: "var(--space-7)" }}>
+          <h2 className="heading-section">What changes the cost the most?</h2>
           <p style={{ marginTop: 0, lineHeight: 1.7 }}>
             The biggest cost drivers for {article} {applianceConfig.displayName.toLowerCase()} are the local
             electricity rate and real-world usage intensity. For this appliance, the main swing factors are{" "}
@@ -341,8 +302,8 @@ export default async function ApplianceCostToRunPage({
           </p>
         </section>
 
-        <section style={{ marginBottom: 32 }}>
-          <h2 style={{ fontSize: 20, marginBottom: 12 }}>Comparison discovery pathways</h2>
+        <section style={{ marginBottom: "var(--space-7)" }}>
+          <h2 className="heading-section">Comparison discovery pathways</h2>
           <p style={{ marginTop: 0, lineHeight: 1.7 }}>
             Use the curated Energy Comparison Hub to move between appliance, state, and usage comparison routes
             without changing canonical ownership for appliance cost intent.
@@ -364,55 +325,31 @@ export default async function ApplianceCostToRunPage({
         </section>
 
         {applianceCityRows.length > 0 && (
-          <section style={{ marginBottom: 32 }}>
-            <h2 style={{ fontSize: 20, marginBottom: 12 }}>
+          <section style={{ marginBottom: "var(--space-7)" }}>
+            <h2 className="heading-section">
               Rollout-enabled city context in {stateData.name}
             </h2>
             <p style={{ marginTop: 0, lineHeight: 1.7 }}>
               These city pages provide supplemental local context for this same appliance usage profile. City values are
               deterministic estimates and remain secondary to the canonical appliance-state route.
             </p>
-            <div style={{ overflowX: "auto" }}>
-              <table
-                style={{
-                  width: "100%",
-                  borderCollapse: "collapse",
-                  border: "1px solid var(--color-border, #e5e7eb)",
-                }}
-              >
+            <div className="data-table-wrap">
+              <table className="data-table">
                 <thead>
                   <tr>
                     {["City", "City rate", "Monthly estimate", "Yearly estimate", "City route"].map((label) => (
-                      <th
-                        key={label}
-                        style={{
-                          textAlign: "left",
-                          padding: 10,
-                          borderBottom: "1px solid var(--color-border, #e5e7eb)",
-                          backgroundColor: "var(--color-surface-alt, #f9fafb)",
-                        }}
-                      >
-                        {label}
-                      </th>
+                      <th key={label}>{label}</th>
                     ))}
                   </tr>
                 </thead>
                 <tbody>
                   {applianceCityRows.map((row) => (
                     <tr key={row.citySummary.city.slug}>
-                      <td style={{ padding: 10, borderBottom: "1px solid var(--color-border, #e5e7eb)" }}>
-                        {row.citySummary.city.name}
-                      </td>
-                      <td style={{ padding: 10, borderBottom: "1px solid var(--color-border, #e5e7eb)" }}>
-                        {formatRate(row.citySummary.cityRateCentsPerKwh)}
-                      </td>
-                      <td style={{ padding: 10, borderBottom: "1px solid var(--color-border, #e5e7eb)" }}>
-                        {formatUsd(row.monthlyCost)}
-                      </td>
-                      <td style={{ padding: 10, borderBottom: "1px solid var(--color-border, #e5e7eb)" }}>
-                        {formatUsd(row.yearlyCost)}
-                      </td>
-                      <td style={{ padding: 10, borderBottom: "1px solid var(--color-border, #e5e7eb)" }}>
+                      <td>{row.citySummary.city.name}</td>
+                      <td>{formatRate(row.citySummary.cityRateCentsPerKwh)}</td>
+                      <td>{formatUsd(row.monthlyCost)}</td>
+                      <td>{formatUsd(row.yearlyCost)}</td>
+                      <td>
                         {row.hasApplianceCityPilot ? (
                           <Link
                             href={`/cost-to-run/${applianceSlug}/${stateData.slug}/${row.citySummary.city.slug}`}

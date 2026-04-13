@@ -177,8 +177,8 @@ export default async function ApplianceCityCostPage({
           updatedLabel: summary.citySummary.state.updatedLabel,
         }}
       >
-        <section style={{ marginBottom: 24 }}>
-          <h2 style={{ fontSize: 20, marginBottom: 12 }}>Methodology and disclosure</h2>
+        <section style={{ marginBottom: "var(--space-7)" }}>
+          <h2 className="heading-section">Methodology and disclosure</h2>
           <p style={{ marginTop: 0, lineHeight: 1.7 }}>
             Appliance usage assumptions are deterministic and reuse the same state-level appliance model:
             {` ${formatWattageRange(summary.applianceConfig)}`} and{" "}
@@ -191,8 +191,8 @@ export default async function ApplianceCityCostPage({
           </p>
         </section>
 
-        <section style={{ marginBottom: 24 }}>
-          <h2 style={{ fontSize: 20, marginBottom: 12 }}>Canonical scope and intent separation</h2>
+        <section style={{ marginBottom: "var(--space-7)" }}>
+          <h2 className="heading-section">Canonical scope and intent separation</h2>
           <ul style={{ margin: 0, paddingLeft: 20, lineHeight: 1.8 }}>
             <li>
               <Link href={applianceStatePath}>Appliance state route</Link> remains the broad appliance-cost benchmark.

@@ -234,8 +234,8 @@ export default async function ElectricityCostCityPage({
           updatedLabel: summary.state.updatedLabel,
         }}
       >
-        <section style={{ marginBottom: 24 }}>
-          <h2 style={{ fontSize: 20, marginBottom: 12 }}>How this city estimate is derived</h2>
+        <section style={{ marginBottom: "var(--space-7)" }}>
+          <h2 className="heading-section">How this city estimate is derived</h2>
           <p style={{ marginTop: 0, lineHeight: 1.7 }}>
             This page starts from the statewide residential electricity baseline and applies a deterministic city
             estimate rule. Where a city reference value exists in the internal city dataset, that value is used as the
@@ -247,8 +247,8 @@ export default async function ElectricityCostCityPage({
           </p>
         </section>
 
-        <section style={{ marginBottom: 24 }}>
-          <h2 style={{ fontSize: 20, marginBottom: 12 }}>Intent separation and canonical scope</h2>
+        <section style={{ marginBottom: "var(--space-7)" }}>
+          <h2 className="heading-section">Intent separation and canonical scope</h2>
           <ul style={{ margin: 0, paddingLeft: 20, lineHeight: 1.8 }}>
             <li>
               <Link href={`/electricity-cost/${summary.state.slug}`}>State authority cost route</Link> remains the
