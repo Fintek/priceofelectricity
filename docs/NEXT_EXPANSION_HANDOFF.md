@@ -4845,3 +4845,85 @@ Run Prompt 120 only after all of the following are true:
 2. At least **100 total `CommercialOfferImpression`** events are recorded.
 3. At least **5 total `CommercialOfferClick`** events are recorded.
 4. At least **2 distinct `pageFamily`** values are represented in recorded events.
+
+## Prompt 120 update — data-informed commercial tuning decision
+
+- **Status:** HOLD / MONITOR. Gating conditions could not be validated.
+- **Why:** no Plausible analytics readout data was supplied by the user or available through any connected tool. The Plausible dashboard at `plausible.io` is the sole source of `CommercialOfferImpression` and `CommercialOfferClick` event data; no API integration, export artifact, or MCP connector exists in this session.
+- **Decision:** tuning is NOT approved. The project remains in production data-collection hold posture.
+- **Guardrails preserved:** all five held/deferred postures unchanged; no rollout, canonical, provider, placement, or UI changes made.
+
+### What is needed to unlock Prompt 121
+
+To run a data-informed tuning prompt, the user must supply one of:
+1. A Plausible dashboard export (CSV or JSON) covering `CommercialOfferImpression` and `CommercialOfferClick` custom events with property breakdowns (`moduleType`, `pageFamily`, `state`, `providerId`, `offerType`).
+2. A screenshot or text summary of the Plausible custom events dashboard showing event counts and property breakdowns for the gating period.
+3. A Plausible API key configured as an MCP tool or environment variable so the agent can query event data directly.
+
+Once real data is provided and all four gating thresholds are met, Prompt 121 should be: **"Data-Informed Commercial Tuning Decision (with supplied readout)"** — identical in structure to Prompt 120 but with the user-supplied data artifact as input.
+
+---
+
+## ZIP-Code Electricity Price Route Family — Feasibility Evaluation
+
+**Date**: 2026-04-02
+**Status**: POSSIBLE LATER — not approved, strict entry conditions required
+**Type**: Planning-only feasibility evaluation; no implementation performed
+
+### What was evaluated
+
+Whether a future "price of electricity by ZIP code" route family should exist, given trust/accuracy risk, data quality, canonical overlap, and monetization usefulness.
+
+### Key findings
+
+1. **No ZIP-level data exists in the repo.** All pricing data is state-level (EIA residential retail rates by `stateid`). City rates are either curated reference values or population-modeled estimates from the state average. Utility data is curated name/slug pairs without service-territory or ZIP mapping.
+2. **`postal` in the codebase means 2-letter state abbreviation, not ZIP code.** No 5-digit ZIP, no ZIP→state, ZIP→city, or ZIP→utility mapping exists anywhere.
+3. **A ZIP page built on current data would be a state proxy** — it could only display the state average rate for the state containing that ZIP, adding no information beyond what `/{state}` or `/electricity-cost/{state}` already provides.
+4. **Canonical overlap is severe.** ZIP intent already maps to state pages, city pages, utility pages, provider pages, and bill estimator pages. Adding a ZIP family without unique data would create thin duplicate content and cannibalize existing authority surfaces.
+5. **Indexing risk is extreme.** ~41,000 US ZIP codes would create massive route fan-out with near-identical content grouped by state, far exceeding any current rollout cap.
+
+### Recommendation
+
+**POSSIBLE LATER** — only if all strict entry conditions are met. Not approved for implementation, piloting, or roadmap scheduling.
+
+### Strict entry conditions for future reconsideration
+
+All of the following must be true before any ZIP implementation prompt is allowed:
+
+1. **ZIP-specific or utility-territory data source exists** — e.g., EIA Form 861 utility service territory boundaries, a commercial ZIP→utility→rate mapping, or similar. The data source must provide pricing granularity finer than state average.
+2. **ZIP→utility mapping is available and maintained** — a verifiable, updateable mapping from ZIP codes to serving utilities with corresponding rate data.
+3. **Methodology/disclosure framework is explicit** — the methodology page documents exactly what a ZIP-level rate represents, its source, its limitations, and how it differs from the state average.
+4. **Canonical owner is clearly separated** — the canonical architecture policy is updated to define ZIP intent ownership without overlapping state, city, utility, or estimator families.
+5. **Pilot scope is tiny and rollout-gated** — any initial launch must follow the project's established rollout-helper pattern with explicit key allowlists and hard caps (e.g., ≤50 ZIPs in ≤3 states).
+6. **Clear evidence the page adds value beyond state/city proxying** — the ZIP page must contain materially different rate, utility, or plan information that no existing page provides.
+7. **Payload/indexing risk is acceptable** — server/app and standalone payload budgets can absorb the pilot without exceeding current headroom decision lines.
+
+### What must remain out of scope
+
+- No broad ZIP cross-product (41,000+ pages)
+- No synthetic/modeled ZIP rates without disclosed methodology
+- No ZIP pages that are functionally identical to state pages
+- No ZIP family that competes with city or utility canonical ownership
+- No provider/commercial placement on ZIP pages without established measurement framework
+
+### Optional pilot shape (planning reference only)
+
+If entry conditions are ever met, the safest pilot concept would be:
+
+- **Route:** `/electricity-price-by-zip/[zip]` (avoids `/zip/` which is too generic)
+- **Purpose:** show the serving utility, its rate, and how it compares to the state average — useful only if utility-territory data exists
+- **Required data:** ZIP→utility mapping, utility-level residential rate, state average for comparison
+- **Must NOT:** claim ZIP-specific pricing when only state data exists; must NOT duplicate city or state page content
+- **Pilot cap:** ≤50 ZIPs across ≤3 states, rollout-helper-gated, sitemap-gated
+
+---
+
+## Prompt 33 — UI Consistency Wave 2 release / deploy / closure
+
+- **Status:** completed.
+- **Release commit:** `a93d12c` — `UI consistency wave 2 for longtail and traffic hub templates` (scope: shared tokens in `globals.css`, `LongtailStateTemplate`, `TrafficHubTemplate`, `LongtailRelatedLinks`, `PageMonetization`, `BillEstimator`, `/{state}` and selected longtail route pages; `public/readiness.json` / `public/release.json` refreshed post-verify).
+- **Pre-push verification:** `npm run knowledge:build` (pass), `npm run knowledge:verify` (pass), `npm run build` (pass; Windows traced-file copy warning only), `npm run verify:vercel` (pass: 78/0 readiness, SEO 8/8, etc.).
+- **Deployment:** push to `origin/main`; confirm Vercel production deployment **READY** for the release commit and spot-check longtail + hub surfaces (breadcrumbs, headings, stat cards, tables, spacing).
+- **Wave 2 posture:** UI Consistency Wave 2 remains **closed**; no Wave 3 authorized from this prompt.
+- **Future UI candidate (not scheduled):** page-level design-token adoption on appliance-cost and bill-estimator surfaces only, trigger-based.
+- **Roadmap posture:** return to **stable hold / trigger-based** sequencing after this release; no held-family cap changes, no new route families, no canonical or sitemap architecture changes from this work.
