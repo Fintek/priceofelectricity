@@ -17,9 +17,9 @@ export const dynamic = "force-static";
 export const revalidate = 86400;
 
 export const metadata: Metadata = buildMetadata({
-  title: "Appliance Cost Comparisons | Energy Comparison Hub",
+  title: "Appliance Electricity Cost by State | PriceOfElectricity.com",
   description:
-    "Curated appliance operating cost comparison links that route into canonical appliance-state and pilot appliance-city pages.",
+    "How much does it cost to run common appliances in your state? Browse electricity costs for refrigerators, AC units, space heaters, and more across all U.S. states.",
   canonicalPath: "/energy-comparison/appliances",
 });
 
@@ -39,8 +39,8 @@ export default async function EnergyComparisonAppliancesPage() {
     { name: "Appliance Comparisons", url: "/energy-comparison/appliances" },
   ]);
   const webPageJsonLd = buildWebPageJsonLd({
-    title: "Appliance Cost Comparisons",
-    description: "Curated appliance comparison discovery routes across state and pilot city contexts.",
+    title: "Appliance Electricity Cost by State",
+    description: "Find out how much it costs to run common household appliances in your state.",
     url: "/energy-comparison/appliances",
     isPartOf: "/",
     about: ["appliance electricity cost comparisons", "cost to run appliance by state"],
@@ -58,14 +58,10 @@ export default async function EnergyComparisonAppliancesPage() {
           <span aria-current="page">Appliance Comparisons</span>
         </nav>
 
-        <h1 style={{ fontSize: 32, marginBottom: 12 }}>Appliance Cost Comparisons</h1>
+        <h1 style={{ fontSize: 32, marginBottom: 12 }}>Appliance Electricity Cost by State</h1>
         <p style={{ marginTop: 0, marginBottom: 24, maxWidth: "75ch", lineHeight: 1.7 }}>
-          Appliance cost intent remains canonical in <code>/cost-to-run/[appliance]/[state]</code>. This page is a
-          curated discovery layer with a controlled set of appliance-state and pilot appliance-city links.
-        </p>
-        <p style={{ marginTop: 0, marginBottom: 24, maxWidth: "75ch", lineHeight: 1.7 }}>
-          This slice does not create a new appliance comparison matrix. It routes discovery into existing canonical
-          appliance-state routes and rollout-gated appliance-city pilot pages only.
+          Find out how much it costs to run common household appliances in your state.
+          Each page shows estimated monthly and annual running costs based on average residential electricity rates.
         </p>
 
         <section style={{ marginBottom: 26 }}>

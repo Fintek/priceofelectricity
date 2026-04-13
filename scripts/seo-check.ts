@@ -15,6 +15,9 @@ const TEST_PATHS = [
   "/offers",
   "/alerts",
   "/knowledge",
+  "/electricity-cost/california",
+  "/electricity-cost-comparison/california-vs-texas",
+  "/energy-comparison/states",
 ];
 
 const MIN_DESCRIPTION_LENGTH = 50;
@@ -66,6 +69,23 @@ function checkHtml(path: string, html: string): CheckResult {
   );
   if (robotsMeta && /noindex/i.test(robotsMeta[1])) {
     failures.push("Page has noindex in robots meta tag");
+  }
+
+  const INTERNAL_JARGON_IN_DESCRIPTION = [
+    "canonical",
+    "curated slice",
+    "rollout-gated",
+    "allowlist",
+    "pilot",
+    "discovery directory",
+  ];
+  if (descMatch?.[1]) {
+    const desc = descMatch[1].toLowerCase();
+    for (const term of INTERNAL_JARGON_IN_DESCRIPTION) {
+      if (desc.includes(term)) {
+        failures.push(`Meta description contains internal jargon: "${term}"`);
+      }
+    }
   }
 
   return { path, passed: failures.length === 0, failures };

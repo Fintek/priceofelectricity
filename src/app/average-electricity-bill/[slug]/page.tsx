@@ -95,7 +95,9 @@ export default async function AverageElectricityBillStatePage({
           { label: state.name },
         ]}
         title={`Average Electricity Bill in ${state.name}`}
-        intro={`This page estimates a typical monthly and annual electricity bill in ${state.name} using the state's average residential electricity rate and a benchmark usage assumption of ${AVERAGE_ELECTRICITY_BILL_USAGE_KWH.toLocaleString()} kWh per month.`}
+        intro={state.monthlyBill != null
+          ? `A typical household in ${state.name} pays about ${formatUsd(state.monthlyBill)} per month for electricity, based on the state average rate of ${formatRate(state.avgRateCentsPerKwh)} and a ${AVERAGE_ELECTRICITY_BILL_USAGE_KWH.toLocaleString()} kWh monthly usage benchmark.`
+          : `Estimated monthly and annual electricity bills for ${state.name}, based on the state average residential rate and a ${AVERAGE_ELECTRICITY_BILL_USAGE_KWH.toLocaleString()} kWh monthly usage benchmark.`}
         stats={[
           { label: `${state.name} average rate`, value: formatRate(state.avgRateCentsPerKwh) },
           { label: "Estimated monthly bill", value: formatUsd(state.monthlyBill) },

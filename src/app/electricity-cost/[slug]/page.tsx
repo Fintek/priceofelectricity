@@ -182,12 +182,12 @@ export default async function ElectricityCostStatePage({
 
         <h1 style={{ fontSize: 32, marginBottom: 16 }}>Electricity Cost in {stateName}</h1>
         <p style={{ marginTop: 0, marginBottom: 24, maxWidth: "65ch", fontSize: 16, lineHeight: 1.6 }}>
-          This page summarizes average residential electricity rates and estimated costs for {stateName}.
-          All figures are based on EIA data and use a standard 900 kWh monthly usage for cost estimates.
+          {avgRate != null
+            ? `The average residential electricity rate in ${stateName} is ${avgRate.toFixed(2)}¢ per kWh. At 900 kWh/month, that works out to about $${estimatedMonthlyCost.toFixed(0)} per month or $${estimatedAnnualCost.toFixed(0)} per year.`
+            : `Residential electricity rates and estimated monthly costs for ${stateName}, based on EIA data.`}
         </p>
         <p className="muted" style={{ marginTop: -8, marginBottom: 24, maxWidth: "65ch" }}>
-          Authority signals: deterministic state benchmark methodology, machine-readable dataset references, and
-          canonical linkage to city context, estimator, and comparison families.
+          Rates from EIA data · 900 kWh standard usage benchmark
         </p>
 
         {/* Key stat cards */}

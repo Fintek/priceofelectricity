@@ -15,9 +15,9 @@ export const dynamic = "force-static";
 export const revalidate = 86400;
 
 export const metadata: Metadata = buildMetadata({
-  title: "Usage Tier Electricity Comparisons | Energy Comparison Hub",
+  title: "Electricity Cost by Usage Level (kWh) | PriceOfElectricity.com",
   description:
-    "Curated usage-tier comparison links that route to canonical electricity-usage-cost pages.",
+    "See what electricity costs at different usage levels — 500, 1000, or 2000 kWh — across every U.S. state. Find exact dollar amounts for your monthly usage.",
   canonicalPath: "/energy-comparison/usage",
 });
 
@@ -32,8 +32,8 @@ export default async function EnergyComparisonUsagePage() {
   ]);
 
   const webPageJsonLd = buildWebPageJsonLd({
-    title: "Usage Tier Electricity Comparisons",
-    description: "Curated usage-tier links into canonical fixed-kWh cost pages.",
+    title: "Electricity Cost by Usage Level",
+    description: "See what electricity costs at different usage levels across every U.S. state.",
     url: "/energy-comparison/usage",
     isPartOf: "/",
     about: ["kWh usage cost comparisons", "electricity usage tier comparison"],
@@ -51,13 +51,10 @@ export default async function EnergyComparisonUsagePage() {
           <span aria-current="page">Usage Comparisons</span>
         </nav>
 
-        <h1 style={{ fontSize: 32, marginBottom: 12 }}>Usage Tier Electricity Comparisons</h1>
+        <h1 style={{ fontSize: 32, marginBottom: 12 }}>Electricity Cost by Usage Level</h1>
         <p style={{ marginTop: 0, marginBottom: 24, maxWidth: "75ch", lineHeight: 1.7 }}>
-          This curated directory links to canonical fixed-kWh routes at <code>/electricity-usage-cost/[kwh]/[state]</code>.
-        </p>
-        <p style={{ marginTop: 0, marginBottom: 24, maxWidth: "75ch", lineHeight: 1.7 }}>
-          It is intentionally lightweight and discovery-focused: no new usage datasets and no competing canonical usage
-          family are introduced here.
+          How much does electricity actually cost at your usage level? Browse costs by kWh tier
+          and state to see exact dollar amounts for common monthly usage levels.
         </p>
 
         {tiers.map((tier) => (

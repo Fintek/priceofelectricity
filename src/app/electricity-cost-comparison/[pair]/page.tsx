@@ -157,17 +157,16 @@ export default async function ElectricityCostComparisonPairPage({
           <span aria-current="page">{nameA} vs {nameB}</span>
         </nav>
 
-        <h1 style={{ fontSize: 32, marginBottom: 24 }}>
+        <h1 style={{ fontSize: 32, marginBottom: 16 }}>
           Electricity Cost: {nameA} vs {nameB}
         </h1>
-        <p className="muted" style={{ marginTop: -8, marginBottom: 24, maxWidth: "70ch" }}>
-          Authority scope: this canonical pair page uses deterministic state-rate inputs and a fixed 900 kWh baseline
-          to keep comparisons consistent across all pair routes.
+        <p style={{ marginTop: 0, marginBottom: 24, maxWidth: "65ch", fontSize: 16, lineHeight: 1.6 }}>
+          {summaryText}{" "}
+          {nameA} averages {data.rateA.toFixed(2)}¢/kWh and {nameB} averages {data.rateB.toFixed(2)}¢/kWh,
+          putting a typical 900 kWh monthly bill at ${monthlyCostA.toFixed(0)} vs ${monthlyCostB.toFixed(0)}.
         </p>
-        <p className="muted" style={{ marginTop: -16, marginBottom: 24, maxWidth: "70ch" }}>
-          This route compares standardized state benchmarks only; for profile scenarios and custom usage pathways, use
-          estimator and calculator families linked below. Estimator profile links remain allowlist-gated (
-          {estimatorRollout.activeKeyCount} active keys across {estimatorRollout.activeStateCount} states).
+        <p className="muted" style={{ marginTop: -8, marginBottom: 24, maxWidth: "65ch" }}>
+          Based on average residential rates from EIA data · 900 kWh standard usage benchmark
         </p>
 
         {/* Summary cards */}

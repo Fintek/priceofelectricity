@@ -34,10 +34,9 @@ export async function generateMetadata({
     });
   }
 
-  const basisLabel = summary.estimateBasis === "city-config-reference" ? "configured reference rate" : "modeled estimate";
-  const description = `Estimated electricity cost context for ${summary.city.name}, ${summary.state.name}: ${summary.cityRateCentsPerKwh.toFixed(
+  const description = `Electricity in ${summary.city.name}, ${summary.state.name} costs about ${summary.cityRateCentsPerKwh.toFixed(
     2,
-  )} cents per kWh and ${formatUsd(summary.monthlyCostEstimate)} per month at ${CITY_REFERENCE_USAGE_KWH.toLocaleString()} kWh. City ${basisLabel} with methodology disclosure.`;
+  )}¢/kWh. At ${CITY_REFERENCE_USAGE_KWH.toLocaleString()} kWh/month, that's roughly ${formatUsd(summary.monthlyCostEstimate)}/mo. See how ${summary.city.name} compares to the ${summary.state.name} state average.`;
 
   return buildMetadata({
     title: `Electricity Cost in ${summary.city.name}, ${summary.state.name} | PriceOfElectricity.com`,
@@ -129,7 +128,7 @@ export default async function ElectricityCostCityPage({
           { label: summary.city.name },
         ]}
         title={`Electricity Cost in ${summary.city.name}, ${summary.state.name}`}
-        intro={`This city page provides deterministic electricity-cost context for ${summary.city.name} using ${summary.estimateBasis === "city-config-reference" ? "a configured reference rate" : "a modeled estimate framework"}. It is designed for local authority intent and remains distinct from calculator and average-bill benchmark intent.`}
+        intro={`The average residential electricity rate in ${summary.city.name} is approximately ${formatRate(summary.cityRateCentsPerKwh)}, which puts a typical ${CITY_REFERENCE_USAGE_KWH.toLocaleString()} kWh monthly bill at around ${formatUsd(summary.monthlyCostEstimate)}. Below you'll find how that compares to the ${summary.state.name} state average and what drives the difference.`}
         stats={[
           { label: "Estimated city rate", value: formatRate(summary.cityRateCentsPerKwh) },
           {

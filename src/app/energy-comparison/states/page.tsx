@@ -12,9 +12,9 @@ export const dynamic = "force-static";
 export const revalidate = 86400;
 
 export const metadata: Metadata = buildMetadata({
-  title: "State Electricity Comparisons | Energy Comparison Hub",
+  title: "State-vs-State Electricity Cost Comparisons | PriceOfElectricity.com",
   description:
-    "Curated state-vs-state comparison routes that point to the canonical electricity-cost-comparison family.",
+    "Compare electricity rates and bills between U.S. states side by side. Browse state-vs-state comparisons to see which states have the cheapest and most expensive power.",
   canonicalPath: "/energy-comparison/states",
 });
 
@@ -30,8 +30,8 @@ export default async function EnergyComparisonStatesPage() {
     { name: "State Comparisons", url: "/energy-comparison/states" },
   ]);
   const webPageJsonLd = buildWebPageJsonLd({
-    title: "State Electricity Comparisons",
-    description: "Curated state-vs-state comparison route directory linking to canonical comparison pages.",
+    title: "State-vs-State Electricity Cost Comparisons",
+    description: "Compare electricity rates and bills between U.S. states side by side.",
     url: "/energy-comparison/states",
     isPartOf: "/",
     about: ["state electricity comparisons", "state vs state electricity cost"],
@@ -49,13 +49,10 @@ export default async function EnergyComparisonStatesPage() {
           <span aria-current="page">State Comparisons</span>
         </nav>
 
-        <h1 style={{ fontSize: 32, marginBottom: 12 }}>State Electricity Comparisons</h1>
+        <h1 style={{ fontSize: 32, marginBottom: 12 }}>State-vs-State Electricity Cost Comparisons</h1>
         <p style={{ marginTop: 0, marginBottom: 24, maxWidth: "75ch", lineHeight: 1.7 }}>
-          This curated slice links into the canonical pair system at <Link href="/electricity-cost-comparison">/electricity-cost-comparison</Link>.
-        </p>
-        <p style={{ marginTop: 0, marginBottom: 24, maxWidth: "75ch", lineHeight: 1.7 }}>
-          This page is a discovery directory only. It does not create new state-pair data and does not replace canonical
-          ownership of pair pages.
+          Pick any two states below to see a side-by-side breakdown of electricity rates and estimated monthly bills.
+          Each comparison uses average residential rates and a standard 900 kWh monthly usage.
         </p>
 
         <ul style={{ margin: 0, paddingLeft: 20, lineHeight: 1.9, columns: 2 }}>

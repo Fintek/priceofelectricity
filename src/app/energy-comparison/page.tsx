@@ -32,9 +32,9 @@ export const dynamic = "force-static";
 export const revalidate = 86400;
 
 export const metadata: Metadata = buildMetadata({
-  title: "Energy Comparison Hub: State, Usage, Appliance & Bill Paths | PriceOfElectricity.com",
+  title: "Compare Electricity Costs: States, Usage & Appliances | PriceOfElectricity.com",
   description:
-    "Compare electricity costs across states, usage levels, appliances, and cities. Find side-by-side rate comparisons, usage-based cost estimates, and appliance running costs.",
+    "Compare electricity costs across states, usage levels, and appliances. See side-by-side rate comparisons, find what electricity costs at your usage level, and check appliance running costs.",
   canonicalPath: "/energy-comparison",
 });
 
