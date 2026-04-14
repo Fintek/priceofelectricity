@@ -108,7 +108,7 @@ export default async function ElectricityCostStatePage({
   const comparison = derived?.comparison;
   const regionRef = (statePage.data as { regionRef?: { id: string; name: string; href: string } })?.regionRef;
   const compareLinks = (statePage.data as { compareLinks?: Array<{ pairSlug: string; title: string; url: string }> })?.compareLinks ?? [];
-  const activeCities = getActiveCitiesForState(slug).slice(0, 8);
+  const activeCities = getActiveCitiesForState(slug);
 
   const canonicalPath = `/electricity-cost/${slug}`;
 
@@ -402,10 +402,10 @@ export default async function ElectricityCostStatePage({
 
         {activeCities.length > 0 && (
           <section style={{ marginBottom: 32 }}>
-            <h2 style={{ fontSize: 20, marginBottom: 12 }}>Rollout-enabled city electricity pages</h2>
+            <h2 style={{ fontSize: 20, marginBottom: 12 }}>City electricity costs in {stateName}</h2>
             <p style={{ marginTop: 0, maxWidth: "70ch", lineHeight: 1.7 }}>
-              These city pages provide deterministic city-level estimate context and methodology disclosure. They are
-              supplemental to the canonical state benchmark and do not replace utility tariff quotes.
+              Local rate context for major cities in {stateName}. Figures are modeled estimates for comparison; confirm
+              rates with your utility.
             </p>
             <ul style={{ margin: 0, paddingLeft: 20, lineHeight: 1.8 }}>
               {activeCities.map((city) => (

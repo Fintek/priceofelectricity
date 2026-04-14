@@ -5,7 +5,8 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 const NAV_LINKS = [
-  { href: "/compare", label: "Compare States" },
+  { href: "/electricity-cost-comparison", label: "State comparisons" },
+  { href: "/energy-comparison", label: "Energy comparison" },
   { href: "/electricity-cost-calculator", label: "Calculator" },
   { href: "/datasets", label: "Data" },
   { href: "/methodology", label: "Methodology" },

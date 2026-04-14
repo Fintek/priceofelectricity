@@ -134,6 +134,29 @@ export default async function EnergyComparisonHubPage() {
           Choose a comparison type below to find the data that matters to you.
         </p>
 
+        <section aria-labelledby="comparison-guides-heading" style={{ marginBottom: 28 }}>
+          <h2 id="comparison-guides-heading" style={{ fontSize: 20, marginBottom: 12 }}>
+            Comparison guides
+          </h2>
+          <p style={{ marginTop: 0, marginBottom: 12, maxWidth: "65ch", lineHeight: 1.6 }}>
+            Structured entry points for state pairs, usage tiers, and appliance running costs.
+          </p>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: 12 }}>
+            <Link href="/energy-comparison/states" className="stat-card" style={{ textDecoration: "none", color: "inherit", padding: 16 }}>
+              <div style={{ fontWeight: 700, marginBottom: 4 }}>State pair index</div>
+              <div className="stat-card-label" style={{ fontSize: 14 }}>Browse state-to-state comparisons</div>
+            </Link>
+            <Link href="/energy-comparison/usage" className="stat-card" style={{ textDecoration: "none", color: "inherit", padding: 16 }}>
+              <div style={{ fontWeight: 700, marginBottom: 4 }}>Usage level costs</div>
+              <div className="stat-card-label" style={{ fontSize: 14 }}>Fixed kWh costs by state</div>
+            </Link>
+            <Link href="/energy-comparison/appliances" className="stat-card" style={{ textDecoration: "none", color: "inherit", padding: 16 }}>
+              <div style={{ fontWeight: 700, marginBottom: 4 }}>Appliance costs</div>
+              <div className="stat-card-label" style={{ fontSize: 14 }}>Running cost by appliance</div>
+            </Link>
+          </div>
+        </section>
+
         {/* ── COMPARISON PATHWAYS ── */}
         <section style={{ marginBottom: 28 }}>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: 12 }}>

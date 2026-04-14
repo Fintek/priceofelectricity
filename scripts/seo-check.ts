@@ -8,6 +8,7 @@ import {
 
 const TEST_PATHS = [
   "/",
+  "/electricity-cost-comparison",
   "/texas",
   "/national",
   "/drivers",

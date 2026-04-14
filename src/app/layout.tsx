@@ -123,7 +123,8 @@ export default function RootLayout({
             </Link>
 
             <div className="header-desktop-nav">
-              <Link href="/compare">Compare</Link>
+              <Link href="/electricity-cost-comparison">State comparisons</Link>
+              <Link href="/energy-comparison">Energy comparison</Link>
               <Link href="/electricity-cost-calculator">Calculator</Link>
               <Link href="/datasets">Data</Link>
               <Link href="/methodology">Methodology</Link>
@@ -149,7 +150,8 @@ export default function RootLayout({
           <div className="container footer-grid">
             <div className="footer-group">
               <p className="footer-group-title">Explore</p>
-              <Link href="/compare">Compare States</Link>
+              <Link href="/electricity-cost-comparison">State comparisons</Link>
+              <Link href="/energy-comparison">Energy comparison</Link>
               <Link href="/electricity-cost-calculator">Calculator</Link>
               <Link href="/electricity-bill-estimator">Bill Estimator</Link>
               <Link href="/electricity-cost-comparison">Comparisons</Link>

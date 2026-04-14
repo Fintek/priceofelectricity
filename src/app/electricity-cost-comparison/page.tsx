@@ -47,6 +47,7 @@ export default async function ElectricityCostComparisonIndexPage() {
   const manifestPairs = manifest?.pairs ?? [];
 
   const pairSet = new Set(pairs);
+  const allPairsSorted = [...pairs].sort((a, b) => a.localeCompare(b));
   const featuredPairs = [
     "california-vs-texas",
     "texas-vs-florida",
@@ -144,14 +145,40 @@ export default async function ElectricityCostComparisonIndexPage() {
                         </Link>
                       ))}
                       {list.length > 12 && (
-                        <span className="muted" style={{ fontSize: 13, alignSelf: "center" }}>
-                          +{list.length - 12} more
-                        </span>
+                        <Link
+                          href="#all-comparisons"
+                          className="muted"
+                          style={{ fontSize: 13, alignSelf: "center", textDecoration: "underline" }}
+                        >
+                          +{list.length - 12} more (full list below)
+                        </Link>
                       )}
                     </div>
                   </div>
                 );
               })}
+            </div>
+          </section>
+        )}
+
+        {allPairsSorted.length > 0 && (
+          <section id="all-comparisons" style={{ marginBottom: 28 }}>
+            <h2 style={{ fontSize: 20, marginBottom: 12 }}>All state-to-state comparisons</h2>
+            <p style={{ marginTop: 0, marginBottom: 16, maxWidth: "65ch", lineHeight: 1.6 }}>
+              Alphabetical index of every published comparison. Each link opens the fixed-usage side-by-side rate
+              comparison for that state pair.
+            </p>
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(200px, 1fr))", gap: 8 }}>
+              {allPairsSorted.map((pair) => (
+                <Link
+                  key={pair}
+                  href={`/electricity-cost-comparison/${pair}`}
+                  className="stat-card"
+                  style={{ textDecoration: "none", color: "inherit", fontSize: 14, padding: 10 }}
+                >
+                  {pairToDisplayLabel(pair)}
+                </Link>
+              ))}
             </div>
           </section>
         )}

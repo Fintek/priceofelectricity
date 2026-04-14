@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-04-13T19:47:29.692Z",
-  "commit": "e2c3cc8",
+  "generatedAt": "2026-04-14T23:11:38.310Z",
+  "commit": "d2e3d24",
   "summary": {
-    "total": 78,
-    "passed": 78,
+    "total": 93,
+    "passed": 93,
     "failed": 0
   },
   "checks": [
@@ -85,6 +85,10 @@
       "passed": true
     },
     {
+      "name": "no legacy city redirect URL shapes in sitemap",
+      "passed": true
+    },
+    {
       "name": "estimator profile sitemap leakage is blocked",
       "passed": true
     },
@@ -143,7 +147,19 @@
     {
       "name": "/health returns release fields",
       "passed": true,
-      "details": "commit=e2c3cc8 data=v20260222"
+      "details": "commit=d2e3d24 data=v20260222"
+    },
+    {
+      "name": "/ reachable",
+      "passed": true
+    },
+    {
+      "name": "home header links comparison hubs: href=\"/electricity-cost-comparison\"",
+      "passed": true
+    },
+    {
+      "name": "home header links comparison hubs: href=\"/energy-comparison\"",
+      "passed": true
     },
     {
       "name": "/electricity-hubs reachable",
@@ -179,6 +195,18 @@
     },
     {
       "name": "/energy-comparison reachable",
+      "passed": true
+    },
+    {
+      "name": "energy-comparison links canonical clusters: /energy-comparison/states",
+      "passed": true
+    },
+    {
+      "name": "energy-comparison links canonical clusters: /energy-comparison/usage",
+      "passed": true
+    },
+    {
+      "name": "energy-comparison links canonical clusters: /energy-comparison/appliances",
       "passed": true
     },
     {
@@ -230,11 +258,43 @@
       "passed": true
     },
     {
+      "name": "comparison index links provider discovery: id=\"all-comparisons\"",
+      "passed": true
+    },
+    {
       "name": "comparison index links provider discovery: /electricity-providers",
       "passed": true
     },
     {
       "name": "comparison index links provider discovery: /electricity-cost",
+      "passed": true
+    },
+    {
+      "name": "/electricity-cost/texas reachable",
+      "passed": true
+    },
+    {
+      "name": "electricity-cost/texas links active city pages: /electricity-cost/texas/houston",
+      "passed": true
+    },
+    {
+      "name": "electricity-cost/texas links active city pages: /electricity-cost/texas/san-antonio",
+      "passed": true
+    },
+    {
+      "name": "electricity-cost/texas links active city pages: /electricity-cost/texas/dallas",
+      "passed": true
+    },
+    {
+      "name": "electricity-cost/texas links active city pages: /electricity-cost/texas/austin",
+      "passed": true
+    },
+    {
+      "name": "electricity-cost/texas links active city pages: /electricity-cost/texas/fort-worth",
+      "passed": true
+    },
+    {
+      "name": "electricity-cost/texas links active city pages: /electricity-cost/texas/el-paso",
       "passed": true
     },
     {

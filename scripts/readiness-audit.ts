@@ -11,9 +11,11 @@ import {
 import {
   getActiveApplianceCityPages,
   getActiveCityBillPages,
+  getActiveCitiesForState,
 } from "../src/lib/longtail/rollout";
 import { getActiveBillEstimatorProfilePages } from "../src/lib/longtail/billEstimator";
 import { getUtilitiesByState } from "../src/data/utilities";
+import { findLegacyCityRedirectShapesInSitemaps } from "./legacyCitySitemapGuards";
 
 type CheckResult = {
   name: string;
@@ -217,6 +219,18 @@ async function checkSitemap(base: string): Promise<CheckResult[]> {
       results.push(pass(`${segmentPath} reachable`));
       const xml = await segmentRes.text();
       allPathnames.push(...extractSitemapPathnames(xml));
+    }
+
+    const legacyCityShapes = findLegacyCityRedirectShapesInSitemaps(allPathnames);
+    if (legacyCityShapes.length > 0) {
+      results.push(
+        fail(
+          "no legacy city redirect URL shapes in sitemap",
+          `found non-canonical city aliases — use /electricity-cost/{state}/{city} only: ${legacyCityShapes.slice(0, 5).join(", ")}`,
+        ),
+      );
+    } else {
+      results.push(pass("no legacy city redirect URL shapes in sitemap"));
     }
 
     const estimatorProfilePath =
@@ -483,11 +497,21 @@ async function checkReleaseMetadata(base: string): Promise<CheckResult[]> {
 
 async function checkTrafficDiscovery(base: string): Promise<CheckResult[]> {
   const results: CheckResult[] = [];
+  const stateSlugForCityLinks = "texas";
+  const cityPathChecks = getActiveCitiesForState(stateSlugForCityLinks).map(
+    (c) => `/electricity-cost/${stateSlugForCityLinks}/${c.slug}`,
+  );
+
   const checks: Array<{
     path: string;
     required: string[];
     label: string;
   }> = [
+    {
+      path: "/",
+      required: ['href="/electricity-cost-comparison"', 'href="/energy-comparison"'],
+      label: "home header links comparison hubs",
+    },
     {
       path: "/electricity-hubs",
       required: [
@@ -504,6 +528,9 @@ async function checkTrafficDiscovery(base: string): Promise<CheckResult[]> {
     {
       path: "/energy-comparison",
       required: [
+        "/energy-comparison/states",
+        "/energy-comparison/usage",
+        "/energy-comparison/appliances",
         "/electricity-cost-comparison/",
         "/electricity-usage-cost/",
         "/cost-to-run/",
@@ -526,11 +553,21 @@ async function checkTrafficDiscovery(base: string): Promise<CheckResult[]> {
     {
       path: "/electricity-cost-comparison",
       required: [
+        'id="all-comparisons"',
         "/electricity-providers",
         "/electricity-cost",
       ],
       label: "comparison index links provider discovery",
     },
+    ...(cityPathChecks.length > 0
+      ? [
+          {
+            path: `/electricity-cost/${stateSlugForCityLinks}`,
+            required: cityPathChecks,
+            label: `electricity-cost/${stateSlugForCityLinks} links active city pages`,
+          },
+        ]
+      : []),
     {
       path: "/electricity-providers",
       required: [

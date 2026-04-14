@@ -7,7 +7,12 @@ import {
   fetchWithTimeout,
 } from "./_server";
 import { getActiveBillEstimatorProfilePages } from "../src/lib/longtail/billEstimator";
-import { getActiveApplianceCityPages, getActiveCityBillPages } from "../src/lib/longtail/rollout";
+import {
+  getActiveApplianceCityPages,
+  getActiveCityBillPages,
+  getActiveCitiesForState,
+} from "../src/lib/longtail/rollout";
+import { findLegacyCityRedirectShapesInSitemaps } from "./legacyCitySitemapGuards";
 
 let passed = 0;
 let failed = 0;
@@ -114,6 +119,16 @@ async function checkDeferredRouteLeakage(base: string): Promise<void> {
     fail("no /compare/{pair} redirect routes in sitemap", "found legacy redirect URLs — these should only appear as /electricity-cost-comparison/{pair}");
   } else {
     pass("no /compare/{pair} redirect routes in sitemap");
+  }
+
+  const legacyCityShapes = findLegacyCityRedirectShapesInSitemaps(allPathnames);
+  if (legacyCityShapes.length > 0) {
+    fail(
+      "no legacy city redirect URL shapes in sitemap",
+      `found non-canonical city aliases — use /electricity-cost/{state}/{city} only: ${legacyCityShapes.slice(0, 5).join(", ")}`,
+    );
+  } else {
+    pass("no legacy city redirect URL shapes in sitemap");
   }
 
   const estimatorProfilePath = /^\/electricity-bill-estimator\/([a-z-]+)\/(apartment|small-home|medium-home|large-home)\/?$/;
@@ -250,11 +265,21 @@ async function checkCanonical(base: string, path: string): Promise<void> {
 }
 
 async function checkDiscoveryHubs(base: string): Promise<void> {
+  const stateSlugForCityLinks = "texas";
+  const cityPathChecks = getActiveCitiesForState(stateSlugForCityLinks).map(
+    (c) => `/electricity-cost/${stateSlugForCityLinks}/${c.slug}`,
+  );
+
   const checks: Array<{
     path: string;
     required: string[];
     label: string;
   }> = [
+    {
+      path: "/",
+      required: ['href="/electricity-cost-comparison"', 'href="/energy-comparison"'],
+      label: "home header links comparison hubs",
+    },
     {
       path: "/electricity-hubs",
       required: [
@@ -271,6 +296,9 @@ async function checkDiscoveryHubs(base: string): Promise<void> {
     {
       path: "/energy-comparison",
       required: [
+        "/energy-comparison/states",
+        "/energy-comparison/usage",
+        "/energy-comparison/appliances",
         "/electricity-cost-comparison/",
         "/electricity-usage-cost/",
         "/cost-to-run/",
@@ -293,11 +321,21 @@ async function checkDiscoveryHubs(base: string): Promise<void> {
     {
       path: "/electricity-cost-comparison",
       required: [
+        'id="all-comparisons"',
         "/electricity-providers",
         "/electricity-cost",
       ],
       label: "comparison index provider discovery links",
     },
+    ...(cityPathChecks.length > 0
+      ? [
+          {
+            path: `/electricity-cost/${stateSlugForCityLinks}`,
+            required: cityPathChecks,
+            label: `electricity-cost/${stateSlugForCityLinks} links active city pages`,
+          },
+        ]
+      : []),
     {
       path: "/electricity-providers",
       required: [
