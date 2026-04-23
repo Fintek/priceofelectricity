@@ -3,7 +3,7 @@ import { use } from "react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { STATES } from "@/data/states";
-import { SITE_URL, LAST_REVIEWED } from "@/lib/site";
+import { SITE_URL, LAST_REVIEWED, formatPublicReviewDate } from "@/lib/site";
 import { isValidStateSlug } from "@/lib/slugGuard";
 import { getRateCasesForState } from "@/content/regulatory";
 
@@ -142,7 +142,7 @@ export default function RateCasesPage({
                   <td style={{ padding: "8px 12px" }}>
                     {CONFIDENCE_LABELS[rc.confidence]}
                   </td>
-                  <td style={{ padding: "8px 12px" }}>{rc.lastReviewed}</td>
+                  <td style={{ padding: "8px 12px" }}>{formatPublicReviewDate(rc.lastReviewed)}</td>
                 </tr>
               ))}
             </tbody>

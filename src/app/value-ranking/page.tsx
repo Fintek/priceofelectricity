@@ -3,7 +3,7 @@ import Link from "next/link";
 import { STATES } from "@/data/states";
 import { computeAffordability } from "@/lib/affordability";
 import { computeValueScores } from "@/lib/valueScore";
-import { LAST_REVIEWED, SITE_URL, UPDATE_CADENCE_TEXT } from "@/lib/site";
+import { LAST_REVIEWED_DISPLAY, SITE_URL, UPDATE_CADENCE_TEXT } from "@/lib/site";
 
 const BASE_URL = SITE_URL;
 export const dynamic = "force-static";
@@ -121,7 +121,7 @@ export default async function ValueRankingPage({
 
       <h1>Electricity Value Ranking by State</h1>
       <p className="muted" style={{ marginTop: 0, marginBottom: 8 }}>
-        {UPDATE_CADENCE_TEXT} {"•"} Last reviewed {LAST_REVIEWED} {"•"}{" "}
+        {UPDATE_CADENCE_TEXT} {"•"} Last reviewed {LAST_REVIEWED_DISPLAY} {"•"}{" "}
         <Link href="/about">Methodology</Link>
       </p>
       <p className="intro muted" style={{ marginTop: 0 }}>

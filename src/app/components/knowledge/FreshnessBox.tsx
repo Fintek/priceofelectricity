@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { t } from "@/lib/knowledge/labels";
+import { formatPublicReviewDate } from "@/lib/site";
 
 export type FreshnessData = {
   datasetUpdatedAt: string;
@@ -44,7 +45,7 @@ export default function FreshnessBox({ freshness }: FreshnessBoxProps) {
           {t(`status.${freshness.status}`)}
         </dd>
         <dt className="muted" style={{ marginTop: 8 }}>{t("dl.datasetUpdatedAt")}</dt>
-        <dd style={{ margin: "2px 0 0 0" }}>{freshness.datasetUpdatedAt}</dd>
+        <dd style={{ margin: "2px 0 0 0" }}>{formatPublicReviewDate(freshness.datasetUpdatedAt)}</dd>
         {freshness.ageDays !== undefined && (
           <>
             <dt className="muted" style={{ marginTop: 8 }}>{t("dl.ageDays")}</dt>

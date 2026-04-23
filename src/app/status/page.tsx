@@ -3,7 +3,7 @@ import Link from "next/link";
 import { readFile } from "node:fs/promises";
 import { join } from "node:path";
 import { computeFreshness } from "@/lib/freshness";
-import { LAST_REVIEWED, SITE_URL } from "@/lib/site";
+import { LAST_REVIEWED_DISPLAY, SITE_URL } from "@/lib/site";
 import { buildAllNormalizedStates } from "@/lib/stateBuilder";
 
 const BASE_URL = SITE_URL;
@@ -129,7 +129,7 @@ export default async function StatusPage() {
           <li>Fresh: {freshnessCounts.fresh}</li>
           <li>Aging: {freshnessCounts.aging}</li>
           <li>Stale: {freshnessCounts.stale}</li>
-          <li>Last reviewed: {LAST_REVIEWED}</li>
+          <li>Last reviewed: {LAST_REVIEWED_DISPLAY}</li>
         </ul>
       </section>
 

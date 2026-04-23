@@ -3,7 +3,7 @@ import Link from "next/link";
 import { STATES } from "@/data/states";
 import { computeAffordability } from "@/lib/affordability";
 import { computeFreshness } from "@/lib/freshness";
-import { LAST_REVIEWED, SITE_URL, UPDATE_CADENCE_TEXT } from "@/lib/site";
+import { LAST_REVIEWED_DISPLAY, SITE_URL, UPDATE_CADENCE_TEXT } from "@/lib/site";
 import { getRelatedForTool } from "@/lib/related";
 import RelatedLinks from "@/app/components/RelatedLinks";
 
@@ -91,7 +91,7 @@ export default async function AffordabilityPage({
 
       <h1>Electricity Affordability by State</h1>
       <p className="muted" style={{ marginTop: 0, marginBottom: 8 }}>
-        {UPDATE_CADENCE_TEXT} {"•"} Last reviewed {LAST_REVIEWED} {"•"}{" "}
+        {UPDATE_CADENCE_TEXT} {"•"} Last reviewed {LAST_REVIEWED_DISPLAY} {"•"}{" "}
         <Link href="/about">Methodology</Link>
       </p>
       <p className="muted" style={{ marginTop: 0 }}>

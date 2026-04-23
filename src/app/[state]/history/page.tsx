@@ -5,11 +5,10 @@ import { STATES } from "@/data/states";
 import { normalizeSlug } from "@/data/slug";
 import { isValidStateSlug } from "@/lib/slugGuard";
 import { HISTORY_BY_STATE } from "@/data/history";
-import { LAST_REVIEWED, SITE_URL, UPDATE_CADENCE_TEXT } from "@/lib/site";
+import { LAST_REVIEWED_DISPLAY, SITE_URL, UPDATE_CADENCE_TEXT } from "@/lib/site";
 
 const BASE_URL = SITE_URL;
 const FLAT_THRESHOLD_CENTS = 0.5;
-const SPARK_CHARS = ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"];
 
 export const dynamic = "force-dynamic";
 export const revalidate = 2592000;
@@ -78,26 +77,6 @@ function getTrend(first: number, last: number): "Up" | "Down" | "Flat" {
     return "Flat";
   }
   return diff > 0 ? "Up" : "Down";
-}
-
-function getSparkline(values: number[]): string {
-  if (values.length === 0) {
-    return "";
-  }
-
-  const min = Math.min(...values);
-  const max = Math.max(...values);
-  if (min === max) {
-    return "▅".repeat(values.length);
-  }
-
-  return values
-    .map((value) => {
-      const normalized = (value - min) / (max - min);
-      const index = Math.round(normalized * (SPARK_CHARS.length - 1));
-      return SPARK_CHARS[index];
-    })
-    .join("");
 }
 
 export async function generateMetadata({
@@ -178,7 +157,7 @@ export default async function StateHistoryPage({
         />
         <h1>{stateInfo.name} Electricity Price History</h1>
         <p className="muted" style={{ marginTop: 0, marginBottom: 8 }}>
-          {UPDATE_CADENCE_TEXT} {"•"} Last reviewed {LAST_REVIEWED} {"•"}{" "}
+          {UPDATE_CADENCE_TEXT} {"•"} Last reviewed {LAST_REVIEWED_DISPLAY} {"•"}{" "}
           <Link href="/about">Methodology</Link>
         </p>
         <p className="muted">History coming soon.</p>
@@ -206,9 +185,8 @@ export default async function StateHistoryPage({
   const firstValue = displayedSeries[0].avgRateCentsPerKwh;
   const lastValue = displayedSeries[displayedSeries.length - 1].avgRateCentsPerKwh;
   const trend = getTrend(firstValue, lastValue);
-  const sparkline = getSparkline(
-    displayedSeries.map((point) => point.avgRateCentsPerKwh),
-  );
+  const firstPeriod = displayedSeries[0].ym;
+  const lastPeriod = displayedSeries[displayedSeries.length - 1].ym;
 
   return (
     <main className="container">
@@ -218,7 +196,7 @@ export default async function StateHistoryPage({
       />
       <h1>{stateInfo.name} Electricity Price History</h1>
       <p className="muted" style={{ marginTop: 0, marginBottom: 8 }}>
-        {UPDATE_CADENCE_TEXT} {"•"} Last reviewed {LAST_REVIEWED} {"•"}{" "}
+        {UPDATE_CADENCE_TEXT} {"•"} Last reviewed {LAST_REVIEWED_DISPLAY} {"•"}{" "}
         <Link href="/about">Methodology</Link>
       </p>
       <p className="muted intro" style={{ marginTop: 0 }}>
@@ -227,10 +205,8 @@ export default async function StateHistoryPage({
       </p>
 
       <p>
-        <b>Trend:</b> {trend} ({firstValue.toFixed(2)}¢ → {lastValue.toFixed(2)}¢)
-      </p>
-      <p>
-        <b>Sparkline:</b> <span aria-label="Monthly trend sparkline">{sparkline}</span>
+        <b>Trend:</b> {trend} from {firstPeriod} ({firstValue.toFixed(2)}¢/kWh) to{" "}
+        {lastPeriod} ({lastValue.toFixed(2)}¢/kWh)
       </p>
       <p className="muted" style={{ marginTop: 6 }}>
         Source:{" "}

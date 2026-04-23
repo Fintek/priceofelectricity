@@ -34,7 +34,7 @@ import StatusFooter from "@/components/common/StatusFooter";
 import RecommendedNext from "@/components/knowledge/RecommendedNext";
 import ExploreMore from "@/components/navigation/ExploreMore";
 import SummarySnippet from "@/components/knowledge/SummarySnippet";
-import { SITE_URL } from "@/lib/site";
+import { SITE_URL, formatPublicReviewDate } from "@/lib/site";
 import { buildMetadata } from "@/lib/seo/metadata";
 import { t } from "@/lib/knowledge/labels";
 import { compareSnapshots, getSnapshotVersions } from "@/lib/snapshotLoader";
@@ -538,7 +538,7 @@ export default async function KnowledgeStatePage({
                       const dt =
                         (page.meta.freshness as { computedAt?: string })?.computedAt ??
                         (page.meta as { updatedAt?: string }).updatedAt;
-                      const dateStr = typeof dt === "string" ? dt.slice(0, 10) : "—";
+                      const dateStr = typeof dt === "string" ? formatPublicReviewDate(dt) : "—";
                       return [
                         `Freshness: ${t(`status.${String(derived.freshnessStatus)}`)} (as of ${dateStr})`,
                       ];

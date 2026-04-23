@@ -26,7 +26,7 @@ import ShareBar from "@/components/common/ShareBar";
 import StatusFooter from "@/components/common/StatusFooter";
 import RecommendedNext from "@/components/knowledge/RecommendedNext";
 import SummarySnippet from "@/components/knowledge/SummarySnippet";
-import { SITE_URL } from "@/lib/site";
+import { SITE_URL, formatPublicReviewDate } from "@/lib/site";
 import { buildMetadata } from "@/lib/seo/metadata";
 import { t } from "@/lib/knowledge/labels";
 import { buildWebPageJsonLd } from "@/lib/seo/jsonld";
@@ -243,7 +243,7 @@ export default async function KnowledgeNationalPage() {
                       const dt =
                         (page.meta.freshness as { computedAt?: string })?.computedAt ??
                         (page.meta as { updatedAt?: string }).updatedAt;
-                      const dateStr = typeof dt === "string" ? dt.slice(0, 10) : "—";
+                      const dateStr = typeof dt === "string" ? formatPublicReviewDate(dt) : "—";
                       return [`Freshness: ${t(`status.${freshnessStatus}`)} (as of ${dateStr})`];
                     })()
                   : []),

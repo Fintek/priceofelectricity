@@ -6,7 +6,7 @@ import { normalizeSlug } from "@/data/slug";
 import { getActiveCitiesForState } from "@/lib/longtail/rollout";
 import { isValidStateSlug } from "@/lib/slugGuard";
 import { getUtilitiesByState } from "@/data/utilities";
-import { LAST_REVIEWED, SITE_URL, UPDATE_CADENCE_TEXT } from "@/lib/site";
+import { LAST_REVIEWED_DISPLAY, SITE_URL, UPDATE_CADENCE_TEXT } from "@/lib/site";
 
 const BASE_URL = SITE_URL;
 export const dynamicParams = true;
@@ -76,7 +76,7 @@ export default async function StateUtilitiesPage({
       />
       <h1>{info.name} Utilities</h1>
       <p className="muted" style={{ marginTop: 0, marginBottom: 8 }}>
-        {UPDATE_CADENCE_TEXT} {"•"} Last reviewed {LAST_REVIEWED} {"•"}{" "}
+        {UPDATE_CADENCE_TEXT} {"•"} Last reviewed {LAST_REVIEWED_DISPLAY} {"•"}{" "}
         <Link href="/about">Methodology</Link>
       </p>
 

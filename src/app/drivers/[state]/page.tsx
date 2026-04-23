@@ -3,7 +3,7 @@ import { use } from "react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { STATES } from "@/data/states";
-import { SITE_URL, LAST_REVIEWED } from "@/lib/site";
+import { SITE_URL, LAST_REVIEWED, formatPublicReviewDate } from "@/lib/site";
 import { isValidStateSlug } from "@/lib/slugGuard";
 import {
   getDriversForState,
@@ -134,7 +134,7 @@ export default function StateDriversPage({
                   style={{ margin: "4px 0 0", fontSize: 12 }}
                 >
                   Confidence: {CONFIDENCE_LABELS[sig.confidence]} · Last
-                  reviewed: {sig.lastReviewed}
+                  reviewed: {formatPublicReviewDate(sig.lastReviewed)}
                 </p>
                 {sig.related.length > 0 && (
                   <p style={{ margin: "4px 0 0", fontSize: 13 }}>

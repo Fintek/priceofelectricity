@@ -4,7 +4,7 @@ import { STATES } from "@/data/states";
 import HomepagePersonalization from "@/app/components/HomepagePersonalization";
 import AboutThisSite from "@/components/navigation/AboutThisSite";
 import { getRateTier, getRateTierLabel } from "@/lib/insights";
-import { LAST_REVIEWED, SITE_URL, UPDATE_CADENCE_TEXT } from "@/lib/site";
+import { LAST_REVIEWED_DISPLAY, SITE_URL, UPDATE_CADENCE_TEXT } from "@/lib/site";
 import { buildMetadata } from "@/lib/seo/metadata";
 import { getHomepageCoverageEntries } from "@/lib/stateDestinations";
 
@@ -49,7 +49,7 @@ export default function HomePage() {
         Compare residential electricity rates across all 50 states, estimate your monthly bill, and see how your state ranks.
       </p>
       <p className="muted" style={{ marginTop: 0, marginBottom: 20, fontSize: 13 }}>
-        {UPDATE_CADENCE_TEXT} · Last reviewed {LAST_REVIEWED} ·{" "}
+        {UPDATE_CADENCE_TEXT} · Last reviewed {LAST_REVIEWED_DISPLAY} ·{" "}
         <Link href="/methodology">Methodology</Link> ·{" "}
         <Link href="/datasets">Data</Link>
       </p>

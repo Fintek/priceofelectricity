@@ -3,7 +3,7 @@ import { use } from "react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { STATES } from "@/data/states";
-import { SITE_URL, LAST_REVIEWED } from "@/lib/site";
+import { SITE_URL, LAST_REVIEWED, formatPublicReviewDate } from "@/lib/site";
 import { isValidStateSlug } from "@/lib/slugGuard";
 import { getTimelineForState, EVENT_TYPE_LABELS } from "@/content/regulatory";
 
@@ -122,7 +122,7 @@ export default function TimelinePage({
                   className="muted"
                   style={{ margin: "2px 0 0", fontSize: 12 }}
                 >
-                  Last reviewed: {e.lastReviewed}
+                  Last reviewed: {formatPublicReviewDate(e.lastReviewed)}
                 </p>
                 {e.relatedInternalLinks &&
                   e.relatedInternalLinks.length > 0 && (
