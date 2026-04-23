@@ -45,7 +45,7 @@ export async function generateMetadata({
   }
 
   const title = `${utility.name} Electricity Rates | ${stateInfo.name}`;
-  const description = `Average electricity rate context for ${utility.name} in ${stateInfo.name}, with a 1000 kWh energy-only bill example.`;
+  const description = `Average electricity rate context for ${utility.name} in ${stateInfo.name}, with a 900 kWh energy-only bill example.`;
   const canonicalUrl = `${BASE_URL}/${stateSlug}/utility/${utility.slug}`;
   return {
     title,
@@ -84,7 +84,7 @@ export default async function UtilityPage({
 
   const ns = buildNormalizedState(stateSlug);
   const rateCentsPerKwh = utility.avgRateCentsPerKwh ?? ns.avgRateCentsPerKwh;
-  const billAt1000Kwh = rateCentsPerKwh * 10;
+  const billAt900Kwh = rateCentsPerKwh * 9;
 
   const freshnessDotColor =
     ns.freshnessStatus === "fresh"
@@ -128,7 +128,7 @@ export default async function UtilityPage({
         Rate: <b>{rateCentsPerKwh.toFixed(2)}¢/kWh</b>
       </p>
       <p>
-        Example bill at 1000 kWh (energy-only): <b>${billAt1000Kwh.toFixed(2)}</b>
+        Example bill at 900 kWh (energy-only): <b>${billAt900Kwh.toFixed(2)}</b>
       </p>
       <p className="muted" style={{ marginTop: 6, display: "flex", alignItems: "center", gap: 8 }}>
         <span

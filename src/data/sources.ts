@@ -48,6 +48,7 @@ const SOURCES_BY_SLUG = Object.fromEntries(
 const SOURCE_NAME_TO_SLUG: Record<string, string> = {
   "PowerOutage.us": "poweroutage-us",
   "U.S. Energy Information Administration": "eia",
+  "U.S. Energy Information Administration (EIA)": "eia",
   EIA: "eia",
 };
 

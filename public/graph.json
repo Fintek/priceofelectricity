@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generatedAt": "2026-02-22T00:00:00.000Z",
+  "generatedAt": "2026-01-15T00:00:00.000Z",
   "totalNodes": 1391,
   "totalEdges": 2149,
   "nodes": [
@@ -3850,9 +3850,19 @@
       "url": "http://localhost:3000/questions/why-electricity-cheaper-in-idaho"
     },
     {
+      "id": "question:why-electricity-cheaper-in-iowa",
+      "type": "question",
+      "url": "http://localhost:3000/questions/why-electricity-cheaper-in-iowa"
+    },
+    {
       "id": "question:why-electricity-cheaper-in-louisiana",
       "type": "question",
       "url": "http://localhost:3000/questions/why-electricity-cheaper-in-louisiana"
+    },
+    {
+      "id": "question:why-electricity-cheaper-in-missouri",
+      "type": "question",
+      "url": "http://localhost:3000/questions/why-electricity-cheaper-in-missouri"
     },
     {
       "id": "question:why-electricity-cheaper-in-montana",
@@ -3875,19 +3885,9 @@
       "url": "http://localhost:3000/questions/why-electricity-cheaper-in-oklahoma"
     },
     {
-      "id": "question:why-electricity-cheaper-in-south-dakota",
+      "id": "question:why-electricity-cheaper-in-wyoming",
       "type": "question",
-      "url": "http://localhost:3000/questions/why-electricity-cheaper-in-south-dakota"
-    },
-    {
-      "id": "question:why-electricity-cheaper-in-utah",
-      "type": "question",
-      "url": "http://localhost:3000/questions/why-electricity-cheaper-in-utah"
-    },
-    {
-      "id": "question:why-electricity-cheaper-in-washington",
-      "type": "question",
-      "url": "http://localhost:3000/questions/why-electricity-cheaper-in-washington"
+      "url": "http://localhost:3000/questions/why-electricity-cheaper-in-wyoming"
     },
     {
       "id": "question:why-electricity-expensive-in-alaska",
@@ -12797,8 +12797,18 @@
       "rel": "related"
     },
     {
+      "from": "question:why-electricity-cheaper-in-iowa",
+      "to": "state:iowa",
+      "rel": "related"
+    },
+    {
       "from": "question:why-electricity-cheaper-in-louisiana",
       "to": "state:louisiana",
+      "rel": "related"
+    },
+    {
+      "from": "question:why-electricity-cheaper-in-missouri",
+      "to": "state:missouri",
       "rel": "related"
     },
     {
@@ -12822,18 +12832,8 @@
       "rel": "related"
     },
     {
-      "from": "question:why-electricity-cheaper-in-south-dakota",
-      "to": "state:south-dakota",
-      "rel": "related"
-    },
-    {
-      "from": "question:why-electricity-cheaper-in-utah",
-      "to": "state:utah",
-      "rel": "related"
-    },
-    {
-      "from": "question:why-electricity-cheaper-in-washington",
-      "to": "state:washington",
+      "from": "question:why-electricity-cheaper-in-wyoming",
+      "to": "state:wyoming",
       "rel": "related"
     },
     {
@@ -22550,17 +22550,17 @@
     },
     {
       "from": "knowledge:vertical:ai-energy",
-      "to": "knowledge:state:connecticut",
-      "relation": "related-to"
-    },
-    {
-      "from": "knowledge:vertical:ai-energy",
       "to": "knowledge:state:hawaii",
       "relation": "related-to"
     },
     {
       "from": "knowledge:vertical:ai-energy",
       "to": "knowledge:state:maine",
+      "relation": "related-to"
+    },
+    {
+      "from": "knowledge:vertical:ai-energy",
+      "to": "knowledge:state:massachusetts",
       "relation": "related-to"
     },
     {

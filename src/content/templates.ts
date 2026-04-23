@@ -41,10 +41,10 @@ export const CONTENT_TEMPLATES: ContentTemplate[] = [
     generate(stateSlug: string) {
       const s = buildState(stateSlug);
       const name = s.name;
-      const bill1000 = s.exampleBills.find((b) => b.kwh === 1000);
-      const monthly = bill1000
-        ? `$${bill1000.estimated.toFixed(2)}`
-        : `$${((s.avgRateCentsPerKwh * 1000) / 100).toFixed(2)}`;
+      const bill900 = s.exampleBills.find((b) => b.kwh === 900);
+      const monthly = bill900
+        ? `$${bill900.estimated.toFixed(2)}`
+        : `$${((s.avgRateCentsPerKwh * 900) / 100).toFixed(2)}`;
 
       return {
         title: `Average Electric Bill in ${name}`,
@@ -52,7 +52,7 @@ export const CONTENT_TEMPLATES: ContentTemplate[] = [
         contentBlocks: [
           {
             heading: `What is the average electric bill in ${name}?`,
-            body: `The average residential electricity rate in ${name} is ${s.avgRateCentsPerKwh.toFixed(2)}¢/kWh as of ${s.updated}. At a typical usage of 1,000 kWh per month, the estimated energy-only charge is about ${monthly}.`,
+            body: `The average residential electricity rate in ${name} is ${s.avgRateCentsPerKwh.toFixed(2)}¢/kWh as of ${s.updated}. At a typical usage of 900 kWh per month, the estimated energy-only charge is about ${monthly}.`,
           },
           {
             heading: "Example bills by usage",
@@ -143,10 +143,10 @@ export const CONTENT_TEMPLATES: ContentTemplate[] = [
     generate(stateSlug: string) {
       const s = buildState(stateSlug);
       const name = s.name;
-      const bill1000 = s.exampleBills.find((b) => b.kwh === 1000);
-      const monthly = bill1000
-        ? `$${bill1000.estimated.toFixed(2)}`
-        : `$${((s.avgRateCentsPerKwh * 1000) / 100).toFixed(2)}`;
+      const bill900 = s.exampleBills.find((b) => b.kwh === 900);
+      const monthly = bill900
+        ? `$${bill900.estimated.toFixed(2)}`
+        : `$${((s.avgRateCentsPerKwh * 900) / 100).toFixed(2)}`;
 
       return {
         title: `Moving to ${name}: Electricity Cost Guide`,
@@ -154,7 +154,7 @@ export const CONTENT_TEMPLATES: ContentTemplate[] = [
         contentBlocks: [
           {
             heading: `Electricity rates in ${name}`,
-            body: `The current average residential electricity rate in ${name} is ${s.avgRateCentsPerKwh.toFixed(2)}¢/kWh. For a household using 1,000 kWh per month, this translates to roughly ${monthly} in energy-only charges.`,
+            body: `The current average residential electricity rate in ${name} is ${s.avgRateCentsPerKwh.toFixed(2)}¢/kWh. For a household using 900 kWh per month, this translates to roughly ${monthly} in energy-only charges.`,
           },
           {
             heading: "How it compares nationally",

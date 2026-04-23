@@ -317,6 +317,7 @@ const KNOWLEDGE_LABELS: Record<string, string> = {
   "field.avgRateCentsPerKwh": "Avg rate (¢/kWh)",
   "field.valueScore": "Value score",
   "field.affordabilityIndex": "Affordability",
+  "field.benchmarkMonthlyBill900kwh": "Benchmark bill (900 kWh)",
   "field.exampleBill1000kwh": "Example bill (1000 kWh)",
   "field.updated": "Updated",
   "field.medianRateCentsPerKwh": "Median rate (¢/kWh)",

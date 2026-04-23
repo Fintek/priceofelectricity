@@ -94,7 +94,7 @@ export default async function ComparePage({
       </p>
       <p className="intro muted" style={{ marginTop: 0 }}>
         Compare average residential electricity prices (¢/kWh) and see example
-        energy-only monthly costs at 1000 kWh.
+        energy-only monthly costs at 900 kWh.
       </p>
 
       <p style={{ marginBottom: 12 }}>
@@ -126,7 +126,7 @@ export default async function ComparePage({
             <tr>
               <th scope="col">State</th>
               <th scope="col">Avg rate (¢/kWh)</th>
-              <th scope="col">Example bill @ 1000 kWh (energy-only)</th>
+              <th scope="col">Example bill @ 900 kWh (energy-only)</th>
               <th scope="col">Freshness</th>
             </tr>
           </thead>
@@ -137,7 +137,7 @@ export default async function ComparePage({
                   <Link href={`/${state.slug}`}>{state.name}</Link>
                 </td>
                 <td>{state.avgRateCentsPerKwh.toFixed(2)}</td>
-                <td>${(state.avgRateCentsPerKwh * 10).toFixed(2)}</td>
+                <td>${(state.avgRateCentsPerKwh * 9).toFixed(2)}</td>
                 <td>{computeFreshness(state.updated).label}</td>
               </tr>
             ))}

@@ -33,6 +33,8 @@ export function GET(request: Request) {
     slug: state.slug,
     name: state.name,
     avgRateCentsPerKwh: state.avgRateCentsPerKwh,
+    benchmarkKwh: 900,
+    benchmarkMonthlyBill: Number(((state.avgRateCentsPerKwh * 900) / 100).toFixed(2)),
     exampleBill1000: Number(((state.avgRateCentsPerKwh * 1000) / 100).toFixed(2)),
   }));
 

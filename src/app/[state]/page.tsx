@@ -282,8 +282,8 @@ export default function StatePage({
           <div className="stat-card-label">per kWh (avg residential)</div>
         </div>
         <div className="stat-card stat-card--primary">
-          <div className="stat-card-value">${billByKwh[1000].toFixed(0)}</div>
-          <div className="stat-card-label">est. monthly bill at 1,000 kWh</div>
+          <div className="stat-card-value">${billByKwh[900].toFixed(0)}</div>
+          <div className="stat-card-label">est. monthly bill at 900 kWh</div>
         </div>
         <div className="stat-card stat-card--secondary">
           <div className="stat-card-value">{ns.rateTierLabel}</div>

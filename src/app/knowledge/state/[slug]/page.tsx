@@ -204,6 +204,11 @@ export default async function KnowledgeStatePage({
 
   const exampleBill1000 = (derived.exampleBills as { kwh1000?: number } | undefined)?.kwh1000;
   const avgRate = raw.avgRateCentsPerKwh as number | undefined;
+  const MONTHLY_USAGE_KWH = 900;
+  const benchmarkMonthlyBill =
+    typeof avgRate === "number"
+      ? Number(((avgRate * MONTHLY_USAGE_KWH) / 100).toFixed(2))
+      : null;
   const valueScore = derived.valueScore as number | undefined;
   const affordabilityIndex = derived.affordabilityIndex as number | undefined;
 
@@ -477,6 +482,13 @@ export default async function KnowledgeStatePage({
                 sparklineValues={Array.isArray(avgRateTrendValues) ? avgRateTrendValues : undefined}
               />
               <MetricCard
+                label={t("field.benchmarkMonthlyBill900kwh")}
+                value={benchmarkMonthlyBill ?? "—"}
+                unit="$"
+                glossaryMap={glossaryMap}
+                fieldId="benchmarkMonthlyBill900kwh"
+              />
+              <MetricCard
                 label={t("field.exampleBill1000kwh")}
                 value={typeof exampleBill1000 === "number" ? exampleBill1000 : "—"}
                 unit="$"
@@ -524,6 +536,9 @@ export default async function KnowledgeStatePage({
               lines={[
                 ...(typeof avgRate === "number"
                   ? [`${stateName} electricity: ${avgRate} ¢/kWh`]
+                  : []),
+                ...(typeof benchmarkMonthlyBill === "number"
+                  ? [`Benchmark bill (900 kWh): $${benchmarkMonthlyBill}`]
                   : []),
                 ...(typeof exampleBill1000 === "number"
                   ? [`Example bill (1000 kWh): $${exampleBill1000}`]

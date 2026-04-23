@@ -43,9 +43,9 @@ export async function generateMetadata({
   }
 
   const title = `Electricity Price per kWh in ${data.name} | PriceOfElectricity.com`;
-  const cost1000 = calculateUsageCost(data.avgRateCentsPerKwh, 1000);
+  const cost900 = calculateUsageCost(data.avgRateCentsPerKwh, 900);
   const description = data.avgRateCentsPerKwh != null
-    ? `See the current electricity price per kWh in ${data.name}: ${data.avgRateCentsPerKwh.toFixed(2)}¢. Estimated 1000 kWh cost: ${formatUsd(cost1000)}.`
+    ? `See the current electricity price per kWh in ${data.name}: ${data.avgRateCentsPerKwh.toFixed(2)}¢. Estimated 900 kWh cost: ${formatUsd(cost900)}.`
     : `Current electricity price per kWh in ${data.name}, with state-to-national comparison and usage cost estimates.`;
 
   return buildMetadata({
@@ -66,7 +66,7 @@ export default async function ElectricityPricePerKwhStatePage({
   if (!data) notFound();
 
   const canonicalPath = `/electricity-price-per-kwh/${state}`;
-  const cost1000 = calculateUsageCost(data.avgRateCentsPerKwh, 1000);
+  const cost900 = calculateUsageCost(data.avgRateCentsPerKwh, 900);
   const relatedLinkSections = await buildLongtailLinkSections({
     pageType: "state-price",
     stateData: data,
@@ -86,7 +86,7 @@ export default async function ElectricityPricePerKwhStatePage({
     title: `Electricity Price per kWh in ${data.name}`,
     description:
       data.avgRateCentsPerKwh != null
-        ? `${data.name} electricity rate is ${data.avgRateCentsPerKwh.toFixed(2)}¢/kWh with estimated 1000 kWh cost of ${formatUsd(cost1000)}.`
+        ? `${data.name} electricity rate is ${data.avgRateCentsPerKwh.toFixed(2)}¢/kWh with estimated 900 kWh cost of ${formatUsd(cost900)}.`
         : `${data.name} electricity price per kWh page.`,
     url: canonicalPath,
     isPartOf: "/",
@@ -106,7 +106,7 @@ export default async function ElectricityPricePerKwhStatePage({
         intro={`This page shows the latest statewide residential electricity price per kWh for ${data.name}, along with usage-based cost estimates and national comparison context.`}
         stats={[
           { label: "Current average rate", value: formatRate(data.avgRateCentsPerKwh) },
-          { label: "Estimated 1000 kWh cost", value: formatUsd(cost1000) },
+          { label: "Estimated 900 kWh cost", value: formatUsd(cost900) },
           {
             label: "Data period",
             value: data.updatedLabel ?? "N/A",

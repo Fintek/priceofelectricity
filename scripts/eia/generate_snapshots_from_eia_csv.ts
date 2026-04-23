@@ -62,9 +62,44 @@ const OUTPUT_SNAPSHOT_V2_PATH = path.join(
   "snapshots",
   "v2.json",
 );
+const OUTPUT_SNAPSHOT_LATEST_PATH = path.join(
+  process.cwd(),
+  "src",
+  "data",
+  "snapshots",
+  "latest.json",
+);
+const OUTPUT_RAW_STATES_PATH = path.join(
+  process.cwd(),
+  "src",
+  "data",
+  "raw",
+  "states.raw.ts",
+);
 
 const HISTORY_SOURCE_NAME = "U.S. Energy Information Administration (EIA)";
 const HISTORY_SOURCE_URL = "https://api.eia.gov/v2/electricity/retail-sales/data/";
+// Public-facing EIA state page (used on state pages as the human-readable source URL).
+const RAW_STATES_SOURCE_URL = "https://www.eia.gov/electricity/data/state/";
+const RAW_STATES_METHODOLOGY =
+  "Average residential electricity price in cents per kWh from the U.S. Energy Information Administration (EIA) Form EIA-861M retail sales dataset. Values are used as a reference benchmark for comparison and estimation.";
+const RAW_STATES_DISCLAIMER =
+  "Estimates are energy-only and exclude delivery fees, taxes, fixed charges, and other utility fees.";
+
+// Display names used when regenerating `src/data/raw/states.raw.ts` so the
+// generator does not need to import the file it is rewriting.
+const POSTAL_TO_NAME: Record<string, string> = {
+  AL: "Alabama", AK: "Alaska", AZ: "Arizona", AR: "Arkansas", CA: "California",
+  CO: "Colorado", CT: "Connecticut", DE: "Delaware", FL: "Florida", GA: "Georgia",
+  HI: "Hawaii", ID: "Idaho", IL: "Illinois", IN: "Indiana", IA: "Iowa",
+  KS: "Kansas", KY: "Kentucky", LA: "Louisiana", ME: "Maine", MD: "Maryland",
+  MA: "Massachusetts", MI: "Michigan", MN: "Minnesota", MS: "Mississippi", MO: "Missouri",
+  MT: "Montana", NE: "Nebraska", NV: "Nevada", NH: "New Hampshire", NJ: "New Jersey",
+  NM: "New Mexico", NY: "New York", NC: "North Carolina", ND: "North Dakota", OH: "Ohio",
+  OK: "Oklahoma", OR: "Oregon", PA: "Pennsylvania", RI: "Rhode Island", SC: "South Carolina",
+  SD: "South Dakota", TN: "Tennessee", TX: "Texas", UT: "Utah", VT: "Vermont",
+  VA: "Virginia", WA: "Washington", WV: "West Virginia", WI: "Wisconsin", WY: "Wyoming",
+};
 
 // Keep output compatible with current site slugs and 50-state assumptions.
 const POSTAL_TO_SLUG: Record<string, string> = {
@@ -292,6 +327,57 @@ function buildSnapshot(
   };
 }
 
+function buildRawStatesTs(
+  latestPeriod: string,
+  byStatePostal: Map<string, Map<string, number>>,
+): string {
+  const header = `import type { StateRecord } from "@/data/types";
+
+// GENERATED FILE — do not edit by hand.
+// Written by scripts/eia/generate_snapshots_from_eia_csv.ts from the canonical
+// EIA residential retail-sales CSV. Rates and "updated" labels reflect the
+// latest complete EIA monthly period in the dataset.
+const COMMON_STATE_METADATA = {
+  sourceName: "U.S. Energy Information Administration (EIA)",
+  sourceUrl: ${JSON.stringify(RAW_STATES_SOURCE_URL)},
+  methodology:
+    ${JSON.stringify(RAW_STATES_METHODOLOGY)},
+  disclaimer:
+    ${JSON.stringify(RAW_STATES_DISCLAIMER)},
+} as const;
+
+export const RAW_STATES: Record<string, StateRecord> = {
+`;
+
+  const updatedLabel = toMonthYear(latestPeriod);
+  const postals = Object.keys(POSTAL_TO_SLUG).sort((a, b) => {
+    const nameA = POSTAL_TO_NAME[a] ?? a;
+    const nameB = POSTAL_TO_NAME[b] ?? b;
+    return nameA.localeCompare(nameB);
+  });
+
+  const lines: string[] = [];
+  for (const postal of postals) {
+    const slug = POSTAL_TO_SLUG[postal];
+    const name = POSTAL_TO_NAME[postal];
+    if (!name) {
+      throw new Error(`Missing display name for postal ${postal}`);
+    }
+    const rate = byStatePostal.get(postal)?.get(latestPeriod);
+    if (rate === undefined) {
+      throw new Error(
+        `EIA CSV missing rate for ${postal} at latest period ${latestPeriod}; cannot regenerate RAW_STATES.`,
+      );
+    }
+    const key = /^[a-z]+$/.test(slug) ? slug : JSON.stringify(slug);
+    lines.push(
+      `  ${key}: { slug: "${slug}", name: "${name}", postal: "${postal}", avgRateCentsPerKwh: ${rate}, updated: "${updatedLabel}", ...COMMON_STATE_METADATA },`,
+    );
+  }
+
+  return `${header}${lines.join("\n")}\n};\n`;
+}
+
 function buildHistoryGeneratedTs(history: StateHistory[]): string {
   const historyJson = JSON.stringify(history, null, 2);
   return `export type MonthlyRate = { ym: string; avgRateCentsPerKwh: number };
@@ -331,6 +417,14 @@ async function main(): Promise<void> {
   const v2Period = completePeriods[completePeriods.length - 1];
   const v1Snapshot = buildSnapshot("v1", v1Period, byStatePostal);
   const v2Snapshot = buildSnapshot("v2", v2Period, byStatePostal);
+  // `latest.json` mirrors v2 but carries a period-based version token so
+  // `getCurrentSnapshot()` in `src/lib/snapshotLoader.ts` reflects the most
+  // recent EIA period on state-page-adjacent surfaces. The releasedAt is the
+  // same date as v2; stable sort in snapshotLoader keeps `latest` last on tie.
+  const latestVersion = `v${v2Period.replace("-", "")}15`;
+  const latestSnapshot: Snapshot = {
+    ...buildSnapshot(latestVersion, v2Period, byStatePostal),
+  };
 
   await writeFile(
     OUTPUT_HISTORY_GENERATED_PATH,
@@ -352,16 +446,28 @@ async function main(): Promise<void> {
     `${JSON.stringify(v2Snapshot, null, 2)}\n`,
     "utf8",
   );
+  await writeFile(
+    OUTPUT_SNAPSHOT_LATEST_PATH,
+    `${JSON.stringify(latestSnapshot, null, 2)}\n`,
+    "utf8",
+  );
+  await writeFile(
+    OUTPUT_RAW_STATES_PATH,
+    buildRawStatesTs(v2Period, byStatePostal),
+    "utf8",
+  );
 
   const months = history[0]?.series.length ?? 0;
   console.log(`states=${history.length}`);
   console.log(`months=${months}`);
   console.log(`latest_period=${v2Period}`);
-  console.log(`snapshot_periods=v1:${v1Period}, v2:${v2Period}`);
+  console.log(`snapshot_periods=v1:${v1Period}, v2:${v2Period}, latest:${latestVersion}`);
   console.log(`wrote=${OUTPUT_HISTORY_GENERATED_PATH}`);
   console.log(`wrote=${OUTPUT_HISTORY_GENERATED_JSON_PATH}`);
   console.log(`wrote=${OUTPUT_SNAPSHOT_V1_PATH}`);
   console.log(`wrote=${OUTPUT_SNAPSHOT_V2_PATH}`);
+  console.log(`wrote=${OUTPUT_SNAPSHOT_LATEST_PATH}`);
+  console.log(`wrote=${OUTPUT_RAW_STATES_PATH}`);
 }
 
 main().catch((error) => {

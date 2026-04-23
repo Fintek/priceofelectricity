@@ -34,9 +34,12 @@ export type NormalizedState = {
   };
 };
 
-const EXAMPLE_KWH = [500, 1000, 1500] as const;
-const DEFAULT_SOURCE_NAME = "PowerOutage.us";
-const DEFAULT_SOURCE_URL = "https://poweroutage.us/electricity-rates";
+const EXAMPLE_KWH = [500, 900, 1000, 1500] as const;
+// Source of record is the U.S. EIA Form EIA-861M retail-sales dataset. The
+// monthly refresh pipeline (scripts/eia/*) is the canonical ingestion path;
+// `src/data/raw/states.raw.ts` is regenerated from that CSV on each refresh.
+const DEFAULT_SOURCE_NAME = "U.S. Energy Information Administration (EIA)";
+const DEFAULT_SOURCE_URL = "https://www.eia.gov/electricity/data/state/";
 const DEFAULT_METHODOLOGY =
   "Average residential electricity price in cents per kWh from the published state-level dataset. Values are used as a reference benchmark for comparison and estimation.";
 const DEFAULT_DISCLAIMER =
@@ -96,7 +99,7 @@ export function buildNormalizedState(slug: string): NormalizedState {
   const vs = getValueScoreMap().get(slug);
   const freshness = computeFreshness(updated);
   const rateTierLabel = getRateTierLabel(getRateTier(rate));
-  const shortSummary = `${transformed.name}'s average residential electricity price is ${rate}¢/kWh as of ${updated}. This places ${transformed.name} in the ${rateTierLabel.toLowerCase()} rate tier based on the same threshold model used across all states. At 1000 kWh of monthly usage, the estimated energy-only charge is about $${((1000 * rate) / 100).toFixed(2)}.`;
+  const shortSummary = `${transformed.name}'s average residential electricity price is ${rate}¢/kWh as of ${updated}. This places ${transformed.name} in the ${rateTierLabel.toLowerCase()} rate tier based on the same threshold model used across all states. At 900 kWh of monthly usage, the estimated energy-only charge is about $${((900 * rate) / 100).toFixed(2)}.`;
 
   return {
     slug,

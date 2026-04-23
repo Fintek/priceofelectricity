@@ -83,7 +83,7 @@ export default function RegionPage({
         slug,
         name: state.name,
         rate: state.avgRateCentsPerKwh,
-        exampleBill1000: Number(((state.avgRateCentsPerKwh * 1000) / 100).toFixed(2)),
+        exampleBill900: Number(((state.avgRateCentsPerKwh * 900) / 100).toFixed(2)),
       };
     })
     .filter((item): item is NonNullable<typeof item> => Boolean(item))
@@ -107,7 +107,7 @@ export default function RegionPage({
       <h1>{region.name} Electricity Prices</h1>
       <p className="muted intro" style={{ marginTop: 0 }}>
         Compare state-level average residential rates within the {region.name} and
-        review energy-only example monthly costs at 1000 kWh.
+        review energy-only example monthly costs at 900 kWh.
       </p>
 
       <div className="data-table-wrap">
@@ -116,7 +116,7 @@ export default function RegionPage({
             <tr>
               <th scope="col">State</th>
               <th scope="col">Avg rate (¢/kWh)</th>
-              <th scope="col">1000 kWh example bill</th>
+              <th scope="col">900 kWh example bill</th>
             </tr>
           </thead>
           <tbody>
@@ -126,7 +126,7 @@ export default function RegionPage({
                   <Link href={`/${row.slug}`}>{row.name}</Link>
                 </td>
                 <td>{row.rate.toFixed(2)}</td>
-                <td>${row.exampleBill1000.toFixed(2)}</td>
+                <td>${row.exampleBill900.toFixed(2)}</td>
               </tr>
             ))}
           </tbody>

@@ -32,18 +32,17 @@ jobs:
         run: |
           set -o pipefail
           npm run data:update:eia:res 2>&1 | tee /tmp/eia-output.log
-          if grep -q "No new or changed data" /tmp/eia-output.log; then
-            echo "skip=true" >> "$GITHUB_OUTPUT"
-          fi
         env:
           EIA_API_KEY: ${{ secrets.EIA_API_KEY }}
 
-      - name: Regenerate snapshot and history artifacts
-        if: steps.fetch.outputs.skip != 'true'
+      # Always regenerate snapshot/history artifacts from the canonical CSV.
+      # This keeps every downstream layer (history, v1/v2, latest.json, and
+      # `src/data/raw/states.raw.ts`) consistent with the on-disk CSV even if
+      # the updater no-oped because EIA had nothing newer than last refresh.
+      - name: Regenerate snapshot, history, and RAW_STATES artifacts
         run: npm run data:build:snapshots:eia
 
       - name: Check for changes
-        if: steps.fetch.outputs.skip != 'true'
         id: changes
         run: |
           git diff --quiet || echo "changed=true" >> "$GITHUB_OUTPUT"
@@ -58,6 +57,7 @@ jobs:
             data/raw/eia/retail_res_monthly_latest_refresh.json \
             src/data/history.generated.ts \
             src/data/history.generated.json \
+            src/data/raw/states.raw.ts \
             src/data/snapshots/
           git diff --cached --quiet && echo "Nothing staged, skipping commit." && exit 0
           git commit -m "chore: update EIA residential electricity prices (monthly refresh)"

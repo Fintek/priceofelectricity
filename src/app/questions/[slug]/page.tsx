@@ -115,7 +115,7 @@ export default async function QuestionPage({
         name: `What is an example monthly energy-only bill in ${state.name}?`,
         acceptedAnswer: {
           "@type": "Answer",
-          text: `At 1000 kWh, the energy-only benchmark is about $${context.billAt1000Kwh.toFixed(2)} in ${state.name}.`,
+          text: `At 900 kWh, the energy-only benchmark is about $${context.billAt900Kwh.toFixed(2)} in ${state.name}.`,
         },
       },
       {
