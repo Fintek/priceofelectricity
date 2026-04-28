@@ -1,256 +1,256 @@
 {
-  "version": "v20260115",
-  "releasedAt": "2026-01-15",
+  "version": "v20260215",
+  "releasedAt": "2026-02-15",
   "states": [
     {
       "slug": "alabama",
-      "rate": 16.06,
-      "updated": "January 2026"
+      "rate": 16.18,
+      "updated": "February 2026"
     },
     {
       "slug": "alaska",
-      "rate": 25.52,
-      "updated": "January 2026"
+      "rate": 25.79,
+      "updated": "February 2026"
     },
     {
       "slug": "arizona",
-      "rate": 15.61,
-      "updated": "January 2026"
+      "rate": 16.03,
+      "updated": "February 2026"
     },
     {
       "slug": "arkansas",
-      "rate": 12.35,
-      "updated": "January 2026"
+      "rate": 12.73,
+      "updated": "February 2026"
     },
     {
       "slug": "california",
-      "rate": 30.29,
-      "updated": "January 2026"
+      "rate": 33.22,
+      "updated": "February 2026"
     },
     {
       "slug": "colorado",
-      "rate": 16.44,
-      "updated": "January 2026"
+      "rate": 16.79,
+      "updated": "February 2026"
     },
     {
       "slug": "connecticut",
-      "rate": 28.3,
-      "updated": "January 2026"
+      "rate": 30.77,
+      "updated": "February 2026"
     },
     {
       "slug": "delaware",
-      "rate": 16.51,
-      "updated": "January 2026"
+      "rate": 16.27,
+      "updated": "February 2026"
     },
     {
       "slug": "florida",
-      "rate": 15.92,
-      "updated": "January 2026"
+      "rate": 15.8,
+      "updated": "February 2026"
     },
     {
       "slug": "georgia",
-      "rate": 14.46,
-      "updated": "January 2026"
+      "rate": 14.13,
+      "updated": "February 2026"
     },
     {
       "slug": "hawaii",
-      "rate": 39.79,
-      "updated": "January 2026"
+      "rate": 43,
+      "updated": "February 2026"
     },
     {
       "slug": "idaho",
-      "rate": 12.07,
-      "updated": "January 2026"
+      "rate": 12.63,
+      "updated": "February 2026"
     },
     {
       "slug": "illinois",
-      "rate": 16.36,
-      "updated": "January 2026"
+      "rate": 17.83,
+      "updated": "February 2026"
     },
     {
       "slug": "indiana",
-      "rate": 16.19,
-      "updated": "January 2026"
+      "rate": 16.06,
+      "updated": "February 2026"
     },
     {
       "slug": "iowa",
-      "rate": 12.83,
-      "updated": "January 2026"
+      "rate": 12.74,
+      "updated": "February 2026"
     },
     {
       "slug": "kansas",
-      "rate": 14.29,
-      "updated": "January 2026"
+      "rate": 15.11,
+      "updated": "February 2026"
     },
     {
       "slug": "kentucky",
-      "rate": 14.27,
-      "updated": "January 2026"
+      "rate": 13.42,
+      "updated": "February 2026"
     },
     {
       "slug": "louisiana",
-      "rate": 12.46,
-      "updated": "January 2026"
+      "rate": 12.87,
+      "updated": "February 2026"
     },
     {
       "slug": "maine",
-      "rate": 30.73,
-      "updated": "January 2026"
+      "rate": 32.17,
+      "updated": "February 2026"
     },
     {
       "slug": "maryland",
-      "rate": 20.61,
-      "updated": "January 2026"
+      "rate": 20.08,
+      "updated": "February 2026"
     },
     {
       "slug": "massachusetts",
-      "rate": 31.16,
-      "updated": "January 2026"
+      "rate": 30.46,
+      "updated": "February 2026"
     },
     {
       "slug": "michigan",
-      "rate": 19.52,
-      "updated": "January 2026"
+      "rate": 20,
+      "updated": "February 2026"
     },
     {
       "slug": "minnesota",
-      "rate": 14.98,
-      "updated": "January 2026"
+      "rate": 15.39,
+      "updated": "February 2026"
     },
     {
       "slug": "mississippi",
-      "rate": 14.24,
-      "updated": "January 2026"
+      "rate": 14.72,
+      "updated": "February 2026"
     },
     {
       "slug": "missouri",
-      "rate": 11.8,
-      "updated": "January 2026"
+      "rate": 12.17,
+      "updated": "February 2026"
     },
     {
       "slug": "montana",
-      "rate": 12.86,
-      "updated": "January 2026"
+      "rate": 13.33,
+      "updated": "February 2026"
     },
     {
       "slug": "nebraska",
-      "rate": 11.76,
-      "updated": "January 2026"
+      "rate": 11.79,
+      "updated": "February 2026"
     },
     {
       "slug": "nevada",
-      "rate": 13.98,
-      "updated": "January 2026"
+      "rate": 14.38,
+      "updated": "February 2026"
     },
     {
       "slug": "new-hampshire",
-      "rate": 26.32,
-      "updated": "January 2026"
+      "rate": 26.52,
+      "updated": "February 2026"
     },
     {
       "slug": "new-jersey",
-      "rate": 23.13,
-      "updated": "January 2026"
+      "rate": 23.12,
+      "updated": "February 2026"
     },
     {
       "slug": "new-mexico",
-      "rate": 14.7,
-      "updated": "January 2026"
+      "rate": 15.07,
+      "updated": "February 2026"
     },
     {
       "slug": "new-york",
-      "rate": 28.37,
-      "updated": "January 2026"
+      "rate": 29.99,
+      "updated": "February 2026"
     },
     {
       "slug": "north-carolina",
-      "rate": 13.68,
-      "updated": "January 2026"
+      "rate": 14.64,
+      "updated": "February 2026"
     },
     {
       "slug": "north-dakota",
-      "rate": 10.92,
-      "updated": "January 2026"
+      "rate": 11.64,
+      "updated": "February 2026"
     },
     {
       "slug": "ohio",
-      "rate": 17.59,
-      "updated": "January 2026"
+      "rate": 17.52,
+      "updated": "February 2026"
     },
     {
       "slug": "oklahoma",
-      "rate": 12.62,
-      "updated": "January 2026"
+      "rate": 12.89,
+      "updated": "February 2026"
     },
     {
       "slug": "oregon",
-      "rate": 14.66,
-      "updated": "January 2026"
+      "rate": 14.64,
+      "updated": "February 2026"
     },
     {
       "slug": "pennsylvania",
-      "rate": 20.19,
-      "updated": "January 2026"
+      "rate": 20.3,
+      "updated": "February 2026"
     },
     {
       "slug": "rhode-island",
-      "rate": 30.14,
-      "updated": "January 2026"
+      "rate": 29.45,
+      "updated": "February 2026"
     },
     {
       "slug": "south-carolina",
-      "rate": 15.41,
-      "updated": "January 2026"
+      "rate": 16.15,
+      "updated": "February 2026"
     },
     {
       "slug": "south-dakota",
-      "rate": 13.6,
-      "updated": "January 2026"
+      "rate": 13.24,
+      "updated": "February 2026"
     },
     {
       "slug": "tennessee",
-      "rate": 13.1,
-      "updated": "January 2026"
+      "rate": 12.82,
+      "updated": "February 2026"
     },
     {
       "slug": "texas",
-      "rate": 15.69,
-      "updated": "January 2026"
+      "rate": 15.41,
+      "updated": "February 2026"
     },
     {
       "slug": "utah",
-      "rate": 12.88,
-      "updated": "January 2026"
+      "rate": 13.33,
+      "updated": "February 2026"
     },
     {
       "slug": "vermont",
-      "rate": 23.29,
-      "updated": "January 2026"
+      "rate": 23.27,
+      "updated": "February 2026"
     },
     {
       "slug": "virginia",
-      "rate": 15.87,
-      "updated": "January 2026"
+      "rate": 15.96,
+      "updated": "February 2026"
     },
     {
       "slug": "washington",
-      "rate": 13.81,
-      "updated": "January 2026"
+      "rate": 14.11,
+      "updated": "February 2026"
     },
     {
       "slug": "west-virginia",
-      "rate": 14.77,
-      "updated": "January 2026"
+      "rate": 14.41,
+      "updated": "February 2026"
     },
     {
       "slug": "wisconsin",
-      "rate": 18.2,
-      "updated": "January 2026"
+      "rate": 18.74,
+      "updated": "February 2026"
     },
     {
       "slug": "wyoming",
-      "rate": 12.85,
-      "updated": "January 2026"
+      "rate": 13.04,
+      "updated": "February 2026"
     }
   ]
 }
