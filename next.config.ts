@@ -12,6 +12,8 @@ const nextConfig: NextConfig = {
       "scripts/**",
       "docs/**",
       "node_modules/typescript/**",
+      "node_modules/@img/sharp-libvips-linuxmusl-x64/**",
+      "node_modules/@img/sharp-linuxmusl-x64/**",
       "src/data/history.generated.ts",
       "src/data/snapshots/v1.json",
       "src/data/snapshots/v20260222.json",
