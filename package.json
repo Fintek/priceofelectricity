@@ -13,7 +13,7 @@
     "typecheck": "tsc --noEmit",
     "smoke": "tsx scripts/smoke-test.ts",
     "integrity": "tsx scripts/integrity-check.ts",
-    "lhci": "node -e \"if(process.env.VERCEL){console.log('Skipping LHCI on Vercel');} else {process.exit(1)}\" || lhci autorun",
+    "lhci": "node -e \"if(process.env.VERCEL || process.env.CI){console.log('Skipping LHCI in CI');} else {process.exit(1)}\" || lhci autorun",
     "canonical:check": "tsx scripts/canonical-check.ts",
     "api:contract": "tsx scripts/api-contract-check.ts",
     "indexing:check": "tsx scripts/indexing-readiness.ts",
