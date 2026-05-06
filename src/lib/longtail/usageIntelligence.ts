@@ -260,3 +260,20 @@ export function buildUsageNarrativeForState(state: UsageStateSummary): string {
     calculateUsageCost(state.avgRateCentsPerKwh, state.estimatedMonthlyUsageKwh),
   )} per month.`;
 }
+
+const USAGE_META_VS_NATIONAL_NEUTRAL_EPSILON_PERCENT = 0.05;
+
+export function buildUsageMetaDescriptionForState(state: UsageStateSummary): string {
+  const kwhDisplay = state.estimatedMonthlyUsageKwh.toLocaleString();
+  const nationalDisplay = NATIONAL_AVERAGE_HOUSEHOLD_USAGE_KWH.toLocaleString();
+  const pctAbs = Math.abs(state.usageVsNationalPercent);
+  const comparisonClause =
+    pctAbs < USAGE_META_VS_NATIONAL_NEUTRAL_EPSILON_PERCENT
+      ? `about the same as the U.S. average of ${nationalDisplay}`
+      : `${pctAbs.toFixed(1)}% ${state.usageVsNationalPercent > 0 ? "above" : "below"} the U.S. average of ${nationalDisplay}`;
+  const ratePhrase =
+    state.avgRateCentsPerKwh != null ? `${state.avgRateCentsPerKwh.toFixed(2)}¢/kWh` : "the available state rate";
+  const monthlyCost = calculateUsageCost(state.avgRateCentsPerKwh, state.estimatedMonthlyUsageKwh);
+  const costPhrase = monthlyCost != null ? `$${Math.round(monthlyCost)}/mo` : "N/A";
+  return `Households in ${state.name} use about ${kwhDisplay} kWh per month — ${comparisonClause}. At ${ratePhrase}, that's roughly ${costPhrase}.`;
+}

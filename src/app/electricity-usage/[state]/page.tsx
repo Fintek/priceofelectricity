@@ -10,6 +10,7 @@ import { getRelease } from "@/lib/knowledge/fetch";
 import { buildLongtailLinkSections } from "@/lib/longtail/internalLinks";
 import { formatRate, formatUsd } from "@/lib/longtail/stateLongtail";
 import {
+  buildUsageMetaDescriptionForState,
   buildUsageNarrativeForState,
   buildUsageTierCostRows,
   formatKwh,
@@ -37,8 +38,8 @@ export async function generateMetadata({
     });
   }
   return buildMetadata({
-    title: `Electricity Usage in ${data.name} | PriceOfElectricity.com`,
-    description: buildUsageNarrativeForState(data),
+    title: `Average Electricity Usage in ${data.name}: ${data.estimatedMonthlyUsageKwh.toLocaleString()} kWh/Month`,
+    description: buildUsageMetaDescriptionForState(data),
     canonicalPath: `/electricity-usage/${state}`,
   });
 }

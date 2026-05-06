@@ -65,9 +65,30 @@ export async function generateMetadata({
       canonicalPath: `/electricity-bill-estimator/${slug}/${profile}`,
     });
   }
+  const monthlyEstimate = calculateBillEstimatorProfileMonthlyCost(state.avgRateCentsPerKwh, profileConfig);
+  const profileLower = profileConfig.label.toLowerCase();
+  const article = /^[aeiou]/i.test(profileLower.trim()) ? "an" : "a";
+  const kwhDisplay = profileConfig.defaultMonthlyKwh.toLocaleString();
+  const ratePhrase =
+    state.avgRateCentsPerKwh != null ? `${state.avgRateCentsPerKwh.toFixed(2)}¢/kWh` : null;
+  const monthlyRounded = monthlyEstimate != null ? Math.round(monthlyEstimate) : null;
+  const title =
+    monthlyRounded != null
+      ? `${profileConfig.label} Electricity Bill in ${state.name}: ~$${monthlyRounded}/Month`
+      : `${profileConfig.label} Electricity Bill in ${state.name}`;
+  let description: string;
+  if (monthlyRounded != null && ratePhrase != null) {
+    description = `Estimated electricity bill for ${article} ${profileLower} in ${state.name}: about $${monthlyRounded}/month at ${ratePhrase} using ~${kwhDisplay} kWh of usage.`;
+  } else if (monthlyRounded != null) {
+    description = `Estimated electricity bill for ${article} ${profileLower} in ${state.name}: about $${monthlyRounded}/month using ~${kwhDisplay} kWh of usage.`;
+  } else if (ratePhrase != null) {
+    description = `Estimated electricity bill for ${article} ${profileLower} in ${state.name} at ${ratePhrase} using ~${kwhDisplay} kWh of usage.`;
+  } else {
+    description = `Estimated electricity bill for ${article} ${profileLower} in ${state.name} using ~${kwhDisplay} kWh of usage.`;
+  }
   return buildMetadata({
-    title: `${profileConfig.label} Electricity Bill Estimate in ${state.name} | PriceOfElectricity.com`,
-    description: `Deterministic ${profileConfig.label.toLowerCase()} electricity bill scenario in ${state.name} using auditable monthly usage assumptions.`,
+    title,
+    description,
     canonicalPath: `/electricity-bill-estimator/${slug}/${profile}`,
   });
 }

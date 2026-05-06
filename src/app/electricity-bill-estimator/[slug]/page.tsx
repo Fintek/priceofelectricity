@@ -44,9 +44,15 @@ export async function generateMetadata({
       canonicalPath: `/electricity-bill-estimator/${slug}`,
     });
   }
+  const ratePhrase =
+    state.avgRateCentsPerKwh != null ? `${state.avgRateCentsPerKwh.toFixed(2)}¢/kWh` : null;
+  const description =
+    ratePhrase != null
+      ? `Estimate your monthly electricity bill in ${state.name} for an apartment, small, medium, or large home. Built from ${state.name}'s ${ratePhrase} average rate.`
+      : `Estimate your monthly electricity bill in ${state.name} for an apartment, small, medium, or large home.`;
   return buildMetadata({
-    title: `Electricity Bill Estimator in ${state.name} | PriceOfElectricity.com`,
-    description: `Household-profile electricity bill estimator for ${state.name} using deterministic usage scenarios and statewide residential rate context.`,
+    title: `${state.name} Electricity Bill Estimator: Apartment to Large Home`,
+    description,
     canonicalPath: `/electricity-bill-estimator/${slug}`,
   });
 }
