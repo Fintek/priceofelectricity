@@ -72,6 +72,52 @@ async function collectTopChildren(absDirPath: string, limit = 10): Promise<Array
   return measured.sort((a, b) => b.sizeBytes - a.sizeBytes).slice(0, limit);
 }
 
+const STANDALONE_SCOPED_NEST_TARGETS = ["@next", "@img", "@swc", "sharp", "lightningcss"] as const;
+
+async function reportStandaloneContributors(root: string): Promise<void> {
+  const standalonePath = path.join(root, ".next", "standalone");
+  try {
+    const topStandalone = await collectTopChildren(standalonePath, 10);
+    if (topStandalone.length > 0) {
+      console.log("Top .next/standalone folders:");
+      for (const item of topStandalone) {
+        console.log(`  - ${item.name}: ${formatMiB(item.sizeBytes)}`);
+      }
+    }
+  } catch {
+    // Best-effort diagnostic only.
+  }
+
+  const nmPath = path.join(standalonePath, "node_modules");
+  try {
+    const topNm = await collectTopChildren(nmPath, 15);
+    if (topNm.length > 0) {
+      console.log("Top .next/standalone/node_modules folders:");
+      for (const item of topNm) {
+        console.log(`  - ${item.name}: ${formatMiB(item.sizeBytes)}`);
+      }
+    }
+  } catch {
+    // Best-effort diagnostic only.
+  }
+
+  for (const pkg of STANDALONE_SCOPED_NEST_TARGETS) {
+    const pkgAbs = path.join(nmPath, pkg);
+    try {
+      const st = await stat(pkgAbs);
+      if (!st.isDirectory()) continue;
+      const nested = await collectTopChildren(pkgAbs, 10);
+      if (nested.length === 0) continue;
+      console.log(`Top .next/standalone/node_modules/${pkg}/ folders:`);
+      for (const item of nested) {
+        console.log(`  - ${item.name}: ${formatMiB(item.sizeBytes)}`);
+      }
+    } catch {
+      // Skip missing or unreadable paths.
+    }
+  }
+}
+
 async function main(): Promise<void> {
   const root = process.cwd();
   const failures: string[] = [];
@@ -105,6 +151,8 @@ async function main(): Promise<void> {
       }
     }
   }
+
+  await reportStandaloneContributors(root);
 
   const serverAppPath = path.join(root, ".next", "server", "app");
   try {
