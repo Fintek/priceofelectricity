@@ -43,8 +43,13 @@ export async function generateMetadata({
         )} using a ${AVERAGE_ELECTRICITY_BILL_USAGE_KWH.toLocaleString()} kWh benchmark.`
       : `${state.name} average electricity bill. Residential rate, estimated monthly and annual bills.`;
 
+  const title =
+    state.monthlyBill != null
+      ? `Average Electricity Bill in ${state.name}: $${Math.round(state.monthlyBill)}/Month`
+      : `Average Electricity Bill in ${state.name}`;
+
   return buildMetadata({
-    title: `Average Electricity Bill in ${state.name} | PriceOfElectricity.com`,
+    title,
     description,
     canonicalPath: `/average-electricity-bill/${slug}`,
   });
