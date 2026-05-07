@@ -70,6 +70,7 @@ export function startNextServer(port: number): ChildProcess {
   return spawn(npmCmd, ["run", "start", "--", "-p", String(port)], {
     stdio: ["ignore", "pipe", "pipe"],
     env: { ...process.env, NODE_ENV: "production" },
+    detached: true,
   });
 }
 
@@ -83,15 +84,23 @@ export async function stopServer(proc: ChildProcess): Promise<void> {
     return;
   }
 
-  proc.kill("SIGTERM");
+  try {
+    process.kill(-proc.pid, "SIGTERM");
+  } catch {
+    proc.kill("SIGTERM");
+  }
   await Promise.race([
     new Promise<void>((resolve) => {
       proc.once("exit", () => resolve());
     }),
     sleep(2_000),
   ]);
-  if (!proc.killed) {
-    proc.kill("SIGKILL");
+  if (proc.exitCode === null && proc.signalCode === null) {
+    try {
+      process.kill(-proc.pid, "SIGKILL");
+    } catch {
+      proc.kill("SIGKILL");
+    }
   }
 }
 
