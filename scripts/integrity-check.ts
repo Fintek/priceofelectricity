@@ -10,6 +10,32 @@ import {
 } from "./_server";
 
 const COLD_ISR_TIMEOUT_MS = 30_000;
+const FETCH_CONCURRENCY = 8;
+const PROGRESS_EVERY = 100;
+
+async function runWithConcurrency<T>(
+  items: T[],
+  worker: (item: T) => Promise<void>,
+  onProgress: (completed: number, total: number) => void,
+): Promise<void> {
+  if (items.length === 0) return;
+  let nextIndex = 0;
+  let completed = 0;
+  const workerCount = Math.min(FETCH_CONCURRENCY, items.length);
+  await Promise.all(
+    Array.from({ length: workerCount }, async () => {
+      while (true) {
+        const idx = nextIndex++;
+        if (idx >= items.length) return;
+        await worker(items[idx] as T);
+        completed++;
+        if (completed % PROGRESS_EVERY === 0 || completed === items.length) {
+          onProgress(completed, items.length);
+        }
+      }
+    }),
+  );
+}
 
 type RegistryError = {
   kind: string;
@@ -194,35 +220,46 @@ async function main(): Promise<void> {
     await waitForServerReady(baseUrl);
     console.log("Server ready. Running integrity checks...");
 
-    for (const path of registryValidation.internalPaths) {
-      const result = await fetchLocalPath(baseUrl, path);
-      if (result.ok) {
-        passCount++;
-      } else {
-        failures.push({
-          source: "registry",
-          path,
-          status: result.status,
-          detail: result.detail,
-        });
-      }
-    }
+    console.log(
+      `Registry HTTP checks: ${registryValidation.internalPaths.length} URLs (concurrency ${FETCH_CONCURRENCY})`,
+    );
+    await runWithConcurrency(
+      registryValidation.internalPaths,
+      async (path) => {
+        const result = await fetchLocalPath(baseUrl, path);
+        if (result.ok) {
+          passCount++;
+        } else {
+          failures.push({
+            source: "registry",
+            path,
+            status: result.status,
+            detail: result.detail,
+          });
+        }
+      },
+      (done, total) => console.log(`  registry: ${done}/${total}`),
+    );
 
     const sitemapPaths = await collectSitemapPaths(baseUrl);
     console.log(`Sitemap URLs: ${sitemapPaths.length}`);
-    for (const path of sitemapPaths) {
-      const result = await fetchLocalPath(baseUrl, path);
-      if (result.ok) {
-        passCount++;
-      } else {
-        failures.push({
-          source: "sitemap",
-          path,
-          status: result.status,
-          detail: result.detail,
-        });
-      }
-    }
+    await runWithConcurrency(
+      sitemapPaths,
+      async (path) => {
+        const result = await fetchLocalPath(baseUrl, path);
+        if (result.ok) {
+          passCount++;
+        } else {
+          failures.push({
+            source: "sitemap",
+            path,
+            status: result.status,
+            detail: result.detail,
+          });
+        }
+      },
+      (done, total) => console.log(`  sitemap: ${done}/${total}`),
+    );
 
     const alreadyChecked = new Set<string>([
       ...registryValidation.internalPaths,
@@ -233,19 +270,23 @@ async function main(): Promise<void> {
     console.log(
       `Hub internal links: ${hubLinks.length} total, ${newHubLinks.length} new (${hubLinks.length - newHubLinks.length} already checked)`,
     );
-    for (const path of newHubLinks) {
-      const result = await fetchLocalPath(baseUrl, path, COLD_ISR_TIMEOUT_MS);
-      if (result.ok) {
-        passCount++;
-      } else {
-        failures.push({
-          source: "hub-links",
-          path,
-          status: result.status,
-          detail: result.detail,
-        });
-      }
-    }
+    await runWithConcurrency(
+      newHubLinks,
+      async (path) => {
+        const result = await fetchLocalPath(baseUrl, path, COLD_ISR_TIMEOUT_MS);
+        if (result.ok) {
+          passCount++;
+        } else {
+          failures.push({
+            source: "hub-links",
+            path,
+            status: result.status,
+            detail: result.detail,
+          });
+        }
+      },
+      (done, total) => console.log(`  hub-links: ${done}/${total}`),
+    );
 
     console.log("");
     console.log(
