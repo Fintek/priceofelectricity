@@ -67,7 +67,7 @@ export async function generateMetadata({
   }
 
   const ns = buildNormalizedState(slug);
-  const title = `${ns.name} Electricity Price (¢/kWh) + Bill Estimator | PriceOfElectricity.com`;
+  const title = `${ns.name} Electricity Price (¢/kWh) | PriceOfElectricity.com`;
   const description = `${ns.name} average residential electricity rate is ${ns.avgRateCentsPerKwh}¢/kWh (updated ${ns.updated}). Estimate your monthly bill with our quick calculator.`;
   const canonicalUrl = `${BASE_URL}/${slug}`;
 
