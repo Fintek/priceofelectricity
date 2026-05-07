@@ -152,10 +152,15 @@ async function collectSitemapPaths(baseUrl: string): Promise<string[]> {
   const candidates = ["/sitemap.xml", "/sitemap-index.xml", "/sitemap/core.xml"];
   let xml: string | null = null;
   for (const candidate of candidates) {
-    const res = await fetchWithTimeout(`${baseUrl}${candidate}`);
-    if (res.status === 200) {
-      xml = await res.text();
-      break;
+    try {
+      const res = await fetchWithTimeout(`${baseUrl}${candidate}`, COLD_ISR_TIMEOUT_MS);
+      if (res.status === 200) {
+        xml = await res.text();
+        break;
+      }
+    } catch (error: unknown) {
+      const message = error instanceof Error ? error.message : String(error);
+      console.warn(`  sitemap probe failed for ${candidate}: ${message}`);
     }
   }
   if (!xml) {
