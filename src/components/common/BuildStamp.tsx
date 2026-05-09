@@ -1,4 +1,8 @@
 import Link from "next/link";
+import {
+  getCanonicalDatasetSynchronizedMediumDateUtc,
+  getCanonicalResidentialDataThroughMonthLabel,
+} from "@/lib/eiaReportingTrust";
 
 type Release = {
   releaseId?: string;
@@ -13,6 +17,9 @@ type BuildStampProps = {
 
 export default function BuildStamp({ release }: BuildStampProps) {
   if (!release?.releaseId) return null;
+
+  const reportingMonth = getCanonicalResidentialDataThroughMonthLabel();
+  const syncLabel = getCanonicalDatasetSynchronizedMediumDateUtc();
 
   const generatedAt = release.generatedAt
     ? new Date(release.generatedAt).toLocaleString("en-US", {
@@ -37,6 +44,14 @@ export default function BuildStamp({ release }: BuildStampProps) {
         <span>Data: {release.sourceVersion ?? "—"}</span>
         <span>Contract: {release.contractVersion ?? "—"}</span>
         <span>Knowledge build (dataset ingest, UTC): {generatedAt}</span>
+      </div>
+      <div style={{ marginTop: 6, marginBottom: 4, maxWidth: "72ch", fontSize: 11, lineHeight: 1.55 }}>
+        Latest EIA residential reporting month: {reportingMonth}.
+        {syncLabel !== null ? (
+          <> Dataset synchronized from canonical source {syncLabel} (UTC).</>
+        ) : null}{" "}
+        EIA monthly state data ships on a reporting lag; ingest stamps track when this site pulled the published
+        series, not unpublished future EIA months.
       </div>
       <div style={{ display: "flex", flexWrap: "wrap", gap: 8, marginTop: 4 }}>
         <Link href="/knowledge/release.json">release.json</Link>

@@ -14,6 +14,10 @@ import { isValidStateSlug } from "@/lib/slugGuard";
 import { buildNormalizedState } from "@/lib/stateBuilder";
 import { buildStateSchema } from "@/lib/schema";
 import { getElectricityPriceIndexForState } from "@/lib/priceIndex";
+import {
+  getCanonicalDatasetSynchronizedMediumDateUtc,
+  getCanonicalResidentialDataThroughMonthLabel,
+} from "@/lib/eiaReportingTrust";
 import { SITE_URL } from "@/lib/site";
 import {
   getPrevNextByName,
@@ -68,7 +72,8 @@ export async function generateMetadata({
 
   const ns = buildNormalizedState(slug);
   const title = `${ns.name} Electricity Price (¢/kWh) | PriceOfElectricity.com`;
-  const description = `${ns.name} average residential electricity rate is ${ns.avgRateCentsPerKwh}¢/kWh (updated ${ns.updated}). Estimate your monthly bill with our quick calculator.`;
+  const eiaMonth = getCanonicalResidentialDataThroughMonthLabel();
+  const description = `${ns.name} average residential electricity rate is ${ns.avgRateCentsPerKwh}¢/kWh (latest EIA reporting month ${eiaMonth}). Estimate your monthly bill with our quick calculator.`;
   const canonicalUrl = `${BASE_URL}/${slug}`;
 
   return {
@@ -168,6 +173,8 @@ export default function StatePage({
   }
 
   const ns = buildNormalizedState(slug);
+  const eiaReportingMonth = getCanonicalResidentialDataThroughMonthLabel();
+  const eiaDatasetSyncUtc = getCanonicalDatasetSynchronizedMediumDateUtc();
   const history = HISTORY_BY_STATE[slug];
   const latestSeries = history?.series.at(-1);
   const previousSeries = history && history.series.length >= 2 ? history.series.at(-2) : undefined;
@@ -322,13 +329,20 @@ export default function StatePage({
           }}
         />
         <span className="sr-only">Data status: {ns.freshnessStatus}</span>
-        EIA data through {ns.updated}
-        {ns.datasetSynchronizedDisplayUtc !== null ? (
+        Latest EIA reporting month: {eiaReportingMonth}
+        {eiaDatasetSyncUtc !== null ? (
+          <>
+            {" · "}
+            Dataset synchronized {eiaDatasetSyncUtc} (UTC)
+          </>
+        ) : ns.datasetSynchronizedDisplayUtc !== null ? (
           <>
             {" · "}
             Dataset synchronized {ns.datasetSynchronizedDisplayUtc} (UTC)
           </>
         ) : null}
+        . EIA publishes monthly state electricity data with a reporting lag. Figures advance when EIA releases the next
+        monthly publication
         {" · "}
         Source:{" "}
         {ns.source.slug ? (

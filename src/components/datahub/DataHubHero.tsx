@@ -1,5 +1,8 @@
 import Link from "next/link";
 import CopyButton from "@/components/common/CopyButton";
+import {
+  getCanonicalResidentialDataThroughMonthLabel,
+} from "@/lib/eiaReportingTrust";
 import { SITE_URL } from "@/lib/site";
 
 type Release = {
@@ -74,9 +77,13 @@ export default function DataHubHero({
       <p className="muted" style={{ margin: "0 0 16px 0", fontSize: 15, maxWidth: "60ch" }}>
         Central entry point for electricity data and knowledge surfaces. Datasets for analysis, knowledge pages for LLM ingestion.
       </p>
-      <p className="muted" style={{ margin: "0 0 16px 0", fontSize: 15 }}>
-        {release?.releaseId ?? "—"} · snapshot tag {release?.sourceVersion ?? "—"} (latest complete EIA month) ·
-        contract {release?.contractVersion ?? "—"}
+      <p className="muted" style={{ margin: "0 0 8px 0", fontSize: 15 }}>
+        {release?.releaseId ?? "—"} · Snapshot tag {release?.sourceVersion ?? "—"} · Contract {release?.contractVersion ?? "—"}
+      </p>
+      <p className="muted" style={{ margin: "0 0 16px 0", fontSize: 14, maxWidth: "65ch" }}>
+        Latest complete EIA residential reporting month in bundled data: {" "}
+        <strong>{getCanonicalResidentialDataThroughMonthLabel()}</strong>. EIA publishes monthly state averages with an
+        official reporting lag. Bundle tags mark the build’s data cut, not a future month EIA has yet to publish.
       </p>
       {release?.integrity?.manifestHash && (
         <p style={{ margin: "0 0 16px 0", fontSize: 13 }}>

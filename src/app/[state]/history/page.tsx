@@ -5,7 +5,11 @@ import { STATES } from "@/data/states";
 import { normalizeSlug } from "@/data/slug";
 import { isValidStateSlug } from "@/lib/slugGuard";
 import { HISTORY_BY_STATE } from "@/data/history";
-import { LAST_REVIEWED_DISPLAY, SITE_URL, UPDATE_CADENCE_TEXT } from "@/lib/site";
+import {
+  getCanonicalDatasetSynchronizedMediumDateUtc,
+  getCanonicalResidentialDataThroughMonthLabel,
+} from "@/lib/eiaReportingTrust";
+import { SITE_URL } from "@/lib/site";
 
 const BASE_URL = SITE_URL;
 const FLAT_THRESHOLD_CENTS = 0.5;
@@ -135,6 +139,8 @@ export default async function StateHistoryPage({
   }
 
   const { stateSlug, state: stateInfo } = resolved;
+  const eiaReportingMonth = getCanonicalResidentialDataThroughMonthLabel();
+  const eiaDatasetSyncUtc = getCanonicalDatasetSynchronizedMediumDateUtc();
   const historyKey = buildHistoryKeyCandidates(stateParam).find(
     (key) => HISTORY_BY_STATE[key] !== undefined,
   );
@@ -157,7 +163,12 @@ export default async function StateHistoryPage({
         />
         <h1>{stateInfo.name} Electricity Price History</h1>
         <p className="muted" style={{ marginTop: 0, marginBottom: 8 }}>
-          {UPDATE_CADENCE_TEXT} {"•"} Last reviewed {LAST_REVIEWED_DISPLAY} {"•"}{" "}
+          Latest EIA reporting month: {eiaReportingMonth}
+          {eiaDatasetSyncUtc !== null ? (
+            <> · Dataset synchronized {eiaDatasetSyncUtc} (UTC)</>
+          ) : null}
+          . EIA publishes monthly state electricity data with a reporting lag. Figures advance when EIA posts the next
+          monthly release. ·{" "}
           <Link href="/about">Methodology</Link>
         </p>
         <p className="muted">History coming soon.</p>
@@ -193,7 +204,12 @@ export default async function StateHistoryPage({
       />
       <h1>{stateInfo.name} Electricity Price History</h1>
       <p className="muted" style={{ marginTop: 0, marginBottom: 8 }}>
-        {UPDATE_CADENCE_TEXT} {"•"} Last reviewed {LAST_REVIEWED_DISPLAY} {"•"}{" "}
+        Latest EIA reporting month: {eiaReportingMonth}
+        {eiaDatasetSyncUtc !== null ? (
+          <> · Dataset synchronized {eiaDatasetSyncUtc} (UTC)</>
+        ) : null}
+        . EIA publishes monthly state electricity data with a reporting lag. Figures advance when EIA posts the next
+        monthly release. ·{" "}
         <Link href="/about">Methodology</Link>
       </p>
       <p className="muted intro" style={{ marginTop: 0 }}>
@@ -211,8 +227,8 @@ export default async function StateHistoryPage({
           <Link href={history.sourceUrl}>{history.sourceName ?? "History source"}</Link>
         ) : (
           history.sourceName ?? "History source unavailable"
-        )}{" "}
-        (updated {history.updated})
+        )}
+        .
       </p>
       <p className="muted" style={{ marginTop: 6 }}>
         Showing {displayedSeries.length} of {history.series.length} months.{" "}
