@@ -85,25 +85,40 @@ export default async function ElectricityPricesByStateDatasetPage() {
       <section style={{ marginTop: 24 }}>
         <h2 style={{ fontSize: 20, marginBottom: 8 }}>Columns</h2>
         <p className="muted" style={{ marginTop: 0, marginBottom: 12, fontSize: "var(--font-size-sm)", maxWidth: 640 }}>
-          Names below match the JSON and CSV files so tools can align columns correctly.
+          Download files use stable machine-readable column names for compatibility.
         </p>
         <ul style={{ paddingLeft: 20, lineHeight: 1.8 }}>
           <li>
-            <code>slug</code> — State page path in site links (URL-friendly lowercase name,{" "}
-            such as <code>california</code>)
-          </li>
-          <li><code>state</code> — Full state name</li>
-          <li><code>avgRateCentsPerKwh</code> — Average residential electricity price in cents per kilowatt-hour</li>
-          <li><code>nationalAverage</code> — US average residential rate for comparison (same units)</li>
-          <li>
-            <code>differencePercent</code> — Percent difference from the US average (positive means higher than average)
+            <strong>State page path</strong> — URL-friendly state name used in site links, such as{" "}
+            <code>california</code>. In the downloadable files, this field is named <code>slug</code>.
           </li>
           <li>
-            <code>momentumSignal</code> — Short label for recent price movement (for example accelerating, decelerating, or
-            steady)
+            <strong>State</strong> — Full state name
           </li>
-          <li><code>generatedAt</code> — When this dataset snapshot was produced</li>
-          <li><code>sourceVersion</code> — Snapshot label for the upstream data used in the build</li>
+          <li>
+            <strong>Average rate</strong> — Residential electricity price in cents per kilowatt-hour. In the downloadable
+            files, this field is named <code>avgRateCentsPerKwh</code>.
+          </li>
+          <li>
+            <strong>National average</strong> — US average residential rate for the same period (same units as average
+            rate). In the downloadable files, this field is named <code>nationalAverage</code>.
+          </li>
+          <li>
+            <strong>Difference from US average</strong> — Percent difference from the US average (positive means higher
+            than average). In the downloadable files, this field is named <code>differencePercent</code>.
+          </li>
+          <li>
+            <strong>Trend label</strong> — Short plain-language label for recent price movement. In the downloadable
+            files, this field is named <code>momentumSignal</code>.
+          </li>
+          <li>
+            <strong>Dataset produced</strong> — When this dataset snapshot was produced. In the downloadable files, this
+            field is named <code>generatedAt</code>.
+          </li>
+          <li>
+            <strong>Source snapshot</strong> — Snapshot label for the upstream data used in the build. In the
+            downloadable files, this field is named <code>sourceVersion</code>.
+          </li>
         </ul>
       </section>
 
@@ -133,11 +148,21 @@ export default async function ElectricityPricesByStateDatasetPage() {
             >
               <thead>
                 <tr>
-                  <th style={{ textAlign: "left", padding: "8px 12px", borderBottom: "1px solid var(--color-border)" }}>slug</th>
-                  <th style={{ textAlign: "left", padding: "8px 12px", borderBottom: "1px solid var(--color-border)" }}>state</th>
-                  <th style={{ textAlign: "right", padding: "8px 12px", borderBottom: "1px solid var(--color-border)" }}>avgRateCentsPerKwh</th>
-                  <th style={{ textAlign: "right", padding: "8px 12px", borderBottom: "1px solid var(--color-border)" }}>differencePercent</th>
-                  <th style={{ textAlign: "left", padding: "8px 12px", borderBottom: "1px solid var(--color-border)" }}>momentumSignal</th>
+                  <th style={{ textAlign: "left", padding: "8px 12px", borderBottom: "1px solid var(--color-border)" }}>
+                    State page path
+                  </th>
+                  <th style={{ textAlign: "left", padding: "8px 12px", borderBottom: "1px solid var(--color-border)" }}>
+                    State
+                  </th>
+                  <th style={{ textAlign: "right", padding: "8px 12px", borderBottom: "1px solid var(--color-border)" }}>
+                    Avg rate (¢/kWh)
+                  </th>
+                  <th style={{ textAlign: "right", padding: "8px 12px", borderBottom: "1px solid var(--color-border)" }}>
+                    Difference from US avg
+                  </th>
+                  <th style={{ textAlign: "left", padding: "8px 12px", borderBottom: "1px solid var(--color-border)" }}>
+                    Trend label
+                  </th>
                 </tr>
               </thead>
               <tbody>
