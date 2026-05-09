@@ -75,7 +75,8 @@ export default function DataHubHero({
         Central entry point for electricity data and knowledge surfaces. Datasets for analysis, knowledge pages for LLM ingestion.
       </p>
       <p className="muted" style={{ margin: "0 0 16px 0", fontSize: 15 }}>
-        {release?.releaseId ?? "—"} · source {release?.sourceVersion ?? "—"} · contract {release?.contractVersion ?? "—"}
+        {release?.releaseId ?? "—"} · snapshot tag {release?.sourceVersion ?? "—"} (latest complete EIA month) ·
+        contract {release?.contractVersion ?? "—"}
       </p>
       {release?.integrity?.manifestHash && (
         <p style={{ margin: "0 0 16px 0", fontSize: 13 }}>

@@ -85,6 +85,30 @@ function getExpectedDeterministicGeneratedAt(sourceVersion) {
   }
 }
 
+/** Canonical EIA ingest time written by scripts/eia/generate_snapshots_from_eia_csv.ts */
+function getPipelineSynchronizedAtIsoFromStatesRawTs() {
+  try {
+    const p = path.join(process.cwd(), "src", "data", "raw", "states.raw.ts");
+    const raw = fs.readFileSync(p, "utf8");
+    const m = /pipelineSynchronizedAtIso:\s*"([^"]+)"/.exec(raw);
+    return m && typeof m[1] === "string" && m[1].length > 0 ? m[1] : null;
+  } catch {
+    return null;
+  }
+}
+
+function normalizeKnowledgeGeneratedAtIso(iso) {
+  if (typeof iso !== "string" || iso.length === 0 || Number.isNaN(Date.parse(iso))) return null;
+  return new Date(iso).toISOString();
+}
+
+/** Expected knowledge generatedAt matches knowledge-build prioritization over snapshot releasedAt when ingest meta exists. */
+function getExpectedKnowledgeGeneratedAt(sourceVersion) {
+  const ingest = normalizeKnowledgeGeneratedAtIso(getPipelineSynchronizedAtIsoFromStatesRawTs());
+  if (ingest) return ingest;
+  return normalizeKnowledgeGeneratedAtIso(getExpectedDeterministicGeneratedAt(sourceVersion));
+}
+
 function recomputeContentHash(pageObject) {
   if (!pageObject || typeof pageObject !== "object" || !pageObject.meta || typeof pageObject.meta !== "object") {
     return null;
@@ -3448,13 +3472,15 @@ function runPreLaunchVerification(root, sitemapSource, layoutSource) {
     if (!fs.existsSync(indexPath)) throw new Error("public/knowledge/index.json must exist");
     const index = readJson(indexPath, "public/knowledge/index.json");
     const sourceVersion = index && typeof index.sourceVersion === "string" ? index.sourceVersion : "";
-    const expectedGeneratedAt = getExpectedDeterministicGeneratedAt(sourceVersion);
+    const expectedGeneratedAt = getExpectedKnowledgeGeneratedAt(sourceVersion);
     if (!expectedGeneratedAt) return;
-    const actualGeneratedAt = index && typeof index.generatedAt === "string" ? index.generatedAt : "";
+    const actualGeneratedAtRaw = index && typeof index.generatedAt === "string" ? index.generatedAt : "";
+    const actualGeneratedAt = normalizeKnowledgeGeneratedAtIso(actualGeneratedAtRaw);
     if (actualGeneratedAt !== expectedGeneratedAt) {
       throw new Error(
-        "knowledge/index.json generatedAt must match deterministic snapshot release timestamp " +
-          `(expected ${expectedGeneratedAt}, got ${actualGeneratedAt || "empty"})`
+        "knowledge/index.json generatedAt must equal canonical ingest (EIA pipelineSynchronizedAtIso) when present," +
+          " else snapshot releasedAt-derived timestamp " +
+          `(expected ${expectedGeneratedAt}, got ${actualGeneratedAtRaw || "empty"})`
       );
     }
   });

@@ -27,7 +27,10 @@ function checkBudget(phase: keyof typeof BUDGETS_MS, durationMs: number): void {
 }
 import { buildKnowledgePack } from "../src/lib/knowledgePack";
 import { buildContentRegistry } from "../src/lib/contentRegistry";
-import { RAW_STATES } from "../src/data/raw/states.raw";
+import {
+  RAW_STATES,
+  EIA_RESIDENTIAL_RETAIL_PRICE_DATA_META,
+} from "../src/data/raw/states.raw";
 import {
   getKnowledgeNormalizedStates,
   getKnowledgeMethodologyRefs,
@@ -1762,11 +1765,16 @@ async function main(): Promise<void> {
   const datasetUpdatedAt = snapshot.releasedAt.includes("T")
     ? snapshot.releasedAt
     : `${snapshot.releasedAt}T00:00:00.000Z`;
-  // Deterministic generated timestamp: keep stable across repeated builds for
-  // the same snapshot version unless explicitly overridden by env.
+  const pipelineIso = EIA_RESIDENTIAL_RETAIL_PRICE_DATA_META.pipelineSynchronizedAtIso;
+  const ingestIso =
+    typeof pipelineIso === "string" && Number.isFinite(Date.parse(pipelineIso))
+      ? pipelineIso
+      : datasetUpdatedAt;
+  // Deterministic ingest-aligned timestamp from canonical CSV (see states.raw.ts
+  // meta), not synthetic mid-period dates, unless KNOWLEDGE_GENERATED_AT is set.
   const generatedAt =
     process.env.KNOWLEDGE_GENERATED_AT?.trim() ||
-    datasetUpdatedAt;
+    ingestIso;
   const { statesBySlug: previousStatesBySlug, national: previousNational, comparedToVersion } =
     await loadPreviousPages(sourceVersion);
   const eiaHistory = await loadEiaHistory();

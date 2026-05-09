@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-02-15T00:00:00.000Z",
+  "generatedAt": "2026-04-28T11:48:55.834Z",
   "sourceVersion": "v20260215",
   "rowCount": 51,
   "columns": [
@@ -21,7 +21,7 @@
       "nationalAverage": 18.24,
       "differencePercent": -11.3,
       "momentumSignal": "rising",
-      "generatedAt": "2026-02-15T00:00:00.000Z",
+      "generatedAt": "2026-04-28T11:48:55.834Z",
       "sourceVersion": "v20260215"
     },
     {
@@ -31,7 +31,7 @@
       "nationalAverage": 18.24,
       "differencePercent": 41.4,
       "momentumSignal": "rising",
-      "generatedAt": "2026-02-15T00:00:00.000Z",
+      "generatedAt": "2026-04-28T11:48:55.834Z",
       "sourceVersion": "v20260215"
     },
     {
@@ -41,7 +41,7 @@
       "nationalAverage": 18.24,
       "differencePercent": -12.1,
       "momentumSignal": "rising",
-      "generatedAt": "2026-02-15T00:00:00.000Z",
+      "generatedAt": "2026-04-28T11:48:55.834Z",
       "sourceVersion": "v20260215"
     },
     {
@@ -51,7 +51,7 @@
       "nationalAverage": 18.24,
       "differencePercent": -30.2,
       "momentumSignal": "accelerating",
-      "generatedAt": "2026-02-15T00:00:00.000Z",
+      "generatedAt": "2026-04-28T11:48:55.834Z",
       "sourceVersion": "v20260215"
     },
     {
@@ -61,7 +61,7 @@
       "nationalAverage": 18.24,
       "differencePercent": 82.1,
       "momentumSignal": "accelerating",
-      "generatedAt": "2026-02-15T00:00:00.000Z",
+      "generatedAt": "2026-04-28T11:48:55.834Z",
       "sourceVersion": "v20260215"
     },
     {
@@ -71,7 +71,7 @@
       "nationalAverage": 18.24,
       "differencePercent": -7.9,
       "momentumSignal": "accelerating",
-      "generatedAt": "2026-02-15T00:00:00.000Z",
+      "generatedAt": "2026-04-28T11:48:55.834Z",
       "sourceVersion": "v20260215"
     },
     {
@@ -81,7 +81,7 @@
       "nationalAverage": 18.24,
       "differencePercent": 68.7,
       "momentumSignal": "falling",
-      "generatedAt": "2026-02-15T00:00:00.000Z",
+      "generatedAt": "2026-04-28T11:48:55.834Z",
       "sourceVersion": "v20260215"
     },
     {
@@ -91,7 +91,7 @@
       "nationalAverage": 18.24,
       "differencePercent": -10.8,
       "momentumSignal": "accelerating",
-      "generatedAt": "2026-02-15T00:00:00.000Z",
+      "generatedAt": "2026-04-28T11:48:55.834Z",
       "sourceVersion": "v20260215"
     },
     {
@@ -101,7 +101,7 @@
       "nationalAverage": 18.24,
       "differencePercent": -13.4,
       "momentumSignal": "accelerating",
-      "generatedAt": "2026-02-15T00:00:00.000Z",
+      "generatedAt": "2026-04-28T11:48:55.834Z",
       "sourceVersion": "v20260215"
     },
     {
@@ -111,7 +111,7 @@
       "nationalAverage": 18.24,
       "differencePercent": -22.5,
       "momentumSignal": "rising",
-      "generatedAt": "2026-02-15T00:00:00.000Z",
+      "generatedAt": "2026-04-28T11:48:55.834Z",
       "sourceVersion": "v20260215"
     },
     {
@@ -121,7 +121,7 @@
       "nationalAverage": 18.24,
       "differencePercent": 135.7,
       "momentumSignal": "stable",
-      "generatedAt": "2026-02-15T00:00:00.000Z",
+      "generatedAt": "2026-04-28T11:48:55.834Z",
       "sourceVersion": "v20260215"
     },
     {
@@ -131,7 +131,7 @@
       "nationalAverage": 18.24,
       "differencePercent": -30.8,
       "momentumSignal": "accelerating",
-      "generatedAt": "2026-02-15T00:00:00.000Z",
+      "generatedAt": "2026-04-28T11:48:55.834Z",
       "sourceVersion": "v20260215"
     },
     {
@@ -141,7 +141,7 @@
       "nationalAverage": 18.24,
       "differencePercent": -2.2,
       "momentumSignal": "accelerating",
-      "generatedAt": "2026-02-15T00:00:00.000Z",
+      "generatedAt": "2026-04-28T11:48:55.834Z",
       "sourceVersion": "v20260215"
     },
     {
@@ -151,7 +151,7 @@
       "nationalAverage": 18.24,
       "differencePercent": -12,
       "momentumSignal": "accelerating",
-      "generatedAt": "2026-02-15T00:00:00.000Z",
+      "generatedAt": "2026-04-28T11:48:55.834Z",
       "sourceVersion": "v20260215"
     },
     {
@@ -161,7 +161,7 @@
       "nationalAverage": 18.24,
       "differencePercent": -30.2,
       "momentumSignal": "accelerating",
-      "generatedAt": "2026-02-15T00:00:00.000Z",
+      "generatedAt": "2026-04-28T11:48:55.834Z",
       "sourceVersion": "v20260215"
     },
     {
@@ -171,7 +171,7 @@
       "nationalAverage": 18.24,
       "differencePercent": -17.2,
       "momentumSignal": "accelerating",
-      "generatedAt": "2026-02-15T00:00:00.000Z",
+      "generatedAt": "2026-04-28T11:48:55.834Z",
       "sourceVersion": "v20260215"
     },
     {
@@ -181,7 +181,7 @@
       "nationalAverage": 18.24,
       "differencePercent": -26.4,
       "momentumSignal": "rising",
-      "generatedAt": "2026-02-15T00:00:00.000Z",
+      "generatedAt": "2026-04-28T11:48:55.834Z",
       "sourceVersion": "v20260215"
     },
     {
@@ -191,7 +191,7 @@
       "nationalAverage": 18.24,
       "differencePercent": -29.4,
       "momentumSignal": "accelerating",
-      "generatedAt": "2026-02-15T00:00:00.000Z",
+      "generatedAt": "2026-04-28T11:48:55.834Z",
       "sourceVersion": "v20260215"
     },
     {
@@ -201,7 +201,7 @@
       "nationalAverage": 18.24,
       "differencePercent": 76.4,
       "momentumSignal": "accelerating",
-      "generatedAt": "2026-02-15T00:00:00.000Z",
+      "generatedAt": "2026-04-28T11:48:55.834Z",
       "sourceVersion": "v20260215"
     },
     {
@@ -211,7 +211,7 @@
       "nationalAverage": 18.24,
       "differencePercent": 10.1,
       "momentumSignal": "accelerating",
-      "generatedAt": "2026-02-15T00:00:00.000Z",
+      "generatedAt": "2026-04-28T11:48:55.834Z",
       "sourceVersion": "v20260215"
     },
     {
@@ -221,7 +221,7 @@
       "nationalAverage": 18.24,
       "differencePercent": 67,
       "momentumSignal": "stable",
-      "generatedAt": "2026-02-15T00:00:00.000Z",
+      "generatedAt": "2026-04-28T11:48:55.834Z",
       "sourceVersion": "v20260215"
     },
     {
@@ -231,7 +231,7 @@
       "nationalAverage": 18.24,
       "differencePercent": 9.6,
       "momentumSignal": "accelerating",
-      "generatedAt": "2026-02-15T00:00:00.000Z",
+      "generatedAt": "2026-04-28T11:48:55.834Z",
       "sourceVersion": "v20260215"
     },
     {
@@ -241,7 +241,7 @@
       "nationalAverage": 18.24,
       "differencePercent": -15.6,
       "momentumSignal": "accelerating",
-      "generatedAt": "2026-02-15T00:00:00.000Z",
+      "generatedAt": "2026-04-28T11:48:55.834Z",
       "sourceVersion": "v20260215"
     },
     {
@@ -251,7 +251,7 @@
       "nationalAverage": 18.24,
       "differencePercent": -19.3,
       "momentumSignal": "accelerating",
-      "generatedAt": "2026-02-15T00:00:00.000Z",
+      "generatedAt": "2026-04-28T11:48:55.834Z",
       "sourceVersion": "v20260215"
     },
     {
@@ -261,7 +261,7 @@
       "nationalAverage": 18.24,
       "differencePercent": -33.3,
       "momentumSignal": "accelerating",
-      "generatedAt": "2026-02-15T00:00:00.000Z",
+      "generatedAt": "2026-04-28T11:48:55.834Z",
       "sourceVersion": "v20260215"
     },
     {
@@ -271,7 +271,7 @@
       "nationalAverage": 18.24,
       "differencePercent": -26.9,
       "momentumSignal": "accelerating",
-      "generatedAt": "2026-02-15T00:00:00.000Z",
+      "generatedAt": "2026-04-28T11:48:55.834Z",
       "sourceVersion": "v20260215"
     },
     {
@@ -281,7 +281,7 @@
       "nationalAverage": 18.24,
       "differencePercent": -35.4,
       "momentumSignal": "accelerating",
-      "generatedAt": "2026-02-15T00:00:00.000Z",
+      "generatedAt": "2026-04-28T11:48:55.834Z",
       "sourceVersion": "v20260215"
     },
     {
@@ -291,7 +291,7 @@
       "nationalAverage": 18.24,
       "differencePercent": -21.2,
       "momentumSignal": "stable",
-      "generatedAt": "2026-02-15T00:00:00.000Z",
+      "generatedAt": "2026-04-28T11:48:55.834Z",
       "sourceVersion": "v20260215"
     },
     {
@@ -301,7 +301,7 @@
       "nationalAverage": 18.24,
       "differencePercent": 45.4,
       "momentumSignal": "accelerating",
-      "generatedAt": "2026-02-15T00:00:00.000Z",
+      "generatedAt": "2026-04-28T11:48:55.834Z",
       "sourceVersion": "v20260215"
     },
     {
@@ -311,7 +311,7 @@
       "nationalAverage": 18.24,
       "differencePercent": 26.8,
       "momentumSignal": "accelerating",
-      "generatedAt": "2026-02-15T00:00:00.000Z",
+      "generatedAt": "2026-04-28T11:48:55.834Z",
       "sourceVersion": "v20260215"
     },
     {
@@ -321,7 +321,7 @@
       "nationalAverage": 18.24,
       "differencePercent": -17.4,
       "momentumSignal": "rising",
-      "generatedAt": "2026-02-15T00:00:00.000Z",
+      "generatedAt": "2026-04-28T11:48:55.834Z",
       "sourceVersion": "v20260215"
     },
     {
@@ -331,7 +331,7 @@
       "nationalAverage": 18.24,
       "differencePercent": 64.4,
       "momentumSignal": "accelerating",
-      "generatedAt": "2026-02-15T00:00:00.000Z",
+      "generatedAt": "2026-04-28T11:48:55.834Z",
       "sourceVersion": "v20260215"
     },
     {
@@ -341,7 +341,7 @@
       "nationalAverage": 18.24,
       "differencePercent": -19.7,
       "momentumSignal": "accelerating",
-      "generatedAt": "2026-02-15T00:00:00.000Z",
+      "generatedAt": "2026-04-28T11:48:55.834Z",
       "sourceVersion": "v20260215"
     },
     {
@@ -351,7 +351,7 @@
       "nationalAverage": 18.24,
       "differencePercent": -36.2,
       "momentumSignal": "accelerating",
-      "generatedAt": "2026-02-15T00:00:00.000Z",
+      "generatedAt": "2026-04-28T11:48:55.834Z",
       "sourceVersion": "v20260215"
     },
     {
@@ -361,7 +361,7 @@
       "nationalAverage": 18.24,
       "differencePercent": -3.9,
       "momentumSignal": "accelerating",
-      "generatedAt": "2026-02-15T00:00:00.000Z",
+      "generatedAt": "2026-04-28T11:48:55.834Z",
       "sourceVersion": "v20260215"
     },
     {
@@ -371,7 +371,7 @@
       "nationalAverage": 18.24,
       "differencePercent": -29.3,
       "momentumSignal": "accelerating",
-      "generatedAt": "2026-02-15T00:00:00.000Z",
+      "generatedAt": "2026-04-28T11:48:55.834Z",
       "sourceVersion": "v20260215"
     },
     {
@@ -381,7 +381,7 @@
       "nationalAverage": 18.24,
       "differencePercent": -19.7,
       "momentumSignal": "stable",
-      "generatedAt": "2026-02-15T00:00:00.000Z",
+      "generatedAt": "2026-04-28T11:48:55.834Z",
       "sourceVersion": "v20260215"
     },
     {
@@ -391,7 +391,7 @@
       "nationalAverage": 18.24,
       "differencePercent": 11.3,
       "momentumSignal": "accelerating",
-      "generatedAt": "2026-02-15T00:00:00.000Z",
+      "generatedAt": "2026-04-28T11:48:55.834Z",
       "sourceVersion": "v20260215"
     },
     {
@@ -401,7 +401,7 @@
       "nationalAverage": 18.24,
       "differencePercent": 61.5,
       "momentumSignal": "falling",
-      "generatedAt": "2026-02-15T00:00:00.000Z",
+      "generatedAt": "2026-04-28T11:48:55.834Z",
       "sourceVersion": "v20260215"
     },
     {
@@ -411,7 +411,7 @@
       "nationalAverage": 18.24,
       "differencePercent": -11.5,
       "momentumSignal": "accelerating",
-      "generatedAt": "2026-02-15T00:00:00.000Z",
+      "generatedAt": "2026-04-28T11:48:55.834Z",
       "sourceVersion": "v20260215"
     },
     {
@@ -421,7 +421,7 @@
       "nationalAverage": 18.24,
       "differencePercent": -27.4,
       "momentumSignal": "accelerating",
-      "generatedAt": "2026-02-15T00:00:00.000Z",
+      "generatedAt": "2026-04-28T11:48:55.834Z",
       "sourceVersion": "v20260215"
     },
     {
@@ -431,7 +431,7 @@
       "nationalAverage": 18.24,
       "differencePercent": -29.7,
       "momentumSignal": "rising",
-      "generatedAt": "2026-02-15T00:00:00.000Z",
+      "generatedAt": "2026-04-28T11:48:55.834Z",
       "sourceVersion": "v20260215"
     },
     {
@@ -441,7 +441,7 @@
       "nationalAverage": 18.24,
       "differencePercent": -15.5,
       "momentumSignal": "rising",
-      "generatedAt": "2026-02-15T00:00:00.000Z",
+      "generatedAt": "2026-04-28T11:48:55.834Z",
       "sourceVersion": "v20260215"
     },
     {
@@ -451,7 +451,7 @@
       "nationalAverage": 18.24,
       "differencePercent": -26.9,
       "momentumSignal": "rising",
-      "generatedAt": "2026-02-15T00:00:00.000Z",
+      "generatedAt": "2026-04-28T11:48:55.834Z",
       "sourceVersion": "v20260215"
     },
     {
@@ -461,7 +461,7 @@
       "nationalAverage": 18.24,
       "differencePercent": 27.6,
       "momentumSignal": "rising",
-      "generatedAt": "2026-02-15T00:00:00.000Z",
+      "generatedAt": "2026-04-28T11:48:55.834Z",
       "sourceVersion": "v20260215"
     },
     {
@@ -471,7 +471,7 @@
       "nationalAverage": 18.24,
       "differencePercent": -12.5,
       "momentumSignal": "accelerating",
-      "generatedAt": "2026-02-15T00:00:00.000Z",
+      "generatedAt": "2026-04-28T11:48:55.834Z",
       "sourceVersion": "v20260215"
     },
     {
@@ -481,7 +481,7 @@
       "nationalAverage": 18.24,
       "differencePercent": -22.6,
       "momentumSignal": "accelerating",
-      "generatedAt": "2026-02-15T00:00:00.000Z",
+      "generatedAt": "2026-04-28T11:48:55.834Z",
       "sourceVersion": "v20260215"
     },
     {
@@ -491,7 +491,7 @@
       "nationalAverage": 18.24,
       "differencePercent": -21,
       "momentumSignal": "falling",
-      "generatedAt": "2026-02-15T00:00:00.000Z",
+      "generatedAt": "2026-04-28T11:48:55.834Z",
       "sourceVersion": "v20260215"
     },
     {
@@ -501,7 +501,7 @@
       "nationalAverage": 18.24,
       "differencePercent": 2.7,
       "momentumSignal": "accelerating",
-      "generatedAt": "2026-02-15T00:00:00.000Z",
+      "generatedAt": "2026-04-28T11:48:55.834Z",
       "sourceVersion": "v20260215"
     },
     {
@@ -511,7 +511,7 @@
       "nationalAverage": 18.24,
       "differencePercent": -28.5,
       "momentumSignal": "accelerating",
-      "generatedAt": "2026-02-15T00:00:00.000Z",
+      "generatedAt": "2026-04-28T11:48:55.834Z",
       "sourceVersion": "v20260215"
     },
     {
@@ -521,7 +521,7 @@
       "nationalAverage": 18.24,
       "differencePercent": 0,
       "momentumSignal": "accelerating",
-      "generatedAt": "2026-02-15T00:00:00.000Z",
+      "generatedAt": "2026-04-28T11:48:55.834Z",
       "sourceVersion": "v20260215"
     }
   ]

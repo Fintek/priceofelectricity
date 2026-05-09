@@ -15,12 +15,10 @@ export default function BuildStamp({ release }: BuildStampProps) {
   if (!release?.releaseId) return null;
 
   const generatedAt = release.generatedAt
-    ? new Date(release.generatedAt).toLocaleDateString(undefined, {
-        year: "numeric",
-        month: "short",
-        day: "numeric",
-        hour: "2-digit",
-        minute: "2-digit",
+    ? new Date(release.generatedAt).toLocaleString("en-US", {
+        dateStyle: "medium",
+        timeStyle: "short",
+        timeZone: "UTC",
       })
     : "—";
 
@@ -38,7 +36,7 @@ export default function BuildStamp({ release }: BuildStampProps) {
         <span>Build: {release.releaseId}</span>
         <span>Data: {release.sourceVersion ?? "—"}</span>
         <span>Contract: {release.contractVersion ?? "—"}</span>
-        <span>Generated: {generatedAt}</span>
+        <span>Knowledge build (dataset ingest, UTC): {generatedAt}</span>
       </div>
       <div style={{ display: "flex", flexWrap: "wrap", gap: 8, marginTop: 4 }}>
         <Link href="/knowledge/release.json">release.json</Link>

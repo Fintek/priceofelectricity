@@ -220,9 +220,9 @@ export default async function StateHistoryPage({
       <p className="muted" style={{ marginTop: 6 }}>
         Showing {displayedSeries.length} of {history.series.length} months.{" "}
         {range === "all" ? (
-          <Link href={`/${stateSlug}/history?range=24`}>Last {RECENT_MONTHS} months</Link>
+          <a href={`/${stateSlug}/history?range=24`}>Last {RECENT_MONTHS} months</a>
         ) : (
-          <Link href={`/${stateSlug}/history?range=all`}>All history</Link>
+          <a href={`/${stateSlug}/history?range=all`}>All history</a>
         )}
       </p>
 
