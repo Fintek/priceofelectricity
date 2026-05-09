@@ -96,20 +96,25 @@ export default async function ElectricityRankingsDatasetPage() {
       <section style={{ marginTop: 24 }}>
         <h2 style={{ fontSize: 20, marginBottom: 8 }}>Columns</h2>
         <ul style={{ paddingLeft: 20, lineHeight: 1.8 }}>
-          <li><code>rankingId</code> — Ranking identifier (e.g. rate-high-to-low)</li>
-          <li><code>rankingTitle</code> — Human-readable ranking title</li>
-          <li><code>state</code> — State name</li>
-          <li><code>value</code> — Metric value</li>
-          <li><code>displayValue</code> — Formatted display value (if present)</li>
           <li>
-            <code>direction</code> — Sort direction code: <code>asc</code> (ascending) or <code>desc</code>{" "}
-            (descending), for scripts and spreadsheets
+            <code>rankingId</code> — Shared id for rows from the same ranking (for example <code>affordability</code> or{" "}
+            <code>rate-high-to-low</code>)
+          </li>
+          <li><code>rankingTitle</code> — Full title shown on the ranking page</li>
+          <li><code>state</code> — State name</li>
+          <li><code>value</code> — Numeric metric value used for sorting</li>
+          <li><code>displayValue</code> — Same number formatted for display (when provided)</li>
+          <li>
+            <code>direction</code> — Sort direction as stored in the file: <code>asc</code> (low values first) or{" "}
+            <code>desc</code> (high values first)
           </li>
           <li>
-            <code>directionLabel</code> — Same sort order in plain language: &quot;Lowest to highest&quot; or
+            <code>directionLabel</code> — Plain-language sort order: &quot;Lowest to highest&quot; or
             &quot;Highest to lowest&quot;
           </li>
-          <li><code>metricId</code> — Metric field identifier</li>
+          <li>
+            <code>metricId</code> — Site-internal metric key so this row maps back to definitions elsewhere on the site
+          </li>
         </ul>
       </section>
 

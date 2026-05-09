@@ -78,20 +78,32 @@ export default async function ElectricityPricesByStateDatasetPage() {
 
       <p className="intro muted" style={{ marginTop: 0 }}>
         State-level average residential electricity rates (¢/kWh) with national
-        comparison and momentum signal. Derived from the site&apos;s normalized
-        data pipeline.
+        comparison and a plain-language trend label. Derived from the site&apos;s
+        normalized data pipeline.
       </p>
 
       <section style={{ marginTop: 24 }}>
         <h2 style={{ fontSize: 20, marginBottom: 8 }}>Columns</h2>
+        <p className="muted" style={{ marginTop: 0, marginBottom: 12, fontSize: "var(--font-size-sm)", maxWidth: 640 }}>
+          Names below match the JSON and CSV files so tools can align columns correctly.
+        </p>
         <ul style={{ paddingLeft: 20, lineHeight: 1.8 }}>
-          <li><code>slug</code> — State slug (e.g. california)</li>
-          <li><code>state</code> — State name</li>
-          <li><code>avgRateCentsPerKwh</code> — Average residential rate (¢/kWh)</li>
-          <li><code>nationalAverage</code> — National average rate (¢/kWh)</li>
-          <li><code>differencePercent</code> — State vs national (% difference)</li>
-          <li><code>momentumSignal</code> — Price momentum (accelerating, decelerating, etc.)</li>
-          <li><code>generatedAt</code>, <code>sourceVersion</code> — Build metadata</li>
+          <li>
+            <code>slug</code> — State page path in site links (URL-friendly lowercase name,{" "}
+            such as <code>california</code>)
+          </li>
+          <li><code>state</code> — Full state name</li>
+          <li><code>avgRateCentsPerKwh</code> — Average residential electricity price in cents per kilowatt-hour</li>
+          <li><code>nationalAverage</code> — US average residential rate for comparison (same units)</li>
+          <li>
+            <code>differencePercent</code> — Percent difference from the US average (positive means higher than average)
+          </li>
+          <li>
+            <code>momentumSignal</code> — Short label for recent price movement (for example accelerating, decelerating, or
+            steady)
+          </li>
+          <li><code>generatedAt</code> — When this dataset snapshot was produced</li>
+          <li><code>sourceVersion</code> — Snapshot label for the upstream data used in the build</li>
         </ul>
       </section>
 
