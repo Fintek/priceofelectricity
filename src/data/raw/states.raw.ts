@@ -65,3 +65,12 @@ export const RAW_STATES: Record<string, StateRecord> = {
   wisconsin: { slug: "wisconsin", name: "Wisconsin", postal: "WI", avgRateCentsPerKwh: 18.74, updated: "February 2026", ...COMMON_STATE_METADATA },
   wyoming: { slug: "wyoming", name: "Wyoming", postal: "WY", avgRateCentsPerKwh: 13.04, updated: "February 2026", ...COMMON_STATE_METADATA },
 };
+/**
+ * Build-time anchors for residential EIA ingests (canonical CSV-derived).
+ * `pipelineSynchronizedAtIso` is the newest ingest timestamp in rows; freshness UX should
+ * anchor off this ISO string while `RAW_STATES[].updated` stays the latest EIA reporting month.
+ */
+export const EIA_RESIDENTIAL_RETAIL_PRICE_DATA_META = {
+  dataThroughYm: "2026-02",
+  pipelineSynchronizedAtIso: "2026-04-28T11:48:55.834Z",
+} as const;

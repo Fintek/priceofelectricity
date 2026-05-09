@@ -1,6 +1,6 @@
 import { readFileSync } from "node:fs";
 import path from "node:path";
-import { RAW_STATES } from "../src/data/raw/states.raw";
+import { RAW_STATES, EIA_RESIDENTIAL_RETAIL_PRICE_DATA_META } from "../src/data/raw/states.raw";
 import { validateRawState } from "../src/lib/validators/stateValidator";
 
 const slugs = Object.keys(RAW_STATES).sort();
@@ -79,6 +79,20 @@ try {
       const sample = mismatchedUpdated.slice(0, 3).map(([slug, s]) => `${slug}=${s.updated}`);
       console.error(
         `  FAIL  freshness: RAW_STATES.updated expected "${expectedUpdated}" but ${mismatchedUpdated.length} state(s) differ (e.g. ${sample.join(", ")})`,
+      );
+      failures++;
+    }
+
+    if (EIA_RESIDENTIAL_RETAIL_PRICE_DATA_META.dataThroughYm !== historyPeriod) {
+      console.error(
+        `  FAIL  freshness: EIA_RESIDENTIAL_RETAIL_PRICE_DATA_META.dataThroughYm=${EIA_RESIDENTIAL_RETAIL_PRICE_DATA_META.dataThroughYm} but history latest=${historyPeriod}`,
+      );
+      failures++;
+    }
+    const syncMs = Date.parse(EIA_RESIDENTIAL_RETAIL_PRICE_DATA_META.pipelineSynchronizedAtIso);
+    if (Number.isNaN(syncMs)) {
+      console.error(
+        `  FAIL  freshness: EIA_RESIDENTIAL_RETAIL_PRICE_DATA_META.pipelineSynchronizedAtIso is not parseable`,
       );
       failures++;
     }

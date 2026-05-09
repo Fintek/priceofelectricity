@@ -322,7 +322,15 @@ export default function StatePage({
           }}
         />
         <span className="sr-only">Data status: {ns.freshnessStatus}</span>
-        Updated {ns.updated} · Source:{" "}
+        EIA data through {ns.updated}
+        {ns.datasetSynchronizedDisplayUtc !== null ? (
+          <>
+            {" · "}
+            Dataset synchronized {ns.datasetSynchronizedDisplayUtc} (UTC)
+          </>
+        ) : null}
+        {" · "}
+        Source:{" "}
         {ns.source.slug ? (
           <Link href={`/sources/${ns.source.slug}`}>{ns.source.name}</Link>
         ) : (

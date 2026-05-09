@@ -6,6 +6,7 @@ import { computeAffordability, type AffordabilityRecord } from "@/lib/affordabil
 import { computeValueScores, type ValueScore } from "@/lib/valueScore";
 import { computeFreshness } from "@/lib/freshness";
 import { getRateTier, getRateTierLabel } from "@/lib/insights";
+import { EIA_RESIDENTIAL_RETAIL_PRICE_DATA_META } from "@/data/raw/states.raw";
 import {
   getAllTransformedStates,
   transformRawState,
@@ -16,6 +17,7 @@ export type NormalizedState = {
   name: string;
   avgRateCentsPerKwh: number;
   updated: string;
+  datasetSynchronizedDisplayUtc: string | null;
   methodology: string;
   disclaimer: string;
   affordabilityIndex: number;
@@ -97,7 +99,18 @@ export function buildNormalizedState(slug: string): NormalizedState {
   const sourceSlug = getSourceSlugForState(DEFAULT_SOURCE_NAME);
   const affordability = getAffordabilityMap().get(slug);
   const vs = getValueScoreMap().get(slug);
-  const freshness = computeFreshness(updated);
+  const syncIso =
+    typeof EIA_RESIDENTIAL_RETAIL_PRICE_DATA_META.pipelineSynchronizedAtIso === "string"
+      ? EIA_RESIDENTIAL_RETAIL_PRICE_DATA_META.pipelineSynchronizedAtIso
+      : undefined;
+  const datasetSynchronizedDisplayUtc =
+    syncIso !== undefined && Number.isFinite(Date.parse(syncIso))
+      ? new Date(syncIso).toLocaleDateString("en-US", {
+          dateStyle: "medium",
+          timeZone: "UTC",
+        })
+      : null;
+  const freshness = computeFreshness(updated, syncIso);
   const rateTierLabel = getRateTierLabel(getRateTier(rate));
   const shortSummary = `${transformed.name}'s average residential electricity price is ${rate}¢/kWh as of ${updated}. This places ${transformed.name} in the ${rateTierLabel.toLowerCase()} rate tier based on the same threshold model used across all states. At 900 kWh of monthly usage, the estimated energy-only charge is about $${((900 * rate) / 100).toFixed(2)}.`;
 
@@ -106,6 +119,7 @@ export function buildNormalizedState(slug: string): NormalizedState {
     name: transformed.name,
     avgRateCentsPerKwh: rate,
     updated,
+    datasetSynchronizedDisplayUtc,
     methodology: DEFAULT_METHODOLOGY,
     disclaimer: DEFAULT_DISCLAIMER,
     affordabilityIndex: affordability?.indexScore ?? 0,

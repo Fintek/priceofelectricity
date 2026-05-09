@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generatedAt": "2026-01-15T00:00:00.000Z",
+  "generatedAt": "2026-02-15T00:00:00.000Z",
   "totalNodes": 1391,
   "totalEdges": 2149,
   "nodes": [
@@ -3865,11 +3865,6 @@
       "url": "http://localhost:3000/questions/why-electricity-cheaper-in-missouri"
     },
     {
-      "id": "question:why-electricity-cheaper-in-montana",
-      "type": "question",
-      "url": "http://localhost:3000/questions/why-electricity-cheaper-in-montana"
-    },
-    {
       "id": "question:why-electricity-cheaper-in-nebraska",
       "type": "question",
       "url": "http://localhost:3000/questions/why-electricity-cheaper-in-nebraska"
@@ -3883,6 +3878,11 @@
       "id": "question:why-electricity-cheaper-in-oklahoma",
       "type": "question",
       "url": "http://localhost:3000/questions/why-electricity-cheaper-in-oklahoma"
+    },
+    {
+      "id": "question:why-electricity-cheaper-in-tennessee",
+      "type": "question",
+      "url": "http://localhost:3000/questions/why-electricity-cheaper-in-tennessee"
     },
     {
       "id": "question:why-electricity-cheaper-in-wyoming",
@@ -12812,11 +12812,6 @@
       "rel": "related"
     },
     {
-      "from": "question:why-electricity-cheaper-in-montana",
-      "to": "state:montana",
-      "rel": "related"
-    },
-    {
       "from": "question:why-electricity-cheaper-in-nebraska",
       "to": "state:nebraska",
       "rel": "related"
@@ -12829,6 +12824,11 @@
     {
       "from": "question:why-electricity-cheaper-in-oklahoma",
       "to": "state:oklahoma",
+      "rel": "related"
+    },
+    {
+      "from": "question:why-electricity-cheaper-in-tennessee",
+      "to": "state:tennessee",
       "rel": "related"
     },
     {
@@ -22550,6 +22550,11 @@
     },
     {
       "from": "knowledge:vertical:ai-energy",
+      "to": "knowledge:state:connecticut",
+      "relation": "related-to"
+    },
+    {
+      "from": "knowledge:vertical:ai-energy",
       "to": "knowledge:state:hawaii",
       "relation": "related-to"
     },
@@ -22561,11 +22566,6 @@
     {
       "from": "knowledge:vertical:ai-energy",
       "to": "knowledge:state:massachusetts",
-      "relation": "related-to"
-    },
-    {
-      "from": "knowledge:vertical:ai-energy",
-      "to": "knowledge:state:rhode-island",
       "relation": "related-to"
     }
   ]

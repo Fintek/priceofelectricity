@@ -1,6 +1,14 @@
 import { readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 
+const RAW_REFRESH_JSON_PATH = path.join(
+  process.cwd(),
+  "data",
+  "raw",
+  "eia",
+  "retail_res_monthly_latest_refresh.json",
+);
+
 type ParsedRow = {
   period: string;
   stateid: string;
@@ -181,7 +189,7 @@ function parseCsvLine(line: string): string[] {
   return out;
 }
 
-function parseCsv(csvText: string): ParsedRow[] {
+function parseCsv(csvText: string): { rows: ParsedRow[]; maxFetchedAtMs: number } {
   const lines = csvText.split(/\r?\n/).filter((line) => line.trim().length > 0);
   if (lines.length < 2) {
     throw new Error("EIA CSV is empty or missing data rows.");
@@ -196,6 +204,9 @@ function parseCsv(csvText: string): ParsedRow[] {
     }
   }
 
+  const fetchedIdx = indexByName.get("fetched_at") ?? -1;
+  let maxFetchedAtMs = -1;
+
   const rows: ParsedRow[] = [];
   for (let i = 1; i < lines.length; i += 1) {
     const cols = parseCsvLine(lines[i]);
@@ -204,6 +215,11 @@ function parseCsv(csvText: string): ParsedRow[] {
     const sectorid = cols[indexByName.get("sectorid") ?? -1]?.trim() ?? "";
     const priceRaw = cols[indexByName.get("price") ?? -1]?.trim() ?? "";
     const price = Number(priceRaw);
+    const fetchedRaw = fetchedIdx >= 0 ? (cols[fetchedIdx]?.trim() ?? "") : "";
+    const fetchedMs = fetchedRaw.length > 0 ? Date.parse(fetchedRaw) : Number.NaN;
+    if (Number.isFinite(fetchedMs) && fetchedMs > maxFetchedAtMs) {
+      maxFetchedAtMs = fetchedMs;
+    }
 
     if (!/^\d{4}-(0[1-9]|1[0-2])$/.test(period)) continue;
     if (!/^[A-Z]{2}$/.test(stateid)) continue; // keeps 2-letter IDs, drops regions (ENC, NEW, MTN, etc.)
@@ -217,7 +233,30 @@ function parseCsv(csvText: string): ParsedRow[] {
     if (a.period !== b.period) return a.period.localeCompare(b.period);
     return a.stateid.localeCompare(b.stateid);
   });
-  return rows;
+  return { rows, maxFetchedAtMs };
+}
+
+async function resolvePipelineSynchronizedAtIso(csvMaxFetchedAtMs: number): Promise<string> {
+  if (csvMaxFetchedAtMs >= 0) {
+    return new Date(csvMaxFetchedAtMs).toISOString();
+  }
+  try {
+    const raw = await readFile(RAW_REFRESH_JSON_PATH, "utf8");
+    const parsed = JSON.parse(raw) as { fetched_at?: string };
+    const fromFile = parsed.fetched_at;
+    const ms = typeof fromFile === "string" ? Date.parse(fromFile) : Number.NaN;
+    if (Number.isFinite(ms)) {
+      return new Date(ms).toISOString();
+    }
+  } catch {
+    throw new Error(
+      `CSV has no fetched_at timestamps and fallback ${path.relative(process.cwd(), RAW_REFRESH_JSON_PATH)} could not supply fetched_at.`,
+    );
+  }
+
+  throw new Error(
+    "Cannot derive pipeline ingest timestamp from EIA CSV (missing fetched_at?) or fallback JSON fetched_at.",
+  );
 }
 
 function roundToCents(value: number): number {
@@ -330,6 +369,7 @@ function buildSnapshot(
 function buildRawStatesTs(
   latestPeriod: string,
   byStatePostal: Map<string, Map<string, number>>,
+  pipelineSynchronizedAtIso: string,
 ): string {
   const header = `import type { StateRecord } from "@/data/types";
 
@@ -375,7 +415,9 @@ export const RAW_STATES: Record<string, StateRecord> = {
     );
   }
 
-  return `${header}${lines.join("\n")}\n};\n`;
+  const metaBlock = `\n/**\n * Build-time anchors for residential EIA ingests (canonical CSV-derived).\n * \`pipelineSynchronizedAtIso\` is the newest ingest timestamp in rows; freshness UX should\n * anchor off this ISO string while \`RAW_STATES[].updated\` stays the latest EIA reporting month.\n */\nexport const EIA_RESIDENTIAL_RETAIL_PRICE_DATA_META = {\n  dataThroughYm: ${JSON.stringify(latestPeriod)},\n  pipelineSynchronizedAtIso: ${JSON.stringify(pipelineSynchronizedAtIso)},\n} as const;\n`;
+
+  return `${header}${lines.join("\n")}\n};${metaBlock}`;
 }
 
 function buildHistoryGeneratedTs(history: StateHistory[]): string {
@@ -400,7 +442,8 @@ export const HISTORY_BY_STATE: Record<string, StateHistory> = Object.fromEntries
 
 async function main(): Promise<void> {
   const csvText = await readFile(INPUT_CSV_PATH, "utf8");
-  const rows = parseCsv(csvText);
+  const { rows, maxFetchedAtMs } = parseCsv(csvText);
+  const pipelineSynchronizedAtIso = await resolvePipelineSynchronizedAtIso(maxFetchedAtMs);
   const byStatePostal = groupRowsByState(rows);
   const history = buildHistory(byStatePostal);
 
@@ -453,7 +496,7 @@ async function main(): Promise<void> {
   );
   await writeFile(
     OUTPUT_RAW_STATES_PATH,
-    buildRawStatesTs(v2Period, byStatePostal),
+    buildRawStatesTs(v2Period, byStatePostal, pipelineSynchronizedAtIso),
     "utf8",
   );
 
@@ -461,6 +504,7 @@ async function main(): Promise<void> {
   console.log(`states=${history.length}`);
   console.log(`months=${months}`);
   console.log(`latest_period=${v2Period}`);
+  console.log(`pipeline_synchronized_iso=${pipelineSynchronizedAtIso}`);
   console.log(`snapshot_periods=v1:${v1Period}, v2:${v2Period}, latest:${latestVersion}`);
   console.log(`wrote=${OUTPUT_HISTORY_GENERATED_PATH}`);
   console.log(`wrote=${OUTPUT_HISTORY_GENERATED_JSON_PATH}`);
