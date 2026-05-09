@@ -179,9 +179,6 @@ export default async function StateHistoryPage({
     range === "all"
       ? fullSeries
       : fullSeries.slice(-24);
-  if (range === "all" && displayedSeries.length < fullSeries.length) {
-    throw new Error(`History range bug: all=${displayedSeries.length} full=${fullSeries.length}`);
-  }
   const firstValue = displayedSeries[0].avgRateCentsPerKwh;
   const lastValue = displayedSeries[displayedSeries.length - 1].avgRateCentsPerKwh;
   const trend = getTrend(firstValue, lastValue);

@@ -40,6 +40,10 @@ function getAllowedParams(pathname: string): Set<string> {
     return new Set(["sort"]);
   }
 
+  if (/^\/[a-z0-9-]+\/history$/.test(pathname)) {
+    return new Set(["range"]);
+  }
+
   return new Set();
 }
 
