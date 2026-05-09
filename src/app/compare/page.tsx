@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { STATE_LIST } from "@/data/states";
 import { computeFreshness } from "@/lib/freshness";
-import { LAST_REVIEWED_DISPLAY, SITE_URL, UPDATE_CADENCE_TEXT } from "@/lib/site";
+import EiaHomeTrustLine from "@/components/common/EiaHomeTrustLine";
+import { SITE_URL } from "@/lib/site";
 import { getRelatedForTool } from "@/lib/related";
 import RelatedLinks from "@/app/components/RelatedLinks";
 
@@ -88,10 +89,7 @@ export default async function ComparePage({
       <h1>
         Compare Electricity Prices by State
       </h1>
-      <p className="muted" style={{ marginTop: 0, marginBottom: 8 }}>
-        {UPDATE_CADENCE_TEXT} {"•"} Last reviewed {LAST_REVIEWED_DISPLAY} {"•"}{" "}
-        <Link href="/about">Methodology</Link>
-      </p>
+      <EiaHomeTrustLine />
       <p className="intro muted" style={{ marginTop: 0 }}>
         Compare average residential electricity prices (¢/kWh) and see example
         energy-only monthly costs at 900 kWh.

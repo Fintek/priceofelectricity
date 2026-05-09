@@ -3,8 +3,9 @@ import Link from "next/link";
 import { STATES } from "@/data/states";
 import HomepagePersonalization from "@/app/components/HomepagePersonalization";
 import AboutThisSite from "@/components/navigation/AboutThisSite";
+import EiaHomeTrustLine from "@/components/common/EiaHomeTrustLine";
 import { getRateTier, getRateTierLabel } from "@/lib/insights";
-import { LAST_REVIEWED_DISPLAY, SITE_URL, UPDATE_CADENCE_TEXT } from "@/lib/site";
+import { SITE_URL } from "@/lib/site";
 import { buildMetadata } from "@/lib/seo/metadata";
 import { getHomepageCoverageEntries } from "@/lib/stateDestinations";
 
@@ -48,11 +49,7 @@ export default function HomePage() {
       <p style={{ marginTop: 0, marginBottom: 16, maxWidth: "60ch", lineHeight: 1.6 }}>
         Compare residential electricity rates across all 50 states, estimate your monthly bill, and see how your state ranks.
       </p>
-      <p className="muted" style={{ marginTop: 0, marginBottom: 20, fontSize: 13 }}>
-        {UPDATE_CADENCE_TEXT} · Last reviewed {LAST_REVIEWED_DISPLAY} ·{" "}
-        <Link href="/methodology">Methodology</Link> ·{" "}
-        <Link href="/datasets">Data</Link>
-      </p>
+      <EiaHomeTrustLine />
 
       {/* ── PRIMARY PATHWAYS ── */}
       <section style={{ marginBottom: 28 }}>

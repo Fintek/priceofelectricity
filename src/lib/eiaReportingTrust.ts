@@ -31,3 +31,19 @@ export function getCanonicalDatasetSynchronizedMediumDateUtc(): string | null {
     timeZone: "UTC",
   });
 }
+
+/** EIA official publication date for the residential series cut, when provided in refresh JSON + generator meta. */
+export function getCanonicalEiaReleasePublishedMediumDateUtc(): string | null {
+  const meta = EIA_RESIDENTIAL_RETAIL_PRICE_DATA_META as {
+    pipelineSynchronizedAtIso: string;
+    eiaReleasePublishedAtIso?: string;
+  };
+  const iso = meta.eiaReleasePublishedAtIso;
+  if (typeof iso !== "string" || !Number.isFinite(Date.parse(iso))) {
+    return null;
+  }
+  return new Date(iso).toLocaleDateString("en-US", {
+    dateStyle: "medium",
+    timeZone: "UTC",
+  });
+}

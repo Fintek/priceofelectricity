@@ -236,6 +236,20 @@ function parseCsv(csvText: string): { rows: ParsedRow[]; maxFetchedAtMs: number 
   return { rows, maxFetchedAtMs };
 }
 
+async function loadOptionalEiaReleasePublishedAtIsoFromRefreshJson(): Promise<string | undefined> {
+  try {
+    const raw = await readFile(RAW_REFRESH_JSON_PATH, "utf8");
+    const parsed = JSON.parse(raw) as { eia_release_published_at?: string };
+    const v = parsed.eia_release_published_at;
+    if (typeof v !== "string" || !Number.isFinite(Date.parse(v))) {
+      return undefined;
+    }
+    return new Date(Date.parse(v)).toISOString();
+  } catch {
+    return undefined;
+  }
+}
+
 async function resolvePipelineSynchronizedAtIso(csvMaxFetchedAtMs: number): Promise<string> {
   if (csvMaxFetchedAtMs >= 0) {
     return new Date(csvMaxFetchedAtMs).toISOString();
@@ -370,6 +384,7 @@ function buildRawStatesTs(
   latestPeriod: string,
   byStatePostal: Map<string, Map<string, number>>,
   pipelineSynchronizedAtIso: string,
+  eiaReleasePublishedAtIso?: string,
 ): string {
   const header = `import type { StateRecord } from "@/data/types";
 
@@ -415,7 +430,11 @@ export const RAW_STATES: Record<string, StateRecord> = {
     );
   }
 
-  const metaBlock = `\n/**\n * Build-time anchors for residential EIA ingests (canonical CSV-derived).\n * \`pipelineSynchronizedAtIso\` is the newest ingest timestamp in rows; freshness UX should\n * anchor off this ISO string while \`RAW_STATES[].updated\` stays the latest EIA reporting month.\n */\nexport const EIA_RESIDENTIAL_RETAIL_PRICE_DATA_META = {\n  dataThroughYm: ${JSON.stringify(latestPeriod)},\n  pipelineSynchronizedAtIso: ${JSON.stringify(pipelineSynchronizedAtIso)},\n} as const;\n`;
+  const releaseField =
+    typeof eiaReleasePublishedAtIso === "string"
+      ? `\n  eiaReleasePublishedAtIso: ${JSON.stringify(eiaReleasePublishedAtIso)},`
+      : "";
+  const metaBlock = `\n/**\n * Build-time anchors for residential EIA ingests (canonical CSV-derived).\n * \`pipelineSynchronizedAtIso\` is the newest ingest timestamp in rows; freshness UX should\n * anchor off this ISO string while \`RAW_STATES[].updated\` stays the latest EIA reporting month.\n * Optional \`eiaReleasePublishedAtIso\` is copied from \`data/raw/eia/retail_res_monthly_latest_refresh.json\`\n * when present (official EIA publication timing for the series cut, not a future data month).\n */\nexport const EIA_RESIDENTIAL_RETAIL_PRICE_DATA_META = {\n  dataThroughYm: ${JSON.stringify(latestPeriod)},\n  pipelineSynchronizedAtIso: ${JSON.stringify(pipelineSynchronizedAtIso)},${releaseField}\n} as const;\n`;
 
   return `${header}${lines.join("\n")}\n};${metaBlock}`;
 }
@@ -443,6 +462,7 @@ export const HISTORY_BY_STATE: Record<string, StateHistory> = Object.fromEntries
 async function main(): Promise<void> {
   const csvText = await readFile(INPUT_CSV_PATH, "utf8");
   const { rows, maxFetchedAtMs } = parseCsv(csvText);
+  const eiaReleasePublishedAtIso = await loadOptionalEiaReleasePublishedAtIsoFromRefreshJson();
   const pipelineSynchronizedAtIso = await resolvePipelineSynchronizedAtIso(maxFetchedAtMs);
   const byStatePostal = groupRowsByState(rows);
   const history = buildHistory(byStatePostal);
@@ -496,7 +516,7 @@ async function main(): Promise<void> {
   );
   await writeFile(
     OUTPUT_RAW_STATES_PATH,
-    buildRawStatesTs(v2Period, byStatePostal, pipelineSynchronizedAtIso),
+    buildRawStatesTs(v2Period, byStatePostal, pipelineSynchronizedAtIso, eiaReleasePublishedAtIso),
     "utf8",
   );
 

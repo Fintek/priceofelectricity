@@ -1,5 +1,6 @@
 {
   "source_url": "https://api.eia.gov/v2/electricity/retail-sales/data/",
+  "eia_release_published_at": "2026-04-23T00:00:00.000Z",
   "fetched_at": "2026-04-28T11:48:55.834Z",
   "request": {
     "frequency": "monthly",
