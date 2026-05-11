@@ -79,6 +79,8 @@ export default async function ElectricityBillEstimatorStatePage({
     maxLinksPerSection: 2,
   });
   const canonicalPath = `/electricity-bill-estimator/${slug}`;
+  const missingResidentialRate =
+    state.avgRateCentsPerKwh == null || Number.isNaN(state.avgRateCentsPerKwh);
 
   const breadcrumbJsonLd = buildBreadcrumbListJsonLd([
     { name: "Home", url: "/" },
@@ -161,7 +163,7 @@ export default async function ElectricityBillEstimatorStatePage({
           updatedLabel: state.updatedLabel,
         }}
         contentBelowStatCards={
-          state.avgRateCentsPerKwh == null ? (
+          missingResidentialRate ? (
             <p className="muted" style={{ margin: 0, maxWidth: "75ch" }}>
               We do not currently have a normalized statewide residential average rate for {state.name} in this tool,
               so energy-only estimates and some benchmark differences show as unavailable (N/A) rather than implying a

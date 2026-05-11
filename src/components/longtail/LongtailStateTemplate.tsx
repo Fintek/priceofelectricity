@@ -119,10 +119,19 @@ export default function LongtailStateTemplate({
                 ) : null}
               </div>
             ))}
+            {contentBelowStatCards ? (
+              <div
+                className="stat-panel-full-width-note"
+                style={{
+                  gridColumn: "1 / -1",
+                  marginTop: "var(--space-2)",
+                  marginBottom: 0,
+                }}
+              >
+                {contentBelowStatCards}
+              </div>
+            ) : null}
           </div>
-          {contentBelowStatCards ? (
-            <div style={{ marginTop: "var(--space-4)", marginBottom: "var(--space-2)" }}>{contentBelowStatCards}</div>
-          ) : null}
           <div style={{ marginTop: 16 }}>
             <h2 className="heading-section">Key metrics</h2>
             <div className="data-table-wrap">
