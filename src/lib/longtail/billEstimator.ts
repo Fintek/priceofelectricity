@@ -338,6 +338,7 @@ export function buildBillEstimatorDifferenceVsBenchmark(
 ): string {
   if (profileMonthlyCost == null || benchmarkMonthlyCost == null) return "N/A";
   const diff = profileMonthlyCost - benchmarkMonthlyCost;
-  const direction = diff >= 0 ? "higher" : "lower";
+  if (Math.round(diff * 100) === 0) return "About the same";
+  const direction = diff > 0 ? "higher" : "lower";
   return `${formatUsd(Math.abs(diff))} ${direction}`;
 }

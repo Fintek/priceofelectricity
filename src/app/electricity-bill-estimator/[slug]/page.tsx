@@ -16,6 +16,7 @@ import {
 } from "@/lib/longtail/billEstimator";
 import { AVERAGE_ELECTRICITY_BILL_USAGE_KWH, buildAverageBillComparisonSummary } from "@/lib/longtail/averageBill";
 import { buildLongtailLinkSections } from "@/lib/longtail/internalLinks";
+import { formatApplianceSlugForDisplay } from "@/lib/longtail/applianceConfig";
 import { getActiveApplianceSlugs } from "@/lib/longtail/rollout";
 import { buildMetadata } from "@/lib/seo/metadata";
 import {
@@ -160,6 +161,13 @@ export default async function ElectricityBillEstimatorStatePage({
           updatedLabel: state.updatedLabel,
         }}
       >
+        {state.avgRateCentsPerKwh == null ? (
+          <p className="muted" style={{ marginBottom: "var(--space-5)", maxWidth: "75ch" }}>
+            We do not currently have a normalized statewide residential average rate for {state.name} in this tool,
+            so energy-only estimates and some benchmark differences show as unavailable (N/A) rather than implying a
+            precision we do not have.
+          </p>
+        ) : null}
         <section style={{ marginBottom: "var(--space-7)" }}>
           <h2 className="heading-section">Household profile scenarios</h2>
           <p className="muted" style={{ marginTop: 0, marginBottom: 12, maxWidth: "75ch" }}>
@@ -256,11 +264,11 @@ export default async function ElectricityBillEstimatorStatePage({
             {featuredApplianceSlugs.map((applianceSlug) => (
               <li key={applianceSlug}>
                 <Link href={`/cost-to-run/${applianceSlug}/${slug}`}>
-                  {applianceSlug.replace(/-/g, " ")} cost to run in {state.name}
+                  {formatApplianceSlugForDisplay(applianceSlug)} cost to run in {state.name}
                 </Link>
                 {" · "}
                 <Link href={`/electricity-cost-calculator/${slug}/${applianceSlug}`}>
-                  {applianceSlug.replace(/-/g, " ")} calculator scenario
+                  {formatApplianceSlugForDisplay(applianceSlug)} calculator scenario
                 </Link>
               </li>
             ))}

@@ -522,6 +522,12 @@ export function isSupportedApplianceSlug(value: string): value is ApplianceSlug 
   return SUPPORTED_APPLIANCE_SLUGS.includes(value as ApplianceSlug);
 }
 
+/** User-facing appliance name for a slug (catalog display names keep abbreviations like AC correct). */
+export function formatApplianceSlugForDisplay(slug: string): string {
+  const appliance = APPLIANCE_CONFIGS.find((item) => item.slug === slug);
+  return appliance?.displayName ?? slug.replace(/-/g, " ").replace(/\b\w/g, (c) => c.toUpperCase());
+}
+
 export function getApplianceConfig(slug: ApplianceSlug): ApplianceConfig {
   const appliance = APPLIANCE_CONFIGS.find((item) => item.slug === slug);
   if (!appliance) {

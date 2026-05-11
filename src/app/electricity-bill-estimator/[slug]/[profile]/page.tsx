@@ -16,6 +16,7 @@ import {
   isBillEstimatorProfileSlug,
   loadBillEstimatorStateSummary,
 } from "@/lib/longtail/billEstimator";
+import { formatApplianceSlugForDisplay } from "@/lib/longtail/applianceConfig";
 import { getActiveApplianceSlugs } from "@/lib/longtail/rollout";
 import { buildMetadata } from "@/lib/seo/metadata";
 import {
@@ -205,7 +206,7 @@ export default async function ElectricityBillEstimatorProfilePage({
               },
               ...featuredApplianceSlugs.map((applianceSlug) => ({
                 href: `/cost-to-run/${applianceSlug}/${slug}`,
-                label: `${applianceSlug.replace(/-/g, " ")} cost to run in ${state.name}`,
+                label: `${formatApplianceSlugForDisplay(applianceSlug)} cost to run in ${state.name}`,
                 description: "Appliance operating-cost page",
               })),
             ],

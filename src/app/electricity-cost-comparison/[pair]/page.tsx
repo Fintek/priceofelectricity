@@ -289,8 +289,15 @@ export default async function ElectricityCostComparisonPairPage({
           >
             <p style={{ margin: 0, fontSize: 16, lineHeight: 1.6 }}>{summaryText}</p>
             <p className="muted" style={{ marginTop: 8, fontSize: 14 }}>
-              Difference: {differenceDollars >= 0 ? "+" : ""}${differenceDollars.toFixed(2)} (
-              {differencePercent >= 0 ? "+" : ""}{differencePercent.toFixed(1)}%) at 900 kWh/month
+              {Math.round(differenceDollars * 100) === 0 ? (
+                <>About the same at 900 kWh/month.</>
+              ) : (
+                <>
+                  Difference: {differenceDollars >= 0 ? "+" : ""}${differenceDollars.toFixed(2)} (
+                  {differencePercent >= 0 ? "+" : ""}
+                  {differencePercent.toFixed(1)}%) at 900 kWh/month
+                </>
+              )}
             </p>
           </div>
         </section>
