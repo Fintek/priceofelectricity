@@ -160,14 +160,16 @@ export default async function ElectricityBillEstimatorStatePage({
           sourceUrl: state.sourceUrl,
           updatedLabel: state.updatedLabel,
         }}
+        contentBelowStatCards={
+          state.avgRateCentsPerKwh == null ? (
+            <p className="muted" style={{ margin: 0, maxWidth: "75ch" }}>
+              We do not currently have a normalized statewide residential average rate for {state.name} in this tool,
+              so energy-only estimates and some benchmark differences show as unavailable (N/A) rather than implying a
+              precision we do not have.
+            </p>
+          ) : null
+        }
       >
-        {state.avgRateCentsPerKwh == null ? (
-          <p className="muted" style={{ marginBottom: "var(--space-5)", maxWidth: "75ch" }}>
-            We do not currently have a normalized statewide residential average rate for {state.name} in this tool,
-            so energy-only estimates and some benchmark differences show as unavailable (N/A) rather than implying a
-            precision we do not have.
-          </p>
-        ) : null}
         <section style={{ marginBottom: "var(--space-7)" }}>
           <h2 className="heading-section">Household profile scenarios</h2>
           <p className="muted" style={{ marginTop: 0, marginBottom: 12, maxWidth: "75ch" }}>
