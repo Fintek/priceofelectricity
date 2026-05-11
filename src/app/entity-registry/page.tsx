@@ -15,6 +15,7 @@ export const metadata: Metadata = buildMetadata({
   description:
     "Index of core entities: price concepts, states, rankings, datasets. For verifying site structure.",
   canonicalPath: "/entity-registry",
+  robots: { index: false, follow: true },
 });
 
 export default async function EntityRegistryPage() {

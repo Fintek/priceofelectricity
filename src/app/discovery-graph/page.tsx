@@ -14,6 +14,7 @@ export const metadata: Metadata = buildMetadata({
   description:
     "Curated relationship map of major topics, datasets, and methodology. Machine-readable JSON for crawlers.",
   canonicalPath: "/discovery-graph",
+  robots: { index: false, follow: true },
 });
 
 export default async function DiscoveryGraphPage() {

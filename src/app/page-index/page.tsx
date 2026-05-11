@@ -14,6 +14,7 @@ export const metadata: Metadata = buildMetadata({
   description:
     "Browse major pages by category: state pages, rankings, tools, topics, datasets, and methodology.",
   canonicalPath: "/page-index",
+  robots: { index: false, follow: true },
 });
 
 export default async function PageIndexPage() {

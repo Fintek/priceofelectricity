@@ -13,6 +13,7 @@ export const metadata: Metadata = buildMetadata({
   description:
     "Registry of electricity datasets used by the site: rate data, rankings, and downloadable exports. Links to methodology and dataset pages.",
   canonicalPath: "/data-registry",
+  robots: { index: false, follow: true },
 });
 
 const REGISTRY_ITEMS: Array<{

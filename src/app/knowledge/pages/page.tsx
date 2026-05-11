@@ -21,6 +21,7 @@ export const metadata: Metadata = buildMetadata({
   description:
     "Human-readable directory of all Knowledge JSON pages: states, national, methodologies, rankings, and verticals.",
   canonicalPath: "/knowledge/pages",
+  robots: { index: false, follow: true },
 });
 
 export default async function KnowledgePagesDirectoryPage() {
