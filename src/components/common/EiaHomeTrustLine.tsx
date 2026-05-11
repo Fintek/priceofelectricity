@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { EIA_STATE_RESIDENTIAL_DATA_URL } from "@/data/sources";
 import {
   getCanonicalDatasetSynchronizedMediumDateUtc,
   getCanonicalEiaReleasePublishedMediumDateUtc,
@@ -23,7 +24,11 @@ export default function EiaHomeTrustLine() {
         <Link href="/methodology">Methodology</Link> · <Link href="/datasets">Data</Link>
       </p>
       <p className="muted" style={{ marginTop: 0, marginBottom: 20, fontSize: 12, maxWidth: "72ch", lineHeight: 1.5 }}>
-        EIA publishes monthly state electricity data with a reporting lag.
+        Residential rates on this site follow the latest available{" "}
+        <a href={EIA_STATE_RESIDENTIAL_DATA_URL} rel="noopener noreferrer" target="_blank">
+          U.S. Energy Information Administration
+        </a>{" "}
+        state electricity data. EIA publishes monthly figures with a reporting lag.
       </p>
     </>
   );

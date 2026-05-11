@@ -44,6 +44,10 @@ const SOURCES_BY_SLUG = Object.fromEntries(
   SOURCES.map((s) => [s.slug, s])
 ) as Record<string, Source>;
 
+/** Human-readable EIA page for state-level residential electricity data (shared outbound trust link). */
+export const EIA_STATE_RESIDENTIAL_DATA_URL =
+  SOURCES_BY_SLUG.eia?.url ?? "https://www.eia.gov/electricity/data/state/";
+
 /** Maps state sourceName to source slug for linking. */
 const SOURCE_NAME_TO_SLUG: Record<string, string> = {
   "PowerOutage.us": "poweroutage-us",

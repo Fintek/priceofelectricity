@@ -1,7 +1,7 @@
 // ARCHITECTURE:
 // RAW → VALIDATED → TRANSFORMED → NORMALIZED → RENDERED
 // This separation prepares the system for future automated ingestion.
-import { getSourceSlugForState } from "@/data/sources";
+import { EIA_STATE_RESIDENTIAL_DATA_URL, getSourceSlugForState } from "@/data/sources";
 import { computeAffordability, type AffordabilityRecord } from "@/lib/affordability";
 import { computeValueScores, type ValueScore } from "@/lib/valueScore";
 import { computeFreshness } from "@/lib/freshness";
@@ -41,7 +41,7 @@ const EXAMPLE_KWH = [500, 900, 1000, 1500] as const;
 // monthly refresh pipeline (scripts/eia/*) is the canonical ingestion path;
 // `src/data/raw/states.raw.ts` is regenerated from that CSV on each refresh.
 const DEFAULT_SOURCE_NAME = "U.S. Energy Information Administration (EIA)";
-const DEFAULT_SOURCE_URL = "https://www.eia.gov/electricity/data/state/";
+const DEFAULT_SOURCE_URL = EIA_STATE_RESIDENTIAL_DATA_URL;
 const DEFAULT_METHODOLOGY =
   "Average residential electricity price in cents per kWh from the published state-level dataset. Values are used as a reference benchmark for comparison and estimation.";
 const DEFAULT_DISCLAIMER =

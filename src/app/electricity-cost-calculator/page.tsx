@@ -8,6 +8,7 @@ import {
   sortAverageBillStates,
 } from "@/lib/longtail/averageBill";
 import { CALCULATOR_USAGE_TIERS } from "@/lib/longtail/calculatorCluster";
+import { EIA_STATE_RESIDENTIAL_DATA_URL } from "@/data/sources";
 import { getRelease } from "@/lib/knowledge/fetch";
 import { buildMetadata } from "@/lib/seo/metadata";
 import { formatRate, formatUsd } from "@/lib/longtail/stateLongtail";
@@ -82,8 +83,12 @@ export default async function ElectricityCostCalculatorIndexPage() {
           calculators, fixed usage examples, appliance tools, and related guides.
         </p>
         <p className="muted" style={{ margin: "0 0 24px 0", maxWidth: "65ch", fontSize: 14 }}>
-          Rates come from the same EIA-backed residential dataset used across this site&apos;s state pages, average
-          bill comparisons, usage-cost examples, and appliance calculators.
+          Rates come from the same{" "}
+          <a href={EIA_STATE_RESIDENTIAL_DATA_URL} rel="noopener noreferrer" target="_blank">
+            U.S. Energy Information Administration
+          </a>{" "}
+          residential dataset used across this site&apos;s state pages, average bill comparisons, usage-cost examples,
+          and appliance calculators.
         </p>
 
         <ElectricityCostNationalCalculator states={calculatorStates} />

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { EIA_STATE_RESIDENTIAL_DATA_URL } from "@/data/sources";
 import { SITE_URL } from "@/lib/site";
 import { buildMetadata } from "@/lib/seo/metadata";
 
@@ -79,7 +80,11 @@ export default async function ElectricityPricesByStateDatasetPage() {
       <p className="intro muted" style={{ marginTop: 0 }}>
         State-level average residential electricity rates (¢/kWh) with national
         comparison and a plain-language trend label. Derived from the site&apos;s
-        normalized data pipeline.
+        normalized data pipeline, based on the latest available{" "}
+        <a href={EIA_STATE_RESIDENTIAL_DATA_URL} rel="noopener noreferrer" target="_blank">
+          U.S. Energy Information Administration
+        </a>{" "}
+        residential data.
       </p>
 
       <section style={{ marginTop: 24 }}>

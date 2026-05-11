@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-05-11T16:59:35.949Z",
-  "commit": "87a3cc1",
+  "generatedAt": "2026-05-11T18:55:31.532Z",
+  "commit": "1a94eda",
   "summary": {
     "total": 93,
     "passed": 93,
@@ -147,7 +147,7 @@
     {
       "name": "/health returns release fields",
       "passed": true,
-      "details": "commit=87a3cc1 data=v20260215"
+      "details": "commit=1a94eda data=v20260215"
     },
     {
       "name": "/ reachable",

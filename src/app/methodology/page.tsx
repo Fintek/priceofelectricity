@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { EIA_STATE_RESIDENTIAL_DATA_URL } from "@/data/sources";
 import { SITE_URL, LAST_REVIEWED } from "@/lib/site";
 import ExploreMore from "@/components/navigation/ExploreMore";
 import SectionNav from "@/components/navigation/SectionNav";
@@ -125,7 +126,12 @@ export default function MethodologyPage() {
         <h2 style={{ fontSize: 22, marginBottom: 8 }}>Data foundation</h2>
         <p style={{ marginTop: 0 }}>
           All metrics use state-level average residential electricity prices
-          (¢/kWh) from our normalized data pipeline. See{" "}
+          (¢/kWh) from our normalized data pipeline, grounded in the latest
+          available{" "}
+          <a href={EIA_STATE_RESIDENTIAL_DATA_URL} rel="noopener noreferrer" target="_blank">
+            U.S. Energy Information Administration
+          </a>{" "}
+          state electricity data. See{" "}
           <Link href="/electricity-data">electricity data</Link>,{" "}
           <Link href="/datasets">datasets</Link>,{" "}
           <Link href="/sources">sources</Link>,{" "}

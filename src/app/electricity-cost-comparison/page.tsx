@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { EIA_STATE_RESIDENTIAL_DATA_URL } from "@/data/sources";
 import {
   loadComparePairs,
   loadElectricityComparisonPairs,
@@ -108,7 +109,11 @@ export default async function ElectricityCostComparisonIndexPage() {
           dollars and percentage.
         </p>
         <p className="muted" style={{ marginTop: 0, marginBottom: 24, fontSize: 13 }}>
-          Rates from EIA data · <Link href="/methodology">Methodology</Link>
+          Rates from{" "}
+          <a href={EIA_STATE_RESIDENTIAL_DATA_URL} rel="noopener noreferrer" target="_blank">
+            EIA residential data
+          </a>{" "}
+          · <Link href="/methodology">Methodology</Link>
         </p>
 
         {/* ── FEATURED COMPARISONS ── */}

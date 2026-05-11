@@ -345,7 +345,15 @@ export default function StatePage({
         monthly publication
         {" · "}
         Source:{" "}
-        {ns.source.slug ? (
+        {ns.source.slug === "eia" ? (
+          <TrackedOutboundLink
+            href={ns.source.url}
+            eventName="SourceLinkClick"
+            props={{ state: slug }}
+          >
+            {ns.source.name}
+          </TrackedOutboundLink>
+        ) : ns.source.slug ? (
           <Link href={`/sources/${ns.source.slug}`}>{ns.source.name}</Link>
         ) : (
           <TrackedOutboundLink

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { EIA_STATE_RESIDENTIAL_DATA_URL } from "@/data/sources";
 import { SITE_URL } from "@/lib/site";
 import ExploreMore from "@/components/navigation/ExploreMore";
 import SectionNav from "@/components/navigation/SectionNav";
@@ -55,6 +56,13 @@ export default function DatasetsHubPage() {
       </p>
       <p style={{ marginTop: 8, marginBottom: 0, maxWidth: "65ch", fontSize: 14, lineHeight: 1.5 }}>
         <strong>Why download?</strong> Researchers, analysts, and journalists use these datasets to study electricity prices, build models, or cite our data. All exports are static and deterministic.
+      </p>
+      <p className="muted" style={{ marginTop: 10, marginBottom: 0, maxWidth: "65ch", fontSize: 13, lineHeight: 1.5 }}>
+        Residential rate inputs trace to the{" "}
+        <a href={EIA_STATE_RESIDENTIAL_DATA_URL} rel="noopener noreferrer" target="_blank">
+          U.S. Energy Information Administration
+        </a>{" "}
+        state electricity data series.
       </p>
 
       <section style={{ marginTop: 24 }}>
