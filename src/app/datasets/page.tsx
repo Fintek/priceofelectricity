@@ -55,7 +55,7 @@ export default function DatasetsHubPage() {
         The downloadable evidence layer. PriceOfElectricity.com publishes electricity price and ranking datasets. Use these for research, analysis, or to verify our numbers—no API or runtime computation required.
       </p>
       <p style={{ marginTop: 8, marginBottom: 0, maxWidth: "65ch", fontSize: 14, lineHeight: 1.5 }}>
-        <strong>Why download?</strong> Researchers, analysts, and journalists use these datasets to study electricity prices, build models, or cite our data. All exports are static and deterministic.
+        <strong>Why download?</strong> Researchers, analysts, and journalists use these datasets to study electricity prices, build models, or cite our data. All exports are static files produced with repeatable formulas from our snapshots.
       </p>
       <p className="muted" style={{ marginTop: 10, marginBottom: 0, maxWidth: "65ch", fontSize: 13, lineHeight: 1.5 }}>
         Residential rate inputs trace to the{" "}

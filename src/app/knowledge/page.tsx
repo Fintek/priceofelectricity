@@ -172,7 +172,7 @@ export default async function KnowledgeHubPage() {
             The main authority for U.S. electricity price data: national snapshot, state rankings, affordability, value scores, and price momentum.
           </p>
           <p className="muted" style={{ margin: 0, maxWidth: "65ch", fontSize: 16, lineHeight: 1.6 }}>
-            Explore national snapshots, state-by-state rates and metrics, rankings, regional summaries, and state comparisons. All data is build-generated and deterministic.
+            Explore national snapshots, state-by-state rates and metrics, rankings, regional summaries, and state comparisons. All charts and tables are rebuilt from source datasets whenever the knowledge bundle is regenerated.
           </p>
         </header>
 
@@ -449,8 +449,7 @@ export default async function KnowledgeHubPage() {
         <section style={{ marginBottom: 32 }}>
           <h2 style={{ fontSize: 20, marginBottom: 12 }}>Methodology & Transparency</h2>
           <p className="muted" style={{ margin: "0 0 12px 0", fontSize: 14 }}>
-            Rankings and insights are generated from build-time datasets. All methodologies are documented and
-            deterministic.
+            Rankings and insights are generated from build-time datasets. Methodology pages explain how each ranking is calculated with consistent rules.
           </p>
           <ul style={{ paddingLeft: 20, lineHeight: 1.8, margin: 0 }}>
             <li>

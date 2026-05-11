@@ -106,7 +106,7 @@ export default async function ElectricityUsageHubPage({
           },
           {
             title: "Browse all states for this usage tier",
-            intro: "Use the state-specific longtail pages below to answer usage cost questions in individual states.",
+            intro: "Use the linked state pages below for state-specific monthly kWh cost answers.",
             cards: buildUsageTierCardsForStates(states, parsedKwh),
           },
         ]}

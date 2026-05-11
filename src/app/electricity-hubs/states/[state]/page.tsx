@@ -36,7 +36,7 @@ export async function generateMetadata({
   return buildMetadata({
     title: `${data.name} Electricity Hub | PriceOfElectricity.com`,
     description:
-      `Explore longtail electricity pages for ${data.name}, including price-per-kWh pages, usage scenario pages, comparison pages, and calculators.`,
+      `Explore electricity cost pages for ${data.name}, including price per kWh, usage scenarios, comparisons, and calculators.`,
     canonicalPath: `/electricity-hubs/states/${state}`,
   });
 }
@@ -69,7 +69,7 @@ export default async function StateElectricityHubPage({
   const webPageJsonLd = buildWebPageJsonLd({
     title: `${data.name} Electricity Hub`,
     description:
-      `Explore longtail electricity pages for ${data.name}, including price-per-kWh pages, usage scenario pages, comparison pages, and calculators.`,
+      `Explore electricity cost pages for ${data.name}, including price per kWh, usage scenarios, comparisons, and calculators.`,
     url: canonicalPath,
     isPartOf: "/",
     about: [
@@ -90,7 +90,7 @@ export default async function StateElectricityHubPage({
           { label: `${data.name} Electricity Hub` },
         ]}
         title={`${data.name} Electricity Hub`}
-        intro={`This hub organizes the site's electricity pages for ${data.name} into one discovery layer. Use it to move from broad state context into dedicated longtail pages for current rates, usage cost scenarios, trend pages, comparisons, and calculators.`}
+        intro={`This hub lists the main electricity pages we publish for ${data.name}. Use it to move from the statewide overview into rate detail, usage-based cost examples, trends, comparisons, and calculators.`}
         stats={stats}
         monetizationContext={{
           pageType: "hub-state-detail",

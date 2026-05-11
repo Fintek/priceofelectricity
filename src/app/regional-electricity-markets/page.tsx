@@ -140,7 +140,7 @@ export default async function RegionalElectricityMarketsPage() {
         </section>
 
         <TopicClusterNav
-          title="Related topic clusters"
+          title="Related topics"
           description="Market structure, cost drivers, and price dynamics."
           links={[
             { href: "/electricity-markets", label: "Electricity market structures" },

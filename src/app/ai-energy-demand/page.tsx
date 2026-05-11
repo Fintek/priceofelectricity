@@ -187,7 +187,7 @@ export default async function AIEnergyDemandPage() {
         )}
 
         <TopicClusterNav
-          title="Related topic clusters"
+          title="Related topics"
           description="Data centers, grid capacity, electricity data, and trends."
           links={[
             { href: "/data-center-electricity-cost", label: "Data center electricity cost" },

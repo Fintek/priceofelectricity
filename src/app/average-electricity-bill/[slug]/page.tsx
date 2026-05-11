@@ -184,8 +184,8 @@ export default async function AverageElectricityBillStatePage({
             </table>
           </div>
           <p style={{ marginBottom: 0, marginTop: 12, lineHeight: 1.7 }}>
-            These usage pages are the canonical route family for fixed-kWh consumer electricity searches. The bill page
-            uses them as supporting examples rather than duplicating the same intent under another URL.
+            These usage pages handle fixed monthly kWh searches like &quot;how much does 1,000 kWh cost?&quot; The bill
+            page links to them as supporting examples instead of duplicating the same math under another URL.
           </p>
         </section>
 

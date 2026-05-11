@@ -48,7 +48,7 @@ export default function BuildStamp({ release }: BuildStampProps) {
       <div style={{ marginTop: 6, marginBottom: 4, maxWidth: "72ch", fontSize: 11, lineHeight: 1.55 }}>
         Latest EIA residential reporting month: {reportingMonth}.
         {syncLabel !== null ? (
-          <> Dataset synchronized from canonical source {syncLabel} (UTC).</>
+          <> Dataset synchronized from the published EIA release {syncLabel} (UTC).</>
         ) : null}{" "}
         EIA monthly state data ships on a reporting lag; ingest stamps track when this site pulled the published
         series, not unpublished future EIA months.

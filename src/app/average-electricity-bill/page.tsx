@@ -250,7 +250,7 @@ export default async function AverageElectricityBillIndexPage() {
               <Link href="/electricity-bill-estimator">Household-profile bill estimator hub</Link>
               {` `}
               <span className="muted">
-                Compare deterministic apartment, small-home, medium-home, and large-home scenarios.
+                Compare apartment, small-home, medium-home, and large-home bill scenarios.
               </span>
             </li>
           </ul>

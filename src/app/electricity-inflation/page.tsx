@@ -284,7 +284,7 @@ export default async function ElectricityInflationPage() {
         </section>
 
         <TopicClusterNav
-          title="Related topic clusters"
+          title="Related topics"
           description="Affordability, volatility, cost-of-living, and data."
           links={[
             { href: "/electricity-affordability", label: "Electricity affordability" },

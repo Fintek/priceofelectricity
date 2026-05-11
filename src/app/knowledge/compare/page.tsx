@@ -60,7 +60,7 @@ export default async function KnowledgeComparePage() {
       />
       <p className="muted" style={{ marginTop: 0 }}>
         Select 2–4 states to compare key metrics side by side. Use presets for quick comparisons or search to pick
-        specific states. Data is static and build-generated.
+        specific states. Data updates when the static knowledge bundle is rebuilt.
       </p>
       <CompareStatesClient
         compareData={compareData}

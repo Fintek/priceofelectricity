@@ -110,7 +110,7 @@ export async function loadCityElectricitySummary(
   const estimateMethodNote =
     estimateBasis === "city-config-reference"
       ? "City configured reference rate when available; still an estimate for comparison context."
-      : "Modeled estimate derived from state average rate with deterministic population-based modifier.";
+      : "Modeled estimate derived from the state average rate with a population-based adjustment.";
 
   return {
     city,

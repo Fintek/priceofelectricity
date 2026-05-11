@@ -59,7 +59,7 @@ export default async function EnergyComparisonHubPage() {
   const webPageJsonLd = buildWebPageJsonLd({
     title: "Energy Comparison Hub",
     description:
-      "Structured comparison discovery hub that routes users into canonical comparison, usage, appliance, and city electricity pages.",
+      "Hub page linking to state, usage, appliance, and city electricity comparisons across the site.",
     url: "/energy-comparison",
     isPartOf: "/",
     about: [
@@ -71,31 +71,31 @@ export default async function EnergyComparisonHubPage() {
   });
   const faqJsonLd = buildFaqPageJsonLd([
     {
-      question: "Does the Energy Comparison Hub create new canonical comparison pages?",
+      question: "Does the Energy Comparison Hub create new comparison pages?",
       answer:
-        "No. It is a curated discovery layer that links into existing canonical state, usage, appliance, and city comparison routes.",
+        "No. It is a guide that links to existing state, usage, appliance, and city electricity pages elsewhere on the site.",
     },
     {
-      question: "Where are state-to-state comparison pages canonicalized?",
+      question: "Where are state-to-state comparison pages?",
       answer:
-        "State pair comparisons remain canonical in /electricity-cost-comparison/[pair].",
+        "State pair comparisons live under /electricity-cost-comparison/[pair].",
     },
     {
-      question: "How does this hub reinforce topical authority?",
+      question: "How does this hub help?",
       answer:
-        "It provides curated pathways across state, usage, appliance, city, and bill clusters while preserving canonical ownership in the destination families.",
+        "It organizes entry points for comparing states, monthly kWh levels, appliances, and example city bills so you can reach the right page quickly.",
     },
   ]);
-  const clusterItemListJsonLd = buildItemListJsonLd("Energy comparison canonical clusters", [
-    { name: "State comparison cluster", url: "/electricity-cost-comparison" },
-    { name: "Fixed-usage cost cluster", url: "/electricity-usage-cost/1000/texas" },
-    { name: "Appliance cost cluster", url: "/cost-to-run/refrigerator/texas" },
-    { name: "City electricity context cluster", url: "/electricity-cost/texas/houston" },
-    { name: "Bill estimator cluster", url: "/electricity-bill-estimator" },
-    { name: "Average bill benchmark cluster", url: "/average-electricity-bill" },
+  const clusterItemListJsonLd = buildItemListJsonLd("Energy comparison sections", [
+    { name: "State-to-state comparisons", url: "/electricity-cost-comparison" },
+    { name: "Fixed monthly kWh cost example", url: "/electricity-usage-cost/1000/texas" },
+    { name: "Appliance cost example", url: "/cost-to-run/refrigerator/texas" },
+    { name: "City electricity cost example", url: "/electricity-cost/texas/houston" },
+    { name: "Bill estimator", url: "/electricity-bill-estimator" },
+    { name: "Average electricity bill", url: "/average-electricity-bill" },
   ]);
   const providerDiscoveryItemListJsonLd = buildItemListJsonLd(
-    "Provider comparison discovery pathways",
+    "Provider comparison links",
     buildProviderDiscoveryItemListEntries(focusStates),
   );
   const commercialPathwaysJsonLd = buildCommercialPathwayItemListJsonLd(
@@ -103,8 +103,8 @@ export default async function EnergyComparisonHubPage() {
     [
       { name: "Electricity providers by state", url: "/electricity-providers", pathwayType: "provider-marketplace" },
       { name: "Offers and savings hub", url: "/offers", pathwayType: "offers" },
-      { name: "State electricity cluster", url: "/electricity-cost", pathwayType: "state-cluster" },
-      { name: "Bill estimator cluster", url: "/electricity-bill-estimator", pathwayType: "estimator-cluster" },
+      { name: "State electricity overview", url: "/electricity-cost", pathwayType: "state-cluster" },
+      { name: "Bill estimator", url: "/electricity-bill-estimator", pathwayType: "estimator-cluster" },
     ],
   );
   const providerDiscoveryLinks = buildProviderDiscoveryLinks(focusStates);

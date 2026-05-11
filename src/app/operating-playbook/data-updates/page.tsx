@@ -64,7 +64,7 @@ export default async function OperatingPlaybookDataUpdatesPage() {
           <h2 style={{ fontSize: 20, marginBottom: 12 }}>Rebuild Process</h2>
           <p style={{ marginTop: 0, marginBottom: 12, maxWidth: "65ch", fontSize: 16, lineHeight: 1.6 }}>
             At a high level, a rebuild loads source data, normalizes state metrics, computes national and ranking
-            outputs, and writes knowledge pages and discovery assets. The process is deterministic and does not
+            outputs, and writes knowledge pages and navigation aids. The process is repeatable and does not
             expose internal secrets or infrastructure details.
           </p>
         </section>

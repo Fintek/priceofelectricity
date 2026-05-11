@@ -12,7 +12,7 @@ export const revalidate = 86400;
 export const metadata: Metadata = buildMetadata({
   title: "Data and Discovery Expansion Framework | PriceOfElectricity.com",
   description:
-    "How data assets, discovery systems, and methodology should evolve as the site expands. Data layer, discovery layer, and trust principles.",
+    "How data assets and navigation pages should evolve as the site expands—including datasets, methodology, and transparency tools.",
   canonicalPath: "/future-expansion/data-and-discovery-expansion",
   robots: { index: false, follow: false },
 });

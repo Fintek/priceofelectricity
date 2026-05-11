@@ -62,7 +62,7 @@ export default async function QualityChecksPage() {
         <section style={{ marginBottom: 32 }}>
           <h2 style={{ fontSize: 20, marginBottom: 12 }}>Why This Matters</h2>
           <p style={{ marginTop: 0, marginBottom: 16, maxWidth: "65ch", fontSize: 16, lineHeight: 1.6 }}>
-            A large electricity analysis site with many state pages, rankings, and programmatic routes benefits from repeatable quality checks. Catching missing datasets or broken links before deployment helps keep the site reliable for users, crawlers, and researchers.
+            A large electricity reference site with many state pages, rankings, and templated routes benefits from repeatable quality checks. Catching missing datasets or broken links before deployment helps keep the site reliable for readers and researchers.
           </p>
         </section>
 

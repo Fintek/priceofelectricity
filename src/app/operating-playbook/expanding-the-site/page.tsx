@@ -12,7 +12,7 @@ export const revalidate = 86400;
 export const metadata: Metadata = buildMetadata({
   title: "Expanding the Electricity Analysis Site | PriceOfElectricity.com",
   description:
-    "How the site expands: topic hubs, programmatic state pages, comparison pages, discovery layers, and marketplace-ready educational pages.",
+    "How the site expands: topic hubs, templated state pages, comparison pages, navigation aids, and marketplace-ready educational pages.",
   canonicalPath: "/operating-playbook/expanding-the-site",
   robots: { index: false, follow: false },
 });
@@ -43,9 +43,9 @@ export default async function OperatingPlaybookExpandingPage() {
         {/* Intro */}
         <section style={{ marginBottom: 32 }}>
           <p style={{ marginTop: 0, marginBottom: 16, maxWidth: "65ch", fontSize: 16, lineHeight: 1.6 }}>
-            The site expands through several mechanisms: topic hubs, programmatic state pages, comparison pages,
-            discovery layers, and marketplace-ready educational pages. New content should fit into the existing
-            architecture.
+            The site expands through several coordinated pieces: topic hubs, templated state pages, comparison pages,
+            navigation and transparency pages, and marketplace-ready educational content. New material should fit the
+            existing patterns readers already recognize.
           </p>
         </section>
 
@@ -54,9 +54,9 @@ export default async function OperatingPlaybookExpandingPage() {
           <h2 style={{ fontSize: 20, marginBottom: 12 }}>Expansion Mechanisms</h2>
           <ul style={{ margin: 0, paddingLeft: 20, lineHeight: 1.8 }}>
             <li><strong>Topic hubs</strong> — Major theme areas (consumer costs, price trends, market structure) that link to related pages.</li>
-            <li><strong>Programmatic state pages</strong> — Route families that generate one page per state from shared data and templates.</li>
+            <li><strong>Templated state pages</strong> — Shared layouts that generate one page per state from the same inputs.</li>
             <li><strong>Comparison pages</strong> — State-to-state or scenario comparisons built from the same underlying data.</li>
-            <li><strong>Discovery layers</strong> — Page index, site map, entity registry, and discovery graph help users and crawlers find content.</li>
+            <li><strong>Navigation pages</strong> — Page index, site map, entity registry, and discovery graph help people find related reading.</li>
             <li><strong>Marketplace-ready educational pages</strong> — Provider, shopping, and business electricity context pages that explain what to evaluate without offering live offers or procurement.</li>
           </ul>
         </section>

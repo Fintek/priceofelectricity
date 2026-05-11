@@ -142,7 +142,7 @@ function buildStateCoreSection(stateData: LongtailStateData, pageType: LongtailP
           `Electricity cost in ${firstActiveCity.name}, ${stateName}`,
           `${firstActiveCity.name} electricity estimate (${stateName})`,
         ]),
-        description: "Rollout-gated city electricity context page with deterministic methodology disclosure",
+        description: "City electricity page with methodology notes where city coverage is available",
       });
     }
   }
@@ -163,7 +163,7 @@ function buildStateCoreSection(stateData: LongtailStateData, pageType: LongtailP
         `${stateName} household bill estimator`,
         `Electric bill estimator scenarios in ${stateName}`,
       ]),
-      description: "Deterministic household-profile bill scenarios",
+      description: "Household profile bill scenarios with fixed monthly kWh assumptions",
     });
   }
   if (hasRoute("authorityKnowledge")) {
@@ -200,14 +200,14 @@ function buildStateCoreSection(stateData: LongtailStateData, pageType: LongtailP
     links.push({
       href: "/electricity-usage",
       label: "National electricity usage hub",
-      description: "Household usage benchmarks, tiers, and usage intelligence pathways",
+      description: "National benchmarks for typical household kWh levels and related cost pages",
     });
   }
   if (hasRoute("hubIndex")) {
     links.push({
       href: "/electricity-hubs",
-      label: "Electricity discovery hubs",
-      description: "Top-level discovery hub connecting canonical state, usage, and comparison clusters",
+      label: "Electricity hubs directory",
+      description: "Top-level guides linking state, usage, and comparison electricity pages",
     });
   }
   const topApplianceSlugs = getActiveApplianceSlugs().slice(0, 2);
@@ -216,7 +216,7 @@ function buildStateCoreSection(stateData: LongtailStateData, pageType: LongtailP
       links.push({
         href: `/cost-to-run/${applianceSlug}/${state}`,
         label: `${slugToName(applianceSlug.replace(/-/g, " "))} cost in ${stateName}`,
-        description: "Canonical appliance operating cost page for this state",
+        description: "Appliance operating-cost page for this state",
       });
     }
   }
@@ -317,13 +317,13 @@ function buildApplianceEstimatorPathwaySection(stateData: LongtailStateData): Lo
     links.push({
       href: `/cost-to-run/${applianceSlug}/${state}`,
       label: `${slugToName(applianceSlug.replace(/-/g, " "))} cost in ${stateName}`,
-      description: "Canonical appliance operating-cost page for this state",
+      description: "Appliance operating-cost page for this state",
     });
     if (hasRoute("calculator")) {
       links.push({
         href: `/electricity-cost-calculator/${state}/${applianceSlug}`,
         label: `${slugToName(applianceSlug.replace(/-/g, " "))} calculator in ${stateName}`,
-        description: "Calculator-intent scenario page for this appliance",
+        description: "Calculator page for adjusting wattage and usage for this appliance",
       });
     }
   }
@@ -339,8 +339,8 @@ function buildApplianceEstimatorPathwaySection(stateData: LongtailStateData): Lo
   if (hasRoute("energyComparisonHub")) {
     links.push({
       href: "/energy-comparison/appliances",
-      label: "Appliance comparison discovery slice",
-      description: "Curated appliance and estimator comparison pathways",
+      label: "Appliance comparison guide",
+      description: "Appliance and estimator comparison links",
     });
   }
 
@@ -417,7 +417,7 @@ function buildHubSection(
     links.push({
       href: `/electricity-hubs/states/${stateData.slug}`,
       label: `${stateData.name} electricity hub`,
-      description: "Discovery hub for this state's price, usage, comparison, and tool pages",
+      description: "Guide to this state's electricity rate, usage, comparison, and tool pages",
     });
   }
 
@@ -432,8 +432,8 @@ function buildHubSection(
   if (hasRoute("coreCost")) {
     links.push({
       href: `/electricity-cost/${state}`,
-      label: `${stateName} electricity cost authority`,
-      description: "Canonical state electricity cost cluster page",
+      label: `${stateName} electricity cost overview`,
+      description: "State-level electricity cost page with rates and typical bill context",
     });
   }
 
@@ -441,7 +441,7 @@ function buildHubSection(
     links.push({
       href: `/average-electricity-bill/${state}`,
       label: `${stateName} average electricity bill benchmark`,
-      description: "Canonical benchmark bill cluster page",
+      description: "Typical monthly bill estimate using a standard household usage assumption",
     });
   }
 
@@ -449,7 +449,7 @@ function buildHubSection(
     links.push({
       href: `/electricity-bill-estimator/${state}`,
       label: `${stateName} electricity bill estimator`,
-      description: "Canonical estimator cluster page",
+      description: "Household profile bill scenarios for this state",
     });
   }
 
@@ -473,42 +473,42 @@ function buildHubSection(
     links.push({
       href: "/electricity-hubs/comparisons",
       label: "Electricity comparison hub",
-      description: "Explore state-vs-state electricity discovery pathways",
+      description: "Browse state-by-state electricity cost comparisons",
     });
   }
   if (hasRoute("energyComparisonHub")) {
     links.push({
       href: "/energy-comparison",
       label: "Energy comparison hub",
-      description: "Curated discovery across state, usage, appliance, and city comparison pathways",
+      description: "Hand-picked links for comparing states, usage tiers, appliances, and selected cities",
     });
   }
   if (hasRoute("energyComparisonStates")) {
     links.push({
       href: "/energy-comparison/states",
-      label: "State comparison slice",
-      description: "Curated state-vs-state links into canonical comparison pages",
+      label: "State-by-state comparisons",
+      description: "Side-by-side state comparison pages",
     });
   }
   if (hasRoute("energyComparisonUsage")) {
     links.push({
       href: "/energy-comparison/usage",
-      label: "Usage comparison slice",
-      description: "Curated fixed-kWh comparisons across key states",
+      label: "Usage tier comparisons",
+      description: "Fixed monthly kWh comparisons across selected states",
     });
   }
   if (hasRoute("energyComparisonAppliances")) {
     links.push({
       href: "/energy-comparison/appliances",
-      label: "Appliance comparison slice",
-      description: "Curated appliance-state and pilot appliance-city discovery routes",
+      label: "Appliance comparisons",
+      description: "Appliance cost pages by state and selected city examples",
     });
   }
   if (hasRoute("providerPage")) {
     links.push({
       href: "/electricity-providers",
       label: "Electricity provider marketplace index",
-      description: "State-by-state provider discovery connected to canonical cost and comparison clusters",
+      description: "State-by-state provider pages linked alongside cost and comparison tools",
     });
     links.push({
       href: `/electricity-providers/${state}`,

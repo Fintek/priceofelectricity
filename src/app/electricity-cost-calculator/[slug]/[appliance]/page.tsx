@@ -140,7 +140,7 @@ export default async function StateApplianceCalculatorPage({
           { label: applianceConfig.displayName },
         ]}
         title={`${applianceConfig.displayName} Electricity Calculator in ${state.name}`}
-        intro={`Use this appliance electricity calculator to estimate ${applianceConfig.displayName.toLowerCase()} operating cost in ${state.name} using deterministic wattage and runtime assumptions tied to the statewide residential electricity rate.`}
+        intro={`Use this appliance electricity calculator to estimate ${applianceConfig.displayName.toLowerCase()} operating cost in ${state.name} using typical wattage and runtime assumptions tied to the statewide residential electricity rate.`}
         stats={[
           { label: `${state.name} average rate`, value: formatRate(state.avgRateCentsPerKwh) },
           { label: "Assumed wattage", value: `${applianceConfig.averageWattage.toLocaleString()} W` },
@@ -186,7 +186,7 @@ export default async function StateApplianceCalculatorPage({
           <p style={{ marginTop: 0, lineHeight: 1.7 }}>
             This calculator uses a typical wattage range of {formatWattageRange(applianceConfig)}, with a standard
             working assumption of {applianceConfig.averageWattage.toLocaleString()} watts for{" "}
-            {formatHoursPerDay(applianceConfig.typicalUsageHoursPerDay)}. The deterministic formula is{" "}
+            {formatHoursPerDay(applianceConfig.typicalUsageHoursPerDay)}. The formula is{" "}
             <code>kWh = (watts × hours) / 1000</code>.
           </p>
           <p style={{ marginBottom: 0, lineHeight: 1.7 }}>
@@ -225,10 +225,10 @@ export default async function StateApplianceCalculatorPage({
         </section>
 
         <section style={{ marginBottom: "var(--space-7)" }}>
-          <h2 className="heading-section">Canonical appliance cost route</h2>
+          <h2 className="heading-section">Appliance cost reference page</h2>
           <p style={{ marginTop: 0, lineHeight: 1.7 }}>
-            Appliance-intent cost pages remain canonical at the dedicated route below. This calculator page is additive
-            for scenario-focused calculator queries and links into the same state rate context.
+            The dedicated appliance page below uses the same statewide rate and wattage assumptions in a longer-form
+            layout. This calculator stays focused on quick hour-profile comparisons.
           </p>
           <ul style={{ margin: 0, paddingLeft: 20, lineHeight: 1.8 }}>
             <li>
@@ -243,21 +243,19 @@ export default async function StateApplianceCalculatorPage({
         </section>
 
         <section style={{ marginBottom: "var(--space-7)" }}>
-          <h2 className="heading-section">Comparison discovery routes</h2>
+          <h2 className="heading-section">More comparison links</h2>
           <p style={{ marginTop: 0, lineHeight: 1.7 }}>
-            For comparison-first navigation, use the curated Energy Comparison Hub slices below. These are discovery
-            routes and preserve canonical ownership in the existing calculator, appliance-cost, and state-comparison
-            systems.
+            Browse related comparisons from the energy comparison hub without leaving the calculator context.
           </p>
           <ul style={{ margin: 0, paddingLeft: 20, lineHeight: 1.8 }}>
             <li>
               <Link href="/energy-comparison">Energy comparison hub</Link>
             </li>
             <li>
-              <Link href="/energy-comparison/appliances">Appliance comparison slice</Link>
+              <Link href="/energy-comparison/appliances">Appliance comparisons</Link>
             </li>
             <li>
-              <Link href="/energy-comparison/usage">Usage comparison slice</Link>
+              <Link href="/energy-comparison/usage">Usage tier comparisons</Link>
             </li>
           </ul>
         </section>
@@ -265,18 +263,18 @@ export default async function StateApplianceCalculatorPage({
         {calculatorCityRows.length > 0 && (
           <section style={{ marginBottom: "var(--space-7)" }}>
             <h2 className="heading-section">
-              City authority context for {state.name}
+              City electricity context for {state.name}
             </h2>
             <p style={{ marginTop: 0, lineHeight: 1.7 }}>
-              For local context, rollout-enabled city electricity pages can be used alongside this calculator scenario.
-              These links are supplemental and do not change calculator or appliance-cost canonicals.
+              For local context, published city electricity pages complement this calculator. Links below are optional
+              local references and do not change the statewide calculator math.
             </p>
             <ul style={{ margin: 0, paddingLeft: 20, lineHeight: 1.8 }}>
               {calculatorCityRows.map((row) => (
                 <li key={row.citySummary.city.slug}>
                   {row.hasApplianceCityPilot ? (
                     <Link href={`/cost-to-run/${applianceSlug}/${state.slug}/${row.citySummary.city.slug}`}>
-                      {row.citySummary.city.name} appliance city pilot
+                      {row.citySummary.city.name} city appliance page
                     </Link>
                   ) : (
                     <Link href={`/electricity-cost/${state.slug}/${row.citySummary.city.slug}`}>

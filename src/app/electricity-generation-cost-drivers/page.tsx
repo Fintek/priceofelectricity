@@ -131,7 +131,7 @@ export default async function ElectricityGenerationCostDriversPage() {
         </section>
 
         <TopicClusterNav
-          title="Related topic clusters"
+          title="Related topics"
           description="Power generation mix, markets, pricing dynamics, and data."
           links={[
             { href: "/power-generation-mix", label: "Power generation mix" },

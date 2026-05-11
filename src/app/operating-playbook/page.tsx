@@ -63,8 +63,8 @@ export default async function OperatingPlaybookHubPage() {
         <section style={{ marginBottom: 32 }}>
           <h2 style={{ fontSize: 20, marginBottom: 12 }}>Expanding the Site</h2>
           <p style={{ marginTop: 0, marginBottom: 12, maxWidth: "65ch", fontSize: 16, lineHeight: 1.6 }}>
-            New topic clusters and programmatic pages can be added while preserving structure. The expansion model
-            covers topic hubs, state pages, comparison pages, and discovery layers.
+            New topic areas and templated pages can be added while preserving structure. The expansion model
+            covers topic hubs, state pages, comparison pages, and supporting navigation pages.
           </p>
           <p style={{ margin: 0 }}>
             <Link href="/operating-playbook/expanding-the-site">Expanding the electricity analysis site</Link>

@@ -69,9 +69,9 @@ export default async function EnergyComparisonStatesPage() {
           <h2 style={{ fontSize: 20, marginBottom: 10 }}>Related comparison pathways</h2>
           <ul style={{ margin: 0, paddingLeft: 20, lineHeight: 1.8 }}>
             <li><Link href="/energy-comparison">Back to Energy Comparison Hub</Link></li>
-            <li><Link href="/energy-comparison/usage">Usage tier comparison slice</Link></li>
-            <li><Link href="/energy-comparison/appliances">Appliance comparison slice</Link></li>
-            <li><Link href="/electricity-cost-calculator">Electricity cost calculator cluster</Link></li>
+            <li><Link href="/energy-comparison/usage">Usage tier comparisons</Link></li>
+            <li><Link href="/energy-comparison/appliances">Appliance comparisons</Link></li>
+            <li><Link href="/electricity-cost-calculator">Electricity cost calculators</Link></li>
           </ul>
         </section>
 

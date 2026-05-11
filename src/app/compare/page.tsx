@@ -112,7 +112,7 @@ export default async function ComparePage({
         <Link href="/index-ranking">Electricity Price Index™</Link>.
       </p>
       <p className="muted" style={{ marginTop: 6 }}>
-        Explore the cluster: <Link href="/topics/electricity-prices">Electricity Prices</Link>.
+        Explore the topic area: <Link href="/topics/electricity-prices">Electricity Prices</Link>.
       </p>
       <p className="muted" style={{ marginTop: 6 }}>
         Get monthly updates - <Link href="/newsletter">join the newsletter</Link>.

@@ -58,7 +58,7 @@ export default async function ElectricityCostIndexPage() {
         </p>
         <p className="muted" style={{ margin: "0 0 32px 0", maxWidth: "65ch", fontSize: 14 }}>
           Cost estimates use a standard 900 kWh monthly usage (10,800 kWh annually). Rates come from EIA data.
-          All figures are build-generated and deterministic.
+          All figures are updated from the latest published EIA data using consistent methodology.
         </p>
 
         {/* Featured states */}

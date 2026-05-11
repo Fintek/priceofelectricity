@@ -281,7 +281,7 @@ export default async function ElectricityTrendsPage() {
             {insightText}
           </p>
           <p className="muted" style={{ marginTop: 12, fontSize: 14 }}>
-            Data comes from EIA residential retail sales. All figures are build-generated and deterministic.
+            Data comes from EIA residential retail sales. Figures are updated from that data using consistent methodology.
           </p>
         </section>
 

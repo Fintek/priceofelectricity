@@ -42,8 +42,8 @@ const CHANGELOG_ENTRIES = [
   {
     id: "canonical-redirects",
     date: "2026-02-15",
-    title: "Added canonical redirects",
-    description: "Implemented middleware redirects to enforce canonical state URL slugs.",
+    title: "Added URL redirects for state slugs",
+    description: "Implemented middleware redirects to keep state URLs on consistent slug patterns.",
   },
   {
     id: "history-mvp",

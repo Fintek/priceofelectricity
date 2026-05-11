@@ -68,7 +68,7 @@ export default async function ApplianceUsageReferencePage({
   ]);
   const webPageJsonLd = buildWebPageJsonLd({
     title: `${applianceConfig.displayName} electricity usage`,
-    description: `${applianceConfig.displayName} usage reference page with kWh/hour, daily and monthly usage assumptions and links to canonical cost routes.`,
+    description: `${applianceConfig.displayName} usage reference page with kWh/hour, daily and monthly usage assumptions and links to related cost pages.`,
     url: `/electricity-usage/appliances/${applianceSlug}`,
     isPartOf: "/",
     about: ["electricity usage by appliance", `${applianceConfig.displayName} kwh usage`, "appliance energy usage"],
@@ -88,9 +88,8 @@ export default async function ApplianceUsageReferencePage({
 
         <h1 style={{ fontSize: 32, marginBottom: 12 }}>{applianceConfig.displayName} Electricity Usage</h1>
         <p style={{ marginTop: 0, marginBottom: 24, maxWidth: "70ch", lineHeight: 1.7 }}>
-          This page focuses on kWh usage behavior for {applianceConfig.displayName.toLowerCase()} scenarios. It keeps
-          intent centered on consumption modeling and then links into the canonical appliance cost route and calculator
-          cluster for price-specific outcomes.
+          This page focuses on kWh usage patterns for {applianceConfig.displayName.toLowerCase()}. From here you can open
+          the matching cost-to-run pages and state calculators when you want estimated dollars, not just usage.
         </p>
 
         <section style={{ marginBottom: 32 }}>
@@ -196,7 +195,7 @@ export default async function ApplianceUsageReferencePage({
             {representativeState.updatedLabel
               ? `Last dataset period: ${representativeState.updatedLabel}.`
               : "Data period label is currently unavailable."}{" "}
-            Usage calculations are deterministic and based on appliance wattage and runtime assumptions.
+            Usage calculations use fixed appliance wattage and runtime assumptions so results stay comparable across pages.
           </p>
         </section>
 

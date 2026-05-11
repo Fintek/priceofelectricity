@@ -59,7 +59,7 @@ export default async function KnowledgeDocsPage() {
 
       <h1 style={{ fontSize: 32, marginBottom: 8 }}>Knowledge API Documentation</h1>
       <p className="muted" style={{ marginTop: 0, marginBottom: 24 }}>
-        Developer documentation for the Knowledge system. All artifacts are build-generated and deterministic.
+        Developer documentation for the Knowledge system. Artifacts are produced at build time from checked-in data snapshots.
       </p>
 
       <Section title="1. Overview">
@@ -209,7 +209,7 @@ export default async function KnowledgeDocsPage() {
 
       <Section title="11. Stability/verification notes">
         <p style={{ margin: 0 }}>
-          All knowledge artifacts are build-generated and deterministic. Index includes{" "}
+          All knowledge artifacts are regenerated from source inputs at build time. Index includes{" "}
           {index?.integritySignature ? "integritySignature" : ""}
           {index?.integritySignature && index?.registryHash ? " and " : ""}
           {index?.registryHash ? "registryHash" : ""}

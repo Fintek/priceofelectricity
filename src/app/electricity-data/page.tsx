@@ -157,7 +157,7 @@ export default async function ElectricityDataPage() {
         <section style={{ marginBottom: 32 }}>
           <h2 style={{ fontSize: 20, marginBottom: 12 }}>Rankings and Metrics</h2>
           <p style={{ marginTop: 0, marginBottom: 12, maxWidth: "65ch", fontSize: 16, lineHeight: 1.6 }}>
-            The site generates rankings from the underlying data, including electricity price rankings (rate high-to-low, rate low-to-high), volatility rankings, inflation rankings (1-year and 5-year), affordability rankings, value score, and momentum. All rankings are build-generated and deterministic.
+            The site generates rankings from the underlying data, including electricity price rankings (rate high-to-low, rate low-to-high), volatility rankings, inflation rankings (1-year and 5-year), affordability rankings, value score, and momentum. Each ranking applies the same rules every time we rebuild the dataset.
           </p>
           <p style={{ margin: 0 }}>
             <Link href="/knowledge/rankings">View all rankings</Link>
@@ -216,7 +216,7 @@ export default async function ElectricityDataPage() {
           title="Related pages"
           description="Connect to topic hubs, discovery, and data."
           links={[
-            { href: "/electricity-topics", label: "Browse the major electricity economics topic clusters" },
+            { href: "/electricity-topics", label: "Browse major electricity economics topics" },
             { href: "/electricity-cost", label: "Electricity cost by state" },
             { href: "/electricity-inflation", label: "Electricity inflation" },
             { href: "/electricity-affordability", label: "Electricity affordability" },

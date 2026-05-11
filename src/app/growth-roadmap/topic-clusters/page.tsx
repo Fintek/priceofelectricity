@@ -10,9 +10,9 @@ export const dynamic = "force-static";
 export const revalidate = 86400;
 
 export const metadata: Metadata = buildMetadata({
-  title: "Electricity Topic Cluster Expansion | PriceOfElectricity.com",
+  title: "Electricity Topic Area Expansion | PriceOfElectricity.com",
   description:
-    "Major electricity topic clusters: consumer economics, affordability, business, AI infrastructure, market structure, energy transition, and data methodology.",
+    "Major electricity topic areas: consumer economics, affordability, business, AI infrastructure, market structure, energy transition, and data methodology.",
   canonicalPath: "/growth-roadmap/topic-clusters",
   robots: { index: false, follow: false },
 });
@@ -23,7 +23,7 @@ export default async function TopicClustersPage() {
   const breadcrumbJsonLd = buildBreadcrumbListJsonLd([
     { name: "Home", url: "/" },
     { name: "Growth Roadmap", url: "/growth-roadmap" },
-    { name: "Topic Clusters", url: "/growth-roadmap/topic-clusters" },
+    { name: "Topic areas", url: "/growth-roadmap/topic-clusters" },
   ]);
 
   return (
@@ -35,21 +35,21 @@ export default async function TopicClustersPage() {
           {" · "}
           <Link href="/growth-roadmap">Growth Roadmap</Link>
           {" · "}
-          <span aria-current="page">Topic Clusters</span>
+          <span aria-current="page">Topic areas</span>
         </nav>
 
-        <h1 style={{ fontSize: 32, marginBottom: 24 }}>Electricity Topic Cluster Expansion</h1>
+        <h1 style={{ fontSize: 32, marginBottom: 24 }}>Electricity Topic Area Expansion</h1>
 
         {/* INTRO */}
         <section style={{ marginBottom: 32 }}>
           <p style={{ marginTop: 0, marginBottom: 16, maxWidth: "65ch", fontSize: 16, lineHeight: 1.6 }}>
-            The site&apos;s authority is built through connected topic clusters. Each cluster covers a related set of electricity economics questions, and clusters link to each other to improve understanding and discoverability.
+            The site grows through linked topic areas. Each area groups related electricity economics questions, and cross-links help readers move from one subject to the next.
           </p>
         </section>
 
-        {/* CLUSTERS TO COVER */}
+        {/* Areas TO COVER */}
         <section style={{ marginBottom: 32 }}>
-          <h2 style={{ fontSize: 20, marginBottom: 12 }}>Clusters to Cover</h2>
+          <h2 style={{ fontSize: 20, marginBottom: 12 }}>Areas to cover</h2>
           <ul style={{ margin: 0, paddingLeft: 20, lineHeight: 2.2 }}>
             <li><strong>Consumer electricity economics</strong> — <Link href="/electricity-cost">Electricity cost</Link>, <Link href="/average-electricity-bill">Average bill</Link>, <Link href="/electricity-affordability">Affordability</Link></li>
             <li><strong>Affordability / cost of living</strong> — <Link href="/electricity-affordability">Electricity affordability</Link>, <Link href="/electricity-cost-of-living">Cost of living</Link></li>
@@ -57,15 +57,15 @@ export default async function TopicClustersPage() {
             <li><strong>AI / data center infrastructure</strong> — <Link href="/ai-energy-demand">AI energy demand</Link>, <Link href="/grid-capacity-and-electricity-demand">Grid capacity and demand</Link></li>
             <li><strong>Market structure</strong> — <Link href="/electricity-markets">Electricity markets</Link>, <Link href="/regional-electricity-markets">Regional markets</Link>, <Link href="/power-generation-mix">Power generation mix</Link></li>
             <li><strong>Energy transition</strong> — <Link href="/solar-vs-grid-electricity-cost">Solar vs grid</Link>, <Link href="/battery-backup-electricity-cost">Battery backup</Link></li>
-            <li><strong>Data / methodology / discovery</strong> — <Link href="/electricity-data">Electricity data</Link>, <Link href="/datasets">Datasets</Link>, <Link href="/methodology">Methodology</Link>, <Link href="/entity-registry">Entity registry</Link></li>
+            <li><strong>Data / methodology / navigation</strong> — <Link href="/electricity-data">Electricity data</Link>, <Link href="/datasets">Datasets</Link>, <Link href="/methodology">Methodology</Link>, <Link href="/entity-registry">Entity registry</Link></li>
           </ul>
         </section>
 
         {/* WHY CLUSTERS MATTER */}
         <section style={{ marginBottom: 32 }}>
-          <h2 style={{ fontSize: 20, marginBottom: 12 }}>Why Clusters Matter</h2>
+          <h2 style={{ fontSize: 20, marginBottom: 12 }}>Why grouped topics matter</h2>
           <p style={{ marginTop: 0, marginBottom: 16, maxWidth: "65ch", fontSize: 16, lineHeight: 1.6 }}>
-            Connected topic coverage improves understanding and discoverability. When clusters link to each other, visitors can explore related questions, and search engines can better understand the site&apos;s topical authority.
+            Organizing related articles together improves understanding and helps people find the next question they should ask. Cross-links between areas keep navigation intuitive.
           </p>
         </section>
 

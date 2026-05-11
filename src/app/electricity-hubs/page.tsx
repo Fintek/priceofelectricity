@@ -192,7 +192,7 @@ export default async function ElectricityHubsIndexPage() {
   const webPageJsonLd = buildWebPageJsonLd({
     title: "Electricity Hubs",
     description:
-      "Discovery hubs for state electricity pages, usage scenarios, comparison pages, and industry electricity cost pages.",
+      "Guides and directories for state electricity pages, usage scenarios, comparisons, and industry cost examples.",
     url: "/electricity-hubs",
     isPartOf: "/",
     about: [
@@ -214,16 +214,16 @@ export default async function ElectricityHubsIndexPage() {
         "Data is grouped by topic: state rates, usage scenarios, comparisons, cost details, bill tools, and providers. Each section links to detailed pages.",
     },
   ]);
-  const clusterItemListJsonLd = buildItemListJsonLd("Electricity authority clusters", [
-    { name: "State electricity cost cluster", url: "/electricity-cost" },
-    { name: "City electricity context cluster", url: "/electricity-cost/texas/houston" },
-    { name: "Average electricity bill cluster", url: "/average-electricity-bill" },
-    { name: "Electricity bill estimator cluster", url: "/electricity-bill-estimator" },
-    { name: "Appliance operating cost cluster", url: "/cost-to-run/refrigerator/texas" },
-    { name: "Energy comparison cluster", url: "/energy-comparison" },
+  const clusterItemListJsonLd = buildItemListJsonLd("Main electricity cost sections", [
+    { name: "State electricity cost overview", url: "/electricity-cost" },
+    { name: "City electricity cost example", url: "/electricity-cost/texas/houston" },
+    { name: "Average electricity bill", url: "/average-electricity-bill" },
+    { name: "Electricity bill estimator", url: "/electricity-bill-estimator" },
+    { name: "Appliance operating cost example", url: "/cost-to-run/refrigerator/texas" },
+    { name: "Energy comparison hub", url: "/energy-comparison" },
   ]);
   const providerDiscoveryItemListJsonLd = buildItemListJsonLd(
-    "Provider marketplace discovery clusters",
+    "Provider marketplace sections",
     buildProviderDiscoveryItemListEntries(states),
   );
 

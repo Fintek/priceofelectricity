@@ -61,7 +61,7 @@ export default async function HomeSizeUsagePage({
   ]);
   const webPageJsonLd = buildWebPageJsonLd({
     title: scenario.label,
-    description: `Electricity usage range estimates for a ${scenario.squareFeet.toLocaleString()} sq ft home with links to canonical cost pages and calculator routes.`,
+    description: `Electricity usage range estimates for a ${scenario.squareFeet.toLocaleString()} sq ft home with links to related cost pages and calculators.`,
     url: `/electricity-usage/home-size/${scenario.slug}`,
     isPartOf: "/",
     about: ["kwh usage for home sizes", "average kwh per month by home size", "household electricity usage"],
@@ -169,8 +169,8 @@ export default async function HomeSizeUsagePage({
             {representativeState.updatedLabel
               ? `Last dataset period: ${representativeState.updatedLabel}.`
               : "Data period label is currently unavailable."}{" "}
-            Home-size usage ranges are deterministic planning assumptions tied to appliance/HVAC profiles and intended
-            for comparative usage intelligence.
+            Home-size usage ranges are fixed planning inputs tied to appliance/HVAC profiles and intended
+            for side-by-side comparisons across home sizes.
           </p>
         </section>
 

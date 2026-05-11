@@ -66,8 +66,8 @@ export default async function ElectricityCostCityPage({
     ? `${summary.state.name} medium-home bill scenario`
     : `${summary.state.name} household bill estimator`;
   const mediumHomeEstimatorDescription = isActiveBillEstimatorProfilePage(summary.state.slug, "medium-home")
-    ? "Representative household estimator profile with deterministic assumptions"
-    : "Deterministic household-profile estimator directory for this state";
+    ? "Representative medium-home bill scenario"
+    : "Household bill estimator index for this state";
 
   const breadcrumbJsonLd = buildBreadcrumbListJsonLd([
     { name: "Home", url: "/" },
@@ -78,7 +78,7 @@ export default async function ElectricityCostCityPage({
 
   const webPageJsonLd = buildWebPageJsonLd({
     title: `Electricity Cost in ${summary.city.name}, ${summary.state.name}`,
-    description: `City electricity estimate page for ${summary.city.name}, ${summary.state.name}. Values are deterministic ${summary.estimateBasis === "city-config-reference" ? "configured reference rates" : "modeled estimates"} with disclosure and source attribution.`,
+    description: `City electricity estimate page for ${summary.city.name}, ${summary.state.name}. Values use ${summary.estimateBasis === "city-config-reference" ? "configured reference rates" : "modeled estimates"} with disclosure and EIA source attribution.`,
     url: canonicalPath,
     isPartOf: "/",
     about: [
@@ -92,7 +92,7 @@ export default async function ElectricityCostCityPage({
   const datasetJsonLd = buildDatasetJsonLd({
     name: `${summary.state.name} Residential Electricity Dataset Reference`,
     description:
-      "State-level residential electricity rate dataset used as the deterministic baseline for city electricity modeled estimates.",
+      "State-level residential electricity rate data used as the baseline for city electricity estimates on this site.",
     url: `/electricity-cost/${summary.state.slug}/${summary.city.slug}`,
     publisher: "PriceOfElectricity.com",
     sameAs: summary.state.sourceUrl ? [summary.state.sourceUrl] : undefined,
@@ -105,7 +105,7 @@ export default async function ElectricityCostCityPage({
     {
       question: `Is this ${summary.city.name} electricity rate a utility quote?`,
       answer:
-        "No. This page provides a deterministic city estimate for local context and comparison, not a utility tariff quote or enrollment offer.",
+        "No. This page provides a modeled city estimate for local context and comparison, not a utility tariff quote or enrollment offer.",
     },
     {
       question: `How is the ${summary.city.name} estimate calculated?`,
@@ -162,11 +162,11 @@ export default async function ElectricityCostCityPage({
             value: `/electricity-cost/${summary.state.slug}`,
           },
           {
-            label: "Canonical city route",
+            label: "City page URL",
             value: canonicalPath,
           },
         ]}
-        comparisonSummary="City values on this page are deterministic estimates for local context and comparison. They are not utility tariff quotes and should not be interpreted as exact billed rates."
+        comparisonSummary="City values on this page are modeled estimates for local context and comparison. They are not utility tariff quotes and should not be interpreted as exact billed rates."
         relatedLinks={[]}
         relatedLinkSections={[
           {
@@ -175,37 +175,37 @@ export default async function ElectricityCostCityPage({
               {
                 href: `/electricity-cost/${summary.state.slug}`,
                 label: `${summary.state.name} electricity cost overview`,
-                description: "Canonical state-level electricity cost benchmark page",
+                description: "State-level electricity cost overview and benchmarks",
               },
               {
                 href: `/average-electricity-bill/${summary.state.slug}`,
                 label: `${summary.state.name} average electricity bill`,
-                description: "Benchmark bill-intent page (separate from city cost context)",
+                description: "Average bill at a fixed kWh benchmark (separate from this city cost page)",
               },
               {
                 href: `/electricity-cost-calculator/${summary.state.slug}`,
                 label: `${summary.state.name} electricity cost calculator`,
-                description: "Calculator-intent route for custom scenarios",
+                description: "Interactive calculator for custom usage",
               },
               {
                 href: "/energy-comparison",
                 label: "Energy comparison hub",
-                description: "Curated discovery hub linking city, state, usage, and appliance clusters",
+                description: "Guide linking city, state, usage, and appliance comparisons",
               },
               {
                 href: "/energy-comparison/states",
-                label: "State comparison discovery slice",
-                description: "Curated state-vs-state pathways connected to canonical pair pages",
+                label: "State-by-state comparisons",
+                description: "Side-by-side state comparison pages",
               },
               {
                 href: "/electricity-cost-comparison",
                 label: "Electricity cost comparison index",
-                description: "Canonical state comparison family for head-to-head cost intent",
+                description: "Index of state-to-state electricity cost comparisons",
               },
               ...featuredApplianceSlugs.map((applianceSlug) => ({
                 href: `/cost-to-run/${applianceSlug}/${summary.state.slug}`,
                 label: `${slugToName(applianceSlug.replace(/-/g, " "))} cost in ${summary.state.name}`,
-                description: "Canonical appliance operating-cost route for this state",
+                description: "Appliance operating-cost page for this state",
               })),
               {
                 href: mediumHomeEstimatorPath,
@@ -217,7 +217,7 @@ export default async function ElectricityCostCityPage({
           ...(siblingCities.length > 0
             ? [
                 {
-                  title: `Other rollout-enabled cities in ${summary.state.name}`,
+                  title: `Other city pages in ${summary.state.name}`,
                   links: siblingCities.map((item) => ({
                     href: `/electricity-cost/${item.stateSlug}/${item.slug}`,
                     label: `Electricity cost in ${item.name}`,
@@ -236,9 +236,9 @@ export default async function ElectricityCostCityPage({
         <section style={{ marginBottom: "var(--space-7)" }}>
           <h2 className="heading-section">How this city estimate is derived</h2>
           <p style={{ marginTop: 0, lineHeight: 1.7 }}>
-            This page starts from the statewide residential electricity baseline and applies a deterministic city
-            estimate rule. Where a city reference value exists in the internal city dataset, that value is used as the
-            estimate basis; otherwise a deterministic population-based modifier is applied to the state baseline.
+            This page starts from the statewide residential electricity baseline and applies a city-specific estimate
+            rule. Where a city reference value exists in our city dataset, that value is used as the estimate basis;
+            otherwise a population-based adjustment is applied to the state baseline.
           </p>
           <p style={{ marginBottom: 0, lineHeight: 1.7 }}>
             {summary.estimateMethodNote} This methodology is intended for consistent local context, not utility-plan
@@ -247,19 +247,19 @@ export default async function ElectricityCostCityPage({
         </section>
 
         <section style={{ marginBottom: "var(--space-7)" }}>
-          <h2 className="heading-section">Intent separation and canonical scope</h2>
+          <h2 className="heading-section">Related page types</h2>
           <ul style={{ margin: 0, paddingLeft: 20, lineHeight: 1.8 }}>
             <li>
-              <Link href={`/electricity-cost/${summary.state.slug}`}>State authority cost route</Link> remains the
-              canonical state benchmark.
+              <Link href={`/electricity-cost/${summary.state.slug}`}>State electricity cost page</Link> is the
+              statewide benchmark.
             </li>
             <li>
-              <Link href={`/electricity-cost-calculator/${summary.state.slug}`}>State calculator route</Link> remains
-              canonical for interactive/custom scenario intent.
+              <Link href={`/electricity-cost-calculator/${summary.state.slug}`}>State calculator</Link> is best for
+              custom usage and interactive estimates.
             </li>
             <li>
-              <Link href={`/average-electricity-bill/${summary.state.slug}`}>State average bill route</Link> remains
-              canonical for monthly benchmark bill intent.
+              <Link href={`/average-electricity-bill/${summary.state.slug}`}>Average bill page</Link> uses one standard
+              monthly usage baseline for a simple bill comparison.
             </li>
           </ul>
         </section>

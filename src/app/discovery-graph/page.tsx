@@ -41,16 +41,16 @@ export default async function DiscoveryGraphPage() {
         {/* A) Intro */}
         <section style={{ marginBottom: 32 }}>
           <p style={{ marginTop: 0, marginBottom: 12, maxWidth: "65ch", fontSize: 16, lineHeight: 1.6 }}>
-            Curated relationship map of major topics, datasets, and methodology. It shows representative connections across the site rather than an exhaustive graph of every page and edge. Machine-readable JSON is available for crawlers and programmatic discovery.
+            Curated relationship map of major topics, datasets, and methodology. It shows representative connections across the site rather than an exhaustive graph of every page and edge. Machine-readable JSON is available for crawlers and structured browsing.
           </p>
           <p className="muted" style={{ margin: "0 0 24px 0", fontSize: 14, maxWidth: "50ch" }}>
             <strong>Best for:</strong> Understanding site structure and the machine-readable topic map.
           </p>
         </section>
 
-        {/* B) Major Topic Clusters */}
+        {/* B) Major topics */}
         <section style={{ marginBottom: 32 }}>
-          <h2 style={{ fontSize: 20, marginBottom: 12 }}>Major Topic Clusters</h2>
+          <h2 style={{ fontSize: 20, marginBottom: 12 }}>Major topics</h2>
           <ul style={{ margin: 0, paddingLeft: 20, lineHeight: 2.2 }}>
             <li>
               <strong>Consumer electricity economics</strong> —{" "}
@@ -85,7 +85,7 @@ export default async function DiscoveryGraphPage() {
               <Link href="/electricity-generation-cost-drivers">Electricity generation cost drivers</Link>
             </li>
             <li>
-              <strong>Data / methodology / discovery</strong> —{" "}
+              <strong>Data / methodology / navigation</strong> —{" "}
               <Link href="/future-expansion">Future expansion framework</Link>,{" "}
               <Link href="/electricity-data">Electricity data</Link>,{" "}
               <Link href="/datasets">Datasets</Link>,{" "}
@@ -114,7 +114,7 @@ export default async function DiscoveryGraphPage() {
         <section style={{ marginBottom: 32 }}>
           <h2 style={{ fontSize: 20, marginBottom: 12 }}>Machine-Readable Graph</h2>
           <p style={{ marginTop: 0, marginBottom: 12, maxWidth: "65ch", fontSize: 16, lineHeight: 1.6 }}>
-            A lightweight, curated JSON subset of major nodes and relationships is available for programmatic discovery and LLM crawlers:
+            A lightweight, curated JSON subset of major nodes and relationships is available for developers and automated research tools:
           </p>
           <p style={{ margin: 0 }}>
             <Link href="/discovery-graph.json">/discovery-graph.json</Link>
@@ -125,9 +125,9 @@ export default async function DiscoveryGraphPage() {
 
         {/* E) Related Discovery Pages */}
         <section style={{ marginBottom: 32 }}>
-          <h2 style={{ fontSize: 20, marginBottom: 12 }}>Related Discovery Pages</h2>
+          <h2 style={{ fontSize: 20, marginBottom: 12 }}>Related navigation pages</h2>
           <ul style={{ margin: 0, paddingLeft: 20, lineHeight: 2.2 }}>
-            <li><Link href="/electricity-topics">Browse the major electricity economics topic clusters</Link></li>
+            <li><Link href="/electricity-topics">Browse major electricity economics topics</Link></li>
             <li><Link href="/electricity-data">See the datasets and data-driven analysis foundation</Link></li>
             <li><Link href="/page-index">Browse all major pages by category</Link></li>
             <li><Link href="/site-map">See the high-level site structure</Link></li>

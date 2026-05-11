@@ -94,7 +94,7 @@ export default async function EnergyComparisonAppliancesPage() {
 
         {pilotPages.length > 0 && (
           <section style={{ marginBottom: 26 }}>
-            <h2 style={{ fontSize: 20, marginBottom: 10 }}>Pilot appliance-city comparisons</h2>
+            <h2 style={{ fontSize: 20, marginBottom: 10 }}>Appliance costs in selected cities</h2>
             <ul style={{ margin: 0, paddingLeft: 20, lineHeight: 1.8 }}>
               {pilotPages.map((page) => (
                 <li key={`${page.applianceSlug}-${page.stateSlug}-${page.citySlug}`}>
@@ -111,9 +111,9 @@ export default async function EnergyComparisonAppliancesPage() {
           <h2 style={{ fontSize: 20, marginBottom: 10 }}>Related comparison pathways</h2>
           <ul style={{ margin: 0, paddingLeft: 20, lineHeight: 1.8 }}>
             <li><Link href="/energy-comparison">Back to Energy Comparison Hub</Link></li>
-            <li><Link href="/energy-comparison/states">State comparison slice</Link></li>
-            <li><Link href="/energy-comparison/usage">Usage comparison slice</Link></li>
-            <li><Link href="/electricity-bill-estimator">Bill estimator cluster</Link></li>
+            <li><Link href="/energy-comparison/states">Compare states</Link></li>
+            <li><Link href="/energy-comparison/usage">Compare by usage level</Link></li>
+            <li><Link href="/electricity-bill-estimator">Electricity bill estimator</Link></li>
           </ul>
         </section>
 

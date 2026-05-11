@@ -41,7 +41,7 @@ export default async function ElectricityUsageHubPage() {
     { name: "Electricity Usage", url: "/electricity-usage" },
   ]);
   const webPageJsonLd = buildWebPageJsonLd({
-    title: "Electricity Usage Intelligence Hub",
+    title: "Electricity usage guide",
     description: `National household electricity usage benchmark: ${formatKwh(
       NATIONAL_AVERAGE_HOUSEHOLD_USAGE_KWH,
     )} per month, with state usage pages, home-size scenarios, and appliance usage references.`,
@@ -64,15 +64,14 @@ export default async function ElectricityUsageHubPage() {
           <span aria-current="page">Electricity Usage</span>
         </nav>
 
-        <h1 style={{ fontSize: 32, marginBottom: 12 }}>Electricity Usage Intelligence</h1>
+        <h1 style={{ fontSize: 32, marginBottom: 12 }}>Household electricity usage</h1>
         <p style={{ marginTop: 0, marginBottom: 16, maxWidth: "70ch", lineHeight: 1.7 }}>
-          This usage hub explains household electricity consumption patterns and connects usage levels to real cost
-          outcomes. All usage and cost examples are deterministic and linked to canonical calculator and usage-cost
-          routes.
+          This hub explains typical household electricity consumption and links usage levels to cost examples on the
+          rest of the site—including calculators and fixed monthly kWh pages.
         </p>
         <p className="muted" style={{ margin: "0 0 32px 0", maxWidth: "70ch", lineHeight: 1.7 }}>
           National household benchmark usage is {formatKwh(NATIONAL_AVERAGE_HOUSEHOLD_USAGE_KWH)} per month
-          (10,788 kWh/year). State pages adjust this benchmark using deterministic rate-and-climate-informed modeling.
+          (10,788 kWh/year). State pages adjust this benchmark using simple rate- and climate-informed modeling rules.
         </p>
 
         <section style={{ marginBottom: 32 }}>
@@ -221,8 +220,8 @@ export default async function ElectricityUsageHubPage() {
             {sourceState.updatedLabel
               ? `Last dataset period: ${sourceState.updatedLabel}.`
               : "Data period label is currently unavailable."}{" "}
-            State usage values in this cluster use deterministic benchmark modeling and are designed for comparative
-            consumer usage intelligence, not utility billing settlement.
+            State usage values use benchmark modeling for side-by-side comparisons—they are not meant to match your exact
+            utility meter totals.
           </p>
         </section>
 

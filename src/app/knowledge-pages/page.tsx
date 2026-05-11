@@ -8,7 +8,7 @@ export default function KnowledgePagesDirectoryPage() {
     <main className="container">
       <h1>Knowledge JSON Pages</h1>
       <p className="muted" style={{ marginTop: 0 }}>
-        These endpoints are build-generated static JSON assets designed for LLM
+        These endpoints are static JSON assets produced at build time, designed for LLM
         and agent ingestion.
       </p>
       <ul style={{ paddingLeft: 20, lineHeight: 2 }}>

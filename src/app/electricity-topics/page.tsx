@@ -41,7 +41,7 @@ export default async function ElectricityTopicsPage() {
         <h1 style={{ fontSize: 32, marginBottom: 24 }}>Electricity Economics Topics</h1>
 
         <p style={{ marginTop: 0, marginBottom: 12, maxWidth: "65ch", fontSize: 16, lineHeight: 1.6 }}>
-          The main topic hub for electricity analysis. Browse major topic clusters—consumer costs, price trends, market structure, energy transition, and data—to find the analysis you need.
+          The main topic hub for electricity analysis. Browse major topics—consumer costs, price trends, market structure, energy transition, and data—to find the analysis you need.
         </p>
         <p className="muted" style={{ margin: "0 0 24px 0", fontSize: 14, maxWidth: "50ch" }}>
           <strong>Best for:</strong> Browsing topics by theme, understanding how the site&apos;s electricity coverage is organized.

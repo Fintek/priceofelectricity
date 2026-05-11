@@ -76,8 +76,8 @@ export default async function EnergyComparisonUsagePage() {
           <h2 style={{ fontSize: 20, marginBottom: 10 }}>Related comparison pathways</h2>
           <ul style={{ margin: 0, paddingLeft: 20, lineHeight: 1.8 }}>
             <li><Link href="/energy-comparison">Back to Energy Comparison Hub</Link></li>
-            <li><Link href="/energy-comparison/states">State comparison slice</Link></li>
-            <li><Link href="/energy-comparison/appliances">Appliance comparison slice</Link></li>
+            <li><Link href="/energy-comparison/states">Compare states</Link></li>
+            <li><Link href="/energy-comparison/appliances">Compare appliances</Link></li>
             <li><Link href="/electricity-usage">National electricity usage hub</Link></li>
           </ul>
         </section>

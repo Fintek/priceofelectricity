@@ -12,7 +12,7 @@ export const revalidate = 86400;
 export const metadata: Metadata = buildMetadata({
   title: "Programmatic Electricity Page Expansion | PriceOfElectricity.com",
   description:
-    "Types of programmatic electricity pages: state cost pages, average bill pages, cost-of-living pages, inflation pages, comparison pages, and fixed-kWh pages.",
+    "Types of templated electricity pages: state cost pages, average bill pages, cost-of-living pages, inflation pages, comparison pages, and fixed-kWh pages.",
   canonicalPath: "/growth-roadmap/programmatic-pages",
   robots: { index: false, follow: false },
 });
@@ -43,7 +43,7 @@ export default async function ProgrammaticPagesPage() {
         {/* INTRO */}
         <section style={{ marginBottom: 32 }}>
           <p style={{ marginTop: 0, marginBottom: 16, maxWidth: "65ch", fontSize: 16, lineHeight: 1.6 }}>
-            Programmatic pages are generated from the same underlying data and methodology. Each page type applies a consistent template across all states or comparison pairs, enabling structured coverage of electricity costs, bills, affordability, inflation, and fixed-usage scenarios.
+            Templated pages are generated from the same underlying data and methodology. Each page type applies a consistent template across all states or comparison pairs, enabling structured coverage of electricity costs, bills, affordability, inflation, and fixed-usage scenarios.
           </p>
         </section>
 
@@ -64,7 +64,7 @@ export default async function ProgrammaticPagesPage() {
         <section style={{ marginBottom: 32 }}>
           <h2 style={{ fontSize: 20, marginBottom: 12 }}>Why Programmatic Coverage Matters</h2>
           <p style={{ marginTop: 0, marginBottom: 16, maxWidth: "65ch", fontSize: 16, lineHeight: 1.6 }}>
-            Structured page systems help users compare states, usage assumptions, and electricity economics. Each programmatic route family uses the same methodology, so comparisons across pages are consistent and transparent.
+            Structured page systems help users compare states, usage assumptions, and electricity economics. Each group of similar pages uses the same methodology, so comparisons stay consistent and transparent.
           </p>
         </section>
 

@@ -55,7 +55,7 @@ export default async function BatteryRechargeCostIndexPage() {
           <strong>Why it varies by state:</strong> A 13.5 kWh home battery costs about 3× more to recharge in Hawaii than in Idaho because electricity rates differ. Select a state to see estimates for portable, backup, and home battery sizes.
         </p>
         <p className="muted" style={{ margin: "0 0 24px 0", maxWidth: "65ch", fontSize: 14 }}>
-          Rates come from EIA data. All figures are build-generated and deterministic.
+          Rates come from EIA data. Figures are updated from the latest published series using consistent methodology.
         </p>
 
         {/* Battery size examples */}

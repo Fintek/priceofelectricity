@@ -61,8 +61,7 @@ export default function ApiDocsPage() {
           v1 Public Data Contract
         </h2>
         <p style={{ marginTop: 0 }}>
-          The v1 endpoints return structured, deterministic JSON with a stable
-          schema. Fields may be added over time but existing fields will not be
+          The v1 endpoints return structured JSON with a stable schema. Fields may be added over time but existing fields will not be
           removed or renamed within the same version.
         </p>
 

@@ -64,8 +64,8 @@ export default async function FutureExpansionHubPage() {
         <section style={{ marginBottom: 32 }}>
           <h2 style={{ fontSize: 20, marginBottom: 12 }}>Topic Expansion</h2>
           <p style={{ marginTop: 0, marginBottom: 12, maxWidth: "65ch", fontSize: 16, lineHeight: 1.6 }}>
-            New topic clusters should connect to existing architecture rather than being added randomly. Each
-            cluster should have a clear hub, supporting pages, and links into adjacent clusters.
+            New topic areas should connect to the existing structure rather than being added randomly. Each
+            area should have a clear hub, supporting pages, and links to related sections.
           </p>
           <p style={{ margin: 0 }}>
             <Link href="/future-expansion/topic-expansion">Topic expansion framework</Link>

@@ -92,12 +92,12 @@ export default async function EntityRegistryPage() {
 
         {/* Topic clusters */}
         <section style={{ marginBottom: 32 }}>
-          <h2 style={{ fontSize: 20, marginBottom: 12 }}>Topic Clusters</h2>
+          <h2 style={{ fontSize: 20, marginBottom: 12 }}>Topics</h2>
           <p style={{ marginTop: 0, marginBottom: 12, maxWidth: "65ch", fontSize: 16, lineHeight: 1.6 }}>
             Navigate by theme: consumer costs, price dynamics, market structure, and data.
           </p>
           <p style={{ margin: 0 }}>
-            <Link href="/electricity-topics">Browse the major electricity economics topic clusters</Link>
+            <Link href="/electricity-topics">Browse major electricity economics topics</Link>
             {" · "}
             <Link href="/electricity-data">See the datasets and data-driven analysis foundation</Link>
             {" · "}
@@ -210,7 +210,7 @@ export default async function EntityRegistryPage() {
         </section>
 
         <p className="muted" style={{ marginTop: 32 }}>
-          <Link href="/electricity-topics">Browse topic clusters</Link> {" | "}
+          <Link href="/electricity-topics">Browse topics</Link> {" | "}
           <Link href="/page-index">Browse all pages by category</Link> {" | "}
           <Link href="/site-map">See the high-level site structure</Link> {" | "}
           <Link href="/discovery-graph">View the topic relationship map</Link> {" | "}

@@ -12,7 +12,7 @@ export const revalidate = 86400;
 export const metadata: Metadata = buildMetadata({
   title: "Page Index | PriceOfElectricity.com",
   description:
-    "Browse major pages by category: state pages, rankings, tools, topic clusters, datasets, and methodology.",
+    "Browse major pages by category: state pages, rankings, tools, topics, datasets, and methodology.",
   canonicalPath: "/page-index",
 });
 
@@ -50,7 +50,7 @@ export default async function PageIndexPage() {
       <h1>Page Index</h1>
 
       <p className="intro muted" style={{ marginTop: 0, marginBottom: 8 }}>
-        Browse major pages by category: state pages, rankings, tools, topic clusters, datasets, and methodology.
+        Browse major pages by category: state pages, rankings, tools, topics, datasets, and methodology.
       </p>
       <p className="muted" style={{ margin: "0 0 24px 0", fontSize: 14, maxWidth: "50ch" }}>
         <strong>Best for:</strong> Finding pages by category when you know the type of content you want.
@@ -96,7 +96,7 @@ export default async function PageIndexPage() {
           Navigate by theme: consumer costs, price dynamics, market structure, and data.
         </p>
         <ul style={{ paddingLeft: 20, lineHeight: 2.2 }}>
-          <li><Link href="/electricity-topics">Electricity topics hub</Link> — Browse all topic clusters</li>
+          <li><Link href="/electricity-topics">Electricity topics hub</Link> — Browse all major topics</li>
           <li><Link href="/electricity-data">Electricity data</Link> — Datasets and methodology</li>
           <li><Link href="/discovery-graph">Discovery graph</Link> — Machine-readable topic relationships</li>
           <li><Link href="/electricity-inflation">Electricity inflation</Link> — Price trends</li>
@@ -149,7 +149,7 @@ export default async function PageIndexPage() {
       <ExploreMore
         title="Other discovery and support"
         links={[
-          { href: "/electricity-topics", label: "Browse the major electricity economics topic clusters" },
+          { href: "/electricity-topics", label: "Browse major electricity economics topics" },
           { href: "/site-map", label: "See the high-level site structure" },
           { href: "/entity-registry", label: "Explore the site's core electricity entities" },
           { href: "/discovery-graph", label: "View the machine-readable topic relationship map" },

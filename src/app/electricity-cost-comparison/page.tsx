@@ -81,13 +81,13 @@ export default async function ElectricityCostComparisonIndexPage() {
   const webPageJsonLd = buildWebPageJsonLd({
     title: "Electricity Cost Comparison by State",
     description:
-      "Canonical state-to-state electricity comparison index using deterministic pair data and fixed-usage methodology.",
+      "State-to-state electricity comparison index built from fixed pair lists and a standard monthly usage assumption.",
     url: "/electricity-cost-comparison",
     isPartOf: "/",
     about: [
       "state electricity comparison",
-      "deterministic rate comparison",
-      "electricity-cost-comparison canonical cluster",
+      "residential electricity rate comparison",
+      "electricity-cost-comparison index",
     ],
   });
 

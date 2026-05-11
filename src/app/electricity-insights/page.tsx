@@ -184,7 +184,7 @@ export default async function ElectricityInsightsPage() {
 
         <h1 style={{ fontSize: 32, marginBottom: 12 }}>National Electricity Insights</h1>
         <p style={{ marginTop: 0, marginBottom: 24, maxWidth: "65ch", fontSize: 16, lineHeight: 1.6 }}>
-          Most expensive and cheapest electricity states, affordability rankings, and inflation trends. All figures are derived from EIA residential data and are build-generated.
+          Most expensive and cheapest electricity states, affordability rankings, and inflation trends. Figures are derived from EIA residential data and refresh whenever we rebuild the public datasets.
         </p>
 
         {/* National summary cards */}

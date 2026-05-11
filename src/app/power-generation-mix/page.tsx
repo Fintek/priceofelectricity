@@ -85,7 +85,7 @@ export default async function PowerGenerationMixPage() {
         </section>
 
         <TopicClusterNav
-          title="Related topic clusters"
+          title="Related topics"
           description="Electricity markets, volatility, generation cost drivers, and data."
           links={[
             { href: "/electricity-markets", label: "Electricity market structures" },

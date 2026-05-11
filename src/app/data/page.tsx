@@ -79,8 +79,8 @@ export default async function DataHubPage() {
       <section style={{ marginBottom: 32 }}>
         <h2 style={{ fontSize: 22, marginBottom: 12 }}>Public endpoints</h2>
         <p style={{ fontSize: 14, color: "#666", margin: "0 0 16px 0" }}>
-          Build-generated JSON entry points for discovery and LLM ingestion. See{" "}
-          <Link href="/knowledge/public-endpoints.json">public-endpoints.json</Link> for the canonical list.
+          JSON entry points published with the site for search, research tools, and automated ingestion. See{" "}
+          <Link href="/knowledge/public-endpoints.json">public-endpoints.json</Link> for the full list.
         </p>
         <EndpointGroupCards groups={publicEndpoints?.groups ?? []} />
       </section>

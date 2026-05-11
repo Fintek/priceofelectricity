@@ -151,7 +151,7 @@ export default async function GridCapacityAndElectricityDemandPage() {
         </section>
 
         <TopicClusterNav
-          title="Related topic clusters"
+          title="Related topics"
           description="AI energy demand, price dynamics, and market structure."
           links={[
             { href: "/ai-energy-demand", label: "AI energy demand" },

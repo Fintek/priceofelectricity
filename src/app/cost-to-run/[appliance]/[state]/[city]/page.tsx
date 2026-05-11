@@ -41,7 +41,7 @@ export async function generateMetadata({
   const article = getIndefiniteArticle(summary.applianceConfig.displayName);
   return buildMetadata({
     title: `Cost to Run ${article} ${summary.applianceConfig.displayName} in ${summary.citySummary.city.name}, ${summary.citySummary.state.name} | PriceOfElectricity.com`,
-    description: `Deterministic estimate for running ${article} ${summary.applianceConfig.displayName.toLowerCase()} in ${summary.citySummary.city.name}, ${summary.citySummary.state.name}, using rollout-gated city rate context and explicit methodology disclosure.`,
+    description: `Planning estimate for running ${article} ${summary.applianceConfig.displayName.toLowerCase()} in ${summary.citySummary.city.name}, ${summary.citySummary.state.name}, using the site's city rate methodology and published EIA state data.`,
     canonicalPath: `/cost-to-run/${summary.applianceSlug}/${summary.citySummary.state.slug}/${summary.citySummary.city.slug}`,
   });
 }
@@ -71,7 +71,7 @@ export default async function ApplianceCityCostPage({
 
   const webPageJsonLd = buildWebPageJsonLd({
     title: `Cost to Run ${article} ${summary.applianceConfig.displayName} in ${summary.citySummary.city.name}, ${summary.citySummary.state.name}`,
-    description: `Appliance x city pilot page with deterministic ${summary.citySummary.estimateBasis === "city-config-reference" ? "configured reference" : "modeled"} city-rate context and methodology disclosure.`,
+    description: `Appliance cost page for ${summary.citySummary.city.name} with ${summary.citySummary.estimateBasis === "city-config-reference" ? "configured reference" : "modeled"} city rate context and methodology notes.`,
     url: canonicalPath,
     isPartOf: "/",
     about: [
@@ -97,7 +97,7 @@ export default async function ApplianceCityCostPage({
           { label: summary.citySummary.city.name },
         ]}
         title={`What Does It Cost to Run ${article} ${summary.applianceConfig.displayName} in ${summary.citySummary.city.name}, ${summary.citySummary.state.name}?`}
-        intro={`This rollout-gated pilot page estimates the energy-only cost to run ${article} ${summary.applianceConfig.displayName.toLowerCase()} in ${summary.citySummary.city.name} using city-level deterministic rate context and the standard appliance runtime assumptions.`}
+        intro={`This page estimates the energy-only cost to run ${article} ${summary.applianceConfig.displayName.toLowerCase()} in ${summary.citySummary.city.name} using city-level rate assumptions from our methodology and the same appliance runtime assumptions as the statewide pages.`}
         stats={[
           {
             label: "City estimate basis",
@@ -132,41 +132,41 @@ export default async function ApplianceCityCostPage({
             value: formatUsd(summary.nationalMonthlyCostEstimate),
           },
         ]}
-        comparisonSummary={`City values on this page are deterministic ${summary.citySummary.estimateBasis === "city-config-reference" ? "configured reference estimates" : "modeled estimates"} for context. They are not utility tariff quotes or exact bill predictions.`}
+        comparisonSummary={`City values on this page are ${summary.citySummary.estimateBasis === "city-config-reference" ? "reference" : "modeled"} estimates for context. They are not utility tariff quotes or exact bill predictions.`}
         relatedLinks={[]}
         relatedLinkSections={[
           {
-            title: "Related canonical routes",
+            title: "Related pages",
             links: [
               {
                 href: applianceStatePath,
-                label: `State appliance cost route: ${summary.citySummary.state.name}`,
-                description: "Primary appliance cost benchmark route",
+                label: `State appliance cost page: ${summary.citySummary.state.name}`,
+                description: "Primary appliance cost page using the statewide average rate",
               },
               {
                 href: `/electricity-cost/${summary.citySummary.state.slug}/${summary.citySummary.city.slug}`,
-                label: `City electricity authority route: ${summary.citySummary.city.name}`,
-                description: "City authority context route with methodology disclosure",
+                label: `City electricity page: ${summary.citySummary.city.name}`,
+                description: "City electricity page with methodology notes",
               },
               {
                 href: `/electricity-cost-calculator/${summary.citySummary.state.slug}/${summary.applianceSlug}`,
                 label: `${summary.applianceConfig.displayName} calculator in ${summary.citySummary.state.name}`,
-                description: "Calculator-intent route for scenario adjustments",
+                description: "Calculator for adjusting hours and assumptions",
               },
               {
                 href: `/electricity-bill-estimator/${summary.citySummary.state.slug}`,
                 label: `${summary.citySummary.state.name} electricity bill estimator`,
-                description: "Deterministic household-profile scenarios for this state",
+                description: "Household profile bill scenarios for this state",
               },
               {
                 href: "/energy-comparison/appliances",
-                label: "Appliance comparison discovery slice",
-                description: "Curated appliance and pilot-city comparison pathways",
+                label: "Appliance comparison guide",
+                description: "More appliance and city comparison links",
               },
               {
                 href: "/electricity-cost-comparison",
                 label: "Electricity cost comparison index",
-                description: "Canonical state-vs-state comparison family",
+                description: "State-to-state electricity cost comparisons",
               },
             ],
           },
@@ -180,34 +180,35 @@ export default async function ApplianceCityCostPage({
         <section style={{ marginBottom: "var(--space-7)" }}>
           <h2 className="heading-section">Methodology and disclosure</h2>
           <p style={{ marginTop: 0, lineHeight: 1.7 }}>
-            Appliance usage assumptions are deterministic and reuse the same state-level appliance model:
+            Appliance usage assumptions use the same state-level appliance model:
             {` ${formatWattageRange(summary.applianceConfig)}`} and{" "}
             {formatHoursPerDay(summary.applianceConfig.typicalUsageHoursPerDay)}.
             Estimated monthly usage is <strong>{formatKwh(summary.applianceUsage.kwhPerMonth)}</strong>.
           </p>
           <p style={{ marginBottom: 0, lineHeight: 1.7 }}>
-            {summary.citySummary.estimateMethodNote} This route is a rollout-gated appliance x city pilot and is
-            intended for structured comparison context, not utility tariff quoting.
+            {summary.citySummary.estimateMethodNote} City-level appliance pages are available for a limited set of city
+            and appliance combinations and are intended for comparison context, not utility tariff quoting.
           </p>
         </section>
 
         <section style={{ marginBottom: "var(--space-7)" }}>
-          <h2 className="heading-section">Canonical scope and intent separation</h2>
+          <h2 className="heading-section">How these pages fit together</h2>
           <ul style={{ margin: 0, paddingLeft: 20, lineHeight: 1.8 }}>
             <li>
-              <Link href={applianceStatePath}>Appliance state route</Link> remains the broad appliance-cost benchmark.
+              <Link href={applianceStatePath}>State appliance cost page</Link> uses the statewide average residential
+              rate.
             </li>
             <li>
               <Link href={`/electricity-cost/${summary.citySummary.state.slug}/${summary.citySummary.city.slug}`}>
-                City authority route
+                City electricity page
               </Link>{" "}
-              remains canonical for city electricity context intent.
+              focuses on city electricity cost context.
             </li>
             <li>
               <Link href={`/electricity-cost-calculator/${summary.citySummary.state.slug}/${summary.applianceSlug}`}>
-                Appliance calculator route
+                Appliance calculator
               </Link>{" "}
-              remains canonical for calculator/scenario intent.
+              is best when you want to change hours or assumptions interactively.
             </li>
           </ul>
         </section>

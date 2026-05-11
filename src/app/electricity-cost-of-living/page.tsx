@@ -71,7 +71,7 @@ export default async function ElectricityCostOfLivingPage() {
         <section style={{ marginBottom: 24 }}>
           <h2 style={{ fontSize: 20, marginBottom: 12 }}>How the Site Estimates Electricity Cost of Living</h2>
           <p style={{ marginTop: 0, marginBottom: 16, maxWidth: "65ch", fontSize: 16, lineHeight: 1.6 }}>
-            We use state electricity prices from EIA data and standard household usage assumptions (900 kWh per month). Estimated monthly bills are computed as rate × usage. All figures are build-generated and deterministic.
+            We use state electricity prices from EIA data and standard household usage assumptions (900 kWh per month). Estimated monthly bills are computed as rate × usage. Figures are updated from the latest published data using consistent methodology.
           </p>
           <p className="muted" style={{ margin: "0 0 24px 0", maxWidth: "65ch", fontSize: 14 }}>
             This section focuses on electricity only—not rent, taxes, groceries, or other household costs.

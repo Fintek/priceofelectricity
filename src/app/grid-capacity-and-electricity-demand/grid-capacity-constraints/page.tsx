@@ -131,7 +131,7 @@ export default async function GridCapacityConstraintsPage() {
         <section style={{ marginBottom: 32 }}>
           <h2 style={{ fontSize: 20, marginBottom: 12 }}>Transparency / Limits</h2>
           <p style={{ marginTop: 0, marginBottom: 16, maxWidth: "65ch", fontSize: 16, lineHeight: 1.6 }}>
-            This site provides electricity-cost context and explanatory analysis based on EIA residential retail data. We do not provide real-time grid operations data, live congestion information, or utility-specific capacity conditions. Our figures are build-generated and deterministic. For real-time grid conditions, consult your utility or regional grid operator.
+            This site provides electricity-cost context and explanatory analysis based on EIA residential retail data. We do not provide real-time grid operations data, live congestion information, or utility-specific capacity conditions. Our planning figures are updated from published EIA data using fixed formulas. For real-time grid conditions, consult your utility or regional grid operator.
           </p>
         </section>
 

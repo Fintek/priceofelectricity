@@ -316,7 +316,7 @@ export default async function ElectricityCostComparisonPairPage({
               <Link href="/energy-comparison">Energy comparison hub</Link>
             </li>
             <li>
-              <Link href="/energy-comparison/states">State comparison discovery slice</Link>
+              <Link href="/energy-comparison/states">Compare states</Link>
             </li>
             <li>
               <Link href={`/electricity-cost/${stateA}`}>Electricity cost in {nameA}</Link>

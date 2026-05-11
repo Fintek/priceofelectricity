@@ -155,7 +155,7 @@ export default async function ApplianceCostToRunPage({
   const datasetJsonLd = buildDatasetJsonLd({
     name: `${stateData.name} Residential Electricity Dataset Reference`,
     description:
-      "State-level residential electricity rate data used to price deterministic appliance operating-cost scenarios.",
+      "State-level residential electricity rate data used for appliance operating-cost estimates on this page.",
     url: canonicalPath,
     publisher: "PriceOfElectricity.com",
     sameAs: stateData.sourceUrl ? [stateData.sourceUrl] : undefined,
@@ -169,8 +169,8 @@ export default async function ApplianceCostToRunPage({
       question: `How much does it cost to run ${article} ${applianceConfig.displayName.toLowerCase()} in ${stateData.name}?`,
       answer:
         stateEstimate.costPerMonth != null
-          ? `Using ${formatHoursPerDay(applianceConfig.typicalUsageHoursPerDay)} and a state average rate of ${formatRate(stateData.avgRateCentsPerKwh)}, this deterministic model estimates about ${formatUsd(stateEstimate.costPerMonth)} per month.`
-          : "This route uses deterministic wattage and runtime assumptions to estimate energy-only operating cost.",
+          ? `Using ${formatHoursPerDay(applianceConfig.typicalUsageHoursPerDay)} and a state average rate of ${formatRate(stateData.avgRateCentsPerKwh)}, this page estimates about ${formatUsd(stateEstimate.costPerMonth)} per month.`
+          : "This page uses fixed wattage and runtime assumptions to estimate energy-only operating cost.",
     },
     {
       question: "Does this estimate include delivery fees and taxes?",
@@ -178,8 +178,8 @@ export default async function ApplianceCostToRunPage({
         "No. This model is energy-only and excludes delivery charges, taxes, fixed monthly fees, and plan-specific adjustments.",
     },
     {
-      question: `Where can I compare this appliance across more routes?`,
-      answer: `Use /energy-comparison/appliances for curated appliance comparisons and /electricity-bill-estimator/${stateData.slug} for household bill profiles in ${stateData.name}.`,
+      question: `Where else can I compare this appliance?`,
+      answer: `Use /energy-comparison/appliances for appliance comparison links overview and /electricity-bill-estimator/${stateData.slug} for household bill profiles in ${stateData.name}.`,
     },
   ]);
 
@@ -294,7 +294,7 @@ export default async function ApplianceCostToRunPage({
             usage-cost pages below are the fastest way to model a custom scenario with the same state electricity rate.
           </p>
           <p style={{ marginBottom: 0, marginTop: 12, lineHeight: 1.7 }}>
-            For calculator-focused intent, use{" "}
+            For calculator-style comparisons, use{" "}
             <Link href={`/electricity-cost-calculator/${state}/${applianceSlug}`}>
               the {applianceConfig.displayName} calculator in {stateData.name}
             </Link>{" "}
@@ -303,20 +303,20 @@ export default async function ApplianceCostToRunPage({
         </section>
 
         <section style={{ marginBottom: "var(--space-7)" }}>
-          <h2 className="heading-section">Comparison discovery pathways</h2>
+          <h2 className="heading-section">Comparison entry points</h2>
           <p style={{ marginTop: 0, lineHeight: 1.7 }}>
-            Use the curated Energy Comparison Hub to move between appliance, state, and usage comparison routes
-            without changing canonical ownership for appliance cost intent.
+            The energy comparison hub links appliance, state, and usage pages so you can browse related comparisons from
+            one place. The main appliance cost reference for this state remains this page.
           </p>
           <ul style={{ margin: 0, paddingLeft: 20, lineHeight: 1.8 }}>
             <li>
-              <Link href="/energy-comparison/appliances">Appliance comparison slice</Link>
+              <Link href="/energy-comparison/appliances">Appliance comparisons</Link>
             </li>
             <li>
-              <Link href="/energy-comparison/states">State comparison slice</Link>
+              <Link href="/energy-comparison/states">State comparisons</Link>
             </li>
             <li>
-              <Link href="/energy-comparison/usage">Usage comparison slice</Link>
+              <Link href="/energy-comparison/usage">Usage tier comparisons</Link>
             </li>
             <li>
               <Link href={`/electricity-bill-estimator/${stateData.slug}`}>State bill estimator scenarios</Link>
@@ -327,17 +327,17 @@ export default async function ApplianceCostToRunPage({
         {applianceCityRows.length > 0 && (
           <section style={{ marginBottom: "var(--space-7)" }}>
             <h2 className="heading-section">
-              Rollout-enabled city context in {stateData.name}
+              City pages for selected metros in {stateData.name}
             </h2>
             <p style={{ marginTop: 0, lineHeight: 1.7 }}>
-              These city pages provide supplemental local context for this same appliance usage profile. City values are
-              deterministic estimates and remain secondary to the canonical appliance-state route.
+              These city pages add local rate context for the same appliance assumptions. City values are modeled
+              estimates; the primary appliance reference for the whole state is still the table on this page.
             </p>
             <div className="data-table-wrap">
               <table className="data-table">
                 <thead>
                   <tr>
-                    {["City", "City rate", "Monthly estimate", "Yearly estimate", "City route"].map((label) => (
+                    {["City", "City rate", "Monthly estimate", "Yearly estimate", "More detail"].map((label) => (
                       <th key={label}>{label}</th>
                     ))}
                   </tr>
@@ -354,7 +354,7 @@ export default async function ApplianceCostToRunPage({
                           <Link
                             href={`/cost-to-run/${applianceSlug}/${stateData.slug}/${row.citySummary.city.slug}`}
                           >
-                            Appliance city pilot page
+                            City appliance page
                           </Link>
                         ) : (
                           <Link href={`/electricity-cost/${stateData.slug}/${row.citySummary.city.slug}`}>
@@ -368,8 +368,8 @@ export default async function ApplianceCostToRunPage({
               </table>
             </div>
             <p style={{ marginBottom: 0, marginTop: 12, lineHeight: 1.7 }}>
-              City pages are authority/context routes and not appliance-by-city canonical pages. Appliance cost intent
-              remains canonical at this state-level route.
+              City electricity pages focus on household rate context. This state-level appliance page stays the main
+              place to compare appliance run cost using the statewide average rate.
             </p>
           </section>
         )}

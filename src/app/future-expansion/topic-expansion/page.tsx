@@ -12,7 +12,7 @@ export const revalidate = 86400;
 export const metadata: Metadata = buildMetadata({
   title: "Topic Expansion Framework | PriceOfElectricity.com",
   description:
-    "How new electricity topic clusters should be added. Hub pages, supporting pages, and links into adjacent clusters.",
+    "How new electricity topic sections should be added. Hub pages, supporting pages, and links to related topics.",
   canonicalPath: "/future-expansion/topic-expansion",
   robots: { index: false, follow: false },
 });

@@ -70,24 +70,24 @@ export default async function AverageElectricityBillCityPage({
   ]);
   const webPageJsonLd = buildWebPageJsonLd({
     title: `Average Electricity Bill in ${summary.city.name}, ${summary.state.name}`,
-    description: `City benchmark bill estimate page for ${summary.city.name}, ${summary.state.name}. Deterministic benchmark bill framing at ${AVERAGE_ELECTRICITY_BILL_USAGE_KWH.toLocaleString()} kWh.`,
+    description: `City benchmark bill estimate for ${summary.city.name}, ${summary.state.name} at ${AVERAGE_ELECTRICITY_BILL_USAGE_KWH.toLocaleString()} kWh per month.`,
     url: canonicalPath,
     isPartOf: "/",
     about: [
       `average electricity bill in ${summary.city.name}`,
       `${summary.state.name} city electricity bill benchmark`,
-      "deterministic benchmark electricity bill estimate",
+      "benchmark electricity bill estimate",
     ],
   });
   const faqJsonLd = buildFaqPageJsonLd([
     {
       question: `What does the average electricity bill estimate for ${summary.city.name} assume?`,
-      answer: `This benchmark assumes ${AVERAGE_ELECTRICITY_BILL_USAGE_KWH.toLocaleString()} kWh per month and applies a deterministic city electricity-rate estimate.`,
+      answer: `This benchmark assumes ${AVERAGE_ELECTRICITY_BILL_USAGE_KWH.toLocaleString()} kWh per month and uses the site's city electricity rate estimate for ${summary.city.name}.`,
     },
     {
       question: `Is this page a calculator?`,
       answer:
-        "No. This page is a benchmark-bill reference page. Calculator intent remains in the electricity-cost-calculator family.",
+        "No. This page is a benchmark bill reference. Interactive calculators are on the state electricity cost calculator pages.",
     },
     {
       question: `How does ${summary.city.name} compare with the ${summary.state.name} state benchmark?`,
@@ -106,7 +106,7 @@ export default async function AverageElectricityBillCityPage({
           { label: summary.city.name },
         ]}
         title={`Average Electricity Bill in ${summary.city.name}, ${summary.state.name}`}
-        intro={`This city page provides a deterministic benchmark electricity-bill estimate for ${summary.city.name} at ${AVERAGE_ELECTRICITY_BILL_USAGE_KWH.toLocaleString()} kWh per month. It complements, but does not replace, city electricity-cost authority pages and calculator scenarios.`}
+        intro={`This city page estimates a typical monthly electricity bill for ${summary.city.name} at ${AVERAGE_ELECTRICITY_BILL_USAGE_KWH.toLocaleString()} kWh per month. It complements the city electricity cost page and calculator scenarios without replacing them.`}
         stats={[
           { label: `${summary.city.name} estimated rate`, value: formatRate(summary.cityRateCentsPerKwh) },
           { label: "Estimated monthly bill", value: formatUsd(summary.cityMonthlyBill) },
@@ -114,7 +114,7 @@ export default async function AverageElectricityBillCityPage({
           { label: `${summary.state.name} benchmark monthly bill`, value: formatUsd(summary.state.monthlyBill) },
           { label: "Difference vs state benchmark", value: differenceLabel },
         ]}
-        comparisonTitle="Benchmark methodology and intent boundary"
+        comparisonTitle="How this benchmark works"
         comparisonRows={[
           {
             label: "Benchmark usage assumption",
@@ -128,15 +128,15 @@ export default async function AverageElectricityBillCityPage({
                 : "Modeled from state baseline",
           },
           {
-            label: "Canonical city bill route",
+            label: "This city page",
             value: canonicalPath,
           },
           {
-            label: "State bill benchmark route",
+            label: "State average bill page",
             value: `/average-electricity-bill/${summary.state.slug}`,
           },
         ]}
-        comparisonSummary={`${summary.estimateMethodNote} This route is benchmark-bill intent only and stays distinct from calculator and city-authority intent families.`}
+        comparisonSummary={`${summary.estimateMethodNote} This page is a fixed-usage benchmark only. For custom usage math, use the state calculator; for city rate and cost context, use the city electricity cost page.`}
         relatedLinks={[]}
         relatedLinkSections={[
           {
@@ -145,22 +145,22 @@ export default async function AverageElectricityBillCityPage({
               {
                 href: `/average-electricity-bill/${summary.state.slug}`,
                 label: `${summary.state.name} average electricity bill`,
-                description: "State-level benchmark bill owner route",
+                description: "State-level average bill at the same kWh benchmark",
               },
               {
                 href: `/electricity-cost/${summary.state.slug}/${summary.city.slug}`,
                 label: `${summary.city.name} electricity cost context`,
-                description: "City electricity authority route (separate intent)",
+                description: "City electricity rates and cost overview",
               },
               {
                 href: `/electricity-cost-calculator/${summary.state.slug}`,
                 label: `${summary.state.name} electricity cost calculator`,
-                description: "Calculator-intent route for custom usage scenarios",
+                description: "Custom usage and bill math",
               },
               {
                 href: `/electricity-bill-estimator/${summary.state.slug}`,
                 label: `${summary.state.name} electricity bill estimator`,
-                description: "Household profile scenario family",
+                description: "Household profile bill estimates",
               },
             ],
           },
@@ -181,26 +181,31 @@ export default async function AverageElectricityBillCityPage({
             kWh monthly profile so cities can be compared on a consistent basis.
           </p>
           <p style={{ marginBottom: 0, lineHeight: 1.7 }}>
-            It is not a utility quote and not a custom calculator flow. For scenario changes, use the state calculator
-            route; for local electricity-cost authority context, use the city electricity-cost route.
+            It is not a utility quote and not a custom calculator. To try different usage levels, use the state
+            electricity cost calculator; for local rates and electricity cost context, see the city electricity cost page.
           </p>
         </section>
 
         <section style={{ marginBottom: "var(--space-7)" }}>
-          <h2 className="heading-section">Intent separation guardrails</h2>
+          <h2 className="heading-section">Which page fits your question?</h2>
           <ul style={{ margin: 0, paddingLeft: 20, lineHeight: 1.8 }}>
             <li>
-              <Link href={`/average-electricity-bill/${summary.state.slug}`}>State bill benchmark route</Link> remains
-              the state-level owner for benchmark bill intent.
+              <Link href={`/average-electricity-bill/${summary.state.slug}`}>
+                {summary.state.name} average electricity bill
+              </Link>{" "}
+              — same fixed kWh benchmark, statewide.
             </li>
             <li>
-              <Link href={`/electricity-cost/${summary.state.slug}/${summary.city.slug}`}>City authority route</Link>
-              {" "}
-              remains the owner for city electricity-cost context intent.
+              <Link href={`/electricity-cost/${summary.state.slug}/${summary.city.slug}`}>
+                {summary.city.name} electricity cost
+              </Link>{" "}
+              — city rates and cost context for this city.
             </li>
             <li>
-              <Link href={`/electricity-cost-calculator/${summary.state.slug}`}>Calculator route</Link> remains the
-              owner for custom scenario calculator intent.
+              <Link href={`/electricity-cost-calculator/${summary.state.slug}`}>
+                {summary.state.name} electricity cost calculator
+              </Link>{" "}
+              — enter your own usage and see estimated costs.
             </li>
           </ul>
         </section>
