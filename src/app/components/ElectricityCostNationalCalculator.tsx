@@ -21,26 +21,24 @@ function formatRateCents(value: number | null): string {
  */
 export default function ElectricityCostNationalCalculator({
   states,
-  defaultSlug,
 }: {
   states: ElectricityCostNationalCalculatorState[];
-  defaultSlug: string;
 }) {
-  const fallbackSlug = states[0]?.slug ?? "";
-  const initialSlug = states.some((s) => s.slug === defaultSlug) ? defaultSlug : fallbackSlug;
-  const [slug, setSlug] = useState(initialSlug);
+  const [slug, setSlug] = useState("");
   const [kwhInput, setKwhInput] = useState("900");
 
-  const selected = states.find((s) => s.slug === slug);
+  const selected = slug ? states.find((s) => s.slug === slug) : undefined;
   const rate = selected?.rateCentsPerKwh ?? null;
+  const hasState = Boolean(selected);
 
   const estimateDollars = useMemo(() => {
+    if (!hasState) return null;
     const trimmed = kwhInput.trim();
     if (trimmed === "" || rate == null) return null;
     const kwh = Number(trimmed);
     if (!Number.isFinite(kwh) || kwh < 0) return null;
     return (kwh * rate) / 100;
-  }, [kwhInput, rate]);
+  }, [kwhInput, rate, hasState]);
 
   const selectId = "electricity-cost-national-state";
   const kwhId = "electricity-cost-national-kwh";
@@ -83,6 +81,7 @@ export default function ElectricityCostNationalCalculator({
               backgroundColor: "var(--color-surface, #fff)",
             }}
           >
+            <option value="">Select a state</option>
             {states.map((s) => (
               <option key={s.slug} value={s.slug}>
                 {s.name}
@@ -114,36 +113,42 @@ export default function ElectricityCostNationalCalculator({
         </div>
       </div>
 
-      <p style={{ marginTop: "var(--space-4)", marginBottom: "var(--space-2)", fontSize: "var(--font-size-lg)" }}>
-        Estimated monthly energy charge:{" "}
-        <strong>{estimateDollars == null ? "—" : `$${estimateDollars.toFixed(2)}`}</strong>
-      </p>
-
-      <p style={{ marginTop: 0, marginBottom: "var(--space-2)", fontSize: 15 }}>
-        Rate applied: <strong>{formatRateCents(rate)}</strong>
-      </p>
-
-      {selected ? (
-        <p className="muted" style={{ marginTop: 0, marginBottom: "var(--space-3)", fontSize: 13, lineHeight: 1.6 }}>
-          Source:{" "}
-          {selected.sourceUrl ? (
-            <a href={selected.sourceUrl} rel="noopener noreferrer" target="_blank">
-              {selected.sourceName}
-            </a>
-          ) : (
-            selected.sourceName
-          )}
-          .
-          {selected.updatedLabel
-            ? ` Last dataset period shown for ${selected.name}: ${selected.updatedLabel}.`
-            : " Dataset period label is currently unavailable."}
+      {!hasState ? (
+        <p className="muted" style={{ marginTop: "var(--space-4)", marginBottom: 0, fontSize: 15, lineHeight: 1.6 }}>
+          Choose a state and enter monthly kWh to estimate your energy charge.
         </p>
-      ) : null}
+      ) : selected ? (
+        <>
+          <p style={{ marginTop: "var(--space-4)", marginBottom: "var(--space-2)", fontSize: "var(--font-size-lg)" }}>
+            Estimated monthly energy charge:{" "}
+            <strong>{estimateDollars == null ? "—" : `$${estimateDollars.toFixed(2)}`}</strong>
+          </p>
 
-      <p className="muted" style={{ marginTop: 0, marginBottom: 0, fontSize: 13, lineHeight: 1.6 }}>
-        Energy charge estimate only. Your actual bill may also include delivery charges, fixed fees, taxes, and local
-        adjustments.
-      </p>
+          <p style={{ marginTop: 0, marginBottom: "var(--space-2)", fontSize: 15 }}>
+            Rate applied: <strong>{formatRateCents(rate)}</strong>
+          </p>
+
+          <p className="muted" style={{ marginTop: 0, marginBottom: "var(--space-3)", fontSize: 13, lineHeight: 1.6 }}>
+            Source:{" "}
+            {selected.sourceUrl ? (
+              <a href={selected.sourceUrl} rel="noopener noreferrer" target="_blank">
+                {selected.sourceName}
+              </a>
+            ) : (
+              selected.sourceName
+            )}
+            .
+            {selected.updatedLabel
+              ? ` Last dataset period shown for ${selected.name}: ${selected.updatedLabel}.`
+              : " Dataset period label is currently unavailable."}
+          </p>
+
+          <p className="muted" style={{ marginTop: 0, marginBottom: 0, fontSize: 13, lineHeight: 1.6 }}>
+            Energy charge estimate only. Your actual bill may also include delivery charges, fixed fees, taxes, and local
+            adjustments.
+          </p>
+        </>
+      ) : null}
     </section>
   );
 }

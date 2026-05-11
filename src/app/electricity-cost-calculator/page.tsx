@@ -86,7 +86,7 @@ export default async function ElectricityCostCalculatorIndexPage() {
           bill comparisons, usage-cost examples, and appliance calculators.
         </p>
 
-        <ElectricityCostNationalCalculator states={calculatorStates} defaultSlug={representativeState.slug} />
+        <ElectricityCostNationalCalculator states={calculatorStates} />
 
         <section style={{ marginBottom: 32 }}>
           <div
