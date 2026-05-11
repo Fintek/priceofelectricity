@@ -30,6 +30,7 @@ import CommercialPlacement from "@/components/monetization/CommercialPlacement";
 import { getRateCasesForState, getTimelineForState } from "@/content/regulatory";
 import { getTopDriversForState, DRIVER_CATEGORY_LABELS } from "@/content/drivers";
 import { getActiveCitiesForState } from "@/lib/longtail/rollout";
+import { getRateTier } from "@/lib/insights";
 
 const BASE_URL = SITE_URL;
 export const dynamicParams = true;
@@ -227,6 +228,8 @@ export default function StatePage({
       ? `${momDeltaCents >= 0 ? "+" : ""}${momDeltaCents.toFixed(2)}¢ (${momDeltaPct >= 0 ? "+" : ""}${momDeltaPct.toFixed(2)}%)`
       : null;
 
+  const rateTier = getRateTier(ns.avgRateCentsPerKwh);
+
   return (
     <main className="container">
       <script
@@ -292,7 +295,9 @@ export default function StatePage({
           <div className="stat-card-value">${billByKwh[900].toFixed(0)}</div>
           <div className="stat-card-label">est. monthly bill at 900 kWh</div>
         </div>
-        <div className="stat-card stat-card--secondary">
+        <div
+          className={`stat-card stat-card--secondary stat-card--rate-tier stat-card--tier-${rateTier}`}
+        >
           <div className="stat-card-value">{ns.rateTierLabel}</div>
           <div className="stat-card-label">rate tier</div>
         </div>

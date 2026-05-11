@@ -20,6 +20,16 @@
   --color-border: #dddddd;
   --color-surface-alt: #fafafa;
   --focus-ring: #0a66ff;
+  /* Rate tier accents (used with text labels — not sole indicator) */
+  --tier-low-bg: #ecfdf5;
+  --tier-low-border: #047857;
+  --tier-low-text: #064e3b;
+  --tier-medium-bg: #fffbeb;
+  --tier-medium-border: #b45309;
+  --tier-medium-text: #78350f;
+  --tier-high-bg: #fef2f2;
+  --tier-high-border: #dc2626;
+  --tier-high-text: #7f1d1d;
 }
 
 *,
@@ -113,6 +123,27 @@ h3 {
   border: 1px solid var(--color-border);
   border-radius: 999px;
   padding: 2px var(--space-2);
+}
+
+.chip.chip--low {
+  color: var(--tier-low-text);
+  background: var(--tier-low-bg);
+  border-color: var(--tier-low-border);
+  font-weight: 600;
+}
+
+.chip.chip--medium {
+  color: var(--tier-medium-text);
+  background: var(--tier-medium-bg);
+  border-color: var(--tier-medium-border);
+  font-weight: 600;
+}
+
+.chip.chip--high {
+  color: var(--tier-high-text);
+  background: var(--tier-high-bg);
+  border-color: var(--tier-high-border);
+  font-weight: 600;
 }
 
 .data-table-wrap {
@@ -446,6 +477,35 @@ h3 {
 
 .stat-card--secondary .stat-card-value {
   font-size: var(--font-size-xl);
+}
+
+.stat-card--rate-tier {
+  border-left-width: 4px;
+  border-left-style: solid;
+}
+
+.stat-card--rate-tier.stat-card--tier-low {
+  border-left-color: var(--tier-low-border);
+}
+
+.stat-card--rate-tier.stat-card--tier-low .stat-card-value {
+  color: var(--tier-low-text);
+}
+
+.stat-card--rate-tier.stat-card--tier-medium {
+  border-left-color: var(--tier-medium-border);
+}
+
+.stat-card--rate-tier.stat-card--tier-medium .stat-card-value {
+  color: var(--tier-medium-text);
+}
+
+.stat-card--rate-tier.stat-card--tier-high {
+  border-left-color: var(--tier-high-border);
+}
+
+.stat-card--rate-tier.stat-card--tier-high .stat-card-value {
+  color: var(--tier-high-text);
 }
 
 .breadcrumb-nav {

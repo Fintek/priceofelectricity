@@ -83,22 +83,25 @@ export default function HomePage() {
       <section>
         <h2 style={{ fontSize: 20, marginBottom: 12 }}>Select your state</h2>
         <div className="homepage-state-grid">
-          {coverageEntries.map((entry) => (
-            <Link
-              key={entry.slug}
-              href={entry.href}
-              prefetch={false}
-              className="homepage-state-item"
-            >
-              <span className="homepage-state-name">{entry.label}</span>
-              <span className="homepage-state-rate">
-                {entry.avgRateCentsPerKwh}¢
-                <span className="chip" style={{ marginLeft: 6 }}>
-                  {getRateTierLabel(getRateTier(entry.avgRateCentsPerKwh))}
+          {coverageEntries.map((entry) => {
+            const tier = getRateTier(entry.avgRateCentsPerKwh);
+            return (
+              <Link
+                key={entry.slug}
+                href={entry.href}
+                prefetch={false}
+                className="homepage-state-item"
+              >
+                <span className="homepage-state-name">{entry.label}</span>
+                <span className="homepage-state-rate">
+                  {entry.avgRateCentsPerKwh}¢
+                  <span className={`chip chip--${tier}`} style={{ marginLeft: 6 }}>
+                    {getRateTierLabel(tier)}
+                  </span>
                 </span>
-              </span>
-            </Link>
-          ))}
+              </Link>
+            );
+          })}
         </div>
       </section>
 
