@@ -125,8 +125,8 @@ export default function RootLayout({
             <div className="header-desktop-nav">
               <Link href="/electricity-cost-comparison">State comparisons</Link>
               <Link href="/energy-comparison">Energy comparison</Link>
-              <Link href="/electricity-cost-calculator">Calculator</Link>
-              <Link href="/datasets">Data</Link>
+              <Link href="/electricity-cost-calculator">Bill calculator</Link>
+              <Link href="/datasets">Download data</Link>
               <Link href="/methodology">Methodology</Link>
               <SearchBox />
               <CommandPalette />
@@ -150,32 +150,32 @@ export default function RootLayout({
           <div className="container footer-grid">
             <div className="footer-group">
               <p className="footer-group-title">Explore</p>
+              <Link href="/electricity-hubs">Explore hubs</Link>
               <Link href="/electricity-cost-comparison">State comparisons</Link>
               <Link href="/energy-comparison">Energy comparison</Link>
-              <Link href="/electricity-cost-calculator">Calculator</Link>
-              <Link href="/electricity-bill-estimator">Bill Estimator</Link>
-              <Link href="/electricity-cost-comparison">Comparisons</Link>
+              <Link href="/electricity-cost-calculator">Bill calculator</Link>
+              <Link href="/electricity-bill-estimator">Bill estimator</Link>
               <Link href="/electricity-trends">Trends</Link>
               <Link href="/electricity-insights">Insights</Link>
             </div>
             <div className="footer-group">
-              <p className="footer-group-title">Data</p>
-              <Link href="/datasets">Datasets</Link>
+              <p className="footer-group-title">Data &amp; methodology</p>
+              <Link href="/datasets">Download data</Link>
               <Link href="/methodology">Methodology</Link>
-              <Link href="/knowledge">Knowledge</Link>
+              <Link href="/knowledge">Knowledge hub</Link>
               <Link href="/research">Research</Link>
-              <Link href="/drivers">Price Drivers</Link>
-              <Link href="/data-history">Data History</Link>
+              <Link href="/drivers">What drives prices</Link>
+              <Link href="/data-history">Historical data</Link>
             </div>
             <div className="footer-group">
               <p className="footer-group-title">About</p>
-              <Link href="/about">About &amp; Trust</Link>
+              <Link href="/about">About &amp; trust</Link>
               <Link href="/contact">Contact</Link>
-              <Link href="/advertise">Advertise with Us</Link>
+              <Link href="/advertise">Advertise with us</Link>
               <Link href="/newsletter">Newsletter</Link>
               <Link href="/press">Press</Link>
               <Link href="/citations">Citations</Link>
-              <Link href="/site-map">Site Map</Link>
+              <Link href="/site-map">Site map</Link>
             </div>
             <div className="footer-group">
               <p className="footer-group-title">Legal</p>

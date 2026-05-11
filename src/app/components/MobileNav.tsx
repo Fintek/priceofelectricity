@@ -5,17 +5,19 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 const NAV_LINKS = [
+  { href: "/electricity-hubs", label: "Explore hubs" },
   { href: "/electricity-cost-comparison", label: "State comparisons" },
   { href: "/energy-comparison", label: "Energy comparison" },
-  { href: "/electricity-cost-calculator", label: "Calculator" },
-  { href: "/datasets", label: "Data" },
+  { href: "/electricity-cost-calculator", label: "Bill calculator" },
+  { href: "/electricity-bill-estimator", label: "Bill estimator" },
+  { href: "/datasets", label: "Download data" },
   { href: "/methodology", label: "Methodology" },
   { href: "/electricity-trends", label: "Trends" },
   { href: "/electricity-insights", label: "Insights" },
-  { href: "/knowledge", label: "Knowledge" },
-  { href: "/about", label: "About & Trust" },
+  { href: "/knowledge", label: "Knowledge hub" },
+  { href: "/about", label: "About & trust" },
   { href: "/search", label: "Search" },
-  { href: "/site-map", label: "Site Map" },
+  { href: "/site-map", label: "Site map" },
 ] as const;
 
 export default function MobileNav() {

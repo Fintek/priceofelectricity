@@ -121,16 +121,17 @@ export default function HomePage() {
           <div>
             <p style={{ margin: "0 0 6px", fontWeight: 600 }}>Data</p>
             <ul style={{ margin: 0, paddingLeft: 18, lineHeight: 2 }}>
-              <li><Link href="/datasets">Datasets</Link></li>
+              <li><Link href="/datasets">Download data</Link></li>
               <li><Link href="/methodology">Methodology</Link></li>
-              <li><Link href="/knowledge">Knowledge</Link></li>
+              <li><Link href="/knowledge">Knowledge hub</Link></li>
               <li><Link href="/research">Research</Link></li>
             </ul>
           </div>
           <div>
             <p style={{ margin: "0 0 6px", fontWeight: 600 }}>Tools</p>
             <ul style={{ margin: 0, paddingLeft: 18, lineHeight: 2 }}>
-              <li><Link href="/electricity-cost-comparison">Cost comparisons</Link></li>
+              <li><Link href="/electricity-hubs">Explore hubs</Link></li>
+              <li><Link href="/electricity-cost-comparison">State comparisons</Link></li>
               <li><Link href="/energy-comparison">Energy comparison</Link></li>
               <li><Link href="/electricity-topics">Topics</Link></li>
               <li><Link href="/about">About &amp; trust</Link></li>
@@ -145,8 +146,8 @@ export default function HomePage() {
           description="Independent electricity price data covering all 50 states. Methodology and downloadable datasets are published for verification."
           links={[
             { href: "/methodology", label: "Methodology" },
-            { href: "/datasets", label: "Datasets" },
-            { href: "/electricity-data", label: "Data" },
+            { href: "/datasets", label: "Download data" },
+            { href: "/electricity-data", label: "Electricity data" },
             { href: "/about", label: "About" },
           ]}
         />

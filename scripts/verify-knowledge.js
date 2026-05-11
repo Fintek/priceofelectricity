@@ -3215,6 +3215,7 @@ const KNOWN_ROUTE_FAMILY_PREFIXES = [
   "/average-electricity-bill/",
   "/electricity-bill-estimator/",
   "/electricity-cost-calculator/",
+  "/electricity-hubs/",
   "/energy-comparison/",
   "/electricity-usage/",
   "/electricity-usage/home-size/",
