@@ -447,7 +447,7 @@ export default async function ElectricityInsightsPage() {
             { href: "/knowledge", label: "Knowledge Hub" },
             { href: "/datasets", label: "Datasets" },
             { href: "/methodology", label: "Methodology" },
-            { href: "/page-index", label: "Page index" },
+            { href: "/site-map", label: "Site map" },
           ]}
         />
 

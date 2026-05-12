@@ -45,7 +45,7 @@ export default function DatasetsHubPage() {
           { href: "/datasets/electricity-prices-by-state", label: "Prices by state" },
           { href: "/datasets/electricity-rankings", label: "Electricity rankings" },
           { href: "/methodology", label: "Methodology" },
-          { href: "/data-registry", label: "Data registry" },
+          { href: "/electricity-data", label: "Electricity data" },
           { href: "/knowledge", label: "Knowledge Hub" },
           { href: "/site-map", label: "Site map" },
         ]}
@@ -132,7 +132,7 @@ export default function DatasetsHubPage() {
         links={[
           { href: "/electricity-data", label: "Explore electricity datasets" },
           { href: "/methodology", label: "Methodology" },
-          { href: "/data-registry", label: "Data registry" },
+          { href: "/electricity-hubs", label: "Electricity hubs" },
           { href: "/knowledge", label: "Knowledge Hub" },
           { href: "/site-map", label: "Site map" },
           { href: "/site-maintenance", label: "Site maintenance" },

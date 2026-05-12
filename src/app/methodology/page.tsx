@@ -62,7 +62,7 @@ export default function MethodologyPage() {
       <section style={{ marginTop: 24, padding: "14px 18px", border: "1px solid var(--color-border, #e5e7eb)", borderRadius: 8, backgroundColor: "var(--color-surface-alt, #f9fafb)" }}>
         <h2 style={{ fontSize: 18, fontWeight: 600, margin: "0 0 10px 0" }}>How to verify this site</h2>
         <p style={{ margin: 0, fontSize: 14, lineHeight: 1.5 }}>
-          Review the <Link href="/methodology">methodology</Link>, inspect <Link href="/datasets">downloadable datasets</Link>, browse <Link href="/electricity-topics">topic hubs</Link> and <Link href="/discovery-graph">discovery pages</Link>, and compare <Link href="/knowledge/rankings">state rankings</Link>.
+          Review the <Link href="/methodology">methodology</Link>, inspect <Link href="/datasets">downloadable datasets</Link>, browse <Link href="/electricity-topics">topic hubs</Link>, explore the <Link href="/site-map">site map</Link> and <Link href="/electricity-hubs">electricity hubs</Link>, and compare <Link href="/knowledge/rankings">state rankings</Link>.
         </p>
       </section>
 
@@ -163,9 +163,7 @@ export default function MethodologyPage() {
           <li>
             <Link href="/site-map">View the site map</Link>
             {" · "}
-            <Link href="/data-registry">Browse the data registry</Link>
-            {" · "}
-            <Link href="/page-index">See the page index</Link>
+            <Link href="/electricity-data">Browse the electricity data hub</Link>
             {" · "}
             <Link href="/launch-checklist">Review the launch checklist</Link>
           </li>
@@ -179,7 +177,7 @@ export default function MethodologyPage() {
           { href: "/datasets", label: "Datasets" },
           { href: "/electricity-trends", label: "Electricity trends" },
           { href: "/site-map", label: "Site map" },
-          { href: "/data-registry", label: "Data registry" },
+          { href: "/electricity-data", label: "Electricity data" },
           { href: "/launch-checklist", label: "Launch checklist" },
           { href: "/site-maintenance", label: "Site maintenance" },
         ]}

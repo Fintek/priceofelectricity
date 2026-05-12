@@ -59,8 +59,8 @@ export default async function ElectricityDataPage() {
             { href: "/methodology", label: "Methodology" },
             { href: "/operating-playbook", label: "Operating playbook" },
             { href: "/electricity-shopping", label: "Electricity shopping" },
-            { href: "/discovery-graph", label: "Discovery graph" },
-            { href: "/entity-registry", label: "Entity registry" },
+            { href: "/electricity-topics", label: "Electricity topics" },
+            { href: "/site-map", label: "Site map" },
             { href: "/site-maintenance", label: "Site maintenance" },
           ]}
         />
@@ -188,7 +188,7 @@ export default async function ElectricityDataPage() {
         <section style={{ marginBottom: 32 }}>
           <h2 style={{ fontSize: 20, marginBottom: 12 }}>Methodology and Transparency</h2>
           <p style={{ marginTop: 0, marginBottom: 12, maxWidth: "65ch", fontSize: 16, lineHeight: 1.6 }}>
-            For detailed methodology, formulas, and data provenance, see our methodology pages and data registry.
+            For detailed methodology, formulas, and data provenance, see our methodology pages and electricity data hub.
           </p>
           <ul style={{ margin: 0, paddingLeft: 20, lineHeight: 1.8 }}>
             <li>
@@ -197,9 +197,9 @@ export default async function ElectricityDataPage() {
               How rates, inflation, and affordability are calculated
             </li>
             <li>
-              <Link href="/data-registry">Data Registry</Link>
+              <Link href="/datasets">Datasets</Link>
               {" — "}
-              Registry of datasets used by the site
+              Download JSON and CSV exports used across the site
             </li>
           </ul>
         </section>
@@ -208,21 +208,21 @@ export default async function ElectricityDataPage() {
         <section style={{ marginBottom: 32, padding: "14px 18px", border: "1px solid var(--color-border, #e5e7eb)", borderRadius: 8, backgroundColor: "var(--color-surface-alt, #f9fafb)" }}>
           <h2 style={{ fontSize: 18, fontWeight: 600, margin: "0 0 10px 0" }}>How to verify this site</h2>
           <p style={{ margin: "0 0 8px 0", fontSize: 14, lineHeight: 1.5 }}>
-            To evaluate our analysis: review the <Link href="/methodology">methodology</Link>, inspect <Link href="/datasets">downloadable datasets</Link>, browse <Link href="/electricity-topics">topic hubs</Link> and <Link href="/discovery-graph">discovery pages</Link>, and compare <Link href="/knowledge/rankings">state rankings</Link>.
+            To evaluate our analysis: review the <Link href="/methodology">methodology</Link>, inspect <Link href="/datasets">downloadable datasets</Link>, browse <Link href="/electricity-topics">topic hubs</Link>, explore the <Link href="/site-map">site map</Link> and <Link href="/electricity-hubs">electricity hubs</Link>, and compare <Link href="/knowledge/rankings">state rankings</Link>.
           </p>
         </section>
 
         <TopicClusterNav
           title="Related pages"
-          description="Connect to topic hubs, discovery, and data."
+          description="Connect to topic hubs, navigation, and data."
           links={[
             { href: "/electricity-topics", label: "Browse major electricity economics topics" },
             { href: "/electricity-cost", label: "Electricity cost by state" },
             { href: "/electricity-inflation", label: "Electricity inflation" },
             { href: "/electricity-affordability", label: "Electricity affordability" },
             { href: "/datasets", label: "Download datasets" },
-            { href: "/page-index", label: "Browse all major pages by category" },
-            { href: "/discovery-graph", label: "View the machine-readable topic relationship map" },
+            { href: "/site-map", label: "Site map" },
+            { href: "/electricity-hubs", label: "Electricity hubs" },
           ]}
         />
 

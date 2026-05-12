@@ -55,7 +55,10 @@ export default async function ElectricityTopicsPage() {
             <li><strong>State pages</strong> provide local electricity cost context for each state.</li>
             <li><strong>Comparison pages</strong> compare electricity costs between states.</li>
             <li><strong>Datasets and methodology</strong> — <Link href="/electricity-data">Electricity data</Link>, <Link href="/methodology">methodology</Link>, and <Link href="/datasets">downloadable datasets</Link> explain the evidence and how we calculate rates, inflation, and rankings.</li>
-            <li><strong>Discovery pages</strong> (page index, site map, entity registry) help browse the system by category.</li>
+            <li>
+              <strong>Site navigation</strong> — The <Link href="/site-map">site map</Link> and{" "}
+              <Link href="/electricity-hubs">electricity hubs</Link> summarize structure and entry points.
+            </li>
           </ul>
         </section>
 
@@ -67,8 +70,8 @@ export default async function ElectricityTopicsPage() {
             { href: "/electricity-data", label: "Electricity data" },
             { href: "/methodology", label: "Methodology" },
             { href: "/datasets", label: "Datasets" },
-            { href: "/entity-registry", label: "Entity registry" },
-            { href: "/discovery-graph", label: "Discovery graph" },
+            { href: "/knowledge", label: "Knowledge hub" },
+            { href: "/site-map", label: "Site map" },
           ]}
         />
 
@@ -187,10 +190,8 @@ export default async function ElectricityTopicsPage() {
             <li><Link href="/electricity-data">Electricity data</Link> — See the datasets and data-driven analysis foundation</li>
             <li><Link href="/datasets">Datasets</Link> — Download JSON and CSV exports</li>
             <li><Link href="/methodology">Methodology</Link> — How rates, inflation, and affordability are calculated</li>
-            <li><Link href="/page-index">Page index</Link> — Browse all major pages by category</li>
             <li><Link href="/site-map">Site map</Link> — See the high-level site structure</li>
-            <li><Link href="/entity-registry">Entity registry</Link> — Explore the site&apos;s core electricity entities</li>
-            <li><Link href="/discovery-graph">Discovery graph</Link> — View the machine-readable topic relationship map</li>
+            <li><Link href="/electricity-hubs">Electricity hubs</Link> — Guided entry points by topic and use case</li>
           </ul>
         </section>
 
@@ -208,8 +209,8 @@ export default async function ElectricityTopicsPage() {
         />
 
         <p className="muted" style={{ marginTop: 32 }}>
-          <Link href="/page-index">Browse all pages by category</Link> {" | "}
           <Link href="/site-map">Site map</Link> {" | "}
+          <Link href="/electricity-hubs">Electricity hubs</Link> {" | "}
           <Link href="/electricity-trends">Electricity trends</Link> {" | "}
           <Link href="/knowledge">Knowledge Hub</Link>
         </p>
