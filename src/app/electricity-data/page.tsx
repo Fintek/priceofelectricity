@@ -185,7 +185,7 @@ export default async function ElectricityDataPage() {
         <section style={{ marginBottom: 32 }}>
           <h2 style={{ fontSize: 20, marginBottom: 12 }}>Methodology and Transparency</h2>
           <p style={{ marginTop: 0, marginBottom: 12, maxWidth: "65ch", fontSize: 16, lineHeight: 1.6 }}>
-            For detailed methodology, formulas, and data provenance, see our methodology pages and electricity data hub.
+            For detailed methodology, formulas, and data provenance, see our methodology pages and electricity data overview.
           </p>
           <ul style={{ margin: 0, paddingLeft: 20, lineHeight: 1.8 }}>
             <li>

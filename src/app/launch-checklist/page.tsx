@@ -70,7 +70,7 @@ export default function LaunchChecklistPage() {
         <ul style={{ paddingLeft: 20, lineHeight: 2 }}>
           <li>Downloadable datasets exist (JSON and CSV)</li>
           <li>Methodology pages exist</li>
-          <li>Electricity data hub, site map, and downloadable datasets exist</li>
+          <li>Electricity data, site map, and downloadable datasets exist</li>
         </ul>
       </section>
 

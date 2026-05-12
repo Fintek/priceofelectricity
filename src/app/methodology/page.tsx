@@ -163,7 +163,7 @@ export default function MethodologyPage() {
           <li>
             <Link href="/site-map">View the site map</Link>
             {" · "}
-            <Link href="/electricity-data">Browse the electricity data hub</Link>
+            <Link href="/electricity-data">Browse electricity data</Link>
             {" · "}
             <Link href="/launch-checklist">Review the launch checklist</Link>
           </li>
