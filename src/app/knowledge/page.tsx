@@ -46,7 +46,7 @@ function toPath(url: string): string {
 export const metadata: Metadata = buildMetadata({
   title: "U.S. Electricity Price Data & Rankings | PriceOfElectricity.com",
   description:
-    "Knowledge hub: national snapshot, state rankings, affordability, value scores, and price momentum. Bridge to state pages and rankings.",
+    "Knowledge: national snapshot, state rankings, affordability, value scores, and price momentum. Bridge to state pages and rankings.",
   canonicalPath: "/knowledge",
 });
 
@@ -120,7 +120,7 @@ export default async function KnowledgeHubPage() {
         <nav aria-label="Breadcrumb" className="muted" style={{ marginBottom: 16, fontSize: 14 }}>
           <Link href="/">Home</Link>
           {" · "}
-          <Link href="/data">Data Hub</Link>
+          <Link href="/data">Data</Link>
           {" · "}
           <span aria-current="page">Knowledge</span>
         </nav>

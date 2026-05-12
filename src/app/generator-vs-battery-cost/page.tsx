@@ -46,7 +46,7 @@ export default async function GeneratorVsBatteryCostIndexPage() {
         <nav aria-label="Breadcrumb" className="muted" style={{ marginBottom: 16, fontSize: 14 }}>
           <Link href="/">Home</Link>
           {" · "}
-          <Link href="/data">Data Hub</Link>
+          <Link href="/data">Data</Link>
           {" · "}
           <span aria-current="page">Generator vs Battery Cost</span>
         </nav>
@@ -115,7 +115,7 @@ export default async function GeneratorVsBatteryCostIndexPage() {
           links={[
             { href: "/battery-recharge-cost", label: "Battery recharge cost" },
             { href: "/electricity-cost", label: "Electricity cost by state" },
-            { href: "/knowledge", label: "Knowledge Hub" },
+            { href: "/knowledge", label: "Knowledge" },
             { href: "/methodology/generator-vs-battery-cost", label: "Methodology" },
             { href: "/methodology", label: "All methodology" },
           ]}

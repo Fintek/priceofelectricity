@@ -87,7 +87,7 @@ export default function AnnualReportPage() {
 
       <p className="intro muted" style={{ marginTop: 0 }}>
         A summary of residential electricity prices across {r.stateCount} U.S.
-        states, computed from the normalized data pipeline as of the latest
+        states, computed from the normalized site dataset as of the latest
         update.
       </p>
 

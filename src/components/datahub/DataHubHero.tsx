@@ -72,10 +72,10 @@ export default function DataHubHero({
       }}
     >
       <h1 id="datahub-hero-heading" style={{ fontSize: 28, margin: "0 0 12px 0", fontWeight: 600 }}>
-        Data Hub
+        Data
       </h1>
       <p className="muted" style={{ margin: "0 0 16px 0", fontSize: 15, maxWidth: "60ch" }}>
-        Central entry point for electricity data and knowledge surfaces. Datasets for analysis, knowledge pages for LLM ingestion.
+        Central entry point for electricity datasets and knowledge JSON. Datasets for analysis; knowledge pages for research tools and structured access.
       </p>
       <p className="muted" style={{ margin: "0 0 8px 0", fontSize: 15 }}>
         {release?.releaseId ?? "—"} · Snapshot tag {release?.sourceVersion ?? "—"} · Contract {release?.contractVersion ?? "—"}
@@ -83,7 +83,7 @@ export default function DataHubHero({
       <p className="muted" style={{ margin: "0 0 16px 0", fontSize: 14, maxWidth: "65ch" }}>
         Latest complete EIA residential reporting month in bundled data: {" "}
         <strong>{getCanonicalResidentialDataThroughMonthLabel()}</strong>. EIA publishes monthly state averages with an
-        official reporting lag. Bundle tags mark the build’s data cut, not a future month EIA has yet to publish.
+        official reporting lag. Release tags mark this site&apos;s dataset snapshot date, not a future month EIA has yet to publish.
       </p>
       {release?.integrity?.manifestHash && (
         <p style={{ margin: "0 0 16px 0", fontSize: 13 }}>

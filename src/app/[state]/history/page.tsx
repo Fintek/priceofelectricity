@@ -163,12 +163,11 @@ export default async function StateHistoryPage({
         />
         <h1>{stateInfo.name} Electricity Price History</h1>
         <p className="muted" style={{ marginTop: 0, marginBottom: 8 }}>
-          Latest EIA reporting month: {eiaReportingMonth}
           {eiaDatasetSyncUtc !== null ? (
-            <> · Dataset synchronized {eiaDatasetSyncUtc} (UTC)</>
+            <>Dataset last updated {eiaDatasetSyncUtc} (UTC). </>
           ) : null}
-          . EIA publishes monthly state electricity data with a reporting lag. Figures advance when EIA posts the next
-          monthly release. ·{" "}
+          The U.S. Energy Information Administration (EIA) publishes monthly state data with a reporting lag, so the
+          series above reflects {eiaReportingMonth} activity. ·{" "}
           <Link href="/about">Methodology</Link>
         </p>
         <p className="muted">History coming soon.</p>
@@ -204,12 +203,11 @@ export default async function StateHistoryPage({
       />
       <h1>{stateInfo.name} Electricity Price History</h1>
       <p className="muted" style={{ marginTop: 0, marginBottom: 8 }}>
-        Latest EIA reporting month: {eiaReportingMonth}
         {eiaDatasetSyncUtc !== null ? (
-          <> · Dataset synchronized {eiaDatasetSyncUtc} (UTC)</>
+          <>Dataset last updated {eiaDatasetSyncUtc} (UTC). </>
         ) : null}
-        . EIA publishes monthly state electricity data with a reporting lag. Figures advance when EIA posts the next
-        monthly release. ·{" "}
+        The U.S. Energy Information Administration (EIA) publishes monthly state data with a reporting lag, so the series
+        above reflects {eiaReportingMonth} activity. ·{" "}
         <Link href="/about">Methodology</Link>
       </p>
       <p className="muted intro" style={{ marginTop: 0 }}>

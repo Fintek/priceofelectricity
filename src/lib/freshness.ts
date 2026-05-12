@@ -7,9 +7,9 @@ function toUtcDate(date: Date): Date {
 }
 
 /**
- * Public-site freshness is anchored to the ingest sync time when available
- * (`pipelineSynchronizedAtIso` from the canonical EIA CSV ingest), not the EIA
- * reporting month label (`RAW_STATES.updated`) which can lag calendar time.
+ * Public-site freshness uses the EIA bundle sync timestamp when available
+ * (`pipelineSynchronizedAtIso`), not only the reporting month label, which can
+ * lag calendar time.
  */
 export function computeFreshness(
   eiaReportingMonthLabel: string,
@@ -47,7 +47,7 @@ export function computeFreshness(
   const rawDays = Math.floor((nowDate.getTime() - referenceDate.getTime()) / msPerDay);
   const daysOld = Math.max(0, rawDays);
 
-  const verbPrefix = typeof syncIso === "string" ? "Dataset synchronized" : "Updated";
+  const verbPrefix = typeof syncIso === "string" ? "Dataset last updated" : "Updated";
 
   if (daysOld < 45) {
     return {

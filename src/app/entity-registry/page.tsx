@@ -91,7 +91,7 @@ export default async function EntityRegistryPage() {
           <strong>Best for:</strong> Browsing entities by type, understanding site structure, and verifying coverage.
         </p>
 
-        {/* Topic clusters */}
+        {/* Browse by topic */}
         <section style={{ marginBottom: 32 }}>
           <h2 style={{ fontSize: 20, marginBottom: 12 }}>Topics</h2>
           <p style={{ marginTop: 0, marginBottom: 12, maxWidth: "65ch", fontSize: 16, lineHeight: 1.6 }}>
@@ -102,7 +102,7 @@ export default async function EntityRegistryPage() {
             {" · "}
             <Link href="/electricity-data">See the datasets and data-driven analysis foundation</Link>
             {" · "}
-            <Link href="/discovery-graph">View the machine-readable topic relationship map</Link>
+            <Link href="/discovery-graph">Browse topic relationships (JSON map)</Link>
             {" · "}
             <Link href="/electricity-inflation">Electricity inflation</Link>
             {" · "}

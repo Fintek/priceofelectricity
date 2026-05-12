@@ -48,8 +48,8 @@ export default function ResearchPage() {
 
       <p className="intro muted" style={{ marginTop: 0 }}>
         All analysis on this page is computed from the same normalized state
-        data pipeline that powers every page on PriceOfElectricity.com. No
-        figures are hardcoded — statistics are derived at build time from
+        dataset used across every page on PriceOfElectricity.com. No
+        figures are hardcoded — statistics are derived when the dataset updates from
         current rate data, affordability indices, value scores, and historical
         series.
       </p>

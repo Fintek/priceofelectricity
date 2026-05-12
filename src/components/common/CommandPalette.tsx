@@ -32,7 +32,7 @@ const STATIC_ENTRIES: SearchEntity[] = [
     id: "data:hub",
     type: "hub",
     slug: "data",
-    title: "Data Hub",
+    title: "Data",
     canonicalUrl: "/data",
     excerpt: "Human entry point for data surfaces and datasets.",
     tokens: ["data", "hub", "datasets"],

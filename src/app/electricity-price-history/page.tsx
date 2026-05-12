@@ -41,7 +41,7 @@ export default async function ElectricityPriceHistoryIndexPage() {
         <nav aria-label="Breadcrumb" className="muted" style={{ marginBottom: 16, fontSize: 14 }}>
           <Link href="/">Home</Link>
           {" · "}
-          <Link href="/data">Data Hub</Link>
+          <Link href="/data">Data</Link>
           {" · "}
           <span aria-current="page">Electricity Price History</span>
         </nav>
@@ -107,7 +107,7 @@ export default async function ElectricityPriceHistoryIndexPage() {
               Usage-based cost estimates
             </li>
             <li>
-              <Link href="/knowledge">Knowledge Hub</Link>
+              <Link href="/knowledge">Knowledge</Link>
               {" — "}
               Rates, rankings, affordability, trends
             </li>

@@ -334,20 +334,13 @@ export default function StatePage({
           }}
         />
         <span className="sr-only">Data status: {ns.freshnessStatus}</span>
-        Latest EIA reporting month: {eiaReportingMonth}
         {eiaDatasetSyncUtc !== null ? (
-          <>
-            {" · "}
-            Dataset synchronized {eiaDatasetSyncUtc} (UTC)
-          </>
+          <>Dataset last updated {eiaDatasetSyncUtc} (UTC). </>
         ) : ns.datasetSynchronizedDisplayUtc !== null ? (
-          <>
-            {" · "}
-            Dataset synchronized {ns.datasetSynchronizedDisplayUtc} (UTC)
-          </>
+          <>Dataset last updated {ns.datasetSynchronizedDisplayUtc} (UTC). </>
         ) : null}
-        . EIA publishes monthly state electricity data with a reporting lag. Figures advance when EIA releases the next
-        monthly publication
+        The U.S. Energy Information Administration (EIA) publishes monthly state data with a reporting lag, so the rates
+        above reflect {eiaReportingMonth} activity.
         {" · "}
         Source:{" "}
         {ns.source.slug === "eia" ? (

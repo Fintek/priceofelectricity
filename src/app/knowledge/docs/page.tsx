@@ -50,7 +50,7 @@ export default async function KnowledgeDocsPage() {
   return (
     <main className="container">
       <nav aria-label="Knowledge navigation" className="muted" style={{ marginBottom: 16, fontSize: 14 }}>
-        <Link href="/data">Data Hub</Link>
+        <Link href="/data">Data</Link>
         {" · "}
         <Link href="/knowledge">Knowledge</Link>
         {" · "}
@@ -235,7 +235,7 @@ export default async function KnowledgeDocsPage() {
       <StatusFooter release={release} capabilities={capabilities} />
 
       <p className="muted" style={{ marginTop: 24 }}>
-        <Link href="/data">Data Hub</Link> · <Link href="/knowledge/pages">Knowledge Directory</Link> · <Link href="/knowledge/contract.json">Contract (JSON)</Link> · <Link href="/knowledge/index.json">Index (JSON)</Link>
+        <Link href="/data">Data</Link> · <Link href="/knowledge/pages">Knowledge Directory</Link> · <Link href="/knowledge/contract.json">Contract (JSON)</Link> · <Link href="/knowledge/index.json">Index (JSON)</Link>
       </p>
     </main>
   );

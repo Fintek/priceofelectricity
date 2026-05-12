@@ -126,7 +126,7 @@ export default async function AIPowerConsumptionPage() {
               Estimate cost to recharge a home battery by state
             </li>
             <li>
-              <Link href="/knowledge">Knowledge Hub</Link>
+              <Link href="/knowledge">Knowledge</Link>
               {" — "}
               National overview, rankings, methodology
             </li>

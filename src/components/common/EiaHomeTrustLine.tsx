@@ -19,7 +19,7 @@ export default function EiaHomeTrustLine() {
       <p className="muted" style={{ marginTop: 0, marginBottom: 8, fontSize: 13, maxWidth: "72ch", lineHeight: 1.55 }}>
         Latest EIA data: {eiaMonth}
         {released !== null ? <>, released {released}</> : null}
-        {syncUtc !== null ? <> · Dataset synchronized {syncUtc} (UTC)</> : null}
+        {syncUtc !== null ? <> · Dataset last updated {syncUtc} (UTC)</> : null}
         {" · "}
         <Link href="/methodology">Methodology</Link> · <Link href="/datasets">Data</Link>
       </p>

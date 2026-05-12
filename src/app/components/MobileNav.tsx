@@ -14,7 +14,7 @@ const NAV_LINKS = [
   { href: "/methodology", label: "Methodology" },
   { href: "/electricity-trends", label: "Trends" },
   { href: "/electricity-insights", label: "Insights" },
-  { href: "/knowledge", label: "Knowledge hub" },
+  { href: "/knowledge", label: "Knowledge" },
   { href: "/about", label: "About & trust" },
   { href: "/search", label: "Search" },
   { href: "/site-map", label: "Site map" },

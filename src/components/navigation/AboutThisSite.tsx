@@ -15,7 +15,7 @@ const DEFAULT_LINKS: AboutThisSiteLink[] = [
   { href: "/methodology", label: "Methodology" },
   { href: "/datasets", label: "Datasets" },
   { href: "/electricity-data", label: "Electricity data" },
-  { href: "/knowledge", label: "Knowledge hub" },
+  { href: "/knowledge", label: "Knowledge" },
   { href: "/electricity-topics", label: "Electricity topics" },
 ];
 

@@ -162,7 +162,7 @@ export default function RootLayout({
               <p className="footer-group-title">Data &amp; methodology</p>
               <Link href="/datasets">Download data</Link>
               <Link href="/methodology">Methodology</Link>
-              <Link href="/knowledge">Knowledge hub</Link>
+              <Link href="/knowledge">Knowledge</Link>
               <Link href="/research">Research</Link>
               <Link href="/drivers">What drives prices</Link>
               <Link href="/data-history">Historical data</Link>

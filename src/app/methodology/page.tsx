@@ -48,7 +48,7 @@ export default function MethodologyPage() {
           { href: "/methodology/electricity-affordability", label: "Affordability" },
           { href: "/methodology/battery-recharge-cost", label: "Battery recharge cost" },
           { href: "/methodology/generator-vs-battery-cost", label: "Generator vs battery" },
-          { href: "/knowledge", label: "Knowledge Hub" },
+          { href: "/knowledge", label: "Knowledge" },
         ]}
       />
 
@@ -126,7 +126,7 @@ export default function MethodologyPage() {
         <h2 style={{ fontSize: 22, marginBottom: 8 }}>Data foundation</h2>
         <p style={{ marginTop: 0 }}>
           All metrics use state-level average residential electricity prices
-          (¢/kWh) from our normalized data pipeline, grounded in the latest
+          (¢/kWh) from our normalized state dataset, grounded in the latest
           available{" "}
           <a href={EIA_STATE_RESIDENTIAL_DATA_URL} rel="noopener noreferrer" target="_blank">
             U.S. Energy Information Administration
@@ -145,7 +145,7 @@ export default function MethodologyPage() {
         <h2 style={{ fontSize: 22, marginBottom: 8 }}>Explore</h2>
         <ul style={{ paddingLeft: 20, lineHeight: 2 }}>
           <li>
-            <Link href="/knowledge">Knowledge Hub</Link> — National snapshot, state
+            <Link href="/knowledge">Knowledge</Link> — National snapshot, state
             rankings, and methodology
           </li>
           <li>
@@ -173,7 +173,7 @@ export default function MethodologyPage() {
       <ExploreMore
         title="Explore more"
         links={[
-          { href: "/knowledge", label: "Knowledge Hub" },
+          { href: "/knowledge", label: "Knowledge" },
           { href: "/datasets", label: "Datasets" },
           { href: "/electricity-trends", label: "Electricity trends" },
           { href: "/site-map", label: "Site map" },

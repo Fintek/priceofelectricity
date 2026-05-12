@@ -244,7 +244,7 @@ export default function NationalTrendsPage() {
           <p>
             Trend analysis requires at least two data snapshots. Currently only
             one snapshot is available. As additional snapshots are generated
-            through the data build pipeline, this page will automatically show
+            when published data refreshes on this site, this page will automatically show
             rate change trends.
           </p>
           <p>

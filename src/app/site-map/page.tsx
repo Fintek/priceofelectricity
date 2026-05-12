@@ -44,7 +44,7 @@ const SECTIONS: Array<{ title: string; links: Array<{ href: string; label: strin
   {
     title: "Knowledge",
     links: [
-      { href: "/knowledge", label: "Knowledge Hub" },
+      { href: "/knowledge", label: "Knowledge" },
       { href: "/knowledge/rankings", label: "Rankings" },
       { href: "/knowledge/pages", label: "State pages" },
     ],
@@ -152,7 +152,7 @@ export default function SiteMapPage() {
           { href: "/entity-registry", label: "Entity registry" },
           { href: "/discovery-graph", label: "Discovery graph" },
           { href: "/electricity-data", label: "Electricity data" },
-          { href: "/knowledge", label: "Knowledge Hub" },
+          { href: "/knowledge", label: "Knowledge" },
         ]}
       />
 

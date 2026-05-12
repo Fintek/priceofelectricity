@@ -267,7 +267,7 @@ export default async function ElectricityAffordabilityStatePage({
           <Link href="/electricity-affordability">Electricity Affordability</Link> {" | "}
           <Link href="/electricity-cost">Electricity Cost</Link> {" | "}
           <Link href="/average-electricity-bill">Average Bill</Link> {" | "}
-          <Link href="/knowledge">Knowledge Hub</Link>
+          <Link href="/knowledge">Knowledge</Link>
         </p>
       </main>
     </>

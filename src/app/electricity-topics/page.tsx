@@ -85,7 +85,7 @@ export default async function ElectricityTopicsPage() {
             { href: "/electricity-data", label: "Electricity data" },
             { href: "/methodology", label: "Methodology" },
             { href: "/datasets", label: "Datasets" },
-            { href: "/knowledge", label: "Knowledge hub" },
+            { href: "/knowledge", label: "Knowledge" },
             { href: "/site-map", label: "Site map" },
           ]}
         />
@@ -227,7 +227,7 @@ export default async function ElectricityTopicsPage() {
           <Link href="/site-map">Site map</Link> {" | "}
           <Link href="/electricity-hubs">Electricity hubs</Link> {" | "}
           <Link href="/electricity-trends">Electricity trends</Link> {" | "}
-          <Link href="/knowledge">Knowledge Hub</Link>
+          <Link href="/knowledge">Knowledge</Link>
         </p>
 
         <StatusFooter release={release} />

@@ -113,7 +113,7 @@ export default async function ElectricityProvidersIndexPage() {
         <nav aria-label="Breadcrumb" className="muted" style={{ marginBottom: 16, fontSize: 14 }}>
           <Link href="/">Home</Link>
           {" · "}
-          <Link href="/data">Data Hub</Link>
+          <Link href="/data">Data</Link>
           {" · "}
           <span aria-current="page">Electricity Providers</span>
         </nav>

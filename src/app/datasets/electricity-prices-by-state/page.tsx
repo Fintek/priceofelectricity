@@ -80,7 +80,7 @@ export default async function ElectricityPricesByStateDatasetPage() {
       <p className="intro muted" style={{ marginTop: 0 }}>
         State-level average residential electricity rates (¢/kWh) with national
         comparison and a plain-language trend label. Derived from the site&apos;s
-        normalized data pipeline, based on the latest available{" "}
+        normalized site dataset, based on the latest available{" "}
         <a href={EIA_STATE_RESIDENTIAL_DATA_URL} rel="noopener noreferrer" target="_blank">
           U.S. Energy Information Administration
         </a>{" "}
@@ -90,7 +90,7 @@ export default async function ElectricityPricesByStateDatasetPage() {
       <section style={{ marginTop: 24 }}>
         <h2 style={{ fontSize: 20, marginBottom: 8 }}>Columns</h2>
         <p className="muted" style={{ marginTop: 0, marginBottom: 12, fontSize: "var(--font-size-sm)", maxWidth: 640 }}>
-          Download files use stable machine-readable column names for compatibility.
+          Download files use stable column names for compatibility.
         </p>
         <ul style={{ paddingLeft: 20, lineHeight: 1.8 }}>
           <li>
@@ -194,7 +194,7 @@ export default async function ElectricityPricesByStateDatasetPage() {
         <h2 style={{ fontSize: 20, marginBottom: 8 }}>Related</h2>
         <ul style={{ paddingLeft: 20, lineHeight: 2 }}>
           <li><Link href="/electricity-cost">Electricity cost by state</Link></li>
-          <li><Link href="/knowledge">Knowledge Hub</Link></li>
+          <li><Link href="/knowledge">Knowledge</Link></li>
           <li><Link href="/methodology/electricity-rates">How electricity rates are presented</Link></li>
         </ul>
       </section>

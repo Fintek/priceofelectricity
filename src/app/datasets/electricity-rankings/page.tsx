@@ -96,7 +96,7 @@ export default async function ElectricityRankingsDatasetPage() {
       <section style={{ marginTop: 24 }}>
         <h2 style={{ fontSize: 20, marginBottom: 8 }}>Columns</h2>
         <p className="muted" style={{ marginTop: 0, marginBottom: 12, fontSize: "var(--font-size-sm)", maxWidth: 640 }}>
-          Download files use stable machine-readable column names for compatibility.
+          Download files use stable column names for compatibility.
         </p>
         <ul style={{ paddingLeft: 20, lineHeight: 1.8 }}>
           <li>
@@ -196,7 +196,7 @@ export default async function ElectricityRankingsDatasetPage() {
         <h2 style={{ fontSize: 20, marginBottom: 8 }}>Related</h2>
         <ul style={{ paddingLeft: 20, lineHeight: 2 }}>
           <li><Link href="/knowledge/rankings">Browse rankings</Link></li>
-          <li><Link href="/knowledge">Knowledge Hub</Link></li>
+          <li><Link href="/knowledge">Knowledge</Link></li>
           <li><Link href="/methodology">Methodology</Link></li>
         </ul>
       </section>

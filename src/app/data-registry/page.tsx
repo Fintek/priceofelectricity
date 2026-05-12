@@ -110,11 +110,11 @@ export default function DataRegistryPage() {
       </p>
 
       <section style={{ marginTop: 24, marginBottom: 24 }}>
-        <h2 style={{ fontSize: 20, marginBottom: 12 }}>Topic Clusters</h2>
+        <h2 style={{ fontSize: 20, marginBottom: 12 }}>Browse by topic</h2>
         <p className="muted" style={{ margin: "0 0 8px 0", fontSize: 14 }}>
-          <Link href="/discovery-graph">Explore the site&apos;s discovery graph</Link>
+          <Link href="/discovery-graph">Browse topic relationships</Link>
           {" · "}
-          <Link href="/electricity-topics">Electricity topics hub</Link>
+          <Link href="/electricity-topics">Electricity topics</Link>
           {" · "}
           <Link href="/electricity-data">Electricity data</Link>
           {" · "}
@@ -165,7 +165,7 @@ export default function DataRegistryPage() {
           { href: "/datasets", label: "Datasets" },
           { href: "/site-map", label: "Site map" },
           { href: "/page-index", label: "Page index" },
-          { href: "/knowledge", label: "Knowledge Hub" },
+          { href: "/knowledge", label: "Knowledge" },
           { href: "/methodology", label: "Methodology" },
           { href: "/launch-checklist", label: "Launch checklist" },
         ]}

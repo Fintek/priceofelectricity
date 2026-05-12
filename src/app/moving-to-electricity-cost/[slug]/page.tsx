@@ -245,7 +245,7 @@ export default async function MovingToElectricityCostStatePage({
               <Link href="/electricity-cost">Electricity Cost by State</Link>
             </li>
             <li>
-              <Link href="/knowledge">Knowledge Hub</Link>
+              <Link href="/knowledge">Knowledge</Link>
             </li>
           </ul>
         </section>

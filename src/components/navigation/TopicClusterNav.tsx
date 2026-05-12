@@ -13,7 +13,7 @@ export type TopicClusterNavProps = {
 
 /**
  * Cross-cluster topic navigation for authority and hub pages.
- * Links into adjacent topic clusters for stronger internal link graph.
+ * Links to related topic sections for a stronger internal link map.
  * Server-safe. Use 4–8 links max. Keep curated and intentional.
  */
 export default function TopicClusterNav({ title, description, links }: TopicClusterNavProps) {

@@ -12,7 +12,7 @@ export const revalidate = 86400;
 export const metadata: Metadata = buildMetadata({
   title: "Discovery Graph – Topic & Data Relationships | PriceOfElectricity.com",
   description:
-    "Curated relationship map of major topics, datasets, and methodology. Machine-readable JSON for crawlers.",
+    "Curated relationship map of major topics, datasets, and methodology. Structured JSON for crawlers.",
   canonicalPath: "/discovery-graph",
   robots: { index: false, follow: true },
 });
@@ -42,10 +42,10 @@ export default async function DiscoveryGraphPage() {
         {/* A) Intro */}
         <section style={{ marginBottom: 32 }}>
           <p style={{ marginTop: 0, marginBottom: 12, maxWidth: "65ch", fontSize: 16, lineHeight: 1.6 }}>
-            Curated relationship map of major topics, datasets, and methodology. It shows representative connections across the site rather than an exhaustive graph of every page and edge. Machine-readable JSON is available for crawlers and structured browsing.
+            Curated relationship map of major topics, datasets, and methodology. It shows representative connections across the site rather than an exhaustive map of every page and edge. Structured JSON is available for crawlers and research tools.
           </p>
           <p className="muted" style={{ margin: "0 0 24px 0", fontSize: 14, maxWidth: "50ch" }}>
-            <strong>Best for:</strong> Understanding site structure and the machine-readable topic map.
+            <strong>Best for:</strong> Understanding site structure and the JSON topic map.
           </p>
         </section>
 

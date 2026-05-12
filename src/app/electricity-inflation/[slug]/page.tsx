@@ -289,7 +289,7 @@ export default async function ElectricityInflationStatePage({
           <Link href="/electricity-inflation">Electricity Inflation</Link> {" | "}
           <Link href="/electricity-trends">Electricity Trends</Link> {" | "}
           <Link href="/electricity-price-history">Price History</Link> {" | "}
-          <Link href="/knowledge">Knowledge Hub</Link>
+          <Link href="/knowledge">Knowledge</Link>
         </p>
       </main>
     </>

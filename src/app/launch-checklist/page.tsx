@@ -33,7 +33,7 @@ export default function LaunchChecklistPage() {
         <h2 style={{ fontSize: 20, marginBottom: 12 }}>A) Core Content Coverage</h2>
         <ul style={{ paddingLeft: 20, lineHeight: 2 }}>
           <li>Homepage</li>
-          <li>Knowledge hub</li>
+          <li>Knowledge</li>
           <li>Electricity trends</li>
           <li>Electricity insights</li>
           <li>Datasets</li>

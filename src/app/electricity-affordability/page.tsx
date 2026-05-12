@@ -232,7 +232,7 @@ export default async function ElectricityAffordabilityPage() {
         <p className="muted" style={{ marginTop: 32 }}>
           <Link href="/electricity-trends">Electricity Trends</Link> {" | "}
           <Link href="/electricity-insights">Electricity Insights</Link> {" | "}
-          <Link href="/knowledge">Knowledge Hub</Link> {" | "}
+          <Link href="/knowledge">Knowledge</Link> {" | "}
           <Link href="/datasets">Datasets</Link>
         </p>
       </main>

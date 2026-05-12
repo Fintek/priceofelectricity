@@ -46,7 +46,7 @@ export default function DatasetsHubPage() {
           { href: "/datasets/electricity-rankings", label: "Electricity rankings" },
           { href: "/methodology", label: "Methodology" },
           { href: "/electricity-data", label: "Electricity data" },
-          { href: "/knowledge", label: "Knowledge Hub" },
+          { href: "/knowledge", label: "Knowledge" },
           { href: "/site-map", label: "Site map" },
         ]}
       />
@@ -133,7 +133,7 @@ export default function DatasetsHubPage() {
           { href: "/electricity-data", label: "Explore electricity datasets" },
           { href: "/methodology", label: "Methodology" },
           { href: "/electricity-hubs", label: "Electricity hubs" },
-          { href: "/knowledge", label: "Knowledge Hub" },
+          { href: "/knowledge", label: "Knowledge" },
           { href: "/site-map", label: "Site map" },
           { href: "/site-maintenance", label: "Site maintenance" },
           { href: "/electricity-trends", label: "Electricity trends" },

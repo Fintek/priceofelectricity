@@ -53,7 +53,7 @@ export default function ElectricityInflationMethodologyPage() {
         <h2 style={{ fontSize: 20, marginBottom: 8 }}>Comparing current vs historical rates</h2>
         <p style={{ marginTop: 0 }}>
           The site uses state-level average residential electricity rates from its
-          normalized data pipeline. To compute inflation, the current rate is
+          normalized state dataset. To compute inflation, the current rate is
           compared with the rate from the same period one year ago (for 1-year
           change) or five years ago (for 5-year change). Monthly data is
           aggregated by period; the most recent complete period is used as the
@@ -98,7 +98,7 @@ inflation5yPercent =
       <section style={{ marginTop: 20 }}>
         <h2 style={{ fontSize: 20, marginBottom: 8 }}>Data sources</h2>
         <p style={{ marginTop: 0 }}>
-          State rates come from the site&apos;s normalized data pipeline. See{" "}
+          State rates come from the site&apos;s normalized state dataset. See{" "}
           <Link href="/sources">sources</Link> for provenance.
         </p>
       </section>

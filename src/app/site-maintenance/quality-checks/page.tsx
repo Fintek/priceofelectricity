@@ -43,7 +43,7 @@ export default async function QualityChecksPage() {
         {/* INTRO */}
         <section style={{ marginBottom: 32 }}>
           <p style={{ marginTop: 0, marginBottom: 16, maxWidth: "65ch", fontSize: 16, lineHeight: 1.6 }}>
-            Quality checks help catch missing pages, missing datasets, broken discovery assets, and crawl issues. A structured electricity analysis site benefits from repeatable checks that run as part of the build pipeline.
+            Quality checks help catch missing pages, missing datasets, broken discovery assets, and crawl issues. A structured electricity analysis site benefits from repeatable checks that run with each release.
           </p>
         </section>
 

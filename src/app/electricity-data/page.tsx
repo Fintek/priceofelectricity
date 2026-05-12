@@ -12,9 +12,9 @@ export const dynamic = "force-static";
 export const revalidate = 86400;
 
 export const metadata: Metadata = buildMetadata({
-  title: "Electricity Data Hub – Datasets & Methodology | PriceOfElectricity.com",
+  title: "Electricity Data – Datasets & Methodology | PriceOfElectricity.com",
   description:
-    "Data authority hub: national metrics, state rates, rankings, and downloadable exports. Datasets and methodology used across the site.",
+    "Data overview: national metrics, state rates, rankings, and downloadable exports. Datasets and methodology used across the site.",
   canonicalPath: "/electricity-data",
 });
 
@@ -33,7 +33,7 @@ export default async function ElectricityDataPage() {
         <nav aria-label="Breadcrumb" className="muted" style={{ marginBottom: 16, fontSize: 14 }}>
           <Link href="/">Home</Link>
           {" · "}
-          <Link href="/data">Data Hub</Link>
+          <Link href="/data">Data</Link>
           {" · "}
           <span aria-current="page">Electricity Data</span>
         </nav>
@@ -43,7 +43,7 @@ export default async function ElectricityDataPage() {
         {/* Intro */}
         <section style={{ marginBottom: 32 }}>
           <p style={{ marginTop: 0, marginBottom: 12, maxWidth: "65ch", fontSize: 16, lineHeight: 1.6 }}>
-            The high-level data authority hub. Explains the datasets used throughout the site—national metrics, state-level rates, rankings, and downloadable exports—and how they support cost pages, affordability analysis, and rankings.
+            The high-level overview of site data sources. Explains the datasets used throughout the site—national metrics, state-level rates, rankings, and downloadable exports—and how they support cost pages, affordability analysis, and rankings.
           </p>
           <p className="muted" style={{ margin: "0 0 24px 0", fontSize: 14, maxWidth: "50ch" }}>
             <strong>Best for:</strong> Understanding data sources, seeing datasets and data structure, finding downloadable exports.

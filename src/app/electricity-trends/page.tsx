@@ -96,7 +96,7 @@ export default async function ElectricityTrendsPage() {
       answer:
         nationalAvgRate != null
           ? `The national average residential electricity rate is approximately ${nationalAvgRate.toFixed(2)} cents per kWh. At 900 kWh per month, that translates to an estimated bill of about $${monthlyBill.toFixed(2)}.`
-          : "The national average varies by data source and period. Check the Knowledge Hub for current figures.",
+          : "The national average varies by data source and period. See Knowledge for current figures.",
     },
     {
       question: "Are electricity prices increasing?",
@@ -125,7 +125,7 @@ export default async function ElectricityTrendsPage() {
       answer:
         derived?.highestState != null
           ? `${derived.highestState.name ?? "Hawaii"} has the highest average residential electricity rate at ${derived.highestState.rate?.toFixed(2) ?? "—"}¢/kWh. See the most expensive electricity ranking for the full list.`
-          : "Hawaii, California, and several Northeast states typically have among the highest rates. See the Knowledge Hub rankings for the full list.",
+          : "Hawaii, California, and several Northeast states typically have among the highest rates. See the Knowledge rankings for the full list.",
     },
   ];
 
@@ -166,7 +166,7 @@ export default async function ElectricityTrendsPage() {
         <nav aria-label="Breadcrumb" className="muted" style={{ marginBottom: 16, fontSize: 14 }}>
           <Link href="/">Home</Link>
           {" · "}
-          <Link href="/data">Data Hub</Link>
+          <Link href="/data">Data</Link>
           {" · "}
           <span aria-current="page">Electricity Trends</span>
         </nav>
@@ -408,7 +408,7 @@ export default async function ElectricityTrendsPage() {
               Compare rates and costs
             </li>
             <li>
-              <Link href="/knowledge">Knowledge Hub</Link>
+              <Link href="/knowledge">Knowledge</Link>
               {" — "}
               National overview, rankings, methodology
             </li>

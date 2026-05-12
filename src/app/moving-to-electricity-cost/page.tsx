@@ -41,7 +41,7 @@ export default async function MovingToElectricityCostIndexPage() {
         <nav aria-label="Breadcrumb" className="muted" style={{ marginBottom: 16, fontSize: 14 }}>
           <Link href="/">Home</Link>
           {" · "}
-          <Link href="/data">Data Hub</Link>
+          <Link href="/data">Data</Link>
           {" · "}
           <span aria-current="page">Electricity Costs When Moving</span>
         </nav>
@@ -106,7 +106,7 @@ export default async function MovingToElectricityCostIndexPage() {
               Monthly and annual bill estimates
             </li>
             <li>
-              <Link href="/knowledge">Knowledge Hub</Link>
+              <Link href="/knowledge">Knowledge</Link>
               {" — "}
               Rates, rankings, affordability, trends
             </li>

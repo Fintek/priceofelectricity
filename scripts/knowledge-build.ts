@@ -304,11 +304,11 @@ type KnowledgeContract = {
 
 /** Stable keys for Knowledge UI labels (i18n-ready). Build generates /knowledge/labels/en.json. */
 const KNOWLEDGE_LABELS: Record<string, string> = {
-  "nav.dataHub": "Data Hub",
+  "nav.dataHub": "Data",
   "nav.knowledgeDirectory": "Knowledge Directory",
   "nav.viewJson": "View JSON",
   "nav.downloadJson": "Download JSON",
-  "nav.backToDataHub": "Back to Data Hub",
+  "nav.backToDataHub": "Back to Data",
   "nav.backToKnowledgeDirectory": "Back to Knowledge Directory",
   "section.freshness": "Freshness",
   "section.provenance": "Provenance",
@@ -316,7 +316,7 @@ const KNOWLEDGE_LABELS: Record<string, string> = {
   "section.relatedEntities": "Related",
   "badge.quality": "Quality",
   "badge.sourceVersion": "Source version",
-  "badge.semanticCluster": "Cluster",
+  "badge.semanticCluster": "Topic area",
   "field.avgRateCentsPerKwh": "Avg rate (¢/kWh)",
   "field.valueScore": "Value score",
   "field.affordabilityIndex": "Affordability",

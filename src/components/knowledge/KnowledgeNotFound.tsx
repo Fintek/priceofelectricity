@@ -12,7 +12,7 @@ export default function KnowledgeNotFound() {
         <Link href="/knowledge/pages">States directory</Link>
         <Link href="/knowledge/rankings">Rankings</Link>
         <Link href="/knowledge/pages">Methodologies</Link>
-        <Link href="/data">Data Hub</Link>
+        <Link href="/data">Data</Link>
       </nav>
     </main>
   );

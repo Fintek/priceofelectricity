@@ -329,7 +329,7 @@ export async function loadAllBillEstimatorStateSummaries(
 }
 
 export function buildBillEstimatorMethodologyNote(profile: BillEstimatorProfile): string {
-  return `This deterministic scenario applies ${profile.defaultMonthlyKwh.toLocaleString()} kWh/month for the ${profile.label.toLowerCase()} profile and excludes delivery fees, taxes, and fixed utility charges.`;
+  return `This scenario uses ${profile.defaultMonthlyKwh.toLocaleString()} kWh/month for the ${profile.label.toLowerCase()} profile and is computed from published EIA rate data; it excludes delivery fees, taxes, and fixed utility charges.`;
 }
 
 export function buildBillEstimatorDifferenceVsBenchmark(

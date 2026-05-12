@@ -51,7 +51,7 @@ export default async function AIEnergyDemandPage() {
         <nav aria-label="Breadcrumb" className="muted" style={{ marginBottom: 16, fontSize: 14 }}>
           <Link href="/">Home</Link>
           {" · "}
-          <Link href="/data">Data Hub</Link>
+          <Link href="/data">Data</Link>
           {" · "}
           <span aria-current="page">AI Energy Demand</span>
         </nav>
@@ -214,7 +214,7 @@ export default async function AIEnergyDemandPage() {
               Price conditions, affordability, inflation
             </li>
             <li>
-              <Link href="/knowledge">Knowledge Hub</Link>
+              <Link href="/knowledge">Knowledge</Link>
               {" — "}
               National overview, rankings, methodology
             </li>

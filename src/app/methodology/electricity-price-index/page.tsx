@@ -117,7 +117,7 @@ export default function ElectricityPriceIndexMethodologyPage() {
       <section style={{ marginTop: 20 }}>
         <h2 style={{ fontSize: 20, marginBottom: 8 }}>Data sources</h2>
         <p style={{ marginTop: 0 }}>
-          State rates come from our normalized data pipeline. See{" "}
+          State rates come from our normalized state dataset. See{" "}
           <Link href="/sources">sources</Link> for provenance.
         </p>
       </section>

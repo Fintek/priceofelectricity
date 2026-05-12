@@ -4,6 +4,9 @@ const nextConfig: NextConfig = {
   output: "standalone",
   poweredByHeader: false,
   compress: true,
+  async redirects() {
+    return [{ source: "/knowledge-hub", destination: "/knowledge", permanent: true }];
+  },
   outputFileTracingExcludes: {
     "*": [
       ".data/**",

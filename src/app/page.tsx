@@ -123,7 +123,7 @@ export default function HomePage() {
             <ul style={{ margin: 0, paddingLeft: 18, lineHeight: 2 }}>
               <li><Link href="/datasets">Download data</Link></li>
               <li><Link href="/methodology">Methodology</Link></li>
-              <li><Link href="/knowledge">Knowledge hub</Link></li>
+              <li><Link href="/knowledge">Knowledge</Link></li>
               <li><Link href="/research">Research</Link></li>
             </ul>
           </div>

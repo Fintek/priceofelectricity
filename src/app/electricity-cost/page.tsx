@@ -47,7 +47,7 @@ export default async function ElectricityCostIndexPage() {
         <nav aria-label="Breadcrumb" className="muted" style={{ marginBottom: 16, fontSize: 14 }}>
           <Link href="/">Home</Link>
           {" · "}
-          <Link href="/data">Data Hub</Link>
+          <Link href="/data">Data</Link>
           {" · "}
           <span aria-current="page">Electricity Cost</span>
         </nav>
@@ -159,7 +159,7 @@ export default async function ElectricityCostIndexPage() {
             { href: "/battery-backup-electricity-cost", label: "Explore battery recharge electricity costs" },
             { href: "/electricity-price-volatility", label: "Explore electricity price volatility" },
             { href: "/electricity-cost-comparison", label: "Compare electricity prices between states" },
-            { href: "/knowledge", label: "Knowledge Hub" },
+            { href: "/knowledge", label: "Knowledge" },
             { href: "/electricity-trends", label: "Electricity trends" },
             { href: "/knowledge/rankings/rate-high-to-low", label: "Highest rates" },
             { href: "/datasets", label: "Download datasets" },

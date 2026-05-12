@@ -43,7 +43,7 @@ export default async function KnowledgeComparePage() {
   return (
     <main className="container">
       <nav aria-label="Knowledge navigation" className="muted" style={{ marginBottom: 16, fontSize: 14 }}>
-        <Link href="/data">Data Hub</Link>
+        <Link href="/data">Data</Link>
         {" · "}
         <Link href="/knowledge">Knowledge</Link>
         {" · "}
