@@ -51,9 +51,24 @@ export default async function ElectricityTopicsPage() {
         <section style={{ marginBottom: 32, padding: "12px 16px", border: "1px solid var(--color-border, #e5e7eb)", borderRadius: 6, backgroundColor: "var(--color-surface-alt, #f9fafb)" }}>
           <h2 style={{ fontSize: 16, fontWeight: 600, margin: "0 0 8px 0" }}>How to navigate this site</h2>
           <ul style={{ margin: 0, paddingLeft: 20, fontSize: 14, lineHeight: 1.7 }}>
-            <li><strong>Topic hubs</strong> (like this page) explain major areas and link to related pages.</li>
-            <li><strong>State pages</strong> provide local electricity cost context for each state.</li>
-            <li><strong>Comparison pages</strong> compare electricity costs between states.</li>
+            <li>
+              <Link href="/electricity-topics">
+                <strong>Topic hubs</strong>
+              </Link>{" "}
+              (like this page) explain major areas and link to related pages.
+            </li>
+            <li>
+              <Link href="/electricity-cost">
+                <strong>State pages</strong>
+              </Link>{" "}
+              provide local electricity cost context for each state.
+            </li>
+            <li>
+              <Link href="/electricity-cost-comparison">
+                <strong>Comparison pages</strong>
+              </Link>{" "}
+              compare electricity costs between states.
+            </li>
             <li><strong>Datasets and methodology</strong> — <Link href="/electricity-data">Electricity data</Link>, <Link href="/methodology">methodology</Link>, and <Link href="/datasets">downloadable datasets</Link> explain the evidence and how we calculate rates, inflation, and rankings.</li>
             <li>
               <strong>Site navigation</strong> — The <Link href="/site-map">site map</Link> and{" "}
