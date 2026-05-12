@@ -382,30 +382,6 @@ export function getSegmentedSitemapEntries() {
       priority: 0.55,
     },
     {
-      url: `${BASE_URL}/data-registry`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.55,
-    },
-    {
-      url: `${BASE_URL}/discovery-graph`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.55,
-    },
-    {
-      url: `${BASE_URL}/entity-registry`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.55,
-    },
-    {
-      url: `${BASE_URL}/page-index`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.55,
-    },
-    {
       url: `${BASE_URL}/electricity-data`,
       lastModified: new Date(),
       changeFrequency: "monthly",

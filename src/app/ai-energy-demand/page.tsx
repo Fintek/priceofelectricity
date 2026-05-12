@@ -195,7 +195,7 @@ export default async function AIEnergyDemandPage() {
             { href: "/electricity-data", label: "Electricity data" },
             { href: "/electricity-trends", label: "Electricity trends" },
             { href: "/electricity-cost", label: "Electricity cost by state" },
-            { href: "/electricity-topics", label: "Electricity topics hub" },
+            { href: "/electricity-topics", label: "Electricity topics" },
           ]}
         />
 

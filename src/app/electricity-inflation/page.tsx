@@ -292,7 +292,7 @@ export default async function ElectricityInflationPage() {
             { href: "/electricity-cost-of-living", label: "Electricity cost of living" },
             { href: "/electricity-cost", label: "Electricity cost by state" },
             { href: "/electricity-data", label: "Electricity data" },
-            { href: "/electricity-topics", label: "Electricity topics hub" },
+            { href: "/electricity-topics", label: "Electricity topics" },
           ]}
         />
 

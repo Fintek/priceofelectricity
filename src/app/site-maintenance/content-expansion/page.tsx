@@ -54,7 +54,7 @@ export default async function ContentExpansionPage() {
             New pages should usually fit into one of these layers:
           </p>
           <ul style={{ margin: 0, paddingLeft: 20, lineHeight: 1.8 }}>
-            <li><strong>Topic area</strong> — Add to an existing hub (e.g. electricity costs, price dynamics, market structure) or start a new section with clear links from the topics hub.</li>
+            <li><strong>Topic area</strong> — Add to an existing topic group (e.g. electricity costs, price dynamics, market structure) or start a new section with clear links from the main electricity topics page.</li>
             <li><strong>Templated state or comparison pages</strong> — Pages that follow a consistent pattern and are backed by the same data.</li>
             <li><strong>Data and transparency pages</strong> — Datasets, methodology, entity registry, and navigation aids that support reproducibility.</li>
             <li><strong>Methodology or authority layer</strong> — New formulas, metrics, or documentation that explain how the site calculates or presents data.</li>

@@ -178,8 +178,6 @@ export default function MethodologyPage() {
           { href: "/electricity-trends", label: "Electricity trends" },
           { href: "/site-map", label: "Site map" },
           { href: "/electricity-data", label: "Electricity data" },
-          { href: "/launch-checklist", label: "Launch checklist" },
-          { href: "/site-maintenance", label: "Site maintenance" },
         ]}
       />
 

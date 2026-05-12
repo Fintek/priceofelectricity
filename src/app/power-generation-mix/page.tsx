@@ -93,7 +93,7 @@ export default async function PowerGenerationMixPage() {
             { href: "/electricity-generation-cost-drivers", label: "Electricity generation cost drivers" },
             { href: "/electricity-data", label: "Electricity data" },
             { href: "/electricity-inflation", label: "Electricity inflation" },
-            { href: "/electricity-topics", label: "Electricity topics hub" },
+            { href: "/electricity-topics", label: "Electricity topics" },
           ]}
         />
 

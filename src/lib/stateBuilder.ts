@@ -112,7 +112,7 @@ export function buildNormalizedState(slug: string): NormalizedState {
       : null;
   const freshness = computeFreshness(updated, syncIso);
   const rateTierLabel = getRateTierLabel(getRateTier(rate));
-  const shortSummary = `${transformed.name}'s average residential electricity price is ${rate}¢/kWh for the latest complete EIA reporting month (${updated}). This places ${transformed.name} in the ${rateTierLabel.toLowerCase()} rate tier based on the same threshold model used across all states. At 900 kWh of monthly usage, the estimated energy-only charge is about $${((900 * rate) / 100).toFixed(2)}.`;
+  const shortSummary = `${transformed.name}'s average residential electricity price is ${rate}¢/kWh for the latest complete EIA reporting month (${updated}). This places ${transformed.name} in the ${rateTierLabel.toLowerCase()} rate tier compared with other states. At 900 kWh of monthly usage, the estimated energy-only charge is about $${((900 * rate) / 100).toFixed(2)}.`;
 
   return {
     slug,

@@ -78,7 +78,7 @@ export default function DataHubHero({
         Central entry point for electricity datasets and knowledge JSON. Datasets for analysis; knowledge pages for research tools and structured access.
       </p>
       <p className="muted" style={{ margin: "0 0 8px 0", fontSize: 15 }}>
-        {release?.releaseId ?? "—"} · Snapshot tag {release?.sourceVersion ?? "—"} · Contract {release?.contractVersion ?? "—"}
+        Release {release?.releaseId ?? "—"} · Data snapshot {release?.sourceVersion ?? "—"} · Format {release?.contractVersion ?? "—"}
       </p>
       <p className="muted" style={{ margin: "0 0 16px 0", fontSize: 14, maxWidth: "65ch" }}>
         Latest complete EIA residential reporting month in bundled data: {" "}
@@ -87,7 +87,7 @@ export default function DataHubHero({
       </p>
       {release?.integrity?.manifestHash && (
         <p style={{ margin: "0 0 16px 0", fontSize: 13 }}>
-          <strong>Integrity:</strong>{" "}
+          <strong>Verification hash:</strong>{" "}
           <code style={{ fontSize: 12, wordBreak: "break-all" }}>{release.integrity.manifestHash}</code>
         </p>
       )}
@@ -167,7 +167,7 @@ export default function DataHubHero({
             fontWeight: 500,
           }}
         >
-          Search Index (JSON)
+          Search index (JSON)
         </Link>
         <CopyButton
           value={`${SITE_URL}${searchIndexUrl.startsWith("/") ? searchIndexUrl : `/${searchIndexUrl}`}`}

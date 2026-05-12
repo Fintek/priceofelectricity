@@ -10,9 +10,9 @@ export const dynamic = "force-static";
 export const revalidate = 86400;
 
 export const metadata: Metadata = buildMetadata({
-  title: "Discovery Graph – Topic & Data Relationships | PriceOfElectricity.com",
+  title: "Site Discovery Map – Topic Relationships | PriceOfElectricity.com",
   description:
-    "Curated relationship map of major topics, datasets, and methodology. Structured JSON for crawlers.",
+    "Curated relationship map of major topics, datasets, and methodology. Structured JSON for research tools.",
   canonicalPath: "/discovery-graph",
   robots: { index: false, follow: true },
 });
@@ -22,7 +22,7 @@ export default async function DiscoveryGraphPage() {
 
   const breadcrumbJsonLd = buildBreadcrumbListJsonLd([
     { name: "Home", url: "/" },
-    { name: "Discovery Graph", url: "/discovery-graph" },
+    { name: "Site Discovery Map", url: "/discovery-graph" },
   ]);
 
   return (
@@ -34,10 +34,10 @@ export default async function DiscoveryGraphPage() {
           {" · "}
           <Link href="/electricity-trends">Electricity Trends</Link>
           {" · "}
-          <span aria-current="page">Discovery Graph</span>
+          <span aria-current="page">Site Discovery Map</span>
         </nav>
 
-        <h1 style={{ fontSize: 32, marginBottom: 24 }}>Discovery Graph</h1>
+        <h1 style={{ fontSize: 32, marginBottom: 24 }}>Site Discovery Map</h1>
 
         {/* A) Intro */}
         <section style={{ marginBottom: 32 }}>
@@ -87,12 +87,11 @@ export default async function DiscoveryGraphPage() {
             </li>
             <li>
               <strong>Data / methodology / navigation</strong> —{" "}
-              <Link href="/future-expansion">Future expansion framework</Link>,{" "}
               <Link href="/electricity-data">Electricity data</Link>,{" "}
               <Link href="/datasets">Datasets</Link>,{" "}
               <Link href="/methodology">Methodology</Link>,{" "}
               <Link href="/electricity-topics">Electricity topics</Link>,{" "}
-              <Link href="/entity-registry">Entity registry</Link>
+              <Link href="/entity-registry">Electricity reference index</Link>
             </li>
           </ul>
         </section>
@@ -111,11 +110,11 @@ export default async function DiscoveryGraphPage() {
           </ul>
         </section>
 
-        {/* D) Machine-Readable Graph */}
+        {/* D) Structured JSON */}
         <section style={{ marginBottom: 32 }}>
-          <h2 style={{ fontSize: 20, marginBottom: 12 }}>Machine-Readable Graph</h2>
+          <h2 style={{ fontSize: 20, marginBottom: 12 }}>Structured JSON</h2>
           <p style={{ marginTop: 0, marginBottom: 12, maxWidth: "65ch", fontSize: 16, lineHeight: 1.6 }}>
-            A lightweight, curated JSON subset of major nodes and relationships is available for developers and automated research tools:
+            A lightweight, curated JSON subset of major topics and relationships is available for developers and research tools:
           </p>
           <p style={{ margin: 0 }}>
             <Link href="/discovery-graph.json">/discovery-graph.json</Link>
@@ -133,7 +132,7 @@ export default async function DiscoveryGraphPage() {
             <li><Link href="/page-index">Browse all major pages by category</Link></li>
             <li><Link href="/site-map">See the high-level site structure</Link></li>
             <li><Link href="/entity-registry">Explore the site&apos;s core electricity entities</Link></li>
-            <li><Link href="/data-registry">Data registry</Link></li>
+            <li><Link href="/data-registry">Electricity data reference</Link></li>
           </ul>
         </section>
 

@@ -10,9 +10,9 @@ export const dynamic = "force-static";
 export const revalidate = 86400;
 
 export const metadata: Metadata = buildMetadata({
-  title: "Page Index | PriceOfElectricity.com",
+  title: "Page Directory | PriceOfElectricity.com",
   description:
-    "Browse major pages by category: state pages, rankings, tools, topics, datasets, and methodology.",
+    "Reference list of major pages by category: state pages, rankings, tools, topics, datasets, and methodology.",
   canonicalPath: "/page-index",
   robots: { index: false, follow: true },
 });
@@ -34,8 +34,8 @@ export default async function PageIndexPage() {
   const webPageStructuredData = {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    name: "Page Index",
-    description: "Index of all major pages on PriceOfElectricity.com.",
+    name: "Page Directory",
+    description: "Directory of all major pages on PriceOfElectricity.com.",
     url: `${BASE_URL}/page-index`,
   };
 
@@ -48,10 +48,10 @@ export default async function PageIndexPage() {
         }}
       />
 
-      <h1>Page Index</h1>
+      <h1>Page Directory</h1>
 
       <p className="intro muted" style={{ marginTop: 0, marginBottom: 8 }}>
-        Browse major pages by category: state pages, rankings, tools, topics, datasets, and methodology.
+        Reference list of major pages by category: state pages, rankings, tools, topics, datasets, and methodology.
       </p>
       <p className="muted" style={{ margin: "0 0 24px 0", fontSize: 14, maxWidth: "50ch" }}>
         <strong>Best for:</strong> Finding pages by category when you know the type of content you want.
@@ -163,9 +163,8 @@ export default async function PageIndexPage() {
 
       <p className="muted" style={{ marginTop: 32 }}>
         <Link href="/">Home</Link> {" | "}
-        <Link href="/site-map">Site Map</Link> {" | "}
-        <Link href="/data-registry">Data Registry</Link> {" | "}
-        <Link href="/launch-checklist">Launch checklist</Link>
+        <Link href="/site-map">Site map</Link> {" | "}
+        <Link href="/data-registry">Electricity data reference</Link>
       </p>
     </main>
   );

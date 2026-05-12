@@ -164,7 +164,7 @@ export default async function ElectricityPriceVolatilityPage() {
             { href: "/electricity-cost", label: "Electricity cost by state" },
             { href: "/power-generation-mix/generation-mix-and-price-volatility", label: "Generation mix and price volatility" },
             { href: "/electricity-data", label: "Electricity data" },
-            { href: "/electricity-topics", label: "Electricity topics hub" },
+            { href: "/electricity-topics", label: "Electricity topics" },
           ]}
         />
 

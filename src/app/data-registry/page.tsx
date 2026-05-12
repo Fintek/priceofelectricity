@@ -9,9 +9,9 @@ export const dynamic = "force-static";
 export const revalidate = 86400;
 
 export const metadata: Metadata = buildMetadata({
-  title: "Data Registry – Electricity Datasets & Sources | PriceOfElectricity.com",
+  title: "Electricity Data Reference – Datasets & Sources | PriceOfElectricity.com",
   description:
-    "Registry of electricity datasets used by the site: rate data, rankings, and downloadable exports. Links to methodology and dataset pages.",
+    "Reference list of electricity datasets used by the site: rate data, rankings, and downloadable exports. Links to methodology and dataset pages.",
   canonicalPath: "/data-registry",
   robots: { index: false, follow: true },
 });
@@ -89,8 +89,8 @@ export default function DataRegistryPage() {
   const webPageStructuredData = {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    name: "Data Registry",
-    description: "Registry of datasets used by PriceOfElectricity.com.",
+    name: "Electricity Data Reference",
+    description: "Reference list of datasets used by PriceOfElectricity.com.",
     url: `${BASE_URL}/data-registry`,
   };
 
@@ -103,10 +103,10 @@ export default function DataRegistryPage() {
         }}
       />
 
-      <h1>Data Registry</h1>
+      <h1>Electricity Data Reference</h1>
 
       <p className="intro muted" style={{ marginTop: 0 }}>
-        A transparency and discovery asset. Registry of electricity datasets used by the site. Each entry links to dataset pages, methodology, and knowledge pages for verification and discoverability.
+        A transparency reference. List of electricity datasets used by the site. Each entry links to dataset pages, methodology, and knowledge pages so anyone can verify the data behind the analysis.
       </p>
 
       <section style={{ marginTop: 24, marginBottom: 24 }}>

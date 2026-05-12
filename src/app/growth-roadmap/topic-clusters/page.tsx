@@ -73,7 +73,7 @@ export default async function TopicClustersPage() {
         <section style={{ marginBottom: 32 }}>
           <h2 style={{ fontSize: 20, marginBottom: 12 }}>Related Pages</h2>
           <ul style={{ margin: 0, paddingLeft: 20, lineHeight: 1.8 }}>
-            <li><Link href="/electricity-topics">Electricity topics hub</Link></li>
+            <li><Link href="/electricity-topics">Electricity topics</Link></li>
             <li><Link href="/entity-registry">Entity registry</Link></li>
             <li><Link href="/discovery-graph">Discovery graph</Link></li>
             <li><Link href="/electricity-data">Electricity data</Link></li>

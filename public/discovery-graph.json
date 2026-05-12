@@ -121,7 +121,7 @@
     {
       "id": "entity-registry",
       "type": "discovery",
-      "title": "Entity Registry",
+      "title": "Electricity Reference Index",
       "url": "/entity-registry",
       "keywords": [
         "entities",
@@ -426,7 +426,7 @@
     {
       "id": "discovery-graph",
       "type": "discovery",
-      "title": "Discovery Graph",
+      "title": "Site Discovery Map",
       "url": "/discovery-graph",
       "keywords": [
         "discovery graph",
@@ -437,7 +437,7 @@
     {
       "id": "data-registry",
       "type": "discovery",
-      "title": "Data Registry",
+      "title": "Electricity Data Reference",
       "url": "/data-registry",
       "keywords": [
         "data registry",
@@ -447,7 +447,7 @@
     {
       "id": "page-index",
       "type": "discovery",
-      "title": "Page Index",
+      "title": "Page Directory",
       "url": "/page-index",
       "keywords": [
         "page index",

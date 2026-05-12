@@ -146,7 +146,7 @@ export default async function ElectricityCostIndexPage() {
           {" · "}
           <Link href="/electricity-price-volatility">Electricity price volatility</Link>
           {" · "}
-          <Link href="/electricity-topics">Electricity topics hub</Link>
+          <Link href="/electricity-topics">Electricity topics</Link>
           {" · "}
           <Link href="/electricity-data">Electricity data</Link>
         </p>

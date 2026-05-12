@@ -81,7 +81,6 @@ export default async function ElectricityTopicsPage() {
           title="About this site"
           description="Data-driven electricity analysis. Methodology and datasets are published for verification."
           links={[
-            { href: "/future-expansion", label: "Future expansion framework" },
             { href: "/electricity-data", label: "Electricity data" },
             { href: "/methodology", label: "Methodology" },
             { href: "/datasets", label: "Datasets" },

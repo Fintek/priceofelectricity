@@ -135,7 +135,6 @@ export default function DatasetsHubPage() {
           { href: "/electricity-hubs", label: "Electricity hubs" },
           { href: "/knowledge", label: "Knowledge" },
           { href: "/site-map", label: "Site map" },
-          { href: "/site-maintenance", label: "Site maintenance" },
           { href: "/electricity-trends", label: "Electricity trends" },
         ]}
       />

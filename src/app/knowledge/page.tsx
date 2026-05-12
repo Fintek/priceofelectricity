@@ -127,7 +127,7 @@ export default async function KnowledgeHubPage() {
         <section style={{ marginBottom: 24 }}>
           <h2 style={{ fontSize: 18, marginBottom: 8 }}>Explore Electricity Topics</h2>
           <p className="muted" style={{ margin: "0 0 8px 0", fontSize: 14 }}>
-            <Link href="/electricity-topics">Electricity topics hub</Link>
+            <Link href="/electricity-topics">Electricity topics</Link>
             {" · "}
             <Link href="/electricity-data">Electricity data</Link>
             {" · "}

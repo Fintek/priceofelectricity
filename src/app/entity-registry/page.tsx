@@ -11,9 +11,9 @@ export const dynamic = "force-static";
 export const revalidate = 86400;
 
 export const metadata: Metadata = buildMetadata({
-  title: "Entity Registry – Electricity Concepts & Data Structure | PriceOfElectricity.com",
+  title: "Electricity Reference Index – Concepts, States & Datasets | PriceOfElectricity.com",
   description:
-    "Index of core entities: price concepts, states, rankings, datasets. For verifying site structure.",
+    "Reference index of core entities: price concepts, states, rankings, and datasets. For verifying site structure.",
   canonicalPath: "/entity-registry",
   robots: { index: false, follow: true },
 });
@@ -79,13 +79,13 @@ export default async function EntityRegistryPage() {
           {" · "}
           <Link href="/site-map">Site Map</Link>
           {" · "}
-          <span aria-current="page">Entity Registry</span>
+          <span aria-current="page">Electricity Reference Index</span>
         </nav>
 
-        <h1 style={{ fontSize: 32, marginBottom: 24 }}>Entity Registry</h1>
+        <h1 style={{ fontSize: 32, marginBottom: 24 }}>Electricity Reference Index</h1>
 
         <p style={{ marginTop: 0, marginBottom: 12, maxWidth: "65ch", fontSize: 16, lineHeight: 1.6 }}>
-          Index of core entities and concepts: price concepts, states, rankings, datasets, and tools. For crawlers, researchers, and visitors verifying site structure.
+          Reference list of core concepts and entries: price concepts, states, rankings, datasets, and tools. For researchers and visitors verifying site structure.
         </p>
         <p className="muted" style={{ margin: "0 0 24px 0", fontSize: 14, maxWidth: "50ch" }}>
           <strong>Best for:</strong> Browsing entities by type, understanding site structure, and verifying coverage.

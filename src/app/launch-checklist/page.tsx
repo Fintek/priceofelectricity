@@ -85,7 +85,6 @@ export default function LaunchChecklistPage() {
       </section>
 
       <p className="muted" style={{ marginTop: 24 }}>
-        <Link href="/operating-playbook">Operating playbook</Link> {" | "}
         <Link href="/methodology">Methodology</Link> {" | "}
         <Link href="/electricity-data">Electricity data</Link> {" | "}
         <Link href="/site-map">Site map</Link> {" | "}
