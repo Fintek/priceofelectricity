@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import { SITE_NAME, SITE_URL, LAUNCH_MODE } from "@/lib/site";
+import { SITE_NAME, SITE_URL, LAUNCH_MODE, SOCIAL_LINKS, SITE_TWITTER_HANDLE } from "@/lib/site";
 import { reportWebVitals as reportWebVitalsImpl } from "@/lib/performance";
 import MobileNav from "@/app/components/MobileNav";
 import SearchBox from "@/app/components/SearchBox";
@@ -34,6 +34,8 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: SITE_NAME,
+    site: SITE_TWITTER_HANDLE,
+    creator: SITE_TWITTER_HANDLE,
   },
 };
 
@@ -51,7 +53,7 @@ export default function RootLayout({
     "@type": "Organization",
     name: SITE_NAME,
     url: BASE_URL,
-    sameAs: [],
+    sameAs: SOCIAL_LINKS.map((link) => link.url),
   };
   const websiteStructuredData = {
     "@context": "https://schema.org",
@@ -185,6 +187,23 @@ export default function RootLayout({
               <Link href="/regulatory">Regulatory</Link>
               <Link href="/attribution">Attribution</Link>
               <Link href="/offers">Offers</Link>
+            </div>
+            <div className="footer-group">
+              <p className="footer-group-title">Follow</p>
+              {SOCIAL_LINKS.map((link) => (
+                <a
+                  key={link.name}
+                  href={link.url}
+                  target="_blank"
+                  rel="me noopener noreferrer"
+                  aria-label={`Follow ${SITE_NAME} on ${link.name}${
+                    link.handle ? ` (${link.handle})` : ""
+                  }`}
+                >
+                  {link.name}
+                  {link.handle ? ` (${link.handle})` : ""}
+                </a>
+              ))}
             </div>
           </div>
           {process.env.NODE_ENV !== "production" && (
