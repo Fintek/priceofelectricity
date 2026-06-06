@@ -239,14 +239,17 @@ export function getApplianceUsageReference(applianceSlug: ApplianceSlug): Applia
   const kwhPerDay = kwhPerHour * appliance.typicalUsageHoursPerDay;
   const kwhPerMonth = kwhPerDay * 30;
   const kwhPerYear = kwhPerDay * 365;
+  const isAlwaysOn = appliance.typicalUsageHoursPerDay >= 24;
   return {
     appliance: applianceSlug,
     kwhPerHour,
     kwhPerDay,
     kwhPerMonth,
     kwhPerYear,
-    lowRuntimeHoursPerDay: Math.max(0.5, appliance.typicalUsageHoursPerDay * 0.5),
-    highRuntimeHoursPerDay: Math.min(24, Math.max(appliance.typicalUsageHoursPerDay + 2, appliance.typicalUsageHoursPerDay * 1.5)),
+    lowRuntimeHoursPerDay: isAlwaysOn ? 24 : Math.max(0.5, appliance.typicalUsageHoursPerDay * 0.5),
+    highRuntimeHoursPerDay: isAlwaysOn
+      ? 24
+      : Math.min(24, Math.max(appliance.typicalUsageHoursPerDay + 2, appliance.typicalUsageHoursPerDay * 1.5)),
   };
 }
 
