@@ -50,12 +50,14 @@ export default async function ElectricityInflationPage() {
   let increase5YearPercent: number | null = null;
   if (trendValues.length >= 2) {
     const current = trendValues[trendValues.length - 1];
-    const oneBack = trendValues[trendValues.length - 2];
+    const oneBack = trendValues.length >= 13
+      ? trendValues[trendValues.length - 13]
+      : trendValues[trendValues.length - 2];
     if (typeof current === "number" && typeof oneBack === "number" && oneBack > 0) {
       increase1YearPercent = ((current - oneBack) / oneBack) * 100;
     }
-    if (trendValues.length >= 6) {
-      const fiveBack = trendValues[trendValues.length - 6];
+    if (trendValues.length >= 61) {
+      const fiveBack = trendValues[trendValues.length - 61];
       if (typeof current === "number" && typeof fiveBack === "number" && fiveBack > 0) {
         increase5YearPercent = ((current - fiveBack) / fiveBack) * 100;
       }

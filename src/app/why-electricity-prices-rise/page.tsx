@@ -33,10 +33,17 @@ export default async function WhyElectricityPricesRisePage() {
   const nationalMonthlyBill =
     nationalAvgRate != null ? (nationalAvgRate / 100) * MONTHLY_USAGE_KWH : null;
   const trendValues = derived?.trends?.avgRateCentsPerKwh?.values ?? [];
-  const hasRisingTrend = trendValues.length >= 2 &&
-    typeof trendValues[trendValues.length - 1] === "number" &&
-    typeof trendValues[trendValues.length - 2] === "number" &&
-    (trendValues[trendValues.length - 1] as number) > (trendValues[trendValues.length - 2] as number);
+  // "Rising" is a year-over-year comparison when we have at least 13 months
+  // of history; otherwise fall back to the most recent month-over-month
+  // delta so the page still renders something coherent on partial data.
+  const hasRisingTrend = (() => {
+    const current = trendValues[trendValues.length - 1];
+    if (typeof current !== "number") return false;
+    const compareIdx = trendValues.length >= 13 ? trendValues.length - 13 : trendValues.length - 2;
+    if (compareIdx < 0) return false;
+    const compare = trendValues[compareIdx];
+    return typeof compare === "number" && current > compare;
+  })();
 
   const breadcrumbJsonLd = buildBreadcrumbListJsonLd([
     { name: "Home", url: "/" },

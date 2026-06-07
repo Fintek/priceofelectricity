@@ -1933,7 +1933,45 @@ async function main(): Promise<void> {
     }
   }
 
-  if (snapshots.length >= 2) {
+  // Prefer the EIA monthly history when available: aggregate by period to
+  // produce a true monthly national average series suitable for proper YoY
+  // and 5-year comparisons. This gives us up to 60 monthly points instead
+  // of the handful of release snapshots, which only span a few weeks.
+  if (eiaHistory.historyAvailable && eiaHistory.byState && eiaHistory.byState.size > 0) {
+    const NATIONAL_TREND_MONTHS = 60;
+    const sumByPeriod = new Map<string, { sum: number; count: number }>();
+    for (const entry of eiaHistory.byState.values()) {
+      for (let i = 0; i < entry.periods.length; i++) {
+        const period = entry.periods[i];
+        const value = entry.values[i];
+        if (typeof value !== "number" || !Number.isFinite(value)) continue;
+        const bucket = sumByPeriod.get(period) ?? { sum: 0, count: 0 };
+        bucket.sum += value;
+        bucket.count += 1;
+        sumByPeriod.set(period, bucket);
+      }
+    }
+    const periodsSorted = [...sumByPeriod.keys()].sort();
+    const nationalMonthlyValues = periodsSorted
+      .map((period) => {
+        const bucket = sumByPeriod.get(period)!;
+        return bucket.count > 0 ? bucket.sum / bucket.count : null;
+      })
+      .filter((v): v is number => v !== null)
+      .map((v) => Math.round(v * 100) / 100);
+    const nationalValues = nationalMonthlyValues.slice(-NATIONAL_TREND_MONTHS);
+    if (nationalValues.length >= 2) {
+      nationalTrendSeries = {
+        values: nationalValues,
+        min: Math.min(...nationalValues),
+        max: Math.max(...nationalValues),
+      };
+    }
+  }
+  // Fallback to the release-snapshot-derived series when the EIA history is
+  // unavailable. Snapshots cover a much shorter window, so the resulting
+  // chart and inflation math are noisier, but the page can still render.
+  if (!nationalTrendSeries && snapshots.length >= 2) {
     const snapshotsToUse = snapshots.slice(-MAX_TREND_PERIODS);
     const nationalValues: number[] = [];
     for (const snap of snapshotsToUse) {

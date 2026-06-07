@@ -51,18 +51,26 @@ export default async function ElectricityTrendsPage() {
   const trendValues = derived?.trends?.avgRateCentsPerKwh?.values ?? [];
   const hasTrendChart = trendValues.length >= 2;
 
+  // Trend values come from the monthly EIA national series, so a true
+  // year-over-year comparison is the value 12 months earlier and a 5-year
+  // comparison is 60 months earlier. Fall back gracefully when the series
+  // is shorter than that (e.g. the snapshot fallback path).
   let increase1YearPercent: number | null = null;
   let increase5YearPercent: number | null = null;
   if (trendValues.length >= 2) {
     const current = trendValues[trendValues.length - 1];
-    const oneBack = trendValues[trendValues.length - 2];
-    if (typeof current === "number" && typeof oneBack === "number" && oneBack > 0) {
-      increase1YearPercent = ((current - oneBack) / oneBack) * 100;
-    }
-    if (trendValues.length >= 6) {
-      const fiveBack = trendValues[trendValues.length - 6];
-      if (typeof current === "number" && typeof fiveBack === "number" && fiveBack > 0) {
-        increase5YearPercent = ((current - fiveBack) / fiveBack) * 100;
+    if (typeof current === "number") {
+      if (trendValues.length >= 13) {
+        const oneYearBack = trendValues[trendValues.length - 13];
+        if (typeof oneYearBack === "number" && oneYearBack > 0) {
+          increase1YearPercent = ((current - oneYearBack) / oneYearBack) * 100;
+        }
+      }
+      if (trendValues.length >= 61) {
+        const fiveYearBack = trendValues[trendValues.length - 61];
+        if (typeof fiveYearBack === "number" && fiveYearBack > 0) {
+          increase5YearPercent = ((current - fiveYearBack) / fiveYearBack) * 100;
+        }
       }
     }
   }

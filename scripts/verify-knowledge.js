@@ -801,18 +801,24 @@ function main() {
     fail("datasets electricity-rankings page must include Dataset schema with distribution");
   }
 
+  const hasBreadcrumbSchema = (source) =>
+    source.includes("BreadcrumbList") ||
+    source.includes("buildBreadcrumbListJsonLd") ||
+    source.includes("breadcrumbsToJsonLd") ||
+    source.includes("Breadcrumbs");
+
   const electricityCostSlugSource = fs.readFileSync(electricityCostSlugPath, "utf8");
-  if (!electricityCostSlugSource.includes("BreadcrumbList") && !electricityCostSlugSource.includes("buildBreadcrumbListJsonLd")) {
+  if (!hasBreadcrumbSchema(electricityCostSlugSource)) {
     fail("electricity-cost [slug] page must include BreadcrumbList schema");
   }
   const knowledgeStateSlugPath = path.join(process.cwd(), "src", "app", "knowledge", "state", "[slug]", "page.tsx");
   const knowledgeStateSlugSource = fs.readFileSync(knowledgeStateSlugPath, "utf8");
-  if (!knowledgeStateSlugSource.includes("BreadcrumbList") && !knowledgeStateSlugSource.includes("buildBreadcrumbListJsonLd")) {
+  if (!hasBreadcrumbSchema(knowledgeStateSlugSource)) {
     fail("knowledge state [slug] page must include BreadcrumbList schema");
   }
   const knowledgeRankingsIdPath = path.join(process.cwd(), "src", "app", "knowledge", "rankings", "[id]", "page.tsx");
   const knowledgeRankingsIdSource = fs.readFileSync(knowledgeRankingsIdPath, "utf8");
-  if (!knowledgeRankingsIdSource.includes("BreadcrumbList") && !knowledgeRankingsIdSource.includes("buildBreadcrumbListJsonLd")) {
+  if (!hasBreadcrumbSchema(knowledgeRankingsIdSource)) {
     fail("knowledge rankings [id] page must include BreadcrumbList schema");
   }
 
