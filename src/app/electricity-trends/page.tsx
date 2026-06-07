@@ -3,8 +3,9 @@ import Link from "next/link";
 import { loadKnowledgePage, loadEntityIndex, loadRankingsIndex } from "@/lib/knowledge/loadKnowledgePage";
 import { getRelease } from "@/lib/knowledge/fetch";
 import { buildMetadata } from "@/lib/seo/metadata";
-import { buildBreadcrumbListJsonLd, buildWebPageJsonLd } from "@/lib/seo/jsonld";
+import { buildWebPageJsonLd } from "@/lib/seo/jsonld";
 import JsonLdScript from "@/app/components/seo/JsonLdScript";
+import Breadcrumbs, { breadcrumbsToJsonLd, type BreadcrumbItem } from "@/components/navigation/Breadcrumbs";
 import StatusFooter from "@/components/common/StatusFooter";
 import ExploreMore from "@/components/navigation/ExploreMore";
 import SectionNav from "@/components/navigation/SectionNav";
@@ -74,10 +75,12 @@ export default async function ElectricityTrendsPage() {
   const rankingIds = ["electricity-inflation-1y", "electricity-inflation-5y", "electricity-affordability", "most-expensive-electricity"];
   const rankings = rankingsIndex?.items?.filter((r) => rankingIds.includes(r.id)) ?? [];
 
-  const breadcrumbJsonLd = buildBreadcrumbListJsonLd([
+  const breadcrumbTrail: BreadcrumbItem[] = [
     { name: "Home", url: "/" },
-    { name: "Electricity Trends", url: "/electricity-trends" },
-  ]);
+    { name: "Data", url: "/data" },
+    { name: "Electricity Trends" },
+  ];
+  const breadcrumbJsonLd = breadcrumbsToJsonLd(breadcrumbTrail);
 
   const webPageJsonLd = buildWebPageJsonLd({
     title: "Electricity Price Trends in the United States",
@@ -163,13 +166,7 @@ export default async function ElectricityTrendsPage() {
     <>
       <JsonLdScript data={[breadcrumbJsonLd, webPageJsonLd, faqJsonLd]} />
       <main className="container">
-        <nav aria-label="Breadcrumb" className="muted" style={{ marginBottom: 16, fontSize: 14 }}>
-          <Link href="/">Home</Link>
-          {" · "}
-          <Link href="/data">Data</Link>
-          {" · "}
-          <span aria-current="page">Electricity Trends</span>
-        </nav>
+        <Breadcrumbs trail={breadcrumbTrail} />
         <SectionNav
           title="In this section"
           description="Trends, insights, rankings, and state-level data."

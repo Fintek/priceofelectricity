@@ -8,8 +8,9 @@ import {
 } from "@/lib/knowledge/loadKnowledgePage";
 import { getRelease } from "@/lib/knowledge/fetch";
 import { buildMetadata } from "@/lib/seo/metadata";
-import { buildBreadcrumbListJsonLd, buildWebPageJsonLd } from "@/lib/seo/jsonld";
+import { buildWebPageJsonLd } from "@/lib/seo/jsonld";
 import JsonLdScript from "@/app/components/seo/JsonLdScript";
+import Breadcrumbs, { breadcrumbsToJsonLd, type BreadcrumbItem } from "@/components/navigation/Breadcrumbs";
 import StatusFooter from "@/components/common/StatusFooter";
 import ExploreMore from "@/components/navigation/ExploreMore";
 import SectionNav from "@/components/navigation/SectionNav";
@@ -99,10 +100,12 @@ export default async function ElectricityInsightsPage() {
   const chartRows = top5Highest.map((s) => ({ label: s.name, value: s.rate }));
   const hasChartData = chartRows.length >= 2;
 
-  const breadcrumbJsonLd = buildBreadcrumbListJsonLd([
+  const breadcrumbTrail: BreadcrumbItem[] = [
     { name: "Home", url: "/" },
-    { name: "National Electricity Insights", url: "/electricity-insights" },
-  ]);
+    { name: "Data", url: "/data" },
+    { name: "National Electricity Insights" },
+  ];
+  const breadcrumbJsonLd = breadcrumbsToJsonLd(breadcrumbTrail);
 
   const webPageJsonLd = buildWebPageJsonLd({
     title: "National Electricity Insights",
@@ -161,13 +164,7 @@ export default async function ElectricityInsightsPage() {
     <>
       <JsonLdScript data={[breadcrumbJsonLd, webPageJsonLd, faqJsonLd]} />
       <main className="container">
-        <nav aria-label="Breadcrumb" className="muted" style={{ marginBottom: 16, fontSize: 14 }}>
-          <Link href="/">Home</Link>
-          {" · "}
-          <Link href="/data">Data</Link>
-          {" · "}
-          <span aria-current="page">National Electricity Insights</span>
-        </nav>
+        <Breadcrumbs trail={breadcrumbTrail} />
         <SectionNav
           title="In this section"
           description="Insights, trends, rankings, and state data."
