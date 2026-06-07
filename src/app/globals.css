@@ -214,6 +214,56 @@ h3 {
   white-space: nowrap;
 }
 
+.header-search {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.header-search-icon {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--color-muted);
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+}
+
+.header-search-input {
+  width: 240px;
+  max-width: 40vw;
+  padding: 8px 10px 8px 32px;
+  font-size: var(--font-size-sm);
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  background: var(--color-surface-alt);
+  color: var(--color-text);
+}
+
+.header-search-input:focus {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 1px;
+  background: var(--color-bg);
+}
+
+.header-search-submit {
+  padding: 7px 12px;
+  font-size: var(--font-size-sm);
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  background: var(--color-bg);
+  color: var(--color-text);
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.header-search-submit:hover {
+  background: var(--color-surface-alt);
+}
+
 /* ------------------------------------------------------------------ */
 /* Mobile nav toggle + drawer                                         */
 /* ------------------------------------------------------------------ */
