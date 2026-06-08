@@ -42,6 +42,18 @@ jobs:
       - name: Regenerate snapshot, history, and RAW_STATES artifacts
         run: npm run data:build:snapshots:eia
 
+      # Regenerate the committed public artifacts (datasets, graph.json,
+      # discovery-graph.json, electricity-comparison-pairs.json) so they stay
+      # in sync with the refreshed snapshot data. Per
+      # docs/GENERATED_OUTPUT_POLICY.md these generated outputs are part of the
+      # repo contract; without this step they drift a month behind every
+      # refresh and re-dirty the working tree on the next local build.
+      - name: Regenerate public knowledge and dataset artifacts
+        run: npm run knowledge:build
+
+      - name: Verify generated knowledge artifacts
+        run: npm run knowledge:verify
+
       - name: Check for changes
         id: changes
         run: |
@@ -58,7 +70,14 @@ jobs:
             src/data/history.generated.ts \
             src/data/history.generated.json \
             src/data/raw/states.raw.ts \
-            src/data/snapshots/
+            src/data/snapshots/ \
+            public/datasets/electricity-prices-by-state.json \
+            public/datasets/electricity-prices-by-state.csv \
+            public/datasets/electricity-rankings.json \
+            public/datasets/electricity-rankings.csv \
+            public/discovery-graph.json \
+            public/electricity-comparison-pairs.json \
+            public/graph.json
           git diff --cached --quiet && echo "Nothing staged, skipping commit." && exit 0
           git commit -m "chore: update EIA residential electricity prices (monthly refresh)"
           git push
