@@ -45,6 +45,29 @@ Runtime route latency and frontend quality are now complemented by a lightweight
 The script also prints top subfolders for `.next/server/app` and `public/knowledge` to make growth concentration visible during reviews.
 It now also prints explicit per-target headroom.
 
+### Change reporting ("how much did it weigh?")
+
+`payload:audit` can also report how each target changed versus a recorded
+baseline, so you can see the size impact of a change rather than just
+pass/fail:
+
+- Seed or refresh the baseline after a build: `npm run payload:baseline`.
+- Subsequent `npm run payload:audit` runs print a `change vs baseline` line
+  per target (delta MiB and percentage-points of budget, plus the prior
+  value).
+
+The baseline (`payload-baseline.json`) is **informational only** — it never
+gates the build; the absolute ceilings above remain the only hard gate. It is
+**environment-sensitive** (the `.next/*` targets include platform-specific
+binaries, so Windows and CI/Linux sizes differ) and is therefore gitignored
+as a per-machine reference rather than committed.
+
+Caveat when measuring `public/knowledge` locally: `knowledge:build` does not
+clean its output directory, so repeated local builds can leave stale files
+that inflate the measured size. For an accurate local reading, remove
+`public/knowledge` before rebuilding. CI/Vercel always build from a clean
+checkout, so production measurements are unaffected.
+
 ### Operating margin policy
 
 Passing the ceiling is necessary but not sufficient for expansion safety.

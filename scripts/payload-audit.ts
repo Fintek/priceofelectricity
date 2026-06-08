@@ -1,4 +1,4 @@
-import { readdir, stat } from "node:fs/promises";
+import { readdir, stat, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 
 type BudgetTarget = {
@@ -38,6 +38,32 @@ const BUDGET_TARGETS: BudgetTarget[] = [
 
 function formatMiB(bytes: number): string {
   return `${(bytes / MB).toFixed(2)} MiB`;
+}
+
+const BASELINE_REL_PATH = "payload-baseline.json";
+
+type PayloadBaseline = {
+  generatedAt: string;
+  note: string;
+  targets: Record<string, number>;
+};
+
+function formatSignedMiB(bytes: number): string {
+  const sign = bytes > 0 ? "+" : bytes < 0 ? "-" : "";
+  return `${sign}${(bytes / MB).toFixed(2)} MiB`;
+}
+
+async function readBaseline(absPath: string): Promise<PayloadBaseline | null> {
+  try {
+    const raw = await readFile(absPath, "utf8");
+    const parsed = JSON.parse(raw) as PayloadBaseline;
+    if (parsed && typeof parsed === "object" && parsed.targets) {
+      return parsed;
+    }
+    return null;
+  } catch {
+    return null;
+  }
 }
 
 async function getPathSizeBytes(absPath: string): Promise<number> {
@@ -120,6 +146,9 @@ async function reportStandaloneContributors(root: string): Promise<void> {
 
 async function main(): Promise<void> {
   const root = process.cwd();
+  const updateBaseline = process.argv.includes("--update-baseline");
+  const baselineAbsPath = path.join(root, BASELINE_REL_PATH);
+  const baseline = await readBaseline(baselineAbsPath);
   const failures: string[] = [];
   const measuredTargets: MeasuredTarget[] = [];
 
@@ -144,12 +173,42 @@ async function main(): Promise<void> {
         `  - ${target.id}: ${formatMiB(target.sizeBytes)} / ${formatMiB(target.maxBytes)} (${pct.toFixed(1)}%)`,
       );
       console.log(`    headroom: ${formatMiB(headroomBytes)}`);
+      if (baseline?.targets && Object.prototype.hasOwnProperty.call(baseline.targets, target.id)) {
+        const baseBytes = baseline.targets[target.id];
+        const deltaBytes = target.sizeBytes - baseBytes;
+        const basePct = (baseBytes / target.maxBytes) * 100;
+        if (deltaBytes === 0) {
+          console.log(`    change vs baseline: no change (baseline ${formatMiB(baseBytes)}, ${basePct.toFixed(1)}%)`);
+        } else {
+          const deltaPoints = (deltaBytes / target.maxBytes) * 100;
+          const pointsLabel = `${deltaPoints >= 0 ? "+" : ""}${deltaPoints.toFixed(1)} pts of budget`;
+          console.log(
+            `    change vs baseline: ${formatSignedMiB(deltaBytes)} (${pointsLabel}) — was ${formatMiB(baseBytes)} (${basePct.toFixed(1)}%)`,
+          );
+        }
+      } else if (baseline) {
+        console.log(`    change vs baseline: no baseline recorded for this target`);
+      }
       if (target.sizeBytes > target.maxBytes) {
         failures.push(
           `${target.id} exceeds budget: ${formatMiB(target.sizeBytes)} > ${formatMiB(target.maxBytes)}`,
         );
       }
     }
+  }
+
+  if (updateBaseline) {
+    const newBaseline: PayloadBaseline = {
+      generatedAt: new Date().toISOString(),
+      note: "Reference payload sizes for differential reporting. Environment-sensitive (sizes differ between local OS and CI/Vercel Linux); informational only and never gates the build. Refresh with `npm run payload:baseline` after a build.",
+      targets: Object.fromEntries(measuredTargets.map((t) => [t.id, t.sizeBytes])),
+    };
+    await writeFile(baselineAbsPath, `${JSON.stringify(newBaseline, null, 2)}\n`, "utf8");
+    console.log(`Wrote payload baseline to ${BASELINE_REL_PATH} (${measuredTargets.length} targets).`);
+  } else if (!baseline) {
+    console.log(
+      "No payload baseline found. Run `npm run payload:baseline` after a build to record one for change reporting.",
+    );
   }
 
   await reportStandaloneContributors(root);
