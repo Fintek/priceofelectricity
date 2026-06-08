@@ -1,0 +1,60 @@
+---
+description: PriceOfElectricity (POE) Supermemory space + end-of-session backup
+alwaysApply: true
+---
+
+# Supermemory: PriceOfElectricity (POE)
+
+This project has a dedicated Supermemory space. Use it for cross-session agent context.
+
+## Space scoping
+
+- This project uses the project-scoped Supermemory MCP server
+  **`project-0-priceofelectricity-supermemory`**. That server is already
+  scoped to the POE space, so the `memory` and `recall` tools do not need
+  (and do not accept) a `containerTag` argument.
+- The legacy `supermemory` MCP server (the global one) is also scoped to
+  POE in this repo via `.cursor/mcp.json` (`x-sm-project: "priceofelectricity"`).
+  If you ever fall back to that server, prefer the project-scoped one above.
+
+## Start of session
+
+- For non-trivial work, call `recall` early to load prior context
+  (decisions, conventions, recent changes, open threads).
+
+## End of each session (REQUIRED)
+
+There is a Cursor hook at `.cursor/hooks/supermemory-end-of-session.js` that
+fires on the trigger phrase **"end of session"** and injects a system reminder
+telling you to run this protocol. Even when the hook does not fire (e.g. the
+user wraps up with different wording like "done", "thanks", "bye", "that's
+all", or explicitly asks to save/back up), you must still run the protocol
+yourself.
+
+The protocol:
+
+1. Use the `memory` tool on `project-0-priceofelectricity-supermemory` with
+   `action: "save"` and a single `content` string that summarizes this
+   session.
+2. The summary must capture:
+   - What the user asked for this session
+   - What changed (files touched, commands run, decisions made, and any
+     commit SHAs and titles)
+   - Current state and verification results (typecheck/build/verify outcomes,
+     deploy status, open PRs)
+   - Open items or deliberate follow-ups
+3. Keep it factual and concise — aim for a focused list of short bullets or
+   sentences. Do not paste large code blocks.
+4. Do not save secrets, API keys, tokens, or `.env` values. Treat repo files
+   and git state as the source of truth; memories are supplementary context,
+   not overrides.
+5. After the save call returns, briefly confirm to the user what was saved
+   and surface any deferred follow-ups in your response. If the save fails,
+   surface the error to the user instead of silently continuing.
+
+## Trigger phrase
+
+The literal phrase **"end of session"** is the canonical way to invoke this
+protocol. The hook recognizes minor variants (`end-of-session`,
+`end_of_session`, trailing punctuation, surrounding whitespace) but not free
+paraphrases — those rely on this rule.
