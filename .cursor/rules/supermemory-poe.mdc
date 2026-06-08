@@ -17,10 +17,15 @@ This project has a dedicated Supermemory space. Use it for cross-session agent c
   POE in this repo via `.cursor/mcp.json` (`x-sm-project: "priceofelectricity"`).
   If you ever fall back to that server, prefer the project-scoped one above.
 
-## Start of session
+## Start Session (recall)
 
-- For non-trivial work, call `recall` early to load prior context
-  (decisions, conventions, recent changes, open threads).
+The `.cursor/hooks/supermemory-session-start.js` hook fires on every new
+conversation and injects a reminder to recall prior context. At the start of
+a session — or whenever the user says the phrase **"Start Session"** — call
+`recall` on `project-0-priceofelectricity-supermemory` (no containerTag) to
+load prior context (decisions, conventions, recent changes, open threads /
+follow-ups) before substantive work. Treat repo files and git state as the
+source of truth; memories are supplementary.
 
 ## End of each session (REQUIRED)
 

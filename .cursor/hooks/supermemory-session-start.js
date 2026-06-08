@@ -13,28 +13,39 @@
 "use strict";
 
 const PROTOCOL = `<system-reminder>
-PriceOfElectricity (POE) Supermemory end-of-session protocol — REQUIRED.
+PriceOfElectricity (POE) Supermemory protocol — REQUIRED.
 
+== START SESSION (recall prior context) ==
+At the start of a new session, or whenever the user says the phrase
+"Start Session" (or close variants such as "start session", with trailing
+punctuation), load prior project context BEFORE substantive work:
+
+1. Call the "recall" tool on the project-scoped Supermemory MCP server
+   "project-0-priceofelectricity-supermemory". It is already scoped to the
+   POE space, so the tool does not take a containerTag argument.
+2. Use a query covering recent decisions, conventions, recent changes, and
+   open threads/follow-ups. Briefly orient yourself from what is returned
+   before acting. Treat repo files and git state as the source of truth;
+   memories are supplementary context.
+
+== END OF SESSION (save a summary) ==
 When the user types the literal phrase "end of session" (or close variants
 such as "end-of-session", "end_of_session", or with trailing punctuation),
 you MUST run this protocol BEFORE doing anything else in that turn:
 
-1. Use the project-scoped Supermemory MCP server
-   "project-0-priceofelectricity-supermemory". It is already scoped to the
-   POE space, so the "memory" tool does not take a containerTag argument.
-2. Call the "memory" tool with action "save" and a single \`content\` string
-   summarizing this session. Aim for a focused list of short bullets or
-   sentences. Do not paste large code blocks.
-3. The summary must capture:
+1. Use the "memory" tool with action "save" on the same
+   "project-0-priceofelectricity-supermemory" server (no containerTag) and a
+   single \`content\` string summarizing this session. Aim for a focused list
+   of short bullets or sentences. Do not paste large code blocks.
+2. The summary must capture:
    - What the user asked for this session
    - What changed (files touched, commands run, decisions made, and any
      commit SHAs and titles)
    - Current state and verification results (typecheck/build/verify
      outcomes, deploy status, open PRs)
    - Open items or deliberate follow-ups so the next agent picks them up
-4. Do NOT save secrets, API keys, tokens, or .env values. Treat repo files
-   and git state as the source of truth; memories are supplementary context.
-5. After the save call returns, briefly confirm to the user what was saved
+3. Do NOT save secrets, API keys, tokens, or .env values.
+4. After the save call returns, briefly confirm to the user what was saved
    and surface any deferred follow-ups in your response. If the save fails,
    surface the error to the user instead of silently continuing.
 
