@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Breadcrumbs, { breadcrumbsToJsonLd, type BreadcrumbItem } from "@/components/navigation/Breadcrumbs";
 import { SITE_URL } from "@/lib/site";
 import CopyButton from "@/components/common/CopyButton";
 import StatusFooter from "@/components/common/StatusFooter";
@@ -17,7 +18,7 @@ import {
 } from "@/lib/knowledge/loadKnowledgePage";
 import { getRelease, getCapabilities } from "@/lib/knowledge/fetch";
 import { buildMetadata } from "@/lib/seo/metadata";
-import { buildBreadcrumbListJsonLd } from "@/lib/seo/jsonld";
+
 import JsonLdScript from "@/app/components/seo/JsonLdScript";
 
 const BASE_URL = SITE_URL;
@@ -88,10 +89,12 @@ export default async function KnowledgeHubPage() {
     entityIndex?.entities?.filter((e) => e.type === "state").sort((a, b) => a.slug.localeCompare(b.slug)) ?? [];
   const enabledRegions = regionsIndex?.regions?.filter((r) => r.enabled !== false) ?? [];
 
-  const breadcrumbJsonLd = buildBreadcrumbListJsonLd([
+  const breadcrumbTrail: BreadcrumbItem[] = [
     { name: "Home", url: "/" },
-    { name: "Knowledge", url: "/knowledge" },
-  ]);
+    { name: "Data", url: "/data" },
+    { name: "Knowledge" },
+  ];
+  const breadcrumbJsonLd = breadcrumbsToJsonLd(breadcrumbTrail);
 
   const caps = capabilities?.capabilities ?? {};
   const badges: string[] = [];
@@ -117,13 +120,7 @@ export default async function KnowledgeHubPage() {
     <>
       <JsonLdScript data={breadcrumbJsonLd} />
       <main className="container">
-        <nav aria-label="Breadcrumb" className="muted" style={{ marginBottom: 16, fontSize: 14 }}>
-          <Link href="/">Home</Link>
-          {" · "}
-          <Link href="/data">Data</Link>
-          {" · "}
-          <span aria-current="page">Knowledge</span>
-        </nav>
+        <Breadcrumbs trail={breadcrumbTrail} />
         <section style={{ marginBottom: 24 }}>
           <h2 style={{ fontSize: 18, marginBottom: 8 }}>Explore Electricity Topics</h2>
           <p className="muted" style={{ margin: "0 0 8px 0", fontSize: 14 }}>

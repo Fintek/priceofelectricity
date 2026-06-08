@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Breadcrumbs, { breadcrumbsToJsonLd, type BreadcrumbItem } from "@/components/navigation/Breadcrumbs";
 import { notFound } from "next/navigation";
 import JsonLdScript from "@/app/components/seo/JsonLdScript";
 import Disclaimers from "@/app/components/policy/Disclaimers";
@@ -15,7 +16,7 @@ import {
 } from "@/lib/longtail/usageIntelligence";
 import { buildMetadata } from "@/lib/seo/metadata";
 import { formatRate, formatUsd } from "@/lib/longtail/stateLongtail";
-import { buildBreadcrumbListJsonLd, buildWebPageJsonLd } from "@/lib/seo/jsonld";
+import { buildWebPageJsonLd } from "@/lib/seo/jsonld";
 
 export const dynamic = "force-static";
 export const revalidate = 86400;
@@ -36,10 +37,11 @@ export default async function ElectricityUsageHubPage() {
   const representativeState = states.find((state) => state.nationalAverageCentsPerKwh != null) ?? states[0];
   const sourceState = states[0];
 
-  const breadcrumbJsonLd = buildBreadcrumbListJsonLd([
+  const breadcrumbTrail: BreadcrumbItem[] = [
     { name: "Home", url: "/" },
-    { name: "Electricity Usage", url: "/electricity-usage" },
-  ]);
+    { name: "Electricity Usage" },
+  ];
+  const breadcrumbJsonLd = breadcrumbsToJsonLd(breadcrumbTrail);
   const webPageJsonLd = buildWebPageJsonLd({
     title: "Electricity usage guide",
     description: `National household electricity usage benchmark: ${formatKwh(
@@ -58,11 +60,7 @@ export default async function ElectricityUsageHubPage() {
     <>
       <JsonLdScript data={[breadcrumbJsonLd, webPageJsonLd]} />
       <main className="container">
-        <nav aria-label="Breadcrumb" className="muted" style={{ marginBottom: 16, fontSize: 14 }}>
-          <Link href="/">Home</Link>
-          {" · "}
-          <span aria-current="page">Electricity Usage</span>
-        </nav>
+        <Breadcrumbs trail={breadcrumbTrail} />
 
         <h1 style={{ fontSize: 32, marginBottom: 12 }}>Household electricity usage</h1>
         <p style={{ marginTop: 0, marginBottom: 16, maxWidth: "70ch", lineHeight: 1.7 }}>

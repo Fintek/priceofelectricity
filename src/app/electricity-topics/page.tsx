@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Breadcrumbs, { breadcrumbsToJsonLd, type BreadcrumbItem } from "@/components/navigation/Breadcrumbs";
 import { getRelease } from "@/lib/knowledge/fetch";
 import { buildMetadata } from "@/lib/seo/metadata";
-import { buildBreadcrumbListJsonLd } from "@/lib/seo/jsonld";
+
 import JsonLdScript from "@/app/components/seo/JsonLdScript";
 import StatusFooter from "@/components/common/StatusFooter";
 import TopicClusterNav from "@/components/navigation/TopicClusterNav";
@@ -21,22 +22,18 @@ export const metadata: Metadata = buildMetadata({
 export default async function ElectricityTopicsPage() {
   const release = await getRelease();
 
-  const breadcrumbJsonLd = buildBreadcrumbListJsonLd([
+  const breadcrumbTrail: BreadcrumbItem[] = [
     { name: "Home", url: "/" },
-    { name: "Electricity Economics Topics", url: "/electricity-topics" },
-  ]);
+    { name: "Electricity Trends", url: "/electricity-trends" },
+    { name: "Electricity Economics Topics" },
+  ];
+  const breadcrumbJsonLd = breadcrumbsToJsonLd(breadcrumbTrail);
 
   return (
     <>
       <JsonLdScript data={breadcrumbJsonLd} />
       <main className="container">
-        <nav aria-label="Breadcrumb" className="muted" style={{ marginBottom: 16, fontSize: 14 }}>
-          <Link href="/">Home</Link>
-          {" · "}
-          <Link href="/electricity-trends">Electricity Trends</Link>
-          {" · "}
-          <span aria-current="page">Electricity Economics Topics</span>
-        </nav>
+        <Breadcrumbs trail={breadcrumbTrail} />
 
         <h1 style={{ fontSize: 32, marginBottom: 24 }}>Electricity Economics Topics</h1>
 

@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Breadcrumbs, { breadcrumbsToJsonLd, type BreadcrumbItem } from "@/components/navigation/Breadcrumbs";
 import { loadEntityIndex } from "@/lib/knowledge/loadKnowledgePage";
 import { buildMetadata } from "@/lib/seo/metadata";
-import { buildBreadcrumbListJsonLd } from "@/lib/seo/jsonld";
+
 import JsonLdScript from "@/app/components/seo/JsonLdScript";
 import StatusFooter from "@/components/common/StatusFooter";
 import Disclaimers from "@/app/components/policy/Disclaimers";
@@ -33,22 +34,18 @@ export default async function ElectricityCostOfLivingPage() {
       ?.filter((e) => e.type === "state")
       .sort((a, b) => a.slug.localeCompare(b.slug)) ?? [];
 
-  const breadcrumbJsonLd = buildBreadcrumbListJsonLd([
+  const breadcrumbTrail: BreadcrumbItem[] = [
     { name: "Home", url: "/" },
-    { name: "Electricity Cost of Living", url: "/electricity-cost-of-living" },
-  ]);
+    { name: "Electricity Trends", url: "/electricity-trends" },
+    { name: "Electricity Cost of Living" },
+  ];
+  const breadcrumbJsonLd = breadcrumbsToJsonLd(breadcrumbTrail);
 
   return (
     <>
       <JsonLdScript data={breadcrumbJsonLd} />
       <main className="container">
-        <nav aria-label="Breadcrumb" className="muted" style={{ marginBottom: 16, fontSize: 14 }}>
-          <Link href="/">Home</Link>
-          {" · "}
-          <Link href="/electricity-trends">Electricity Trends</Link>
-          {" · "}
-          <span aria-current="page">Electricity Cost of Living</span>
-        </nav>
+        <Breadcrumbs trail={breadcrumbTrail} />
 
         <h1 style={{ fontSize: 32, marginBottom: 24 }}>Electricity Cost of Living by State</h1>
 

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Breadcrumbs, { breadcrumbsToJsonLd, type BreadcrumbItem } from "@/components/navigation/Breadcrumbs";
 import { notFound } from "next/navigation";
 import JsonLdScript from "@/app/components/seo/JsonLdScript";
 import Disclaimers from "@/app/components/policy/Disclaimers";
@@ -18,7 +19,7 @@ import {
   parseUsageApplianceSlug,
 } from "@/lib/longtail/usageIntelligence";
 import { buildMetadata } from "@/lib/seo/metadata";
-import { buildBreadcrumbListJsonLd, buildWebPageJsonLd } from "@/lib/seo/jsonld";
+import { buildWebPageJsonLd } from "@/lib/seo/jsonld";
 
 export const dynamicParams = true;
 export const revalidate = 86400;
@@ -60,12 +61,12 @@ export default async function ApplianceUsageReferencePage({
   const representativeState = await loadLongtailStateData("texas");
   if (!representativeState) notFound();
 
-  const breadcrumbJsonLd = buildBreadcrumbListJsonLd([
+  const breadcrumbTrail: BreadcrumbItem[] = [
     { name: "Home", url: "/" },
     { name: "Electricity Usage", url: "/electricity-usage" },
-    { name: "Appliances", url: "/electricity-usage/appliances/refrigerator" },
-    { name: applianceConfig.displayName, url: `/electricity-usage/appliances/${applianceSlug}` },
-  ]);
+    { name: "applianceConfig.displayName" },
+  ];
+  const breadcrumbJsonLd = breadcrumbsToJsonLd(breadcrumbTrail);
   const webPageJsonLd = buildWebPageJsonLd({
     title: `${applianceConfig.displayName} electricity usage`,
     description: `${applianceConfig.displayName} usage reference page with kWh/hour, daily and monthly usage assumptions and links to related cost pages.`,
@@ -78,13 +79,7 @@ export default async function ApplianceUsageReferencePage({
     <>
       <JsonLdScript data={[breadcrumbJsonLd, webPageJsonLd]} />
       <main className="container">
-        <nav aria-label="Breadcrumb" className="muted" style={{ marginBottom: 16, fontSize: 14 }}>
-          <Link href="/">Home</Link>
-          {" · "}
-          <Link href="/electricity-usage">Electricity Usage</Link>
-          {" · "}
-          <span aria-current="page">{applianceConfig.displayName}</span>
-        </nav>
+        <Breadcrumbs trail={breadcrumbTrail} />
 
         <h1 style={{ fontSize: 32, marginBottom: 12 }}>{applianceConfig.displayName} Electricity Usage</h1>
         <p style={{ marginTop: 0, marginBottom: 24, maxWidth: "70ch", lineHeight: 1.7 }}>

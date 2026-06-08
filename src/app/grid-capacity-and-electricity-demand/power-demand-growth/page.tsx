@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Breadcrumbs, { breadcrumbsToJsonLd, type BreadcrumbItem } from "@/components/navigation/Breadcrumbs";
 import { loadKnowledgePage } from "@/lib/knowledge/loadKnowledgePage";
 import { getRelease } from "@/lib/knowledge/fetch";
 import { buildMetadata } from "@/lib/seo/metadata";
-import { buildBreadcrumbListJsonLd } from "@/lib/seo/jsonld";
+
 import JsonLdScript from "@/app/components/seo/JsonLdScript";
 import StatusFooter from "@/components/common/StatusFooter";
 import Disclaimers from "@/app/components/policy/Disclaimers";
@@ -31,23 +32,18 @@ export default async function PowerDemandGrowthPage() {
   const rateDollarsPerKwh = nationalAvgRate != null ? nationalAvgRate / 100 : 0;
   const estimatedMonthlyBill = rateDollarsPerKwh * 900;
 
-  const breadcrumbJsonLd = buildBreadcrumbListJsonLd([
+  const breadcrumbTrail: BreadcrumbItem[] = [
     { name: "Home", url: "/" },
     { name: "Grid Capacity and Electricity Demand", url: "/grid-capacity-and-electricity-demand" },
-    { name: "Power Demand Growth", url: "/grid-capacity-and-electricity-demand/power-demand-growth" },
-  ]);
+    { name: "Power Demand Growth" },
+  ];
+  const breadcrumbJsonLd = breadcrumbsToJsonLd(breadcrumbTrail);
 
   return (
     <>
       <JsonLdScript data={breadcrumbJsonLd} />
       <main className="container">
-        <nav aria-label="Breadcrumb" className="muted" style={{ marginBottom: 16, fontSize: 14 }}>
-          <Link href="/">Home</Link>
-          {" · "}
-          <Link href="/grid-capacity-and-electricity-demand">Grid Capacity and Electricity Demand</Link>
-          {" · "}
-          <span aria-current="page">Power Demand Growth</span>
-        </nav>
+        <Breadcrumbs trail={breadcrumbTrail} />
 
         <h1 style={{ fontSize: 32, marginBottom: 24 }}>Power Demand Growth and Electricity Prices</h1>
 

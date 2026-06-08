@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Breadcrumbs, { breadcrumbsToJsonLd, type BreadcrumbItem } from "@/components/navigation/Breadcrumbs";
 import { loadKnowledgePage } from "@/lib/knowledge/loadKnowledgePage";
 import { buildMetadata } from "@/lib/seo/metadata";
-import { buildBreadcrumbListJsonLd } from "@/lib/seo/jsonld";
+
 import JsonLdScript from "@/app/components/seo/JsonLdScript";
 import StatusFooter from "@/components/common/StatusFooter";
 import Disclaimers from "@/app/components/policy/Disclaimers";
@@ -33,23 +34,18 @@ export default async function ElectricityCostsForSmallBusinessesPage() {
   const nationalMonthlyBill =
     nationalAvgRate != null ? (nationalAvgRate / 100) * MONTHLY_USAGE_KWH : null;
 
-  const breadcrumbJsonLd = buildBreadcrumbListJsonLd([
+  const breadcrumbTrail: BreadcrumbItem[] = [
     { name: "Home", url: "/" },
     { name: "Business Electricity Cost Decisions", url: "/business-electricity-cost-decisions" },
-    { name: "Electricity Costs for Small Businesses", url: "/business-electricity-cost-decisions/electricity-costs-for-small-businesses" },
-  ]);
+    { name: "Electricity Costs for Small Businesses" },
+  ];
+  const breadcrumbJsonLd = breadcrumbsToJsonLd(breadcrumbTrail);
 
   return (
     <>
       <JsonLdScript data={breadcrumbJsonLd} />
       <main className="container">
-        <nav aria-label="Breadcrumb" className="muted" style={{ marginBottom: 16, fontSize: 14 }}>
-          <Link href="/">Home</Link>
-          {" · "}
-          <Link href="/business-electricity-cost-decisions">Business Electricity Cost Decisions</Link>
-          {" · "}
-          <span aria-current="page">Electricity Costs for Small Businesses</span>
-        </nav>
+        <Breadcrumbs trail={breadcrumbTrail} />
 
         <h1 style={{ fontSize: 32, marginBottom: 24 }}>Electricity Costs for Small Businesses</h1>
 

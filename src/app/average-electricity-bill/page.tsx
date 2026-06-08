@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Breadcrumbs, { breadcrumbsToJsonLd, type BreadcrumbItem } from "@/components/navigation/Breadcrumbs";
 import { notFound } from "next/navigation";
 import JsonLdScript from "@/app/components/seo/JsonLdScript";
 import Disclaimers from "@/app/components/policy/Disclaimers";
@@ -16,7 +17,7 @@ import { getRelease } from "@/lib/knowledge/fetch";
 import { buildMetadata } from "@/lib/seo/metadata";
 import { formatRate, formatUsd } from "@/lib/longtail/stateLongtail";
 import { getCanonicalUsageCostPath } from "@/lib/longtail/usageEntryRoutes";
-import { buildBreadcrumbListJsonLd, buildWebPageJsonLd } from "@/lib/seo/jsonld";
+import { buildWebPageJsonLd } from "@/lib/seo/jsonld";
 
 export const dynamic = "force-static";
 export const revalidate = 86400;
@@ -44,10 +45,11 @@ export default async function AverageElectricityBillIndexPage() {
   if (!representativeState || !highestBillState || !lowestBillState) notFound();
   const nationalMonthlyBill = representativeState?.nationalMonthlyBill ?? null;
 
-  const breadcrumbJsonLd = buildBreadcrumbListJsonLd([
+  const breadcrumbTrail: BreadcrumbItem[] = [
     { name: "Home", url: "/" },
-    { name: "Average Electricity Bill", url: "/average-electricity-bill" },
-  ]);
+    { name: "Average Electricity Bill" },
+  ];
+  const breadcrumbJsonLd = breadcrumbsToJsonLd(breadcrumbTrail);
   const webPageJsonLd = buildWebPageJsonLd({
     title: "Average Electricity Bill by State",
     description:
@@ -69,11 +71,7 @@ export default async function AverageElectricityBillIndexPage() {
     <>
       <JsonLdScript data={[breadcrumbJsonLd, webPageJsonLd]} />
       <main className="container">
-        <nav aria-label="Breadcrumb" className="muted" style={{ marginBottom: 16, fontSize: 14 }}>
-          <Link href="/">Home</Link>
-          {" · "}
-          <span aria-current="page">Average Electricity Bill</span>
-        </nav>
+        <Breadcrumbs trail={breadcrumbTrail} />
 
         <h1 style={{ fontSize: 32, marginBottom: 12 }}>Average Electricity Bill by State</h1>
         <p style={{ marginTop: 0, marginBottom: 16, maxWidth: "65ch", fontSize: 16, lineHeight: 1.6 }}>

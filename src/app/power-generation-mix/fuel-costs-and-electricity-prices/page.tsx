@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Breadcrumbs, { breadcrumbsToJsonLd, type BreadcrumbItem } from "@/components/navigation/Breadcrumbs";
 import { loadKnowledgePage } from "@/lib/knowledge/loadKnowledgePage";
 import { getRelease } from "@/lib/knowledge/fetch";
 import { buildMetadata } from "@/lib/seo/metadata";
-import { buildBreadcrumbListJsonLd } from "@/lib/seo/jsonld";
+
 import JsonLdScript from "@/app/components/seo/JsonLdScript";
 import StatusFooter from "@/components/common/StatusFooter";
 
@@ -35,25 +36,19 @@ export default async function FuelCostsAndElectricityPricesPage() {
   const rateDollarsPerKwh = nationalAvgRate != null ? nationalAvgRate / 100 : 0;
   const monthlyBill = rateDollarsPerKwh * MONTHLY_USAGE_KWH;
 
-  const breadcrumbJsonLd = buildBreadcrumbListJsonLd([
+  const breadcrumbTrail: BreadcrumbItem[] = [
     { name: "Home", url: "/" },
+    { name: "Electricity Trends", url: "/electricity-trends" },
     { name: "Power Generation Mix", url: "/power-generation-mix" },
-    { name: "Fuel Costs and Electricity Prices", url: "/power-generation-mix/fuel-costs-and-electricity-prices" },
-  ]);
+    { name: "Fuel Costs and Electricity Prices" },
+  ];
+  const breadcrumbJsonLd = breadcrumbsToJsonLd(breadcrumbTrail);
 
   return (
     <>
       <JsonLdScript data={breadcrumbJsonLd} />
       <main className="container">
-        <nav aria-label="Breadcrumb" className="muted" style={{ marginBottom: 16, fontSize: 14 }}>
-          <Link href="/">Home</Link>
-          {" · "}
-          <Link href="/electricity-trends">Electricity Trends</Link>
-          {" · "}
-          <Link href="/power-generation-mix">Power Generation Mix</Link>
-          {" · "}
-          <span aria-current="page">Fuel Costs and Electricity Prices</span>
-        </nav>
+        <Breadcrumbs trail={breadcrumbTrail} />
 
         <h1 style={{ fontSize: 32, marginBottom: 24 }}>Fuel Costs and Electricity Prices</h1>
 

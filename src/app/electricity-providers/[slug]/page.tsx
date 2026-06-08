@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Breadcrumbs, { breadcrumbsToJsonLd, type BreadcrumbItem } from "@/components/navigation/Breadcrumbs";
 import { notFound } from "next/navigation";
 import { loadKnowledgePage } from "@/lib/knowledge/loadKnowledgePage";
 import { buildMetadata } from "@/lib/seo/metadata";
-import { buildBreadcrumbListJsonLd, buildItemListJsonLd, buildWebPageJsonLd } from "@/lib/seo/jsonld";
+import { buildItemListJsonLd, buildWebPageJsonLd } from "@/lib/seo/jsonld";
 import JsonLdScript from "@/app/components/seo/JsonLdScript";
 import StatusFooter from "@/components/common/StatusFooter";
 import Disclaimers from "@/app/components/policy/Disclaimers";
@@ -80,11 +81,12 @@ export default async function ElectricityProvidersStatePage({
   const rateDollarsPerKwh = avgRate != null ? avgRate / 100 : 0;
   const estimatedMonthlyCost = rateDollarsPerKwh * MONTHLY_USAGE_KWH;
 
-  const breadcrumbJsonLd = buildBreadcrumbListJsonLd([
+  const breadcrumbTrail: BreadcrumbItem[] = [
     { name: "Home", url: "/" },
     { name: "Electricity Providers", url: "/electricity-providers" },
-    { name: stateName, url: `/electricity-providers/${slug}` },
-  ]);
+    { name: stateName },
+  ];
+  const breadcrumbJsonLd = breadcrumbsToJsonLd(breadcrumbTrail);
   const webPageJsonLd = buildWebPageJsonLd({
     title: `Electricity providers in ${stateName}`,
     description: `State-level electricity provider context for ${stateName}, with links to cost, bill, and comparison tools on this site.`,
@@ -134,13 +136,7 @@ export default async function ElectricityProvidersStatePage({
         ]}
       />
       <main className="container">
-        <nav aria-label="Breadcrumb" className="muted" style={{ marginBottom: 16, fontSize: 14 }}>
-          <Link href="/">Home</Link>
-          {" · "}
-          <Link href="/electricity-providers">Electricity Providers</Link>
-          {" · "}
-          <span aria-current="page">{stateName}</span>
-        </nav>
+        <Breadcrumbs trail={breadcrumbTrail} />
 
         <h1 style={{ fontSize: 32, marginBottom: 12 }}>
           Electricity Providers in {stateName}

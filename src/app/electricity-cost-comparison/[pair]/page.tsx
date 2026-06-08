@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Breadcrumbs, { breadcrumbsToJsonLd, type BreadcrumbItem } from "@/components/navigation/Breadcrumbs";
 import { notFound } from "next/navigation";
 import { loadComparePair } from "@/lib/knowledge/loadKnowledgePage";
 import { buildMetadata } from "@/lib/seo/metadata";
-import { buildBreadcrumbListJsonLd, buildWebPageJsonLd } from "@/lib/seo/jsonld";
+import { buildWebPageJsonLd } from "@/lib/seo/jsonld";
 import JsonLdScript from "@/app/components/seo/JsonLdScript";
 import StatusFooter from "@/components/common/StatusFooter";
 import Disclaimers from "@/app/components/policy/Disclaimers";
@@ -84,11 +85,12 @@ export default async function ElectricityCostComparisonPairPage({
 
   const canonicalPath = `/electricity-cost-comparison/${pair}`;
 
-  const breadcrumbJsonLd = buildBreadcrumbListJsonLd([
+  const breadcrumbTrail: BreadcrumbItem[] = [
     { name: "Home", url: "/" },
     { name: "Electricity Cost Comparison", url: "/electricity-cost-comparison" },
-    { name: `${nameA} vs ${nameB}`, url: canonicalPath },
-  ]);
+    { name: "nameA} vs {nameB" },
+  ];
+  const breadcrumbJsonLd = breadcrumbsToJsonLd(breadcrumbTrail);
 
   const webPageJsonLd = buildWebPageJsonLd({
     title: `Electricity Cost: ${nameA} vs ${nameB}`,
@@ -149,13 +151,7 @@ export default async function ElectricityCostComparisonPairPage({
     <>
       <JsonLdScript data={[breadcrumbJsonLd, webPageJsonLd, faqJsonLd]} />
       <main className="container">
-        <nav aria-label="Breadcrumb" className="muted" style={{ marginBottom: 16, fontSize: 14 }}>
-          <Link href="/">Home</Link>
-          {" · "}
-          <Link href="/electricity-cost-comparison">Electricity Cost Comparison</Link>
-          {" · "}
-          <span aria-current="page">{nameA} vs {nameB}</span>
-        </nav>
+        <Breadcrumbs trail={breadcrumbTrail} />
 
         <h1 style={{ fontSize: 32, marginBottom: 16 }}>
           Electricity Cost: {nameA} vs {nameB}

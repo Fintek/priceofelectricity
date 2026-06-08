@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Breadcrumbs from "@/components/navigation/Breadcrumbs";
 import { loadEntityIndex, loadRankingsIndex } from "@/lib/knowledge/loadKnowledgePage";
 import { SITE_URL } from "@/lib/site";
 import { buildMetadata } from "@/lib/seo/metadata";
@@ -74,13 +75,13 @@ export default async function EntityRegistryPage() {
         }}
       />
       <main className="container">
-        <nav aria-label="Breadcrumb" className="muted" style={{ marginBottom: 16, fontSize: 14 }}>
-          <Link href="/">Home</Link>
-          {" · "}
-          <Link href="/site-map">Site Map</Link>
-          {" · "}
-          <span aria-current="page">Electricity Reference Index</span>
-        </nav>
+        <Breadcrumbs
+          trail={[
+            { name: "Home", url: "/" },
+            { name: "Site Map", url: "/site-map" },
+            { name: "Electricity Reference Index" },
+          ]}
+        />
 
         <h1 style={{ fontSize: 32, marginBottom: 24 }}>Electricity Reference Index</h1>
 

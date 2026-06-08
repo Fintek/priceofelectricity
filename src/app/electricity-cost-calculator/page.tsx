@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Breadcrumbs, { breadcrumbsToJsonLd, type BreadcrumbItem } from "@/components/navigation/Breadcrumbs";
 import { notFound } from "next/navigation";
 import { FEATURED_APPLIANCE_SLUGS, getApplianceConfig } from "@/lib/longtail/applianceConfig";
 import {
@@ -12,7 +13,7 @@ import { EIA_STATE_RESIDENTIAL_DATA_URL } from "@/data/sources";
 import { getRelease } from "@/lib/knowledge/fetch";
 import { buildMetadata } from "@/lib/seo/metadata";
 import { formatRate, formatUsd } from "@/lib/longtail/stateLongtail";
-import { buildBreadcrumbListJsonLd, buildWebPageJsonLd } from "@/lib/seo/jsonld";
+import { buildWebPageJsonLd } from "@/lib/seo/jsonld";
 import JsonLdScript from "@/app/components/seo/JsonLdScript";
 import ElectricityCostNationalCalculator from "@/app/components/ElectricityCostNationalCalculator";
 import StatusFooter from "@/components/common/StatusFooter";
@@ -49,10 +50,11 @@ export default async function ElectricityCostCalculatorIndexPage() {
       sourceUrl: s.sourceUrl,
     }));
 
-  const breadcrumbJsonLd = buildBreadcrumbListJsonLd([
+  const breadcrumbTrail: BreadcrumbItem[] = [
     { name: "Home", url: "/" },
-    { name: "Electricity Cost Calculator", url: "/electricity-cost-calculator" },
-  ]);
+    { name: "Electricity Cost Calculator" },
+  ];
+  const breadcrumbJsonLd = breadcrumbsToJsonLd(breadcrumbTrail);
   const webPageJsonLd = buildWebPageJsonLd({
     title: "Electricity Cost Calculator",
     description:
@@ -70,11 +72,7 @@ export default async function ElectricityCostCalculatorIndexPage() {
     <>
       <JsonLdScript data={[breadcrumbJsonLd, webPageJsonLd]} />
       <main className="container">
-        <nav aria-label="Breadcrumb" className="muted" style={{ marginBottom: 16, fontSize: 14 }}>
-          <Link href="/">Home</Link>
-          {" · "}
-          <span aria-current="page">Electricity Cost Calculator</span>
-        </nav>
+        <Breadcrumbs trail={breadcrumbTrail} />
 
         <h1 style={{ fontSize: 32, marginBottom: 12 }}>Electricity Cost Calculator by State</h1>
         <p style={{ marginTop: 0, marginBottom: 16, maxWidth: "65ch", fontSize: 16, lineHeight: 1.6 }}>

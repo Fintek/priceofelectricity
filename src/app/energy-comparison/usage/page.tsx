@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Breadcrumbs, { breadcrumbsToJsonLd, type BreadcrumbItem } from "@/components/navigation/Breadcrumbs";
 import JsonLdScript from "@/app/components/seo/JsonLdScript";
 import Disclaimers from "@/app/components/policy/Disclaimers";
 import StatusFooter from "@/components/common/StatusFooter";
@@ -9,7 +10,7 @@ import {
   getEnergyComparisonUsageTiers,
 } from "@/lib/longtail/energyComparisonHub";
 import { buildMetadata } from "@/lib/seo/metadata";
-import { buildBreadcrumbListJsonLd, buildWebPageJsonLd } from "@/lib/seo/jsonld";
+import { buildWebPageJsonLd } from "@/lib/seo/jsonld";
 
 export const dynamic = "force-static";
 export const revalidate = 86400;
@@ -25,11 +26,12 @@ export default async function EnergyComparisonUsagePage() {
   const tiers = getEnergyComparisonUsageTiers();
   const states = getEnergyComparisonUsageStates();
 
-  const breadcrumbJsonLd = buildBreadcrumbListJsonLd([
+  const breadcrumbTrail: BreadcrumbItem[] = [
     { name: "Home", url: "/" },
     { name: "Energy Comparison Hub", url: "/energy-comparison" },
-    { name: "Usage Comparisons", url: "/energy-comparison/usage" },
-  ]);
+    { name: "Usage Comparisons" },
+  ];
+  const breadcrumbJsonLd = breadcrumbsToJsonLd(breadcrumbTrail);
 
   const webPageJsonLd = buildWebPageJsonLd({
     title: "Electricity Cost by Usage Level",
@@ -43,13 +45,7 @@ export default async function EnergyComparisonUsagePage() {
     <>
       <JsonLdScript data={[breadcrumbJsonLd, webPageJsonLd]} />
       <main className="container">
-        <nav aria-label="Breadcrumb" className="muted" style={{ marginBottom: 16, fontSize: 14 }}>
-          <Link href="/">Home</Link>
-          {" · "}
-          <Link href="/energy-comparison">Energy Comparison Hub</Link>
-          {" · "}
-          <span aria-current="page">Usage Comparisons</span>
-        </nav>
+        <Breadcrumbs trail={breadcrumbTrail} />
 
         <h1 style={{ fontSize: 32, marginBottom: 12 }}>Electricity Cost by Usage Level</h1>
         <p style={{ marginTop: 0, marginBottom: 24, maxWidth: "75ch", lineHeight: 1.7 }}>

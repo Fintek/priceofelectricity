@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Breadcrumbs, { breadcrumbsToJsonLd, type BreadcrumbItem } from "@/components/navigation/Breadcrumbs";
 import { notFound } from "next/navigation";
 import { loadKnowledgePage } from "@/lib/knowledge/loadKnowledgePage";
 import { buildMetadata } from "@/lib/seo/metadata";
-import { buildBreadcrumbListJsonLd, buildWebPageJsonLd } from "@/lib/seo/jsonld";
+import { buildWebPageJsonLd } from "@/lib/seo/jsonld";
 import JsonLdScript from "@/app/components/seo/JsonLdScript";
 import ExploreMore from "@/components/navigation/ExploreMore";
 
@@ -95,11 +96,12 @@ export default async function ElectricityAffordabilityStatePage({
 
   const canonicalPath = `/electricity-affordability/${slug}`;
 
-  const breadcrumbJsonLd = buildBreadcrumbListJsonLd([
+  const breadcrumbTrail: BreadcrumbItem[] = [
     { name: "Home", url: "/" },
     { name: "Electricity Affordability", url: "/electricity-affordability" },
-    { name: stateName, url: canonicalPath },
-  ]);
+    { name: stateName },
+  ];
+  const breadcrumbJsonLd = breadcrumbsToJsonLd(breadcrumbTrail);
 
   const webPageJsonLd = buildWebPageJsonLd({
     title: `Electricity Affordability in ${stateName}`,
@@ -117,13 +119,7 @@ export default async function ElectricityAffordabilityStatePage({
       <JsonLdScript data={breadcrumbJsonLd} />
       <JsonLdScript data={webPageJsonLd} />
       <main className="container">
-        <nav aria-label="Breadcrumb" className="muted" style={{ marginBottom: 16, fontSize: 14 }}>
-          <Link href="/">Home</Link>
-          {" · "}
-          <Link href="/electricity-affordability">Electricity Affordability</Link>
-          {" · "}
-          <span aria-current="page">{stateName}</span>
-        </nav>
+        <Breadcrumbs trail={breadcrumbTrail} />
 
         <h1 style={{ fontSize: 32, marginBottom: 24 }}>
           Electricity Affordability in {stateName}

@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Breadcrumbs, { breadcrumbsToJsonLd, type BreadcrumbItem } from "@/components/navigation/Breadcrumbs";
 import {
   loadKnowledgePage,
   loadEntityIndex,
   loadRankingsIndex,
 } from "@/lib/knowledge/loadKnowledgePage";
 import { buildMetadata } from "@/lib/seo/metadata";
-import { buildBreadcrumbListJsonLd, buildWebPageJsonLd } from "@/lib/seo/jsonld";
+import { buildWebPageJsonLd } from "@/lib/seo/jsonld";
 import JsonLdScript from "@/app/components/seo/JsonLdScript";
 import ExploreMore from "@/components/navigation/ExploreMore";
 import SectionNav from "@/components/navigation/SectionNav";
@@ -72,10 +73,12 @@ export default async function ElectricityInflationPage() {
   const inflationRankings =
     rankingsIndex?.items?.filter((r) => INFLATION_RANKING_IDS.includes(r.id)) ?? [];
 
-  const breadcrumbJsonLd = buildBreadcrumbListJsonLd([
+  const breadcrumbTrail: BreadcrumbItem[] = [
     { name: "Home", url: "/" },
-    { name: "Electricity Inflation", url: "/electricity-inflation" },
-  ]);
+    { name: "Electricity Trends", url: "/electricity-trends" },
+    { name: "Electricity Inflation" },
+  ];
+  const breadcrumbJsonLd = breadcrumbsToJsonLd(breadcrumbTrail);
 
   const webPageJsonLd = buildWebPageJsonLd({
     title: "Electricity Inflation in the United States",
@@ -103,13 +106,7 @@ export default async function ElectricityInflationPage() {
       <JsonLdScript data={breadcrumbJsonLd} />
       <JsonLdScript data={webPageJsonLd} />
       <main className="container">
-        <nav aria-label="Breadcrumb" className="muted" style={{ marginBottom: 16, fontSize: 14 }}>
-          <Link href="/">Home</Link>
-          {" · "}
-          <Link href="/electricity-trends">Electricity Trends</Link>
-          {" · "}
-          <span aria-current="page">Electricity Inflation</span>
-        </nav>
+        <Breadcrumbs trail={breadcrumbTrail} />
 
         <SectionNav
           title="In this section"
