@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generatedAt": "2026-04-28T11:48:55.834Z",
+  "generatedAt": "2026-05-28T13:54:57.371Z",
   "totalNodes": 1391,
   "totalEdges": 2149,
   "nodes": [
@@ -3855,14 +3855,14 @@
       "url": "http://localhost:3000/questions/why-electricity-cheaper-in-iowa"
     },
     {
-      "id": "question:why-electricity-cheaper-in-louisiana",
-      "type": "question",
-      "url": "http://localhost:3000/questions/why-electricity-cheaper-in-louisiana"
-    },
-    {
       "id": "question:why-electricity-cheaper-in-missouri",
       "type": "question",
       "url": "http://localhost:3000/questions/why-electricity-cheaper-in-missouri"
+    },
+    {
+      "id": "question:why-electricity-cheaper-in-montana",
+      "type": "question",
+      "url": "http://localhost:3000/questions/why-electricity-cheaper-in-montana"
     },
     {
       "id": "question:why-electricity-cheaper-in-nebraska",
@@ -3880,9 +3880,9 @@
       "url": "http://localhost:3000/questions/why-electricity-cheaper-in-oklahoma"
     },
     {
-      "id": "question:why-electricity-cheaper-in-tennessee",
+      "id": "question:why-electricity-cheaper-in-utah",
       "type": "question",
-      "url": "http://localhost:3000/questions/why-electricity-cheaper-in-tennessee"
+      "url": "http://localhost:3000/questions/why-electricity-cheaper-in-utah"
     },
     {
       "id": "question:why-electricity-cheaper-in-wyoming",
@@ -3915,6 +3915,11 @@
       "url": "http://localhost:3000/questions/why-electricity-expensive-in-maine"
     },
     {
+      "id": "question:why-electricity-expensive-in-maryland",
+      "type": "question",
+      "url": "http://localhost:3000/questions/why-electricity-expensive-in-maryland"
+    },
+    {
       "id": "question:why-electricity-expensive-in-massachusetts",
       "type": "question",
       "url": "http://localhost:3000/questions/why-electricity-expensive-in-massachusetts"
@@ -3933,11 +3938,6 @@
       "id": "question:why-electricity-expensive-in-rhode-island",
       "type": "question",
       "url": "http://localhost:3000/questions/why-electricity-expensive-in-rhode-island"
-    },
-    {
-      "id": "question:why-electricity-expensive-in-vermont",
-      "type": "question",
-      "url": "http://localhost:3000/questions/why-electricity-expensive-in-vermont"
     },
     {
       "id": "regulatory:alabama",
@@ -12802,13 +12802,13 @@
       "rel": "related"
     },
     {
-      "from": "question:why-electricity-cheaper-in-louisiana",
-      "to": "state:louisiana",
+      "from": "question:why-electricity-cheaper-in-missouri",
+      "to": "state:missouri",
       "rel": "related"
     },
     {
-      "from": "question:why-electricity-cheaper-in-missouri",
-      "to": "state:missouri",
+      "from": "question:why-electricity-cheaper-in-montana",
+      "to": "state:montana",
       "rel": "related"
     },
     {
@@ -12827,8 +12827,8 @@
       "rel": "related"
     },
     {
-      "from": "question:why-electricity-cheaper-in-tennessee",
-      "to": "state:tennessee",
+      "from": "question:why-electricity-cheaper-in-utah",
+      "to": "state:utah",
       "rel": "related"
     },
     {
@@ -12862,6 +12862,11 @@
       "rel": "related"
     },
     {
+      "from": "question:why-electricity-expensive-in-maryland",
+      "to": "state:maryland",
+      "rel": "related"
+    },
+    {
       "from": "question:why-electricity-expensive-in-massachusetts",
       "to": "state:massachusetts",
       "rel": "related"
@@ -12879,11 +12884,6 @@
     {
       "from": "question:why-electricity-expensive-in-rhode-island",
       "to": "state:rhode-island",
-      "rel": "related"
-    },
-    {
-      "from": "question:why-electricity-expensive-in-vermont",
-      "to": "state:vermont",
       "rel": "related"
     },
     {
@@ -22560,7 +22560,7 @@
     },
     {
       "from": "knowledge:vertical:ai-energy",
-      "to": "knowledge:state:maine",
+      "to": "knowledge:state:maryland",
       "relation": "related-to"
     },
     {
