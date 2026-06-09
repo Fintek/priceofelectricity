@@ -24,14 +24,6 @@ export const SOURCES: Source[] = [
     publisher: "National Association of Regulatory Utility Commissioners",
   },
   {
-    slug: "manual-mvp",
-    name: "Manual MVP (Temporary)",
-    description:
-      "Placeholder for manually curated or aggregated data during initial development. Used when automated sources are not yet integrated.",
-    url: "https://priceofelectricity.com/about",
-    publisher: "PriceOfElectricity.com",
-  },
-  {
     slug: "poweroutage-us",
     name: "PowerOutage.us",
     description:

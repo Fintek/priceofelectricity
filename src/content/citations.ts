@@ -8,39 +8,12 @@ export type Citation = {
   isPlaceholder?: boolean;
 };
 
-export const CITATIONS: Citation[] = [
-  {
-    id: "placeholder-1",
-    title: "Example citation (placeholder) — State electricity rate comparison",
-    publication: "Example Energy Publication",
-    date: "2025-11-01",
-    url: undefined,
-    context:
-      "Placeholder: Referenced PriceOfElectricity.com state-level rate data to compare average residential electricity costs across multiple states.",
-    isPlaceholder: true,
-  },
-  {
-    id: "placeholder-2",
-    title: "Example citation (placeholder) — AI data centers and grid demand",
-    publication: "Example Technology Review",
-    date: "2025-09-15",
-    url: undefined,
-    context:
-      "Placeholder: Cited PriceOfElectricity.com as a source for electricity pricing context in a story about data center energy consumption.",
-    isPlaceholder: true,
-  },
-  {
-    id: "placeholder-3",
-    title:
-      "Example citation (placeholder) — Affordability index methodology",
-    publication: "Example Policy Journal",
-    date: "2025-07-20",
-    url: undefined,
-    context:
-      "Placeholder: Used the Electricity Affordability Index from PriceOfElectricity.com to contextualize residential energy burden by state.",
-    isPlaceholder: true,
-  },
-];
+// Citations are added manually as real media mentions are verified. The list is
+// intentionally empty until then; the citations page renders an honest
+// "No verified citations yet" state while it is empty. The `isPlaceholder`
+// field and filters below remain so unverified drafts can be staged without
+// rendering.
+export const CITATIONS: Citation[] = [];
 
 export function getVerifiedCitations(): Citation[] {
   return CITATIONS.filter((c) => !c.isPlaceholder);
