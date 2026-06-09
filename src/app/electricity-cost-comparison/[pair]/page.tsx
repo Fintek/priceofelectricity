@@ -88,7 +88,7 @@ export default async function ElectricityCostComparisonPairPage({
   const breadcrumbTrail: BreadcrumbItem[] = [
     { name: "Home", url: "/" },
     { name: "Electricity Cost Comparison", url: "/electricity-cost-comparison" },
-    { name: "nameA} vs {nameB" },
+    { name: `${nameA} vs ${nameB}` },
   ];
   const breadcrumbJsonLd = breadcrumbsToJsonLd(breadcrumbTrail);
 

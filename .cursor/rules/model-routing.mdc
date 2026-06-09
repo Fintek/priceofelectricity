@@ -1,0 +1,67 @@
+---
+description: Model routing policy for POE — recommend the cheapest capable model tier at the start of each task
+alwaysApply: true
+---
+
+# Model Routing: Composer-First, Reasoning When It Pays
+
+Goal: maximize Composer 2.5 usage to save tokens without giving up reasoning
+quality where it matters.
+
+## The three tiers (relative cost)
+
+| Tier | Model | Cost (per M tokens) | Use for |
+|------|-------|---------------------|---------|
+| Execute | Composer 2.5 | $0.50 in / $2.50 out — ~1/10 of Claude 4.8, ~1/20 of Fable 5 | Well-specified mechanical work: pattern edits across many files, applying a written brief/plan, refactors, renames, boilerplate, checklist tasks with clear verification |
+| Triage & plan (default) | Claude 4.8 High | ~$5 in / ~$25 out (baseline) | Planning, ambiguity, diagnosis, tradeoffs, writing execution briefs, and anything touching policy-governed areas (generated outputs, canonical/SEO policy, payload budgets) |
+| Break-glass | Fable 5 High | $10 in / $50 out — 2x Claude 4.8 | Specific hard-reasoning categories where Fable's edge is large enough to justify 2x (see below). Use sparingly |
+
+Note: long agent sessions are dominated by cache reads (Fable $1 vs Composer
+$0.20 per M), so effective savings in practice is ~5-20x, not the full
+headline ratio. Composer-first still wins decisively.
+
+## Required behavior
+
+At the start of each task, proactively recommend the appropriate tier to the
+user, e.g.:
+
+- "This is a clean Composer job — switch the picker to Composer 2.5."
+- "This needs reasoning — stay on Claude 4.8."
+- "This is genuinely gnarly — worth Fable 5."
+
+Rule of thumb: if the task can be written as a precise checklist, it's a
+Composer job.
+
+## When Fable 5 actually earns its 2x (Anthropic benchmarks, 2026-06-09)
+
+Fable 5 beats Claude 4.8 on almost everything, but the *gap* — and therefore
+the value of paying double — varies hugely by task. Reserve Fable for the
+categories where its edge is large:
+
+- **Spatial/structural reasoning** (Blueprint-Bench +24 pts): data-model and
+  schema design, graph/dependency reasoning, diagram- or layout-like problems.
+- **Hard, novel coding** (FrontierCode Diamond +16 pts; SWE-Bench Pro +11 pts):
+  unfamiliar architecture, gnarly multi-system debugging where 4.8 stalls.
+- **Deep multidisciplinary reasoning** (HLE +9 pts): genuinely hard analytical
+  calls spanning domains.
+
+Do NOT reach for Fable on routine agentic coding, tool use, or computer use —
+the edge there is only ~1-2 pts and does not justify 2x cost; Claude 4.8 is the
+value pick. Two caveats: (1) the chart says nothing about Composer 2.5, so pure
+execution is unaffected — still a Composer job; (2) on Anthropic's starred
+benchmarks (cybersecurity, biology, health, HLE-with-tools, Terminal-Bench),
+Fable 5 falls back toward Claude 4.8 due to safeguards, so don't expect those
+headline gaps from Fable specifically.
+
+## Default workflow (user-approved: claude_triage)
+
+1. Claude 4.8 triages and writes a tight execution brief (exact files,
+   pattern, invariants, verification commands).
+2. User switches to Composer 2.5 to execute the brief — the bulk token volume
+   lands on the cheapest model.
+3. Escalate back to a reasoning tier only if verification fails in a way
+   Composer can't resolve.
+4. Fable 5 only when 4.8 explicitly hits a wall.
+
+Safety net regardless of model: typecheck, `knowledge:verify`,
+`payload:audit`, and the Vercel build gate catch most mechanical mistakes.

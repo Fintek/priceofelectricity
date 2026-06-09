@@ -78,6 +78,31 @@ Passing the ceiling is necessary but not sufficient for expansion safety.
 - **Blocker zone:** >= 97% (run headroom recovery before additional inventory expansion).
 - Large route families should avoid full static fan-out by default unless payload headroom is clearly sufficient.
 
+### Headroom release valves (`.next/server/app`)
+
+Most route families render on demand (`ƒ`), so they add only a small compiled
+bundle and do **not** dominate `.next/server/app`. Growth there is distributed
+across many routes rather than driven by one runaway family.
+
+The exceptions are the multiplicative families that fully pre-render via
+`generateStaticParams`. As of the last measured build the two largest are:
+
+- `electricity-bill-estimator/[slug]/[profile]` (~2.3 MiB; states × profiles)
+- `average-electricity-bill/[slug]/[city]` (~2.3 MiB; states × cities)
+
+These are the designated **first release valves** if `.next/server/app`
+re-enters the caution zone (>= 90%). Highest-leverage mitigation, in order:
+
+1. Cap their `generateStaticParams` to high-value params (e.g. top-N states /
+   cities) and let the long tail render on demand via `dynamicParams = true`.
+2. If more headroom is needed, convert the family fully to on-demand ISR
+   (the same `dynamicParams = true` + `revalidate` pattern the newer families
+   already use). Pages still render and cache; SEO impact is negligible.
+
+Do not perform this surgery while comfortably under budget — converting pages
+that aren't causing pressure trades real SEO/latency benefit for headroom you
+don't need yet.
+
 ## How to run locally
 
 1. Build production assets:
