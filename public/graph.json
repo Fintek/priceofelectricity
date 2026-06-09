@@ -1,7 +1,7 @@
 {
   "version": "1.0",
   "generatedAt": "2026-05-28T13:54:57.371Z",
-  "totalNodes": 1391,
+  "totalNodes": 1390,
   "totalEdges": 2149,
   "nodes": [
     {
@@ -4723,11 +4723,6 @@
       "id": "source:eia",
       "type": "static",
       "url": "http://localhost:3000/sources/eia"
-    },
-    {
-      "id": "source:manual-mvp",
-      "type": "static",
-      "url": "http://localhost:3000/sources/manual-mvp"
     },
     {
       "id": "source:poweroutage-us",
