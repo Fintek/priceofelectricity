@@ -114,7 +114,7 @@ export default async function MetricsPage() {
 
       <section style={{ marginTop: 24 }}>
         <h2 style={{ fontSize: 20, marginBottom: 8 }}>
-          Future Metrics (Placeholder)
+          Future Metrics (Not Yet Instrumented)
         </h2>
         <ul
           style={{
