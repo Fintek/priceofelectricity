@@ -1,4 +1,4 @@
-import { readdir, stat, readFile, writeFile } from "node:fs/promises";
+import { readdir, stat, readFile, writeFile, appendFile } from "node:fs/promises";
 import path from "node:path";
 
 type BudgetTarget = {
@@ -144,9 +144,33 @@ async function reportStandaloneContributors(root: string): Promise<void> {
   }
 }
 
+async function writeGithubStepSummary(measuredTargets: MeasuredTarget[]): Promise<void> {
+  const summaryPath = process.env.GITHUB_STEP_SUMMARY;
+  if (!summaryPath) return;
+  const lines: string[] = [];
+  lines.push("### Payload governance audit");
+  lines.push("");
+  if (measuredTargets.length === 0) {
+    lines.push("_No build output measured (run `npm run build` first)._");
+  } else {
+    lines.push("| Target | Size | Budget | Used | Headroom |");
+    lines.push("| --- | ---: | ---: | ---: | ---: |");
+    for (const t of measuredTargets) {
+      const pct = (t.sizeBytes / t.maxBytes) * 100;
+      const headroomBytes = Math.max(t.maxBytes - t.sizeBytes, 0);
+      lines.push(
+        `| ${t.id} | ${formatMiB(t.sizeBytes)} | ${formatMiB(t.maxBytes)} | ${pct.toFixed(1)}% | ${formatMiB(headroomBytes)} |`,
+      );
+    }
+  }
+  lines.push("");
+  await appendFile(summaryPath, `${lines.join("\n")}\n`, "utf8");
+}
+
 async function main(): Promise<void> {
   const root = process.cwd();
   const updateBaseline = process.argv.includes("--update-baseline");
+  const emitGithubSummary = process.argv.includes("--github-summary");
   const baselineAbsPath = path.join(root, BASELINE_REL_PATH);
   const baseline = await readBaseline(baselineAbsPath);
   const failures: string[] = [];
@@ -209,6 +233,10 @@ async function main(): Promise<void> {
     console.log(
       "No payload baseline found. Run `npm run payload:baseline` after a build to record one for change reporting.",
     );
+  }
+
+  if (emitGithubSummary) {
+    await writeGithubStepSummary(measuredTargets);
   }
 
   await reportStandaloneContributors(root);
