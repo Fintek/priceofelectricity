@@ -100,11 +100,11 @@ export default async function RevenuePage() {
           >
             <thead>
               <tr style={{ borderBottom: "2px solid #e5e7eb", textAlign: "left" }}>
-                <th style={{ padding: "8px 12px" }}>State</th>
-                <th style={{ padding: "8px 12px", textAlign: "right" }}>
+                <th scope="col" style={{ padding: "8px 12px" }}>State</th>
+                <th scope="col" style={{ padding: "8px 12px", textAlign: "right" }}>
                   Impressions
                 </th>
-                <th style={{ padding: "8px 12px", textAlign: "right" }}>
+                <th scope="col" style={{ padding: "8px 12px", textAlign: "right" }}>
                   Clicks
                 </th>
               </tr>

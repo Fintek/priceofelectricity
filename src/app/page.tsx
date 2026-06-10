@@ -110,7 +110,7 @@ export default function HomePage() {
         <h2 style={{ fontSize: 20, marginBottom: 20 }}>Explore more</h2>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))", gap: 16, fontSize: 14 }}>
           <div>
-            <p style={{ margin: "0 0 6px", fontWeight: 600 }}>Analysis</p>
+            <h3 style={{ margin: "0 0 6px", fontWeight: 600, fontSize: 14 }}>Analysis</h3>
             <ul style={{ margin: 0, paddingLeft: 18, lineHeight: 2 }}>
               <li><Link href="/electricity-trends">Trends</Link></li>
               <li><Link href="/electricity-insights">Insights</Link></li>
@@ -119,7 +119,7 @@ export default function HomePage() {
             </ul>
           </div>
           <div>
-            <p style={{ margin: "0 0 6px", fontWeight: 600 }}>Data</p>
+            <h3 style={{ margin: "0 0 6px", fontWeight: 600, fontSize: 14 }}>Data</h3>
             <ul style={{ margin: 0, paddingLeft: 18, lineHeight: 2 }}>
               <li><Link href="/datasets">Download data</Link></li>
               <li><Link href="/methodology">Methodology</Link></li>
@@ -128,7 +128,7 @@ export default function HomePage() {
             </ul>
           </div>
           <div>
-            <p style={{ margin: "0 0 6px", fontWeight: 600 }}>Tools</p>
+            <h3 style={{ margin: "0 0 6px", fontWeight: 600, fontSize: 14 }}>Tools</h3>
             <ul style={{ margin: 0, paddingLeft: 18, lineHeight: 2 }}>
               <li><Link href="/electricity-hubs">Explore hubs</Link></li>
               <li><Link href="/electricity-cost-comparison">State comparisons</Link></li>

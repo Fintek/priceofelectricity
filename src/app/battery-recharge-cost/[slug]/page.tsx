@@ -266,13 +266,13 @@ export default async function BatteryRechargeCostStatePage({
               >
                 <thead>
                   <tr>
-                    <th style={{ textAlign: "left", padding: "12px 16px", borderBottom: "2px solid var(--color-border, #e5e7eb)" }}>
+                    <th scope="col" style={{ textAlign: "left", padding: "12px 16px", borderBottom: "2px solid var(--color-border, #e5e7eb)" }}>
                       Battery size
                     </th>
-                    <th style={{ textAlign: "right", padding: "12px 16px", borderBottom: "2px solid var(--color-border, #e5e7eb)" }}>
+                    <th scope="col" style={{ textAlign: "right", padding: "12px 16px", borderBottom: "2px solid var(--color-border, #e5e7eb)" }}>
                       Baseline recharge cost
                     </th>
-                    <th style={{ textAlign: "right", padding: "12px 16px", borderBottom: "2px solid var(--color-border, #e5e7eb)" }}>
+                    <th scope="col" style={{ textAlign: "right", padding: "12px 16px", borderBottom: "2px solid var(--color-border, #e5e7eb)" }}>
                       Recharge cost with 10% charging losses
                     </th>
                   </tr>

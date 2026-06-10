@@ -143,14 +143,14 @@ export default function AnnualReportPage() {
         <table style={{ width: "100%", borderCollapse: "collapse" }}>
           <thead>
             <tr style={{ borderBottom: "2px solid var(--color-border)" }}>
-              <th style={{ textAlign: "left", padding: "8px 4px" }}>State</th>
-              <th style={{ textAlign: "right", padding: "8px 4px" }}>
+              <th scope="col" style={{ textAlign: "left", padding: "8px 4px" }}>State</th>
+              <th scope="col" style={{ textAlign: "right", padding: "8px 4px" }}>
                 Rate (¢/kWh)
               </th>
-              <th style={{ textAlign: "right", padding: "8px 4px" }}>
+              <th scope="col" style={{ textAlign: "right", padding: "8px 4px" }}>
                 Value Score
               </th>
-              <th style={{ textAlign: "left", padding: "8px 4px" }}>
+              <th scope="col" style={{ textAlign: "left", padding: "8px 4px" }}>
                 Affordability
               </th>
             </tr>
@@ -188,14 +188,14 @@ export default function AnnualReportPage() {
         <table style={{ width: "100%", borderCollapse: "collapse" }}>
           <thead>
             <tr style={{ borderBottom: "2px solid var(--color-border)" }}>
-              <th style={{ textAlign: "left", padding: "8px 4px" }}>State</th>
-              <th style={{ textAlign: "right", padding: "8px 4px" }}>
+              <th scope="col" style={{ textAlign: "left", padding: "8px 4px" }}>State</th>
+              <th scope="col" style={{ textAlign: "right", padding: "8px 4px" }}>
                 Rate (¢/kWh)
               </th>
-              <th style={{ textAlign: "right", padding: "8px 4px" }}>
+              <th scope="col" style={{ textAlign: "right", padding: "8px 4px" }}>
                 Value Score
               </th>
-              <th style={{ textAlign: "left", padding: "8px 4px" }}>
+              <th scope="col" style={{ textAlign: "left", padding: "8px 4px" }}>
                 Affordability
               </th>
             </tr>

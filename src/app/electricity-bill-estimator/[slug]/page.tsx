@@ -199,7 +199,7 @@ export default async function ElectricityBillEstimatorStatePage({
               <thead>
                 <tr>
                   {["Profile", "Monthly usage", "Monthly estimate", "Annual estimate", "Profile scenario"].map((label) => (
-                    <th key={label}>{label}</th>
+                    <th scope="col" key={label}>{label}</th>
                   ))}
                 </tr>
               </thead>

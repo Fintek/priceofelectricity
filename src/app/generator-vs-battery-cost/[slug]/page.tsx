@@ -264,10 +264,10 @@ export default async function GeneratorVsBatteryCostStatePage({
               >
                 <thead>
                   <tr>
-                    <th style={{ textAlign: "left", padding: "12px 16px", borderBottom: "2px solid var(--color-border, #e5e7eb)" }}>
+                    <th scope="col" style={{ textAlign: "left", padding: "12px 16px", borderBottom: "2px solid var(--color-border, #e5e7eb)" }}>
                       Scenario
                     </th>
-                    <th style={{ textAlign: "right", padding: "12px 16px", borderBottom: "2px solid var(--color-border, #e5e7eb)" }}>
+                    <th scope="col" style={{ textAlign: "right", padding: "12px 16px", borderBottom: "2px solid var(--color-border, #e5e7eb)" }}>
                       Cost
                     </th>
                   </tr>

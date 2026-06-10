@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 
 export type ElectricityCostNationalCalculatorState = {
   slug: string;
@@ -26,6 +26,7 @@ export default function ElectricityCostNationalCalculator({
 }) {
   const [slug, setSlug] = useState("");
   const [kwhInput, setKwhInput] = useState("900");
+  const [announced, setAnnounced] = useState("");
 
   const selected = slug ? states.find((s) => s.slug === slug) : undefined;
   const rate = selected?.rateCentsPerKwh ?? null;
@@ -39,6 +40,21 @@ export default function ElectricityCostNationalCalculator({
     if (!Number.isFinite(kwh) || kwh < 0) return null;
     return (kwh * rate) / 100;
   }, [kwhInput, rate, hasState]);
+
+  const statusText = useMemo(() => {
+    if (!hasState) {
+      return "Choose a state and enter monthly kWh to estimate your energy charge.";
+    }
+    if (estimateDollars == null) {
+      return `Enter monthly usage for ${selected?.name ?? "selected state"} to estimate energy charge.`;
+    }
+    return `Estimated monthly energy charge for ${selected?.name ?? "selected state"}: $${estimateDollars.toFixed(2)}. Rate applied: ${formatRateCents(rate)}.`;
+  }, [estimateDollars, hasState, rate, selected?.name]);
+
+  useEffect(() => {
+    const timer = window.setTimeout(() => setAnnounced(statusText), 500);
+    return () => window.clearTimeout(timer);
+  }, [statusText]);
 
   const selectId = "electricity-cost-national-state";
   const kwhId = "electricity-cost-national-kwh";
@@ -75,7 +91,7 @@ export default function ElectricityCostNationalCalculator({
               width: "100%",
               maxWidth: 360,
               padding: "var(--space-2) var(--space-3)",
-              border: "1px solid var(--color-border)",
+              border: "1px solid var(--color-border-input)",
               borderRadius: 6,
               fontSize: "var(--font-size-base)",
               backgroundColor: "var(--color-surface, #fff)",
@@ -105,13 +121,17 @@ export default function ElectricityCostNationalCalculator({
               padding: "var(--space-2) var(--space-3)",
               width: "100%",
               maxWidth: 200,
-              border: "1px solid var(--color-border)",
+              border: "1px solid var(--color-border-input)",
               borderRadius: 6,
               fontSize: "var(--font-size-base)",
             }}
           />
         </div>
       </div>
+
+      <span className="sr-only" role="status">
+        {announced}
+      </span>
 
       {!hasState ? (
         <p className="muted" style={{ marginTop: "var(--space-4)", marginBottom: 0, fontSize: 15, lineHeight: 1.6 }}>

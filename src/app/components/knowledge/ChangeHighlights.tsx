@@ -39,16 +39,16 @@ export default function ChangeHighlights({ changeSummary, data }: ChangeHighligh
       <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 14 }}>
         <thead>
           <tr>
-            <th style={{ textAlign: "left", padding: "8px 12px", borderBottom: "1px solid #ddd" }}>
+            <th scope="col" style={{ textAlign: "left", padding: "8px 12px", borderBottom: "1px solid #ddd" }}>
               {t("table.field")}
             </th>
-            <th style={{ textAlign: "right", padding: "8px 12px", borderBottom: "1px solid #ddd" }}>
+            <th scope="col" style={{ textAlign: "right", padding: "8px 12px", borderBottom: "1px solid #ddd" }}>
               {t("table.previous")}
             </th>
-            <th style={{ textAlign: "right", padding: "8px 12px", borderBottom: "1px solid #ddd" }}>
+            <th scope="col" style={{ textAlign: "right", padding: "8px 12px", borderBottom: "1px solid #ddd" }}>
               {t("table.current")}
             </th>
-            <th style={{ textAlign: "right", padding: "8px 12px", borderBottom: "1px solid #ddd" }}>
+            <th scope="col" style={{ textAlign: "right", padding: "8px 12px", borderBottom: "1px solid #ddd" }}>
               Δ
             </th>
           </tr>

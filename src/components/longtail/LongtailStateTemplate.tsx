@@ -138,8 +138,8 @@ export default function LongtailStateTemplate({
               <table className="data-table">
                 <thead>
                   <tr>
-                    <th>Metric</th>
-                    <th>Value</th>
+                    <th scope="col">Metric</th>
+                    <th scope="col">Value</th>
                   </tr>
                 </thead>
                 <tbody>

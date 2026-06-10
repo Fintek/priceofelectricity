@@ -88,10 +88,10 @@ export default async function ComparePairPage({
         <table style={{ width: "100%", borderCollapse: "collapse" }}>
           <thead>
             <tr>
-              <th style={{ textAlign: "left", padding: "8px 12px", borderBottom: "1px solid var(--color-border)" }}>
+              <th scope="col" style={{ textAlign: "left", padding: "8px 12px", borderBottom: "1px solid var(--color-border)" }}>
                 State
               </th>
-              <th style={{ textAlign: "right", padding: "8px 12px", borderBottom: "1px solid var(--color-border)" }}>
+              <th scope="col" style={{ textAlign: "right", padding: "8px 12px", borderBottom: "1px solid var(--color-border)" }}>
                 Electricity rate
               </th>
             </tr>
