@@ -255,9 +255,9 @@ export default async function ApplianceCostToRunPage({
             <table className="data-table">
               <thead>
                 <tr>
-                  <th>Time period</th>
-                  <th>Energy use</th>
-                  <th>Cost</th>
+                  <th scope="col">Time period</th>
+                  <th scope="col">Energy use</th>
+                  <th scope="col">Cost</th>
                 </tr>
               </thead>
               <tbody>
@@ -338,7 +338,7 @@ export default async function ApplianceCostToRunPage({
                 <thead>
                   <tr>
                     {["City", "City rate", "Monthly estimate", "Yearly estimate", "More detail"].map((label) => (
-                      <th key={label}>{label}</th>
+                      <th scope="col" key={label}>{label}</th>
                     ))}
                   </tr>
                 </thead>

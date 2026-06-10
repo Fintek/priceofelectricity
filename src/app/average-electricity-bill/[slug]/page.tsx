@@ -166,7 +166,7 @@ export default async function AverageElectricityBillStatePage({
               <thead>
                 <tr>
                   {["Monthly usage", "Estimated cost", "Canonical page"].map((label) => (
-                    <th key={label}>{label}</th>
+                    <th scope="col" key={label}>{label}</th>
                   ))}
                 </tr>
               </thead>

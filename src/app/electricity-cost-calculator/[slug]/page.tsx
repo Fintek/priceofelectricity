@@ -163,7 +163,7 @@ export default async function ElectricityCostCalculatorStatePage({
                 <tr>
                   {["Monthly usage", "Estimated monthly cost", "Estimated annual cost", "Canonical usage page"].map(
                     (label) => (
-                      <th key={label}>{label}</th>
+                      <th scope="col" key={label}>{label}</th>
                     ),
                   )}
                 </tr>

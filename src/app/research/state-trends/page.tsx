@@ -130,22 +130,22 @@ export default function StateTrendsPage() {
             <table style={{ width: "100%", borderCollapse: "collapse" }}>
               <thead>
                 <tr style={{ borderBottom: "2px solid var(--color-border)" }}>
-                  <th style={{ textAlign: "left", padding: "8px 4px" }}>
+                  <th scope="col" style={{ textAlign: "left", padding: "8px 4px" }}>
                     State
                   </th>
-                  <th style={{ textAlign: "right", padding: "8px 4px" }}>
+                  <th scope="col" style={{ textAlign: "right", padding: "8px 4px" }}>
                     First (¢)
                   </th>
-                  <th style={{ textAlign: "right", padding: "8px 4px" }}>
+                  <th scope="col" style={{ textAlign: "right", padding: "8px 4px" }}>
                     Latest (¢)
                   </th>
-                  <th style={{ textAlign: "right", padding: "8px 4px" }}>
+                  <th scope="col" style={{ textAlign: "right", padding: "8px 4px" }}>
                     Change (¢)
                   </th>
-                  <th style={{ textAlign: "right", padding: "8px 4px" }}>
+                  <th scope="col" style={{ textAlign: "right", padding: "8px 4px" }}>
                     Change %
                   </th>
-                  <th style={{ textAlign: "center", padding: "8px 4px" }}>
+                  <th scope="col" style={{ textAlign: "center", padding: "8px 4px" }}>
                     Trend
                   </th>
                 </tr>

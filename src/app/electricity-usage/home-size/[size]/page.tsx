@@ -118,7 +118,7 @@ export default async function HomeSizeUsagePage({
               <thead>
                 <tr>
                   {["Profile", "Monthly usage", "Estimated monthly cost", "Estimated annual cost"].map((label) => (
-                    <th key={label} style={{ textAlign: "left", padding: 10, borderBottom: "1px solid var(--color-border, #e5e7eb)", backgroundColor: "var(--color-surface-alt, #f9fafb)" }}>
+                    <th scope="col" key={label} style={{ textAlign: "left", padding: 10, borderBottom: "1px solid var(--color-border, #e5e7eb)", backgroundColor: "var(--color-surface-alt, #f9fafb)" }}>
                       {label}
                     </th>
                   ))}

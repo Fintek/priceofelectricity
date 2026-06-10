@@ -193,7 +193,7 @@ export default async function AverageElectricityBillIndexPage() {
               <thead>
                 <tr>
                   {["Rank", "State", "Estimated monthly bill", "Average rate"].map((label) => (
-                    <th
+                    <th scope="col"
                       key={label}
                       style={{
                         textAlign: "left",

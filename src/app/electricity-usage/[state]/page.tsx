@@ -128,7 +128,7 @@ export default async function ElectricityUsageStatePage({
                 <tr>
                   {["Monthly usage", "Estimated monthly cost", "Estimated annual cost", "Canonical cost page"].map(
                     (label) => (
-                      <th key={label}>{label}</th>
+                      <th scope="col" key={label}>{label}</th>
                     ),
                   )}
                 </tr>

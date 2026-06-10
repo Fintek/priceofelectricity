@@ -149,25 +149,25 @@ export default function PriceVolatilityPage() {
             <table style={{ width: "100%", borderCollapse: "collapse" }}>
               <thead>
                 <tr style={{ borderBottom: "2px solid var(--color-border)" }}>
-                  <th style={{ textAlign: "left", padding: "8px 4px" }}>
+                  <th scope="col" style={{ textAlign: "left", padding: "8px 4px" }}>
                     State
                   </th>
-                  <th style={{ textAlign: "right", padding: "8px 4px" }}>
+                  <th scope="col" style={{ textAlign: "right", padding: "8px 4px" }}>
                     Mean (¢)
                   </th>
-                  <th style={{ textAlign: "right", padding: "8px 4px" }}>
+                  <th scope="col" style={{ textAlign: "right", padding: "8px 4px" }}>
                     Std Dev (¢)
                   </th>
-                  <th style={{ textAlign: "right", padding: "8px 4px" }}>
+                  <th scope="col" style={{ textAlign: "right", padding: "8px 4px" }}>
                     Min (¢)
                   </th>
-                  <th style={{ textAlign: "right", padding: "8px 4px" }}>
+                  <th scope="col" style={{ textAlign: "right", padding: "8px 4px" }}>
                     Max (¢)
                   </th>
-                  <th style={{ textAlign: "right", padding: "8px 4px" }}>
+                  <th scope="col" style={{ textAlign: "right", padding: "8px 4px" }}>
                     Range (¢)
                   </th>
-                  <th style={{ textAlign: "right", padding: "8px 4px" }}>
+                  <th scope="col" style={{ textAlign: "right", padding: "8px 4px" }}>
                     Months
                   </th>
                 </tr>

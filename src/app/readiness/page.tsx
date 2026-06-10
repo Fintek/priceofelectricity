@@ -141,9 +141,9 @@ export default async function ReadinessPage() {
                 textAlign: "left",
               }}
             >
-              <th style={{ padding: "8px 12px", width: 40 }}></th>
-              <th style={{ padding: "8px 12px" }}>Check</th>
-              <th style={{ padding: "8px 12px" }}>Details</th>
+              <th scope="col" style={{ padding: "8px 12px", width: 40 }}></th>
+              <th scope="col" style={{ padding: "8px 12px" }}>Check</th>
+              <th scope="col" style={{ padding: "8px 12px" }}>Details</th>
             </tr>
           </thead>
           <tbody>

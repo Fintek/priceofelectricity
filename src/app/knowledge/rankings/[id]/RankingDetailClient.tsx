@@ -192,7 +192,7 @@ export default function RankingDetailClient({
           <table style={{ width: "100%", borderCollapse: "collapse" }}>
             <thead>
               <tr>
-                <th
+                <th scope="col"
                   style={{
                     textAlign: "left",
                     padding: "8px 12px",
@@ -201,7 +201,7 @@ export default function RankingDetailClient({
                 >
                   Rank
                 </th>
-                <th
+                <th scope="col"
                   style={{
                     textAlign: "left",
                     padding: "8px 12px",
@@ -212,7 +212,7 @@ export default function RankingDetailClient({
                 </th>
                 {pageId === "price-trend" && (
                   <>
-                    <th
+                    <th scope="col"
                       style={{
                         textAlign: "right",
                         padding: "8px 12px",
@@ -221,7 +221,7 @@ export default function RankingDetailClient({
                     >
                       Start (¢/kWh)
                     </th>
-                    <th
+                    <th scope="col"
                       style={{
                         textAlign: "right",
                         padding: "8px 12px",
@@ -230,7 +230,7 @@ export default function RankingDetailClient({
                     >
                       End (¢/kWh)
                     </th>
-                    <th
+                    <th scope="col"
                       style={{
                         textAlign: "right",
                         padding: "8px 12px",
@@ -243,7 +243,7 @@ export default function RankingDetailClient({
                 )}
                 {pageId === "momentum-signal" && (
                   <>
-                    <th
+                    <th scope="col"
                       style={{
                         textAlign: "left",
                         padding: "8px 12px",
@@ -252,7 +252,7 @@ export default function RankingDetailClient({
                     >
                       Signal
                     </th>
-                    <th
+                    <th scope="col"
                       style={{
                         textAlign: "right",
                         padding: "8px 12px",
@@ -261,7 +261,7 @@ export default function RankingDetailClient({
                     >
                       12‑mo change (%)
                     </th>
-                    <th
+                    <th scope="col"
                       style={{
                         textAlign: "right",
                         padding: "8px 12px",
@@ -272,7 +272,7 @@ export default function RankingDetailClient({
                     </th>
                   </>
                 )}
-                <th
+                <th scope="col"
                   style={{
                     textAlign: "right",
                     padding: "8px 12px",

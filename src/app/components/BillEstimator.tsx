@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 
 export default function BillEstimator({
   rateCentsPerKwh,
@@ -10,7 +10,9 @@ export default function BillEstimator({
   stateSlug: string;
 }) {
   const [kwhInput, setKwhInput] = useState("900");
+  const [announced, setAnnounced] = useState("");
   const hasTrackedEstimatorUse = useRef(false);
+  const kwhInputId = `bill-estimator-kwh-${stateSlug}`;
 
   /** Parsed only for display; input stays string so clearing/editing never coerces to 0 mid-keystroke. */
   const estimateDollars = useMemo(() => {
@@ -20,6 +22,16 @@ export default function BillEstimator({
     if (!Number.isFinite(kwh) || kwh < 0) return null;
     return (kwh * rateCentsPerKwh) / 100;
   }, [kwhInput, rateCentsPerKwh]);
+
+  const statusText =
+    estimateDollars == null
+      ? "Enter monthly usage to estimate energy charge."
+      : `Estimated energy charge: $${estimateDollars.toFixed(2)}.`;
+
+  useEffect(() => {
+    const timer = window.setTimeout(() => setAnnounced(statusText), 500);
+    return () => window.clearTimeout(timer);
+  }, [statusText]);
 
   const handleKwhChange = (value: string) => {
     if (!hasTrackedEstimatorUse.current) {
@@ -46,11 +58,12 @@ export default function BillEstimator({
         Quick bill estimate
       </h2>
 
-      <label style={{ display: "block", marginBottom: "var(--space-2)" }}>
+      <label htmlFor={kwhInputId} style={{ display: "block", marginBottom: "var(--space-2)" }}>
         Monthly usage (kWh):
       </label>
 
       <input
+        id={kwhInputId}
         type="number"
         value={kwhInput}
         min={0}
@@ -59,7 +72,7 @@ export default function BillEstimator({
         style={{
           padding: "var(--space-2) var(--space-3)",
           width: 200,
-          border: "1px solid var(--color-border)",
+          border: "1px solid var(--color-border-input)",
           borderRadius: 6,
           fontSize: "var(--font-size-base)",
         }}
@@ -69,6 +82,10 @@ export default function BillEstimator({
         Est. energy charge:{" "}
         <b>{estimateDollars == null ? "—" : `$${estimateDollars.toFixed(2)}`}</b>
       </p>
+
+      <span className="sr-only" role="status">
+        {announced}
+      </span>
 
       <p className="muted" style={{ marginTop: "var(--space-2)" }}>
         Note: this is energy-only (doesn’t include delivery fees, taxes, etc.).

@@ -18,6 +18,7 @@
   --color-text: #171717;
   --color-muted: #666666;
   --color-border: #dddddd;
+  --color-border-input: #8c8c8c;
   --color-surface-alt: #fafafa;
   --focus-ring: #0a66ff;
   /* Rate tier accents (used with text labels — not sole indicator) */
@@ -42,6 +43,16 @@ html,
 body {
   margin: 0;
   padding: 0;
+}
+
+input,
+select,
+textarea {
+  border-color: var(--color-border-input);
+}
+
+[id] {
+  scroll-margin-top: 72px;
 }
 
 body {
@@ -237,7 +248,7 @@ h3 {
   max-width: 40vw;
   padding: 8px 10px 8px 32px;
   font-size: var(--font-size-sm);
-  border: 1px solid var(--color-border);
+  border: 1px solid var(--color-border-input);
   border-radius: 6px;
   background: var(--color-surface-alt);
   color: var(--color-text);
@@ -252,7 +263,7 @@ h3 {
 .header-search-submit {
   padding: 7px 12px;
   font-size: var(--font-size-sm);
-  border: 1px solid var(--color-border);
+  border: 1px solid var(--color-border-input);
   border-radius: 6px;
   background: var(--color-bg);
   color: var(--color-text);

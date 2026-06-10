@@ -99,14 +99,14 @@ export default function DataHistoryComparePage({
           <table>
             <thead>
               <tr>
-                <th>State</th>
-                <th style={{ textAlign: "right" }}>
+                <th scope="col">State</th>
+                <th scope="col" style={{ textAlign: "right" }}>
                   {v1} (¢/kWh)
                 </th>
-                <th style={{ textAlign: "right" }}>
+                <th scope="col" style={{ textAlign: "right" }}>
                   {v2} (¢/kWh)
                 </th>
-                <th style={{ textAlign: "right" }}>Delta</th>
+                <th scope="col" style={{ textAlign: "right" }}>Delta</th>
               </tr>
             </thead>
             <tbody>

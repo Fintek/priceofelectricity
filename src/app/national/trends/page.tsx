@@ -104,18 +104,18 @@ export default function NationalTrendsPage() {
                 >
                   <thead>
                     <tr style={{ borderBottom: "2px solid #ddd" }}>
-                      <th
+                      <th scope="col"
                         style={{ textAlign: "left", padding: "8px 12px 8px 0" }}
                       >
                         State
                       </th>
-                      <th style={{ textAlign: "right", padding: "8px 12px" }}>
+                      <th scope="col" style={{ textAlign: "right", padding: "8px 12px" }}>
                         Old rate
                       </th>
-                      <th style={{ textAlign: "right", padding: "8px 12px" }}>
+                      <th scope="col" style={{ textAlign: "right", padding: "8px 12px" }}>
                         New rate
                       </th>
-                      <th
+                      <th scope="col"
                         style={{ textAlign: "right", padding: "8px 0 8px 12px" }}
                       >
                         Change
@@ -179,18 +179,18 @@ export default function NationalTrendsPage() {
                 >
                   <thead>
                     <tr style={{ borderBottom: "2px solid #ddd" }}>
-                      <th
+                      <th scope="col"
                         style={{ textAlign: "left", padding: "8px 12px 8px 0" }}
                       >
                         State
                       </th>
-                      <th style={{ textAlign: "right", padding: "8px 12px" }}>
+                      <th scope="col" style={{ textAlign: "right", padding: "8px 12px" }}>
                         Old rate
                       </th>
-                      <th style={{ textAlign: "right", padding: "8px 12px" }}>
+                      <th scope="col" style={{ textAlign: "right", padding: "8px 12px" }}>
                         New rate
                       </th>
-                      <th
+                      <th scope="col"
                         style={{ textAlign: "right", padding: "8px 0 8px 12px" }}
                       >
                         Change

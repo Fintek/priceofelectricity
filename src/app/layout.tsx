@@ -144,14 +144,15 @@ export default function RootLayout({
           )}
         />
 
-        <div id="main" style={{ flex: "1 0 auto", minHeight: "calc(100vh - 140px)" }}>
+        <div id="main" tabIndex={-1} style={{ flex: "1 0 auto", minHeight: "calc(100vh - 140px)" }}>
           {children}
         </div>
 
         <footer className="site-footer">
+          <h2 className="sr-only">Site footer</h2>
           <div className="container footer-grid">
             <div className="footer-group">
-              <p className="footer-group-title">Explore</p>
+              <h3 className="footer-group-title">Explore</h3>
               <Link href="/electricity-hubs">Explore hubs</Link>
               <Link href="/electricity-cost-comparison">State comparisons</Link>
               <Link href="/energy-comparison">Energy comparison</Link>
@@ -161,7 +162,7 @@ export default function RootLayout({
               <Link href="/electricity-insights">Insights</Link>
             </div>
             <div className="footer-group">
-              <p className="footer-group-title">Data &amp; methodology</p>
+              <h3 className="footer-group-title">Data &amp; methodology</h3>
               <Link href="/datasets">Download data</Link>
               <Link href="/methodology">Methodology</Link>
               <Link href="/knowledge">Knowledge</Link>
@@ -170,7 +171,7 @@ export default function RootLayout({
               <Link href="/data-history">Historical data</Link>
             </div>
             <div className="footer-group">
-              <p className="footer-group-title">About</p>
+              <h3 className="footer-group-title">About</h3>
               <Link href="/about">About &amp; trust</Link>
               <Link href="/contact">Contact</Link>
               <Link href="/advertise">Advertise with us</Link>
@@ -180,7 +181,7 @@ export default function RootLayout({
               <Link href="/site-map">Site map</Link>
             </div>
             <div className="footer-group">
-              <p className="footer-group-title">Legal</p>
+              <h3 className="footer-group-title">Legal</h3>
               <Link href="/data-policy">Data Policy</Link>
               <Link href="/disclosures">Disclosures</Link>
               <Link href="/licensing">Licensing</Link>
@@ -189,7 +190,7 @@ export default function RootLayout({
               <Link href="/offers">Offers</Link>
             </div>
             <div className="footer-group">
-              <p className="footer-group-title">Follow</p>
+              <h3 className="footer-group-title">Follow</h3>
               {SOCIAL_LINKS.map((link) => (
                 <a
                   key={link.name}

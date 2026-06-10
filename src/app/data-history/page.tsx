@@ -57,10 +57,10 @@ export default function DataHistoryPage() {
         <table>
           <thead>
             <tr>
-              <th>Version</th>
-              <th>Released</th>
-              <th>States</th>
-              <th />
+              <th scope="col">Version</th>
+              <th scope="col">Released</th>
+              <th scope="col">States</th>
+              <th scope="col" />
             </tr>
           </thead>
           <tbody>

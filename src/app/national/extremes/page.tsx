@@ -73,13 +73,13 @@ export default function NationalExtremesPage() {
           >
             <thead>
               <tr style={{ borderBottom: "2px solid #ddd" }}>
-                <th style={{ textAlign: "left", padding: "8px 12px 8px 0" }}>
+                <th scope="col" style={{ textAlign: "left", padding: "8px 12px 8px 0" }}>
                   State
                 </th>
-                <th style={{ textAlign: "right", padding: "8px 12px" }}>
+                <th scope="col" style={{ textAlign: "right", padding: "8px 12px" }}>
                   Rate (¢/kWh)
                 </th>
-                <th style={{ textAlign: "left", padding: "8px 0 8px 12px" }}>
+                <th scope="col" style={{ textAlign: "left", padding: "8px 0 8px 12px" }}>
                   Affordability
                 </th>
               </tr>
@@ -119,13 +119,13 @@ export default function NationalExtremesPage() {
           >
             <thead>
               <tr style={{ borderBottom: "2px solid #ddd" }}>
-                <th style={{ textAlign: "left", padding: "8px 12px 8px 0" }}>
+                <th scope="col" style={{ textAlign: "left", padding: "8px 12px 8px 0" }}>
                   State
                 </th>
-                <th style={{ textAlign: "right", padding: "8px 12px" }}>
+                <th scope="col" style={{ textAlign: "right", padding: "8px 12px" }}>
                   Rate (¢/kWh)
                 </th>
-                <th style={{ textAlign: "left", padding: "8px 0 8px 12px" }}>
+                <th scope="col" style={{ textAlign: "left", padding: "8px 0 8px 12px" }}>
                   Affordability
                 </th>
               </tr>
@@ -165,13 +165,13 @@ export default function NationalExtremesPage() {
           >
             <thead>
               <tr style={{ borderBottom: "2px solid #ddd" }}>
-                <th style={{ textAlign: "left", padding: "8px 12px 8px 0" }}>
+                <th scope="col" style={{ textAlign: "left", padding: "8px 12px 8px 0" }}>
                   State
                 </th>
-                <th style={{ textAlign: "right", padding: "8px 12px" }}>
+                <th scope="col" style={{ textAlign: "right", padding: "8px 12px" }}>
                   Rate (¢/kWh)
                 </th>
-                <th style={{ textAlign: "right", padding: "8px 0 8px 12px" }}>
+                <th scope="col" style={{ textAlign: "right", padding: "8px 0 8px 12px" }}>
                   Index
                 </th>
               </tr>
@@ -211,13 +211,13 @@ export default function NationalExtremesPage() {
           >
             <thead>
               <tr style={{ borderBottom: "2px solid #ddd" }}>
-                <th style={{ textAlign: "left", padding: "8px 12px 8px 0" }}>
+                <th scope="col" style={{ textAlign: "left", padding: "8px 12px 8px 0" }}>
                   State
                 </th>
-                <th style={{ textAlign: "right", padding: "8px 12px" }}>
+                <th scope="col" style={{ textAlign: "right", padding: "8px 12px" }}>
                   Rate (¢/kWh)
                 </th>
-                <th style={{ textAlign: "right", padding: "8px 0 8px 12px" }}>
+                <th scope="col" style={{ textAlign: "right", padding: "8px 0 8px 12px" }}>
                   Index
                 </th>
               </tr>

@@ -92,9 +92,9 @@ export default async function SnapshotVersionPage({
       <table>
         <thead>
           <tr>
-            <th>State</th>
-            <th style={{ textAlign: "right" }}>Rate (¢/kWh)</th>
-            <th>Data period</th>
+            <th scope="col">State</th>
+            <th scope="col" style={{ textAlign: "right" }}>Rate (¢/kWh)</th>
+            <th scope="col">Data period</th>
           </tr>
         </thead>
         <tbody>

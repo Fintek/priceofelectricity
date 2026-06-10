@@ -203,7 +203,7 @@ export default async function StateApplianceCalculatorPage({
                 <tr>
                   {["Scenario", "Hours/day", "Annual energy", `${state.name} monthly`, "U.S. monthly", `${state.name} yearly`].map(
                     (label) => (
-                      <th key={label}>{label}</th>
+                      <th scope="col" key={label}>{label}</th>
                     ),
                   )}
                 </tr>
