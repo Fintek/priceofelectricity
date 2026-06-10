@@ -27,7 +27,12 @@ import { HOME_SIZE_SCENARIOS } from "@/lib/longtail/usageIntelligence";
 import {
   assertNoDuplicateSegmentUrls,
   SITEMAP_SEGMENT_IDS,
+  getPathSegments,
+  getScopedStateSlug,
   groupSitemapEntriesBySegment,
+  isApplianceScopedPath,
+  isCityScopedPath,
+  isStateScopedPath,
   type SitemapSegmentId,
 } from "@/lib/seo/sitemapSegments";
 
@@ -75,9 +80,30 @@ function hasDeterministicStateLastModified(url: string): boolean {
   return false;
 }
 
+function hasDeterministicLastModScope(url: string): boolean {
+  const segments = getPathSegments(url);
+  return (
+    hasDeterministicStateLastModified(url) ||
+    isStateScopedPath(segments) ||
+    isCityScopedPath(segments) ||
+    isApplianceScopedPath(segments)
+  );
+}
+
 function stripVolatileLastModified(entries: MetadataRoute.Sitemap): MetadataRoute.Sitemap {
   return entries.map((entry) => {
-    if (!entry.lastModified || hasDeterministicStateLastModified(entry.url)) {
+    const segments = getPathSegments(entry.url);
+    const stateSlug = getScopedStateSlug(segments);
+    const deterministicDate =
+      stateSlug != null ? parseUpdatedDate(STATES[stateSlug]?.updated ?? "") : undefined;
+
+    if (deterministicDate && hasDeterministicLastModScope(entry.url)) {
+      return { ...entry, lastModified: deterministicDate };
+    }
+    if (hasDeterministicStateLastModified(entry.url) && entry.lastModified) {
+      return entry;
+    }
+    if (!entry.lastModified) {
       return entry;
     }
     const stableEntry = { ...entry };

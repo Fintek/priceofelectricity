@@ -6,7 +6,7 @@ export type SitemapSegmentId = (typeof SITEMAP_SEGMENT_IDS)[number];
 
 const STATE_SLUG_SET = new Set(Object.keys(STATES));
 
-function getPathSegments(url: string): string[] {
+export function getPathSegments(url: string): string[] {
   let pathname = url;
   try {
     pathname = new URL(url).pathname;
@@ -16,7 +16,7 @@ function getPathSegments(url: string): string[] {
   return pathname.replace(/^\/+|\/+$/g, "").split("/").filter(Boolean);
 }
 
-function isStateScopedPath(segments: string[]): boolean {
+export function isStateScopedPath(segments: string[]): boolean {
   if (segments.length === 0) return false;
   if (STATE_SLUG_SET.has(segments[0])) {
     if (segments.length === 1) return true;
@@ -36,18 +36,45 @@ function isStateScopedPath(segments: string[]): boolean {
   return false;
 }
 
-function isCityScopedPath(segments: string[]): boolean {
+export function isCityScopedPath(segments: string[]): boolean {
   if (segments.length === 3 && segments[0] === "electricity-cost" && STATE_SLUG_SET.has(segments[1])) return true;
   if (segments.length === 3 && segments[0] === "average-electricity-bill" && STATE_SLUG_SET.has(segments[1])) return true;
   if (segments.length === 4 && segments[0] === "cost-to-run" && STATE_SLUG_SET.has(segments[2])) return true;
   return false;
 }
 
-function isApplianceScopedPath(segments: string[]): boolean {
+export function isApplianceScopedPath(segments: string[]): boolean {
   if (segments.length === 3 && segments[0] === "cost-to-run" && STATE_SLUG_SET.has(segments[2])) return true;
   if (segments.length === 3 && segments[0] === "electricity-cost-calculator" && STATE_SLUG_SET.has(segments[1])) return true;
   if (segments.length === 3 && segments[0] === "electricity-usage" && segments[1] === "appliances") return true;
   return false;
+}
+
+/** Returns the state slug for state/city/appliance-scoped sitemap paths, if determinable. */
+export function getScopedStateSlug(segments: string[]): string | undefined {
+  if (segments.length === 0) return undefined;
+  if (STATE_SLUG_SET.has(segments[0]) && (segments.length === 1 || isStateScopedPath(segments))) {
+    return segments[0];
+  }
+  if (isCityScopedPath(segments)) {
+    if (segments[0] === "cost-to-run") return segments[2];
+    return segments[1];
+  }
+  if (isApplianceScopedPath(segments)) {
+    if (segments[0] === "cost-to-run") return segments[2];
+    if (segments[0] === "electricity-cost-calculator") return segments[1];
+    return undefined;
+  }
+  if (isStateScopedPath(segments)) {
+    if (segments.length >= 2 && STATE_SLUG_SET.has(segments[1])) return segments[1];
+    if (segments.length === 3 && segments[0] === "electricity-usage-cost" && STATE_SLUG_SET.has(segments[2])) {
+      return segments[2];
+    }
+    if (segments.length === 3 && segments[0] === "industry-electricity-cost" && STATE_SLUG_SET.has(segments[2])) {
+      return segments[2];
+    }
+  }
+  return undefined;
 }
 
 function isEstimatorScopedPath(segments: string[]): boolean {
