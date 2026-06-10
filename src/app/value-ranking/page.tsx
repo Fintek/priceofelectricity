@@ -4,6 +4,7 @@ import { STATES } from "@/data/states";
 import { computeAffordability } from "@/lib/affordability";
 import { computeValueScores } from "@/lib/valueScore";
 import { LAST_REVIEWED_DISPLAY, SITE_URL, UPDATE_CADENCE_TEXT } from "@/lib/site";
+import { buildMetadata } from "@/lib/seo/metadata";
 
 const BASE_URL = SITE_URL;
 export const dynamic = "force-static";
@@ -28,27 +29,13 @@ export async function generateMetadata({
   const { sort } = await searchParams;
   const isKnownSort = !sort || VALID_SORTS.has(sort);
 
-  return {
+  return buildMetadata({
     title: "Electricity Value Ranking by State | PriceOfElectricity.com",
     description:
       "Compare states by Electricity Value Score™ — a composite of price, affordability, and data freshness.",
-    alternates: { canonical: `${BASE_URL}/value-ranking` },
+    canonicalPath: "/value-ranking",
     ...(!isKnownSort && { robots: { index: false, follow: true } }),
-    openGraph: {
-      title: "Electricity Value Ranking by State | PriceOfElectricity.com",
-      description:
-        "Compare states by Electricity Value Score™ — a composite of price, affordability, and data freshness.",
-      url: `${BASE_URL}/value-ranking`,
-      siteName: "PriceOfElectricity.com",
-      type: "website",
-    },
-    twitter: {
-      card: "summary",
-      title: "Electricity Value Ranking by State | PriceOfElectricity.com",
-      description:
-        "Compare states by Electricity Value Score™ — a composite of price, affordability, and data freshness.",
-    },
-  };
+  });
 }
 
 export default async function ValueRankingPage({

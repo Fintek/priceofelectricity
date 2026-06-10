@@ -4,6 +4,7 @@ import { STATE_LIST } from "@/data/states";
 import { computeFreshness } from "@/lib/freshness";
 import EiaHomeTrustLine from "@/components/common/EiaHomeTrustLine";
 import { SITE_URL } from "@/lib/site";
+import { buildMetadata } from "@/lib/seo/metadata";
 import { getRelatedForTool } from "@/lib/related";
 import RelatedLinks from "@/app/components/RelatedLinks";
 
@@ -30,27 +31,13 @@ export async function generateMetadata({
   const { sort } = await searchParams;
   const isKnownSort = !sort || VALID_SORTS.has(sort);
 
-  return {
+  return buildMetadata({
     title: "Compare Electricity Prices by State (¢/kWh) | PriceOfElectricity.com",
     description:
       "Compare average residential electricity prices by state and estimate energy-only monthly bills.",
-    alternates: { canonical: `${BASE_URL}/compare` },
+    canonicalPath: "/compare",
     ...(!isKnownSort && { robots: { index: false, follow: true } }),
-    openGraph: {
-      title: "Compare Electricity Prices by State (¢/kWh) | PriceOfElectricity.com",
-      description:
-        "Compare average residential electricity prices by state and estimate energy-only monthly bills.",
-      url: `${BASE_URL}/compare`,
-      siteName: "PriceOfElectricity.com",
-      type: "website",
-    },
-    twitter: {
-      card: "summary",
-      title: "Compare Electricity Prices by State (¢/kWh) | PriceOfElectricity.com",
-      description:
-        "Compare average residential electricity prices by state and estimate energy-only monthly bills.",
-    },
-  };
+  });
 }
 
 export default async function ComparePage({

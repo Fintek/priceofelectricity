@@ -3,33 +3,22 @@ import Link from "next/link";
 import { readFile } from "node:fs/promises";
 import { join } from "node:path";
 import { SITE_URL } from "@/lib/site";
+import { buildMetadata } from "@/lib/seo/metadata";
 
 const BASE_URL = SITE_URL;
 
 export const dynamic = "force-static";
 export const revalidate = 86400;
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetadata({
   title: "Production Readiness | PriceOfElectricity.com",
   description:
     "Automated production readiness audit for PriceOfElectricity.com covering availability, SEO, security, and API contract checks.",
+  socialDescription:
+    "Automated production readiness audit for PriceOfElectricity.com.",
+  canonicalPath: "/readiness",
   robots: { index: false, follow: false },
-  alternates: { canonical: `${BASE_URL}/readiness` },
-  openGraph: {
-    title: "Production Readiness | PriceOfElectricity.com",
-    description:
-      "Automated production readiness audit for PriceOfElectricity.com.",
-    url: `${BASE_URL}/readiness`,
-    siteName: "PriceOfElectricity.com",
-    type: "website",
-  },
-  twitter: {
-    card: "summary",
-    title: "Production Readiness | PriceOfElectricity.com",
-    description:
-      "Automated production readiness audit for PriceOfElectricity.com.",
-  },
-};
+});
 
 type CheckResult = {
   name: string;

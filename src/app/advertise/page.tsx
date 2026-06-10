@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { SITE_URL } from "@/lib/site";
+import { buildMetadata } from "@/lib/seo/metadata";
 import AdvertiserInquiryForm from "./AdvertiserInquiryForm";
 
 const BASE_URL = SITE_URL;
@@ -8,28 +9,12 @@ const BASE_URL = SITE_URL;
 export const dynamic = "force-static";
 export const revalidate = 2592000;
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetadata({
   title: "Advertise with Us | PriceOfElectricity.com",
   description:
     "Reach people comparing residential electricity prices and bills. Inquire about partnerships and advertising on PriceOfElectricity.com.",
-  alternates: {
-    canonical: `${BASE_URL}/advertise`,
-  },
-  openGraph: {
-    title: "Advertise with Us | PriceOfElectricity.com",
-    description:
-      "Reach people comparing residential electricity prices and bills. Inquire about partnerships and advertising on PriceOfElectricity.com.",
-    url: `${BASE_URL}/advertise`,
-    siteName: "PriceOfElectricity.com",
-    type: "website",
-  },
-  twitter: {
-    card: "summary",
-    title: "Advertise with Us | PriceOfElectricity.com",
-    description:
-      "Reach people comparing residential electricity prices and bills. Inquire about partnerships and advertising on PriceOfElectricity.com.",
-  },
-};
+  canonicalPath: "/advertise",
+});
 
 export default function AdvertisePage() {
   const webPageStructuredData = {

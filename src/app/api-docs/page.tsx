@@ -1,32 +1,19 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { SITE_URL } from "@/lib/site";
+import { buildMetadata } from "@/lib/seo/metadata";
 
 const BASE_URL = SITE_URL;
 
 export const dynamic = "force-static";
 export const revalidate = 2592000;
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetadata({
   title: "API Documentation | PriceOfElectricity.com",
   description:
     "Public API documentation for PriceOfElectricity.com, including versioned v1 endpoints and legacy JSON feeds.",
-  alternates: { canonical: `${BASE_URL}/api-docs` },
-  openGraph: {
-    title: "API Documentation | PriceOfElectricity.com",
-    description:
-      "Public API documentation for PriceOfElectricity.com, including versioned v1 endpoints and legacy JSON feeds.",
-    url: `${BASE_URL}/api-docs`,
-    siteName: "PriceOfElectricity.com",
-    type: "website",
-  },
-  twitter: {
-    card: "summary",
-    title: "API Documentation | PriceOfElectricity.com",
-    description:
-      "Public API documentation for PriceOfElectricity.com, including versioned v1 endpoints and legacy JSON feeds.",
-  },
-};
+  canonicalPath: "/api-docs",
+});
 
 export default function ApiDocsPage() {
   const webPageStructuredData = {

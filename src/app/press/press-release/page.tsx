@@ -1,29 +1,16 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { SITE_URL } from "@/lib/site";
+import { buildMetadata } from "@/lib/seo/metadata";
 
 const BASE_URL = SITE_URL;
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetadata({
   title: "Press Release Template | Press | PriceOfElectricity.com",
   description:
     "Template press release for PriceOfElectricity.com coverage and announcements.",
-  alternates: { canonical: `${BASE_URL}/press/press-release` },
-  openGraph: {
-    title: "Press Release Template | Press | PriceOfElectricity.com",
-    description:
-      "Template press release for PriceOfElectricity.com coverage and announcements.",
-    url: `${BASE_URL}/press/press-release`,
-    siteName: "PriceOfElectricity.com",
-    type: "website",
-  },
-  twitter: {
-    card: "summary",
-    title: "Press Release Template | Press | PriceOfElectricity.com",
-    description:
-      "Template press release for PriceOfElectricity.com coverage and announcements.",
-  },
-};
+  canonicalPath: "/press/press-release",
+});
 
 export default function PressReleasePage() {
   return (

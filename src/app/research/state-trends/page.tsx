@@ -1,31 +1,19 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { SITE_URL } from "@/lib/site";
+import { buildMetadata } from "@/lib/seo/metadata";
 import { HISTORY } from "@/data/history";
 import { buildNormalizedState } from "@/lib/stateBuilder";
 
 const BASE_URL = SITE_URL;
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetadata({
   title: "State Electricity Price Trends | PriceOfElectricity.com",
   description:
     "Which U.S. states have rising or falling electricity prices? Trend analysis based on monthly rate history.",
-  alternates: { canonical: `${BASE_URL}/research/state-trends` },
-  openGraph: {
-    title: "State Electricity Price Trends | PriceOfElectricity.com",
-    description:
-      "Which U.S. states have rising or falling electricity prices?",
-    url: `${BASE_URL}/research/state-trends`,
-    siteName: "PriceOfElectricity.com",
-    type: "website",
-  },
-  twitter: {
-    card: "summary",
-    title: "State Electricity Price Trends | PriceOfElectricity.com",
-    description:
-      "Which U.S. states have rising or falling electricity prices?",
-  },
-};
+  socialDescription: "Which U.S. states have rising or falling electricity prices?",
+  canonicalPath: "/research/state-trends",
+});
 
 type TrendRow = {
   slug: string;

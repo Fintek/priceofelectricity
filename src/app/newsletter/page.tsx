@@ -3,30 +3,17 @@ import Link from "next/link";
 import NewsletterForm from "@/app/components/NewsletterForm";
 import { STATE_LIST } from "@/data/states";
 import { LAST_REVIEWED_DISPLAY, SITE_URL, UPDATE_CADENCE_TEXT } from "@/lib/site";
+import { buildMetadata } from "@/lib/seo/metadata";
 
 const BASE_URL = SITE_URL;
 export const dynamic = "force-static";
 export const revalidate = 2592000;
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetadata({
   title: "Electricity Price Updates Newsletter | PriceOfElectricity.com",
   description: "Get monthly electricity price updates by state and bill-saving tips.",
-  alternates: {
-    canonical: `${BASE_URL}/newsletter`,
-  },
-  openGraph: {
-    title: "Electricity Price Updates Newsletter | PriceOfElectricity.com",
-    description: "Get monthly electricity price updates by state and bill-saving tips.",
-    url: `${BASE_URL}/newsletter`,
-    siteName: "PriceOfElectricity.com",
-    type: "website",
-  },
-  twitter: {
-    card: "summary",
-    title: "Electricity Price Updates Newsletter | PriceOfElectricity.com",
-    description: "Get monthly electricity price updates by state and bill-saving tips.",
-  },
-};
+  canonicalPath: "/newsletter",
+});
 
 export default function NewsletterPage() {
   const webPageStructuredData = {

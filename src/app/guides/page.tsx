@@ -2,33 +2,18 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { GUIDES } from "@/data/guides";
 import { SITE_URL } from "@/lib/site";
+import { buildMetadata } from "@/lib/seo/metadata";
 
 const BASE_URL = SITE_URL;
 export const dynamic = "force-static";
 export const revalidate = 2592000;
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetadata({
   title: "Electricity Guides | PriceOfElectricity.com",
   description:
     "Educational guides on electricity bills, kWh, plan types, and state-level price drivers.",
-  alternates: {
-    canonical: `${BASE_URL}/guides`,
-  },
-  openGraph: {
-    title: "Electricity Guides | PriceOfElectricity.com",
-    description:
-      "Educational guides on electricity bills, kWh, plan types, and state-level price drivers.",
-    url: `${BASE_URL}/guides`,
-    siteName: "PriceOfElectricity.com",
-    type: "website",
-  },
-  twitter: {
-    card: "summary",
-    title: "Electricity Guides | PriceOfElectricity.com",
-    description:
-      "Educational guides on electricity bills, kWh, plan types, and state-level price drivers.",
-  },
-};
+  canonicalPath: "/guides",
+});
 
 export default function GuidesIndexPage() {
   const webPageStructuredData = {

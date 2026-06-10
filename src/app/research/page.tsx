@@ -1,29 +1,16 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { SITE_URL } from "@/lib/site";
+import { buildMetadata } from "@/lib/seo/metadata";
 
 const BASE_URL = SITE_URL;
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetadata({
   title: "Electricity Price Research & Insights | PriceOfElectricity.com",
   description:
     "Data-driven research on U.S. electricity prices including annual reports, state trends, and price volatility analysis.",
-  alternates: { canonical: `${BASE_URL}/research` },
-  openGraph: {
-    title: "Electricity Price Research & Insights | PriceOfElectricity.com",
-    description:
-      "Data-driven research on U.S. electricity prices including annual reports, state trends, and price volatility analysis.",
-    url: `${BASE_URL}/research`,
-    siteName: "PriceOfElectricity.com",
-    type: "website",
-  },
-  twitter: {
-    card: "summary",
-    title: "Electricity Price Research & Insights | PriceOfElectricity.com",
-    description:
-      "Data-driven research on U.S. electricity prices including annual reports, state trends, and price volatility analysis.",
-  },
-};
+  canonicalPath: "/research",
+});
 
 export default function ResearchPage() {
   const webPageStructuredData = {

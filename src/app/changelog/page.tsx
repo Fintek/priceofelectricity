@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { SITE_URL } from "@/lib/site";
+import { buildMetadata } from "@/lib/seo/metadata";
 
 const BASE_URL = SITE_URL;
 const CHANGELOG_META_DESCRIPTION =
@@ -59,25 +60,11 @@ const CHANGELOG_ENTRIES = [
   },
 ];
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetadata({
   title: "Changelog | PriceOfElectricity.com",
   description: CHANGELOG_META_DESCRIPTION,
-  alternates: {
-    canonical: `${BASE_URL}/changelog`,
-  },
-  openGraph: {
-    title: "Changelog | PriceOfElectricity.com",
-    description: CHANGELOG_META_DESCRIPTION,
-    url: `${BASE_URL}/changelog`,
-    siteName: "PriceOfElectricity.com",
-    type: "website",
-  },
-  twitter: {
-    card: "summary",
-    title: "Changelog | PriceOfElectricity.com",
-    description: CHANGELOG_META_DESCRIPTION,
-  },
-};
+  canonicalPath: "/changelog",
+});
 
 export default function ChangelogPage() {
   const webPageStructuredData = {

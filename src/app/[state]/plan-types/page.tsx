@@ -6,6 +6,7 @@ import { normalizeSlug } from "@/data/slug";
 import { isValidStateSlug } from "@/lib/slugGuard";
 import { PLAN_TYPES } from "@/data/planTypes";
 import { SITE_URL } from "@/lib/site";
+import { buildMetadata } from "@/lib/seo/metadata";
 
 const BASE_URL = SITE_URL;
 export const dynamicParams = true;
@@ -28,35 +29,22 @@ export async function generateMetadata({
   const { state } = await params;
   const resolved = resolveState(state);
   if (!resolved) {
-    return {
+    return buildMetadata({
       title: "State not found | PriceOfElectricity.com",
       description: "State plan types page not found.",
-      alternates: { canonical: `${BASE_URL}/` },
-    };
+      canonicalPath: "/",
+    });
   }
 
   const { stateSlug, stateInfo } = resolved;
   const title = `Electricity Plan Types in ${stateInfo.name}`;
   const description = `Compare fixed-rate, variable-rate, time-of-use, prepaid, and green energy plan types in ${stateInfo.name}.`;
-  const canonicalUrl = `${BASE_URL}/${stateSlug}/plan-types`;
 
-  return {
+  return buildMetadata({
     title: `${title} | PriceOfElectricity.com`,
     description,
-    alternates: { canonical: canonicalUrl },
-    openGraph: {
-      title: `${title} | PriceOfElectricity.com`,
-      description,
-      url: canonicalUrl,
-      siteName: "PriceOfElectricity.com",
-      type: "website",
-    },
-    twitter: {
-      card: "summary",
-      title: `${title} | PriceOfElectricity.com`,
-      description,
-    },
-  };
+    canonicalPath: `/${stateSlug}/plan-types`,
+  });
 }
 
 export default async function StatePlanTypesPage({

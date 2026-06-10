@@ -2,30 +2,17 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { TOPICS } from "@/data/topics";
 import { SITE_URL } from "@/lib/site";
+import { buildMetadata } from "@/lib/seo/metadata";
 
 const BASE_URL = SITE_URL;
 export const dynamic = "force-static";
 export const revalidate = 2592000;
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetadata({
   title: "Topics | PriceOfElectricity.com",
   description: "Explore electricity topic hubs across pricing, bills, affordability, and markets.",
-  alternates: {
-    canonical: `${BASE_URL}/topics`,
-  },
-  openGraph: {
-    title: "Topics | PriceOfElectricity.com",
-    description: "Explore electricity topic hubs across pricing, bills, affordability, and markets.",
-    url: `${BASE_URL}/topics`,
-    siteName: "PriceOfElectricity.com",
-    type: "website",
-  },
-  twitter: {
-    card: "summary",
-    title: "Topics | PriceOfElectricity.com",
-    description: "Explore electricity topic hubs across pricing, bills, affordability, and markets.",
-  },
-};
+  canonicalPath: "/topics",
+});
 
 export default function TopicsIndexPage() {
   const webPageStructuredData = {
