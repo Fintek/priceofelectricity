@@ -1,33 +1,18 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { SITE_URL } from "@/lib/site";
+import { buildMetadata } from "@/lib/seo/metadata";
 
 const BASE_URL = SITE_URL;
 export const dynamic = "force-static";
 export const revalidate = 2592000;
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetadata({
   title: "Performance | PriceOfElectricity.com",
   description:
     "How PriceOfElectricity.com stays fast with static generation, long revalidation, and minimal client JavaScript.",
-  alternates: {
-    canonical: `${BASE_URL}/performance`,
-  },
-  openGraph: {
-    title: "Performance | PriceOfElectricity.com",
-    description:
-      "How PriceOfElectricity.com stays fast with static generation, long revalidation, and minimal client JavaScript.",
-    url: `${BASE_URL}/performance`,
-    siteName: "PriceOfElectricity.com",
-    type: "website",
-  },
-  twitter: {
-    card: "summary",
-    title: "Performance | PriceOfElectricity.com",
-    description:
-      "How PriceOfElectricity.com stays fast with static generation, long revalidation, and minimal client JavaScript.",
-  },
-};
+  canonicalPath: "/performance",
+});
 
 export default function PerformancePage() {
   const webPageStructuredData = {

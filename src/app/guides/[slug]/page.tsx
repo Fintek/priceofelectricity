@@ -5,6 +5,7 @@ import { GUIDE_BY_SLUG } from "@/data/guides";
 import { STATES } from "@/data/states";
 import { getTopicsByPrefixMatch } from "@/data/topics";
 import { LAST_REVIEWED, SITE_URL } from "@/lib/site";
+import { buildMetadata } from "@/lib/seo/metadata";
 import { getRelatedForGuide } from "@/lib/related";
 import RelatedLinks from "@/app/components/RelatedLinks";
 
@@ -22,33 +23,21 @@ export async function generateMetadata({
   const { slug } = await params;
   const guide = GUIDE_BY_SLUG[slug];
   if (!guide) {
-    return {
+    return buildMetadata({
       title: "Guide not found | PriceOfElectricity.com",
       description: "Guide page not found.",
-      alternates: { canonical: `${BASE_URL}/guides` },
-    };
+      canonicalPath: "/guides",
+    });
   }
 
   const title = `${guide.title} | PriceOfElectricity.com`;
-  const canonicalUrl = `${BASE_URL}/guides/${guide.slug}`;
 
-  return {
+  return buildMetadata({
     title,
     description: guide.description,
-    alternates: { canonical: canonicalUrl },
-    openGraph: {
-      title,
-      description: guide.description,
-      url: canonicalUrl,
-      siteName: "PriceOfElectricity.com",
-      type: "article",
-    },
-    twitter: {
-      card: "summary",
-      title,
-      description: guide.description,
-    },
-  };
+    canonicalPath: `/guides/${guide.slug}`,
+    ogType: "article",
+  });
 }
 
 export default async function GuideDetailPage({

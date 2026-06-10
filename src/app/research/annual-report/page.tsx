@@ -1,30 +1,18 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { SITE_URL, LAST_REVIEWED } from "@/lib/site";
+import { buildMetadata } from "@/lib/seo/metadata";
 import { buildAllNormalizedStates } from "@/lib/stateBuilder";
 
 const BASE_URL = SITE_URL;
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetadata({
   title: "Annual Electricity Price Report | PriceOfElectricity.com",
   description:
     "National electricity price summary: averages, highest and lowest states, affordability breakdown, and value score analysis.",
-  alternates: { canonical: `${BASE_URL}/research/annual-report` },
-  openGraph: {
-    title: "Annual Electricity Price Report | PriceOfElectricity.com",
-    description:
-      "National electricity price summary across all 50 U.S. states.",
-    url: `${BASE_URL}/research/annual-report`,
-    siteName: "PriceOfElectricity.com",
-    type: "website",
-  },
-  twitter: {
-    card: "summary",
-    title: "Annual Electricity Price Report | PriceOfElectricity.com",
-    description:
-      "National electricity price summary across all 50 U.S. states.",
-  },
-};
+  socialDescription: "National electricity price summary across all 50 U.S. states.",
+  canonicalPath: "/research/annual-report",
+});
 
 function computeReport() {
   const states = buildAllNormalizedStates();

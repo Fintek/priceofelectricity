@@ -4,6 +4,7 @@ import { STATES } from "@/data/states";
 import { computeAffordability } from "@/lib/affordability";
 import { computeFreshness } from "@/lib/freshness";
 import { LAST_REVIEWED_DISPLAY, SITE_URL, UPDATE_CADENCE_TEXT } from "@/lib/site";
+import { buildMetadata } from "@/lib/seo/metadata";
 import { getRelatedForTool } from "@/lib/related";
 import RelatedLinks from "@/app/components/RelatedLinks";
 
@@ -30,24 +31,12 @@ export async function generateMetadata({
   const { sort } = await searchParams;
   const isKnownSort = !sort || VALID_SORTS.has(sort);
 
-  return {
+  return buildMetadata({
     title: "Electricity Affordability by State (Index) | PriceOfElectricity.com",
     description: "Compare electricity affordability scores across states.",
-    alternates: { canonical: `${BASE_URL}/affordability` },
+    canonicalPath: "/affordability",
     ...(!isKnownSort && { robots: { index: false, follow: true } }),
-    openGraph: {
-      title: "Electricity Affordability by State (Index) | PriceOfElectricity.com",
-      description: "Compare electricity affordability scores across states.",
-      url: `${BASE_URL}/affordability`,
-      siteName: "PriceOfElectricity.com",
-      type: "website",
-    },
-    twitter: {
-      card: "summary",
-      title: "Electricity Affordability by State (Index) | PriceOfElectricity.com",
-      description: "Compare electricity affordability scores across states.",
-    },
-  };
+  });
 }
 
 export default async function AffordabilityPage({

@@ -7,6 +7,7 @@ import { isValidStateSlug } from "@/lib/slugGuard";
 import { getUtility } from "@/data/utilities";
 import { buildNormalizedState } from "@/lib/stateBuilder";
 import { SITE_URL } from "@/lib/site";
+import { buildMetadata } from "@/lib/seo/metadata";
 
 const BASE_URL = SITE_URL;
 export const dynamicParams = true;
@@ -27,43 +28,31 @@ export async function generateMetadata({
   const { state, utilitySlug } = await params;
   const stateSlug = resolveSlug(state);
   if (!stateSlug) {
-    return {
+    return buildMetadata({
       title: "Utility not found | PriceOfElectricity.com",
       description: "Utility page not found.",
-      alternates: { canonical: `${BASE_URL}/` },
-    };
+      canonicalPath: "/",
+    });
   }
 
   const stateInfo = STATES[stateSlug];
   const utility = getUtility(stateSlug, utilitySlug);
   if (!utility) {
-    return {
+    return buildMetadata({
       title: "Utility not found | PriceOfElectricity.com",
       description: "Utility page not found.",
-      alternates: { canonical: `${BASE_URL}/${stateSlug}/utilities` },
-    };
+      canonicalPath: `/${stateSlug}/utilities`,
+    });
   }
 
   const title = `${utility.name} Electricity Rates | ${stateInfo.name}`;
   const description = `Average electricity rate context for ${utility.name} in ${stateInfo.name}, with a 900 kWh energy-only bill example.`;
-  const canonicalUrl = `${BASE_URL}/${stateSlug}/utility/${utility.slug}`;
-  return {
+
+  return buildMetadata({
     title,
     description,
-    alternates: { canonical: canonicalUrl },
-    openGraph: {
-      title,
-      description,
-      url: canonicalUrl,
-      siteName: "PriceOfElectricity.com",
-      type: "website",
-    },
-    twitter: {
-      card: "summary",
-      title,
-      description,
-    },
-  };
+    canonicalPath: `/${stateSlug}/utility/${utility.slug}`,
+  });
 }
 
 export default async function UtilityPage({

@@ -2,33 +2,18 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { SOURCES } from "@/data/sources";
 import { SITE_URL } from "@/lib/site";
+import { buildMetadata } from "@/lib/seo/metadata";
 
 const BASE_URL = SITE_URL;
 export const dynamic = "force-static";
 export const revalidate = 2592000;
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetadata({
   title: "Data Sources | PriceOfElectricity.com",
   description:
     "Learn where our electricity rate data comes from. We use EIA, state commissions, and other authoritative sources.",
-  alternates: {
-    canonical: `${BASE_URL}/sources`,
-  },
-  openGraph: {
-    title: "Data Sources | PriceOfElectricity.com",
-    description:
-      "Learn where our electricity rate data comes from. We use EIA, state commissions, and other authoritative sources.",
-    url: `${BASE_URL}/sources`,
-    siteName: "PriceOfElectricity.com",
-    type: "website",
-  },
-  twitter: {
-    card: "summary",
-    title: "Data Sources | PriceOfElectricity.com",
-    description:
-      "Learn where our electricity rate data comes from. We use EIA, state commissions, and other authoritative sources.",
-  },
-};
+  canonicalPath: "/sources",
+});
 
 export default function SourcesPage() {
   const webPageStructuredData = {

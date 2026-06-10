@@ -1,29 +1,16 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { SITE_URL } from "@/lib/site";
+import { buildMetadata } from "@/lib/seo/metadata";
 
 const BASE_URL = SITE_URL;
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetadata({
   title: "Brand & Attribution | Press | PriceOfElectricity.com",
   description:
     "Brand guidelines, URL conventions, and attribution requirements for PriceOfElectricity.com.",
-  alternates: { canonical: `${BASE_URL}/press/brand` },
-  openGraph: {
-    title: "Brand & Attribution | Press | PriceOfElectricity.com",
-    description:
-      "Brand guidelines, URL conventions, and attribution requirements for PriceOfElectricity.com.",
-    url: `${BASE_URL}/press/brand`,
-    siteName: "PriceOfElectricity.com",
-    type: "website",
-  },
-  twitter: {
-    card: "summary",
-    title: "Brand & Attribution | Press | PriceOfElectricity.com",
-    description:
-      "Brand guidelines, URL conventions, and attribution requirements for PriceOfElectricity.com.",
-  },
-};
+  canonicalPath: "/press/brand",
+});
 
 export default function PressBrandPage() {
   return (

@@ -2,9 +2,16 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { search } from "@/lib/search";
 import { SITE_URL } from "@/lib/site";
+import { buildMetadata } from "@/lib/seo/metadata";
 
 const BASE_URL = SITE_URL;
 export const revalidate = 2592000;
+
+export const metadata: Metadata = buildMetadata({
+  title: "Search | PriceOfElectricity.com",
+  description: "Search states, utilities, guides, topics, and tools.",
+  canonicalPath: "/search",
+});
 
 const TYPE_LABELS: Record<
   "state" | "utility" | "guide" | "question" | "topic" | "tool",
@@ -26,26 +33,6 @@ const TYPE_ORDER: Array<"state" | "utility" | "guide" | "question" | "topic" | "
   "topic",
   "tool",
 ];
-
-export const metadata: Metadata = {
-  title: "Search | PriceOfElectricity.com",
-  description: "Search states, utilities, guides, topics, and tools.",
-  alternates: {
-    canonical: `${BASE_URL}/search`,
-  },
-  openGraph: {
-    title: "Search | PriceOfElectricity.com",
-    description: "Search states, utilities, guides, topics, and tools.",
-    url: `${BASE_URL}/search`,
-    siteName: "PriceOfElectricity.com",
-    type: "website",
-  },
-  twitter: {
-    card: "summary",
-    title: "Search | PriceOfElectricity.com",
-    description: "Search states, utilities, guides, topics, and tools.",
-  },
-};
 
 export default async function SearchPage({
   searchParams,

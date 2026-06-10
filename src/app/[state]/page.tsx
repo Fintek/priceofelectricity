@@ -19,6 +19,7 @@ import {
   getCanonicalResidentialDataThroughMonthLabel,
 } from "@/lib/eiaReportingTrust";
 import { SITE_URL } from "@/lib/site";
+import { buildMetadata } from "@/lib/seo/metadata";
 import {
   getPrevNextByName,
   getRelatedByRate,
@@ -52,48 +53,23 @@ export async function generateMetadata({
   const slug = resolveSlug(state);
 
   if (!slug) {
-    return {
+    return buildMetadata({
       title: "State not found | PriceOfElectricity.com",
       description: "State page not found.",
-      alternates: { canonical: `${BASE_URL}/` },
-      openGraph: {
-        title: "State not found | PriceOfElectricity.com",
-        description: "State page not found.",
-        url: `${BASE_URL}/`,
-        siteName: "PriceOfElectricity.com",
-        type: "website",
-      },
-      twitter: {
-        card: "summary",
-        title: "State not found | PriceOfElectricity.com",
-        description: "State page not found.",
-      },
-    };
+      canonicalPath: "/",
+    });
   }
 
   const ns = buildNormalizedState(slug);
   const title = `${ns.name} Electricity Price (¢/kWh) | PriceOfElectricity.com`;
   const eiaMonth = getCanonicalResidentialDataThroughMonthLabel();
-  const description = `${ns.name} average residential electricity rate is ${ns.avgRateCentsPerKwh}¢/kWh (latest EIA reporting month ${eiaMonth}). Estimate your monthly bill with our quick calculator.`;
-  const canonicalUrl = `${BASE_URL}/${slug}`;
+  const description = `${ns.name} average residential electricity rate is ${ns.avgRateCentsPerKwh}¢/kWh (latest EIA reporting month ${eiaMonth}). Estimate your monthly bill.`;
 
-  return {
+  return buildMetadata({
     title,
     description,
-    alternates: { canonical: canonicalUrl },
-    openGraph: {
-      title,
-      description,
-      url: canonicalUrl,
-      siteName: "PriceOfElectricity.com",
-      type: "website",
-    },
-    twitter: {
-      card: "summary",
-      title,
-      description,
-    },
-  };
+    canonicalPath: `/${slug}`,
+  });
 }
 
 function PriceDriversPanel({ slug, stateName }: { slug: string; stateName: string }) {

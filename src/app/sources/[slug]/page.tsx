@@ -7,6 +7,7 @@ import {
   getStatesBySourceSlug,
 } from "@/data/sources";
 import { SITE_URL } from "@/lib/site";
+import { withDefaultShareImage, buildMetadata } from "@/lib/seo/metadata";
 
 const BASE_URL = SITE_URL;
 export const dynamicParams = true;
@@ -23,34 +24,31 @@ export async function generateMetadata({
   const source = getSource(slug);
 
   if (!source) {
-    return {
+    return buildMetadata({
       title: "Source not found | PriceOfElectricity.com",
       description: "Data source not found.",
-      alternates: { canonical: `${BASE_URL}/sources` },
-    };
+      canonicalPath: "/sources",
+    });
   }
 
-  const title = `${source.name} | Data Sources`;
-  const description = source.description;
-  const canonicalUrl = `${BASE_URL}/sources/${slug}`;
+  const title = `${source.name} | Data Sources | PriceOfElectricity.com`;
 
-  return {
-    title: `${title} | PriceOfElectricity.com`,
-    description,
-    alternates: { canonical: canonicalUrl },
+  return withDefaultShareImage({
+    title,
+    description: source.description,
+    alternates: { canonical: `${BASE_URL}/sources/${slug}` },
     openGraph: {
-      title: `${title} | PriceOfElectricity.com`,
-      description,
-      url: canonicalUrl,
+      title,
+      description: source.description,
+      url: `${BASE_URL}/sources/${slug}`,
       siteName: "PriceOfElectricity.com",
       type: "website",
     },
     twitter: {
-      card: "summary",
-      title: `${title} | PriceOfElectricity.com`,
-      description,
+      title,
+      description: source.description,
     },
-  };
+  });
 }
 
 export default async function SourcePage({

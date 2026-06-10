@@ -6,6 +6,7 @@ import { isValidStateSlug } from "@/lib/slugGuard";
 import { buildNormalizedState } from "@/lib/stateBuilder";
 import { buildBillSchema } from "@/lib/schema";
 import { SITE_URL } from "@/lib/site";
+import { buildMetadata } from "@/lib/seo/metadata";
 
 const BASE_URL = SITE_URL;
 export const dynamicParams = true;
@@ -34,36 +35,23 @@ export async function generateMetadata({
   const kwhNum = parseKwh(kwh);
 
   if (!slug || kwhNum === null) {
-    return {
+    return buildMetadata({
       title: "Bill estimate not found | PriceOfElectricity.com",
       description: "Bill estimate page not found.",
-      alternates: { canonical: `${BASE_URL}/calculator` },
-    };
+      canonicalPath: "/calculator",
+    });
   }
 
   const ns = buildNormalizedState(slug);
   const estimatedBill = (kwhNum * ns.avgRateCentsPerKwh) / 100;
   const title = `${kwhNum} kWh Electric Bill in ${ns.name} (Energy Estimate)`;
   const description = `Estimate ${kwhNum} kWh electric bill in ${ns.name}: ~$${estimatedBill.toFixed(2)} energy-only at ${ns.avgRateCentsPerKwh}¢/kWh. Excludes delivery fees and taxes.`;
-  const canonicalUrl = `${BASE_URL}/${slug}/bill/${kwhNum}`;
 
-  return {
+  return buildMetadata({
     title: `${title} | PriceOfElectricity.com`,
     description,
-    alternates: { canonical: canonicalUrl },
-    openGraph: {
-      title: `${title} | PriceOfElectricity.com`,
-      description,
-      url: canonicalUrl,
-      siteName: "PriceOfElectricity.com",
-      type: "website",
-    },
-    twitter: {
-      card: "summary",
-      title: `${title} | PriceOfElectricity.com`,
-      description,
-    },
-  };
+    canonicalPath: `/${slug}/bill/${kwhNum}`,
+  });
 }
 
 export default async function BillPage({

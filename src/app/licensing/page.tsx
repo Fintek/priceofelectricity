@@ -1,32 +1,19 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { SITE_URL } from "@/lib/site";
+import { buildMetadata } from "@/lib/seo/metadata";
 
 const BASE_URL = SITE_URL;
 
 export const dynamic = "force-static";
 export const revalidate = 2592000;
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetadata({
   title: "Licensing | PriceOfElectricity.com",
   description:
     "Licensing terms for PriceOfElectricity.com electricity rate data, including commercial usage guidance and contact information.",
-  alternates: { canonical: `${BASE_URL}/licensing` },
-  openGraph: {
-    title: "Licensing | PriceOfElectricity.com",
-    description:
-      "Licensing terms for PriceOfElectricity.com electricity rate data, including commercial usage guidance and contact information.",
-    url: `${BASE_URL}/licensing`,
-    siteName: "PriceOfElectricity.com",
-    type: "website",
-  },
-  twitter: {
-    card: "summary",
-    title: "Licensing | PriceOfElectricity.com",
-    description:
-      "Licensing terms for PriceOfElectricity.com electricity rate data, including commercial usage guidance and contact information.",
-  },
-};
+  canonicalPath: "/licensing",
+});
 
 export default function LicensingPage() {
   const webPageStructuredData = {

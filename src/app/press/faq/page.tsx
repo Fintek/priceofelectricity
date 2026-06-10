@@ -1,29 +1,17 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { SITE_URL } from "@/lib/site";
+import { buildMetadata } from "@/lib/seo/metadata";
 
 const BASE_URL = SITE_URL;
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetadata({
   title: "How to Cite | Press FAQ | PriceOfElectricity.com",
   description:
     "How to cite PriceOfElectricity.com in APA, MLA, and web formats. Energy-only estimates, data sources, and update cadence.",
-  alternates: { canonical: `${BASE_URL}/press/faq` },
-  openGraph: {
-    title: "How to Cite | Press FAQ | PriceOfElectricity.com",
-    description:
-      "How to cite PriceOfElectricity.com in APA, MLA, and web formats.",
-    url: `${BASE_URL}/press/faq`,
-    siteName: "PriceOfElectricity.com",
-    type: "website",
-  },
-  twitter: {
-    card: "summary",
-    title: "How to Cite | Press FAQ | PriceOfElectricity.com",
-    description:
-      "How to cite PriceOfElectricity.com in APA, MLA, and web formats.",
-  },
-};
+  socialDescription: "How to cite PriceOfElectricity.com in APA, MLA, and web formats.",
+  canonicalPath: "/press/faq",
+});
 
 const FAQ_ITEMS = [
   {

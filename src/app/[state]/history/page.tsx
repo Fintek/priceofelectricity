@@ -10,6 +10,7 @@ import {
   getCanonicalResidentialDataThroughMonthLabel,
 } from "@/lib/eiaReportingTrust";
 import { SITE_URL } from "@/lib/site";
+import { buildMetadata } from "@/lib/seo/metadata";
 
 const BASE_URL = SITE_URL;
 const FLAT_THRESHOLD_CENTS = 0.5;
@@ -92,35 +93,22 @@ export async function generateMetadata({
   const resolved = resolveState(state);
 
   if (!resolved) {
-    return {
+    return buildMetadata({
       title: "State not found | PriceOfElectricity.com",
       description: "State history page not found.",
-      alternates: { canonical: `${BASE_URL}/` },
-    };
+      canonicalPath: "/",
+    });
   }
 
   const { stateSlug, state: stateInfo } = resolved;
   const title = `${stateInfo.name} Electricity Price History | PriceOfElectricity.com`;
   const description = `Monthly average residential electricity price trend in ${stateInfo.name} (¢/kWh).`;
-  const canonicalUrl = `${BASE_URL}/${stateSlug}/history`;
 
-  return {
+  return buildMetadata({
     title,
     description,
-    alternates: { canonical: canonicalUrl },
-    openGraph: {
-      title,
-      description,
-      url: canonicalUrl,
-      siteName: "PriceOfElectricity.com",
-      type: "website",
-    },
-    twitter: {
-      card: "summary",
-      title,
-      description,
-    },
-  };
+    canonicalPath: `/${stateSlug}/history`,
+  });
 }
 
 export default async function StateHistoryPage({
