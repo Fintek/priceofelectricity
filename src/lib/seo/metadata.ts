@@ -22,10 +22,10 @@ function truncateDescription(desc: string): string {
 
 function getDefaultShareImageUrl(): string | null {
   try {
-    const png = path.join(process.cwd(), "public", "og.png");
-    const jpg = path.join(process.cwd(), "public", "og.jpg");
-    if (existsSync(png)) return `${SITE_URL.replace(/\/+$/, "")}/og.png`;
-    if (existsSync(jpg)) return `${SITE_URL.replace(/\/+$/, "")}/og.jpg`;
+    const ogDefault = path.join(process.cwd(), "public", "og-default.png");
+    if (existsSync(ogDefault)) {
+      return `${SITE_URL.replace(/\/+$/, "")}/og-default.png`;
+    }
   } catch {
     // ignore
   }

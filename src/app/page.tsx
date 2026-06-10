@@ -1,49 +1,37 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { STATES } from "@/data/states";
+import { STATES, STATE_LIST } from "@/data/states";
 import HomepagePersonalization from "@/app/components/HomepagePersonalization";
 import AboutThisSite from "@/components/navigation/AboutThisSite";
 import EiaHomeTrustLine from "@/components/common/EiaHomeTrustLine";
 import { getRateTier, getRateTierLabel } from "@/lib/insights";
-import { SITE_URL } from "@/lib/site";
 import { buildMetadata } from "@/lib/seo/metadata";
 import { getHomepageCoverageEntries } from "@/lib/stateDestinations";
 
-const BASE_URL = SITE_URL;
 export const dynamic = "force-static";
 export const revalidate = 2592000;
 
+function buildHomepageDescription(): string {
+  let minState = STATE_LIST[0];
+  let maxState = STATE_LIST[0];
+  for (const state of STATE_LIST) {
+    if (state.avgRateCentsPerKwh < minState.avgRateCentsPerKwh) minState = state;
+    if (state.avgRateCentsPerKwh > maxState.avgRateCentsPerKwh) maxState = state;
+  }
+  return `Compare residential electricity prices by state and estimate monthly bills across the United States — from ${minState.avgRateCentsPerKwh}¢ in ${minState.name} to ${maxState.avgRateCentsPerKwh}¢ in ${maxState.name}.`;
+}
+
 export const metadata: Metadata = buildMetadata({
   title: "Average Electricity Prices by State (¢/kWh) | PriceOfElectricity.com",
-  description:
-    "Compare average residential electricity prices by state, estimate monthly bills, and track rate changes across the United States.",
+  description: buildHomepageDescription(),
   canonicalPath: "/",
 });
 
 export default function HomePage() {
   const coverageEntries = getHomepageCoverageEntries();
 
-  const websiteStructuredData = {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    name: "PriceOfElectricity.com",
-    url: BASE_URL,
-    potentialAction: {
-      "@type": "SearchAction",
-      target: "https://priceofelectricity.com/?q={search_term_string}",
-      "query-input": "required name=search_term_string",
-    },
-  };
-
   return (
     <main className="container">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(websiteStructuredData),
-        }}
-      />
-
       {/* ── HERO ── */}
       <h1>Average Electricity Prices by State</h1>
       <p style={{ marginTop: 0, marginBottom: 16, maxWidth: "60ch", lineHeight: 1.6 }}>

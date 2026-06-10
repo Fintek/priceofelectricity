@@ -24,7 +24,7 @@ export const dynamic = "force-static";
 export const revalidate = 86400;
 
 export const metadata: Metadata = buildMetadata({
-  title: "Electricity Cost Calculator by State – Bill Estimator | PriceOfElectricity.com",
+  title: "Electricity Cost Calculator by State | PriceOfElectricity.com",
   description:
     "Electricity cost calculator hub for national and state bill estimates. Compare 500, 1000, 1500, and 2000 kWh scenarios, appliance calculator pages, and average bill context.",
   canonicalPath: "/electricity-cost-calculator",

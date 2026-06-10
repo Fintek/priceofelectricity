@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 
-const CANONICAL_SITEMAP_ORIGIN = "https://priceofelectricity.com";
+const CANONICAL_SITEMAP_ORIGIN = "https://www.priceofelectricity.com";
 
 export default function robots(): MetadataRoute.Robots {
   const isExplicitlyBlocked =
