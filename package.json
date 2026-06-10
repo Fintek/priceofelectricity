@@ -20,6 +20,7 @@
     "readiness:audit": "tsx scripts/readiness-audit.ts",
     "payload:audit": "tsx scripts/payload-audit.ts",
     "payload:baseline": "tsx scripts/payload-audit.ts --update-baseline",
+    "payload:readout": "tsx scripts/payload-audit.ts --readout",
     "seo:check": "tsx scripts/seo-check.ts",
     "verify": "npm run data:validate && npm run lint && npm run typecheck && npm run build && npm run payload:audit && npm run canonical:check && npm run smoke && npm run integrity && npm run api:contract && npm run indexing:check && npm run readiness:audit && npm run seo:check && npm run lhci",
     "verify:vercel": "npm run data:validate && npm run lint && npm run typecheck && npm run build && npm run payload:audit && npm run canonical:check && npm run smoke && npm run integrity && npm run api:contract && npm run indexing:check && npm run readiness:audit && npm run seo:check",

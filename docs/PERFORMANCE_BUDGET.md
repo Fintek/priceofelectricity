@@ -68,6 +68,25 @@ that inflate the measured size. For an accurate local reading, remove
 `public/knowledge` before rebuilding. CI/Vercel always build from a clean
 checkout, so production measurements are unaffected.
 
+### Quick readout (`payload:readout`)
+
+For a fast, human-friendly snapshot without the full audit's contributor
+diagnostics, run `npm run payload:readout`. It reads the **last build output**
+(it does not rebuild) and prints one compact table:
+
+```
+Payload readout (last build):
+  Target                       Size     Budget   Used   Headroom  Zone
+  .next/standalone total  68.68 MiB  85.00 MiB  80.8%  16.32 MiB  preferred
+  .next/server/app total  34.80 MiB  40.00 MiB  87.0%   5.20 MiB  preferred
+  public/knowledge total   4.39 MiB   6.00 MiB  73.2%   1.61 MiB  preferred
+```
+
+The `Zone` column applies the operating-margin policy below (preferred /
+caution / blocker). The readout is **purely informational** — it never gates
+and never exits non-zero; `payload:audit` remains the only hard gate. If no
+build output exists yet, it prints a hint to run `npm run build` first.
+
 ### Operating margin policy
 
 Passing the ceiling is necessary but not sufficient for expansion safety.
