@@ -140,7 +140,9 @@ export default async function StateApplianceCalculatorPage({
           { label: applianceConfig.displayName },
         ]}
         title={`${applianceConfig.displayName} Electricity Calculator in ${state.name}`}
-        intro={`Use this appliance electricity calculator to estimate ${applianceConfig.displayName.toLowerCase()} operating cost in ${state.name} using typical wattage and runtime assumptions tied to the statewide residential electricity rate.`}
+        intro={typicalStateScenario.costPerMonth != null
+          ? `A ${applianceConfig.displayName.toLowerCase()} in ${state.name} costs about ${formatUsd(typicalStateScenario.costPerMonth)} a month (${formatUsd(typicalStateScenario.costPerYear)} a year) to run at the state's average rate of ${formatRate(state.avgRateCentsPerKwh)}. Use this calculator to compare light, typical, and heavy use.`
+          : `Estimate what a ${applianceConfig.displayName.toLowerCase()} costs to run in ${state.name}. Use this calculator to compare light, typical, and heavy use.`}
         stats={[
           { label: `${state.name} average rate`, value: formatRate(state.avgRateCentsPerKwh) },
           { label: "Assumed wattage", value: `${applianceConfig.averageWattage.toLocaleString()} W` },
@@ -184,14 +186,14 @@ export default async function StateApplianceCalculatorPage({
         <section style={{ marginBottom: "var(--space-7)" }}>
           <h2 className="heading-section">Calculator assumptions</h2>
           <p style={{ marginTop: 0, lineHeight: 1.7 }}>
-            This calculator uses a typical wattage range of {formatWattageRange(applianceConfig)}, with a standard
-            working assumption of {applianceConfig.averageWattage.toLocaleString()} watts for{" "}
+            This calculator uses a typical wattage range of {formatWattageRange(applianceConfig)}, and we assume{" "}
+            {applianceConfig.averageWattage.toLocaleString()} watts for{" "}
             {formatHoursPerDay(applianceConfig.typicalUsageHoursPerDay)}. The formula is{" "}
             <code>kWh = (watts × hours) / 1000</code>.
           </p>
           <p style={{ marginBottom: 0, lineHeight: 1.7 }}>
             At this profile, the appliance uses {formatKwh(typicalStateScenario.kwhPerMonth)} per month and{" "}
-            {formatKwh(typicalStateScenario.kwhPerYear)} per year in the model.
+            {formatKwh(typicalStateScenario.kwhPerYear)} per year.
           </p>
         </section>
 
@@ -227,8 +229,7 @@ export default async function StateApplianceCalculatorPage({
         <section style={{ marginBottom: "var(--space-7)" }}>
           <h2 className="heading-section">Appliance cost reference page</h2>
           <p style={{ marginTop: 0, lineHeight: 1.7 }}>
-            The dedicated appliance page below uses the same statewide rate and wattage assumptions in a longer-form
-            layout. This calculator stays focused on quick hour-profile comparisons.
+            Want the full write-up? The appliance page below uses the same rate and wattage assumptions:
           </p>
           <ul style={{ margin: 0, paddingLeft: 20, lineHeight: 1.8 }}>
             <li>
@@ -245,7 +246,7 @@ export default async function StateApplianceCalculatorPage({
         <section style={{ marginBottom: "var(--space-7)" }}>
           <h2 className="heading-section">More comparison links</h2>
           <p style={{ marginTop: 0, lineHeight: 1.7 }}>
-            Browse related comparisons from the energy comparison hub without leaving the calculator context.
+            Browse related comparisons from the energy comparison hub:
           </p>
           <ul style={{ margin: 0, paddingLeft: 20, lineHeight: 1.8 }}>
             <li>
@@ -266,8 +267,7 @@ export default async function StateApplianceCalculatorPage({
               City electricity context for {state.name}
             </h2>
             <p style={{ marginTop: 0, lineHeight: 1.7 }}>
-              For local context, published city electricity pages complement this calculator. Links below are optional
-              local references and do not change the statewide calculator math.
+              City electricity pages add local rate context. They don't change the statewide math here.
             </p>
             <ul style={{ margin: 0, paddingLeft: 20, lineHeight: 1.8 }}>
               {calculatorCityRows.map((row) => (

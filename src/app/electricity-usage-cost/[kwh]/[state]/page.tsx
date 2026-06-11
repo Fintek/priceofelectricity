@@ -129,7 +129,7 @@ export default async function ElectricityUsageCostPage({
           { label: `${parsedKwh} kWh` },
         ]}
         title={`How Much Does ${parsedKwh.toLocaleString()} kWh Cost in ${data.name}?`}
-        intro={`This usage-based electricity page estimates the energy-only cost of ${parsedKwh.toLocaleString()} kWh in ${data.name} using the latest statewide residential average rate.`}
+        intro={`${parsedKwh.toLocaleString()} kWh of electricity costs about ${formatUsd(usageCost)} in ${data.name} at the state's average rate of ${formatRate(data.avgRateCentsPerKwh)}. That covers electricity only, before delivery fees and taxes.`}
         stats={[
           { label: `${data.name} average rate`, value: formatRate(data.avgRateCentsPerKwh) },
           { label: `Estimated ${parsedKwh.toLocaleString()} kWh cost`, value: formatUsd(usageCost) },

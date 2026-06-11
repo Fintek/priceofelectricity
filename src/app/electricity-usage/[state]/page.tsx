@@ -85,7 +85,9 @@ export default async function ElectricityUsageStatePage({
           { label: data.name },
         ]}
         title={`Household Electricity Usage in ${data.name}`}
-        intro={`This page estimates typical household electricity consumption in ${data.name} and maps usage levels directly to cost outcomes using the state's residential electricity rate.`}
+        intro={data.avgRateCentsPerKwh != null
+          ? `A typical home in ${data.name} uses about ${formatKwh(data.estimatedMonthlyUsageKwh)} of electricity a month. At the state's average rate of ${formatRate(data.avgRateCentsPerKwh)}, that's about ${formatUsd((data.avgRateCentsPerKwh / 100) * data.estimatedMonthlyUsageKwh)} a month.`
+          : `A typical home in ${data.name} uses about ${formatKwh(data.estimatedMonthlyUsageKwh)} of electricity a month.`}
         stats={[
           { label: `${data.name} modeled monthly usage`, value: formatKwh(data.estimatedMonthlyUsageKwh) },
           { label: `${data.name} modeled annual usage`, value: formatKwh(data.estimatedAnnualUsageKwh) },
