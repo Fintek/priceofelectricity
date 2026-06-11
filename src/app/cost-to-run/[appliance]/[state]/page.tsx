@@ -169,13 +169,13 @@ export default async function ApplianceCostToRunPage({
       question: `How much does it cost to run ${article} ${applianceConfig.displayName.toLowerCase()} in ${stateData.name}?`,
       answer:
         stateEstimate.costPerMonth != null
-          ? `Using ${formatHoursPerDay(applianceConfig.typicalUsageHoursPerDay)} and a state average rate of ${formatRate(stateData.avgRateCentsPerKwh)}, this page estimates about ${formatUsd(stateEstimate.costPerMonth)} per month.`
-          : "This page uses fixed wattage and runtime assumptions to estimate energy-only operating cost.",
+          ? `At ${formatHoursPerDay(applianceConfig.typicalUsageHoursPerDay)} and the state average rate of ${formatRate(stateData.avgRateCentsPerKwh)}, you'd pay about ${formatUsd(stateEstimate.costPerMonth)} a month.`
+          : "We use a fixed wattage and runtime to estimate the electricity-only cost.",
     },
     {
       question: "Does this estimate include delivery fees and taxes?",
       answer:
-        "No. This model is energy-only and excludes delivery charges, taxes, fixed monthly fees, and plan-specific adjustments.",
+        "No. This estimate covers electricity only. It leaves out delivery charges, taxes, fixed monthly fees, and plan-specific adjustments.",
     },
     {
       question: `Where else can I compare this appliance?`,
@@ -194,7 +194,9 @@ export default async function ApplianceCostToRunPage({
           { label: applianceConfig.displayName },
         ]}
         title={`What Does It Cost to Run ${article} ${applianceConfig.displayName} in ${stateData.name}?`}
-        intro={`This page estimates the energy-only cost to run ${article} ${applianceConfig.displayName.toLowerCase()} in ${stateData.name} using ${applianceConfig.introFragment}, an average load of ${applianceConfig.averageWattage.toLocaleString()} watts, and a typical runtime of ${formatHoursPerDay(applianceConfig.typicalUsageHoursPerDay)}.`}
+        intro={stateEstimate.costPerMonth != null
+          ? `Running ${article} ${applianceConfig.displayName.toLowerCase()} in ${stateData.name} costs about ${formatUsd(stateEstimate.costPerMonth)} a month (${formatUsd(stateEstimate.costPerYear)} a year) at the state's average rate of ${formatRate(stateData.avgRateCentsPerKwh)}. That assumes a typical ${applianceConfig.averageWattage.toLocaleString()}-watt ${applianceConfig.displayName.toLowerCase()} running ${formatHoursPerDay(applianceConfig.typicalUsageHoursPerDay)}. These are electricity-only estimates, before delivery fees and taxes.`
+          : `This is an estimate of the electricity-only cost to run ${article} ${applianceConfig.displayName.toLowerCase()} in ${stateData.name}, based on a typical ${applianceConfig.averageWattage.toLocaleString()}-watt load running ${formatHoursPerDay(applianceConfig.typicalUsageHoursPerDay)}.`}
         stats={[
           { label: "Average wattage assumption", value: `${applianceConfig.averageWattage.toLocaleString()} W` },
           { label: "Typical usage assumption", value: formatHoursPerDay(applianceConfig.typicalUsageHoursPerDay) },
@@ -233,8 +235,8 @@ export default async function ApplianceCostToRunPage({
             How much electricity does {article} {applianceConfig.displayName.toLowerCase()} use?
           </h2>
           <p style={{ marginTop: 0, lineHeight: 1.7 }}>
-            This estimate uses a typical wattage range of {formatWattageRange(applianceConfig)} and a modeling
-            assumption of {applianceConfig.averageWattage.toLocaleString()} watts for {formatHoursPerDay(applianceConfig.typicalUsageHoursPerDay)}.
+            This estimate uses a typical wattage range of {formatWattageRange(applianceConfig)}, and we assume{" "}
+            {applianceConfig.averageWattage.toLocaleString()} watts for {formatHoursPerDay(applianceConfig.typicalUsageHoursPerDay)}.
             Using the formula <code>kWh = (watts × hours) / 1000</code>, that works out to{" "}
             <strong>{formatKwh(stateEstimate.kwhPerDay)}</strong> per day,{" "}
             <strong>{formatKwh(stateEstimate.kwhPerMonth)}</strong> per 30-day month, and{" "}
@@ -242,7 +244,7 @@ export default async function ApplianceCostToRunPage({
           </p>
           <p style={{ marginBottom: 0, lineHeight: 1.7 }}>
             {applianceConfig.usageNote} In {stateData.name}, that energy is priced using the statewide residential
-            average of {formatRate(stateData.avgRateCentsPerKwh)}, with a national benchmark of{" "}
+            average of {formatRate(stateData.avgRateCentsPerKwh)}, with a national average of{" "}
             {formatRate(stateData.nationalAverageCentsPerKwh)} for comparison.
           </p>
         </section>
@@ -305,8 +307,7 @@ export default async function ApplianceCostToRunPage({
         <section style={{ marginBottom: "var(--space-7)" }}>
           <h2 className="heading-section">Comparison entry points</h2>
           <p style={{ marginTop: 0, lineHeight: 1.7 }}>
-            The energy comparison hub links appliance, state, and usage pages so you can browse related comparisons from
-            one place. The main appliance cost reference for this state remains this page.
+            Browse related comparisons from the energy comparison hub:
           </p>
           <ul style={{ margin: 0, paddingLeft: 20, lineHeight: 1.8 }}>
             <li>
@@ -330,8 +331,7 @@ export default async function ApplianceCostToRunPage({
               City pages for selected metros in {stateData.name}
             </h2>
             <p style={{ marginTop: 0, lineHeight: 1.7 }}>
-              These city pages add local rate context for the same appliance assumptions. City values are modeled
-              estimates; the primary appliance reference for the whole state is still the table on this page.
+              These city pages add local rate context for the same appliance assumptions. City values are estimates.
             </p>
             <div className="data-table-wrap">
               <table className="data-table">
@@ -368,8 +368,7 @@ export default async function ApplianceCostToRunPage({
               </table>
             </div>
             <p style={{ marginBottom: 0, marginTop: 12, lineHeight: 1.7 }}>
-              City electricity pages focus on household rate context. This state-level appliance page stays the main
-              place to compare appliance run cost using the statewide average rate.
+              City electricity pages focus on local rate context. The table above uses the statewide average rate.
             </p>
           </section>
         )}

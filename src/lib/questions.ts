@@ -19,7 +19,7 @@ type QuestionStateContext = {
 };
 
 const ENERGY_ONLY_DISCLAIMER =
-  "These estimates are energy-only and exclude delivery charges, fixed fees, taxes, and other utility line items.";
+  "These estimates cover electricity only. They leave out delivery charges, fixed fees, taxes, and other utility line items.";
 
 export const QUESTION_TEMPLATES: Record<string, QuestionTemplate> = {
   "why-electricity-expensive-in": {
@@ -30,7 +30,7 @@ export const QUESTION_TEMPLATES: Record<string, QuestionTemplate> = {
     bodyBuilder: (state) => [
       `${state.name}'s average residential electricity rate is ${state.avgRateCentsPerKwh.toFixed(2)}¢/kWh, which places it in the "${state.affordabilityCategory}" affordability tier compared with other states.`,
       `At that average rate, 900 kWh of monthly usage works out to about $${state.billAt900Kwh.toFixed(2)} in energy charges before delivery and taxes.`,
-      "Higher electricity prices are usually driven by a mix of generation costs, grid investment needs, local market structure, and regulatory cost recovery.",
+      "Higher electricity prices are usually driven by a mix of generation costs, grid investment needs, local market structure, and costs utilities are allowed to pass on to customers.",
       "Geography and reliability requirements can also raise costs, especially where weather hardening, wildfire mitigation, or fuel transport constraints increase utility spending.",
       ENERGY_ONLY_DISCLAIMER,
     ],

@@ -110,7 +110,7 @@ function buildStateCoreSection(stateData: LongtailStateData, pageType: LongtailP
         `${stateName} electricity price per kWh`,
         `Average power price in ${stateName}`,
       ]),
-      description: "Residential rate benchmark used in scenario estimates",
+      description: `What a kWh of electricity costs in ${stateName}`,
     });
   }
   if (hasRoute("stateHome")) {
@@ -153,7 +153,7 @@ function buildStateCoreSection(stateData: LongtailStateData, pageType: LongtailP
         `Average electricity bill in ${stateName}`,
         `${stateName} monthly electricity bill estimate`,
       ]),
-      description: "Bill-focused context for household usage",
+      description: "What a typical monthly bill looks like",
     });
   }
   if (hasRoute("billEstimatorState")) {
@@ -163,7 +163,7 @@ function buildStateCoreSection(stateData: LongtailStateData, pageType: LongtailP
         `${stateName} household bill estimator`,
         `Electric bill estimator scenarios in ${stateName}`,
       ]),
-      description: "Household profile bill scenarios with fixed monthly kWh assumptions",
+      description: "Estimate your bill from your monthly usage",
     });
   }
   if (hasRoute("authorityKnowledge")) {
@@ -193,7 +193,7 @@ function buildStateCoreSection(stateData: LongtailStateData, pageType: LongtailP
         `${stateName} electricity usage profile`,
         `Household electricity usage in ${stateName}`,
       ]),
-      description: "Usage-centric context linking kWh consumption to cost outcomes",
+      description: "How your monthly usage maps to cost",
     });
   }
   if (hasRoute("usageInfoHub")) {
@@ -289,7 +289,7 @@ function buildUsageSection(stateData: LongtailStateData, usageKwh?: number): Lon
         `${tier.toLocaleString()} kWh cost in ${stateName}`,
         `Electricity cost for ${tier.toLocaleString()} kWh in ${stateName}`,
       ]),
-      description: "Usage-tier estimate for the same state",
+      description: "Cost for this usage amount in the same state",
     });
   }
 

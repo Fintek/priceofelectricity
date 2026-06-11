@@ -144,8 +144,8 @@ export default async function ElectricityCostComparisonPairPage({
 
   const summaryText =
     Math.abs(differencePercent) < 0.5
-      ? `Electricity in ${nameA} and ${nameB} cost about the same based on typical household electricity use.`
-      : `Electricity in ${higherCostName} costs approximately ${Math.abs(differencePercent).toFixed(0)}% more than in ${lowerCostName} based on typical household electricity use.`;
+      ? `Electricity costs about the same in ${nameA} and ${nameB}.`
+      : `Electricity costs about ${Math.abs(differencePercent).toFixed(0)}% more in ${higherCostName} than in ${lowerCostName}.`;
 
   return (
     <>
@@ -157,12 +157,11 @@ export default async function ElectricityCostComparisonPairPage({
           Electricity Cost: {nameA} vs {nameB}
         </h1>
         <p style={{ marginTop: 0, marginBottom: 24, maxWidth: "65ch", fontSize: 16, lineHeight: 1.6 }}>
-          {summaryText}{" "}
-          {nameA} averages {data.rateA.toFixed(2)}¢/kWh and {nameB} averages {data.rateB.toFixed(2)}¢/kWh,
-          putting a typical 900 kWh monthly bill at ${monthlyCostA.toFixed(0)} vs ${monthlyCostB.toFixed(0)}.
+          {summaryText} A typical monthly bill runs about ${monthlyCostA.toFixed(0)} in {nameA} vs $
+          {monthlyCostB.toFixed(0)} in {nameB}.
         </p>
         <p className="muted" style={{ marginTop: -8, marginBottom: 24, maxWidth: "65ch" }}>
-          Based on average residential rates from EIA data · 900 kWh standard usage benchmark
+          Based on average residential rates from EIA data · 900 kWh of monthly use
         </p>
 
         {/* Summary cards */}
@@ -283,8 +282,7 @@ export default async function ElectricityCostComparisonPairPage({
               backgroundColor: "var(--color-surface-alt, #f9fafb)",
             }}
           >
-            <p style={{ margin: 0, fontSize: 16, lineHeight: 1.6 }}>{summaryText}</p>
-            <p className="muted" style={{ marginTop: 8, fontSize: 14 }}>
+            <p className="muted" style={{ margin: 0, fontSize: 14, lineHeight: 1.6 }}>
               {Math.round(differenceDollars * 100) === 0 ? (
                 <>About the same at 900 kWh/month.</>
               ) : (

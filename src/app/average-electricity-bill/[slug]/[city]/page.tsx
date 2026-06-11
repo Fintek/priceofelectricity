@@ -87,7 +87,7 @@ export default async function AverageElectricityBillCityPage({
     {
       question: `Is this page a calculator?`,
       answer:
-        "No. This page is a benchmark bill reference. Interactive calculators are on the state electricity cost calculator pages.",
+        "No. It's a fixed-usage bill estimate. For an interactive calculator, use the state electricity cost calculator.",
     },
     {
       question: `How does ${summary.city.name} compare with the ${summary.state.name} state benchmark?`,
@@ -106,7 +106,9 @@ export default async function AverageElectricityBillCityPage({
           { label: summary.city.name },
         ]}
         title={`Average Electricity Bill in ${summary.city.name}, ${summary.state.name}`}
-        intro={`This city page estimates a typical monthly electricity bill for ${summary.city.name} at ${AVERAGE_ELECTRICITY_BILL_USAGE_KWH.toLocaleString()} kWh per month. It complements the city electricity cost page and calculator scenarios without replacing them.`}
+        intro={summary.cityMonthlyBill != null
+          ? `A typical household in ${summary.city.name}, ${summary.state.name} pays about ${formatUsd(summary.cityMonthlyBill)} a month for electricity at ${formatRate(summary.cityRateCentsPerKwh)}, based on ${AVERAGE_ELECTRICITY_BILL_USAGE_KWH.toLocaleString()} kWh of monthly use.`
+          : `Estimated monthly electricity bill for ${summary.city.name}, ${summary.state.name}, based on ${AVERAGE_ELECTRICITY_BILL_USAGE_KWH.toLocaleString()} kWh of monthly use.`}
         stats={[
           { label: `${summary.city.name} estimated rate`, value: formatRate(summary.cityRateCentsPerKwh) },
           { label: "Estimated monthly bill", value: formatUsd(summary.cityMonthlyBill) },
@@ -136,7 +138,7 @@ export default async function AverageElectricityBillCityPage({
             value: `/average-electricity-bill/${summary.state.slug}`,
           },
         ]}
-        comparisonSummary={`${summary.estimateMethodNote} This page is a fixed-usage benchmark only. For custom usage math, use the state calculator; for city rate and cost context, use the city electricity cost page.`}
+        comparisonSummary={`${summary.estimateMethodNote} This is a fixed-usage estimate. For custom usage, use the state calculator. For city rates, see the city electricity cost page.`}
         relatedLinks={[]}
         relatedLinkSections={[
           {

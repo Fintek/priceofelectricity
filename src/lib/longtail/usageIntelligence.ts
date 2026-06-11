@@ -255,13 +255,13 @@ export function getApplianceUsageReference(applianceSlug: ApplianceSlug): Applia
 
 export function buildUsageNarrativeForState(state: UsageStateSummary): string {
   const direction = state.usageVsNationalPercent >= 0 ? "above" : "below";
-  return `${state.name} is modeled at ${formatKwh(
+  return `A typical home in ${state.name} uses about ${formatKwh(
     state.estimatedMonthlyUsageKwh,
-  )} per month, about ${Math.abs(state.usageVsNationalPercent).toFixed(1)}% ${direction} the U.S. household benchmark of ${formatKwh(
+  )} a month, about ${Math.abs(state.usageVsNationalPercent).toFixed(1)}% ${direction} the typical U.S. home of ${formatKwh(
     NATIONAL_AVERAGE_HOUSEHOLD_USAGE_KWH,
-  )}. At ${state.avgRateCentsPerKwh != null ? `${state.avgRateCentsPerKwh.toFixed(2)} ¢/kWh` : "the available state rate"}, that usage translates to roughly ${formatUsd(
+  )}. At ${state.avgRateCentsPerKwh != null ? `${state.avgRateCentsPerKwh.toFixed(2)} ¢/kWh` : "the available state rate"}, that works out to about ${formatUsd(
     calculateUsageCost(state.avgRateCentsPerKwh, state.estimatedMonthlyUsageKwh),
-  )} per month.`;
+  )} a month.`;
 }
 
 const USAGE_META_VS_NATIONAL_NEUTRAL_EPSILON_PERCENT = 0.05;

@@ -101,8 +101,8 @@ export default async function AverageElectricityBillStatePage({
         ]}
         title={`Average Electricity Bill in ${state.name}`}
         intro={state.monthlyBill != null
-          ? `A typical household in ${state.name} pays about ${formatUsd(state.monthlyBill)} per month for electricity, based on the state average rate of ${formatRate(state.avgRateCentsPerKwh)} and a ${AVERAGE_ELECTRICITY_BILL_USAGE_KWH.toLocaleString()} kWh monthly usage benchmark.`
-          : `Estimated monthly and annual electricity bills for ${state.name}, based on the state average residential rate and a ${AVERAGE_ELECTRICITY_BILL_USAGE_KWH.toLocaleString()} kWh monthly usage benchmark.`}
+          ? `A typical household in ${state.name} pays about ${formatUsd(state.monthlyBill)} a month for electricity, based on the state average rate of ${formatRate(state.avgRateCentsPerKwh)} and ${AVERAGE_ELECTRICITY_BILL_USAGE_KWH.toLocaleString()} kWh of monthly use.`
+          : `Estimated monthly and annual electricity bills for ${state.name}, based on the state average residential rate and ${AVERAGE_ELECTRICITY_BILL_USAGE_KWH.toLocaleString()} kWh of monthly use.`}
         stats={[
           { label: `${state.name} average rate`, value: formatRate(state.avgRateCentsPerKwh) },
           { label: "Estimated monthly bill", value: formatUsd(state.monthlyBill) },
@@ -154,7 +154,7 @@ export default async function AverageElectricityBillStatePage({
             of {formatUsd(state.monthlyBill)} before delivery charges, taxes, and fixed utility fees.
           </p>
           <p style={{ marginBottom: 0, lineHeight: 1.7 }}>
-            That benchmark is useful for comparing states, but real households can land above or below it depending on
+            That number is a good way to compare states, but your bill can land above or below it depending on
             cooling load, heating type, home size, appliance intensity, and local utility rate design.
           </p>
         </section>
@@ -184,8 +184,7 @@ export default async function AverageElectricityBillStatePage({
             </table>
           </div>
           <p style={{ marginBottom: 0, marginTop: 12, lineHeight: 1.7 }}>
-            These usage pages handle fixed monthly kWh searches like &quot;how much does 1,000 kWh cost?&quot; The bill
-            page links to them as supporting examples instead of duplicating the same math under another URL.
+            These pages answer fixed-usage questions like &quot;how much does 1,000 kWh cost?&quot;
           </p>
         </section>
 
@@ -196,8 +195,8 @@ export default async function AverageElectricityBillStatePage({
             EV charging, and the length of time high-wattage appliances run each month.
           </p>
           <p style={{ marginBottom: 0, lineHeight: 1.7 }}>
-            That is why this page links to both usage-cost routes and appliance operating-cost pages: one shows what a
-            whole-home kWh pattern looks like, and the other shows how specific devices contribute to the final bill.
+            Two kinds of pages help you dig in: usage-cost pages show what a whole-home kWh pattern costs, and appliance
+            pages show how single devices add up.
           </p>
         </section>
       </LongtailStateTemplate>
