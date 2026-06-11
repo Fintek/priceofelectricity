@@ -54,3 +54,4 @@ next-env.d.ts
 # payload audit local baseline (per-machine reference for change reporting;
 # environment-sensitive, seeded via `npm run payload:baseline`)
 /payload-baseline.json
+gsc-export/

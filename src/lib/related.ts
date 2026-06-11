@@ -161,7 +161,7 @@ function forHubDrivers(): RelatedLink[] {
 function forHubOffers(): RelatedLink[] {
   return dedupe([
     { title: "Compare all states", href: "/compare", type: "tool" },
-    { title: "Bill calculator", href: "/calculator", type: "tool" },
+    { title: "Bill calculator", href: "/electricity-cost-calculator", type: "tool" },
     { title: "Disclosures", href: "/disclosures", type: "research" },
     { title: "National overview", href: "/national", type: "ranking" },
     { title: "Methodology", href: "/methodology", type: "research" },
@@ -246,7 +246,7 @@ function forGuideCtx(slug: string, _state?: string): RelatedLink[] {
     links.push({ title: guide.title, href: `/guides/${guide.slug}`, type: "guide" });
   }
   links.push(
-    { title: "Bill calculator", href: "/calculator", type: "tool" },
+    { title: "Bill calculator", href: "/electricity-cost-calculator", type: "tool" },
     { title: "Compare rates", href: "/compare", type: "tool" },
     { title: "National overview", href: "/national", type: "ranking" },
     { title: "Methodology", href: "/methodology", type: "research" },
@@ -267,7 +267,7 @@ function forQuestionCtx(slug: string, _state?: string): RelatedLink[] {
     }
   }
   links.push(
-    { title: "Bill calculator", href: "/calculator", type: "tool" },
+    { title: "Bill calculator", href: "/electricity-cost-calculator", type: "tool" },
     { title: "Compare rates", href: "/compare", type: "tool" },
     { title: "National overview", href: "/national", type: "ranking" },
     { title: "Methodology", href: "/methodology", type: "research" },
@@ -359,7 +359,7 @@ export function getRelatedForState(stateSlug: string): RelatedLink[] {
   const links: RelatedLink[] = [];
 
   links.push(
-    { title: "Bill calculator", href: "/calculator", type: "tool" },
+    { title: "Bill calculator", href: "/electricity-cost-calculator", type: "tool" },
     { title: "Compare rates", href: "/compare", type: "tool" },
     { title: "Affordability index", href: "/affordability", type: "tool" },
     { title: "Value ranking", href: "/value-ranking", type: "tool" },
@@ -424,7 +424,7 @@ export function getRelatedForGuide(guideSlug: string): RelatedLink[] {
   }
 
   links.push(
-    { title: "Bill calculator", href: "/calculator", type: "tool" },
+    { title: "Bill calculator", href: "/electricity-cost-calculator", type: "tool" },
     { title: "Compare rates", href: "/compare", type: "tool" },
   );
 
@@ -459,7 +459,7 @@ export function getRelatedForQuestion(questionSlug: string): RelatedLink[] {
   }
 
   links.push(
-    { title: "Bill calculator", href: "/calculator", type: "tool" },
+    { title: "Bill calculator", href: "/electricity-cost-calculator", type: "tool" },
     { title: "Compare rates", href: "/compare", type: "tool" },
   );
 
