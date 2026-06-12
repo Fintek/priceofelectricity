@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import JsonLdScript from "@/app/components/seo/JsonLdScript";
 import Disclaimers from "@/app/components/policy/Disclaimers";
 import StatusFooter from "@/components/common/StatusFooter";
+import CityRateDisclosure from "@/components/longtail/CityRateDisclosure";
 import LongtailStateTemplate from "@/components/longtail/LongtailStateTemplate";
 import {
   AVERAGE_ELECTRICITY_BILL_USAGE_KWH,
@@ -124,10 +125,7 @@ export default async function AverageElectricityBillCityPage({
           },
           {
             label: "City estimate basis",
-            value:
-              summary.estimateBasis === "city-config-reference"
-                ? "Configured city reference rate"
-                : "Modeled from state baseline",
+            value: "Modeled from state EIA baseline",
           },
           {
             label: "This city page",
@@ -175,16 +173,13 @@ export default async function AverageElectricityBillCityPage({
       >
         <section style={{ marginBottom: "var(--space-7)" }}>
           <h2 className="heading-section">How to read this city benchmark bill</h2>
-          <p style={{ marginTop: 0, lineHeight: 1.7 }}>
-            This benchmark applies the city electricity-rate estimate to a standard
-            {" "}
-            {AVERAGE_ELECTRICITY_BILL_USAGE_KWH.toLocaleString()}
-            {" "}
-            kWh monthly profile so cities can be compared on a consistent basis.
-          </p>
+          <CityRateDisclosure eiaMonthLabel={summary.state.updatedLabel} />
           <p style={{ marginBottom: 0, lineHeight: 1.7 }}>
-            It is not a utility quote and not a custom calculator. To try different usage levels, use the state
-            electricity cost calculator; for local rates and electricity cost context, see the city electricity cost page.
+            This benchmark applies the modeled city rate to a standard{" "}
+            {AVERAGE_ELECTRICITY_BILL_USAGE_KWH.toLocaleString()} kWh monthly profile so cities can be compared on a
+            consistent basis. It is not a utility quote and not a custom calculator. To try different usage levels, use
+            the state electricity cost calculator; for local rates and electricity cost context, see the city electricity
+            cost page.
           </p>
         </section>
 

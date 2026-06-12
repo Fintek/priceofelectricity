@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import JsonLdScript from "@/app/components/seo/JsonLdScript";
 import Disclaimers from "@/app/components/policy/Disclaimers";
 import StatusFooter from "@/components/common/StatusFooter";
+import CityRateDisclosure from "@/components/longtail/CityRateDisclosure";
 import LongtailStateTemplate from "@/components/longtail/LongtailStateTemplate";
 import { getRelease } from "@/lib/knowledge/fetch";
 import {
@@ -78,15 +79,13 @@ export default async function ElectricityCostCityPage({
 
   const webPageJsonLd = buildWebPageJsonLd({
     title: `Electricity Cost in ${summary.city.name}, ${summary.state.name}`,
-    description: `City electricity estimate page for ${summary.city.name}, ${summary.state.name}. Values use ${summary.estimateBasis === "city-config-reference" ? "configured reference rates" : "modeled estimates"} with disclosure and EIA source attribution.`,
+    description: `City electricity estimate page for ${summary.city.name}, ${summary.state.name}. Values use modeled estimates from EIA state data with disclosure and source attribution.`,
     url: canonicalPath,
     isPartOf: "/",
     about: [
       `electricity cost in ${summary.city.name}`,
       `${summary.state.name} city electricity estimate`,
-      summary.estimateBasis === "city-config-reference"
-        ? "city electricity cost configured reference"
-        : "city electricity cost modeled estimate",
+      "city electricity cost modeled estimate",
     ],
   });
   const datasetJsonLd = buildDatasetJsonLd({
@@ -148,10 +147,7 @@ export default async function ElectricityCostCityPage({
         comparisonRows={[
           {
             label: "Estimate basis",
-            value:
-              summary.estimateBasis === "city-config-reference"
-                ? "City configured reference rate"
-                : "Modeled from state baseline",
+            value: "Modeled from state EIA baseline",
           },
           {
             label: "Reference usage assumption",
@@ -235,14 +231,10 @@ export default async function ElectricityCostCityPage({
       >
         <section style={{ marginBottom: "var(--space-7)" }}>
           <h2 className="heading-section">How this city estimate is derived</h2>
-          <p style={{ marginTop: 0, lineHeight: 1.7 }}>
-            This page starts from the statewide residential electricity baseline and applies a city-specific estimate
-            rule. Where a city reference value exists in our city dataset, that value is used as the estimate basis;
-            otherwise a population-based adjustment is applied to the state baseline.
-          </p>
+          <CityRateDisclosure eiaMonthLabel={summary.state.updatedLabel} />
           <p style={{ marginBottom: 0, lineHeight: 1.7 }}>
-            {summary.estimateMethodNote} This methodology is intended for consistent local context, not utility-plan
-            quoting or bill prediction precision.
+            This methodology is intended for consistent local context, not utility-plan quoting or bill
+            prediction precision.
           </p>
         </section>
 

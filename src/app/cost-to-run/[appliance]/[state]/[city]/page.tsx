@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import JsonLdScript from "@/app/components/seo/JsonLdScript";
 import Disclaimers from "@/app/components/policy/Disclaimers";
 import StatusFooter from "@/components/common/StatusFooter";
+import CityRateDisclosure from "@/components/longtail/CityRateDisclosure";
 import LongtailStateTemplate from "@/components/longtail/LongtailStateTemplate";
 import { getRelease } from "@/lib/knowledge/fetch";
 import {
@@ -71,15 +72,13 @@ export default async function ApplianceCityCostPage({
 
   const webPageJsonLd = buildWebPageJsonLd({
     title: `Cost to Run ${article} ${summary.applianceConfig.displayName} in ${summary.citySummary.city.name}, ${summary.citySummary.state.name}`,
-    description: `Appliance cost page for ${summary.citySummary.city.name} with ${summary.citySummary.estimateBasis === "city-config-reference" ? "configured reference" : "modeled"} city rate context and methodology notes.`,
+    description: `Appliance cost page for ${summary.citySummary.city.name} with modeled city rate context and methodology notes.`,
     url: canonicalPath,
     isPartOf: "/",
     about: [
       `${summary.applianceConfig.displayName} cost in ${summary.citySummary.city.name}`,
       "appliance city electricity estimate",
-      summary.citySummary.estimateBasis === "city-config-reference"
-        ? "configured reference electricity cost context"
-        : "modeled electricity cost context",
+      "modeled electricity cost context",
     ],
   });
 
@@ -101,10 +100,7 @@ export default async function ApplianceCityCostPage({
         stats={[
           {
             label: "City estimate basis",
-            value:
-              summary.citySummary.estimateBasis === "city-config-reference"
-                ? "City configured reference rate"
-                : "Modeled from state baseline",
+            value: "Modeled from state EIA baseline",
           },
           { label: "Estimated city rate", value: formatRate(summary.citySummary.cityRateCentsPerKwh) },
           { label: "Assumed wattage", value: `${summary.applianceConfig.averageWattage.toLocaleString()} W` },
@@ -132,7 +128,7 @@ export default async function ApplianceCityCostPage({
             value: formatUsd(summary.nationalMonthlyCostEstimate),
           },
         ]}
-        comparisonSummary={`City values on this page are ${summary.citySummary.estimateBasis === "city-config-reference" ? "reference" : "modeled"} estimates for context. They are not utility tariff quotes or exact bill predictions.`}
+        comparisonSummary="City values on this page are modeled estimates for context. They are not utility tariff quotes or exact bill predictions."
         relatedLinks={[]}
         relatedLinkSections={[
           {
@@ -185,9 +181,10 @@ export default async function ApplianceCityCostPage({
             {formatHoursPerDay(summary.applianceConfig.typicalUsageHoursPerDay)}.
             Estimated monthly usage is <strong>{formatKwh(summary.applianceUsage.kwhPerMonth)}</strong>.
           </p>
-          <p style={{ marginBottom: 0, lineHeight: 1.7 }}>
-            {summary.citySummary.estimateMethodNote} City-level appliance pages are available for a limited set of city
-            and appliance combinations and are intended for comparison context, not utility tariff quoting.
+          <CityRateDisclosure eiaMonthLabel={summary.citySummary.state.updatedLabel} style={{ marginBottom: 0 }} />
+          <p style={{ marginBottom: 0, lineHeight: 1.7, marginTop: "1rem" }}>
+            City-level appliance pages are available for a limited set of city and appliance combinations and are
+            intended for comparison context, not utility tariff quoting.
           </p>
         </section>
 
