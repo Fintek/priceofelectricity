@@ -36,7 +36,7 @@ export const dynamic = "force-static";
 export const revalidate = 86400;
 
 export const metadata: Metadata = buildMetadata({
-  title: "Electricity Hubs: State, Usage, Bill & Appliance Discovery | PriceOfElectricity.com",
+  title: "Electricity Hubs: Rates, Usage, Bills & Appliances",
   description:
     "Explore electricity data by state, usage level, household profile, and appliance. Find rates, compare costs, estimate bills, and browse providers.",
   canonicalPath: "/electricity-hubs",

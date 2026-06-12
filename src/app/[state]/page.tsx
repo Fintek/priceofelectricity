@@ -62,9 +62,13 @@ export async function generateMetadata({
 
   const ns = buildNormalizedState(slug);
   const isDc = slug === "district-of-columbia";
-  const title = isDc
-    ? "Washington DC Electricity Price (¢/kWh) | PriceOfElectricity.com"
-    : `${ns.name} Electricity Price (¢/kWh) | PriceOfElectricity.com`;
+  const displayName = isDc ? "Washington DC" : ns.name;
+  const monthlyBill900 = Math.round((ns.avgRateCentsPerKwh / 100) * 900);
+  const titleWithHooks = `${displayName} Electricity Rates: $${monthlyBill900}/mo, ${ns.avgRateCentsPerKwh}¢/kWh`;
+  const title =
+    titleWithHooks.length <= 60
+      ? titleWithHooks
+      : `${displayName} Electricity Rates: $${monthlyBill900}/mo`;
   const eiaMonth = getCanonicalResidentialDataThroughMonthLabel();
   const description = isDc
     ? `Washington, D.C. average residential electricity rate is ${ns.avgRateCentsPerKwh}¢/kWh (latest EIA reporting month ${eiaMonth}). Estimate your monthly bill.`

@@ -37,8 +37,17 @@ export async function generateMetadata({
       canonicalPath: `/electricity-usage/${state}`,
     });
   }
+  const kwhDisplay = data.estimatedMonthlyUsageKwh.toLocaleString();
+  const monthlyUsageCost =
+    data.avgRateCentsPerKwh != null
+      ? Math.round((data.avgRateCentsPerKwh / 100) * data.estimatedMonthlyUsageKwh)
+      : null;
+  const title =
+    monthlyUsageCost != null
+      ? `Average Electricity Usage in ${data.name}: ${kwhDisplay} kWh, ~$${monthlyUsageCost}/mo`
+      : `Average Electricity Usage in ${data.name}: ${kwhDisplay} kWh/Month`;
   return buildMetadata({
-    title: `Average Electricity Usage in ${data.name}: ${data.estimatedMonthlyUsageKwh.toLocaleString()} kWh/Month`,
+    title,
     description: buildUsageMetaDescriptionForState(data),
     canonicalPath: `/electricity-usage/${state}`,
   });

@@ -6,6 +6,7 @@ import {
   loadInsights,
 } from "@/lib/knowledge/loadKnowledgePage";
 import { getActiveCitiesForState } from "@/lib/longtail/rollout";
+import { getCanonicalResidentialDataThroughMonthLabel } from "@/lib/eiaReportingTrust";
 import { buildMetadata } from "@/lib/seo/metadata";
 import { buildWebPageJsonLd } from "@/lib/seo/jsonld";
 import JsonLdScript from "@/app/components/seo/JsonLdScript";
@@ -47,8 +48,19 @@ export async function generateMetadata({
     avgRate != null
       ? `Average electricity cost in ${stateName}: ${avgRate.toFixed(2)}¢/kWh. Estimated monthly cost for 900 kWh: $${monthlyCost.toFixed(2)}. Compare to national average.`
       : `${stateName} electricity cost and rate data. Residential average rate, estimated monthly and annual costs.`;
+
+  let title: string;
+  if (avgRate != null) {
+    const yearMatch = getCanonicalResidentialDataThroughMonthLabel().match(/\d{4}/);
+    const base = `Electricity Cost in ${stateName}: $${Math.round(monthlyCost)}/mo, ${avgRate.toFixed(2)}¢/kWh`;
+    const withYear = yearMatch ? `${base} (${yearMatch[0]})` : base;
+    title = withYear.length <= 60 ? withYear : base;
+  } else {
+    title = `Electricity Cost in ${stateName}`;
+  }
+
   return buildMetadata({
-    title: `Electricity Cost in ${stateName} | PriceOfElectricity.com`,
+    title,
     description,
     canonicalPath: `/electricity-cost/${slug}`,
   });
