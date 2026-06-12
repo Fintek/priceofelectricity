@@ -40,6 +40,16 @@ function formatMiB(bytes: number): string {
   return `${(bytes / MB).toFixed(2)} MiB`;
 }
 
+type OperatingZone = "preferred" | "caution" | "blocker";
+
+// Mirrors the operating-margin policy in docs/PERFORMANCE_BUDGET.md:
+// <= 90% preferred, 90-97% caution, >= 97% blocker.
+function zoneForPct(pct: number): OperatingZone {
+  if (pct >= 97) return "blocker";
+  if (pct >= 90) return "caution";
+  return "preferred";
+}
+
 const BASELINE_REL_PATH = "payload-baseline.json";
 
 type PayloadBaseline = {
@@ -50,7 +60,7 @@ type PayloadBaseline = {
 
 function formatSignedMiB(bytes: number): string {
   const sign = bytes > 0 ? "+" : bytes < 0 ? "-" : "";
-  return `${sign}${(bytes / MB).toFixed(2)} MiB`;
+  return `${sign}${(Math.abs(bytes) / MB).toFixed(2)} MiB`;
 }
 
 async function readBaseline(absPath: string): Promise<PayloadBaseline | null> {
@@ -144,6 +154,67 @@ async function reportStandaloneContributors(root: string): Promise<void> {
   }
 }
 
+async function measureTargets(
+  root: string,
+): Promise<{ measured: MeasuredTarget[]; missing: BudgetTarget[] }> {
+  const measured: MeasuredTarget[] = [];
+  const missing: BudgetTarget[] = [];
+  for (const target of BUDGET_TARGETS) {
+    const absPath = path.join(root, target.relPath);
+    try {
+      const sizeBytes = await getPathSizeBytes(absPath);
+      measured.push({ ...target, absPath, sizeBytes });
+    } catch {
+      missing.push(target);
+    }
+  }
+  return { measured, missing };
+}
+
+// Compact, human-friendly headroom snapshot reading the last build output.
+// Purely informational: never gates and never exits non-zero on its own.
+async function runReadout(root: string): Promise<void> {
+  const { measured, missing } = await measureTargets(root);
+  if (measured.length === 0) {
+    console.log("Payload readout: no build output found. Run `npm run build` first.");
+    return;
+  }
+
+  const headers = ["Target", "Size", "Budget", "Used", "Headroom", "Zone"];
+  const rightAligned = new Set([1, 2, 3, 4]);
+  const rows = measured.map((t) => {
+    const pct = (t.sizeBytes / t.maxBytes) * 100;
+    const headroomBytes = Math.max(t.maxBytes - t.sizeBytes, 0);
+    return [
+      t.id,
+      formatMiB(t.sizeBytes),
+      formatMiB(t.maxBytes),
+      `${pct.toFixed(1)}%`,
+      formatMiB(headroomBytes),
+      zoneForPct(pct),
+    ];
+  });
+
+  const widths = headers.map((header, col) =>
+    Math.max(header.length, ...rows.map((row) => row[col].length)),
+  );
+  const formatRow = (cols: string[]): string =>
+    cols
+      .map((value, col) =>
+        rightAligned.has(col) ? value.padStart(widths[col]) : value.padEnd(widths[col]),
+      )
+      .join("  ");
+
+  console.log("Payload readout (last build):");
+  console.log(`  ${formatRow(headers)}`);
+  for (const row of rows) {
+    console.log(`  ${formatRow(row)}`);
+  }
+  for (const target of missing) {
+    console.log(`  (not measured: ${target.relPath} — run \`npm run build\`)`);
+  }
+}
+
 async function writeGithubStepSummary(measuredTargets: MeasuredTarget[]): Promise<void> {
   const summaryPath = process.env.GITHUB_STEP_SUMMARY;
   if (!summaryPath) return;
@@ -169,22 +240,22 @@ async function writeGithubStepSummary(measuredTargets: MeasuredTarget[]): Promis
 
 async function main(): Promise<void> {
   const root = process.cwd();
+
+  if (process.argv.includes("--readout")) {
+    await runReadout(root);
+    return;
+  }
+
   const updateBaseline = process.argv.includes("--update-baseline");
   const emitGithubSummary = process.argv.includes("--github-summary");
   const baselineAbsPath = path.join(root, BASELINE_REL_PATH);
   const baseline = await readBaseline(baselineAbsPath);
   const failures: string[] = [];
-  const measuredTargets: MeasuredTarget[] = [];
+  const { measured: measuredTargets, missing } = await measureTargets(root);
 
-  for (const target of BUDGET_TARGETS) {
-    const absPath = path.join(root, target.relPath);
-    try {
-      const sizeBytes = await getPathSizeBytes(absPath);
-      measuredTargets.push({ ...target, absPath, sizeBytes });
-    } catch {
-      if (target.required) {
-        failures.push(`Missing required path: ${target.relPath} (run npm run build first)`);
-      }
+  for (const target of missing) {
+    if (target.required) {
+      failures.push(`Missing required path: ${target.relPath} (run npm run build first)`);
     }
   }
 
