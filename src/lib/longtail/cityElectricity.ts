@@ -28,7 +28,7 @@ const CITY_POPULATION_MODIFIER_RULES: Array<{
   { minPopulation: 250_000, multiplier: 1.01 },
 ];
 
-export type CityEstimateBasis = "city-config-reference" | "modeled-from-state";
+export type CityEstimateBasis = "modeled-from-state";
 
 export type CityElectricitySummary = {
   city: City;
@@ -66,6 +66,11 @@ function getPopulationModifier(population: number | undefined): number {
   return 1;
 }
 
+export function getCityEstimateMethodNote(eiaMonthLabel: string | null): string {
+  const label = eiaMonthLabel?.trim() || "current";
+  return `City rate is modeled from the ${label} EIA state average with a population-based adjustment. See methodology.`;
+}
+
 export function getCityRolloutStaticParams(): Array<{ state: string; city: string }> {
   return getActiveCityPages().map((city) => ({
     state: city.stateSlug,
@@ -94,23 +99,13 @@ export async function loadCityElectricitySummary(
   const stateRate = state.avgRateCentsPerKwh;
   if (stateRate == null) return null;
 
-  const hasCityConfigRate = typeof city.avgRateCentsPerKwh === "number";
-  const modeledRate = stateRate * getPopulationModifier(city.population);
-  const cityRateCentsPerKwh = hasCityConfigRate ? city.avgRateCentsPerKwh ?? null : modeledRate;
-  if (cityRateCentsPerKwh == null) return null;
-
+  const cityRateCentsPerKwh = stateRate * getPopulationModifier(city.population);
   const monthlyCostEstimate = (cityRateCentsPerKwh / 100) * CITY_REFERENCE_USAGE_KWH;
   const annualCostEstimate = monthlyCostEstimate * 12;
   const stateMonthlyCostEstimate = (stateRate / 100) * CITY_REFERENCE_USAGE_KWH;
 
-  const estimateBasis: CityEstimateBasis = hasCityConfigRate
-    ? "city-config-reference"
-    : "modeled-from-state";
-
-  const estimateMethodNote =
-    estimateBasis === "city-config-reference"
-      ? "City configured reference rate when available; still an estimate for comparison context."
-      : "Modeled estimate derived from the state average rate with a population-based adjustment.";
+  const estimateBasis: CityEstimateBasis = "modeled-from-state";
+  const estimateMethodNote = getCityEstimateMethodNote(state.updatedLabel);
 
   return {
     city,

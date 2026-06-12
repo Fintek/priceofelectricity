@@ -212,8 +212,7 @@ export const ACTIVE_CITY_PAGE_KEYS: readonly string[] = [
  * Key format: `${stateSlug}/${citySlug}`
  *
  * Phase 1 keeps city-bill rollout tightly bounded to a small explicit allowlist.
- * Keys must point to cities already active in city authority rollout and
- * must use configured city reference rates.
+ * Keys must point to cities already active in city authority rollout.
  */
 export const ACTIVE_CITY_BILL_PAGE_KEYS: readonly string[] = [
   "california/los-angeles",
@@ -407,10 +406,7 @@ function parseCityBillPageKey(value: string): CityBillRolloutPage | null {
 
 function isValidCityBillPage(page: CityBillRolloutPage): boolean {
   if (!isActiveCityPageKey(page.stateSlug, page.citySlug)) return false;
-  const city = CITIES.find((row) => row.stateSlug === page.stateSlug && row.slug === page.citySlug);
-  if (!city) return false;
-  if (typeof city.avgRateCentsPerKwh !== "number") return false;
-  return true;
+  return CITIES.some((row) => row.stateSlug === page.stateSlug && row.slug === page.citySlug);
 }
 
 function assertCityBillRolloutLimits(pages: CityBillRolloutPage[]): void {
