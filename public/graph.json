@@ -4827,7 +4827,7 @@
     {
       "id": "state:alabama:history",
       "type": "state",
-      "url": "http://localhost:3000/alabama/history"
+      "url": "http://localhost:3000/electricity-price-history/alabama"
     },
     {
       "id": "state:alabama:plan-types",
@@ -4852,7 +4852,7 @@
     {
       "id": "state:alaska:history",
       "type": "state",
-      "url": "http://localhost:3000/alaska/history"
+      "url": "http://localhost:3000/electricity-price-history/alaska"
     },
     {
       "id": "state:alaska:plan-types",
@@ -4877,7 +4877,7 @@
     {
       "id": "state:arizona:history",
       "type": "state",
-      "url": "http://localhost:3000/arizona/history"
+      "url": "http://localhost:3000/electricity-price-history/arizona"
     },
     {
       "id": "state:arizona:plan-types",
@@ -4902,7 +4902,7 @@
     {
       "id": "state:arkansas:history",
       "type": "state",
-      "url": "http://localhost:3000/arkansas/history"
+      "url": "http://localhost:3000/electricity-price-history/arkansas"
     },
     {
       "id": "state:arkansas:plan-types",
@@ -4927,7 +4927,7 @@
     {
       "id": "state:california:history",
       "type": "state",
-      "url": "http://localhost:3000/california/history"
+      "url": "http://localhost:3000/electricity-price-history/california"
     },
     {
       "id": "state:california:plan-types",
@@ -4952,7 +4952,7 @@
     {
       "id": "state:colorado:history",
       "type": "state",
-      "url": "http://localhost:3000/colorado/history"
+      "url": "http://localhost:3000/electricity-price-history/colorado"
     },
     {
       "id": "state:colorado:plan-types",
@@ -4977,7 +4977,7 @@
     {
       "id": "state:connecticut:history",
       "type": "state",
-      "url": "http://localhost:3000/connecticut/history"
+      "url": "http://localhost:3000/electricity-price-history/connecticut"
     },
     {
       "id": "state:connecticut:plan-types",
@@ -5002,7 +5002,7 @@
     {
       "id": "state:delaware:history",
       "type": "state",
-      "url": "http://localhost:3000/delaware/history"
+      "url": "http://localhost:3000/electricity-price-history/delaware"
     },
     {
       "id": "state:delaware:plan-types",
@@ -5027,7 +5027,7 @@
     {
       "id": "state:district-of-columbia:history",
       "type": "state",
-      "url": "http://localhost:3000/district-of-columbia/history"
+      "url": "http://localhost:3000/electricity-price-history/district-of-columbia"
     },
     {
       "id": "state:district-of-columbia:plan-types",
@@ -5052,7 +5052,7 @@
     {
       "id": "state:florida:history",
       "type": "state",
-      "url": "http://localhost:3000/florida/history"
+      "url": "http://localhost:3000/electricity-price-history/florida"
     },
     {
       "id": "state:florida:plan-types",
@@ -5077,7 +5077,7 @@
     {
       "id": "state:georgia:history",
       "type": "state",
-      "url": "http://localhost:3000/georgia/history"
+      "url": "http://localhost:3000/electricity-price-history/georgia"
     },
     {
       "id": "state:georgia:plan-types",
@@ -5102,7 +5102,7 @@
     {
       "id": "state:hawaii:history",
       "type": "state",
-      "url": "http://localhost:3000/hawaii/history"
+      "url": "http://localhost:3000/electricity-price-history/hawaii"
     },
     {
       "id": "state:hawaii:plan-types",
@@ -5127,7 +5127,7 @@
     {
       "id": "state:idaho:history",
       "type": "state",
-      "url": "http://localhost:3000/idaho/history"
+      "url": "http://localhost:3000/electricity-price-history/idaho"
     },
     {
       "id": "state:idaho:plan-types",
@@ -5152,7 +5152,7 @@
     {
       "id": "state:illinois:history",
       "type": "state",
-      "url": "http://localhost:3000/illinois/history"
+      "url": "http://localhost:3000/electricity-price-history/illinois"
     },
     {
       "id": "state:illinois:plan-types",
@@ -5177,7 +5177,7 @@
     {
       "id": "state:indiana:history",
       "type": "state",
-      "url": "http://localhost:3000/indiana/history"
+      "url": "http://localhost:3000/electricity-price-history/indiana"
     },
     {
       "id": "state:indiana:plan-types",
@@ -5202,7 +5202,7 @@
     {
       "id": "state:iowa:history",
       "type": "state",
-      "url": "http://localhost:3000/iowa/history"
+      "url": "http://localhost:3000/electricity-price-history/iowa"
     },
     {
       "id": "state:iowa:plan-types",
@@ -5227,7 +5227,7 @@
     {
       "id": "state:kansas:history",
       "type": "state",
-      "url": "http://localhost:3000/kansas/history"
+      "url": "http://localhost:3000/electricity-price-history/kansas"
     },
     {
       "id": "state:kansas:plan-types",
@@ -5252,7 +5252,7 @@
     {
       "id": "state:kentucky:history",
       "type": "state",
-      "url": "http://localhost:3000/kentucky/history"
+      "url": "http://localhost:3000/electricity-price-history/kentucky"
     },
     {
       "id": "state:kentucky:plan-types",
@@ -5277,7 +5277,7 @@
     {
       "id": "state:louisiana:history",
       "type": "state",
-      "url": "http://localhost:3000/louisiana/history"
+      "url": "http://localhost:3000/electricity-price-history/louisiana"
     },
     {
       "id": "state:louisiana:plan-types",
@@ -5302,7 +5302,7 @@
     {
       "id": "state:maine:history",
       "type": "state",
-      "url": "http://localhost:3000/maine/history"
+      "url": "http://localhost:3000/electricity-price-history/maine"
     },
     {
       "id": "state:maine:plan-types",
@@ -5327,7 +5327,7 @@
     {
       "id": "state:maryland:history",
       "type": "state",
-      "url": "http://localhost:3000/maryland/history"
+      "url": "http://localhost:3000/electricity-price-history/maryland"
     },
     {
       "id": "state:maryland:plan-types",
@@ -5352,7 +5352,7 @@
     {
       "id": "state:massachusetts:history",
       "type": "state",
-      "url": "http://localhost:3000/massachusetts/history"
+      "url": "http://localhost:3000/electricity-price-history/massachusetts"
     },
     {
       "id": "state:massachusetts:plan-types",
@@ -5377,7 +5377,7 @@
     {
       "id": "state:michigan:history",
       "type": "state",
-      "url": "http://localhost:3000/michigan/history"
+      "url": "http://localhost:3000/electricity-price-history/michigan"
     },
     {
       "id": "state:michigan:plan-types",
@@ -5402,7 +5402,7 @@
     {
       "id": "state:minnesota:history",
       "type": "state",
-      "url": "http://localhost:3000/minnesota/history"
+      "url": "http://localhost:3000/electricity-price-history/minnesota"
     },
     {
       "id": "state:minnesota:plan-types",
@@ -5427,7 +5427,7 @@
     {
       "id": "state:mississippi:history",
       "type": "state",
-      "url": "http://localhost:3000/mississippi/history"
+      "url": "http://localhost:3000/electricity-price-history/mississippi"
     },
     {
       "id": "state:mississippi:plan-types",
@@ -5452,7 +5452,7 @@
     {
       "id": "state:missouri:history",
       "type": "state",
-      "url": "http://localhost:3000/missouri/history"
+      "url": "http://localhost:3000/electricity-price-history/missouri"
     },
     {
       "id": "state:missouri:plan-types",
@@ -5477,7 +5477,7 @@
     {
       "id": "state:montana:history",
       "type": "state",
-      "url": "http://localhost:3000/montana/history"
+      "url": "http://localhost:3000/electricity-price-history/montana"
     },
     {
       "id": "state:montana:plan-types",
@@ -5502,7 +5502,7 @@
     {
       "id": "state:nebraska:history",
       "type": "state",
-      "url": "http://localhost:3000/nebraska/history"
+      "url": "http://localhost:3000/electricity-price-history/nebraska"
     },
     {
       "id": "state:nebraska:plan-types",
@@ -5527,7 +5527,7 @@
     {
       "id": "state:nevada:history",
       "type": "state",
-      "url": "http://localhost:3000/nevada/history"
+      "url": "http://localhost:3000/electricity-price-history/nevada"
     },
     {
       "id": "state:nevada:plan-types",
@@ -5552,7 +5552,7 @@
     {
       "id": "state:new-hampshire:history",
       "type": "state",
-      "url": "http://localhost:3000/new-hampshire/history"
+      "url": "http://localhost:3000/electricity-price-history/new-hampshire"
     },
     {
       "id": "state:new-hampshire:plan-types",
@@ -5577,7 +5577,7 @@
     {
       "id": "state:new-jersey:history",
       "type": "state",
-      "url": "http://localhost:3000/new-jersey/history"
+      "url": "http://localhost:3000/electricity-price-history/new-jersey"
     },
     {
       "id": "state:new-jersey:plan-types",
@@ -5602,7 +5602,7 @@
     {
       "id": "state:new-mexico:history",
       "type": "state",
-      "url": "http://localhost:3000/new-mexico/history"
+      "url": "http://localhost:3000/electricity-price-history/new-mexico"
     },
     {
       "id": "state:new-mexico:plan-types",
@@ -5627,7 +5627,7 @@
     {
       "id": "state:new-york:history",
       "type": "state",
-      "url": "http://localhost:3000/new-york/history"
+      "url": "http://localhost:3000/electricity-price-history/new-york"
     },
     {
       "id": "state:new-york:plan-types",
@@ -5652,7 +5652,7 @@
     {
       "id": "state:north-carolina:history",
       "type": "state",
-      "url": "http://localhost:3000/north-carolina/history"
+      "url": "http://localhost:3000/electricity-price-history/north-carolina"
     },
     {
       "id": "state:north-carolina:plan-types",
@@ -5677,7 +5677,7 @@
     {
       "id": "state:north-dakota:history",
       "type": "state",
-      "url": "http://localhost:3000/north-dakota/history"
+      "url": "http://localhost:3000/electricity-price-history/north-dakota"
     },
     {
       "id": "state:north-dakota:plan-types",
@@ -5702,7 +5702,7 @@
     {
       "id": "state:ohio:history",
       "type": "state",
-      "url": "http://localhost:3000/ohio/history"
+      "url": "http://localhost:3000/electricity-price-history/ohio"
     },
     {
       "id": "state:ohio:plan-types",
@@ -5727,7 +5727,7 @@
     {
       "id": "state:oklahoma:history",
       "type": "state",
-      "url": "http://localhost:3000/oklahoma/history"
+      "url": "http://localhost:3000/electricity-price-history/oklahoma"
     },
     {
       "id": "state:oklahoma:plan-types",
@@ -5752,7 +5752,7 @@
     {
       "id": "state:oregon:history",
       "type": "state",
-      "url": "http://localhost:3000/oregon/history"
+      "url": "http://localhost:3000/electricity-price-history/oregon"
     },
     {
       "id": "state:oregon:plan-types",
@@ -5777,7 +5777,7 @@
     {
       "id": "state:pennsylvania:history",
       "type": "state",
-      "url": "http://localhost:3000/pennsylvania/history"
+      "url": "http://localhost:3000/electricity-price-history/pennsylvania"
     },
     {
       "id": "state:pennsylvania:plan-types",
@@ -5802,7 +5802,7 @@
     {
       "id": "state:rhode-island:history",
       "type": "state",
-      "url": "http://localhost:3000/rhode-island/history"
+      "url": "http://localhost:3000/electricity-price-history/rhode-island"
     },
     {
       "id": "state:rhode-island:plan-types",
@@ -5827,7 +5827,7 @@
     {
       "id": "state:south-carolina:history",
       "type": "state",
-      "url": "http://localhost:3000/south-carolina/history"
+      "url": "http://localhost:3000/electricity-price-history/south-carolina"
     },
     {
       "id": "state:south-carolina:plan-types",
@@ -5852,7 +5852,7 @@
     {
       "id": "state:south-dakota:history",
       "type": "state",
-      "url": "http://localhost:3000/south-dakota/history"
+      "url": "http://localhost:3000/electricity-price-history/south-dakota"
     },
     {
       "id": "state:south-dakota:plan-types",
@@ -5877,7 +5877,7 @@
     {
       "id": "state:tennessee:history",
       "type": "state",
-      "url": "http://localhost:3000/tennessee/history"
+      "url": "http://localhost:3000/electricity-price-history/tennessee"
     },
     {
       "id": "state:tennessee:plan-types",
@@ -5902,7 +5902,7 @@
     {
       "id": "state:texas:history",
       "type": "state",
-      "url": "http://localhost:3000/texas/history"
+      "url": "http://localhost:3000/electricity-price-history/texas"
     },
     {
       "id": "state:texas:plan-types",
@@ -5927,7 +5927,7 @@
     {
       "id": "state:utah:history",
       "type": "state",
-      "url": "http://localhost:3000/utah/history"
+      "url": "http://localhost:3000/electricity-price-history/utah"
     },
     {
       "id": "state:utah:plan-types",
@@ -5952,7 +5952,7 @@
     {
       "id": "state:vermont:history",
       "type": "state",
-      "url": "http://localhost:3000/vermont/history"
+      "url": "http://localhost:3000/electricity-price-history/vermont"
     },
     {
       "id": "state:vermont:plan-types",
@@ -5977,7 +5977,7 @@
     {
       "id": "state:virginia:history",
       "type": "state",
-      "url": "http://localhost:3000/virginia/history"
+      "url": "http://localhost:3000/electricity-price-history/virginia"
     },
     {
       "id": "state:virginia:plan-types",
@@ -6002,7 +6002,7 @@
     {
       "id": "state:washington:history",
       "type": "state",
-      "url": "http://localhost:3000/washington/history"
+      "url": "http://localhost:3000/electricity-price-history/washington"
     },
     {
       "id": "state:washington:plan-types",
@@ -6027,7 +6027,7 @@
     {
       "id": "state:west-virginia:history",
       "type": "state",
-      "url": "http://localhost:3000/west-virginia/history"
+      "url": "http://localhost:3000/electricity-price-history/west-virginia"
     },
     {
       "id": "state:west-virginia:plan-types",
@@ -6052,7 +6052,7 @@
     {
       "id": "state:wisconsin:history",
       "type": "state",
-      "url": "http://localhost:3000/wisconsin/history"
+      "url": "http://localhost:3000/electricity-price-history/wisconsin"
     },
     {
       "id": "state:wisconsin:plan-types",
@@ -6077,7 +6077,7 @@
     {
       "id": "state:wyoming:history",
       "type": "state",
-      "url": "http://localhost:3000/wyoming/history"
+      "url": "http://localhost:3000/electricity-price-history/wyoming"
     },
     {
       "id": "state:wyoming:plan-types",
