@@ -174,6 +174,15 @@ export default async function ApplianceCityCostPage({
         }}
       >
         <section style={{ marginBottom: "var(--space-7)" }}>
+          <h2 className="heading-section">How this city estimate is derived</h2>
+          <CityRateDisclosure eiaMonthLabel={summary.citySummary.state.updatedLabel} />
+          <p style={{ marginBottom: 0, lineHeight: 1.7 }}>
+            This methodology is intended for consistent local context, not utility-plan quoting or bill
+            prediction precision.
+          </p>
+        </section>
+
+        <section style={{ marginBottom: "var(--space-7)" }}>
           <h2 className="heading-section">Methodology and disclosure</h2>
           <p style={{ marginTop: 0, lineHeight: 1.7 }}>
             Appliance usage assumptions use the same state-level appliance model:
@@ -181,7 +190,6 @@ export default async function ApplianceCityCostPage({
             {formatHoursPerDay(summary.applianceConfig.typicalUsageHoursPerDay)}.
             Estimated monthly usage is <strong>{formatKwh(summary.applianceUsage.kwhPerMonth)}</strong>.
           </p>
-          <CityRateDisclosure eiaMonthLabel={summary.citySummary.state.updatedLabel} style={{ marginBottom: 0 }} />
           <p style={{ marginBottom: 0, lineHeight: 1.7, marginTop: "1rem" }}>
             City-level appliance pages are available for a limited set of city and appliance combinations and are
             intended for comparison context, not utility tariff quoting.
