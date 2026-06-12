@@ -22,6 +22,7 @@ export const RAW_STATES: Record<string, StateRecord> = {
   colorado: { slug: "colorado", name: "Colorado", postal: "CO", avgRateCentsPerKwh: 16.74, updated: "March 2026", ...COMMON_STATE_METADATA },
   connecticut: { slug: "connecticut", name: "Connecticut", postal: "CT", avgRateCentsPerKwh: 30.47, updated: "March 2026", ...COMMON_STATE_METADATA },
   delaware: { slug: "delaware", name: "Delaware", postal: "DE", avgRateCentsPerKwh: 17.64, updated: "March 2026", ...COMMON_STATE_METADATA },
+  "district-of-columbia": { slug: "district-of-columbia", name: "District of Columbia", postal: "DC", avgRateCentsPerKwh: 25, updated: "March 2026", ...COMMON_STATE_METADATA },
   florida: { slug: "florida", name: "Florida", postal: "FL", avgRateCentsPerKwh: 14.86, updated: "March 2026", ...COMMON_STATE_METADATA },
   georgia: { slug: "georgia", name: "Georgia", postal: "GA", avgRateCentsPerKwh: 15.01, updated: "March 2026", ...COMMON_STATE_METADATA },
   hawaii: { slug: "hawaii", name: "Hawaii", postal: "HI", avgRateCentsPerKwh: 42.23, updated: "March 2026", ...COMMON_STATE_METADATA },

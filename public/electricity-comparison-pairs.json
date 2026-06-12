@@ -139,6 +139,11 @@
       "stateB": "delaware"
     },
     {
+      "pair": "california-vs-district-of-columbia",
+      "stateA": "california",
+      "stateB": "district-of-columbia"
+    },
+    {
       "pair": "california-vs-florida",
       "stateA": "california",
       "stateB": "florida"
@@ -421,6 +426,31 @@
     {
       "pair": "delaware-vs-texas",
       "stateA": "delaware",
+      "stateB": "texas"
+    },
+    {
+      "pair": "district-of-columbia-vs-florida",
+      "stateA": "district-of-columbia",
+      "stateB": "florida"
+    },
+    {
+      "pair": "district-of-columbia-vs-new-york",
+      "stateA": "district-of-columbia",
+      "stateB": "new-york"
+    },
+    {
+      "pair": "district-of-columbia-vs-ohio",
+      "stateA": "district-of-columbia",
+      "stateB": "ohio"
+    },
+    {
+      "pair": "district-of-columbia-vs-pennsylvania",
+      "stateA": "district-of-columbia",
+      "stateB": "pennsylvania"
+    },
+    {
+      "pair": "district-of-columbia-vs-texas",
+      "stateA": "district-of-columbia",
       "stateB": "texas"
     },
     {

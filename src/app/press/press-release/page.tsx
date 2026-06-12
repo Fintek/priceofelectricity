@@ -43,8 +43,7 @@ export default function PressReleasePage() {
         <h2 style={{ fontSize: 22, marginBottom: 12 }}>What it does</h2>
         <p style={{ marginTop: 0 }}>
           PriceOfElectricity.com displays state-level average residential
-          electricity prices in cents per kilowatt-hour (¢/kWh) for all 50 U.S.
-          states. The site helps consumers, researchers, and journalists
+          electricity prices in cents per kilowatt-hour (¢/kWh) for all 50 states and Washington, D.C. The site helps consumers, researchers, and journalists
           compare rates, estimate bills, and access structured data. All
           estimates are energy-only and exclude delivery fees, taxes, and other
           utility charges. Data is sourced from authoritative public sources and
@@ -63,8 +62,7 @@ export default function PressReleasePage() {
             <strong>Calculator</strong> — Bill estimator for common usage levels
           </li>
           <li>
-            <strong>Data downloads</strong> — JSON and CSV datasets for all 50
-            states
+            <strong>Data downloads</strong> — JSON and CSV datasets for all 50 states and Washington, D.C.
           </li>
           <li>
             <strong>Sources</strong> — Transparent sourcing with links to EIA,

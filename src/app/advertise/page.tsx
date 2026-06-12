@@ -34,7 +34,7 @@ export default function AdvertisePage() {
       />
       <h1>Advertise with Us</h1>
       <p className="muted" style={{ marginTop: 0 }}>
-        Independent electricity price data and tools for all 50 states. We work with a small set of
+        Independent electricity price data and tools for all 50 states and Washington, D.C. We work with a small set of
         partners whose offers align with how people research rates, bills, and providers.
       </p>
 

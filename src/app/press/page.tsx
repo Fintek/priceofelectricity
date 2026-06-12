@@ -39,8 +39,7 @@ export default function PressPage() {
 
       <p className="intro muted" style={{ marginTop: 0 }}>
         PriceOfElectricity.com provides state-level average residential
-        electricity prices in cents per kilowatt-hour (¢/kWh) for all 50 U.S.
-        states. The site offers comparison tools, bill estimators, downloadable
+        electricity prices in cents per kilowatt-hour (¢/kWh) for all 50 states and Washington, D.C. The site offers comparison tools, bill estimators, downloadable
         datasets, and transparent sourcing for journalists, researchers, and
         partners.
       </p>

@@ -39,6 +39,7 @@ affordability,Affordability Rankings,Pennsylvania,70,,desc,Highest to lowest,aff
 affordability,Affordability Rankings,Michigan,69,,desc,Highest to lowest,affordabilityIndex
 affordability,Affordability Rankings,New Jersey,62,,desc,Highest to lowest,affordabilityIndex
 affordability,Affordability Rankings,Vermont,60,,desc,Highest to lowest,affordabilityIndex
+affordability,Affordability Rankings,District of Columbia,57,,desc,Highest to lowest,affordabilityIndex
 affordability,Affordability Rankings,New Hampshire,51,,desc,Highest to lowest,affordabilityIndex
 affordability,Affordability Rankings,Alaska,50,,desc,Highest to lowest,affordabilityIndex
 affordability,Affordability Rankings,Maine,46,,desc,Highest to lowest,affordabilityIndex
@@ -89,6 +90,7 @@ value-score,Value Score Rankings,Pennsylvania,72,,desc,Highest to lowest,valueSc
 value-score,Value Score Rankings,Michigan,71,,desc,Highest to lowest,valueScore
 value-score,Value Score Rankings,New Jersey,64,,desc,Highest to lowest,valueScore
 value-score,Value Score Rankings,Vermont,62,,desc,Highest to lowest,valueScore
+value-score,Value Score Rankings,District of Columbia,59,,desc,Highest to lowest,valueScore
 value-score,Value Score Rankings,Alaska,53,,desc,Highest to lowest,valueScore
 value-score,Value Score Rankings,New Hampshire,53,,desc,Highest to lowest,valueScore
 value-score,Value Score Rankings,Maine,49,,desc,Highest to lowest,valueScore
@@ -139,6 +141,7 @@ rate-low-to-high,Rate Rankings (Low to High),Pennsylvania,20.92,,asc,Lowest to h
 rate-low-to-high,Rate Rankings (Low to High),Michigan,21.2,,asc,Lowest to highest,avgRateCentsPerKwh
 rate-low-to-high,Rate Rankings (Low to High),New Jersey,23.49,,asc,Lowest to highest,avgRateCentsPerKwh
 rate-low-to-high,Rate Rankings (Low to High),Vermont,24.11,,asc,Lowest to highest,avgRateCentsPerKwh
+rate-low-to-high,Rate Rankings (Low to High),District of Columbia,25,,asc,Lowest to highest,avgRateCentsPerKwh
 rate-low-to-high,Rate Rankings (Low to High),New Hampshire,26.92,,asc,Lowest to highest,avgRateCentsPerKwh
 rate-low-to-high,Rate Rankings (Low to High),Alaska,27.17,,asc,Lowest to highest,avgRateCentsPerKwh
 rate-low-to-high,Rate Rankings (Low to High),Maine,28.32,,asc,Lowest to highest,avgRateCentsPerKwh
@@ -159,6 +162,7 @@ rate-high-to-low,Rate Rankings (High to Low),New York,28.55,,desc,Highest to low
 rate-high-to-low,Rate Rankings (High to Low),Maine,28.32,,desc,Highest to lowest,avgRateCentsPerKwh
 rate-high-to-low,Rate Rankings (High to Low),Alaska,27.17,,desc,Highest to lowest,avgRateCentsPerKwh
 rate-high-to-low,Rate Rankings (High to Low),New Hampshire,26.92,,desc,Highest to lowest,avgRateCentsPerKwh
+rate-high-to-low,Rate Rankings (High to Low),District of Columbia,25,,desc,Highest to lowest,avgRateCentsPerKwh
 rate-high-to-low,Rate Rankings (High to Low),Vermont,24.11,,desc,Highest to lowest,avgRateCentsPerKwh
 rate-high-to-low,Rate Rankings (High to Low),New Jersey,23.49,,desc,Highest to lowest,avgRateCentsPerKwh
 rate-high-to-low,Rate Rankings (High to Low),Michigan,21.2,,desc,Highest to lowest,avgRateCentsPerKwh
@@ -239,6 +243,7 @@ electricity-affordability,Most Affordable Electricity by State,Pennsylvania,188.
 electricity-affordability,Most Affordable Electricity by State,Michigan,190.8,$190.80,asc,Lowest to highest,metricValue
 electricity-affordability,Most Affordable Electricity by State,New Jersey,211.41,$211.41,asc,Lowest to highest,metricValue
 electricity-affordability,Most Affordable Electricity by State,Vermont,216.99,$216.99,asc,Lowest to highest,metricValue
+electricity-affordability,Most Affordable Electricity by State,District of Columbia,225,$225.00,asc,Lowest to highest,metricValue
 electricity-affordability,Most Affordable Electricity by State,New Hampshire,242.28,$242.28,asc,Lowest to highest,metricValue
 electricity-affordability,Most Affordable Electricity by State,Alaska,244.53,$244.53,asc,Lowest to highest,metricValue
 electricity-affordability,Most Affordable Electricity by State,Maine,254.88,$254.88,asc,Lowest to highest,metricValue
@@ -259,6 +264,7 @@ most-expensive-electricity,Least Affordable Electricity by State,New York,256.95
 most-expensive-electricity,Least Affordable Electricity by State,Maine,254.88,$254.88,desc,Highest to lowest,metricValue
 most-expensive-electricity,Least Affordable Electricity by State,Alaska,244.53,$244.53,desc,Highest to lowest,metricValue
 most-expensive-electricity,Least Affordable Electricity by State,New Hampshire,242.28,$242.28,desc,Highest to lowest,metricValue
+most-expensive-electricity,Least Affordable Electricity by State,District of Columbia,225,$225.00,desc,Highest to lowest,metricValue
 most-expensive-electricity,Least Affordable Electricity by State,Vermont,216.99,$216.99,desc,Highest to lowest,metricValue
 most-expensive-electricity,Least Affordable Electricity by State,New Jersey,211.41,$211.41,desc,Highest to lowest,metricValue
 most-expensive-electricity,Least Affordable Electricity by State,Michigan,190.8,$190.80,desc,Highest to lowest,metricValue

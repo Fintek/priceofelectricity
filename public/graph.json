@@ -1,8 +1,8 @@
 {
   "version": "1.0",
   "generatedAt": "2026-05-28T13:54:57.371Z",
-  "totalNodes": 1390,
-  "totalEdges": 2149,
+  "totalNodes": 1413,
+  "totalEdges": 2188,
   "nodes": [
     {
       "id": "alerts:ai-energy",
@@ -58,6 +58,11 @@
       "id": "alerts:state:delaware",
       "type": "static",
       "url": "http://localhost:3000/alerts/delaware"
+    },
+    {
+      "id": "alerts:state:district-of-columbia",
+      "type": "static",
+      "url": "http://localhost:3000/alerts/district-of-columbia"
     },
     {
       "id": "alerts:state:florida",
@@ -508,6 +513,36 @@
       "id": "bill:delaware:750",
       "type": "bill",
       "url": "http://localhost:3000/delaware/bill/750"
+    },
+    {
+      "id": "bill:district-of-columbia:1000",
+      "type": "bill",
+      "url": "http://localhost:3000/district-of-columbia/bill/1000"
+    },
+    {
+      "id": "bill:district-of-columbia:1250",
+      "type": "bill",
+      "url": "http://localhost:3000/district-of-columbia/bill/1250"
+    },
+    {
+      "id": "bill:district-of-columbia:1500",
+      "type": "bill",
+      "url": "http://localhost:3000/district-of-columbia/bill/1500"
+    },
+    {
+      "id": "bill:district-of-columbia:2000",
+      "type": "bill",
+      "url": "http://localhost:3000/district-of-columbia/bill/2000"
+    },
+    {
+      "id": "bill:district-of-columbia:500",
+      "type": "bill",
+      "url": "http://localhost:3000/district-of-columbia/bill/500"
+    },
+    {
+      "id": "bill:district-of-columbia:750",
+      "type": "bill",
+      "url": "http://localhost:3000/district-of-columbia/bill/750"
     },
     {
       "id": "bill:florida:1000",
@@ -2060,6 +2095,11 @@
       "url": "http://localhost:3000/drivers/delaware"
     },
     {
+      "id": "drivers:district-of-columbia",
+      "type": "research",
+      "url": "http://localhost:3000/drivers/district-of-columbia"
+    },
+    {
       "id": "drivers:florida",
       "type": "research",
       "url": "http://localhost:3000/drivers/florida"
@@ -2315,6 +2355,11 @@
       "url": "http://localhost:3000/generated/average-electric-bill-in-delaware"
     },
     {
+      "id": "generated:average-electric-bill-in-district-of-columbia",
+      "type": "generated",
+      "url": "http://localhost:3000/generated/average-electric-bill-in-district-of-columbia"
+    },
+    {
       "id": "generated:average-electric-bill-in-florida",
       "type": "generated",
       "url": "http://localhost:3000/generated/average-electric-bill-in-florida"
@@ -2565,6 +2610,11 @@
       "url": "http://localhost:3000/generated/is-electricity-expensive-in-delaware"
     },
     {
+      "id": "generated:is-electricity-expensive-in-district-of-columbia",
+      "type": "generated",
+      "url": "http://localhost:3000/generated/is-electricity-expensive-in-district-of-columbia"
+    },
+    {
       "id": "generated:is-electricity-expensive-in-florida",
       "type": "generated",
       "url": "http://localhost:3000/generated/is-electricity-expensive-in-florida"
@@ -2813,6 +2863,11 @@
       "id": "generated:moving-to-delaware-electricity-cost-guide",
       "type": "generated",
       "url": "http://localhost:3000/generated/moving-to-delaware-electricity-cost-guide"
+    },
+    {
+      "id": "generated:moving-to-district-of-columbia-electricity-cost-guide",
+      "type": "generated",
+      "url": "http://localhost:3000/generated/moving-to-district-of-columbia-electricity-cost-guide"
     },
     {
       "id": "generated:moving-to-florida-electricity-cost-guide",
@@ -3120,6 +3175,11 @@
       "url": "http://localhost:3000/offers/delaware"
     },
     {
+      "id": "offer:district-of-columbia",
+      "type": "offer",
+      "url": "http://localhost:3000/offers/district-of-columbia"
+    },
+    {
       "id": "offer:florida",
       "type": "offer",
       "url": "http://localhost:3000/offers/florida"
@@ -3375,6 +3435,11 @@
       "url": "http://localhost:3000/electricity-providers/delaware"
     },
     {
+      "id": "provider:district-of-columbia",
+      "type": "offer",
+      "url": "http://localhost:3000/electricity-providers/district-of-columbia"
+    },
+    {
       "id": "provider:florida",
       "type": "offer",
       "url": "http://localhost:3000/electricity-providers/florida"
@@ -3628,6 +3693,11 @@
       "id": "question:average-electric-bill-in-delaware",
       "type": "question",
       "url": "http://localhost:3000/questions/average-electric-bill-in-delaware"
+    },
+    {
+      "id": "question:average-electric-bill-in-district-of-columbia",
+      "type": "question",
+      "url": "http://localhost:3000/questions/average-electric-bill-in-district-of-columbia"
     },
     {
       "id": "question:average-electric-bill-in-florida",
@@ -4058,6 +4128,21 @@
       "id": "regulatory:delaware:timeline",
       "type": "research",
       "url": "http://localhost:3000/regulatory/delaware/timeline"
+    },
+    {
+      "id": "regulatory:district-of-columbia",
+      "type": "research",
+      "url": "http://localhost:3000/regulatory/district-of-columbia"
+    },
+    {
+      "id": "regulatory:district-of-columbia:rate-cases",
+      "type": "research",
+      "url": "http://localhost:3000/regulatory/district-of-columbia/rate-cases"
+    },
+    {
+      "id": "regulatory:district-of-columbia:timeline",
+      "type": "research",
+      "url": "http://localhost:3000/regulatory/district-of-columbia/timeline"
     },
     {
       "id": "regulatory:florida",
@@ -4933,6 +5018,31 @@
       "id": "state:delaware:utilities",
       "type": "state",
       "url": "http://localhost:3000/delaware/utilities"
+    },
+    {
+      "id": "state:district-of-columbia",
+      "type": "state",
+      "url": "http://localhost:3000/district-of-columbia"
+    },
+    {
+      "id": "state:district-of-columbia:history",
+      "type": "state",
+      "url": "http://localhost:3000/district-of-columbia/history"
+    },
+    {
+      "id": "state:district-of-columbia:plan-types",
+      "type": "state",
+      "url": "http://localhost:3000/district-of-columbia/plan-types"
+    },
+    {
+      "id": "state:district-of-columbia:plans",
+      "type": "state",
+      "url": "http://localhost:3000/district-of-columbia/plans"
+    },
+    {
+      "id": "state:district-of-columbia:utilities",
+      "type": "state",
+      "url": "http://localhost:3000/district-of-columbia/utilities"
     },
     {
       "id": "state:florida",
@@ -6270,6 +6380,11 @@
       "url": "http://localhost:3000/delaware/utility/delmarva-power"
     },
     {
+      "id": "utility:district-of-columbia:pepco",
+      "type": "utility",
+      "url": "http://localhost:3000/district-of-columbia/utility/pepco"
+    },
+    {
       "id": "utility:florida:duke-energy-florida",
       "type": "utility",
       "url": "http://localhost:3000/florida/utility/duke-energy-florida"
@@ -7017,6 +7132,11 @@
       "rel": "parent"
     },
     {
+      "from": "alerts:state:district-of-columbia",
+      "to": "state:district-of-columbia",
+      "rel": "parent"
+    },
+    {
       "from": "alerts:state:florida",
       "to": "state:florida",
       "rel": "parent"
@@ -7464,6 +7584,36 @@
     {
       "from": "bill:delaware:750",
       "to": "state:delaware",
+      "rel": "parent"
+    },
+    {
+      "from": "bill:district-of-columbia:1000",
+      "to": "state:district-of-columbia",
+      "rel": "parent"
+    },
+    {
+      "from": "bill:district-of-columbia:1250",
+      "to": "state:district-of-columbia",
+      "rel": "parent"
+    },
+    {
+      "from": "bill:district-of-columbia:1500",
+      "to": "state:district-of-columbia",
+      "rel": "parent"
+    },
+    {
+      "from": "bill:district-of-columbia:2000",
+      "to": "state:district-of-columbia",
+      "rel": "parent"
+    },
+    {
+      "from": "bill:district-of-columbia:500",
+      "to": "state:district-of-columbia",
+      "rel": "parent"
+    },
+    {
+      "from": "bill:district-of-columbia:750",
+      "to": "state:district-of-columbia",
       "rel": "parent"
     },
     {
@@ -9097,6 +9247,21 @@
       "rel": "parent"
     },
     {
+      "from": "drivers:district-of-columbia",
+      "to": "drivers:hub",
+      "rel": "related"
+    },
+    {
+      "from": "drivers:district-of-columbia",
+      "to": "regulatory:district-of-columbia",
+      "rel": "related"
+    },
+    {
+      "from": "drivers:district-of-columbia",
+      "to": "state:district-of-columbia",
+      "rel": "parent"
+    },
+    {
       "from": "drivers:florida",
       "to": "drivers:hub",
       "rel": "related"
@@ -9179,6 +9344,11 @@
     {
       "from": "drivers:hub",
       "to": "drivers:delaware",
+      "rel": "related"
+    },
+    {
+      "from": "drivers:hub",
+      "to": "drivers:district-of-columbia",
       "rel": "related"
     },
     {
@@ -10017,6 +10187,11 @@
       "rel": "parent"
     },
     {
+      "from": "generated:average-electric-bill-in-district-of-columbia",
+      "to": "state:district-of-columbia",
+      "rel": "parent"
+    },
+    {
       "from": "generated:average-electric-bill-in-florida",
       "to": "state:florida",
       "rel": "parent"
@@ -10267,6 +10442,11 @@
       "rel": "parent"
     },
     {
+      "from": "generated:is-electricity-expensive-in-district-of-columbia",
+      "to": "state:district-of-columbia",
+      "rel": "parent"
+    },
+    {
       "from": "generated:is-electricity-expensive-in-florida",
       "to": "state:florida",
       "rel": "parent"
@@ -10514,6 +10694,11 @@
     {
       "from": "generated:moving-to-delaware-electricity-cost-guide",
       "to": "state:delaware",
+      "rel": "parent"
+    },
+    {
+      "from": "generated:moving-to-district-of-columbia-electricity-cost-guide",
+      "to": "state:district-of-columbia",
       "rel": "parent"
     },
     {
@@ -10803,6 +10988,11 @@
     },
     {
       "from": "offer:delaware",
+      "to": "offer:hub",
+      "rel": "parent"
+    },
+    {
+      "from": "offer:district-of-columbia",
       "to": "offer:hub",
       "rel": "parent"
     },
@@ -11217,6 +11407,31 @@
       "rel": "related"
     },
     {
+      "from": "provider:district-of-columbia",
+      "to": "offer:district-of-columbia",
+      "rel": "related"
+    },
+    {
+      "from": "provider:district-of-columbia",
+      "to": "provider:hub",
+      "rel": "parent"
+    },
+    {
+      "from": "provider:district-of-columbia",
+      "to": "provider:hub",
+      "rel": "related"
+    },
+    {
+      "from": "provider:district-of-columbia",
+      "to": "state:district-of-columbia",
+      "rel": "related"
+    },
+    {
+      "from": "provider:district-of-columbia",
+      "to": "tool:compare",
+      "rel": "related"
+    },
+    {
       "from": "provider:florida",
       "to": "offer:florida",
       "rel": "related"
@@ -11334,6 +11549,11 @@
     {
       "from": "provider:hub",
       "to": "provider:delaware",
+      "rel": "related"
+    },
+    {
+      "from": "provider:hub",
+      "to": "provider:district-of-columbia",
       "rel": "related"
     },
     {
@@ -12572,6 +12792,11 @@
       "rel": "related"
     },
     {
+      "from": "question:average-electric-bill-in-district-of-columbia",
+      "to": "state:district-of-columbia",
+      "rel": "related"
+    },
+    {
       "from": "question:average-electric-bill-in-florida",
       "to": "state:florida",
       "rel": "related"
@@ -13082,6 +13307,31 @@
       "rel": "parent"
     },
     {
+      "from": "regulatory:district-of-columbia",
+      "to": "regulatory:district-of-columbia:rate-cases",
+      "rel": "related"
+    },
+    {
+      "from": "regulatory:district-of-columbia",
+      "to": "regulatory:district-of-columbia:timeline",
+      "rel": "related"
+    },
+    {
+      "from": "regulatory:district-of-columbia",
+      "to": "regulatory:hub",
+      "rel": "parent"
+    },
+    {
+      "from": "regulatory:district-of-columbia:rate-cases",
+      "to": "regulatory:district-of-columbia",
+      "rel": "parent"
+    },
+    {
+      "from": "regulatory:district-of-columbia:timeline",
+      "to": "regulatory:district-of-columbia",
+      "rel": "parent"
+    },
+    {
       "from": "regulatory:florida",
       "to": "regulatory:florida:rate-cases",
       "rel": "related"
@@ -13194,6 +13444,11 @@
     {
       "from": "regulatory:hub",
       "to": "regulatory:delaware",
+      "rel": "related"
+    },
+    {
+      "from": "regulatory:hub",
+      "to": "regulatory:district-of-columbia",
       "rel": "related"
     },
     {
@@ -14789,6 +15044,56 @@
     {
       "from": "state:delaware:utilities",
       "to": "state:delaware",
+      "rel": "parent"
+    },
+    {
+      "from": "state:district-of-columbia",
+      "to": "offer:district-of-columbia",
+      "rel": "related"
+    },
+    {
+      "from": "state:district-of-columbia",
+      "to": "provider:district-of-columbia",
+      "rel": "related"
+    },
+    {
+      "from": "state:district-of-columbia",
+      "to": "state:district-of-columbia:history",
+      "rel": "related"
+    },
+    {
+      "from": "state:district-of-columbia",
+      "to": "state:district-of-columbia:plan-types",
+      "rel": "related"
+    },
+    {
+      "from": "state:district-of-columbia",
+      "to": "state:district-of-columbia:plans",
+      "rel": "related"
+    },
+    {
+      "from": "state:district-of-columbia",
+      "to": "state:district-of-columbia:utilities",
+      "rel": "related"
+    },
+    {
+      "from": "state:district-of-columbia:history",
+      "to": "state:district-of-columbia",
+      "rel": "parent"
+    },
+    {
+      "from": "state:district-of-columbia:plan-types",
+      "to": "state:district-of-columbia",
+      "rel": "parent"
+    },
+    {
+      "from": "state:district-of-columbia:plans",
+      "to": "state:district-of-columbia",
+      "rel": "parent"
+    },
+    {
+      "from": "state:district-of-columbia:utilities",
+      "to": "state:district-of-columbia",
       "rel": "parent"
     },
     {
@@ -17007,6 +17312,11 @@
       "rel": "parent"
     },
     {
+      "from": "utility:district-of-columbia:pepco",
+      "to": "state:district-of-columbia",
+      "rel": "parent"
+    },
+    {
       "from": "utility:florida:duke-energy-florida",
       "to": "state:florida",
       "rel": "parent"
@@ -17745,6 +18055,11 @@
     },
     {
       "from": "knowledge:rankings:affordability",
+      "to": "knowledge:state:district-of-columbia",
+      "relation": "derived-from"
+    },
+    {
+      "from": "knowledge:rankings:affordability",
       "to": "knowledge:state:florida",
       "relation": "derived-from"
     },
@@ -18250,6 +18565,11 @@
     },
     {
       "from": "knowledge:rankings:electricity-affordability",
+      "to": "knowledge:state:district-of-columbia",
+      "relation": "derived-from"
+    },
+    {
+      "from": "knowledge:rankings:electricity-affordability",
       "to": "knowledge:state:florida",
       "relation": "derived-from"
     },
@@ -19265,6 +19585,11 @@
     },
     {
       "from": "knowledge:rankings:most-expensive-electricity",
+      "to": "knowledge:state:district-of-columbia",
+      "relation": "derived-from"
+    },
+    {
+      "from": "knowledge:rankings:most-expensive-electricity",
       "to": "knowledge:state:florida",
       "relation": "derived-from"
     },
@@ -19770,6 +20095,11 @@
     },
     {
       "from": "knowledge:rankings:rate-high-to-low",
+      "to": "knowledge:state:district-of-columbia",
+      "relation": "derived-from"
+    },
+    {
+      "from": "knowledge:rankings:rate-high-to-low",
       "to": "knowledge:state:florida",
       "relation": "derived-from"
     },
@@ -20020,6 +20350,11 @@
     },
     {
       "from": "knowledge:rankings:rate-low-to-high",
+      "to": "knowledge:state:district-of-columbia",
+      "relation": "derived-from"
+    },
+    {
+      "from": "knowledge:rankings:rate-low-to-high",
       "to": "knowledge:state:florida",
       "relation": "derived-from"
     },
@@ -20266,6 +20601,11 @@
     {
       "from": "knowledge:rankings:value-score",
       "to": "knowledge:state:delaware",
+      "relation": "derived-from"
+    },
+    {
+      "from": "knowledge:rankings:value-score",
+      "to": "knowledge:state:district-of-columbia",
       "relation": "derived-from"
     },
     {

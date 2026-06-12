@@ -18,7 +18,7 @@ function buildHomepageDescription(): string {
     if (state.avgRateCentsPerKwh < minState.avgRateCentsPerKwh) minState = state;
     if (state.avgRateCentsPerKwh > maxState.avgRateCentsPerKwh) maxState = state;
   }
-  return `Compare residential electricity prices by state and estimate monthly bills across the United States — from ${minState.avgRateCentsPerKwh}¢ in ${minState.name} to ${maxState.avgRateCentsPerKwh}¢ in ${maxState.name}.`;
+  return `Compare residential electricity prices by state and estimate monthly bills across all 50 states and Washington, D.C. — from ${minState.avgRateCentsPerKwh}¢ in ${minState.name} to ${maxState.avgRateCentsPerKwh}¢ in ${maxState.name}.`;
 }
 
 export const metadata: Metadata = buildMetadata({
@@ -35,7 +35,7 @@ export default function HomePage() {
       {/* ── HERO ── */}
       <h1>Average Electricity Prices by State</h1>
       <p style={{ marginTop: 0, marginBottom: 16, maxWidth: "60ch", lineHeight: 1.6 }}>
-        Compare residential electricity rates across all 50 states, estimate your monthly bill, and see how your state ranks.
+        Compare residential electricity rates across all 50 states and Washington, D.C., estimate your monthly bill, and see how your state ranks.
       </p>
       <EiaHomeTrustLine />
 
@@ -131,7 +131,7 @@ export default function HomePage() {
       <div style={{ paddingTop: 24 }}>
         <AboutThisSite
           title="About PriceOfElectricity.com"
-          description="Independent electricity price data covering all 50 states. Methodology and downloadable datasets are published for verification."
+          description="Independent electricity price data covering all 50 states and Washington, D.C. Methodology and downloadable datasets are published for verification."
           links={[
             { href: "/methodology", label: "Methodology" },
             { href: "/datasets", label: "Download data" },

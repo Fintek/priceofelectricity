@@ -317,14 +317,14 @@ const KNOWLEDGE_LABELS: Record<string, string> = {
   "badge.quality": "Quality",
   "badge.sourceVersion": "Source version",
   "badge.semanticCluster": "Topic area",
-  "field.avgRateCentsPerKwh": "Avg rate (¢/kWh)",
+  "field.avgRateCentsPerKwh": "Avg rate (Â¢/kWh)",
   "field.valueScore": "Value score",
   "field.affordabilityIndex": "Affordability",
   "field.benchmarkMonthlyBill900kwh": "Benchmark bill (900 kWh)",
   "field.exampleBill1000kwh": "Example bill (1000 kWh)",
   "field.updated": "Updated",
-  "field.medianRateCentsPerKwh": "Median rate (¢/kWh)",
-  "field.dispersionMinMax": "Dispersion (min–max)",
+  "field.medianRateCentsPerKwh": "Median rate (Â¢/kWh)",
+  "field.dispersionMinMax": "Dispersion (minâ€“max)",
   "status.fresh": "Fresh",
   "status.aging": "Aging",
   "status.stale": "Stale",
@@ -623,7 +623,7 @@ function buildNationalInsights(nat: {
     if (ratio >= 2.5) {
       out.push({ type: "price", statement: `Electricity prices in ${high.name} are more than ${Math.floor(ratio)} times higher than in ${low.name}.`, confidence: "high" });
     } else {
-      out.push({ type: "price", statement: `${high.name} has the highest electricity rate (${high.rate.toFixed(2)} ¢/kWh); ${low.name} has the lowest (${low.rate.toFixed(2)} ¢/kWh).`, confidence: "high" });
+      out.push({ type: "price", statement: `${high.name} has the highest electricity rate (${high.rate.toFixed(2)} Â¢/kWh); ${low.name} has the lowest (${low.rate.toFixed(2)} Â¢/kWh).`, confidence: "high" });
     }
   }
   if (typeof spread === "number" && spread > 0) {
@@ -1023,7 +1023,7 @@ const PROVENANCE_SOURCES: Readonly<Record<string, Omit<ProvenanceRef, "retrieved
  * Production-only origin for generated artifacts.
  * Generated knowledge/search-index/discovery assets must always use the
  * production canonical origin regardless of the build environment.
- * Policy ref: docs/CANONICAL_ARCHITECTURE_POLICY.md § B.2
+ * Policy ref: docs/CANONICAL_ARCHITECTURE_POLICY.md Â§ B.2
  */
 const ARTIFACT_ORIGIN = "https://priceofelectricity.com";
 
@@ -1207,13 +1207,13 @@ function buildNationalExcerpt(data: NationalKnowledgeData): string {
   const parts: string[] = [];
   parts.push("US residential electricity rate overview.");
   if (typeof avg === "number" && Number.isFinite(avg))
-    parts.push(`Avg ${avg.toFixed(2)}¢/kWh`);
+    parts.push(`Avg ${avg.toFixed(2)}Â¢/kWh`);
   if (typeof med === "number" && Number.isFinite(med))
-    parts.push(`median ${med.toFixed(2)}¢/kWh`);
+    parts.push(`median ${med.toFixed(2)}Â¢/kWh`);
   if (hi?.name && typeof hi.rate === "number")
-    parts.push(`Highest: ${hi.name} (${hi.rate.toFixed(2)}¢)`);
+    parts.push(`Highest: ${hi.name} (${hi.rate.toFixed(2)}Â¢)`);
   if (lo?.name && typeof lo.rate === "number")
-    parts.push(`Lowest: ${lo.name} (${lo.rate.toFixed(2)}¢)`);
+    parts.push(`Lowest: ${lo.name} (${lo.rate.toFixed(2)}Â¢)`);
   return truncateExcerpt(parts.join(" "));
 }
 
@@ -1226,7 +1226,7 @@ function buildStateExcerpt(data: StateKnowledgeData): string {
   const parts: string[] = [];
   parts.push(`${name} residential electricity snapshot.`);
   if (typeof rate === "number" && Number.isFinite(rate))
-    parts.push(`Avg ${rate.toFixed(2)}¢/kWh`);
+    parts.push(`Avg ${rate.toFixed(2)}Â¢/kWh`);
   if (typeof vs === "number" && Number.isFinite(vs))
     parts.push(`Value score ${vs}`);
   if (typeof aff === "number" && Number.isFinite(aff))
@@ -1279,17 +1279,17 @@ function buildNationalFacts(data: NationalKnowledgeData, freshness?: { ageDays?:
   const facts: FactItem[] = [];
   const d = data.derived;
   if (typeof d.averageRate === "number")
-    facts.push({ label: "Average rate", value: d.averageRate, unit: "¢/kWh", sourceField: "data.derived.averageRate" });
+    facts.push({ label: "Average rate", value: d.averageRate, unit: "Â¢/kWh", sourceField: "data.derived.averageRate" });
   if (typeof d.medianRate === "number")
-    facts.push({ label: "Median rate", value: d.medianRate, unit: "¢/kWh", sourceField: "data.derived.medianRate" });
+    facts.push({ label: "Median rate", value: d.medianRate, unit: "Â¢/kWh", sourceField: "data.derived.medianRate" });
   if (d.highestState?.name && typeof d.highestState.rate === "number")
-    facts.push({ label: "Highest state rate", value: d.highestState.rate, unit: "¢/kWh", sourceField: "data.derived.highestState.rate" });
+    facts.push({ label: "Highest state rate", value: d.highestState.rate, unit: "Â¢/kWh", sourceField: "data.derived.highestState.rate" });
   if (d.lowestState?.name && typeof d.lowestState.rate === "number")
-    facts.push({ label: "Lowest state rate", value: d.lowestState.rate, unit: "¢/kWh", sourceField: "data.derived.lowestState.rate" });
+    facts.push({ label: "Lowest state rate", value: d.lowestState.rate, unit: "Â¢/kWh", sourceField: "data.derived.lowestState.rate" });
   if (typeof data.raw.stateCount === "number")
     facts.push({ label: "State count", value: data.raw.stateCount, sourceField: "data.raw.stateCount" });
   if (d.dispersionMetrics?.spread != null)
-    facts.push({ label: "Rate spread", value: d.dispersionMetrics.spread, unit: "¢/kWh", sourceField: "data.derived.dispersionMetrics.spread" });
+    facts.push({ label: "Rate spread", value: d.dispersionMetrics.spread, unit: "Â¢/kWh", sourceField: "data.derived.dispersionMetrics.spread" });
   if (freshness?.ageDays != null)
     facts.push({ label: "Data age", value: freshness.ageDays, unit: "days", sourceField: "meta.freshness.ageDays" });
   return facts.sort((a, b) => a.label.localeCompare(b.label));
@@ -1300,7 +1300,7 @@ function buildStateFacts(data: StateKnowledgeData, freshness?: { ageDays?: numbe
   const r = data.raw;
   const d = data.derived;
   if (typeof r?.avgRateCentsPerKwh === "number")
-    facts.push({ label: "Average rate", value: r.avgRateCentsPerKwh, unit: "¢/kWh", sourceField: "data.raw.avgRateCentsPerKwh" });
+    facts.push({ label: "Average rate", value: r.avgRateCentsPerKwh, unit: "Â¢/kWh", sourceField: "data.raw.avgRateCentsPerKwh" });
   else if (r)
     facts.push({ label: "Average rate", value: "N/A", sourceField: "data.raw.avgRateCentsPerKwh" });
   if (typeof d?.valueScore === "number")
@@ -2163,7 +2163,7 @@ async function main(): Promise<void> {
     const excerpt =
       r.id === "unknown"
         ? "States with incomplete or unknown region mapping."
-        : `Electricity rates and metrics for ${r.name} U.S. states. Average ${avg.toFixed(2)} ¢/kWh.`;
+        : `Electricity rates and metrics for ${r.name} U.S. states. Average ${avg.toFixed(2)} Â¢/kWh.`;
     regionDataById.set(r.id, {
       id: r.id,
       name: r.name,
@@ -2594,196 +2594,6 @@ async function main(): Promise<void> {
     );
   }
 
-  // Backfill a DC JSON endpoint to satisfy machine index expectations.
-  if (!registryStates.some((item) => item.slug === "district-of-columbia")) {
-    const dcJsonUrl = "/knowledge/state/district-of-columbia.json";
-    const dcMeta = makeMeta({
-      id: "knowledge:state:district-of-columbia",
-      type: "state",
-      slug: "district-of-columbia",
-      title: "District of Columbia Electricity Price Knowledge",
-      description:
-        "Machine-readable state-like record for District of Columbia; values are unavailable in current normalized pipeline.",
-      canonicalUrl: "/knowledge/state/district-of-columbia",
-      jsonUrl: dcJsonUrl,
-      updatedAt: generatedAt,
-      sourceVersion,
-      isLatest: true,
-      provenance: buildPageProvenance(
-        [
-          "eia-retail-sales-923",
-          "poe-methodology-epi",
-          "poe-methodology-value-score",
-          "poe-methodology-freshness",
-          "poe-dataset-states-json",
-          "poe-dataset-affordability-csv",
-          "poe-dataset-value-ranking-csv",
-        ],
-        generatedAt,
-      ),
-      freshness: freshnessBlock,
-      fieldProvenance: [
-        {
-          field: "data.raw.avgRateCentsPerKwh",
-          provenanceIds: ["eia-retail-sales-923", "poe-dataset-states-json"],
-          isDerived: false,
-        },
-        {
-          field: "data.raw.updated",
-          provenanceIds: ["eia-retail-sales-923", "poe-dataset-states-json"],
-          isDerived: false,
-        },
-        {
-          field: "data.derived.affordabilityIndex",
-          provenanceIds: ["poe-dataset-affordability-csv"],
-          isDerived: true,
-          derivedFromFields: ["data.raw.avgRateCentsPerKwh"],
-        },
-        {
-          field: "data.derived.valueScore",
-          provenanceIds: ["poe-methodology-value-score", "poe-dataset-value-ranking-csv"],
-          isDerived: true,
-          derivedFromFields: ["data.raw.avgRateCentsPerKwh", "data.derived.affordabilityIndex"],
-        },
-        {
-          field: "data.derived.freshnessStatus",
-          provenanceIds: ["poe-methodology-freshness"],
-          isDerived: true,
-          derivedFromFields: ["data.raw.updated"],
-        },
-        {
-          field: "data.derived.percentileRankings",
-          provenanceIds: ["poe-dataset-affordability-csv", "poe-dataset-value-ranking-csv"],
-          isDerived: true,
-          derivedFromFields: ["data.raw.avgRateCentsPerKwh", "data.derived.valueScore", "data.derived.affordabilityIndex"],
-        },
-        {
-          field: "data.derived.relatedUrls",
-          provenanceIds: ["poe-methodology-epi", "poe-methodology-value-score", "poe-methodology-freshness"],
-          isDerived: true,
-          derivedFromFields: [],
-        },
-      ],
-      llmHints: {
-        priority: "high",
-        entityType: "state",
-        semanticTopics: ["electricity rates", "kwh pricing", "district data availability"],
-        semanticCluster: "geographic-state",
-      },
-      disclaimerRefs: ["general-site", "offers-disabled"],
-    });
-    const dcNatAvg = typeof pack.national.averageRateCentsPerKwh === "number" && pack.national.averageRateCentsPerKwh > 0
-      ? pack.national.averageRateCentsPerKwh
-      : null;
-    const dcData: StateKnowledgeData = {
-      raw: {
-        slug: "district-of-columbia",
-        name: "District of Columbia",
-        postal: "DC",
-        avgRateCentsPerKwh: null,
-        updated: "N/A",
-      },
-      derived: {
-        valueScore: null,
-        affordabilityIndex: null,
-        freshnessStatus: "unavailable",
-        exampleBills: { kwh500: null, kwh1000: null, kwh1500: null },
-        relatedUrls: getStatePageRelatedUrls("district-of-columbia"),
-        percentileRankings: {
-          ratePercentile: null,
-          valueScorePercentile: null,
-          affordabilityPercentile: null,
-        },
-        ...(dcNatAvg != null && {
-          comparison: {
-            nationalAverage: Math.round(dcNatAvg * 100) / 100,
-            differenceCents: 0,
-            differencePercent: 0,
-            category: "rate data unavailable",
-          },
-        }),
-        momentum: momentumBySlug.get("district-of-columbia") ?? {
-          enabled: false,
-          signal: "unavailable" as const,
-          score: null,
-          shortWindowChangePercent: null,
-          longWindowChangePercent: null,
-          windowPointsUsed: 0,
-          note: "History unavailable",
-        },
-      },
-      derivedMeta: {
-        methodologiesUsed: [
-          {
-            id: "epi",
-            version: METHODOLOGY_VERSION,
-            url: ensureAbsoluteUrl("/knowledge/methodology/epi.json"),
-            appliesToFields: [
-              "data.derived.exampleBills",
-              "data.derived.percentileRankings.ratePercentile",
-              "data.derived.relatedUrls",
-              "data.derived.trends",
-              "data.derived.comparison",
-            ],
-          },
-          {
-            id: "value-score",
-            version: METHODOLOGY_VERSION,
-            url: ensureAbsoluteUrl("/knowledge/methodology/value-score.json"),
-            appliesToFields: [
-              "data.derived.valueScore",
-              "data.derived.affordabilityIndex",
-              "data.derived.percentileRankings.valueScorePercentile",
-              "data.derived.percentileRankings.affordabilityPercentile",
-            ],
-          },
-          {
-            id: "freshness",
-            version: METHODOLOGY_VERSION,
-            url: ensureAbsoluteUrl("/knowledge/methodology/freshness.json"),
-            appliesToFields: ["data.derived.freshnessStatus"],
-          },
-          {
-            id: "momentum-signal",
-            version: METHODOLOGY_VERSION,
-            url: ensureAbsoluteUrl("/knowledge/methodology/momentum-signal.json"),
-            appliesToFields: ["data.derived.momentum"],
-          },
-        ],
-      },
-      relatedEntities: {
-        methodologies: ["epi", "value-score", "freshness", "momentum-signal"],
-        rankings: ["rate-low-to-high", "rate-high-to-low", "affordability", "value-score", "momentum-signal"],
-        national: true,
-      },
-      offersRef: {
-        offersIndexUrl: "/knowledge/offers/index.json",
-        offersConfigUrl: "/knowledge/policy/offers-config.json",
-        enabled: offersEnabled,
-      },
-    };
-    const dcFacts = buildStateFacts(dcData, freshnessBlock);
-    (dcData as Record<string, unknown>).facts = dcFacts;
-    const dcMetaWithExcerpt = { ...dcMeta, excerpt: buildStateExcerpt(dcData) };
-    const dcQualityScore = computeQualityScore(dcMetaWithExcerpt, dcData as Record<string, unknown>, "state");
-    const dcPage = buildPageWithHash({ ...dcMetaWithExcerpt, qualityScore: dcQualityScore }, dcData);
-    validatePage(dcPage, sourceVersion);
-    pageWrites.push({ jsonUrl: dcJsonUrl, page: dcPage });
-    registryStates.push(
-      toRegistryItem({
-        meta: dcPage.meta,
-        relatedMethodologyUrls: [
-          ensureAbsoluteUrl(methodologyRefs.electricityPriceIndex),
-          ensureAbsoluteUrl(methodologyRefs.valueScore),
-          ensureAbsoluteUrl(methodologyRefs.freshnessScoring),
-        ],
-        relatedDataEndpoints: [
-          ensureAbsoluteUrl(dataEndpoints.statesJson),
-          ensureAbsoluteUrl(dataEndpoints.statesCsv),
-        ],
-      }),
-    );
-  }
 
   const methodologyPages: Array<{
     slug: "epi" | "value-score" | "freshness" | "cagr" | "volatility" | "price-trend" | "momentum-signal";
@@ -4127,21 +3937,7 @@ async function main(): Promise<void> {
       jsonUrl: ensureAbsoluteUrl(`/knowledge/state/${state.slug}.json`),
     };
   });
-  const dcEntry = {
-    slug: "district-of-columbia",
-    name: "District of Columbia",
-    postal: "DC" as string | null,
-    metrics: {
-      avgRateCentsPerKwh: null,
-      valueScore: null,
-      affordabilityIndex: null,
-      freshnessStatus: "unavailable",
-      exampleBill1000kwh: null,
-    },
-    canonicalUrl: ensureAbsoluteUrl("/knowledge/state/district-of-columbia"),
-    jsonUrl: ensureAbsoluteUrl("/knowledge/state/district-of-columbia.json"),
-  };
-  const allCompareStates = [...statesFromNormalized, dcEntry].sort((a, b) =>
+  const allCompareStates = [...statesFromNormalized].sort((a, b) =>
     a.name.localeCompare(b.name),
   );
 
@@ -4229,7 +4025,7 @@ async function main(): Promise<void> {
     },
     {
       id: "avgRateCentsPerKwh",
-      label: "Avg rate (¢/kWh)",
+      label: "Avg rate (Â¢/kWh)",
       unit: "centsPerKwh",
       description:
         "Average residential electricity price in cents per kilowatt-hour for the state.",
@@ -4265,7 +4061,7 @@ async function main(): Promise<void> {
       label: "Quality",
       unit: "score",
       description:
-        "Rule-based quality score (0–100) reflecting freshness and metadata completeness.",
+        "Rule-based quality score (0â€“100) reflecting freshness and metadata completeness.",
       sourcePathExamples: ["meta.qualityScore"],
       methodologies: [],
       provenanceIds: ["poe-methodology-freshness"],
@@ -9413,7 +9209,6 @@ export function t(key: string): string {
   };
   const snapshotStatePaths = [
     ...normalizedStates.map((s) => `${snapshotBaseUrl}/state/${s.slug}.json`),
-    `${snapshotBaseUrl}/state/district-of-columbia.json`,
   ].sort((a, b) => a.localeCompare(b));
   const snapshotMethodologyPaths = [
     `${snapshotBaseUrl}/methodology/index.json`,
@@ -9715,7 +9510,6 @@ export function t(key: string): string {
 
   const statePaths = [
     ...normalizedStates.map((s) => `/knowledge/state/${s.slug}.json`),
-    "/knowledge/state/district-of-columbia.json",
   ].sort((a, b) => a.localeCompare(b));
   const statesAllManifestBody: KnowledgeBundleManifest = {
     schemaVersion: "1.0",

@@ -92,7 +92,7 @@ export default function ResearchPage() {
             exports
           </li>
           <li>
-            <Link href="/value-ranking">Value ranking</Link> — Full 50-state
+            <Link href="/value-ranking">Value ranking</Link> — Full 51-jurisdiction
             Electricity Value Score™ table
           </li>
           <li>

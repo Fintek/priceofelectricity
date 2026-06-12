@@ -58,8 +58,7 @@ export default function ElectricityPriceIndexMethodologyPage() {
       <section style={{ marginTop: 24 }}>
         <h2 style={{ fontSize: 20, marginBottom: 8 }}>National average baseline</h2>
         <p style={{ marginTop: 0 }}>
-          The national average residential electricity rate (¢/kWh) across all 50
-          states is used as the baseline. This baseline is assigned an index
+          The national average residential electricity rate (¢/kWh) across all 50 states and Washington, D.C. is used as the baseline. This baseline is assigned an index
           value of <strong>100</strong>.
         </p>
       </section>
@@ -83,7 +82,7 @@ export default function ElectricityPriceIndexMethodologyPage() {
         <p style={{ marginTop: 12 }}>
           Where <code>stateRate</code> is the state&apos;s average residential
           electricity price in ¢/kWh, and <code>nationalAverage</code> is the
-          mean across all 50 states.
+          mean across all 50 states and Washington, D.C.
         </p>
       </section>
 

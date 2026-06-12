@@ -73,7 +73,7 @@ export default function PressKitPage() {
         <ul style={{ paddingLeft: 20, lineHeight: 2.2 }}>
           <li>
             <b>State-by-state comparability</b> — Normalized average rates
-            across all 50 states using a consistent methodology.
+            across all 50 states and Washington, D.C. using a consistent methodology.
           </li>
           <li>
             <b>Proprietary benchmarking</b> — The Electricity Price Index™

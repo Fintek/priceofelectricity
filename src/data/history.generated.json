@@ -9760,6 +9760,1226 @@
     "sourceUrl": "https://api.eia.gov/v2/electricity/retail-sales/data/"
   },
   {
+    "stateSlug": "district-of-columbia",
+    "series": [
+      {
+        "ym": "2001-01",
+        "avgRateCentsPerKwh": 7.16
+      },
+      {
+        "ym": "2001-02",
+        "avgRateCentsPerKwh": 6.9
+      },
+      {
+        "ym": "2001-03",
+        "avgRateCentsPerKwh": 6.65
+      },
+      {
+        "ym": "2001-04",
+        "avgRateCentsPerKwh": 6.68
+      },
+      {
+        "ym": "2001-05",
+        "avgRateCentsPerKwh": 8.77
+      },
+      {
+        "ym": "2001-06",
+        "avgRateCentsPerKwh": 8.97
+      },
+      {
+        "ym": "2001-07",
+        "avgRateCentsPerKwh": 9.18
+      },
+      {
+        "ym": "2001-08",
+        "avgRateCentsPerKwh": 8.91
+      },
+      {
+        "ym": "2001-09",
+        "avgRateCentsPerKwh": 8.37
+      },
+      {
+        "ym": "2001-10",
+        "avgRateCentsPerKwh": 6.68
+      },
+      {
+        "ym": "2001-11",
+        "avgRateCentsPerKwh": 6.91
+      },
+      {
+        "ym": "2001-12",
+        "avgRateCentsPerKwh": 7.17
+      },
+      {
+        "ym": "2002-01",
+        "avgRateCentsPerKwh": 7.03
+      },
+      {
+        "ym": "2002-02",
+        "avgRateCentsPerKwh": 7.72
+      },
+      {
+        "ym": "2002-03",
+        "avgRateCentsPerKwh": 6.76
+      },
+      {
+        "ym": "2002-04",
+        "avgRateCentsPerKwh": 6.82
+      },
+      {
+        "ym": "2002-05",
+        "avgRateCentsPerKwh": 7.94
+      },
+      {
+        "ym": "2002-06",
+        "avgRateCentsPerKwh": 9.1
+      },
+      {
+        "ym": "2002-07",
+        "avgRateCentsPerKwh": 9.21
+      },
+      {
+        "ym": "2002-08",
+        "avgRateCentsPerKwh": 9.48
+      },
+      {
+        "ym": "2002-09",
+        "avgRateCentsPerKwh": 8.59
+      },
+      {
+        "ym": "2002-10",
+        "avgRateCentsPerKwh": 6.2
+      },
+      {
+        "ym": "2002-11",
+        "avgRateCentsPerKwh": 7
+      },
+      {
+        "ym": "2002-12",
+        "avgRateCentsPerKwh": 7.12
+      },
+      {
+        "ym": "2003-01",
+        "avgRateCentsPerKwh": 7.07
+      },
+      {
+        "ym": "2003-02",
+        "avgRateCentsPerKwh": 7.02
+      },
+      {
+        "ym": "2003-03",
+        "avgRateCentsPerKwh": 6.97
+      },
+      {
+        "ym": "2003-04",
+        "avgRateCentsPerKwh": 6.88
+      },
+      {
+        "ym": "2003-05",
+        "avgRateCentsPerKwh": 8.84
+      },
+      {
+        "ym": "2003-06",
+        "avgRateCentsPerKwh": 9
+      },
+      {
+        "ym": "2003-07",
+        "avgRateCentsPerKwh": 9.14
+      },
+      {
+        "ym": "2003-08",
+        "avgRateCentsPerKwh": 8.97
+      },
+      {
+        "ym": "2003-09",
+        "avgRateCentsPerKwh": 8.36
+      },
+      {
+        "ym": "2003-10",
+        "avgRateCentsPerKwh": 6.37
+      },
+      {
+        "ym": "2003-11",
+        "avgRateCentsPerKwh": 6.82
+      },
+      {
+        "ym": "2003-12",
+        "avgRateCentsPerKwh": 7.16
+      },
+      {
+        "ym": "2004-01",
+        "avgRateCentsPerKwh": 7.2
+      },
+      {
+        "ym": "2004-02",
+        "avgRateCentsPerKwh": 7.27
+      },
+      {
+        "ym": "2004-03",
+        "avgRateCentsPerKwh": 7.17
+      },
+      {
+        "ym": "2004-04",
+        "avgRateCentsPerKwh": 6.97
+      },
+      {
+        "ym": "2004-05",
+        "avgRateCentsPerKwh": 8.56
+      },
+      {
+        "ym": "2004-06",
+        "avgRateCentsPerKwh": 9.75
+      },
+      {
+        "ym": "2004-07",
+        "avgRateCentsPerKwh": 9.3
+      },
+      {
+        "ym": "2004-08",
+        "avgRateCentsPerKwh": 9.06
+      },
+      {
+        "ym": "2004-09",
+        "avgRateCentsPerKwh": 8.6
+      },
+      {
+        "ym": "2004-10",
+        "avgRateCentsPerKwh": 7.24
+      },
+      {
+        "ym": "2004-11",
+        "avgRateCentsPerKwh": 6.59
+      },
+      {
+        "ym": "2004-12",
+        "avgRateCentsPerKwh": 6.94
+      },
+      {
+        "ym": "2005-01",
+        "avgRateCentsPerKwh": 7.45
+      },
+      {
+        "ym": "2005-02",
+        "avgRateCentsPerKwh": 8.38
+      },
+      {
+        "ym": "2005-03",
+        "avgRateCentsPerKwh": 8.68
+      },
+      {
+        "ym": "2005-04",
+        "avgRateCentsPerKwh": 8.77
+      },
+      {
+        "ym": "2005-05",
+        "avgRateCentsPerKwh": 7.7
+      },
+      {
+        "ym": "2005-06",
+        "avgRateCentsPerKwh": 9.42
+      },
+      {
+        "ym": "2005-07",
+        "avgRateCentsPerKwh": 10.09
+      },
+      {
+        "ym": "2005-08",
+        "avgRateCentsPerKwh": 10.01
+      },
+      {
+        "ym": "2005-09",
+        "avgRateCentsPerKwh": 10.07
+      },
+      {
+        "ym": "2005-10",
+        "avgRateCentsPerKwh": 9.91
+      },
+      {
+        "ym": "2005-11",
+        "avgRateCentsPerKwh": 8.8
+      },
+      {
+        "ym": "2005-12",
+        "avgRateCentsPerKwh": 8.96
+      },
+      {
+        "ym": "2006-01",
+        "avgRateCentsPerKwh": 9.34
+      },
+      {
+        "ym": "2006-02",
+        "avgRateCentsPerKwh": 8.12
+      },
+      {
+        "ym": "2006-03",
+        "avgRateCentsPerKwh": 8.54
+      },
+      {
+        "ym": "2006-04",
+        "avgRateCentsPerKwh": 8.92
+      },
+      {
+        "ym": "2006-05",
+        "avgRateCentsPerKwh": 9.59
+      },
+      {
+        "ym": "2006-06",
+        "avgRateCentsPerKwh": 10.86
+      },
+      {
+        "ym": "2006-07",
+        "avgRateCentsPerKwh": 10.81
+      },
+      {
+        "ym": "2006-08",
+        "avgRateCentsPerKwh": 10.86
+      },
+      {
+        "ym": "2006-09",
+        "avgRateCentsPerKwh": 11.39
+      },
+      {
+        "ym": "2006-10",
+        "avgRateCentsPerKwh": 10.32
+      },
+      {
+        "ym": "2006-11",
+        "avgRateCentsPerKwh": 8.99
+      },
+      {
+        "ym": "2006-12",
+        "avgRateCentsPerKwh": 9.86
+      },
+      {
+        "ym": "2007-01",
+        "avgRateCentsPerKwh": 10.01
+      },
+      {
+        "ym": "2007-02",
+        "avgRateCentsPerKwh": 9.9
+      },
+      {
+        "ym": "2007-03",
+        "avgRateCentsPerKwh": 9.52
+      },
+      {
+        "ym": "2007-04",
+        "avgRateCentsPerKwh": 9.84
+      },
+      {
+        "ym": "2007-05",
+        "avgRateCentsPerKwh": 9.59
+      },
+      {
+        "ym": "2007-06",
+        "avgRateCentsPerKwh": 11.98
+      },
+      {
+        "ym": "2007-07",
+        "avgRateCentsPerKwh": 12.72
+      },
+      {
+        "ym": "2007-08",
+        "avgRateCentsPerKwh": 12.58
+      },
+      {
+        "ym": "2007-09",
+        "avgRateCentsPerKwh": 12.24
+      },
+      {
+        "ym": "2007-10",
+        "avgRateCentsPerKwh": 12.05
+      },
+      {
+        "ym": "2007-11",
+        "avgRateCentsPerKwh": 10.6
+      },
+      {
+        "ym": "2007-12",
+        "avgRateCentsPerKwh": 11.44
+      },
+      {
+        "ym": "2008-01",
+        "avgRateCentsPerKwh": 10.74
+      },
+      {
+        "ym": "2008-02",
+        "avgRateCentsPerKwh": 10.73
+      },
+      {
+        "ym": "2008-03",
+        "avgRateCentsPerKwh": 11.08
+      },
+      {
+        "ym": "2008-04",
+        "avgRateCentsPerKwh": 11.16
+      },
+      {
+        "ym": "2008-05",
+        "avgRateCentsPerKwh": 11.01
+      },
+      {
+        "ym": "2008-06",
+        "avgRateCentsPerKwh": 13.24
+      },
+      {
+        "ym": "2008-07",
+        "avgRateCentsPerKwh": 14.89
+      },
+      {
+        "ym": "2008-08",
+        "avgRateCentsPerKwh": 14.44
+      },
+      {
+        "ym": "2008-09",
+        "avgRateCentsPerKwh": 13.96
+      },
+      {
+        "ym": "2008-10",
+        "avgRateCentsPerKwh": 14.14
+      },
+      {
+        "ym": "2008-11",
+        "avgRateCentsPerKwh": 13
+      },
+      {
+        "ym": "2008-12",
+        "avgRateCentsPerKwh": 13.03
+      },
+      {
+        "ym": "2009-01",
+        "avgRateCentsPerKwh": 13.04
+      },
+      {
+        "ym": "2009-02",
+        "avgRateCentsPerKwh": 12.98
+      },
+      {
+        "ym": "2009-03",
+        "avgRateCentsPerKwh": 13.12
+      },
+      {
+        "ym": "2009-04",
+        "avgRateCentsPerKwh": 12.99
+      },
+      {
+        "ym": "2009-05",
+        "avgRateCentsPerKwh": 13
+      },
+      {
+        "ym": "2009-06",
+        "avgRateCentsPerKwh": 14.2
+      },
+      {
+        "ym": "2009-07",
+        "avgRateCentsPerKwh": 14.52
+      },
+      {
+        "ym": "2009-08",
+        "avgRateCentsPerKwh": 14.72
+      },
+      {
+        "ym": "2009-09",
+        "avgRateCentsPerKwh": 14.79
+      },
+      {
+        "ym": "2009-10",
+        "avgRateCentsPerKwh": 14.28
+      },
+      {
+        "ym": "2009-11",
+        "avgRateCentsPerKwh": 12.99
+      },
+      {
+        "ym": "2009-12",
+        "avgRateCentsPerKwh": 13.44
+      },
+      {
+        "ym": "2010-01",
+        "avgRateCentsPerKwh": 13.29
+      },
+      {
+        "ym": "2010-02",
+        "avgRateCentsPerKwh": 13.41
+      },
+      {
+        "ym": "2010-03",
+        "avgRateCentsPerKwh": 13.22
+      },
+      {
+        "ym": "2010-04",
+        "avgRateCentsPerKwh": 13.73
+      },
+      {
+        "ym": "2010-05",
+        "avgRateCentsPerKwh": 14
+      },
+      {
+        "ym": "2010-06",
+        "avgRateCentsPerKwh": 14.74
+      },
+      {
+        "ym": "2010-07",
+        "avgRateCentsPerKwh": 14.59
+      },
+      {
+        "ym": "2010-08",
+        "avgRateCentsPerKwh": 14.76
+      },
+      {
+        "ym": "2010-09",
+        "avgRateCentsPerKwh": 14.39
+      },
+      {
+        "ym": "2010-10",
+        "avgRateCentsPerKwh": 14.37
+      },
+      {
+        "ym": "2010-11",
+        "avgRateCentsPerKwh": 13.32
+      },
+      {
+        "ym": "2010-12",
+        "avgRateCentsPerKwh": 13.48
+      },
+      {
+        "ym": "2011-01",
+        "avgRateCentsPerKwh": 13.62
+      },
+      {
+        "ym": "2011-02",
+        "avgRateCentsPerKwh": 13.64
+      },
+      {
+        "ym": "2011-03",
+        "avgRateCentsPerKwh": 15.18
+      },
+      {
+        "ym": "2011-04",
+        "avgRateCentsPerKwh": 13.68
+      },
+      {
+        "ym": "2011-05",
+        "avgRateCentsPerKwh": 14.03
+      },
+      {
+        "ym": "2011-06",
+        "avgRateCentsPerKwh": 14.12
+      },
+      {
+        "ym": "2011-07",
+        "avgRateCentsPerKwh": 13.03
+      },
+      {
+        "ym": "2011-08",
+        "avgRateCentsPerKwh": 13.06
+      },
+      {
+        "ym": "2011-09",
+        "avgRateCentsPerKwh": 13.22
+      },
+      {
+        "ym": "2011-10",
+        "avgRateCentsPerKwh": 13.27
+      },
+      {
+        "ym": "2011-11",
+        "avgRateCentsPerKwh": 11.86
+      },
+      {
+        "ym": "2011-12",
+        "avgRateCentsPerKwh": 12.24
+      },
+      {
+        "ym": "2012-01",
+        "avgRateCentsPerKwh": 11.78
+      },
+      {
+        "ym": "2012-02",
+        "avgRateCentsPerKwh": 12.21
+      },
+      {
+        "ym": "2012-03",
+        "avgRateCentsPerKwh": 12.2
+      },
+      {
+        "ym": "2012-04",
+        "avgRateCentsPerKwh": 12.49
+      },
+      {
+        "ym": "2012-05",
+        "avgRateCentsPerKwh": 12.39
+      },
+      {
+        "ym": "2012-06",
+        "avgRateCentsPerKwh": 13.18
+      },
+      {
+        "ym": "2012-07",
+        "avgRateCentsPerKwh": 12.26
+      },
+      {
+        "ym": "2012-08",
+        "avgRateCentsPerKwh": 12.23
+      },
+      {
+        "ym": "2012-09",
+        "avgRateCentsPerKwh": 12.22
+      },
+      {
+        "ym": "2012-10",
+        "avgRateCentsPerKwh": 12.35
+      },
+      {
+        "ym": "2012-11",
+        "avgRateCentsPerKwh": 12.21
+      },
+      {
+        "ym": "2012-12",
+        "avgRateCentsPerKwh": 11.98
+      },
+      {
+        "ym": "2013-01",
+        "avgRateCentsPerKwh": 12.06
+      },
+      {
+        "ym": "2013-02",
+        "avgRateCentsPerKwh": 11.97
+      },
+      {
+        "ym": "2013-03",
+        "avgRateCentsPerKwh": 12.14
+      },
+      {
+        "ym": "2013-04",
+        "avgRateCentsPerKwh": 12.36
+      },
+      {
+        "ym": "2013-05",
+        "avgRateCentsPerKwh": 12.52
+      },
+      {
+        "ym": "2013-06",
+        "avgRateCentsPerKwh": 12.65
+      },
+      {
+        "ym": "2013-07",
+        "avgRateCentsPerKwh": 12.89
+      },
+      {
+        "ym": "2013-08",
+        "avgRateCentsPerKwh": 12.98
+      },
+      {
+        "ym": "2013-09",
+        "avgRateCentsPerKwh": 12.79
+      },
+      {
+        "ym": "2013-10",
+        "avgRateCentsPerKwh": 13.07
+      },
+      {
+        "ym": "2013-11",
+        "avgRateCentsPerKwh": 12.88
+      },
+      {
+        "ym": "2013-12",
+        "avgRateCentsPerKwh": 12.5
+      },
+      {
+        "ym": "2014-01",
+        "avgRateCentsPerKwh": 12.59
+      },
+      {
+        "ym": "2014-02",
+        "avgRateCentsPerKwh": 12.7
+      },
+      {
+        "ym": "2014-03",
+        "avgRateCentsPerKwh": 12.59
+      },
+      {
+        "ym": "2014-04",
+        "avgRateCentsPerKwh": 13.1
+      },
+      {
+        "ym": "2014-05",
+        "avgRateCentsPerKwh": 14.26
+      },
+      {
+        "ym": "2014-06",
+        "avgRateCentsPerKwh": 13.25
+      },
+      {
+        "ym": "2014-07",
+        "avgRateCentsPerKwh": 12.12
+      },
+      {
+        "ym": "2014-08",
+        "avgRateCentsPerKwh": 12.61
+      },
+      {
+        "ym": "2014-09",
+        "avgRateCentsPerKwh": 12.57
+      },
+      {
+        "ym": "2014-10",
+        "avgRateCentsPerKwh": 13.17
+      },
+      {
+        "ym": "2014-11",
+        "avgRateCentsPerKwh": 12.72
+      },
+      {
+        "ym": "2014-12",
+        "avgRateCentsPerKwh": 12.04
+      },
+      {
+        "ym": "2015-01",
+        "avgRateCentsPerKwh": 12.02
+      },
+      {
+        "ym": "2015-02",
+        "avgRateCentsPerKwh": 13.16
+      },
+      {
+        "ym": "2015-03",
+        "avgRateCentsPerKwh": 12.38
+      },
+      {
+        "ym": "2015-04",
+        "avgRateCentsPerKwh": 13.21
+      },
+      {
+        "ym": "2015-05",
+        "avgRateCentsPerKwh": 13.22
+      },
+      {
+        "ym": "2015-06",
+        "avgRateCentsPerKwh": 12.79
+      },
+      {
+        "ym": "2015-07",
+        "avgRateCentsPerKwh": 13.64
+      },
+      {
+        "ym": "2015-08",
+        "avgRateCentsPerKwh": 13.03
+      },
+      {
+        "ym": "2015-09",
+        "avgRateCentsPerKwh": 12.74
+      },
+      {
+        "ym": "2015-10",
+        "avgRateCentsPerKwh": 13.92
+      },
+      {
+        "ym": "2015-11",
+        "avgRateCentsPerKwh": 13.71
+      },
+      {
+        "ym": "2015-12",
+        "avgRateCentsPerKwh": 13.36
+      },
+      {
+        "ym": "2016-01",
+        "avgRateCentsPerKwh": 12.44
+      },
+      {
+        "ym": "2016-02",
+        "avgRateCentsPerKwh": 12.19
+      },
+      {
+        "ym": "2016-03",
+        "avgRateCentsPerKwh": 12.65
+      },
+      {
+        "ym": "2016-04",
+        "avgRateCentsPerKwh": 12.85
+      },
+      {
+        "ym": "2016-05",
+        "avgRateCentsPerKwh": 13.12
+      },
+      {
+        "ym": "2016-06",
+        "avgRateCentsPerKwh": 12.26
+      },
+      {
+        "ym": "2016-07",
+        "avgRateCentsPerKwh": 11.74
+      },
+      {
+        "ym": "2016-08",
+        "avgRateCentsPerKwh": 11.99
+      },
+      {
+        "ym": "2016-09",
+        "avgRateCentsPerKwh": 11.72
+      },
+      {
+        "ym": "2016-10",
+        "avgRateCentsPerKwh": 12.93
+      },
+      {
+        "ym": "2016-11",
+        "avgRateCentsPerKwh": 13.08
+      },
+      {
+        "ym": "2016-12",
+        "avgRateCentsPerKwh": 11.88
+      },
+      {
+        "ym": "2017-01",
+        "avgRateCentsPerKwh": 12.37
+      },
+      {
+        "ym": "2017-02",
+        "avgRateCentsPerKwh": 12.84
+      },
+      {
+        "ym": "2017-03",
+        "avgRateCentsPerKwh": 13.04
+      },
+      {
+        "ym": "2017-04",
+        "avgRateCentsPerKwh": 13.09
+      },
+      {
+        "ym": "2017-05",
+        "avgRateCentsPerKwh": 13.54
+      },
+      {
+        "ym": "2017-06",
+        "avgRateCentsPerKwh": 12.59
+      },
+      {
+        "ym": "2017-07",
+        "avgRateCentsPerKwh": 12.23
+      },
+      {
+        "ym": "2017-08",
+        "avgRateCentsPerKwh": 12.62
+      },
+      {
+        "ym": "2017-09",
+        "avgRateCentsPerKwh": 13.08
+      },
+      {
+        "ym": "2017-10",
+        "avgRateCentsPerKwh": 13.44
+      },
+      {
+        "ym": "2017-11",
+        "avgRateCentsPerKwh": 14
+      },
+      {
+        "ym": "2017-12",
+        "avgRateCentsPerKwh": 13.28
+      },
+      {
+        "ym": "2018-01",
+        "avgRateCentsPerKwh": 12.3
+      },
+      {
+        "ym": "2018-02",
+        "avgRateCentsPerKwh": 13.38
+      },
+      {
+        "ym": "2018-03",
+        "avgRateCentsPerKwh": 12.19
+      },
+      {
+        "ym": "2018-04",
+        "avgRateCentsPerKwh": 13.72
+      },
+      {
+        "ym": "2018-05",
+        "avgRateCentsPerKwh": 13.73
+      },
+      {
+        "ym": "2018-06",
+        "avgRateCentsPerKwh": 12.06
+      },
+      {
+        "ym": "2018-07",
+        "avgRateCentsPerKwh": 12
+      },
+      {
+        "ym": "2018-08",
+        "avgRateCentsPerKwh": 12.56
+      },
+      {
+        "ym": "2018-09",
+        "avgRateCentsPerKwh": 12.56
+      },
+      {
+        "ym": "2018-10",
+        "avgRateCentsPerKwh": 13.6
+      },
+      {
+        "ym": "2018-11",
+        "avgRateCentsPerKwh": 13.84
+      },
+      {
+        "ym": "2018-12",
+        "avgRateCentsPerKwh": 13.15
+      },
+      {
+        "ym": "2019-01",
+        "avgRateCentsPerKwh": 13.01
+      },
+      {
+        "ym": "2019-02",
+        "avgRateCentsPerKwh": 13.02
+      },
+      {
+        "ym": "2019-03",
+        "avgRateCentsPerKwh": 13.66
+      },
+      {
+        "ym": "2019-04",
+        "avgRateCentsPerKwh": 14.3
+      },
+      {
+        "ym": "2019-05",
+        "avgRateCentsPerKwh": 13.88
+      },
+      {
+        "ym": "2019-06",
+        "avgRateCentsPerKwh": 12.1
+      },
+      {
+        "ym": "2019-07",
+        "avgRateCentsPerKwh": 12.17
+      },
+      {
+        "ym": "2019-08",
+        "avgRateCentsPerKwh": 12.39
+      },
+      {
+        "ym": "2019-09",
+        "avgRateCentsPerKwh": 12.79
+      },
+      {
+        "ym": "2019-10",
+        "avgRateCentsPerKwh": 13.47
+      },
+      {
+        "ym": "2019-11",
+        "avgRateCentsPerKwh": 13.77
+      },
+      {
+        "ym": "2019-12",
+        "avgRateCentsPerKwh": 12.38
+      },
+      {
+        "ym": "2020-01",
+        "avgRateCentsPerKwh": 12.38
+      },
+      {
+        "ym": "2020-02",
+        "avgRateCentsPerKwh": 12.81
+      },
+      {
+        "ym": "2020-03",
+        "avgRateCentsPerKwh": 13.03
+      },
+      {
+        "ym": "2020-04",
+        "avgRateCentsPerKwh": 12.41
+      },
+      {
+        "ym": "2020-05",
+        "avgRateCentsPerKwh": 12.77
+      },
+      {
+        "ym": "2020-06",
+        "avgRateCentsPerKwh": 12.78
+      },
+      {
+        "ym": "2020-07",
+        "avgRateCentsPerKwh": 11.81
+      },
+      {
+        "ym": "2020-08",
+        "avgRateCentsPerKwh": 12.12
+      },
+      {
+        "ym": "2020-09",
+        "avgRateCentsPerKwh": 12.55
+      },
+      {
+        "ym": "2020-10",
+        "avgRateCentsPerKwh": 13.61
+      },
+      {
+        "ym": "2020-11",
+        "avgRateCentsPerKwh": 13.35
+      },
+      {
+        "ym": "2020-12",
+        "avgRateCentsPerKwh": 12.96
+      },
+      {
+        "ym": "2021-01",
+        "avgRateCentsPerKwh": 12.21
+      },
+      {
+        "ym": "2021-02",
+        "avgRateCentsPerKwh": 12.74
+      },
+      {
+        "ym": "2021-03",
+        "avgRateCentsPerKwh": 12.88
+      },
+      {
+        "ym": "2021-04",
+        "avgRateCentsPerKwh": 13.31
+      },
+      {
+        "ym": "2021-05",
+        "avgRateCentsPerKwh": 13.36
+      },
+      {
+        "ym": "2021-06",
+        "avgRateCentsPerKwh": 12.96
+      },
+      {
+        "ym": "2021-07",
+        "avgRateCentsPerKwh": 12.87
+      },
+      {
+        "ym": "2021-08",
+        "avgRateCentsPerKwh": 13.08
+      },
+      {
+        "ym": "2021-09",
+        "avgRateCentsPerKwh": 13.02
+      },
+      {
+        "ym": "2021-10",
+        "avgRateCentsPerKwh": 13.8
+      },
+      {
+        "ym": "2021-11",
+        "avgRateCentsPerKwh": 14.07
+      },
+      {
+        "ym": "2021-12",
+        "avgRateCentsPerKwh": 13.34
+      },
+      {
+        "ym": "2022-01",
+        "avgRateCentsPerKwh": 13.22
+      },
+      {
+        "ym": "2022-02",
+        "avgRateCentsPerKwh": 13.42
+      },
+      {
+        "ym": "2022-03",
+        "avgRateCentsPerKwh": 14.09
+      },
+      {
+        "ym": "2022-04",
+        "avgRateCentsPerKwh": 13.72
+      },
+      {
+        "ym": "2022-05",
+        "avgRateCentsPerKwh": 14.83
+      },
+      {
+        "ym": "2022-06",
+        "avgRateCentsPerKwh": 13.82
+      },
+      {
+        "ym": "2022-07",
+        "avgRateCentsPerKwh": 13.86
+      },
+      {
+        "ym": "2022-08",
+        "avgRateCentsPerKwh": 14.06
+      },
+      {
+        "ym": "2022-09",
+        "avgRateCentsPerKwh": 13.96
+      },
+      {
+        "ym": "2022-10",
+        "avgRateCentsPerKwh": 15.44
+      },
+      {
+        "ym": "2022-11",
+        "avgRateCentsPerKwh": 15.77
+      },
+      {
+        "ym": "2022-12",
+        "avgRateCentsPerKwh": 15.05
+      },
+      {
+        "ym": "2023-01",
+        "avgRateCentsPerKwh": 14.96
+      },
+      {
+        "ym": "2023-02",
+        "avgRateCentsPerKwh": 15.7
+      },
+      {
+        "ym": "2023-03",
+        "avgRateCentsPerKwh": 16.06
+      },
+      {
+        "ym": "2023-04",
+        "avgRateCentsPerKwh": 15.3
+      },
+      {
+        "ym": "2023-05",
+        "avgRateCentsPerKwh": 17.09
+      },
+      {
+        "ym": "2023-06",
+        "avgRateCentsPerKwh": 16.55
+      },
+      {
+        "ym": "2023-07",
+        "avgRateCentsPerKwh": 16.61
+      },
+      {
+        "ym": "2023-08",
+        "avgRateCentsPerKwh": 16.48
+      },
+      {
+        "ym": "2023-09",
+        "avgRateCentsPerKwh": 16.29
+      },
+      {
+        "ym": "2023-10",
+        "avgRateCentsPerKwh": 18.03
+      },
+      {
+        "ym": "2023-11",
+        "avgRateCentsPerKwh": 16.99
+      },
+      {
+        "ym": "2023-12",
+        "avgRateCentsPerKwh": 17.82
+      },
+      {
+        "ym": "2024-01",
+        "avgRateCentsPerKwh": 16.88
+      },
+      {
+        "ym": "2024-02",
+        "avgRateCentsPerKwh": 17.15
+      },
+      {
+        "ym": "2024-03",
+        "avgRateCentsPerKwh": 17.71
+      },
+      {
+        "ym": "2024-04",
+        "avgRateCentsPerKwh": 17.93
+      },
+      {
+        "ym": "2024-05",
+        "avgRateCentsPerKwh": 17.84
+      },
+      {
+        "ym": "2024-06",
+        "avgRateCentsPerKwh": 17.16
+      },
+      {
+        "ym": "2024-07",
+        "avgRateCentsPerKwh": 17.07
+      },
+      {
+        "ym": "2024-08",
+        "avgRateCentsPerKwh": 17.4
+      },
+      {
+        "ym": "2024-09",
+        "avgRateCentsPerKwh": 18.03
+      },
+      {
+        "ym": "2024-10",
+        "avgRateCentsPerKwh": 18.59
+      },
+      {
+        "ym": "2024-11",
+        "avgRateCentsPerKwh": 18.93
+      },
+      {
+        "ym": "2024-12",
+        "avgRateCentsPerKwh": 18.79
+      },
+      {
+        "ym": "2025-01",
+        "avgRateCentsPerKwh": 18.83
+      },
+      {
+        "ym": "2025-02",
+        "avgRateCentsPerKwh": 19.71
+      },
+      {
+        "ym": "2025-03",
+        "avgRateCentsPerKwh": 20.4
+      },
+      {
+        "ym": "2025-04",
+        "avgRateCentsPerKwh": 21.32
+      },
+      {
+        "ym": "2025-05",
+        "avgRateCentsPerKwh": 20.43
+      },
+      {
+        "ym": "2025-06",
+        "avgRateCentsPerKwh": 22.7
+      },
+      {
+        "ym": "2025-07",
+        "avgRateCentsPerKwh": 23.04
+      },
+      {
+        "ym": "2025-08",
+        "avgRateCentsPerKwh": 23.19
+      },
+      {
+        "ym": "2025-09",
+        "avgRateCentsPerKwh": 23.67
+      },
+      {
+        "ym": "2025-10",
+        "avgRateCentsPerKwh": 23.92
+      },
+      {
+        "ym": "2025-11",
+        "avgRateCentsPerKwh": 22.72
+      },
+      {
+        "ym": "2025-12",
+        "avgRateCentsPerKwh": 23.9
+      },
+      {
+        "ym": "2026-01",
+        "avgRateCentsPerKwh": 23.72
+      },
+      {
+        "ym": "2026-02",
+        "avgRateCentsPerKwh": 23.97
+      },
+      {
+        "ym": "2026-03",
+        "avgRateCentsPerKwh": 25
+      }
+    ],
+    "updated": "March 2026",
+    "sourceName": "U.S. Energy Information Administration (EIA)",
+    "sourceUrl": "https://api.eia.gov/v2/electricity/retail-sales/data/"
+  },
+  {
     "stateSlug": "florida",
     "series": [
       {

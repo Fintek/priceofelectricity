@@ -1,7 +1,7 @@
 {
-  "commit": "f6d248e",
-  "builtAt": "2026-05-12T17:35:06.377Z",
-  "dataVersion": "v20260215",
-  "node": "v22.22.0",
+  "commit": "94a2caa",
+  "builtAt": "2026-06-12T17:02:32.968Z",
+  "dataVersion": "v20260315",
+  "node": "v24.6.0",
   "appVersion": "0.1.0"
 }

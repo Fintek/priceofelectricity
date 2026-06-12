@@ -244,7 +244,7 @@ export default async function ElectricityHubsIndexPage() {
           { label: "Electricity Hubs" },
         ]}
         title="Electricity Hubs"
-        intro="Explore electricity data across all 50 states — rates, bills, comparisons, usage scenarios, and provider information. Choose a topic below to get started."
+        intro="Explore electricity data across all 50 states and Washington, D.C. — rates, bills, comparisons, usage scenarios, and provider information. Choose a topic below to get started."
         stats={[
           { label: "States", value: String(states.length) },
           { label: "Cities", value: String(activeCities.length) },
