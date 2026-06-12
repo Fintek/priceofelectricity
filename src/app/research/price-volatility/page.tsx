@@ -103,7 +103,7 @@ export default function PriceVolatilityPage() {
             <ul style={{ paddingLeft: 20, lineHeight: 1.8 }}>
               {mostVolatile.map((v) => (
                 <li key={v.slug}>
-                  <Link href={`/${v.slug}/history`} prefetch={false}>
+                  <Link href={`/electricity-price-history/${v.slug}`} prefetch={false}>
                     {v.name}
                   </Link>{" "}
                   — std dev: {v.stdDev.toFixed(3)}¢, range:{" "}
@@ -120,7 +120,7 @@ export default function PriceVolatilityPage() {
             <ul style={{ paddingLeft: 20, lineHeight: 1.8 }}>
               {mostStable.map((v) => (
                 <li key={v.slug}>
-                  <Link href={`/${v.slug}/history`} prefetch={false}>
+                  <Link href={`/electricity-price-history/${v.slug}`} prefetch={false}>
                     {v.name}
                   </Link>{" "}
                   — std dev: {v.stdDev.toFixed(3)}¢, range:{" "}
@@ -169,7 +169,7 @@ export default function PriceVolatilityPage() {
                     }}
                   >
                     <td style={{ padding: "6px 4px" }}>
-                      <Link href={`/${v.slug}/history`} prefetch={false}>
+                      <Link href={`/electricity-price-history/${v.slug}`} prefetch={false}>
                         {v.name}
                       </Link>
                     </td>
