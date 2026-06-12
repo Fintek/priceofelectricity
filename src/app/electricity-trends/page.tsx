@@ -3,6 +3,7 @@ import Link from "next/link";
 import { loadKnowledgePage, loadEntityIndex, loadRankingsIndex } from "@/lib/knowledge/loadKnowledgePage";
 import { getRelease } from "@/lib/knowledge/fetch";
 import { buildMetadata } from "@/lib/seo/metadata";
+import { getCanonicalResidentialDataThroughMonthLabel } from "@/lib/eiaReportingTrust";
 import { buildWebPageJsonLd } from "@/lib/seo/jsonld";
 import JsonLdScript from "@/app/components/seo/JsonLdScript";
 import Breadcrumbs, { breadcrumbsToJsonLd, type BreadcrumbItem } from "@/components/navigation/Breadcrumbs";
@@ -17,8 +18,12 @@ export const revalidate = 86400;
 
 const MONTHLY_USAGE_KWH = 900;
 
+const trendsYear = getCanonicalResidentialDataThroughMonthLabel().match(/\d{4}/)?.[0];
+
 export const metadata: Metadata = buildMetadata({
-  title: "Electricity Price Trends & Inflation by State | PriceOfElectricity.com",
+  title: trendsYear
+    ? `U.S. Electricity Price Trends & State Inflation (${trendsYear})`
+    : "U.S. Electricity Price Trends & State Inflation",
   description:
     "National electricity price trends, 1-year and 5-year inflation, and affordability. Average U.S. rate, estimated monthly bills, and state-level trend data.",
   canonicalPath: "/electricity-trends",
