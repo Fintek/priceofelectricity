@@ -98,7 +98,7 @@ const RAW_STATES_DISCLAIMER =
 // generator does not need to import the file it is rewriting.
 const POSTAL_TO_NAME: Record<string, string> = {
   AL: "Alabama", AK: "Alaska", AZ: "Arizona", AR: "Arkansas", CA: "California",
-  CO: "Colorado", CT: "Connecticut", DE: "Delaware", FL: "Florida", GA: "Georgia",
+  CO: "Colorado", CT: "Connecticut", DC: "District of Columbia", DE: "Delaware", FL: "Florida", GA: "Georgia",
   HI: "Hawaii", ID: "Idaho", IL: "Illinois", IN: "Indiana", IA: "Iowa",
   KS: "Kansas", KY: "Kentucky", LA: "Louisiana", ME: "Maine", MD: "Maryland",
   MA: "Massachusetts", MI: "Michigan", MN: "Minnesota", MS: "Mississippi", MO: "Missouri",
@@ -109,7 +109,7 @@ const POSTAL_TO_NAME: Record<string, string> = {
   VA: "Virginia", WA: "Washington", WV: "West Virginia", WI: "Wisconsin", WY: "Wyoming",
 };
 
-// Keep output compatible with current site slugs and 50-state assumptions.
+// Keep output compatible with current site slugs (50 states + District of Columbia).
 const POSTAL_TO_SLUG: Record<string, string> = {
   AL: "alabama",
   AK: "alaska",
@@ -118,6 +118,7 @@ const POSTAL_TO_SLUG: Record<string, string> = {
   CA: "california",
   CO: "colorado",
   CT: "connecticut",
+  DC: "district-of-columbia",
   DE: "delaware",
   FL: "florida",
   GA: "georgia",

@@ -370,7 +370,7 @@ export default function MonitoringPage() {
           </li>
           <li>
             <Link href="/compare">Compare current state electricity rates</Link>{" "}
-            — Baseline rate data for all 50 states
+            — Baseline rate data for all 50 states and Washington, D.C.
           </li>
           <li>
             <Link href="/v/ai-energy">

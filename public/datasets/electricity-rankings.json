@@ -2,7 +2,7 @@
   "schemaVersion": "1.0",
   "generatedAt": "2026-05-28T13:54:57.371Z",
   "sourceVersion": "v20260315",
-  "rowCount": 606,
+  "rowCount": 612,
   "columns": [
     "rankingId",
     "rankingTitle",
@@ -409,6 +409,16 @@
       "rankingTitle": "Affordability Rankings",
       "state": "Vermont",
       "value": 60,
+      "displayValue": null,
+      "direction": "desc",
+      "directionLabel": "Highest to lowest",
+      "metricId": "affordabilityIndex"
+    },
+    {
+      "rankingId": "affordability",
+      "rankingTitle": "Affordability Rankings",
+      "state": "District of Columbia",
+      "value": 57,
       "displayValue": null,
       "direction": "desc",
       "directionLabel": "Highest to lowest",
@@ -917,6 +927,16 @@
     {
       "rankingId": "value-score",
       "rankingTitle": "Value Score Rankings",
+      "state": "District of Columbia",
+      "value": 59,
+      "displayValue": null,
+      "direction": "desc",
+      "directionLabel": "Highest to lowest",
+      "metricId": "valueScore"
+    },
+    {
+      "rankingId": "value-score",
+      "rankingTitle": "Value Score Rankings",
       "state": "Alaska",
       "value": 53,
       "displayValue": null,
@@ -1417,6 +1437,16 @@
     {
       "rankingId": "rate-low-to-high",
       "rankingTitle": "Rate Rankings (Low to High)",
+      "state": "District of Columbia",
+      "value": 25,
+      "displayValue": null,
+      "direction": "asc",
+      "directionLabel": "Lowest to highest",
+      "metricId": "avgRateCentsPerKwh"
+    },
+    {
+      "rankingId": "rate-low-to-high",
+      "rankingTitle": "Rate Rankings (Low to High)",
       "state": "New Hampshire",
       "value": 26.92,
       "displayValue": null,
@@ -1609,6 +1639,16 @@
       "rankingTitle": "Rate Rankings (High to Low)",
       "state": "New Hampshire",
       "value": 26.92,
+      "displayValue": null,
+      "direction": "desc",
+      "directionLabel": "Highest to lowest",
+      "metricId": "avgRateCentsPerKwh"
+    },
+    {
+      "rankingId": "rate-high-to-low",
+      "rankingTitle": "Rate Rankings (High to Low)",
+      "state": "District of Columbia",
+      "value": 25,
       "displayValue": null,
       "direction": "desc",
       "directionLabel": "Highest to lowest",
@@ -2417,6 +2457,16 @@
     {
       "rankingId": "electricity-affordability",
       "rankingTitle": "Most Affordable Electricity by State",
+      "state": "District of Columbia",
+      "value": 225,
+      "displayValue": "$225.00",
+      "direction": "asc",
+      "directionLabel": "Lowest to highest",
+      "metricId": "metricValue"
+    },
+    {
+      "rankingId": "electricity-affordability",
+      "rankingTitle": "Most Affordable Electricity by State",
       "state": "New Hampshire",
       "value": 242.28,
       "displayValue": "$242.28",
@@ -2610,6 +2660,16 @@
       "state": "New Hampshire",
       "value": 242.28,
       "displayValue": "$242.28",
+      "direction": "desc",
+      "directionLabel": "Highest to lowest",
+      "metricId": "metricValue"
+    },
+    {
+      "rankingId": "most-expensive-electricity",
+      "rankingTitle": "Least Affordable Electricity by State",
+      "state": "District of Columbia",
+      "value": 225,
+      "displayValue": "$225.00",
       "direction": "desc",
       "directionLabel": "Highest to lowest",
       "metricId": "metricValue"

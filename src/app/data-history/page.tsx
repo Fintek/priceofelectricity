@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Data History | PriceOfElectricity.com",
     description:
-      "Browse historical snapshots of electricity rate data across all 50 states.",
+      "Browse historical snapshots of electricity rate data across all 50 states and Washington, D.C.",
     url: `${BASE_URL}/data-history`,
   },
 };
@@ -29,7 +29,7 @@ export default function DataHistoryPage() {
     "@type": "WebPage",
     name: "Data History",
     description:
-      "Historical snapshots of electricity rate data for all 50 US states.",
+      "Historical snapshots of electricity rate data for all 50 states and Washington, D.C.",
     url: `${BASE_URL}/data-history`,
     dateModified: LAST_REVIEWED,
   };

@@ -21,7 +21,7 @@ import {
 import { SITE_URL } from "@/lib/site";
 import { buildMetadata } from "@/lib/seo/metadata";
 import {
-  getPrevNextByName,
+  getBrowseNearbyStates,
   getRelatedByRate,
   getStatesSortedByName,
 } from "@/lib/nav";
@@ -61,9 +61,14 @@ export async function generateMetadata({
   }
 
   const ns = buildNormalizedState(slug);
-  const title = `${ns.name} Electricity Price (¢/kWh) | PriceOfElectricity.com`;
+  const isDc = slug === "district-of-columbia";
+  const title = isDc
+    ? "Washington DC Electricity Price (¢/kWh) | PriceOfElectricity.com"
+    : `${ns.name} Electricity Price (¢/kWh) | PriceOfElectricity.com`;
   const eiaMonth = getCanonicalResidentialDataThroughMonthLabel();
-  const description = `${ns.name} average residential electricity rate is ${ns.avgRateCentsPerKwh}¢/kWh (latest EIA reporting month ${eiaMonth}). Estimate your monthly bill.`;
+  const description = isDc
+    ? `Washington, D.C. average residential electricity rate is ${ns.avgRateCentsPerKwh}¢/kWh (latest EIA reporting month ${eiaMonth}). Estimate your monthly bill.`
+    : `${ns.name} average residential electricity rate is ${ns.avgRateCentsPerKwh}¢/kWh (latest EIA reporting month ${eiaMonth}). Estimate your monthly bill.`;
 
   return buildMetadata({
     title,
@@ -179,7 +184,8 @@ export default function StatePage({
         : "#b00020";
 
   const sortedStates = getStatesSortedByName(STATES);
-  const { prev, next } = getPrevNextByName(slug, sortedStates);
+  const { prev, next } = getBrowseNearbyStates(slug, sortedStates);
+  const isDc = slug === "district-of-columbia";
   const relatedStates = getRelatedByRate(slug, STATES, 5);
   const majorCities = getActiveCitiesForState(slug);
   const majorUtilities = getUtilitiesByState(slug);
@@ -257,6 +263,22 @@ export default function StatePage({
         <h1 style={{ margin: 0 }}>{ns.name} Electricity Rates</h1>
         <SetPreferredStateButton stateSlug={slug} />
       </div>
+
+      {isDc && (
+        <p
+          style={{
+            marginTop: "var(--space-3)",
+            marginBottom: 0,
+            maxWidth: "65ch",
+            lineHeight: 1.6,
+          }}
+        >
+          The District of Columbia is a federal district, not a state, but EIA reports residential
+          electricity prices for DC on the same monthly schedule as the 50 states. Pepco (Potomac
+          Electric Power Company) is DC&apos;s sole regulated distribution utility; residents can
+          choose a retail electricity supplier for generation supply.
+        </p>
+      )}
 
       {/* ── ANSWER BLOCK ── */}
       <div

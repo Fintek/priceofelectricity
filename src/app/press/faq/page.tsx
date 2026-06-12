@@ -36,7 +36,7 @@ const FAQ_ITEMS = [
   },
   {
     q: "Can I use the data in my publication or report?",
-    a: "Yes. We provide downloadable datasets (JSON and CSV) for all 50 states. Please attribute PriceOfElectricity.com and link to our site when possible. See our brand guidelines for attribution details.",
+    a: "Yes. We provide downloadable datasets (JSON and CSV) for all 50 states and Washington, D.C. Please attribute PriceOfElectricity.com and link to our site when possible. See our brand guidelines for attribution details.",
   },
 ];
 
@@ -125,7 +125,7 @@ export default function PressFaqPage() {
                 ) : item.q.includes("Can I use") ? (
                   <>
                     Yes. We provide downloadable datasets (JSON and CSV) for all
-                    50 states. Please attribute PriceOfElectricity.com and link
+                    50 states and Washington, D.C. Please attribute PriceOfElectricity.com and link
                     to our site when possible. See our{" "}
                     <Link href="/press/brand">brand guidelines</Link> for
                     attribution details.

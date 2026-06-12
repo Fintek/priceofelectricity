@@ -56,7 +56,7 @@ export default function ApiDocsPage() {
           GET /api/v1/states
         </h3>
         <p className="muted" style={{ margin: "4px 0 8px" }}>
-          Returns all 50 states with summary metrics.
+          Returns all 50 states and Washington, D.C. with summary metrics.
         </p>
         <pre
           style={{

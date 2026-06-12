@@ -25,6 +25,7 @@ export const REGIONS: Region[] = [
     name: "South",
     states: [
       "delaware",
+      "district-of-columbia",
       "florida",
       "georgia",
       "maryland",

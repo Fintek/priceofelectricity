@@ -41,6 +41,9 @@ export const UTILITIES: Utility[] = [
   { stateSlug: "connecticut", slug: "eversource-ct", name: "Eversource Energy (Connecticut)" },
   { stateSlug: "connecticut", slug: "united-illuminating", name: "United Illuminating (UI)" },
 
+  // District of Columbia
+  { stateSlug: "district-of-columbia", slug: "pepco", name: "Potomac Electric Power Company (Pepco)" },
+
   // Delaware
   { stateSlug: "delaware", slug: "delmarva-power", name: "Delmarva Power" },
   { stateSlug: "delaware", slug: "delaware-electric-coop", name: "Delaware Electric Cooperative" },

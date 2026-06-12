@@ -10,7 +10,7 @@ export const metadata: Metadata = buildMetadata({
   title: "Annual Electricity Price Report | PriceOfElectricity.com",
   description:
     "National electricity price summary: averages, highest and lowest states, affordability breakdown, and value score analysis.",
-  socialDescription: "National electricity price summary across all 50 U.S. states.",
+  socialDescription: "National electricity price summary across all 50 states and Washington, D.C.",
   canonicalPath: "/research/annual-report",
 });
 
@@ -59,7 +59,7 @@ export default function AnnualReportPage() {
     dateModified: LAST_REVIEWED,
     author: { "@type": "Organization", name: "PriceOfElectricity.com" },
     description:
-      "National electricity price summary across all 50 U.S. states.",
+      "National electricity price summary across all 50 states and Washington, D.C.",
   };
 
   return (
@@ -215,7 +215,7 @@ export default function AnnualReportPage() {
       </section>
 
       <p style={{ marginTop: 16 }}>
-        <Link href="/value-ranking">View full 50-state value ranking</Link>
+        <Link href="/value-ranking">View full 51-jurisdiction value ranking</Link>
       </p>
 
       <p className="muted" style={{ marginTop: 24 }}>

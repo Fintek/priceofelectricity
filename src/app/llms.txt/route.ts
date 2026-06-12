@@ -9,10 +9,10 @@ export const revalidate = 2592000;
 
 export async function GET() {
   const stateSlugs = Object.keys(STATES).sort((a, b) => a.localeCompare(b));
-  const exampleStateUrls = stateSlugs
-    .slice(0, 5)
-    .map((slug) => `${BASE_URL}/${slug}`)
-    .join("\n");
+  const exampleStateUrls = [
+    ...stateSlugs.slice(0, 5).map((slug) => `${BASE_URL}/${slug}`),
+    `${BASE_URL}/district-of-columbia`,
+  ].join("\n");
 
   let dataSection = `Human entry point for data surfaces: ${BASE_URL}/data
 `;
@@ -54,8 +54,8 @@ ${BASE_URL}/compare
 ${BASE_URL}/calculator
 
 State URL pattern:
-All state pages follow: ${BASE_URL}/<state-slug>
-<state-slug> is lowercase, hyphenated, and canonical.
+All state and DC pages follow: ${BASE_URL}/<slug>
+<slug> is lowercase, hyphenated, and canonical.
 Example state URLs:
 ${exampleStateUrls}
 

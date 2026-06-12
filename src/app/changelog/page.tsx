@@ -11,6 +11,13 @@ export const revalidate = 2592000;
 
 const CHANGELOG_ENTRIES = [
   {
+    id: "district-of-columbia",
+    date: "2026-06-12",
+    title: "Added District of Columbia",
+    description:
+      "Expanded coverage to Washington, D.C. with a first-class jurisdiction page, EIA residential rates, bill estimator, and legacy URL redirects.",
+  },
+  {
     id: "all-50-states",
     date: "2026-02-10",
     title: "Added all 50 states",

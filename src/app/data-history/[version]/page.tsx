@@ -23,11 +23,11 @@ export async function generateMetadata({
 
   return {
     title: `Data Snapshot ${snap.version} | PriceOfElectricity.com`,
-    description: `Electricity rate data snapshot ${snap.version}, released ${snap.releasedAt}. Average residential rates for all 50 states.`,
+    description: `Electricity rate data snapshot ${snap.version}, released ${snap.releasedAt}. Average residential rates for all 50 states and Washington, D.C.`,
     alternates: { canonical: `${BASE_URL}/data-history/${snap.version}` },
     openGraph: {
       title: `Data Snapshot ${snap.version} | PriceOfElectricity.com`,
-      description: `Electricity rate data snapshot ${snap.version} covering all 50 states.`,
+      description: `Electricity rate data snapshot ${snap.version} covering all 50 states and Washington, D.C.`,
       url: `${BASE_URL}/data-history/${snap.version}`,
     },
   };
@@ -52,7 +52,7 @@ export default async function SnapshotVersionPage({
     "@context": "https://schema.org",
     "@type": "CreativeWork",
     name: `Electricity Rate Snapshot ${snap.version}`,
-    description: `Average residential electricity rates for all 50 US states as of ${snap.releasedAt}.`,
+    description: `Average residential electricity rates for all 50 states and Washington, D.C. as of ${snap.releasedAt}.`,
     url: `${BASE_URL}/data-history/${snap.version}`,
     datePublished: snap.releasedAt,
     dateModified: LAST_REVIEWED,

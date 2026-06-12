@@ -7,6 +7,7 @@ export const STATE_SLUGS = [
   "colorado",
   "connecticut",
   "delaware",
+  "district-of-columbia",
   "florida",
   "georgia",
   "hawaii",
