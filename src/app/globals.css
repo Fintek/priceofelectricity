@@ -683,47 +683,6 @@ nav[aria-label="Breadcrumb"] [aria-current="page"] {
 }
 
 /* ------------------------------------------------------------------ */
-/* Homepage state grid                                                */
-/* ------------------------------------------------------------------ */
-
-.homepage-state-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  gap: var(--space-2);
-}
-
-.homepage-state-item {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  min-height: 44px;
-  padding: var(--space-3) var(--space-3);
-  border-radius: 6px;
-  text-decoration: none;
-  color: var(--color-text);
-  transition: background-color 0.1s;
-}
-
-.homepage-state-item:visited {
-  color: var(--color-text);
-}
-
-.homepage-state-item:hover {
-  background: var(--color-surface-alt);
-  color: var(--color-text);
-}
-
-.homepage-state-name {
-  font-weight: 500;
-}
-
-.homepage-state-rate {
-  font-size: var(--font-size-sm);
-  color: var(--color-muted);
-  white-space: nowrap;
-}
-
-/* ------------------------------------------------------------------ */
 /* Utilities                                                          */
 /* ------------------------------------------------------------------ */
 
