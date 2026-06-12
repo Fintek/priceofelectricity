@@ -45,11 +45,15 @@ export async function generateMetadata({
 
   const title = `${parsed.template.titleTemplate(state.name)} | PriceOfElectricity.com`;
   const description = parsed.template.descriptionTemplate(state.name);
+  const canonicalPath =
+    parsed.template.slugPrefix === "average-electric-bill-in"
+      ? `/average-electricity-bill/${parsed.stateSlug}`
+      : `/questions/${slug}`;
 
   return buildMetadata({
     title,
     description,
-    canonicalPath: `/questions/${slug}`,
+    canonicalPath,
     ogType: "article",
   });
 }

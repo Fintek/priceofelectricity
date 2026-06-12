@@ -147,7 +147,7 @@ export default function StateTrendsPage() {
                     }}
                   >
                     <td style={{ padding: "6px 4px" }}>
-                      <Link href={`/${t.slug}/history`} prefetch={false}>
+                      <Link href={`/electricity-price-history/${t.slug}`} prefetch={false}>
                         {t.name}
                       </Link>
                     </td>

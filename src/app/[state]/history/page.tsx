@@ -107,7 +107,7 @@ export async function generateMetadata({
   return buildMetadata({
     title,
     description,
-    canonicalPath: `/${stateSlug}/history`,
+    canonicalPath: `/electricity-price-history/${stateSlug}`,
   });
 }
 
@@ -138,7 +138,7 @@ export default async function StateHistoryPage({
     "@context": "https://schema.org",
     "@type": "WebPage",
     name: `${stateInfo.name} Electricity Price History`,
-    url: `${BASE_URL}/${stateSlug}/history`,
+    url: `${BASE_URL}/electricity-price-history/${stateSlug}`,
     description,
   };
 

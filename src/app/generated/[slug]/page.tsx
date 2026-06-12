@@ -19,14 +19,19 @@ export async function generateMetadata({
   const page = getGeneratedPage(slug);
   if (!page) return {};
 
+  const canonicalUrl =
+    page.templateId === "average-electric-bill"
+      ? `${BASE_URL}/average-electricity-bill/${page.stateSlug}`
+      : `${BASE_URL}/generated/${page.slug}`;
+
   return {
     title: `${page.title} | PriceOfElectricity.com`,
     description: page.description,
-    alternates: { canonical: `${BASE_URL}/generated/${page.slug}` },
+    alternates: { canonical: canonicalUrl },
     openGraph: {
       title: `${page.title} | PriceOfElectricity.com`,
       description: page.description,
-      url: `${BASE_URL}/generated/${page.slug}`,
+      url: canonicalUrl,
     },
   };
 }

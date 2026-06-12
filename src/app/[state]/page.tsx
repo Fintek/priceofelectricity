@@ -412,7 +412,7 @@ export default function StatePage({
             <p style={{ margin: "0 0 8px", fontWeight: 600, fontSize: 15 }}>Explore data</p>
             <ul style={{ margin: 0, paddingLeft: 18, lineHeight: 1.8, fontSize: 14 }}>
               <li><Link href={`/electricity-cost/${slug}`}>{ns.name} cost details</Link></li>
-              <li><Link href={`/${slug}/history`}>Price history</Link></li>
+              <li><Link href={`/electricity-price-history/${slug}`}>Price history</Link></li>
               <li><Link href={`/drivers/${slug}`}>Price drivers</Link></li>
             </ul>
           </div>
