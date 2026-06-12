@@ -63,7 +63,7 @@ function buildDcFaqItems(ns: NormalizedState): FAQItem[] {
 }
 
 export function buildStateSchema(ns: NormalizedState) {
-  const description = `${ns.name} average residential electricity rate is ${ns.avgRateCentsPerKwh}¢/kWh (updated ${ns.updated}). Estimate your monthly bill with our quick calculator.`;
+  const description = `${ns.name} average residential electricity rate is ${ns.avgRateCentsPerKwh}¢/kWh (updated ${ns.updated}). Estimate your monthly bill.`;
 
   const faqItems: FAQItem[] =
     ns.slug === "district-of-columbia"
