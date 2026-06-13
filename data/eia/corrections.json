@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "entries": {
+    "2026-03|MD": {
+      "value": 22.2,
+      "reason": "EIA published an erroneous 35.85; corrected by EIA per MD PSC.",
+      "source": "https://psc.maryland.gov/news/2026/u-s-eia-corrects-maryland-electricity-price-data/",
+      "addedAt": "2026-06-13",
+      "removeWhen": "Remove once EIA serves ~22.2 for 2026-03 MD (raw fetch matches the pinned value)."
+    }
+  }
+}
