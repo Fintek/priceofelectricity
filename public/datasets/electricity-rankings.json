@@ -397,6 +397,16 @@
     {
       "rankingId": "affordability",
       "rankingTitle": "Affordability Rankings",
+      "state": "Maryland",
+      "value": 66,
+      "displayValue": null,
+      "direction": "desc",
+      "directionLabel": "Highest to lowest",
+      "metricId": "affordabilityIndex"
+    },
+    {
+      "rankingId": "affordability",
+      "rankingTitle": "Affordability Rankings",
       "state": "New Jersey",
       "value": 62,
       "displayValue": null,
@@ -499,16 +509,6 @@
       "rankingTitle": "Affordability Rankings",
       "state": "California",
       "value": 29,
-      "displayValue": null,
-      "direction": "desc",
-      "directionLabel": "Highest to lowest",
-      "metricId": "affordabilityIndex"
-    },
-    {
-      "rankingId": "affordability",
-      "rankingTitle": "Affordability Rankings",
-      "state": "Maryland",
-      "value": 21,
       "displayValue": null,
       "direction": "desc",
       "directionLabel": "Highest to lowest",
@@ -907,6 +907,16 @@
     {
       "rankingId": "value-score",
       "rankingTitle": "Value Score Rankings",
+      "state": "Maryland",
+      "value": 68,
+      "displayValue": null,
+      "direction": "desc",
+      "directionLabel": "Highest to lowest",
+      "metricId": "valueScore"
+    },
+    {
+      "rankingId": "value-score",
+      "rankingTitle": "Value Score Rankings",
       "state": "New Jersey",
       "value": 64,
       "displayValue": null,
@@ -1009,16 +1019,6 @@
       "rankingTitle": "Value Score Rankings",
       "state": "California",
       "value": 33,
-      "displayValue": null,
-      "direction": "desc",
-      "directionLabel": "Highest to lowest",
-      "metricId": "valueScore"
-    },
-    {
-      "rankingId": "value-score",
-      "rankingTitle": "Value Score Rankings",
-      "state": "Maryland",
-      "value": 25,
       "displayValue": null,
       "direction": "desc",
       "directionLabel": "Highest to lowest",
@@ -1417,6 +1417,16 @@
     {
       "rankingId": "rate-low-to-high",
       "rankingTitle": "Rate Rankings (Low to High)",
+      "state": "Maryland",
+      "value": 22.2,
+      "displayValue": null,
+      "direction": "asc",
+      "directionLabel": "Lowest to highest",
+      "metricId": "avgRateCentsPerKwh"
+    },
+    {
+      "rankingId": "rate-low-to-high",
+      "rankingTitle": "Rate Rankings (Low to High)",
       "state": "New Jersey",
       "value": 23.49,
       "displayValue": null,
@@ -1527,16 +1537,6 @@
     {
       "rankingId": "rate-low-to-high",
       "rankingTitle": "Rate Rankings (Low to High)",
-      "state": "Maryland",
-      "value": 35.85,
-      "displayValue": null,
-      "direction": "asc",
-      "directionLabel": "Lowest to highest",
-      "metricId": "avgRateCentsPerKwh"
-    },
-    {
-      "rankingId": "rate-low-to-high",
-      "rankingTitle": "Rate Rankings (Low to High)",
       "state": "Hawaii",
       "value": 42.23,
       "displayValue": null,
@@ -1549,16 +1549,6 @@
       "rankingTitle": "Rate Rankings (High to Low)",
       "state": "Hawaii",
       "value": 42.23,
-      "displayValue": null,
-      "direction": "desc",
-      "directionLabel": "Highest to lowest",
-      "metricId": "avgRateCentsPerKwh"
-    },
-    {
-      "rankingId": "rate-high-to-low",
-      "rankingTitle": "Rate Rankings (High to Low)",
-      "state": "Maryland",
-      "value": 35.85,
       "displayValue": null,
       "direction": "desc",
       "directionLabel": "Highest to lowest",
@@ -1669,6 +1659,16 @@
       "rankingTitle": "Rate Rankings (High to Low)",
       "state": "New Jersey",
       "value": 23.49,
+      "displayValue": null,
+      "direction": "desc",
+      "directionLabel": "Highest to lowest",
+      "metricId": "avgRateCentsPerKwh"
+    },
+    {
+      "rankingId": "rate-high-to-low",
+      "rankingTitle": "Rate Rankings (High to Low)",
+      "state": "Maryland",
+      "value": 22.2,
       "displayValue": null,
       "direction": "desc",
       "directionLabel": "Highest to lowest",
@@ -2437,6 +2437,16 @@
     {
       "rankingId": "electricity-affordability",
       "rankingTitle": "Most Affordable Electricity by State",
+      "state": "Maryland",
+      "value": 199.8,
+      "displayValue": "$199.80",
+      "direction": "asc",
+      "directionLabel": "Lowest to highest",
+      "metricId": "metricValue"
+    },
+    {
+      "rankingId": "electricity-affordability",
+      "rankingTitle": "Most Affordable Electricity by State",
       "state": "New Jersey",
       "value": 211.41,
       "displayValue": "$211.41",
@@ -2547,16 +2557,6 @@
     {
       "rankingId": "electricity-affordability",
       "rankingTitle": "Most Affordable Electricity by State",
-      "state": "Maryland",
-      "value": 322.65,
-      "displayValue": "$322.65",
-      "direction": "asc",
-      "directionLabel": "Lowest to highest",
-      "metricId": "metricValue"
-    },
-    {
-      "rankingId": "electricity-affordability",
-      "rankingTitle": "Most Affordable Electricity by State",
       "state": "Hawaii",
       "value": 380.07,
       "displayValue": "$380.07",
@@ -2570,16 +2570,6 @@
       "state": "Hawaii",
       "value": 380.07,
       "displayValue": "$380.07",
-      "direction": "desc",
-      "directionLabel": "Highest to lowest",
-      "metricId": "metricValue"
-    },
-    {
-      "rankingId": "most-expensive-electricity",
-      "rankingTitle": "Least Affordable Electricity by State",
-      "state": "Maryland",
-      "value": 322.65,
-      "displayValue": "$322.65",
       "direction": "desc",
       "directionLabel": "Highest to lowest",
       "metricId": "metricValue"
@@ -2690,6 +2680,16 @@
       "state": "New Jersey",
       "value": 211.41,
       "displayValue": "$211.41",
+      "direction": "desc",
+      "directionLabel": "Highest to lowest",
+      "metricId": "metricValue"
+    },
+    {
+      "rankingId": "most-expensive-electricity",
+      "rankingTitle": "Least Affordable Electricity by State",
+      "state": "Maryland",
+      "value": 199.8,
+      "displayValue": "$199.80",
       "direction": "desc",
       "directionLabel": "Highest to lowest",
       "metricId": "metricValue"
@@ -3077,16 +3077,6 @@
     {
       "rankingId": "cagr-25y",
       "rankingTitle": "25-Year Rate Growth (CAGR)",
-      "state": "Maryland",
-      "value": 5.96,
-      "displayValue": null,
-      "direction": "desc",
-      "directionLabel": "Highest to lowest",
-      "metricId": "cagr25y"
-    },
-    {
-      "rankingId": "cagr-25y",
-      "rankingTitle": "25-Year Rate Growth (CAGR)",
       "state": "District of Columbia",
       "value": 4.23,
       "displayValue": null,
@@ -3099,6 +3089,16 @@
       "rankingTitle": "25-Year Rate Growth (CAGR)",
       "state": "Connecticut",
       "value": 4.18,
+      "displayValue": null,
+      "direction": "desc",
+      "directionLabel": "Highest to lowest",
+      "metricId": "cagr25y"
+    },
+    {
+      "rankingId": "cagr-25y",
+      "rankingTitle": "25-Year Rate Growth (CAGR)",
+      "state": "Maryland",
+      "value": 3.93,
       "displayValue": null,
       "direction": "desc",
       "directionLabel": "Highest to lowest",
@@ -3597,8 +3597,8 @@
     {
       "rankingId": "volatility-5y",
       "rankingTitle": "5-Year Rate Volatility",
-      "state": "Maryland",
-      "value": 20.81,
+      "state": "Maine",
+      "value": 18.17,
       "displayValue": null,
       "direction": "desc",
       "directionLabel": "Highest to lowest",
@@ -3607,8 +3607,8 @@
     {
       "rankingId": "volatility-5y",
       "rankingTitle": "5-Year Rate Volatility",
-      "state": "Maine",
-      "value": 18.17,
+      "state": "Maryland",
+      "value": 15.73,
       "displayValue": null,
       "direction": "desc",
       "directionLabel": "Highest to lowest",
@@ -4097,16 +4097,6 @@
     {
       "rankingId": "price-trend",
       "rankingTitle": "Electricity Price Trend Ranking",
-      "state": "Maryland",
-      "value": 36.69,
-      "displayValue": null,
-      "direction": "desc",
-      "directionLabel": "Highest to lowest",
-      "metricId": "annualizedTrend"
-    },
-    {
-      "rankingId": "price-trend",
-      "rankingTitle": "Electricity Price Trend Ranking",
       "state": "District of Columbia",
       "value": 19.56,
       "displayValue": null,
@@ -4119,6 +4109,16 @@
       "rankingTitle": "Electricity Price Trend Ranking",
       "state": "Maine",
       "value": 14.93,
+      "displayValue": null,
+      "direction": "desc",
+      "directionLabel": "Highest to lowest",
+      "metricId": "annualizedTrend"
+    },
+    {
+      "rankingId": "price-trend",
+      "rankingTitle": "Electricity Price Trend Ranking",
+      "state": "Maryland",
+      "value": 14.71,
       "displayValue": null,
       "direction": "desc",
       "directionLabel": "Highest to lowest",
@@ -4607,16 +4607,6 @@
     {
       "rankingId": "momentum-signal",
       "rankingTitle": "Electricity Price Momentum Signal Ranking",
-      "state": "Maryland",
-      "value": 91.28,
-      "displayValue": null,
-      "direction": "desc",
-      "directionLabel": "Highest to lowest",
-      "metricId": "score"
-    },
-    {
-      "rankingId": "momentum-signal",
-      "rankingTitle": "Electricity Price Momentum Signal Ranking",
       "state": "District of Columbia",
       "value": 24.55,
       "displayValue": null,
@@ -4639,6 +4629,16 @@
       "rankingTitle": "Electricity Price Momentum Signal Ranking",
       "state": "New Hampshire",
       "value": 20.02,
+      "displayValue": null,
+      "direction": "desc",
+      "directionLabel": "Highest to lowest",
+      "metricId": "score"
+    },
+    {
+      "rankingId": "momentum-signal",
+      "rankingTitle": "Electricity Price Momentum Signal Ranking",
+      "state": "Maryland",
+      "value": 19.21,
       "displayValue": null,
       "direction": "desc",
       "directionLabel": "Highest to lowest",
@@ -5117,16 +5117,6 @@
     {
       "rankingId": "electricity-inflation-1y",
       "rankingTitle": "1-Year Electricity Inflation Ranking",
-      "state": "Maryland",
-      "value": 89.3,
-      "displayValue": "89.3%",
-      "direction": "desc",
-      "directionLabel": "Highest to lowest",
-      "metricId": "inflation1yPercent"
-    },
-    {
-      "rankingId": "electricity-inflation-1y",
-      "rankingTitle": "1-Year Electricity Inflation Ranking",
       "state": "District of Columbia",
       "value": 22.5,
       "displayValue": "22.5%",
@@ -5150,6 +5140,16 @@
       "state": "New Hampshire",
       "value": 18,
       "displayValue": "18.0%",
+      "direction": "desc",
+      "directionLabel": "Highest to lowest",
+      "metricId": "inflation1yPercent"
+    },
+    {
+      "rankingId": "electricity-inflation-1y",
+      "rankingTitle": "1-Year Electricity Inflation Ranking",
+      "state": "Maryland",
+      "value": 17.2,
+      "displayValue": "17.2%",
       "direction": "desc",
       "directionLabel": "Highest to lowest",
       "metricId": "inflation1yPercent"
@@ -5627,9 +5627,9 @@
     {
       "rankingId": "electricity-inflation-5y",
       "rankingTitle": "5-Year Electricity Inflation Ranking",
-      "state": "Maryland",
-      "value": 180.5,
-      "displayValue": "180.5%",
+      "state": "District of Columbia",
+      "value": 94.1,
+      "displayValue": "94.1%",
       "direction": "desc",
       "directionLabel": "Highest to lowest",
       "metricId": "inflation5yPercent"
@@ -5637,9 +5637,9 @@
     {
       "rankingId": "electricity-inflation-5y",
       "rankingTitle": "5-Year Electricity Inflation Ranking",
-      "state": "District of Columbia",
-      "value": 94.1,
-      "displayValue": "94.1%",
+      "state": "Maryland",
+      "value": 73.7,
+      "displayValue": "73.7%",
       "direction": "desc",
       "directionLabel": "Highest to lowest",
       "metricId": "inflation5yPercent"

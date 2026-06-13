@@ -34,7 +34,7 @@ export const RAW_STATES: Record<string, StateRecord> = {
   kentucky: { slug: "kentucky", name: "Kentucky", postal: "KY", avgRateCentsPerKwh: 14.88, updated: "March 2026", ...COMMON_STATE_METADATA },
   louisiana: { slug: "louisiana", name: "Louisiana", postal: "LA", avgRateCentsPerKwh: 14.16, updated: "March 2026", ...COMMON_STATE_METADATA },
   maine: { slug: "maine", name: "Maine", postal: "ME", avgRateCentsPerKwh: 28.32, updated: "March 2026", ...COMMON_STATE_METADATA },
-  maryland: { slug: "maryland", name: "Maryland", postal: "MD", avgRateCentsPerKwh: 35.85, updated: "March 2026", ...COMMON_STATE_METADATA },
+  maryland: { slug: "maryland", name: "Maryland", postal: "MD", avgRateCentsPerKwh: 22.2, updated: "March 2026", ...COMMON_STATE_METADATA },
   massachusetts: { slug: "massachusetts", name: "Massachusetts", postal: "MA", avgRateCentsPerKwh: 30.21, updated: "March 2026", ...COMMON_STATE_METADATA },
   michigan: { slug: "michigan", name: "Michigan", postal: "MI", avgRateCentsPerKwh: 21.2, updated: "March 2026", ...COMMON_STATE_METADATA },
   minnesota: { slug: "minnesota", name: "Minnesota", postal: "MN", avgRateCentsPerKwh: 15.08, updated: "March 2026", ...COMMON_STATE_METADATA },
