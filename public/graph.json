@@ -3975,6 +3975,11 @@
       "url": "http://localhost:3000/questions/why-electricity-expensive-in-connecticut"
     },
     {
+      "id": "question:why-electricity-expensive-in-district-of-columbia",
+      "type": "question",
+      "url": "http://localhost:3000/questions/why-electricity-expensive-in-district-of-columbia"
+    },
+    {
       "id": "question:why-electricity-expensive-in-hawaii",
       "type": "question",
       "url": "http://localhost:3000/questions/why-electricity-expensive-in-hawaii"
@@ -3983,11 +3988,6 @@
       "id": "question:why-electricity-expensive-in-maine",
       "type": "question",
       "url": "http://localhost:3000/questions/why-electricity-expensive-in-maine"
-    },
-    {
-      "id": "question:why-electricity-expensive-in-maryland",
-      "type": "question",
-      "url": "http://localhost:3000/questions/why-electricity-expensive-in-maryland"
     },
     {
       "id": "question:why-electricity-expensive-in-massachusetts",
@@ -13072,6 +13072,11 @@
       "rel": "related"
     },
     {
+      "from": "question:why-electricity-expensive-in-district-of-columbia",
+      "to": "state:district-of-columbia",
+      "rel": "related"
+    },
+    {
       "from": "question:why-electricity-expensive-in-hawaii",
       "to": "state:hawaii",
       "rel": "related"
@@ -13079,11 +13084,6 @@
     {
       "from": "question:why-electricity-expensive-in-maine",
       "to": "state:maine",
-      "rel": "related"
-    },
-    {
-      "from": "question:why-electricity-expensive-in-maryland",
-      "to": "state:maryland",
       "rel": "related"
     },
     {
@@ -22895,12 +22895,12 @@
     },
     {
       "from": "knowledge:vertical:ai-energy",
-      "to": "knowledge:state:maryland",
+      "to": "knowledge:state:massachusetts",
       "relation": "related-to"
     },
     {
       "from": "knowledge:vertical:ai-energy",
-      "to": "knowledge:state:massachusetts",
+      "to": "knowledge:state:rhode-island",
       "relation": "related-to"
     }
   ]

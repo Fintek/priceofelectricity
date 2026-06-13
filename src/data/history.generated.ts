@@ -25622,7 +25622,7 @@ export const HISTORY: StateHistory[] = [
       },
       {
         "ym": "2026-03",
-        "avgRateCentsPerKwh": 35.85
+        "avgRateCentsPerKwh": 22.2
       }
     ],
     "updated": "March 2026",
