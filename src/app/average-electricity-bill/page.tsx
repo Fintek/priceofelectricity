@@ -12,12 +12,63 @@ import {
   buildAverageBillRankingRows,
   loadAllAverageBillStateSummaries,
   sortAverageBillStates,
+  type AverageBillStateSummary,
 } from "@/lib/longtail/averageBill";
 import { getRelease } from "@/lib/knowledge/fetch";
 import { buildMetadata } from "@/lib/seo/metadata";
 import { formatRate, formatUsd } from "@/lib/longtail/stateLongtail";
 import { getCanonicalUsageCostPath } from "@/lib/longtail/usageEntryRoutes";
-import { buildWebPageJsonLd } from "@/lib/seo/jsonld";
+import { buildFaqPageJsonLd, buildWebPageJsonLd } from "@/lib/seo/jsonld";
+
+const LOW_RATE_ILLUSTRATIVE_PREFERRED_SLUGS = ["texas", "florida"] as const;
+
+function joinWithAnd(parts: string[]): string {
+  if (parts.length <= 1) return parts.join("");
+  return `${parts.slice(0, -1).join(", ")}, and ${parts[parts.length - 1]}`;
+}
+
+function qualifiesAsBelowNationalRate(
+  state: AverageBillStateSummary | undefined,
+  nationalAvgRate: number,
+): state is AverageBillStateSummary {
+  return (
+    state != null && state.avgRateCentsPerKwh != null && state.avgRateCentsPerKwh < nationalAvgRate
+  );
+}
+
+function selectLowRateIllustrativeStates(
+  states: AverageBillStateSummary[],
+  nationalAvgRate: number | null,
+  limit = 2,
+): AverageBillStateSummary[] {
+  if (nationalAvgRate == null) return [];
+
+  const bySlug = new Map(states.map((state) => [state.slug, state]));
+  const selected: AverageBillStateSummary[] = [];
+  const usedSlugs = new Set<string>();
+
+  for (const slug of LOW_RATE_ILLUSTRATIVE_PREFERRED_SLUGS) {
+    const state = bySlug.get(slug);
+    if (qualifiesAsBelowNationalRate(state, nationalAvgRate)) {
+      selected.push(state);
+      usedSlugs.add(slug);
+    }
+  }
+
+  for (const state of sortAverageBillStates(states, "asc")) {
+    if (selected.length >= limit) break;
+    if (usedSlugs.has(state.slug)) continue;
+    if (!qualifiesAsBelowNationalRate(state, nationalAvgRate)) continue;
+    selected.push(state);
+    usedSlugs.add(state.slug);
+  }
+
+  return selected;
+}
+
+function formatIllustrativeStateRates(states: AverageBillStateSummary[]): string {
+  return joinWithAnd(states.map((state) => `${state.name} (${formatRate(state.avgRateCentsPerKwh)})`));
+}
 
 export const dynamic = "force-static";
 export const revalidate = 86400;
@@ -44,6 +95,43 @@ export default async function AverageElectricityBillIndexPage() {
       )[0] ?? states[0];
   if (!representativeState || !highestBillState || !lowestBillState) notFound();
   const nationalMonthlyBill = representativeState?.nationalMonthlyBill ?? null;
+  const nationalAvgRate = representativeState.nationalAverageCentsPerKwh;
+  const nationalAnnualBill = nationalMonthlyBill != null ? nationalMonthlyBill * 12 : null;
+  const billGap =
+    highestBillState.monthlyBill != null && lowestBillState.monthlyBill != null
+      ? highestBillState.monthlyBill - lowestBillState.monthlyBill
+      : null;
+  const lowRateIllustrativeStates = selectLowRateIllustrativeStates(states, nationalAvgRate);
+
+  const faqItems = [
+    {
+      question: "What is the average electricity bill in the US?",
+      answer:
+        nationalMonthlyBill != null && nationalAnnualBill != null && nationalAvgRate != null
+          ? `The U.S. benchmark is about ${formatUsd(nationalMonthlyBill)} a month, or roughly ${formatUsd(nationalAnnualBill)} a year, using a ${AVERAGE_ELECTRICITY_BILL_USAGE_KWH.toLocaleString()} kWh energy-only basis at the ${nationalAvgRate}¢/kWh national average rate.`
+          : `Bill benchmarks on this page use a ${AVERAGE_ELECTRICITY_BILL_USAGE_KWH.toLocaleString()} kWh energy-only basis from the latest statewide residential rate data.`,
+    },
+    {
+      question: "Which state has the highest average electricity bill?",
+      answer: `${highestBillState.name} has the highest modeled bill on this benchmark, at about ${formatUsd(highestBillState.monthlyBill)} a month using ${AVERAGE_ELECTRICITY_BILL_USAGE_KWH.toLocaleString()} kWh (${formatRate(highestBillState.avgRateCentsPerKwh)}).`,
+    },
+    {
+      question: "Which state has the lowest average electricity bill?",
+      answer:
+        billGap != null
+          ? `${lowestBillState.name} has the lowest modeled bill, at about ${formatUsd(lowestBillState.monthlyBill)} a month (${formatRate(lowestBillState.avgRateCentsPerKwh)}) — roughly ${formatUsd(billGap)} a month less than ${highestBillState.name}.`
+          : `${lowestBillState.name} has the lowest modeled bill, at about ${formatUsd(lowestBillState.monthlyBill)} a month (${formatRate(lowestBillState.avgRateCentsPerKwh)}).`,
+    },
+    {
+      question: "Why is my bill higher than my state average?",
+      answer: `These estimates are energy-only and assume ${AVERAGE_ELECTRICITY_BILL_USAGE_KWH.toLocaleString()} kWh of monthly use. Your bill rises above the benchmark with more cooling, heating, or appliance use, and with delivery charges, taxes, and fixed fees not included here.`,
+    },
+    {
+      question: "How is the average bill calculated?",
+      answer: `Average residential rate × ${AVERAGE_ELECTRICITY_BILL_USAGE_KWH.toLocaleString()} kWh ÷ 100, energy-only. It excludes delivery fees, taxes, and fixed charges.`,
+    },
+  ];
+  const faqPageJsonLd = buildFaqPageJsonLd(faqItems);
 
   const breadcrumbTrail: BreadcrumbItem[] = [
     { name: "Home", url: "/" },
@@ -69,7 +157,7 @@ export default async function AverageElectricityBillIndexPage() {
 
   return (
     <>
-      <JsonLdScript data={[breadcrumbJsonLd, webPageJsonLd]} />
+      <JsonLdScript data={[breadcrumbJsonLd, webPageJsonLd, faqPageJsonLd]} />
       <main className="container">
         <Breadcrumbs trail={breadcrumbTrail} />
 
@@ -163,6 +251,32 @@ export default async function AverageElectricityBillIndexPage() {
         </section>
 
         <section style={{ marginBottom: 32 }}>
+          <h2 style={{ fontSize: 20, marginBottom: 12 }}>How the average electricity bill is calculated</h2>
+          <p style={{ marginTop: 0, lineHeight: 1.7 }}>
+            The bill estimates here use one simple formula: the state&apos;s average residential rate multiplied by a
+            fixed {AVERAGE_ELECTRICITY_BILL_USAGE_KWH.toLocaleString()} kWh of monthly use.
+            {nationalMonthlyBill != null && nationalAnnualBill != null && nationalAvgRate != null ? (
+              <>
+                {" "}
+                For example, the U.S. benchmark of {formatUsd(nationalMonthlyBill)} per month is {nationalAvgRate}
+                ¢/kWh × {AVERAGE_ELECTRICITY_BILL_USAGE_KWH.toLocaleString()} kWh ÷ 100. Over a year that is about{" "}
+                {formatUsd(nationalAnnualBill)}.
+              </>
+            ) : null}
+          </p>
+          <p style={{ lineHeight: 1.7 }}>
+            Holding usage at {AVERAGE_ELECTRICITY_BILL_USAGE_KWH.toLocaleString()} kWh keeps the comparison fair. Every
+            state is measured on the same use, so the ranking reflects price differences, not how much power each
+            household happens to draw.
+          </p>
+          <p style={{ marginBottom: 0, lineHeight: 1.7 }}>
+            These are energy-only estimates and exclude delivery fees, taxes, fixed charges, and other utility fees. Real
+            bills also move with home size, heating and cooling load, and local rate design. See our{" "}
+            <Link href="/methodology/electricity-rates">methodology</Link> for how rates are sourced and presented.
+          </p>
+        </section>
+
+        <section style={{ marginBottom: 32 }}>
           <h2 style={{ fontSize: 20, marginBottom: 12 }}>What affects the average electricity bill?</h2>
           <p style={{ marginTop: 0, lineHeight: 1.7 }}>
             A household bill depends on two inputs: the electricity rate and the amount of electricity used. This hub
@@ -173,6 +287,40 @@ export default async function AverageElectricityBillIndexPage() {
             Real bills move above or below this benchmark when homes use more cooling or heating, have different
             appliance loads, or face utility delivery charges and taxes. That is why each bill page links onward to
             usage-specific cost pages, calculators, and appliance operating-cost examples.
+          </p>
+        </section>
+
+        <section style={{ marginBottom: 32 }}>
+          <h2 style={{ fontSize: 20, marginBottom: 12 }}>
+            Rate vs. usage: why a high bill is not always a high rate
+          </h2>
+          <p style={{ marginTop: 0, lineHeight: 1.7 }}>
+            A monthly bill has two drivers: the price per kWh and the number of kWh used. This page fixes usage at{" "}
+            {AVERAGE_ELECTRICITY_BILL_USAGE_KWH.toLocaleString()} kWh, so its ranking is driven by rate alone.{" "}
+            {highestBillState.name} tops the list at {formatRate(highestBillState.avgRateCentsPerKwh)} — high on both
+            price and the resulting {formatUsd(highestBillState.monthlyBill)} benchmark bill.
+          </p>
+          {lowRateIllustrativeStates.length > 0 ? (
+            <p style={{ lineHeight: 1.7 }}>
+              But a low rate does not guarantee a low real-world bill.{" "}
+              {formatIllustrativeStateRates(lowRateIllustrativeStates)} price below the{" "}
+              {nationalAvgRate != null ? `${nationalAvgRate}¢/kWh` : "national average"} U.S. rate on this benchmark,
+              yet households there often run heavy summer cooling, so their actual monthly use — and their real bills —
+              can climb well past a fixed-{AVERAGE_ELECTRICITY_BILL_USAGE_KWH.toLocaleString()} kWh estimate. Usage is
+              the variable this hub deliberately holds constant.
+            </p>
+          ) : (
+            <p style={{ lineHeight: 1.7 }}>
+              But a low rate does not guarantee a low real-world bill. Households in warm climates often run heavy
+              summer cooling, so actual monthly use — and real bills — can climb well past a fixed-
+              {AVERAGE_ELECTRICITY_BILL_USAGE_KWH.toLocaleString()} kWh estimate even when the rate looks favorable.
+              Usage is the variable this hub deliberately holds constant.
+            </p>
+          )}
+          <p style={{ marginBottom: 0, lineHeight: 1.7 }}>
+            To see how consumption changes the picture, compare state usage on the{" "}
+            <Link href="/electricity-usage">electricity usage hub</Link>, or model your own kWh in the{" "}
+            <Link href="/electricity-cost-calculator">bill calculator</Link>.
           </p>
         </section>
 
@@ -300,6 +448,18 @@ export default async function AverageElectricityBillIndexPage() {
               <Link href="/electricity-cost-comparison">Electricity cost comparison hub</Link>
             </li>
           </ul>
+        </section>
+
+        <section style={{ marginBottom: 32 }}>
+          <h2 style={{ fontSize: 20, marginBottom: 12 }}>Frequently asked questions</h2>
+          <dl style={{ margin: 0 }}>
+            {faqItems.map((item) => (
+              <div key={item.question} style={{ marginBottom: 20 }}>
+                <dt style={{ fontWeight: 600, marginBottom: 4 }}>{item.question}</dt>
+                <dd style={{ margin: 0, lineHeight: 1.7, maxWidth: "70ch" }}>{item.answer}</dd>
+              </div>
+            ))}
+          </dl>
         </section>
 
         <section style={{ marginBottom: 32 }}>
