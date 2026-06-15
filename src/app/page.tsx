@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { STATES } from "@/data/states";
 import HomepagePersonalization from "@/app/components/HomepagePersonalization";
+import StateRateMap from "@/components/charts/StateRateMap";
 import AboutThisSite from "@/components/navigation/AboutThisSite";
 import EiaHomeTrustLine from "@/components/common/EiaHomeTrustLine";
 import JsonLdScript from "@/app/components/seo/JsonLdScript";
@@ -10,6 +11,7 @@ import { buildMetadata } from "@/lib/seo/metadata";
 import { buildFaqPageJsonLd } from "@/lib/seo/jsonld";
 import { getHomepageCoverageEntries } from "@/lib/stateDestinations";
 import { SITE_URL } from "@/lib/site";
+import { buildAllNormalizedStates } from "@/lib/stateBuilder";
 import {
   getHighestState,
   getLowestState,
@@ -56,11 +58,12 @@ export const metadata: Metadata = buildMetadata({
 
 export default function HomePage() {
   const coverageEntries = getHomepageCoverageEntries();
+  const normalizedStates = buildAllNormalizedStates();
+  const nationalAvg = getNationalAverage();
+  const highest = getHighestState();
+  const lowest = getLowestState();
 
   // ── Data-driven figures (all sourced from the EIA snapshot via nationalStats) ──
-  const lowest = getLowestState();
-  const highest = getHighestState();
-  const nationalAvg = getNationalAverage();
   const median = getMedianRate();
   const stateCount = getStateCount();
   const top5 = getTopNByRate(5);
@@ -91,6 +94,7 @@ export default function HomePage() {
   const spread = Math.round((highest.avgRateCentsPerKwh - lowest.avgRateCentsPerKwh) * 100) / 100;
   const medianGap = Math.round(Math.abs(nationalAvg - median) * 100) / 100;
   const medianVsAvgWord = median < nationalAvg ? "below" : "above";
+  const mapCaption = `A kilowatt-hour costs about ${(highest.avgRateCentsPerKwh / lowest.avgRateCentsPerKwh).toFixed(1)}× more in ${highest.name} (${highest.avgRateCentsPerKwh}¢) than in ${lowest.name} (${lowest.avgRateCentsPerKwh}¢).`;
 
   const nextLowest = bottom5.slice(1);
   const nextHighest = top5.slice(1);
@@ -161,6 +165,20 @@ export default function HomePage() {
         Compare residential electricity rates across all 50 states and Washington, D.C., estimate your monthly bill, and see how your state ranks.
       </p>
       <EiaHomeTrustLine />
+
+      <section style={{ marginBottom: 28 }}>
+        <h2 style={{ fontSize: 20, marginBottom: 12 }}>US electricity rates at a glance</h2>
+        <StateRateMap
+          states={normalizedStates.map(({ slug, name, avgRateCentsPerKwh }) => ({
+            slug,
+            name,
+            avgRateCentsPerKwh,
+          }))}
+          nationalAverage={nationalAvg}
+          linkStates
+          caption={mapCaption}
+        />
+      </section>
 
       {/* ── PRIMARY PATHWAYS ── */}
       <section style={{ marginBottom: 28 }}>

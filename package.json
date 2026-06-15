@@ -37,7 +37,8 @@
     "knowledge:integrity": "node scripts/verify-knowledge.js --integrity-only",
     "knowledge:types": "node scripts/knowledge-types.js",
     "knowledge:check": "node scripts/knowledge-check.js",
-    "launch:check": "npm run build"
+    "launch:check": "npm run build",
+    "map:build": "node scripts/build-state-map-paths.mjs"
   },
   "dependencies": {
     "@modelcontextprotocol/server-github": "^2025.4.8",
@@ -50,12 +51,16 @@
   "devDependencies": {
     "@lhci/cli": "^0.15.1",
     "@tailwindcss/postcss": "^4",
+    "@types/d3-geo": "^3.1.0",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
+    "d3-geo": "^3.1.1",
     "eslint-config-next": "16.1.6",
     "tailwindcss": "^4",
+    "topojson-client": "^3.1.0",
+    "us-atlas": "^3.0.1",
     "tsx": "^4.21.0",
     "typescript": "^5"
   }
