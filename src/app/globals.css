@@ -157,6 +157,19 @@ h3 {
   font-weight: 600;
 }
 
+.state-rate-map a:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 2px;
+}
+
+.state-rate-map path {
+  transition: filter 0.12s ease;
+}
+
+.state-rate-map a:hover path {
+  filter: brightness(0.93);
+}
+
 .data-table-wrap {
   width: 100%;
   overflow-x: auto;
