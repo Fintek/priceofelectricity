@@ -96,6 +96,14 @@ export default async function ApplianceCostToRunPage({
     stateEstimate.costPerMonth != null && nationalEstimate.costPerMonth != null
       ? stateEstimate.costPerMonth - nationalEstimate.costPerMonth
       : null;
+  const annualDifference =
+    stateEstimate.costPerYear != null && nationalEstimate.costPerYear != null
+      ? stateEstimate.costPerYear - nationalEstimate.costPerYear
+      : null;
+  const introComparison =
+    annualDifference != null && Math.abs(annualDifference) >= 5
+      ? ` That's roughly ${formatUsd(Math.abs(annualDifference))} a year ${annualDifference >= 0 ? "more" : "less"} than a household paying the national average pays for the exact same ${applianceConfig.displayName.toLowerCase()}.`
+      : "";
   const article = getIndefiniteArticle(applianceConfig.displayName);
   const canonicalPath = `/cost-to-run/${applianceSlug}/${state}`;
 
@@ -195,7 +203,7 @@ export default async function ApplianceCostToRunPage({
         ]}
         title={`What Does It Cost to Run ${article} ${applianceConfig.displayName} in ${stateData.name}?`}
         intro={stateEstimate.costPerMonth != null
-          ? `Running ${article} ${applianceConfig.displayName.toLowerCase()} in ${stateData.name} costs about ${formatUsd(stateEstimate.costPerMonth)} a month (${formatUsd(stateEstimate.costPerYear)} a year) at the state's average rate of ${formatRate(stateData.avgRateCentsPerKwh)}. That assumes a typical ${applianceConfig.averageWattage.toLocaleString()}-watt ${applianceConfig.displayName.toLowerCase()} running ${formatHoursPerDay(applianceConfig.typicalUsageHoursPerDay)}. These are electricity-only estimates, before delivery fees and taxes.`
+          ? `Running ${article} ${applianceConfig.displayName.toLowerCase()} in ${stateData.name} costs about ${formatUsd(stateEstimate.costPerMonth)} a month — ${formatUsd(stateEstimate.costPerYear)} a year — at the state's average rate of ${formatRate(stateData.avgRateCentsPerKwh)}.${introComparison} The estimate assumes a typical ${applianceConfig.averageWattage.toLocaleString()}-watt ${applianceConfig.displayName.toLowerCase()} running ${formatHoursPerDay(applianceConfig.typicalUsageHoursPerDay)}, and covers electricity only (before delivery fees and taxes).`
           : `This is an estimate of the electricity-only cost to run ${article} ${applianceConfig.displayName.toLowerCase()} in ${stateData.name}, based on a typical ${applianceConfig.averageWattage.toLocaleString()}-watt load running ${formatHoursPerDay(applianceConfig.typicalUsageHoursPerDay)}.`}
         stats={[
           { label: "Average wattage assumption", value: `${applianceConfig.averageWattage.toLocaleString()} W` },
@@ -219,7 +227,7 @@ export default async function ApplianceCostToRunPage({
         ]}
         comparisonSummary={
           monthlyDifference != null
-            ? `At the statewide average residential rate, running ${article} ${applianceConfig.displayName.toLowerCase()} in ${stateData.name} costs ${monthlyDifference >= 0 ? "more" : "less"} per month by ${formatUsd(Math.abs(monthlyDifference))} than the same usage pattern priced at the current U.S. average electricity rate.`
+            ? `At the state average rate, ${article} ${applianceConfig.displayName.toLowerCase()} in ${stateData.name} costs ${formatUsd(Math.abs(monthlyDifference))} ${monthlyDifference >= 0 ? "more" : "less"} a month than it would at the U.S. average rate.`
             : undefined
         }
         relatedLinks={[]}
@@ -235,17 +243,18 @@ export default async function ApplianceCostToRunPage({
             How much electricity does {article} {applianceConfig.displayName.toLowerCase()} use?
           </h2>
           <p style={{ marginTop: 0, lineHeight: 1.7 }}>
-            This estimate uses a typical wattage range of {formatWattageRange(applianceConfig)}, and we assume{" "}
-            {applianceConfig.averageWattage.toLocaleString()} watts for {formatHoursPerDay(applianceConfig.typicalUsageHoursPerDay)}.
-            Using the formula <code>kWh = (watts × hours) / 1000</code>, that works out to{" "}
-            <strong>{formatKwh(stateEstimate.kwhPerDay)}</strong> per day,{" "}
-            <strong>{formatKwh(stateEstimate.kwhPerMonth)}</strong> per 30-day month, and{" "}
-            <strong>{formatKwh(stateEstimate.kwhPerYear)}</strong> per year.
+            {article === "an" ? "An" : "A"} {applianceConfig.displayName.toLowerCase()} draws roughly{" "}
+            {formatWattageRange(applianceConfig)}; we use {applianceConfig.averageWattage.toLocaleString()} watts running{" "}
+            {formatHoursPerDay(applianceConfig.typicalUsageHoursPerDay)}. That comes to{" "}
+            <strong>{formatKwh(stateEstimate.kwhPerDay)}</strong> a day —{" "}
+            <strong>{formatKwh(stateEstimate.kwhPerMonth)}</strong> a month, or{" "}
+            <strong>{formatKwh(stateEstimate.kwhPerYear)}</strong> over a year — using{" "}
+            <code>kWh = watts × hours ÷ 1000</code>.
           </p>
           <p style={{ marginBottom: 0, lineHeight: 1.7 }}>
-            {applianceConfig.usageNote} In {stateData.name}, that energy is priced using the statewide residential
-            average of {formatRate(stateData.avgRateCentsPerKwh)}, with a national average of{" "}
-            {formatRate(stateData.nationalAverageCentsPerKwh)} for comparison.
+            {applianceConfig.usageNote} {stateData.name} prices that energy at{" "}
+            {formatRate(stateData.avgRateCentsPerKwh)}, against a {formatRate(stateData.nationalAverageCentsPerKwh)}{" "}
+            national average.
           </p>
         </section>
 
@@ -279,21 +288,21 @@ export default async function ApplianceCostToRunPage({
             </table>
           </div>
           <p style={{ marginBottom: 0, marginTop: 12, lineHeight: 1.7 }}>
-            These estimates isolate electricity usage only. Real utility bills can be higher because delivery
-            charges, taxes, seasonal pricing, and fixed monthly fees are not included in this appliance model.
+            These figures are electricity only. Your actual bill can run higher — delivery charges, taxes,
+            seasonal pricing, and fixed monthly fees aren't part of this estimate.
           </p>
         </section>
 
         <section style={{ marginBottom: "var(--space-7)" }}>
           <h2 className="heading-section">What changes the cost the most?</h2>
           <p style={{ marginTop: 0, lineHeight: 1.7 }}>
-            The biggest cost drivers for {article} {applianceConfig.displayName.toLowerCase()} are the local
-            electricity rate and real-world usage intensity. For this appliance, the main swing factors are{" "}
-            {applianceConfig.variabilityFactors.join(", ")}.
+            Two things move this number: your state's rate, which you can't change, and how hard the appliance
+            works, which you often can. For {article} {applianceConfig.displayName.toLowerCase()}, that mostly comes
+            down to {applianceConfig.variabilityFactors.join(", ")}.
           </p>
           <p style={{ marginBottom: 0, lineHeight: 1.7 }}>
-            If your usage is lighter or heavier than the assumption on this page, the linked state calculator and
-            usage-cost pages below are the fastest way to model a custom scenario with the same state electricity rate.
+            Using yours more lightly or heavily than our assumption? The state calculator and usage-cost pages below
+            model your exact scenario at the same rate.
           </p>
           <p style={{ marginBottom: 0, marginTop: 12, lineHeight: 1.7 }}>
             For calculator-style comparisons, use{" "}
