@@ -72,6 +72,11 @@ export default async function AverageElectricityBillStatePage({
   });
   const usageExamples = buildAverageBillUsageExamples(state);
   const applianceLinks = buildAverageBillApplianceLinks(state);
+  const annualBillDifference = state.monthlyDifference != null ? state.monthlyDifference * 12 : null;
+  const billComparison =
+    annualBillDifference != null && Math.abs(annualBillDifference) >= 25
+      ? ` That's about ${formatUsd(Math.abs(annualBillDifference))} a year ${annualBillDifference >= 0 ? "more" : "less"} than the typical U.S. household pays.`
+      : "";
 
   const breadcrumbJsonLd = buildBreadcrumbListJsonLd([
     { name: "Home", url: "/" },
@@ -101,7 +106,7 @@ export default async function AverageElectricityBillStatePage({
         ]}
         title={`Average Electricity Bill in ${state.name}`}
         intro={state.monthlyBill != null
-          ? `A typical household in ${state.name} pays about ${formatUsd(state.monthlyBill)} a month for electricity, based on the state average rate of ${formatRate(state.avgRateCentsPerKwh)} and ${AVERAGE_ELECTRICITY_BILL_USAGE_KWH.toLocaleString()} kWh of monthly use.`
+          ? `A typical household in ${state.name} pays about ${formatUsd(state.monthlyBill)} a month for electricity — roughly ${formatUsd(state.annualBill)} a year — at the state average rate of ${formatRate(state.avgRateCentsPerKwh)}.${billComparison} That's based on ${AVERAGE_ELECTRICITY_BILL_USAGE_KWH.toLocaleString()} kWh of monthly use, before delivery charges and taxes.`
           : `Estimated monthly and annual electricity bills for ${state.name}, based on the state average residential rate and ${AVERAGE_ELECTRICITY_BILL_USAGE_KWH.toLocaleString()} kWh of monthly use.`}
         stats={[
           { label: `${state.name} average rate`, value: formatRate(state.avgRateCentsPerKwh) },
@@ -147,15 +152,16 @@ export default async function AverageElectricityBillStatePage({
         }}
       >
         <section style={{ marginBottom: "var(--space-7)" }}>
-          <h2 className="heading-section">How to interpret this bill estimate</h2>
+          <h2 className="heading-section">Is this what you&apos;ll actually pay?</h2>
           <p style={{ marginTop: 0, lineHeight: 1.7 }}>
-            The statewide residential rate in {state.name} is {formatRate(state.avgRateCentsPerKwh)}. Applying that
-            rate to {AVERAGE_ELECTRICITY_BILL_USAGE_KWH.toLocaleString()} kWh of monthly use produces an estimated bill
-            of {formatUsd(state.monthlyBill)} before delivery charges, taxes, and fixed utility fees.
+            It&apos;s a fair benchmark, not a forecast. We take {state.name}&apos;s average rate of{" "}
+            {formatRate(state.avgRateCentsPerKwh)} and apply it to {AVERAGE_ELECTRICITY_BILL_USAGE_KWH.toLocaleString()}{" "}
+            kWh a month — the energy itself — which comes to {formatUsd(state.monthlyBill)} before delivery charges,
+            taxes, and fixed fees.
           </p>
           <p style={{ marginBottom: 0, lineHeight: 1.7 }}>
-            That number is a good way to compare states, but your bill can land above or below it depending on
-            cooling load, heating type, home size, appliance intensity, and local utility rate design.
+            Your own bill can land well above or below that, depending on how much you run the air conditioning, how
+            you heat your home and water, your home&apos;s size, and how your utility designs its rates.
           </p>
         </section>
 
@@ -195,8 +201,8 @@ export default async function AverageElectricityBillStatePage({
             EV charging, and the length of time high-wattage appliances run each month.
           </p>
           <p style={{ marginBottom: 0, lineHeight: 1.7 }}>
-            Two kinds of pages help you dig in: usage-cost pages show what a whole-home kWh pattern costs, and appliance
-            pages show how single devices add up.
+            Want to see where your money actually goes? The usage-cost pages show what a whole-home kWh pattern costs,
+            and the appliance pages break down how individual devices add up.
           </p>
         </section>
       </LongtailStateTemplate>
