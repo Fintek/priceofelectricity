@@ -2,6 +2,7 @@ import { readFileSync, writeFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
 import { feature } from "topojson-client";
+import { presimplify, simplify } from "topojson-simplify";
 import { geoAlbersUsa, geoPath } from "d3-geo";
 import statesTopo from "us-atlas/states-10m.json" with { type: "json" };
 
@@ -9,6 +10,9 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const root = join(__dirname, "..");
 const outputPath = join(root, "src/data/usStateMapPaths.generated.json");
 const stateSlugsPath = join(root, "src/data/stateSlugs.ts");
+
+// Tuned for ~40–70 KiB output at 975×610; raise to simplify more, lower to preserve detail.
+const MIN_WEIGHT = 0.006;
 
 const VIEW_BOX = "0 0 975 610";
 const FIT_EXTENT = [
@@ -66,7 +70,8 @@ function loadCanonicalSlugs() {
 }
 
 const canonicalSlugs = loadCanonicalSlugs();
-const statesFeature = feature(statesTopo, statesTopo.objects.states);
+const simplifiedTopo = simplify(presimplify(statesTopo), MIN_WEIGHT);
+const statesFeature = feature(simplifiedTopo, simplifiedTopo.objects.states);
 const projection = geoAlbersUsa();
 projection.fitExtent(FIT_EXTENT, statesFeature);
 const path = geoPath(projection);
@@ -118,4 +123,7 @@ const output = {
 };
 
 writeFileSync(outputPath, `${JSON.stringify(output)}\n`, "utf8");
-console.log(`Wrote ${outputPath} (${emittedSlugs.size} states)`);
+const bytes = Buffer.byteLength(JSON.stringify(output), "utf8");
+console.log(
+  `Wrote ${outputPath} (${emittedSlugs.size} states, ${(bytes / 1024).toFixed(1)} KiB, MIN_WEIGHT=${MIN_WEIGHT})`,
+);

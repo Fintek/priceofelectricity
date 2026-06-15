@@ -60,6 +60,7 @@
     "eslint-config-next": "16.1.6",
     "tailwindcss": "^4",
     "topojson-client": "^3.1.0",
+    "topojson-simplify": "^3.0.3",
     "us-atlas": "^3.0.1",
     "tsx": "^4.21.0",
     "typescript": "^5"
