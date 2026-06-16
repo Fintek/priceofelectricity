@@ -1,7 +1,8 @@
 import { STATES } from "@/data/states";
+import { SITE_URL } from "@/lib/site";
 import { escapeXml } from "@/lib/xml";
 
-const BASE_URL = "https://priceofelectricity.com";
+const BASE_URL = SITE_URL;
 
 export const dynamic = "force-static";
 export const revalidate = 2592000;

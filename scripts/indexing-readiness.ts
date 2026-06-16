@@ -29,7 +29,7 @@ function fail(label: string, detail?: string): void {
 
 const SITE_URL =
   process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/+$/, "") ||
-  "https://priceofelectricity.com";
+  "https://www.priceofelectricity.com";
 /** Matches src/app/robots.ts — www avoids 308 from non-www sitemap URL. */
 const ROBOTS_SITEMAP_ORIGIN = "https://www.priceofelectricity.com";
 
@@ -254,7 +254,7 @@ async function checkCanonical(base: string, path: string): Promise<void> {
   const href = canonicalMatch[1];
   if (href.startsWith(SITE_URL)) {
     pass(`${path} canonical starts with SITE_URL`);
-  } else if (href.startsWith("https://priceofelectricity.com")) {
+  } else if (href.startsWith("https://www.priceofelectricity.com")) {
     pass(`${path} canonical starts with production domain`);
   } else {
     fail(`${path} canonical starts with SITE_URL`, `got "${href}"`);

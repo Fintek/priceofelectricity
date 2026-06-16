@@ -82,7 +82,7 @@ These route families exist for backward compatibility or redirect purposes. They
 The production canonical origin is:
 
 ```
-https://priceofelectricity.com
+https://www.priceofelectricity.com
 ```
 
 This value is defined in `src/lib/site.ts` via `resolveSiteUrl()`.

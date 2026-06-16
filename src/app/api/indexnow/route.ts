@@ -7,7 +7,7 @@ const MAX_URLS = 10_000;
 function getSiteUrl(): string {
   return (
     process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/+$/, "") ||
-    "https://priceofelectricity.com"
+    "https://www.priceofelectricity.com"
   );
 }
 
@@ -15,7 +15,7 @@ function getHostname(siteUrl: string): string {
   try {
     return new URL(siteUrl).hostname;
   } catch {
-    return "priceofelectricity.com";
+    return "www.priceofelectricity.com";
   }
 }
 

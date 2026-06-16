@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { STATE_LIST } from "@/data/states";
+import { SITE_URL } from "@/lib/site";
 
-const BASE_URL = "https://priceofelectricity.com";
+const BASE_URL = SITE_URL;
 
 export const dynamic = "force-static";
 export const revalidate = 2592000;
