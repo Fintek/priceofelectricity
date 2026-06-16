@@ -32,7 +32,7 @@ type ReadinessReport = {
 
 const SITE_URL =
   process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/+$/, "") ||
-  "https://priceofelectricity.com";
+  "https://www.priceofelectricity.com";
 
 function getCommit(): string {
   try {
@@ -125,7 +125,7 @@ async function checkCanonical(base: string): Promise<CheckResult[]> {
       );
     } else if (
       canonical.startsWith(SITE_URL) ||
-      canonical.startsWith("https://priceofelectricity.com")
+      canonical.startsWith("https://www.priceofelectricity.com")
     ) {
       results.push(pass("home canonical correct", canonical));
     } else {
