@@ -162,11 +162,11 @@ export default async function RegulatoryQueuePage({ searchParams }: PageProps) {
                     textAlign: "left",
                   }}
                 >
-                  <th style={{ padding: "8px 12px" }}>State</th>
-                  <th style={{ padding: "8px 12px" }}>Kind</th>
-                  <th style={{ padding: "8px 12px" }}>Discovered</th>
-                  <th style={{ padding: "8px 12px" }}>Title</th>
-                  <th style={{ padding: "8px 12px" }}>Status</th>
+                  <th scope="col" style={{ padding: "8px 12px" }}>State</th>
+                  <th scope="col" style={{ padding: "8px 12px" }}>Kind</th>
+                  <th scope="col" style={{ padding: "8px 12px" }}>Discovered</th>
+                  <th scope="col" style={{ padding: "8px 12px" }}>Title</th>
+                  <th scope="col" style={{ padding: "8px 12px" }}>Status</th>
                 </tr>
               </thead>
               <tbody>

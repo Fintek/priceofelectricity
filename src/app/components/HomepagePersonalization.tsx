@@ -36,7 +36,7 @@ export default function HomepagePersonalization({ statesMap }: HomepagePersonali
       <p style={{ marginTop: 0, marginBottom: 0 }}>
         <Link href={`/${preferredState}`}>View {stateName} rates</Link>
         {" | "}
-        <Link href="/electricity-cost-calculator">Calculator</Link>
+        <Link href="/electricity-cost-calculator">Bill calculator</Link>
       </p>
     </section>
   );

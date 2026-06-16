@@ -29,8 +29,8 @@ export default async function KnowledgeRankingsIndexPage() {
         jsonUrl="/knowledge/rankings/index.json"
       />
       <p className="muted" style={{ marginTop: 0 }}>
-        Browse all ranking pages. Each ranking provides a deterministic ordering
-        of states by a specific metric.
+        Browse all ranking pages. Each ranking applies a documented rule so the order is stable between builds with the
+        same inputs. Every row orders states by a specific metric.
       </p>
       <RankingsExplorerClient glossaryMap={glossaryMap} />
     </main>

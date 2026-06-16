@@ -88,8 +88,8 @@ export function buildContentRegistry(): ContentNode[] {
     nodes.push({
       id: `state:${slug}:history`,
       type: "state",
-      title: `History in ${s.name}`,
-      url: `${BASE}/${slug}/history`,
+      title: `${s.name} Electricity Price History`,
+      url: `${BASE}/electricity-price-history/${slug}`,
       parent: `state:${slug}`,
     });
     nodes.push({

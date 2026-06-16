@@ -22,13 +22,6 @@ export function getPublicStateDestination(slug: string): PublicStateDestination 
     };
   }
 
-  if (slug === "district-of-columbia") {
-    return {
-      label: "District of Columbia",
-      href: "/knowledge/state/district-of-columbia",
-    };
-  }
-
   return {
     label: slug.replace(/-/g, " ").replace(/\b\w/g, (char) => char.toUpperCase()),
     href: `/knowledge/state/${slug}`,

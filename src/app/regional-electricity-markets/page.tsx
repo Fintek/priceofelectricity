@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Breadcrumbs, { breadcrumbsToJsonLd, type BreadcrumbItem } from "@/components/navigation/Breadcrumbs";
 import { loadKnowledgePage } from "@/lib/knowledge/loadKnowledgePage";
 import { getRelease } from "@/lib/knowledge/fetch";
 import { buildMetadata } from "@/lib/seo/metadata";
-import { buildBreadcrumbListJsonLd } from "@/lib/seo/jsonld";
+
 import JsonLdScript from "@/app/components/seo/JsonLdScript";
 import StatusFooter from "@/components/common/StatusFooter";
 import TopicClusterNav from "@/components/navigation/TopicClusterNav";
@@ -36,22 +37,18 @@ export default async function RegionalElectricityMarketsPage() {
   const rateDollarsPerKwh = nationalAvgRate != null ? nationalAvgRate / 100 : 0;
   const monthlyBill = rateDollarsPerKwh * MONTHLY_USAGE_KWH;
 
-  const breadcrumbJsonLd = buildBreadcrumbListJsonLd([
+  const breadcrumbTrail: BreadcrumbItem[] = [
     { name: "Home", url: "/" },
-    { name: "Regional Electricity Markets and Price Differences", url: "/regional-electricity-markets" },
-  ]);
+    { name: "Electricity Trends", url: "/electricity-trends" },
+    { name: "Regional Electricity Markets" },
+  ];
+  const breadcrumbJsonLd = breadcrumbsToJsonLd(breadcrumbTrail);
 
   return (
     <>
       <JsonLdScript data={breadcrumbJsonLd} />
       <main className="container">
-        <nav aria-label="Breadcrumb" className="muted" style={{ marginBottom: 16, fontSize: 14 }}>
-          <Link href="/">Home</Link>
-          {" · "}
-          <Link href="/electricity-trends">Electricity Trends</Link>
-          {" · "}
-          <span aria-current="page">Regional Electricity Markets</span>
-        </nav>
+        <Breadcrumbs trail={breadcrumbTrail} />
 
         <h1 style={{ fontSize: 32, marginBottom: 24 }}>Regional Electricity Markets and Price Differences</h1>
 
@@ -140,7 +137,7 @@ export default async function RegionalElectricityMarketsPage() {
         </section>
 
         <TopicClusterNav
-          title="Related topic clusters"
+          title="Related topics"
           description="Market structure, cost drivers, and price dynamics."
           links={[
             { href: "/electricity-markets", label: "Electricity market structures" },

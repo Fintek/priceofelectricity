@@ -24,13 +24,13 @@ export function generateMetadata({
       ? `Compare ${v1} vs ${v2} | Data History | PriceOfElectricity.com`
       : "Compare Data Snapshots | PriceOfElectricity.com",
     description: hasValid
-      ? `Side-by-side comparison of electricity rate snapshots ${v1} and ${v2} across all 50 states.`
+      ? `Side-by-side comparison of electricity rate snapshots ${v1} and ${v2} across all 50 states and Washington, D.C.`
       : "Compare historical electricity rate data snapshots to see how prices changed over time.",
     alternates: { canonical: `${BASE_URL}/data-history/compare` },
     openGraph: {
       title: "Compare Data Snapshots | PriceOfElectricity.com",
       description:
-        "Compare historical electricity rate data snapshots across all 50 states.",
+        "Compare historical electricity rate data snapshots across all 50 states and Washington, D.C.",
       url: `${BASE_URL}/data-history/compare`,
     },
   };
@@ -99,14 +99,14 @@ export default function DataHistoryComparePage({
           <table>
             <thead>
               <tr>
-                <th>State</th>
-                <th style={{ textAlign: "right" }}>
+                <th scope="col">State</th>
+                <th scope="col" style={{ textAlign: "right" }}>
                   {v1} (¢/kWh)
                 </th>
-                <th style={{ textAlign: "right" }}>
+                <th scope="col" style={{ textAlign: "right" }}>
                   {v2} (¢/kWh)
                 </th>
-                <th style={{ textAlign: "right" }}>Delta</th>
+                <th scope="col" style={{ textAlign: "right" }}>Delta</th>
               </tr>
             </thead>
             <tbody>

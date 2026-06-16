@@ -1,0 +1,9 @@
+{
+  "generatedAt": "2026-06-15T20:07:01.794Z",
+  "note": "Reference payload sizes for differential reporting. Environment-sensitive (sizes differ between local OS and CI/Vercel Linux); informational only and never gates the build. Refresh with `npm run payload:baseline` after a build.",
+  "targets": {
+    ".next/standalone total": 73709804,
+    ".next/server/app total": 37573797,
+    "public/knowledge total": 4606721
+  }
+}

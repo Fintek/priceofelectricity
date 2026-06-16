@@ -212,7 +212,7 @@ export async function buildStateHubSections(stateData: LongtailStateData): Promi
       href: `/electricity-usage/${stateData.slug}`,
       title: `Electricity usage in ${stateData.name}`,
       description: `State electricity usage profile with modeled household kWh context and links to cost scenarios.`,
-      eyebrow: "Usage intelligence",
+      eyebrow: "Usage overview",
     },
     {
       href: `/electricity-providers/${stateData.slug}`,
@@ -226,14 +226,14 @@ export async function buildStateHubSections(stateData: LongtailStateData): Promi
     coreCards.unshift({
       href: `/electricity-price-per-kwh/${stateData.slug}`,
       title: `Electricity price per kWh in ${stateData.name}`,
-      description: `Dedicated longtail rate page for current residential price per kWh in ${stateData.name}.`,
-      eyebrow: "Longtail page",
+      description: `Dedicated rate page for current residential price per kWh in ${stateData.name}.`,
+      eyebrow: "Rate detail",
     });
   }
 
   sections.push({
     title: `${stateData.name} core electricity pages`,
-    intro: `Start here for the main state-level entry points, then branch into longtail scenario pages from this hub.`,
+    intro: `Start here for the main state-level entry points, then open specific usage and cost scenarios from this hub.`,
     cards: coreCards,
   });
 
@@ -245,7 +245,7 @@ export async function buildStateHubSections(stateData: LongtailStateData): Promi
         href: `/electricity-usage-cost/${kwh}/${stateData.slug}`,
         title: `${kwh.toLocaleString()} kWh cost in ${stateData.name}`,
         description: `See how much ${kwh.toLocaleString()} kWh costs at the current statewide residential rate.`,
-        eyebrow: "Longtail page",
+        eyebrow: "Usage scenario",
         meta: formatUsd(calculateUsageCost(stateData.avgRateCentsPerKwh, kwh)),
       })),
     });
@@ -260,7 +260,7 @@ export async function buildStateHubSections(stateData: LongtailStateData): Promi
         href: `/cost-to-run/${slug}/${stateData.slug}`,
         title: `${appliance.displayName} cost in ${stateData.name}`,
         description: `Estimated hourly, daily, monthly, and yearly electricity cost for a typical ${appliance.displayName.toLowerCase()} in ${stateData.name}.`,
-        eyebrow: "Longtail page",
+        eyebrow: "Appliance cost",
         meta: `${appliance.averageWattage.toLocaleString()} W assumption`,
       };
     }),
@@ -275,7 +275,7 @@ export async function buildStateHubSections(stateData: LongtailStateData): Promi
           href: `/electricity-price-trend/${stateData.slug}`,
           title: `Electricity price trend in ${stateData.name}`,
           description: `Monthly trend page with 1-year and 5-year change context for ${stateData.name}.`,
-          eyebrow: "Longtail page",
+          eyebrow: "Trend detail",
         },
         {
           href: `/electricity-price-history/${stateData.slug}`,
@@ -318,7 +318,7 @@ export async function buildStateHubSections(stateData: LongtailStateData): Promi
           href: `/industry-electricity-cost/${industry}/${stateData.slug}`,
           title: `${config.displayName} in ${stateData.name}`,
           description: `Scenario-based electricity estimate for ${config.shortLabel} in ${stateData.name}.`,
-          eyebrow: "Longtail page",
+          eyebrow: "Industry scenario",
           meta: `${config.monthlyUsageKwh.toLocaleString()} kWh/month example`,
         };
       }),
@@ -326,26 +326,26 @@ export async function buildStateHubSections(stateData: LongtailStateData): Promi
   }
 
   sections.push({
-    title: "More discovery hubs",
-    intro: "Use these hub pages to continue exploring the longtail inventory from a broader angle.",
+    title: "More guides and indexes",
+    intro: "Use these hub pages to browse usage scenarios, comparisons, and related tools from a broader angle.",
     cards: [
       {
         href: "/electricity-hubs/scenarios",
         title: "Electricity cost scenario hub",
         description: "Overview of the site's residential and industry cost scenarios.",
-        eyebrow: "Traffic hub",
+        eyebrow: "Browse",
       },
       {
         href: "/electricity-hubs/usage",
         title: "Electricity usage hubs",
         description: "Browse usage-based electricity hubs by common kWh tiers.",
-        eyebrow: "Traffic hub",
+        eyebrow: "Browse",
       },
       {
         href: "/electricity-hubs/comparisons",
         title: "Electricity comparison hub",
         description: "Structured entry point into state-vs-state electricity price comparisons.",
-        eyebrow: "Traffic hub",
+        eyebrow: "Browse",
       },
     ],
   });

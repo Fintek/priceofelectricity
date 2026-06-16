@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Breadcrumbs, { breadcrumbsToJsonLd, type BreadcrumbItem } from "@/components/navigation/Breadcrumbs";
 import JsonLdScript from "@/app/components/seo/JsonLdScript";
 import Disclaimers from "@/app/components/policy/Disclaimers";
 import StatusFooter from "@/components/common/StatusFooter";
@@ -12,7 +13,7 @@ import {
 } from "@/lib/longtail/billEstimator";
 import { AVERAGE_ELECTRICITY_BILL_USAGE_KWH, sortAverageBillStates } from "@/lib/longtail/averageBill";
 import { buildMetadata } from "@/lib/seo/metadata";
-import { buildBreadcrumbListJsonLd, buildWebPageJsonLd } from "@/lib/seo/jsonld";
+import { buildWebPageJsonLd } from "@/lib/seo/jsonld";
 import { formatRate, formatUsd } from "@/lib/longtail/stateLongtail";
 
 export const dynamic = "force-static";
@@ -39,10 +40,11 @@ export default async function ElectricityBillEstimatorHubPage() {
     activeProfileGroups.set(entry.slug, rows);
   }
 
-  const breadcrumbJsonLd = buildBreadcrumbListJsonLd([
+  const breadcrumbTrail: BreadcrumbItem[] = [
     { name: "Home", url: "/" },
-    { name: "Electricity Bill Estimator", url: "/electricity-bill-estimator" },
-  ]);
+    { name: "Electricity Bill Estimator" },
+  ];
+  const breadcrumbJsonLd = breadcrumbsToJsonLd(breadcrumbTrail);
   const webPageJsonLd = buildWebPageJsonLd({
     title: "Electricity Bill Estimator",
     description:
@@ -56,11 +58,7 @@ export default async function ElectricityBillEstimatorHubPage() {
     <>
       <JsonLdScript data={[breadcrumbJsonLd, webPageJsonLd]} />
       <main className="container">
-        <nav aria-label="Breadcrumb" className="muted" style={{ marginBottom: 16, fontSize: 14 }}>
-          <Link href="/">Home</Link>
-          {" · "}
-          <span aria-current="page">Electricity Bill Estimator</span>
-        </nav>
+        <Breadcrumbs trail={breadcrumbTrail} />
 
         <h1 style={{ fontSize: 32, marginBottom: 12 }}>Electricity Bill Estimator</h1>
         <p style={{ marginTop: 0, marginBottom: 20, maxWidth: "65ch", lineHeight: 1.7 }}>
@@ -115,7 +113,7 @@ export default async function ElectricityBillEstimatorHubPage() {
               <thead>
                 <tr>
                   {["Profile", "Monthly usage", "Est. monthly bill"].map((label) => (
-                    <th key={label} style={{ textAlign: "left", padding: 10, borderBottom: "1px solid var(--color-border, #e5e7eb)", backgroundColor: "var(--color-surface-alt, #f9fafb)" }}>
+                    <th scope="col" key={label} style={{ textAlign: "left", padding: 10, borderBottom: "1px solid var(--color-border, #e5e7eb)", backgroundColor: "var(--color-surface-alt, #f9fafb)" }}>
                       {label}
                     </th>
                   ))}

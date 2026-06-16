@@ -10,88 +10,92 @@ export type Offer = {
   active: boolean;
 };
 
+// Offers are gated inactive until real affiliate/partner destinations are
+// integrated. Every entry below points at a stub example.com URL, so all
+// are marked `active: false` and excluded from rendering by the accessors. When
+// a real partner is signed, set its `destinationUrl` and flip `active: true`.
 export const OFFERS: Offer[] = [
   // ── National offers ──────────────────────────────────────
   {
     id: "nat-plans-compare",
     title: "Compare Electricity Plans",
     description:
-      "Placeholder — compare fixed and variable electricity plans from multiple providers.",
+      "Compare fixed and variable electricity plans from multiple providers.",
     destinationUrl: "https://example.com/compare-plans",
     category: "plans",
-    active: true,
+    active: false,
   },
   {
     id: "nat-solar-estimate",
     title: "Free Solar Savings Estimate",
     description:
-      "Placeholder — get an estimate of potential solar savings for your home.",
+      "Get an estimate of potential solar savings for your home.",
     destinationUrl: "https://example.com/solar-estimate",
     category: "solar",
-    active: true,
+    active: false,
   },
   {
     id: "nat-efficiency-audit",
     title: "Home Energy Audit",
     description:
-      "Placeholder — find out where your home loses energy and how to fix it.",
+      "Find out where your home loses energy and how to fix it.",
     destinationUrl: "https://example.com/energy-audit",
     category: "efficiency",
-    active: true,
+    active: false,
   },
   {
     id: "nat-moving-utility-setup",
     title: "Set Up Utilities When Moving",
     description:
-      "Placeholder — connect electricity, gas, and internet at your new address in one step.",
+      "Connect electricity, gas, and internet at your new address in one step.",
     destinationUrl: "https://example.com/moving-utilities",
     category: "moving",
-    active: true,
+    active: false,
   },
   {
     id: "nat-green-energy",
     title: "Switch to Green Energy",
     description:
-      "Placeholder — choose a 100% renewable electricity plan where available.",
+      "Choose a 100% renewable electricity plan where available.",
     destinationUrl: "https://example.com/green-energy",
     category: "plans",
-    active: true,
+    active: false,
   },
   {
     id: "nat-smart-thermostat",
     title: "Smart Thermostat Savings",
     description:
-      "Placeholder — save on heating and cooling with a programmable smart thermostat.",
+      "Save on heating and cooling with a programmable smart thermostat.",
     destinationUrl: "https://example.com/smart-thermostat",
     category: "efficiency",
-    active: true,
+    active: false,
   },
   {
     id: "nat-ev-charging",
     title: "EV Home Charging Plans",
     description:
-      "Placeholder — find electricity plans optimized for overnight EV charging.",
+      "Find electricity plans optimized for overnight EV charging.",
     destinationUrl: "https://example.com/ev-charging",
     category: "other",
-    active: true,
+    active: false,
   },
   {
     id: "nat-home-battery",
     title: "Home Battery Storage",
     description:
-      "Placeholder — explore home battery options to store solar energy and reduce peak-hour costs.",
+      "Explore home battery options to store solar energy and reduce peak-hour costs.",
     destinationUrl: "https://example.com/home-battery",
     category: "efficiency",
-    active: true,
+    active: false,
   },
   {
     id: "nat-weatherization",
     title: "Home Weatherization Programs",
     description:
-      "Placeholder — check eligibility for federally funded weatherization assistance in your area.",
+      "Check eligibility for federally funded weatherization assistance in your area.",
     destinationUrl: "https://example.com/weatherization",
     category: "efficiency",
-    active: true,
+    active: false,
   },
 
   // ── Texas-specific offers ────────────────────────────────
@@ -100,50 +104,50 @@ export const OFFERS: Offer[] = [
     stateSlug: "texas",
     title: "Texas Fixed-Rate Plans",
     description:
-      "Placeholder — lock in a fixed electricity rate with a Texas retail provider.",
+      "Lock in a fixed electricity rate with a Texas retail provider.",
     destinationUrl: "https://example.com/texas-fixed-rate",
     category: "plans",
-    active: true,
+    active: false,
   },
   {
     id: "tx-variable-rate",
     stateSlug: "texas",
     title: "Texas Variable-Rate Plans",
     description:
-      "Placeholder — flexible month-to-month electricity in the Texas deregulated market.",
+      "Flexible month-to-month electricity in the Texas deregulated market.",
     destinationUrl: "https://example.com/texas-variable-rate",
     category: "plans",
-    active: true,
+    active: false,
   },
   {
     id: "tx-solar-install",
     stateSlug: "texas",
     title: "Texas Solar Installation",
     description:
-      "Placeholder — get quotes from Texas solar installers and compare savings.",
+      "Get quotes from Texas solar installers and compare savings.",
     destinationUrl: "https://example.com/texas-solar",
     category: "solar",
-    active: true,
+    active: false,
   },
   {
     id: "tx-prepaid-electric",
     stateSlug: "texas",
     title: "Texas Prepaid Electricity",
     description:
-      "Placeholder — pay-as-you-go electricity with no credit check required in Texas.",
+      "Pay-as-you-go electricity with no credit check required in Texas.",
     destinationUrl: "https://example.com/texas-prepaid",
     category: "plans",
-    active: true,
+    active: false,
   },
   {
     id: "tx-green-plans",
     stateSlug: "texas",
     title: "Texas Green Energy Plans",
     description:
-      "Placeholder — 100% renewable energy plans available in the ERCOT market.",
+      "100% renewable energy plans available in the ERCOT market.",
     destinationUrl: "https://example.com/texas-green",
     category: "plans",
-    active: true,
+    active: false,
   },
 
   // ── California-specific offers ─────────────────────────────
@@ -152,50 +156,50 @@ export const OFFERS: Offer[] = [
     stateSlug: "california",
     title: "California Solar Installation Quotes",
     description:
-      "Placeholder — compare solar installation quotes from California-licensed contractors.",
+      "Compare solar installation quotes from California-licensed contractors.",
     destinationUrl: "https://example.com/california-solar",
     category: "solar",
-    active: true,
+    active: false,
   },
   {
     id: "ca-solar-battery",
     stateSlug: "california",
     title: "California Solar + Battery Bundles",
     description:
-      "Placeholder — pair rooftop solar with home battery storage under California incentive programs.",
+      "Pair rooftop solar with home battery storage under California incentive programs.",
     destinationUrl: "https://example.com/california-solar-battery",
     category: "solar",
-    active: true,
+    active: false,
   },
   {
     id: "ca-efficiency-rebates",
     stateSlug: "california",
     title: "California Energy Efficiency Rebates",
     description:
-      "Placeholder — check available rebates for energy-efficient appliances and home upgrades in California.",
+      "Check available rebates for energy-efficient appliances and home upgrades in California.",
     destinationUrl: "https://example.com/california-rebates",
     category: "efficiency",
-    active: true,
+    active: false,
   },
   {
     id: "ca-community-solar",
     stateSlug: "california",
     title: "California Community Solar Programs",
     description:
-      "Placeholder — subscribe to a local community solar project without rooftop installation.",
+      "Subscribe to a local community solar project without rooftop installation.",
     destinationUrl: "https://example.com/california-community-solar",
     category: "solar",
-    active: true,
+    active: false,
   },
   {
     id: "ca-tou-plans",
     stateSlug: "california",
     title: "California Time-of-Use Plan Comparison",
     description:
-      "Placeholder — compare time-of-use rate schedules from California utilities.",
+      "Compare time-of-use rate schedules from California utilities.",
     destinationUrl: "https://example.com/california-tou",
     category: "plans",
-    active: true,
+    active: false,
   },
 ];
 

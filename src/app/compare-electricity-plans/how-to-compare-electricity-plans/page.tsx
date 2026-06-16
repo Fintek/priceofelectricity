@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Breadcrumbs, { breadcrumbsToJsonLd, type BreadcrumbItem } from "@/components/navigation/Breadcrumbs";
 import { loadKnowledgePage } from "@/lib/knowledge/loadKnowledgePage";
 import { getRelease } from "@/lib/knowledge/fetch";
 import { buildMetadata } from "@/lib/seo/metadata";
-import { buildBreadcrumbListJsonLd } from "@/lib/seo/jsonld";
+
 import JsonLdScript from "@/app/components/seo/JsonLdScript";
 import StatusFooter from "@/components/common/StatusFooter";
 import Disclaimers from "@/app/components/policy/Disclaimers";
@@ -36,23 +37,18 @@ export default async function HowToCompareElectricityPlansPage() {
   const rateDollarsPerKwh = nationalAvgRate != null ? nationalAvgRate / 100 : 0;
   const monthlyBill = rateDollarsPerKwh * MONTHLY_USAGE_KWH;
 
-  const breadcrumbJsonLd = buildBreadcrumbListJsonLd([
+  const breadcrumbTrail: BreadcrumbItem[] = [
     { name: "Home", url: "/" },
     { name: "Compare Electricity Plans", url: "/compare-electricity-plans" },
-    { name: "How to Compare Electricity Plans", url: "/compare-electricity-plans/how-to-compare-electricity-plans" },
-  ]);
+    { name: "How to Compare Electricity Plans" },
+  ];
+  const breadcrumbJsonLd = breadcrumbsToJsonLd(breadcrumbTrail);
 
   return (
     <>
       <JsonLdScript data={breadcrumbJsonLd} />
       <main className="container">
-        <nav aria-label="Breadcrumb" className="muted" style={{ marginBottom: 16, fontSize: 14 }}>
-          <Link href="/">Home</Link>
-          {" · "}
-          <Link href="/compare-electricity-plans">Compare Electricity Plans</Link>
-          {" · "}
-          <span aria-current="page">How to Compare Electricity Plans</span>
-        </nav>
+        <Breadcrumbs trail={breadcrumbTrail} />
 
         <h1 style={{ fontSize: 32, marginBottom: 12 }}>How to Compare Electricity Plans</h1>
 

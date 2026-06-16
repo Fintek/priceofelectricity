@@ -140,7 +140,9 @@ export default async function StateApplianceCalculatorPage({
           { label: applianceConfig.displayName },
         ]}
         title={`${applianceConfig.displayName} Electricity Calculator in ${state.name}`}
-        intro={`Use this appliance electricity calculator to estimate ${applianceConfig.displayName.toLowerCase()} operating cost in ${state.name} using deterministic wattage and runtime assumptions tied to the statewide residential electricity rate.`}
+        intro={typicalStateScenario.costPerMonth != null
+          ? `A ${applianceConfig.displayName.toLowerCase()} in ${state.name} costs about ${formatUsd(typicalStateScenario.costPerMonth)} a month (${formatUsd(typicalStateScenario.costPerYear)} a year) to run at the state's average rate of ${formatRate(state.avgRateCentsPerKwh)}. Use this calculator to compare light, typical, and heavy use.`
+          : `Estimate what a ${applianceConfig.displayName.toLowerCase()} costs to run in ${state.name}. Use this calculator to compare light, typical, and heavy use.`}
         stats={[
           { label: `${state.name} average rate`, value: formatRate(state.avgRateCentsPerKwh) },
           { label: "Assumed wattage", value: `${applianceConfig.averageWattage.toLocaleString()} W` },
@@ -184,14 +186,14 @@ export default async function StateApplianceCalculatorPage({
         <section style={{ marginBottom: "var(--space-7)" }}>
           <h2 className="heading-section">Calculator assumptions</h2>
           <p style={{ marginTop: 0, lineHeight: 1.7 }}>
-            This calculator uses a typical wattage range of {formatWattageRange(applianceConfig)}, with a standard
-            working assumption of {applianceConfig.averageWattage.toLocaleString()} watts for{" "}
-            {formatHoursPerDay(applianceConfig.typicalUsageHoursPerDay)}. The deterministic formula is{" "}
+            This calculator uses a typical wattage range of {formatWattageRange(applianceConfig)}, and we assume{" "}
+            {applianceConfig.averageWattage.toLocaleString()} watts for{" "}
+            {formatHoursPerDay(applianceConfig.typicalUsageHoursPerDay)}. The formula is{" "}
             <code>kWh = (watts × hours) / 1000</code>.
           </p>
           <p style={{ marginBottom: 0, lineHeight: 1.7 }}>
             At this profile, the appliance uses {formatKwh(typicalStateScenario.kwhPerMonth)} per month and{" "}
-            {formatKwh(typicalStateScenario.kwhPerYear)} per year in the model.
+            {formatKwh(typicalStateScenario.kwhPerYear)} per year.
           </p>
         </section>
 
@@ -203,7 +205,7 @@ export default async function StateApplianceCalculatorPage({
                 <tr>
                   {["Scenario", "Hours/day", "Annual energy", `${state.name} monthly`, "U.S. monthly", `${state.name} yearly`].map(
                     (label) => (
-                      <th key={label}>{label}</th>
+                      <th scope="col" key={label}>{label}</th>
                     ),
                   )}
                 </tr>
@@ -225,10 +227,9 @@ export default async function StateApplianceCalculatorPage({
         </section>
 
         <section style={{ marginBottom: "var(--space-7)" }}>
-          <h2 className="heading-section">Canonical appliance cost route</h2>
+          <h2 className="heading-section">Appliance cost reference page</h2>
           <p style={{ marginTop: 0, lineHeight: 1.7 }}>
-            Appliance-intent cost pages remain canonical at the dedicated route below. This calculator page is additive
-            for scenario-focused calculator queries and links into the same state rate context.
+            Want the full write-up? The appliance page below uses the same rate and wattage assumptions:
           </p>
           <ul style={{ margin: 0, paddingLeft: 20, lineHeight: 1.8 }}>
             <li>
@@ -243,21 +244,19 @@ export default async function StateApplianceCalculatorPage({
         </section>
 
         <section style={{ marginBottom: "var(--space-7)" }}>
-          <h2 className="heading-section">Comparison discovery routes</h2>
+          <h2 className="heading-section">More comparison links</h2>
           <p style={{ marginTop: 0, lineHeight: 1.7 }}>
-            For comparison-first navigation, use the curated Energy Comparison Hub slices below. These are discovery
-            routes and preserve canonical ownership in the existing calculator, appliance-cost, and state-comparison
-            systems.
+            Browse related comparisons from the energy comparison hub:
           </p>
           <ul style={{ margin: 0, paddingLeft: 20, lineHeight: 1.8 }}>
             <li>
               <Link href="/energy-comparison">Energy comparison hub</Link>
             </li>
             <li>
-              <Link href="/energy-comparison/appliances">Appliance comparison slice</Link>
+              <Link href="/energy-comparison/appliances">Appliance comparisons</Link>
             </li>
             <li>
-              <Link href="/energy-comparison/usage">Usage comparison slice</Link>
+              <Link href="/energy-comparison/usage">Usage tier comparisons</Link>
             </li>
           </ul>
         </section>
@@ -265,18 +264,17 @@ export default async function StateApplianceCalculatorPage({
         {calculatorCityRows.length > 0 && (
           <section style={{ marginBottom: "var(--space-7)" }}>
             <h2 className="heading-section">
-              City authority context for {state.name}
+              City electricity context for {state.name}
             </h2>
             <p style={{ marginTop: 0, lineHeight: 1.7 }}>
-              For local context, rollout-enabled city electricity pages can be used alongside this calculator scenario.
-              These links are supplemental and do not change calculator or appliance-cost canonicals.
+              City electricity pages add local rate context. They don't change the statewide math here.
             </p>
             <ul style={{ margin: 0, paddingLeft: 20, lineHeight: 1.8 }}>
               {calculatorCityRows.map((row) => (
                 <li key={row.citySummary.city.slug}>
                   {row.hasApplianceCityPilot ? (
                     <Link href={`/cost-to-run/${applianceSlug}/${state.slug}/${row.citySummary.city.slug}`}>
-                      {row.citySummary.city.name} appliance city pilot
+                      {row.citySummary.city.name} city appliance page
                     </Link>
                   ) : (
                     <Link href={`/electricity-cost/${state.slug}/${row.citySummary.city.slug}`}>

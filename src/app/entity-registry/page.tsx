@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Breadcrumbs from "@/components/navigation/Breadcrumbs";
 import { loadEntityIndex, loadRankingsIndex } from "@/lib/knowledge/loadKnowledgePage";
 import { SITE_URL } from "@/lib/site";
 import { buildMetadata } from "@/lib/seo/metadata";
@@ -11,10 +12,11 @@ export const dynamic = "force-static";
 export const revalidate = 86400;
 
 export const metadata: Metadata = buildMetadata({
-  title: "Entity Registry – Electricity Concepts & Data Structure | PriceOfElectricity.com",
+  title: "Electricity Reference Index – Concepts, States & Datasets | PriceOfElectricity.com",
   description:
-    "Index of core entities: price concepts, states, rankings, datasets. For verifying site structure.",
+    "Reference index of core entities: price concepts, states, rankings, and datasets. For verifying site structure.",
   canonicalPath: "/entity-registry",
+  robots: { index: false, follow: true },
 });
 
 export default async function EntityRegistryPage() {
@@ -73,35 +75,35 @@ export default async function EntityRegistryPage() {
         }}
       />
       <main className="container">
-        <nav aria-label="Breadcrumb" className="muted" style={{ marginBottom: 16, fontSize: 14 }}>
-          <Link href="/">Home</Link>
-          {" · "}
-          <Link href="/site-map">Site Map</Link>
-          {" · "}
-          <span aria-current="page">Entity Registry</span>
-        </nav>
+        <Breadcrumbs
+          trail={[
+            { name: "Home", url: "/" },
+            { name: "Site Map", url: "/site-map" },
+            { name: "Electricity Reference Index" },
+          ]}
+        />
 
-        <h1 style={{ fontSize: 32, marginBottom: 24 }}>Entity Registry</h1>
+        <h1 style={{ fontSize: 32, marginBottom: 24 }}>Electricity Reference Index</h1>
 
         <p style={{ marginTop: 0, marginBottom: 12, maxWidth: "65ch", fontSize: 16, lineHeight: 1.6 }}>
-          Index of core entities and concepts: price concepts, states, rankings, datasets, and tools. For crawlers, researchers, and visitors verifying site structure.
+          Reference list of core concepts and entries: price concepts, states, rankings, datasets, and tools. For researchers and visitors verifying site structure.
         </p>
         <p className="muted" style={{ margin: "0 0 24px 0", fontSize: 14, maxWidth: "50ch" }}>
           <strong>Best for:</strong> Browsing entities by type, understanding site structure, and verifying coverage.
         </p>
 
-        {/* Topic clusters */}
+        {/* Browse by topic */}
         <section style={{ marginBottom: 32 }}>
-          <h2 style={{ fontSize: 20, marginBottom: 12 }}>Topic Clusters</h2>
+          <h2 style={{ fontSize: 20, marginBottom: 12 }}>Topics</h2>
           <p style={{ marginTop: 0, marginBottom: 12, maxWidth: "65ch", fontSize: 16, lineHeight: 1.6 }}>
             Navigate by theme: consumer costs, price dynamics, market structure, and data.
           </p>
           <p style={{ margin: 0 }}>
-            <Link href="/electricity-topics">Browse the major electricity economics topic clusters</Link>
+            <Link href="/electricity-topics">Browse major electricity economics topics</Link>
             {" · "}
             <Link href="/electricity-data">See the datasets and data-driven analysis foundation</Link>
             {" · "}
-            <Link href="/discovery-graph">View the machine-readable topic relationship map</Link>
+            <Link href="/discovery-graph">Browse topic relationships (JSON map)</Link>
             {" · "}
             <Link href="/electricity-inflation">Electricity inflation</Link>
             {" · "}
@@ -210,7 +212,7 @@ export default async function EntityRegistryPage() {
         </section>
 
         <p className="muted" style={{ marginTop: 32 }}>
-          <Link href="/electricity-topics">Browse topic clusters</Link> {" | "}
+          <Link href="/electricity-topics">Browse topics</Link> {" | "}
           <Link href="/page-index">Browse all pages by category</Link> {" | "}
           <Link href="/site-map">See the high-level site structure</Link> {" | "}
           <Link href="/discovery-graph">View the topic relationship map</Link> {" | "}

@@ -47,7 +47,7 @@ export default async function StateElectricityHubsPage() {
           { label: "State Electricity Hubs" },
         ]}
         title="State Electricity Hubs"
-        intro="Each state hub groups together the site's main electricity pages for that state, including price-per-kWh pages, usage cost scenarios, comparison pathways, and tools. Use this directory to jump directly into the state-level discovery layer."
+        intro="Each state hub groups together the site's main electricity pages for that state: price per kWh, usage scenarios, comparisons, and bill tools. Use this directory to open the set of pages we publish for that state."
         stats={[
           { label: "State hubs", value: String(states.length) },
           { label: "Coverage", value: "50 states + D.C." },
@@ -56,7 +56,7 @@ export default async function StateElectricityHubsPage() {
         sections={[
           {
             title: "Browse all state hubs",
-            intro: "Open a state hub to access its linked longtail electricity pages and related authority content.",
+            intro: "Open a state hub to reach its linked electricity-cost pages and related reference content.",
             cards: stateCards,
           },
         ]}

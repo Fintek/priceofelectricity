@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Breadcrumbs, { breadcrumbsToJsonLd, type BreadcrumbItem } from "@/components/navigation/Breadcrumbs";
 import { loadEntityIndex } from "@/lib/knowledge/loadKnowledgePage";
 import { getRelease } from "@/lib/knowledge/fetch";
 import { buildMetadata } from "@/lib/seo/metadata";
-import { buildBreadcrumbListJsonLd, buildItemListJsonLd, buildWebPageJsonLd } from "@/lib/seo/jsonld";
+import { buildItemListJsonLd, buildWebPageJsonLd } from "@/lib/seo/jsonld";
 import JsonLdScript from "@/app/components/seo/JsonLdScript";
 import StatusFooter from "@/components/common/StatusFooter";
 import Disclaimers from "@/app/components/policy/Disclaimers";
@@ -59,20 +60,22 @@ export default async function ElectricityProvidersIndexPage() {
   const enabledCatalogEntries = getEnabledProviderCatalogEntries();
   const discoveryStates = getProviderDiscoveryStatesFromCatalog();
 
-  const breadcrumbJsonLd = buildBreadcrumbListJsonLd([
+  const breadcrumbTrail: BreadcrumbItem[] = [
     { name: "Home", url: "/" },
-    { name: "Electricity Providers", url: "/electricity-providers" },
-  ]);
+    { name: "Data", url: "/data" },
+    { name: "Electricity Providers" },
+  ];
+  const breadcrumbJsonLd = breadcrumbsToJsonLd(breadcrumbTrail);
   const webPageJsonLd = buildWebPageJsonLd({
     title: "Electricity Providers by State",
     description:
-      "State-level provider marketplace context and market-structure discovery connected to canonical cost and comparison clusters.",
+      "State-level provider marketplace context alongside electricity cost and comparison pages.",
     url: "/electricity-providers",
     isPartOf: "/",
-    about: ["electricity providers by state", "provider marketplace discovery", "electricity market structure"],
+    about: ["electricity providers by state", "provider marketplace", "electricity market structure"],
   });
   const providerItemListJsonLd = buildItemListJsonLd(
-    "Provider marketplace discovery states",
+    "Provider marketplace states",
     buildProviderDiscoveryItemListEntries(discoveryStates.length > 0
       ? discoveryStates
       : stateEntities.map((state) => ({ slug: state.slug, name: state.title ?? slugToDisplayName(state.slug) })), 8),
@@ -94,7 +97,7 @@ export default async function ElectricityProvidersIndexPage() {
       { name: "Provider marketplace index", url: "/electricity-providers", pathwayType: "provider-marketplace" },
       { name: "Offers and savings hub", url: "/offers", pathwayType: "offers" },
       { name: "Compare electricity plans by state", url: "/compare-electricity-plans/by-state", pathwayType: "comparison-cluster" },
-      { name: "Energy comparison discovery hub", url: "/energy-comparison", pathwayType: "comparison-cluster" },
+      { name: "Energy comparison hub", url: "/energy-comparison", pathwayType: "comparison-cluster" },
     ],
   );
 
@@ -110,13 +113,7 @@ export default async function ElectricityProvidersIndexPage() {
         ]}
       />
       <main className="container">
-        <nav aria-label="Breadcrumb" className="muted" style={{ marginBottom: 16, fontSize: 14 }}>
-          <Link href="/">Home</Link>
-          {" · "}
-          <Link href="/data">Data Hub</Link>
-          {" · "}
-          <span aria-current="page">Electricity Providers</span>
-        </nav>
+        <Breadcrumbs trail={breadcrumbTrail} />
 
         <h1 style={{ fontSize: 32, marginBottom: 12 }}>Electricity Providers by State</h1>
 

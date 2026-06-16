@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Breadcrumbs, { breadcrumbsToJsonLd, type BreadcrumbItem } from "@/components/navigation/Breadcrumbs";
 import { loadEntityIndex } from "@/lib/knowledge/loadKnowledgePage";
 import { getRelease } from "@/lib/knowledge/fetch";
 import { buildMetadata } from "@/lib/seo/metadata";
-import { buildBreadcrumbListJsonLd } from "@/lib/seo/jsonld";
+
 import JsonLdScript from "@/app/components/seo/JsonLdScript";
 import StatusFooter from "@/components/common/StatusFooter";
 import Disclaimers from "@/app/components/policy/Disclaimers";
@@ -35,22 +36,18 @@ export default async function ElectricityCostIndexPage() {
     .map((slug) => stateEntities.find((e) => e.slug === slug))
     .filter(Boolean);
 
-  const breadcrumbJsonLd = buildBreadcrumbListJsonLd([
+  const breadcrumbTrail: BreadcrumbItem[] = [
     { name: "Home", url: "/" },
-    { name: "Electricity Cost", url: "/electricity-cost" },
-  ]);
+    { name: "Data", url: "/data" },
+    { name: "Electricity Cost" },
+  ];
+  const breadcrumbJsonLd = breadcrumbsToJsonLd(breadcrumbTrail);
 
   return (
     <>
       <JsonLdScript data={breadcrumbJsonLd} />
       <main className="container">
-        <nav aria-label="Breadcrumb" className="muted" style={{ marginBottom: 16, fontSize: 14 }}>
-          <Link href="/">Home</Link>
-          {" · "}
-          <Link href="/data">Data Hub</Link>
-          {" · "}
-          <span aria-current="page">Electricity Cost</span>
-        </nav>
+        <Breadcrumbs trail={breadcrumbTrail} />
 
         <h1 style={{ fontSize: 32, marginBottom: 12 }}>Electricity Cost by State</h1>
         <p style={{ marginTop: 0, marginBottom: 16, maxWidth: "65ch", fontSize: 16, lineHeight: 1.6 }}>
@@ -58,7 +55,7 @@ export default async function ElectricityCostIndexPage() {
         </p>
         <p className="muted" style={{ margin: "0 0 32px 0", maxWidth: "65ch", fontSize: 14 }}>
           Cost estimates use a standard 900 kWh monthly usage (10,800 kWh annually). Rates come from EIA data.
-          All figures are build-generated and deterministic.
+          All figures are updated from the latest published EIA data using consistent methodology.
         </p>
 
         {/* Featured states */}
@@ -146,7 +143,7 @@ export default async function ElectricityCostIndexPage() {
           {" · "}
           <Link href="/electricity-price-volatility">Electricity price volatility</Link>
           {" · "}
-          <Link href="/electricity-topics">Electricity topics hub</Link>
+          <Link href="/electricity-topics">Electricity topics</Link>
           {" · "}
           <Link href="/electricity-data">Electricity data</Link>
         </p>
@@ -159,7 +156,7 @@ export default async function ElectricityCostIndexPage() {
             { href: "/battery-backup-electricity-cost", label: "Explore battery recharge electricity costs" },
             { href: "/electricity-price-volatility", label: "Explore electricity price volatility" },
             { href: "/electricity-cost-comparison", label: "Compare electricity prices between states" },
-            { href: "/knowledge", label: "Knowledge Hub" },
+            { href: "/knowledge", label: "Knowledge" },
             { href: "/electricity-trends", label: "Electricity trends" },
             { href: "/knowledge/rankings/rate-high-to-low", label: "Highest rates" },
             { href: "/datasets", label: "Download datasets" },

@@ -26,11 +26,11 @@ export const APPLIANCE_CONFIGS = [
     slug: "refrigerator",
     displayName: "Refrigerator",
     category: "kitchen",
-    wattageRange: { min: 100, max: 250 },
-    averageWattage: 180,
-    typicalUsageHoursPerDay: 8,
-    introFragment: "a typical compressor-cycle refrigerator",
-    usageNote: "Refrigerators cycle on and off during the day, so the average running load is lower than peak startup wattage.",
+    wattageRange: { min: 40, max: 100 },
+    averageWattage: 60,
+    typicalUsageHoursPerDay: 24,
+    introFragment: "a typical home refrigerator that stays plugged in 24 hours a day",
+    usageNote: "Refrigerators are always plugged in. The compressor only runs part of the time and cycles on and off based on internal temperature, so the 24-hour average power draw is much lower than the peak running wattage. Modern refrigerators typically average about 40–100 watts over a full day.",
     variabilityFactors: ["appliance age", "door-opening frequency", "garage vs indoor placement"],
   },
   {
@@ -268,11 +268,11 @@ export const APPLIANCE_CONFIGS = [
     slug: "freezer",
     displayName: "Freezer",
     category: "kitchen",
-    wattageRange: { min: 100, max: 300 },
-    averageWattage: 200,
-    typicalUsageHoursPerDay: 8,
-    introFragment: "a standalone chest or upright freezer",
-    usageNote: "Freezers cycle a compressor similarly to refrigerators. Actual draw depends on ambient temperature, door-opening frequency, and whether the unit is in a garage or conditioned space.",
+    wattageRange: { min: 40, max: 100 },
+    averageWattage: 67,
+    typicalUsageHoursPerDay: 24,
+    introFragment: "a standalone chest or upright freezer that stays plugged in 24 hours a day",
+    usageNote: "Standalone freezers run continuously, but the compressor cycles on and off based on internal temperature, so the 24-hour average power draw is much lower than the peak running wattage. Actual draw depends on ambient temperature, door-opening frequency, and whether the unit is in a garage or conditioned space.",
     variabilityFactors: ["chest vs upright design", "ambient temperature", "defrost type"],
   },
   {
@@ -305,7 +305,7 @@ export const APPLIANCE_CONFIGS = [
     averageWattage: 3000,
     typicalUsageHoursPerDay: 8,
     introFragment: "a whole-house heat pump system",
-    usageNote: "Heat pumps move heat rather than generating it, making them more efficient than resistance heating. Actual consumption varies widely with climate, home size, and system SEER/HSPF rating.",
+    usageNote: "Heat pumps move heat rather than generating it, making them more efficient than resistance heating. The runtime shown reflects a typical active heating or cooling day; real annual use is highly seasonal — close to zero in mild weather and much higher during peak summer or winter. Consumption varies widely with climate, home size, and system SEER/HSPF rating.",
     variabilityFactors: ["SEER/HSPF rating", "climate zone", "home square footage"],
   },
   {
@@ -404,7 +404,7 @@ export const APPLIANCE_CONFIGS = [
     averageWattage: 4500,
     typicalUsageHoursPerDay: 2.5,
     introFragment: "a standard electric resistance storage water heater",
-    usageNote: "Electric resistance water heaters cycle to maintain tank temperature and recover hot-water usage. Household size and hot-water demand drive most cost variability.",
+    usageNote: "An electric storage water heater stays energized 24 hours a day and cycles its heating element on and off to hold the tank at temperature and recover the hot water you use. The runtime shown here is an element-on equivalent — the heater is not off the rest of the day, it is standing by. Household size and hot-water demand drive most of the cost variability.",
     variabilityFactors: ["tank size", "household occupancy", "inlet water temperature"],
   },
   {
@@ -426,7 +426,7 @@ export const APPLIANCE_CONFIGS = [
     averageWattage: 15000,
     typicalUsageHoursPerDay: 4,
     introFragment: "a whole-home electric resistance furnace",
-    usageNote: "Electric furnaces are high-load heating systems and can materially increase winter electricity costs. Actual runtime varies with insulation quality, thermostat settings, and outdoor temperatures.",
+    usageNote: "Electric resistance furnaces are high-load heating systems. The runtime shown is a cold-winter-day estimate, not a year-round daily average — the furnace runs little or not at all outside the heating season. Winter electricity costs can rise sharply in cold climates depending on insulation quality, thermostat settings, and outdoor temperatures.",
     variabilityFactors: ["home insulation quality", "thermostat setpoint", "winter climate severity"],
   },
   {
@@ -520,6 +520,12 @@ export const FEATURED_APPLIANCE_SLUGS = [
 
 export function isSupportedApplianceSlug(value: string): value is ApplianceSlug {
   return SUPPORTED_APPLIANCE_SLUGS.includes(value as ApplianceSlug);
+}
+
+/** User-facing appliance name for a slug (catalog display names keep abbreviations like AC correct). */
+export function formatApplianceSlugForDisplay(slug: string): string {
+  const appliance = APPLIANCE_CONFIGS.find((item) => item.slug === slug);
+  return appliance?.displayName ?? slug.replace(/-/g, " ").replace(/\b\w/g, (c) => c.toUpperCase());
 }
 
 export function getApplianceConfig(slug: ApplianceSlug): ApplianceConfig {

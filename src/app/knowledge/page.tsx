@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Breadcrumbs, { breadcrumbsToJsonLd, type BreadcrumbItem } from "@/components/navigation/Breadcrumbs";
 import { SITE_URL } from "@/lib/site";
 import CopyButton from "@/components/common/CopyButton";
 import StatusFooter from "@/components/common/StatusFooter";
@@ -17,7 +18,7 @@ import {
 } from "@/lib/knowledge/loadKnowledgePage";
 import { getRelease, getCapabilities } from "@/lib/knowledge/fetch";
 import { buildMetadata } from "@/lib/seo/metadata";
-import { buildBreadcrumbListJsonLd } from "@/lib/seo/jsonld";
+
 import JsonLdScript from "@/app/components/seo/JsonLdScript";
 
 const BASE_URL = SITE_URL;
@@ -46,7 +47,7 @@ function toPath(url: string): string {
 export const metadata: Metadata = buildMetadata({
   title: "U.S. Electricity Price Data & Rankings | PriceOfElectricity.com",
   description:
-    "Knowledge hub: national snapshot, state rankings, affordability, value scores, and price momentum. Bridge to state pages and rankings.",
+    "Knowledge: national snapshot, state rankings, affordability, value scores, and price momentum. Bridge to state pages and rankings.",
   canonicalPath: "/knowledge",
 });
 
@@ -88,10 +89,12 @@ export default async function KnowledgeHubPage() {
     entityIndex?.entities?.filter((e) => e.type === "state").sort((a, b) => a.slug.localeCompare(b.slug)) ?? [];
   const enabledRegions = regionsIndex?.regions?.filter((r) => r.enabled !== false) ?? [];
 
-  const breadcrumbJsonLd = buildBreadcrumbListJsonLd([
+  const breadcrumbTrail: BreadcrumbItem[] = [
     { name: "Home", url: "/" },
-    { name: "Knowledge", url: "/knowledge" },
-  ]);
+    { name: "Data", url: "/data" },
+    { name: "Knowledge" },
+  ];
+  const breadcrumbJsonLd = breadcrumbsToJsonLd(breadcrumbTrail);
 
   const caps = capabilities?.capabilities ?? {};
   const badges: string[] = [];
@@ -117,17 +120,11 @@ export default async function KnowledgeHubPage() {
     <>
       <JsonLdScript data={breadcrumbJsonLd} />
       <main className="container">
-        <nav aria-label="Breadcrumb" className="muted" style={{ marginBottom: 16, fontSize: 14 }}>
-          <Link href="/">Home</Link>
-          {" · "}
-          <Link href="/data">Data Hub</Link>
-          {" · "}
-          <span aria-current="page">Knowledge</span>
-        </nav>
+        <Breadcrumbs trail={breadcrumbTrail} />
         <section style={{ marginBottom: 24 }}>
           <h2 style={{ fontSize: 18, marginBottom: 8 }}>Explore Electricity Topics</h2>
           <p className="muted" style={{ margin: "0 0 8px 0", fontSize: 14 }}>
-            <Link href="/electricity-topics">Electricity topics hub</Link>
+            <Link href="/electricity-topics">Electricity topics</Link>
             {" · "}
             <Link href="/electricity-data">Electricity data</Link>
             {" · "}
@@ -146,8 +143,8 @@ export default async function KnowledgeHubPage() {
             { href: "/methodology", label: "Methodology" },
             { href: "/datasets", label: "Datasets" },
             { href: "/electricity-data", label: "Electricity data" },
-            { href: "/entity-registry", label: "Entity registry" },
-            { href: "/discovery-graph", label: "Discovery graph" },
+            { href: "/electricity-topics", label: "Electricity topics" },
+            { href: "/site-map", label: "Site map" },
           ]}
         />
 
@@ -172,7 +169,7 @@ export default async function KnowledgeHubPage() {
             The main authority for U.S. electricity price data: national snapshot, state rankings, affordability, value scores, and price momentum.
           </p>
           <p className="muted" style={{ margin: 0, maxWidth: "65ch", fontSize: 16, lineHeight: 1.6 }}>
-            Explore national snapshots, state-by-state rates and metrics, rankings, regional summaries, and state comparisons. All data is build-generated and deterministic.
+            Explore national snapshots, state-by-state rates and metrics, rankings, regional summaries, and state comparisons. All charts and tables are rebuilt from source datasets whenever the knowledge bundle is regenerated.
           </p>
         </header>
 
@@ -449,8 +446,7 @@ export default async function KnowledgeHubPage() {
         <section style={{ marginBottom: 32 }}>
           <h2 style={{ fontSize: 20, marginBottom: 12 }}>Methodology & Transparency</h2>
           <p className="muted" style={{ margin: "0 0 12px 0", fontSize: 14 }}>
-            Rankings and insights are generated from build-time datasets. All methodologies are documented and
-            deterministic.
+            Rankings and insights are generated from build-time datasets. Methodology pages explain how each ranking is calculated with consistent rules.
           </p>
           <ul style={{ paddingLeft: 20, lineHeight: 1.8, margin: 0 }}>
             <li>

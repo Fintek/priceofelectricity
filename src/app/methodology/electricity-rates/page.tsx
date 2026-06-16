@@ -95,6 +95,26 @@ monthlyBill = rateDollarsPerKwh * 900`}
       </section>
 
       <section style={{ marginTop: 20 }}>
+        <h2 style={{ fontSize: 20, marginBottom: 8 }}>Data corrections</h2>
+        <p style={{ marginTop: 0 }}>
+          The U.S. Energy Information Administration issued a correction to Maryland&apos;s March 2026
+          residential average after an initial release overstated the rate. This site uses the
+          corrected figure of 22.2¢/kWh for that month.
+        </p>
+      </section>
+
+      <section style={{ marginTop: 20 }}>
+        <h2 style={{ fontSize: 20, marginBottom: 8 }}>City rates</h2>
+        <p style={{ marginTop: 0 }}>
+          City electricity pages show a modeled estimate, not a measured city average. The estimate
+          starts from the state&apos;s monthly EIA residential average and applies a small
+          population-based adjustment (typically 1.01× to 1.06× for larger metros). No authoritative
+          monthly city-level residential rate series exists at national scale, so PriceOfElectricity.com
+          does not publish measured city rates.
+        </p>
+      </section>
+
+      <section style={{ marginTop: 20 }}>
         <h2 style={{ fontSize: 20, marginBottom: 8 }}>Limitations</h2>
         <p style={{ marginTop: 0 }}>
           Bill estimates are illustrative only. Actual usage varies by household.

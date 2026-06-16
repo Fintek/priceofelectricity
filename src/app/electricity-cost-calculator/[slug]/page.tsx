@@ -85,7 +85,7 @@ export default async function ElectricityCostCalculatorStatePage({
     title: `Electricity Cost Calculator for ${state.name}`,
     description:
       typicalScenario?.monthlyCost != null
-        ? `${state.name} electricity calculator with deterministic ${TYPICAL_MONTHLY_KWH.toLocaleString()} kWh monthly estimate of ${formatUsd(
+        ? `${state.name} electricity calculator example: ${TYPICAL_MONTHLY_KWH.toLocaleString()} kWh month is about ${formatUsd(
             typicalScenario.monthlyCost,
           )}.`
         : `${state.name} electricity cost calculator.`,
@@ -104,7 +104,7 @@ export default async function ElectricityCostCalculatorStatePage({
           { label: state.name },
         ]}
         title={`Electricity Cost Calculator for ${state.name}`}
-        intro={`Estimate your monthly electric bill in ${state.name} using deterministic statewide residential pricing. This page connects fixed usage scenarios, bill interpretation, appliance calculators, and canonical usage-cost routes.`}
+        intro={`Estimate your monthly electric bill in ${state.name} using the statewide average residential rate. This page links fixed usage scenarios, bill benchmarks, appliance calculators, and monthly kWh cost pages.`}
         stats={[
           { label: `${state.name} average rate`, value: formatRate(state.avgRateCentsPerKwh) },
           {
@@ -163,7 +163,7 @@ export default async function ElectricityCostCalculatorStatePage({
                 <tr>
                   {["Monthly usage", "Estimated monthly cost", "Estimated annual cost", "Canonical usage page"].map(
                     (label) => (
-                      <th key={label}>{label}</th>
+                      <th scope="col" key={label}>{label}</th>
                     ),
                   )}
                 </tr>
@@ -204,10 +204,10 @@ export default async function ElectricityCostCalculatorStatePage({
               <Link href={`/electricity-hubs/states/${slug}`}>{state.name} electricity hub</Link>
             </li>
             <li>
-              <Link href="/energy-comparison/states">State comparison discovery hub</Link>
+              <Link href="/energy-comparison/states">State-by-state comparisons</Link>
             </li>
             <li>
-              <Link href="/energy-comparison/usage">Usage comparison discovery slice</Link>
+              <Link href="/energy-comparison/usage">Usage tier comparisons</Link>
             </li>
           </ul>
         </section>

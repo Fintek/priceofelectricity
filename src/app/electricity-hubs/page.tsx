@@ -36,7 +36,7 @@ export const dynamic = "force-static";
 export const revalidate = 86400;
 
 export const metadata: Metadata = buildMetadata({
-  title: "Electricity Hubs: State, Usage, Bill & Appliance Discovery | PriceOfElectricity.com",
+  title: "Electricity Hubs: Rates, Usage, Bills & Appliances",
   description:
     "Explore electricity data by state, usage level, household profile, and appliance. Find rates, compare costs, estimate bills, and browse providers.",
   canonicalPath: "/electricity-hubs",
@@ -192,7 +192,7 @@ export default async function ElectricityHubsIndexPage() {
   const webPageJsonLd = buildWebPageJsonLd({
     title: "Electricity Hubs",
     description:
-      "Discovery hubs for state electricity pages, usage scenarios, comparison pages, and industry electricity cost pages.",
+      "Guides and directories for state electricity pages, usage scenarios, comparisons, and industry cost examples.",
     url: "/electricity-hubs",
     isPartOf: "/",
     about: [
@@ -214,16 +214,16 @@ export default async function ElectricityHubsIndexPage() {
         "Data is grouped by topic: state rates, usage scenarios, comparisons, cost details, bill tools, and providers. Each section links to detailed pages.",
     },
   ]);
-  const clusterItemListJsonLd = buildItemListJsonLd("Electricity authority clusters", [
-    { name: "State electricity cost cluster", url: "/electricity-cost" },
-    { name: "City electricity context cluster", url: "/electricity-cost/texas/houston" },
-    { name: "Average electricity bill cluster", url: "/average-electricity-bill" },
-    { name: "Electricity bill estimator cluster", url: "/electricity-bill-estimator" },
-    { name: "Appliance operating cost cluster", url: "/cost-to-run/refrigerator/texas" },
-    { name: "Energy comparison cluster", url: "/energy-comparison" },
+  const clusterItemListJsonLd = buildItemListJsonLd("Main electricity cost sections", [
+    { name: "State electricity cost overview", url: "/electricity-cost" },
+    { name: "City electricity cost example", url: "/electricity-cost/texas/houston" },
+    { name: "Average electricity bill", url: "/average-electricity-bill" },
+    { name: "Electricity bill estimator", url: "/electricity-bill-estimator" },
+    { name: "Appliance operating cost example", url: "/cost-to-run/refrigerator/texas" },
+    { name: "Energy comparison hub", url: "/energy-comparison" },
   ]);
   const providerDiscoveryItemListJsonLd = buildItemListJsonLd(
-    "Provider marketplace discovery clusters",
+    "Provider marketplace sections",
     buildProviderDiscoveryItemListEntries(states),
   );
 
@@ -244,7 +244,7 @@ export default async function ElectricityHubsIndexPage() {
           { label: "Electricity Hubs" },
         ]}
         title="Electricity Hubs"
-        intro="Explore electricity data across all 50 states — rates, bills, comparisons, usage scenarios, and provider information. Choose a topic below to get started."
+        intro="Explore electricity data across all 50 states and Washington, D.C. — rates, bills, comparisons, usage scenarios, and provider information. Choose a topic below to get started."
         stats={[
           { label: "States", value: String(states.length) },
           { label: "Cities", value: String(activeCities.length) },

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { EIA_STATE_RESIDENTIAL_DATA_URL } from "@/data/sources";
 import { SITE_URL } from "@/lib/site";
 import ExploreMore from "@/components/navigation/ExploreMore";
 import SectionNav from "@/components/navigation/SectionNav";
@@ -44,8 +45,8 @@ export default function DatasetsHubPage() {
           { href: "/datasets/electricity-prices-by-state", label: "Prices by state" },
           { href: "/datasets/electricity-rankings", label: "Electricity rankings" },
           { href: "/methodology", label: "Methodology" },
-          { href: "/data-registry", label: "Data registry" },
-          { href: "/knowledge", label: "Knowledge Hub" },
+          { href: "/electricity-data", label: "Electricity data" },
+          { href: "/knowledge", label: "Knowledge" },
           { href: "/site-map", label: "Site map" },
         ]}
       />
@@ -54,7 +55,14 @@ export default function DatasetsHubPage() {
         The downloadable evidence layer. PriceOfElectricity.com publishes electricity price and ranking datasets. Use these for research, analysis, or to verify our numbers—no API or runtime computation required.
       </p>
       <p style={{ marginTop: 8, marginBottom: 0, maxWidth: "65ch", fontSize: 14, lineHeight: 1.5 }}>
-        <strong>Why download?</strong> Researchers, analysts, and journalists use these datasets to study electricity prices, build models, or cite our data. All exports are static and deterministic.
+        <strong>Why download?</strong> Researchers, analysts, and journalists use these datasets to study electricity prices, build models, or cite our data. All exports are static files produced with repeatable formulas from our snapshots.
+      </p>
+      <p className="muted" style={{ marginTop: 10, marginBottom: 0, maxWidth: "65ch", fontSize: 13, lineHeight: 1.5 }}>
+        Residential rate inputs trace to the{" "}
+        <a href={EIA_STATE_RESIDENTIAL_DATA_URL} rel="noopener noreferrer" target="_blank">
+          U.S. Energy Information Administration
+        </a>{" "}
+        state electricity data series.
       </p>
 
       <section style={{ marginTop: 24 }}>
@@ -124,10 +132,9 @@ export default function DatasetsHubPage() {
         links={[
           { href: "/electricity-data", label: "Explore electricity datasets" },
           { href: "/methodology", label: "Methodology" },
-          { href: "/data-registry", label: "Data registry" },
-          { href: "/knowledge", label: "Knowledge Hub" },
+          { href: "/electricity-hubs", label: "Electricity hubs" },
+          { href: "/knowledge", label: "Knowledge" },
           { href: "/site-map", label: "Site map" },
-          { href: "/site-maintenance", label: "Site maintenance" },
           { href: "/electricity-trends", label: "Electricity trends" },
         ]}
       />

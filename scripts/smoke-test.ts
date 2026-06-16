@@ -41,6 +41,75 @@ async function expectStatus(
   }
 }
 
+async function expectRedirect(
+  baseUrl: string,
+  path: string,
+  expectedStatus: number,
+  expectedLocation: string,
+): Promise<CheckResult> {
+  try {
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), 15_000);
+    const res = await fetch(`${baseUrl}${path}`, {
+      signal: controller.signal,
+      redirect: "manual",
+    });
+    clearTimeout(timeout);
+    const location = res.headers.get("location") ?? "";
+    const passed = res.status === expectedStatus && location === expectedLocation;
+    return {
+      name: `${path} => ${expectedStatus} ${expectedLocation}`,
+      passed,
+      detail: `status ${res.status}, location ${location || "(none)"}`,
+    };
+  } catch (error: unknown) {
+    return {
+      name: `${path} => ${expectedStatus} ${expectedLocation}`,
+      passed: false,
+      detail: error instanceof Error ? error.message : String(error),
+    };
+  }
+}
+
+async function expectDistrictOfColumbiaPage(baseUrl: string): Promise<CheckResult> {
+  const path = "/district-of-columbia";
+  try {
+    const res = await fetchWithTimeout(`${baseUrl}${path}`);
+    if (res.status !== 200) {
+      return {
+        name: `${path} => DC page content`,
+        passed: false,
+        detail: `status ${res.status}`,
+      };
+    }
+    const html = await res.text();
+    const failures: string[] = [];
+    if (!/<link[^>]*rel="canonical"[^>]*href="[^"]*\/district-of-columbia"/i.test(html)) {
+      failures.push("missing canonical /district-of-columbia");
+    }
+    if (!/<h1[^>]*>[\s\S]*?District of Columbia[\s\S]*?Electricity Rates/i.test(html)) {
+      failures.push("missing H1 with District of Columbia");
+    }
+    if (!/"@type"\s*:\s*"FAQPage"/i.test(html)) {
+      failures.push("missing FAQPage JSON-LD");
+    }
+    if (!/\d+(?:\.\d+)?\s*¢/.test(html)) {
+      failures.push("missing rendered ¢/kWh value");
+    }
+    return {
+      name: `${path} => DC page content`,
+      passed: failures.length === 0,
+      detail: failures.length > 0 ? failures.join("; ") : undefined,
+    };
+  } catch (error: unknown) {
+    return {
+      name: `${path} => DC page content`,
+      passed: false,
+      detail: error instanceof Error ? error.message : String(error),
+    };
+  }
+}
+
 async function expectJson(baseUrl: string, path: string): Promise<CheckResult> {
   try {
     const res = await fetchWithTimeout(`${baseUrl}${path}`);
@@ -180,6 +249,13 @@ async function main(): Promise<void> {
       results.push(await expectCsv(baseUrl, path));
     }
     results.push(await expectNoindexOnInvalidSort(baseUrl));
+    results.push(await expectDistrictOfColumbiaPage(baseUrl));
+    results.push(
+      await expectRedirect(baseUrl, "/dc", 308, "/district-of-columbia"),
+    );
+    results.push(
+      await expectRedirect(baseUrl, "/washington-dc", 308, "/district-of-columbia"),
+    );
 
     let passed = 0;
     let failed = 0;

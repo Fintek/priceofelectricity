@@ -305,7 +305,7 @@ export default async function KnowledgeRankingsPage({
           <ExploreMore
             title="Explore more"
             links={[
-              { href: "/knowledge", label: "Knowledge hub" },
+              { href: "/knowledge", label: "Knowledge" },
               { href: "/electricity-insights", label: "Electricity insights" },
               { href: "/electricity-trends", label: "Electricity trends" },
               { href: "/datasets/electricity-rankings", label: "Electricity rankings dataset" },

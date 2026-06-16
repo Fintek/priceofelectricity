@@ -10,10 +10,11 @@ export const dynamic = "force-static";
 export const revalidate = 86400;
 
 export const metadata: Metadata = buildMetadata({
-  title: "Page Index | PriceOfElectricity.com",
+  title: "Page Directory | PriceOfElectricity.com",
   description:
-    "Browse major pages by category: state pages, rankings, tools, topic clusters, datasets, and methodology.",
+    "Reference list of major pages by category: state pages, rankings, tools, topics, datasets, and methodology.",
   canonicalPath: "/page-index",
+  robots: { index: false, follow: true },
 });
 
 export default async function PageIndexPage() {
@@ -33,8 +34,8 @@ export default async function PageIndexPage() {
   const webPageStructuredData = {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    name: "Page Index",
-    description: "Index of all major pages on PriceOfElectricity.com.",
+    name: "Page Directory",
+    description: "Directory of all major pages on PriceOfElectricity.com.",
     url: `${BASE_URL}/page-index`,
   };
 
@@ -47,10 +48,10 @@ export default async function PageIndexPage() {
         }}
       />
 
-      <h1>Page Index</h1>
+      <h1>Page Directory</h1>
 
       <p className="intro muted" style={{ marginTop: 0, marginBottom: 8 }}>
-        Browse major pages by category: state pages, rankings, tools, topic clusters, datasets, and methodology.
+        Reference list of major pages by category: state pages, rankings, tools, topics, datasets, and methodology.
       </p>
       <p className="muted" style={{ margin: "0 0 24px 0", fontSize: 14, maxWidth: "50ch" }}>
         <strong>Best for:</strong> Finding pages by category when you know the type of content you want.
@@ -91,14 +92,14 @@ export default async function PageIndexPage() {
       </section>
 
       <section style={{ marginTop: 24 }}>
-        <h2 style={{ fontSize: 20, marginBottom: 12 }}>Topic Clusters</h2>
+        <h2 style={{ fontSize: 20, marginBottom: 12 }}>Browse by topic</h2>
         <p className="muted" style={{ margin: "0 0 8px 0", fontSize: 14 }}>
           Navigate by theme: consumer costs, price dynamics, market structure, and data.
         </p>
         <ul style={{ paddingLeft: 20, lineHeight: 2.2 }}>
-          <li><Link href="/electricity-topics">Electricity topics hub</Link> — Browse all topic clusters</li>
+          <li><Link href="/electricity-topics">Electricity topics</Link> — Browse all major topics</li>
           <li><Link href="/electricity-data">Electricity data</Link> — Datasets and methodology</li>
-          <li><Link href="/discovery-graph">Discovery graph</Link> — Machine-readable topic relationships</li>
+          <li><Link href="/discovery-graph">Topic relationships</Link> — Structured JSON map for researchers</li>
           <li><Link href="/electricity-inflation">Electricity inflation</Link> — Price trends</li>
           <li><Link href="/electricity-affordability">Electricity affordability</Link> — Cost burden</li>
           <li><Link href="/electricity-price-volatility">Electricity price volatility</Link> — Price stability</li>
@@ -128,7 +129,7 @@ export default async function PageIndexPage() {
       <section style={{ marginTop: 24 }}>
         <h2 style={{ fontSize: 20, marginBottom: 12 }}>Datasets</h2>
         <ul style={{ paddingLeft: 20, lineHeight: 2.2 }}>
-          <li><Link href="/datasets">Datasets hub</Link></li>
+          <li><Link href="/datasets">Datasets</Link></li>
           <li><Link href="/datasets/electricity-prices-by-state">Electricity prices by state</Link></li>
           <li><Link href="/datasets/electricity-rankings">Electricity rankings</Link></li>
         </ul>
@@ -137,7 +138,7 @@ export default async function PageIndexPage() {
       <section style={{ marginTop: 24 }}>
         <h2 style={{ fontSize: 20, marginBottom: 12 }}>Methodology</h2>
         <ul style={{ paddingLeft: 20, lineHeight: 2.2 }}>
-          <li><Link href="/methodology">Methodology hub</Link></li>
+          <li><Link href="/methodology">Methodology</Link></li>
           <li><Link href="/methodology/electricity-rates">How electricity rates are presented</Link></li>
           <li><Link href="/methodology/electricity-inflation">How electricity inflation is calculated</Link></li>
           <li><Link href="/methodology/electricity-affordability">How electricity affordability is estimated</Link></li>
@@ -149,22 +150,21 @@ export default async function PageIndexPage() {
       <ExploreMore
         title="Other discovery and support"
         links={[
-          { href: "/electricity-topics", label: "Browse the major electricity economics topic clusters" },
+          { href: "/electricity-topics", label: "Browse major electricity economics topics" },
           { href: "/site-map", label: "See the high-level site structure" },
           { href: "/entity-registry", label: "Explore the site's core electricity entities" },
-          { href: "/discovery-graph", label: "View the machine-readable topic relationship map" },
+          { href: "/discovery-graph", label: "Browse topic relationships (JSON map)" },
           { href: "/electricity-data", label: "See the datasets and data-driven analysis foundation" },
           { href: "/datasets", label: "Download datasets" },
           { href: "/methodology", label: "Methodology" },
-          { href: "/knowledge", label: "Knowledge Hub" },
+          { href: "/knowledge", label: "Knowledge" },
         ]}
       />
 
       <p className="muted" style={{ marginTop: 32 }}>
         <Link href="/">Home</Link> {" | "}
-        <Link href="/site-map">Site Map</Link> {" | "}
-        <Link href="/data-registry">Data Registry</Link> {" | "}
-        <Link href="/launch-checklist">Launch checklist</Link>
+        <Link href="/site-map">Site map</Link> {" | "}
+        <Link href="/data-registry">Electricity data reference</Link>
       </p>
     </main>
   );

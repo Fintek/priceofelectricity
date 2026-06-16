@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import { SITE_NAME, SITE_URL, LAUNCH_MODE } from "@/lib/site";
+import { SITE_NAME, SITE_URL, LAUNCH_MODE, SOCIAL_LINKS, SITE_TWITTER_HANDLE } from "@/lib/site";
 import { reportWebVitals as reportWebVitalsImpl } from "@/lib/performance";
 import MobileNav from "@/app/components/MobileNav";
 import SearchBox from "@/app/components/SearchBox";
@@ -34,6 +34,8 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: SITE_NAME,
+    site: SITE_TWITTER_HANDLE,
+    creator: SITE_TWITTER_HANDLE,
   },
 };
 
@@ -51,7 +53,7 @@ export default function RootLayout({
     "@type": "Organization",
     name: SITE_NAME,
     url: BASE_URL,
-    sameAs: [],
+    sameAs: SOCIAL_LINKS.map((link) => link.url),
   };
   const websiteStructuredData = {
     "@context": "https://schema.org",
@@ -125,8 +127,8 @@ export default function RootLayout({
             <div className="header-desktop-nav">
               <Link href="/electricity-cost-comparison">State comparisons</Link>
               <Link href="/energy-comparison">Energy comparison</Link>
-              <Link href="/electricity-cost-calculator">Calculator</Link>
-              <Link href="/datasets">Data</Link>
+              <Link href="/electricity-cost-calculator">Bill calculator</Link>
+              <Link href="/datasets">Download data</Link>
               <Link href="/methodology">Methodology</Link>
               <SearchBox />
               <CommandPalette />
@@ -142,49 +144,67 @@ export default function RootLayout({
           )}
         />
 
-        <div id="main" style={{ flex: "1 0 auto", minHeight: "calc(100vh - 140px)" }}>
+        <div id="main" tabIndex={-1} style={{ flex: "1 0 auto", minHeight: "calc(100vh - 140px)" }}>
           {children}
         </div>
 
         <footer className="site-footer">
+          <h2 className="sr-only">Site footer</h2>
           <div className="container footer-grid">
             <div className="footer-group">
-              <p className="footer-group-title">Explore</p>
+              <h3 className="footer-group-title">Explore</h3>
+              <Link href="/electricity-hubs">Explore hubs</Link>
               <Link href="/electricity-cost-comparison">State comparisons</Link>
               <Link href="/energy-comparison">Energy comparison</Link>
-              <Link href="/electricity-cost-calculator">Calculator</Link>
-              <Link href="/electricity-bill-estimator">Bill Estimator</Link>
-              <Link href="/electricity-cost-comparison">Comparisons</Link>
+              <Link href="/electricity-cost-calculator">Bill calculator</Link>
+              <Link href="/electricity-bill-estimator">Bill estimator</Link>
               <Link href="/electricity-trends">Trends</Link>
               <Link href="/electricity-insights">Insights</Link>
             </div>
             <div className="footer-group">
-              <p className="footer-group-title">Data</p>
-              <Link href="/datasets">Datasets</Link>
+              <h3 className="footer-group-title">Data &amp; methodology</h3>
+              <Link href="/datasets">Download data</Link>
               <Link href="/methodology">Methodology</Link>
               <Link href="/knowledge">Knowledge</Link>
               <Link href="/research">Research</Link>
-              <Link href="/drivers">Price Drivers</Link>
-              <Link href="/data-history">Data History</Link>
+              <Link href="/drivers">What drives prices</Link>
+              <Link href="/data-history">Historical data</Link>
             </div>
             <div className="footer-group">
-              <p className="footer-group-title">About</p>
-              <Link href="/about">About &amp; Trust</Link>
+              <h3 className="footer-group-title">About</h3>
+              <Link href="/about">About &amp; trust</Link>
               <Link href="/contact">Contact</Link>
-              <Link href="/advertise">Advertise with Us</Link>
+              <Link href="/advertise">Advertise with us</Link>
               <Link href="/newsletter">Newsletter</Link>
               <Link href="/press">Press</Link>
               <Link href="/citations">Citations</Link>
-              <Link href="/site-map">Site Map</Link>
+              <Link href="/site-map">Site map</Link>
             </div>
             <div className="footer-group">
-              <p className="footer-group-title">Legal</p>
+              <h3 className="footer-group-title">Legal</h3>
               <Link href="/data-policy">Data Policy</Link>
               <Link href="/disclosures">Disclosures</Link>
               <Link href="/licensing">Licensing</Link>
               <Link href="/regulatory">Regulatory</Link>
               <Link href="/attribution">Attribution</Link>
               <Link href="/offers">Offers</Link>
+            </div>
+            <div className="footer-group">
+              <h3 className="footer-group-title">Follow</h3>
+              {SOCIAL_LINKS.map((link) => (
+                <a
+                  key={link.name}
+                  href={link.url}
+                  target="_blank"
+                  rel="me noopener noreferrer"
+                  aria-label={`Follow ${SITE_NAME} on ${link.name}${
+                    link.handle ? ` (${link.handle})` : ""
+                  }`}
+                >
+                  {link.name}
+                  {link.handle ? ` (${link.handle})` : ""}
+                </a>
+              ))}
             </div>
           </div>
           {process.env.NODE_ENV !== "production" && (

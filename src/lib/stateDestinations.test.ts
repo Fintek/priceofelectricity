@@ -5,31 +5,32 @@ import {
   getPublicStateDestination,
 } from "@/lib/stateDestinations";
 
-test("uses state overview routes for the 50-state dataset", () => {
+test("uses state overview routes for the 51-jurisdiction dataset", () => {
   assert.deepEqual(getPublicStateDestination("texas"), {
     href: "/texas",
     label: "Texas",
   });
 });
 
-test("routes district of columbia to its knowledge destination", () => {
+test("routes district of columbia to its canonical state page", () => {
   assert.deepEqual(getPublicStateDestination("district-of-columbia"), {
-    href: "/knowledge/state/district-of-columbia",
+    href: "/district-of-columbia",
     label: "District of Columbia",
   });
 });
 
-test("excludes district of columbia from homepage coverage entries", () => {
+test("includes district of columbia in homepage coverage entries", () => {
   const entries = getHomepageCoverageEntries();
   const dcEntry = entries.find((entry) => entry.slug === "district-of-columbia");
 
-  assert.equal(dcEntry, undefined, "DC should not appear in homepage state list");
+  assert.ok(dcEntry, "DC should appear in homepage state list");
+  assert.equal(dcEntry?.href, "/district-of-columbia");
 });
 
-test("homepage coverage entries only contain states with rate data", () => {
+test("homepage coverage entries only contain jurisdictions with rate data", () => {
   const entries = getHomepageCoverageEntries();
 
-  assert.equal(entries.length, 50);
+  assert.equal(entries.length, 51);
   for (const entry of entries) {
     assert.equal(typeof entry.avgRateCentsPerKwh, "number", `${entry.slug} should have numeric rate`);
   }

@@ -3,6 +3,7 @@ import KnowledgeBadges from "./KnowledgeBadges";
 import CopyButton from "@/components/common/CopyButton";
 import { SITE_URL } from "@/lib/site";
 import { t } from "@/lib/knowledge/labels";
+import Breadcrumbs from "@/components/navigation/Breadcrumbs";
 
 export type BreadcrumbItem = {
   label: string;
@@ -41,20 +42,14 @@ export default function KnowledgeHeader({
 
   const hasBadges = freshnessStatus || typeof qualityScore === "number" || sourceVersion || semanticCluster;
 
+  const breadcrumbTrail = breadcrumbs.map((item) => ({
+    name: item.label,
+    url: item.href,
+  }));
+
   return (
     <header style={{ marginBottom: 24 }}>
-      <nav aria-label="Breadcrumb" className="muted" style={{ marginBottom: 8 }}>
-        {breadcrumbs.map((item, i) => (
-          <span key={i}>
-            {item.href ? (
-              <Link href={item.href}>{item.label}</Link>
-            ) : (
-              <span>{item.label}</span>
-            )}
-            {i < breadcrumbs.length - 1 && " → "}
-          </span>
-        ))}
-      </nav>
+      <Breadcrumbs trail={breadcrumbTrail} />
       <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", gap: 12 }}>
         <h1 style={{ margin: 0 }}>{title}</h1>
         <a

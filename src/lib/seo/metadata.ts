@@ -20,12 +20,12 @@ function truncateDescription(desc: string): string {
   return cut + "...";
 }
 
-function getDefaultShareImageUrl(): string | null {
+export function getDefaultShareImageUrl(): string | null {
   try {
-    const png = path.join(process.cwd(), "public", "og.png");
-    const jpg = path.join(process.cwd(), "public", "og.jpg");
-    if (existsSync(png)) return `${SITE_URL.replace(/\/+$/, "")}/og.png`;
-    if (existsSync(jpg)) return `${SITE_URL.replace(/\/+$/, "")}/og.jpg`;
+    const ogDefault = path.join(process.cwd(), "public", "og-default.png");
+    if (existsSync(ogDefault)) {
+      return `${SITE_URL.replace(/\/+$/, "")}/og-default.png`;
+    }
   } catch {
     // ignore
   }
@@ -35,6 +35,8 @@ function getDefaultShareImageUrl(): string | null {
 export type BuildMetadataInput = {
   title: string;
   description?: string | null;
+  /** When set, used for openGraph/twitter description only (meta description stays `description`). */
+  socialDescription?: string | null;
   canonicalPath: string;
   ogType?: "website" | "article";
   imageUrl?: string | null;
@@ -45,6 +47,7 @@ export type BuildMetadataInput = {
 export function buildMetadata({
   title,
   description,
+  socialDescription,
   canonicalPath,
   ogType = "website",
   imageUrl,
@@ -52,6 +55,9 @@ export function buildMetadata({
   robots,
 }: BuildMetadataInput): Metadata {
   const desc = truncateDescription(description ?? FALLBACK_DESCRIPTION);
+  const socialDesc = truncateDescription(
+    socialDescription ?? description ?? FALLBACK_DESCRIPTION,
+  );
   const baseUrl = SITE_URL.replace(/\/+$/, "");
   const canonicalUrl = canonicalPath.startsWith("http")
     ? canonicalPath
@@ -62,7 +68,7 @@ export function buildMetadata({
 
   const openGraph: Metadata["openGraph"] = {
     title,
-    description: desc,
+    description: socialDesc,
     url: canonicalUrl,
     type: ogType,
     siteName: siteName ?? SITE_NAME,
@@ -74,7 +80,7 @@ export function buildMetadata({
   const twitter: Metadata["twitter"] = {
     card: hasImage ? "summary_large_image" : "summary",
     title,
-    description: desc,
+    description: socialDesc,
     ...(hasImage && resolvedImage ? { images: [resolvedImage] } : {}),
   };
 
@@ -85,5 +91,30 @@ export function buildMetadata({
     openGraph,
     twitter,
     ...(robots ? { robots } : {}),
+  };
+}
+
+/** Adds default OG/Twitter share image to hand-rolled metadata (e.g. when buildMetadata would alter copy). */
+export function withDefaultShareImage(metadata: Metadata, altTitle?: string): Metadata {
+  const imageUrl = getDefaultShareImageUrl();
+  if (!imageUrl) return metadata;
+  const alt =
+    altTitle ??
+    (typeof metadata.title === "string" ? metadata.title : "PriceOfElectricity.com");
+  const openGraphBase =
+    typeof metadata.openGraph === "object" && metadata.openGraph ? metadata.openGraph : {};
+  const twitterBase =
+    typeof metadata.twitter === "object" && metadata.twitter ? metadata.twitter : {};
+  return {
+    ...metadata,
+    openGraph: {
+      ...openGraphBase,
+      images: [{ url: imageUrl, width: 1200, height: 630, alt }],
+    },
+    twitter: {
+      ...twitterBase,
+      card: "summary_large_image",
+      images: [imageUrl],
+    },
   };
 }

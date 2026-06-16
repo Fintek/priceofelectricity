@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Breadcrumbs, { breadcrumbsToJsonLd, type BreadcrumbItem } from "@/components/navigation/Breadcrumbs";
 import { getRelease } from "@/lib/knowledge/fetch";
 import { buildMetadata } from "@/lib/seo/metadata";
-import { buildBreadcrumbListJsonLd } from "@/lib/seo/jsonld";
+
 import JsonLdScript from "@/app/components/seo/JsonLdScript";
 import StatusFooter from "@/components/common/StatusFooter";
 
@@ -20,30 +21,25 @@ export const metadata: Metadata = buildMetadata({
 export default async function QualityChecksPage() {
   const release = await getRelease();
 
-  const breadcrumbJsonLd = buildBreadcrumbListJsonLd([
+  const breadcrumbTrail: BreadcrumbItem[] = [
     { name: "Home", url: "/" },
     { name: "Site Maintenance", url: "/site-maintenance" },
-    { name: "Quality Checks", url: "/site-maintenance/quality-checks" },
-  ]);
+    { name: "Quality Checks" },
+  ];
+  const breadcrumbJsonLd = breadcrumbsToJsonLd(breadcrumbTrail);
 
   return (
     <>
       <JsonLdScript data={breadcrumbJsonLd} />
       <main className="container">
-        <nav aria-label="Breadcrumb" className="muted" style={{ marginBottom: 16, fontSize: 14 }}>
-          <Link href="/">Home</Link>
-          {" · "}
-          <Link href="/site-maintenance">Site Maintenance</Link>
-          {" · "}
-          <span aria-current="page">Quality Checks</span>
-        </nav>
+        <Breadcrumbs trail={breadcrumbTrail} />
 
         <h1 style={{ fontSize: 32, marginBottom: 12 }}>Electricity Site Quality Checks</h1>
 
         {/* INTRO */}
         <section style={{ marginBottom: 32 }}>
           <p style={{ marginTop: 0, marginBottom: 16, maxWidth: "65ch", fontSize: 16, lineHeight: 1.6 }}>
-            Quality checks help catch missing pages, missing datasets, broken discovery assets, and crawl issues. A structured electricity analysis site benefits from repeatable checks that run as part of the build pipeline.
+            Quality checks help catch missing pages, missing datasets, broken discovery assets, and crawl issues. A structured electricity analysis site benefits from repeatable checks that run with each release.
           </p>
         </section>
 
@@ -62,7 +58,7 @@ export default async function QualityChecksPage() {
         <section style={{ marginBottom: 32 }}>
           <h2 style={{ fontSize: 20, marginBottom: 12 }}>Why This Matters</h2>
           <p style={{ marginTop: 0, marginBottom: 16, maxWidth: "65ch", fontSize: 16, lineHeight: 1.6 }}>
-            A large electricity analysis site with many state pages, rankings, and programmatic routes benefits from repeatable quality checks. Catching missing datasets or broken links before deployment helps keep the site reliable for users, crawlers, and researchers.
+            A large electricity reference site with many state pages, rankings, and templated routes benefits from repeatable quality checks. Catching missing datasets or broken links before deployment helps keep the site reliable for readers and researchers.
           </p>
         </section>
 

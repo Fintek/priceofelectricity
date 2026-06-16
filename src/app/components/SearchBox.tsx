@@ -18,17 +18,44 @@ export default function SearchBox() {
   }
 
   return (
-    <form onSubmit={onSubmit} role="search" style={{ display: "flex", gap: 6 }}>
+    <form
+      onSubmit={onSubmit}
+      action="/search"
+      method="get"
+      role="search"
+      className="header-search"
+    >
+      <label htmlFor="header-search-input" className="sr-only">
+        Search PriceOfElectricity.com
+      </label>
+      <span className="header-search-icon" aria-hidden="true">
+        <svg
+          width="16"
+          height="16"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        >
+          <circle cx="11" cy="11" r="7" />
+          <path d="m21 21-4.3-4.3" />
+        </svg>
+      </span>
       <input
+        id="header-search-input"
         type="search"
         name="q"
-        aria-label="Search site"
         value={query}
         onChange={(event) => setQuery(event.target.value)}
-        placeholder="Search"
-        style={{ width: 180, maxWidth: "40vw", padding: "6px 8px" }}
+        placeholder="Search rates, states, calculators…"
+        autoComplete="off"
+        className="header-search-input"
       />
-      <button type="submit">Search</button>
+      <button type="submit" className="header-search-submit">
+        Search
+      </button>
     </form>
   );
 }

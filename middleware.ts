@@ -40,6 +40,10 @@ function getAllowedParams(pathname: string): Set<string> {
     return new Set(["sort"]);
   }
 
+  if (/^\/[a-z0-9-]+\/history$/.test(pathname)) {
+    return new Set(["range"]);
+  }
+
   return new Set();
 }
 
@@ -106,11 +110,11 @@ export function middleware(request: NextRequest) {
   const url = request.nextUrl.clone();
   let needsRedirect = false;
 
-  // --- Legacy redirect map (301) ---
+  // --- Legacy redirect map (308) ---
   const legacyTarget = LEGACY_REDIRECTS[url.pathname];
   if (legacyTarget) {
     url.pathname = legacyTarget;
-    return NextResponse.redirect(url, 301);
+    return NextResponse.redirect(url, 308);
   }
 
   // --- Force lowercase ---

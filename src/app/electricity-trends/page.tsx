@@ -3,8 +3,10 @@ import Link from "next/link";
 import { loadKnowledgePage, loadEntityIndex, loadRankingsIndex } from "@/lib/knowledge/loadKnowledgePage";
 import { getRelease } from "@/lib/knowledge/fetch";
 import { buildMetadata } from "@/lib/seo/metadata";
-import { buildBreadcrumbListJsonLd, buildWebPageJsonLd } from "@/lib/seo/jsonld";
+import { getCanonicalResidentialDataThroughMonthLabel } from "@/lib/eiaReportingTrust";
+import { buildWebPageJsonLd } from "@/lib/seo/jsonld";
 import JsonLdScript from "@/app/components/seo/JsonLdScript";
+import Breadcrumbs, { breadcrumbsToJsonLd, type BreadcrumbItem } from "@/components/navigation/Breadcrumbs";
 import StatusFooter from "@/components/common/StatusFooter";
 import ExploreMore from "@/components/navigation/ExploreMore";
 import SectionNav from "@/components/navigation/SectionNav";
@@ -16,8 +18,12 @@ export const revalidate = 86400;
 
 const MONTHLY_USAGE_KWH = 900;
 
+const trendsYear = getCanonicalResidentialDataThroughMonthLabel().match(/\d{4}/)?.[0];
+
 export const metadata: Metadata = buildMetadata({
-  title: "Electricity Price Trends & Inflation by State | PriceOfElectricity.com",
+  title: trendsYear
+    ? `U.S. Electricity Price Trends & State Inflation (${trendsYear})`
+    : "U.S. Electricity Price Trends & State Inflation",
   description:
     "National electricity price trends, 1-year and 5-year inflation, and affordability. Average U.S. rate, estimated monthly bills, and state-level trend data.",
   canonicalPath: "/electricity-trends",
@@ -50,18 +56,26 @@ export default async function ElectricityTrendsPage() {
   const trendValues = derived?.trends?.avgRateCentsPerKwh?.values ?? [];
   const hasTrendChart = trendValues.length >= 2;
 
+  // Trend values come from the monthly EIA national series, so a true
+  // year-over-year comparison is the value 12 months earlier and a 5-year
+  // comparison is 60 months earlier. Fall back gracefully when the series
+  // is shorter than that (e.g. the snapshot fallback path).
   let increase1YearPercent: number | null = null;
   let increase5YearPercent: number | null = null;
   if (trendValues.length >= 2) {
     const current = trendValues[trendValues.length - 1];
-    const oneBack = trendValues[trendValues.length - 2];
-    if (typeof current === "number" && typeof oneBack === "number" && oneBack > 0) {
-      increase1YearPercent = ((current - oneBack) / oneBack) * 100;
-    }
-    if (trendValues.length >= 6) {
-      const fiveBack = trendValues[trendValues.length - 6];
-      if (typeof current === "number" && typeof fiveBack === "number" && fiveBack > 0) {
-        increase5YearPercent = ((current - fiveBack) / fiveBack) * 100;
+    if (typeof current === "number") {
+      if (trendValues.length >= 13) {
+        const oneYearBack = trendValues[trendValues.length - 13];
+        if (typeof oneYearBack === "number" && oneYearBack > 0) {
+          increase1YearPercent = ((current - oneYearBack) / oneYearBack) * 100;
+        }
+      }
+      if (trendValues.length >= 61) {
+        const fiveYearBack = trendValues[trendValues.length - 61];
+        if (typeof fiveYearBack === "number" && fiveYearBack > 0) {
+          increase5YearPercent = ((current - fiveYearBack) / fiveYearBack) * 100;
+        }
       }
     }
   }
@@ -74,10 +88,12 @@ export default async function ElectricityTrendsPage() {
   const rankingIds = ["electricity-inflation-1y", "electricity-inflation-5y", "electricity-affordability", "most-expensive-electricity"];
   const rankings = rankingsIndex?.items?.filter((r) => rankingIds.includes(r.id)) ?? [];
 
-  const breadcrumbJsonLd = buildBreadcrumbListJsonLd([
+  const breadcrumbTrail: BreadcrumbItem[] = [
     { name: "Home", url: "/" },
-    { name: "Electricity Trends", url: "/electricity-trends" },
-  ]);
+    { name: "Data", url: "/data" },
+    { name: "Electricity Trends" },
+  ];
+  const breadcrumbJsonLd = breadcrumbsToJsonLd(breadcrumbTrail);
 
   const webPageJsonLd = buildWebPageJsonLd({
     title: "Electricity Price Trends in the United States",
@@ -96,7 +112,7 @@ export default async function ElectricityTrendsPage() {
       answer:
         nationalAvgRate != null
           ? `The national average residential electricity rate is approximately ${nationalAvgRate.toFixed(2)} cents per kWh. At 900 kWh per month, that translates to an estimated bill of about $${monthlyBill.toFixed(2)}.`
-          : "The national average varies by data source and period. Check the Knowledge Hub for current figures.",
+          : "The national average varies by data source and period. See Knowledge for current figures.",
     },
     {
       question: "Are electricity prices increasing?",
@@ -125,7 +141,7 @@ export default async function ElectricityTrendsPage() {
       answer:
         derived?.highestState != null
           ? `${derived.highestState.name ?? "Hawaii"} has the highest average residential electricity rate at ${derived.highestState.rate?.toFixed(2) ?? "—"}¢/kWh. See the most expensive electricity ranking for the full list.`
-          : "Hawaii, California, and several Northeast states typically have among the highest rates. See the Knowledge Hub rankings for the full list.",
+          : "Hawaii, California, and several Northeast states typically have among the highest rates. See the Knowledge rankings for the full list.",
     },
   ];
 
@@ -163,13 +179,7 @@ export default async function ElectricityTrendsPage() {
     <>
       <JsonLdScript data={[breadcrumbJsonLd, webPageJsonLd, faqJsonLd]} />
       <main className="container">
-        <nav aria-label="Breadcrumb" className="muted" style={{ marginBottom: 16, fontSize: 14 }}>
-          <Link href="/">Home</Link>
-          {" · "}
-          <Link href="/data">Data Hub</Link>
-          {" · "}
-          <span aria-current="page">Electricity Trends</span>
-        </nav>
+        <Breadcrumbs trail={breadcrumbTrail} />
         <SectionNav
           title="In this section"
           description="Trends, insights, rankings, and state-level data."
@@ -281,7 +291,7 @@ export default async function ElectricityTrendsPage() {
             {insightText}
           </p>
           <p className="muted" style={{ marginTop: 12, fontSize: 14 }}>
-            Data comes from EIA residential retail sales. All figures are build-generated and deterministic.
+            Data comes from EIA residential retail sales. Figures are updated from that data using consistent methodology.
           </p>
         </section>
 
@@ -408,7 +418,7 @@ export default async function ElectricityTrendsPage() {
               Compare rates and costs
             </li>
             <li>
-              <Link href="/knowledge">Knowledge Hub</Link>
+              <Link href="/knowledge">Knowledge</Link>
               {" — "}
               National overview, rankings, methodology
             </li>

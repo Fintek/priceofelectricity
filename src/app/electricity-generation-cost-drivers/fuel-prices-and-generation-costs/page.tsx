@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Breadcrumbs, { breadcrumbsToJsonLd, type BreadcrumbItem } from "@/components/navigation/Breadcrumbs";
 import { loadKnowledgePage } from "@/lib/knowledge/loadKnowledgePage";
 import { getRelease } from "@/lib/knowledge/fetch";
 import { buildMetadata } from "@/lib/seo/metadata";
-import { buildBreadcrumbListJsonLd } from "@/lib/seo/jsonld";
+
 import JsonLdScript from "@/app/components/seo/JsonLdScript";
 import StatusFooter from "@/components/common/StatusFooter";
 
@@ -30,25 +31,19 @@ export default async function FuelPricesAndGenerationCostsPage() {
   const rateDollarsPerKwh = nationalAvgRate != null ? nationalAvgRate / 100 : 0;
   const monthlyBill = rateDollarsPerKwh * MONTHLY_USAGE_KWH;
 
-  const breadcrumbJsonLd = buildBreadcrumbListJsonLd([
+  const breadcrumbTrail: BreadcrumbItem[] = [
     { name: "Home", url: "/" },
-    { name: "Electricity Generation Cost Drivers", url: "/electricity-generation-cost-drivers" },
-    { name: "Fuel Prices and Electricity Generation Costs", url: "/electricity-generation-cost-drivers/fuel-prices-and-generation-costs" },
-  ]);
+    { name: "Electricity Trends", url: "/electricity-trends" },
+    { name: "Generation Cost Drivers", url: "/electricity-generation-cost-drivers" },
+    { name: "Fuel Prices and Generation Costs" },
+  ];
+  const breadcrumbJsonLd = breadcrumbsToJsonLd(breadcrumbTrail);
 
   return (
     <>
       <JsonLdScript data={breadcrumbJsonLd} />
       <main className="container">
-        <nav aria-label="Breadcrumb" className="muted" style={{ marginBottom: 16, fontSize: 14 }}>
-          <Link href="/">Home</Link>
-          {" · "}
-          <Link href="/electricity-trends">Electricity Trends</Link>
-          {" · "}
-          <Link href="/electricity-generation-cost-drivers">Generation Cost Drivers</Link>
-          {" · "}
-          <span aria-current="page">Fuel Prices and Generation Costs</span>
-        </nav>
+        <Breadcrumbs trail={breadcrumbTrail} />
 
         <h1 style={{ fontSize: 32, marginBottom: 24 }}>Fuel Prices and Electricity Generation Costs</h1>
 

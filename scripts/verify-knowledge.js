@@ -85,6 +85,30 @@ function getExpectedDeterministicGeneratedAt(sourceVersion) {
   }
 }
 
+/** Canonical EIA ingest time written by scripts/eia/generate_snapshots_from_eia_csv.ts */
+function getPipelineSynchronizedAtIsoFromStatesRawTs() {
+  try {
+    const p = path.join(process.cwd(), "src", "data", "raw", "states.raw.ts");
+    const raw = fs.readFileSync(p, "utf8");
+    const m = /pipelineSynchronizedAtIso:\s*"([^"]+)"/.exec(raw);
+    return m && typeof m[1] === "string" && m[1].length > 0 ? m[1] : null;
+  } catch {
+    return null;
+  }
+}
+
+function normalizeKnowledgeGeneratedAtIso(iso) {
+  if (typeof iso !== "string" || iso.length === 0 || Number.isNaN(Date.parse(iso))) return null;
+  return new Date(iso).toISOString();
+}
+
+/** Expected knowledge generatedAt matches knowledge-build prioritization over snapshot releasedAt when ingest meta exists. */
+function getExpectedKnowledgeGeneratedAt(sourceVersion) {
+  const ingest = normalizeKnowledgeGeneratedAtIso(getPipelineSynchronizedAtIsoFromStatesRawTs());
+  if (ingest) return ingest;
+  return normalizeKnowledgeGeneratedAtIso(getExpectedDeterministicGeneratedAt(sourceVersion));
+}
+
 function recomputeContentHash(pageObject) {
   if (!pageObject || typeof pageObject !== "object" || !pageObject.meta || typeof pageObject.meta !== "object") {
     return null;
@@ -686,10 +710,29 @@ function main() {
   ensureFileExists(dataRegistryPath, "data-registry page");
   const pageIndexPath = path.join(process.cwd(), "src", "app", "page-index", "page.tsx");
   ensureFileExists(pageIndexPath, "page-index page");
-  const discoverySitemapRoutes = ["/site-map", "/data-registry", "/page-index"];
+  const discoverySitemapRoutes = ["/site-map"];
   for (const route of discoverySitemapRoutes) {
     if (!sitemapSource.includes(route)) {
       fail(`sitemap must include ${route}`);
+    }
+  }
+  const noindexDiscoveryRoutes = [
+    { route: "/page-index", page: "src/app/page-index/page.tsx" },
+    { route: "/data-registry", page: "src/app/data-registry/page.tsx" },
+    { route: "/entity-registry", page: "src/app/entity-registry/page.tsx" },
+    { route: "/discovery-graph", page: "src/app/discovery-graph/page.tsx" },
+  ];
+  for (const { route, page } of noindexDiscoveryRoutes) {
+    const sitemapEntryPattern = new RegExp(`url:\\s*\`?\\$\\{BASE_URL\\}${route}\`?`);
+    if (sitemapEntryPattern.test(sitemapSource)) {
+      fail(`sitemap must NOT include noindex discovery route ${route}`);
+    }
+    const pagePath = path.join(process.cwd(), page);
+    if (fs.existsSync(pagePath)) {
+      const pageSrc = fs.readFileSync(pagePath, "utf8");
+      if (!pageSrc.includes("index: false")) {
+        fail(`${page} must have noindex robots directive`);
+      }
     }
   }
 
@@ -758,18 +801,24 @@ function main() {
     fail("datasets electricity-rankings page must include Dataset schema with distribution");
   }
 
+  const hasBreadcrumbSchema = (source) =>
+    source.includes("BreadcrumbList") ||
+    source.includes("buildBreadcrumbListJsonLd") ||
+    source.includes("breadcrumbsToJsonLd") ||
+    source.includes("Breadcrumbs");
+
   const electricityCostSlugSource = fs.readFileSync(electricityCostSlugPath, "utf8");
-  if (!electricityCostSlugSource.includes("BreadcrumbList") && !electricityCostSlugSource.includes("buildBreadcrumbListJsonLd")) {
+  if (!hasBreadcrumbSchema(electricityCostSlugSource)) {
     fail("electricity-cost [slug] page must include BreadcrumbList schema");
   }
   const knowledgeStateSlugPath = path.join(process.cwd(), "src", "app", "knowledge", "state", "[slug]", "page.tsx");
   const knowledgeStateSlugSource = fs.readFileSync(knowledgeStateSlugPath, "utf8");
-  if (!knowledgeStateSlugSource.includes("BreadcrumbList") && !knowledgeStateSlugSource.includes("buildBreadcrumbListJsonLd")) {
+  if (!hasBreadcrumbSchema(knowledgeStateSlugSource)) {
     fail("knowledge state [slug] page must include BreadcrumbList schema");
   }
   const knowledgeRankingsIdPath = path.join(process.cwd(), "src", "app", "knowledge", "rankings", "[id]", "page.tsx");
   const knowledgeRankingsIdSource = fs.readFileSync(knowledgeRankingsIdPath, "utf8");
-  if (!knowledgeRankingsIdSource.includes("BreadcrumbList") && !knowledgeRankingsIdSource.includes("buildBreadcrumbListJsonLd")) {
+  if (!hasBreadcrumbSchema(knowledgeRankingsIdSource)) {
     fail("knowledge rankings [id] page must include BreadcrumbList schema");
   }
 
@@ -3191,6 +3240,7 @@ const KNOWN_ROUTE_FAMILY_PREFIXES = [
   "/average-electricity-bill/",
   "/electricity-bill-estimator/",
   "/electricity-cost-calculator/",
+  "/electricity-hubs/",
   "/energy-comparison/",
   "/electricity-usage/",
   "/electricity-usage/home-size/",
@@ -3448,13 +3498,15 @@ function runPreLaunchVerification(root, sitemapSource, layoutSource) {
     if (!fs.existsSync(indexPath)) throw new Error("public/knowledge/index.json must exist");
     const index = readJson(indexPath, "public/knowledge/index.json");
     const sourceVersion = index && typeof index.sourceVersion === "string" ? index.sourceVersion : "";
-    const expectedGeneratedAt = getExpectedDeterministicGeneratedAt(sourceVersion);
+    const expectedGeneratedAt = getExpectedKnowledgeGeneratedAt(sourceVersion);
     if (!expectedGeneratedAt) return;
-    const actualGeneratedAt = index && typeof index.generatedAt === "string" ? index.generatedAt : "";
+    const actualGeneratedAtRaw = index && typeof index.generatedAt === "string" ? index.generatedAt : "";
+    const actualGeneratedAt = normalizeKnowledgeGeneratedAtIso(actualGeneratedAtRaw);
     if (actualGeneratedAt !== expectedGeneratedAt) {
       throw new Error(
-        "knowledge/index.json generatedAt must match deterministic snapshot release timestamp " +
-          `(expected ${expectedGeneratedAt}, got ${actualGeneratedAt || "empty"})`
+        "knowledge/index.json generatedAt must equal canonical ingest (EIA pipelineSynchronizedAtIso) when present," +
+          " else snapshot releasedAt-derived timestamp " +
+          `(expected ${expectedGeneratedAt}, got ${actualGeneratedAtRaw || "empty"})`
       );
     }
   });
@@ -3776,8 +3828,6 @@ function runPreLaunchVerification(root, sitemapSource, layoutSource) {
       "/methodology/battery-recharge-cost",
       "/methodology/generator-vs-battery-cost",
       "/site-map",
-      "/page-index",
-      "/data-registry",
       "/ai-energy-demand",
       "/electricity-cost",
       "/average-electricity-bill",
@@ -4322,9 +4372,8 @@ function runPreLaunchVerification(root, sitemapSource, layoutSource) {
   runCheck("Entity registry discovery layer", () => {
     const hubPath = path.join(process.cwd(), "src", "app", "entity-registry", "page.tsx");
     if (!fs.existsSync(hubPath)) throw new Error("src/app/entity-registry/page.tsx must exist");
-    const sitemapPath = path.join(process.cwd(), "src", "app", "sitemap.ts");
-    const sitemapSrc = sitemapSource || fs.readFileSync(sitemapPath, "utf8");
-    if (!sitemapSrc.includes("/entity-registry")) throw new Error("sitemap must include /entity-registry");
+    const hubSrc = fs.readFileSync(hubPath, "utf8");
+    if (!hubSrc.includes("index: false")) throw new Error("entity-registry must have noindex robots directive");
     const searchIndexPath = path.join(root, "search-index.json");
     const searchContent = fs.readFileSync(searchIndexPath, "utf8");
     if (!searchContent.includes("/entity-registry")) throw new Error("search-index must include entity-registry entry");
@@ -4352,8 +4401,6 @@ function runPreLaunchVerification(root, sitemapSource, layoutSource) {
       "/electricity-cost",
       "/electricity-topics",
       "/electricity-data",
-      "/entity-registry",
-      "/discovery-graph",
       "/power-generation-mix",
       "/electricity-markets",
       "/regional-electricity-markets",
@@ -4386,9 +4433,8 @@ function runPreLaunchVerification(root, sitemapSource, layoutSource) {
     const discoveryGraphPagePath = path.join(process.cwd(), "src", "app", "discovery-graph", "page.tsx");
     if (!fs.existsSync(discoveryGraphPath)) throw new Error("public/discovery-graph.json must exist (generated by knowledge-build)");
     if (!fs.existsSync(discoveryGraphPagePath)) throw new Error("src/app/discovery-graph/page.tsx must exist");
-    const sitemapPath = path.join(process.cwd(), "src", "app", "sitemap.ts");
-    const sitemapSrc = sitemapSource || fs.readFileSync(sitemapPath, "utf8");
-    if (!sitemapSrc.includes("/discovery-graph")) throw new Error("sitemap must include /discovery-graph");
+    const pageSrc = fs.readFileSync(discoveryGraphPagePath, "utf8");
+    if (!pageSrc.includes("index: false")) throw new Error("discovery-graph must have noindex robots directive");
     const searchIndexPath = path.join(root, "search-index.json");
     const searchContent = fs.readFileSync(searchIndexPath, "utf8");
     if (!searchContent.includes("/discovery-graph")) throw new Error("search-index must include /discovery-graph entry");

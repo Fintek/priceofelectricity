@@ -34,7 +34,7 @@ const INPUT_STYLE = {
   maxWidth: 420,
   padding: "8px 10px",
   fontSize: 15,
-  border: "1px solid #ccc",
+  border: "1px solid var(--color-border-input)",
   borderRadius: 4,
   boxSizing: "border-box" as const,
 };

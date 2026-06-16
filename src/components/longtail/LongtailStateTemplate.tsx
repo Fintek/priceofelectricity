@@ -55,6 +55,8 @@ type LongtailStateTemplateProps = {
   relatedLinkSections?: LongtailRelatedLinkSection[];
   monetizationContext?: MonetizationContext;
   sourceAttribution: LongtailSourceAttribution;
+  /** Renders after the stat card grid and before the Key metrics table (e.g. data-availability notes). */
+  contentBelowStatCards?: ReactNode;
   children?: ReactNode;
 };
 
@@ -71,6 +73,7 @@ export default function LongtailStateTemplate({
   relatedLinkSections,
   monetizationContext,
   sourceAttribution,
+  contentBelowStatCards,
   children,
 }: LongtailStateTemplateProps) {
   return (
@@ -116,6 +119,18 @@ export default function LongtailStateTemplate({
                 ) : null}
               </div>
             ))}
+            {contentBelowStatCards ? (
+              <div
+                className="stat-panel-full-width-note"
+                style={{
+                  gridColumn: "1 / -1",
+                  marginTop: "var(--space-2)",
+                  marginBottom: 0,
+                }}
+              >
+                {contentBelowStatCards}
+              </div>
+            ) : null}
           </div>
           <div style={{ marginTop: 16 }}>
             <h2 className="heading-section">Key metrics</h2>
@@ -123,8 +138,8 @@ export default function LongtailStateTemplate({
               <table className="data-table">
                 <thead>
                   <tr>
-                    <th>Metric</th>
-                    <th>Value</th>
+                    <th scope="col">Metric</th>
+                    <th scope="col">Value</th>
                   </tr>
                 </thead>
                 <tbody>

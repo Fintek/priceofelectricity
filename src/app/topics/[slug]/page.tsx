@@ -6,6 +6,7 @@ import { STATES } from "@/data/states";
 import { TOPIC_BY_SLUG } from "@/data/topics";
 import { getQuestionSlugs, parseQuestionSlug } from "@/lib/questions";
 import { SITE_URL } from "@/lib/site";
+import { buildMetadata } from "@/lib/seo/metadata";
 
 const BASE_URL = SITE_URL;
 export const dynamicParams = true;
@@ -21,32 +22,19 @@ export async function generateMetadata({
   const { slug } = await params;
   const topic = TOPIC_BY_SLUG[slug];
   if (!topic) {
-    return {
+    return buildMetadata({
       title: "Topic not found | PriceOfElectricity.com",
       description: "Topic page not found.",
-      alternates: { canonical: `${BASE_URL}/topics` },
-    };
+      canonicalPath: "/topics",
+    });
   }
 
   const title = `${topic.name} | PriceOfElectricity.com`;
-  const canonicalUrl = `${BASE_URL}/topics/${topic.slug}`;
-  return {
+  return buildMetadata({
     title,
     description: topic.description,
-    alternates: { canonical: canonicalUrl },
-    openGraph: {
-      title,
-      description: topic.description,
-      url: canonicalUrl,
-      siteName: "PriceOfElectricity.com",
-      type: "website",
-    },
-    twitter: {
-      card: "summary",
-      title,
-      description: topic.description,
-    },
-  };
+    canonicalPath: `/topics/${topic.slug}`,
+  });
 }
 
 export default async function TopicPage({

@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-04-14T23:11:38.310Z",
-  "commit": "d2e3d24",
+  "generatedAt": "2026-06-12T17:04:22.312Z",
+  "commit": "94a2caa",
   "summary": {
     "total": 93,
     "passed": 93,
@@ -138,7 +138,7 @@
     {
       "name": "api/v1/states has states",
       "passed": true,
-      "details": "count: 50"
+      "details": "count: 51"
     },
     {
       "name": "/status shows release metadata",
@@ -147,7 +147,7 @@
     {
       "name": "/health returns release fields",
       "passed": true,
-      "details": "commit=d2e3d24 data=v20260222"
+      "details": "commit=94a2caa data=v20260315"
     },
     {
       "name": "/ reachable",

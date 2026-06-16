@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Breadcrumbs, { breadcrumbsToJsonLd, type BreadcrumbItem } from "@/components/navigation/Breadcrumbs";
 import { getRelease } from "@/lib/knowledge/fetch";
 import { buildMetadata } from "@/lib/seo/metadata";
-import { buildBreadcrumbListJsonLd } from "@/lib/seo/jsonld";
+
 import JsonLdScript from "@/app/components/seo/JsonLdScript";
 import StatusFooter from "@/components/common/StatusFooter";
 
@@ -20,22 +21,18 @@ export const metadata: Metadata = buildMetadata({
 export default async function OperatingPlaybookHubPage() {
   const release = await getRelease();
 
-  const breadcrumbJsonLd = buildBreadcrumbListJsonLd([
+  const breadcrumbTrail: BreadcrumbItem[] = [
     { name: "Home", url: "/" },
-    { name: "Operating Playbook", url: "/operating-playbook" },
-  ]);
+    { name: "Site Maintenance", url: "/site-maintenance" },
+    { name: "Operating Playbook" },
+  ];
+  const breadcrumbJsonLd = breadcrumbsToJsonLd(breadcrumbTrail);
 
   return (
     <>
       <JsonLdScript data={breadcrumbJsonLd} />
       <main className="container">
-        <nav aria-label="Breadcrumb" className="muted" style={{ marginBottom: 16, fontSize: 14 }}>
-          <Link href="/">Home</Link>
-          {" · "}
-          <Link href="/site-maintenance">Site Maintenance</Link>
-          {" · "}
-          <span aria-current="page">Operating Playbook</span>
-        </nav>
+        <Breadcrumbs trail={breadcrumbTrail} />
 
         <h1 style={{ fontSize: 32, marginBottom: 12 }}>Operating Playbook for PriceOfElectricity.com</h1>
 
@@ -63,8 +60,8 @@ export default async function OperatingPlaybookHubPage() {
         <section style={{ marginBottom: 32 }}>
           <h2 style={{ fontSize: 20, marginBottom: 12 }}>Expanding the Site</h2>
           <p style={{ marginTop: 0, marginBottom: 12, maxWidth: "65ch", fontSize: 16, lineHeight: 1.6 }}>
-            New topic clusters and programmatic pages can be added while preserving structure. The expansion model
-            covers topic hubs, state pages, comparison pages, and discovery layers.
+            New topic areas and templated pages can be added while preserving structure. The expansion model
+            covers topic hubs, state pages, comparison pages, and supporting navigation pages.
           </p>
           <p style={{ margin: 0 }}>
             <Link href="/operating-playbook/expanding-the-site">Expanding the electricity analysis site</Link>

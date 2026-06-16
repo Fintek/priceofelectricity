@@ -5,18 +5,29 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 const NAV_LINKS = [
+  { href: "/electricity-hubs", label: "Explore hubs" },
   { href: "/electricity-cost-comparison", label: "State comparisons" },
   { href: "/energy-comparison", label: "Energy comparison" },
-  { href: "/electricity-cost-calculator", label: "Calculator" },
-  { href: "/datasets", label: "Data" },
+  { href: "/electricity-cost-calculator", label: "Bill calculator" },
+  { href: "/electricity-bill-estimator", label: "Bill estimator" },
+  { href: "/datasets", label: "Download data" },
   { href: "/methodology", label: "Methodology" },
   { href: "/electricity-trends", label: "Trends" },
   { href: "/electricity-insights", label: "Insights" },
   { href: "/knowledge", label: "Knowledge" },
-  { href: "/about", label: "About & Trust" },
+  { href: "/about", label: "About & trust" },
   { href: "/search", label: "Search" },
-  { href: "/site-map", label: "Site Map" },
+  { href: "/site-map", label: "Site map" },
 ] as const;
+
+const FOCUSABLE_SELECTOR =
+  'a[href], button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])';
+
+function getFocusableElements(container: HTMLElement): HTMLElement[] {
+  return Array.from(container.querySelectorAll<HTMLElement>(FOCUSABLE_SELECTOR)).filter(
+    (el) => !el.hasAttribute("disabled") && el.getAttribute("aria-hidden") !== "true",
+  );
+}
 
 export default function MobileNav() {
   const [open, setOpen] = useState(false);
@@ -37,6 +48,41 @@ export default function MobileNav() {
     };
     document.addEventListener("keydown", onKey);
     return () => document.removeEventListener("keydown", onKey);
+  }, [open]);
+
+  useEffect(() => {
+    if (!open) return;
+    const drawer = drawerRef.current;
+    if (!drawer) return;
+
+    const focusable = getFocusableElements(drawer);
+    focusable[0]?.focus();
+
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key !== "Tab") return;
+      const items = getFocusableElements(drawer);
+      if (items.length === 0) return;
+
+      const first = items[0];
+      const last = items[items.length - 1];
+      const active = document.activeElement;
+
+      if (e.shiftKey) {
+        if (active === first || !drawer.contains(active)) {
+          e.preventDefault();
+          last.focus();
+        }
+        return;
+      }
+
+      if (active === last) {
+        e.preventDefault();
+        first.focus();
+      }
+    };
+
+    document.addEventListener("keydown", onKeyDown);
+    return () => document.removeEventListener("keydown", onKeyDown);
   }, [open]);
 
   const handleBackdropClick = useCallback(
@@ -97,6 +143,7 @@ export default function MobileNav() {
         role="dialog"
         aria-modal={open}
         aria-label="Navigation menu"
+        inert={!open ? true : undefined}
       >
         <ul className="mobile-nav-list">
           {NAV_LINKS.map(({ href, label }) => (

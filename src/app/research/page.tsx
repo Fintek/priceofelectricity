@@ -1,29 +1,16 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { SITE_URL } from "@/lib/site";
+import { buildMetadata } from "@/lib/seo/metadata";
 
 const BASE_URL = SITE_URL;
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetadata({
   title: "Electricity Price Research & Insights | PriceOfElectricity.com",
   description:
     "Data-driven research on U.S. electricity prices including annual reports, state trends, and price volatility analysis.",
-  alternates: { canonical: `${BASE_URL}/research` },
-  openGraph: {
-    title: "Electricity Price Research & Insights | PriceOfElectricity.com",
-    description:
-      "Data-driven research on U.S. electricity prices including annual reports, state trends, and price volatility analysis.",
-    url: `${BASE_URL}/research`,
-    siteName: "PriceOfElectricity.com",
-    type: "website",
-  },
-  twitter: {
-    card: "summary",
-    title: "Electricity Price Research & Insights | PriceOfElectricity.com",
-    description:
-      "Data-driven research on U.S. electricity prices including annual reports, state trends, and price volatility analysis.",
-  },
-};
+  canonicalPath: "/research",
+});
 
 export default function ResearchPage() {
   const webPageStructuredData = {
@@ -48,8 +35,8 @@ export default function ResearchPage() {
 
       <p className="intro muted" style={{ marginTop: 0 }}>
         All analysis on this page is computed from the same normalized state
-        data pipeline that powers every page on PriceOfElectricity.com. No
-        figures are hardcoded — statistics are derived at build time from
+        dataset used across every page on PriceOfElectricity.com. No
+        figures are hardcoded — statistics are derived when the dataset updates from
         current rate data, affordability indices, value scores, and historical
         series.
       </p>
@@ -105,7 +92,7 @@ export default function ResearchPage() {
             exports
           </li>
           <li>
-            <Link href="/value-ranking">Value ranking</Link> — Full 50-state
+            <Link href="/value-ranking">Value ranking</Link> — Full 51-jurisdiction
             Electricity Value Score™ table
           </li>
           <li>

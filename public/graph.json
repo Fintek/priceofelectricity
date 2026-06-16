@@ -1,8 +1,8 @@
 {
   "version": "1.0",
-  "generatedAt": "2026-01-15T00:00:00.000Z",
-  "totalNodes": 1391,
-  "totalEdges": 2149,
+  "generatedAt": "2026-05-28T13:54:57.371Z",
+  "totalNodes": 1413,
+  "totalEdges": 2188,
   "nodes": [
     {
       "id": "alerts:ai-energy",
@@ -58,6 +58,11 @@
       "id": "alerts:state:delaware",
       "type": "static",
       "url": "http://localhost:3000/alerts/delaware"
+    },
+    {
+      "id": "alerts:state:district-of-columbia",
+      "type": "static",
+      "url": "http://localhost:3000/alerts/district-of-columbia"
     },
     {
       "id": "alerts:state:florida",
@@ -508,6 +513,36 @@
       "id": "bill:delaware:750",
       "type": "bill",
       "url": "http://localhost:3000/delaware/bill/750"
+    },
+    {
+      "id": "bill:district-of-columbia:1000",
+      "type": "bill",
+      "url": "http://localhost:3000/district-of-columbia/bill/1000"
+    },
+    {
+      "id": "bill:district-of-columbia:1250",
+      "type": "bill",
+      "url": "http://localhost:3000/district-of-columbia/bill/1250"
+    },
+    {
+      "id": "bill:district-of-columbia:1500",
+      "type": "bill",
+      "url": "http://localhost:3000/district-of-columbia/bill/1500"
+    },
+    {
+      "id": "bill:district-of-columbia:2000",
+      "type": "bill",
+      "url": "http://localhost:3000/district-of-columbia/bill/2000"
+    },
+    {
+      "id": "bill:district-of-columbia:500",
+      "type": "bill",
+      "url": "http://localhost:3000/district-of-columbia/bill/500"
+    },
+    {
+      "id": "bill:district-of-columbia:750",
+      "type": "bill",
+      "url": "http://localhost:3000/district-of-columbia/bill/750"
     },
     {
       "id": "bill:florida:1000",
@@ -2060,6 +2095,11 @@
       "url": "http://localhost:3000/drivers/delaware"
     },
     {
+      "id": "drivers:district-of-columbia",
+      "type": "research",
+      "url": "http://localhost:3000/drivers/district-of-columbia"
+    },
+    {
       "id": "drivers:florida",
       "type": "research",
       "url": "http://localhost:3000/drivers/florida"
@@ -2315,6 +2355,11 @@
       "url": "http://localhost:3000/generated/average-electric-bill-in-delaware"
     },
     {
+      "id": "generated:average-electric-bill-in-district-of-columbia",
+      "type": "generated",
+      "url": "http://localhost:3000/generated/average-electric-bill-in-district-of-columbia"
+    },
+    {
       "id": "generated:average-electric-bill-in-florida",
       "type": "generated",
       "url": "http://localhost:3000/generated/average-electric-bill-in-florida"
@@ -2565,6 +2610,11 @@
       "url": "http://localhost:3000/generated/is-electricity-expensive-in-delaware"
     },
     {
+      "id": "generated:is-electricity-expensive-in-district-of-columbia",
+      "type": "generated",
+      "url": "http://localhost:3000/generated/is-electricity-expensive-in-district-of-columbia"
+    },
+    {
       "id": "generated:is-electricity-expensive-in-florida",
       "type": "generated",
       "url": "http://localhost:3000/generated/is-electricity-expensive-in-florida"
@@ -2813,6 +2863,11 @@
       "id": "generated:moving-to-delaware-electricity-cost-guide",
       "type": "generated",
       "url": "http://localhost:3000/generated/moving-to-delaware-electricity-cost-guide"
+    },
+    {
+      "id": "generated:moving-to-district-of-columbia-electricity-cost-guide",
+      "type": "generated",
+      "url": "http://localhost:3000/generated/moving-to-district-of-columbia-electricity-cost-guide"
     },
     {
       "id": "generated:moving-to-florida-electricity-cost-guide",
@@ -3120,6 +3175,11 @@
       "url": "http://localhost:3000/offers/delaware"
     },
     {
+      "id": "offer:district-of-columbia",
+      "type": "offer",
+      "url": "http://localhost:3000/offers/district-of-columbia"
+    },
+    {
       "id": "offer:florida",
       "type": "offer",
       "url": "http://localhost:3000/offers/florida"
@@ -3373,6 +3433,11 @@
       "id": "provider:delaware",
       "type": "offer",
       "url": "http://localhost:3000/electricity-providers/delaware"
+    },
+    {
+      "id": "provider:district-of-columbia",
+      "type": "offer",
+      "url": "http://localhost:3000/electricity-providers/district-of-columbia"
     },
     {
       "id": "provider:florida",
@@ -3630,6 +3695,11 @@
       "url": "http://localhost:3000/questions/average-electric-bill-in-delaware"
     },
     {
+      "id": "question:average-electric-bill-in-district-of-columbia",
+      "type": "question",
+      "url": "http://localhost:3000/questions/average-electric-bill-in-district-of-columbia"
+    },
+    {
       "id": "question:average-electric-bill-in-florida",
       "type": "question",
       "url": "http://localhost:3000/questions/average-electric-bill-in-florida"
@@ -3855,11 +3925,6 @@
       "url": "http://localhost:3000/questions/why-electricity-cheaper-in-iowa"
     },
     {
-      "id": "question:why-electricity-cheaper-in-louisiana",
-      "type": "question",
-      "url": "http://localhost:3000/questions/why-electricity-cheaper-in-louisiana"
-    },
-    {
       "id": "question:why-electricity-cheaper-in-missouri",
       "type": "question",
       "url": "http://localhost:3000/questions/why-electricity-cheaper-in-missouri"
@@ -3885,6 +3950,11 @@
       "url": "http://localhost:3000/questions/why-electricity-cheaper-in-oklahoma"
     },
     {
+      "id": "question:why-electricity-cheaper-in-utah",
+      "type": "question",
+      "url": "http://localhost:3000/questions/why-electricity-cheaper-in-utah"
+    },
+    {
       "id": "question:why-electricity-cheaper-in-wyoming",
       "type": "question",
       "url": "http://localhost:3000/questions/why-electricity-cheaper-in-wyoming"
@@ -3903,6 +3973,11 @@
       "id": "question:why-electricity-expensive-in-connecticut",
       "type": "question",
       "url": "http://localhost:3000/questions/why-electricity-expensive-in-connecticut"
+    },
+    {
+      "id": "question:why-electricity-expensive-in-district-of-columbia",
+      "type": "question",
+      "url": "http://localhost:3000/questions/why-electricity-expensive-in-district-of-columbia"
     },
     {
       "id": "question:why-electricity-expensive-in-hawaii",
@@ -3933,11 +4008,6 @@
       "id": "question:why-electricity-expensive-in-rhode-island",
       "type": "question",
       "url": "http://localhost:3000/questions/why-electricity-expensive-in-rhode-island"
-    },
-    {
-      "id": "question:why-electricity-expensive-in-vermont",
-      "type": "question",
-      "url": "http://localhost:3000/questions/why-electricity-expensive-in-vermont"
     },
     {
       "id": "regulatory:alabama",
@@ -4058,6 +4128,21 @@
       "id": "regulatory:delaware:timeline",
       "type": "research",
       "url": "http://localhost:3000/regulatory/delaware/timeline"
+    },
+    {
+      "id": "regulatory:district-of-columbia",
+      "type": "research",
+      "url": "http://localhost:3000/regulatory/district-of-columbia"
+    },
+    {
+      "id": "regulatory:district-of-columbia:rate-cases",
+      "type": "research",
+      "url": "http://localhost:3000/regulatory/district-of-columbia/rate-cases"
+    },
+    {
+      "id": "regulatory:district-of-columbia:timeline",
+      "type": "research",
+      "url": "http://localhost:3000/regulatory/district-of-columbia/timeline"
     },
     {
       "id": "regulatory:florida",
@@ -4725,11 +4810,6 @@
       "url": "http://localhost:3000/sources/eia"
     },
     {
-      "id": "source:manual-mvp",
-      "type": "static",
-      "url": "http://localhost:3000/sources/manual-mvp"
-    },
-    {
       "id": "source:poweroutage-us",
       "type": "static",
       "url": "http://localhost:3000/sources/poweroutage-us"
@@ -4747,7 +4827,7 @@
     {
       "id": "state:alabama:history",
       "type": "state",
-      "url": "http://localhost:3000/alabama/history"
+      "url": "http://localhost:3000/electricity-price-history/alabama"
     },
     {
       "id": "state:alabama:plan-types",
@@ -4772,7 +4852,7 @@
     {
       "id": "state:alaska:history",
       "type": "state",
-      "url": "http://localhost:3000/alaska/history"
+      "url": "http://localhost:3000/electricity-price-history/alaska"
     },
     {
       "id": "state:alaska:plan-types",
@@ -4797,7 +4877,7 @@
     {
       "id": "state:arizona:history",
       "type": "state",
-      "url": "http://localhost:3000/arizona/history"
+      "url": "http://localhost:3000/electricity-price-history/arizona"
     },
     {
       "id": "state:arizona:plan-types",
@@ -4822,7 +4902,7 @@
     {
       "id": "state:arkansas:history",
       "type": "state",
-      "url": "http://localhost:3000/arkansas/history"
+      "url": "http://localhost:3000/electricity-price-history/arkansas"
     },
     {
       "id": "state:arkansas:plan-types",
@@ -4847,7 +4927,7 @@
     {
       "id": "state:california:history",
       "type": "state",
-      "url": "http://localhost:3000/california/history"
+      "url": "http://localhost:3000/electricity-price-history/california"
     },
     {
       "id": "state:california:plan-types",
@@ -4872,7 +4952,7 @@
     {
       "id": "state:colorado:history",
       "type": "state",
-      "url": "http://localhost:3000/colorado/history"
+      "url": "http://localhost:3000/electricity-price-history/colorado"
     },
     {
       "id": "state:colorado:plan-types",
@@ -4897,7 +4977,7 @@
     {
       "id": "state:connecticut:history",
       "type": "state",
-      "url": "http://localhost:3000/connecticut/history"
+      "url": "http://localhost:3000/electricity-price-history/connecticut"
     },
     {
       "id": "state:connecticut:plan-types",
@@ -4922,7 +5002,7 @@
     {
       "id": "state:delaware:history",
       "type": "state",
-      "url": "http://localhost:3000/delaware/history"
+      "url": "http://localhost:3000/electricity-price-history/delaware"
     },
     {
       "id": "state:delaware:plan-types",
@@ -4940,6 +5020,31 @@
       "url": "http://localhost:3000/delaware/utilities"
     },
     {
+      "id": "state:district-of-columbia",
+      "type": "state",
+      "url": "http://localhost:3000/district-of-columbia"
+    },
+    {
+      "id": "state:district-of-columbia:history",
+      "type": "state",
+      "url": "http://localhost:3000/electricity-price-history/district-of-columbia"
+    },
+    {
+      "id": "state:district-of-columbia:plan-types",
+      "type": "state",
+      "url": "http://localhost:3000/district-of-columbia/plan-types"
+    },
+    {
+      "id": "state:district-of-columbia:plans",
+      "type": "state",
+      "url": "http://localhost:3000/district-of-columbia/plans"
+    },
+    {
+      "id": "state:district-of-columbia:utilities",
+      "type": "state",
+      "url": "http://localhost:3000/district-of-columbia/utilities"
+    },
+    {
       "id": "state:florida",
       "type": "state",
       "url": "http://localhost:3000/florida"
@@ -4947,7 +5052,7 @@
     {
       "id": "state:florida:history",
       "type": "state",
-      "url": "http://localhost:3000/florida/history"
+      "url": "http://localhost:3000/electricity-price-history/florida"
     },
     {
       "id": "state:florida:plan-types",
@@ -4972,7 +5077,7 @@
     {
       "id": "state:georgia:history",
       "type": "state",
-      "url": "http://localhost:3000/georgia/history"
+      "url": "http://localhost:3000/electricity-price-history/georgia"
     },
     {
       "id": "state:georgia:plan-types",
@@ -4997,7 +5102,7 @@
     {
       "id": "state:hawaii:history",
       "type": "state",
-      "url": "http://localhost:3000/hawaii/history"
+      "url": "http://localhost:3000/electricity-price-history/hawaii"
     },
     {
       "id": "state:hawaii:plan-types",
@@ -5022,7 +5127,7 @@
     {
       "id": "state:idaho:history",
       "type": "state",
-      "url": "http://localhost:3000/idaho/history"
+      "url": "http://localhost:3000/electricity-price-history/idaho"
     },
     {
       "id": "state:idaho:plan-types",
@@ -5047,7 +5152,7 @@
     {
       "id": "state:illinois:history",
       "type": "state",
-      "url": "http://localhost:3000/illinois/history"
+      "url": "http://localhost:3000/electricity-price-history/illinois"
     },
     {
       "id": "state:illinois:plan-types",
@@ -5072,7 +5177,7 @@
     {
       "id": "state:indiana:history",
       "type": "state",
-      "url": "http://localhost:3000/indiana/history"
+      "url": "http://localhost:3000/electricity-price-history/indiana"
     },
     {
       "id": "state:indiana:plan-types",
@@ -5097,7 +5202,7 @@
     {
       "id": "state:iowa:history",
       "type": "state",
-      "url": "http://localhost:3000/iowa/history"
+      "url": "http://localhost:3000/electricity-price-history/iowa"
     },
     {
       "id": "state:iowa:plan-types",
@@ -5122,7 +5227,7 @@
     {
       "id": "state:kansas:history",
       "type": "state",
-      "url": "http://localhost:3000/kansas/history"
+      "url": "http://localhost:3000/electricity-price-history/kansas"
     },
     {
       "id": "state:kansas:plan-types",
@@ -5147,7 +5252,7 @@
     {
       "id": "state:kentucky:history",
       "type": "state",
-      "url": "http://localhost:3000/kentucky/history"
+      "url": "http://localhost:3000/electricity-price-history/kentucky"
     },
     {
       "id": "state:kentucky:plan-types",
@@ -5172,7 +5277,7 @@
     {
       "id": "state:louisiana:history",
       "type": "state",
-      "url": "http://localhost:3000/louisiana/history"
+      "url": "http://localhost:3000/electricity-price-history/louisiana"
     },
     {
       "id": "state:louisiana:plan-types",
@@ -5197,7 +5302,7 @@
     {
       "id": "state:maine:history",
       "type": "state",
-      "url": "http://localhost:3000/maine/history"
+      "url": "http://localhost:3000/electricity-price-history/maine"
     },
     {
       "id": "state:maine:plan-types",
@@ -5222,7 +5327,7 @@
     {
       "id": "state:maryland:history",
       "type": "state",
-      "url": "http://localhost:3000/maryland/history"
+      "url": "http://localhost:3000/electricity-price-history/maryland"
     },
     {
       "id": "state:maryland:plan-types",
@@ -5247,7 +5352,7 @@
     {
       "id": "state:massachusetts:history",
       "type": "state",
-      "url": "http://localhost:3000/massachusetts/history"
+      "url": "http://localhost:3000/electricity-price-history/massachusetts"
     },
     {
       "id": "state:massachusetts:plan-types",
@@ -5272,7 +5377,7 @@
     {
       "id": "state:michigan:history",
       "type": "state",
-      "url": "http://localhost:3000/michigan/history"
+      "url": "http://localhost:3000/electricity-price-history/michigan"
     },
     {
       "id": "state:michigan:plan-types",
@@ -5297,7 +5402,7 @@
     {
       "id": "state:minnesota:history",
       "type": "state",
-      "url": "http://localhost:3000/minnesota/history"
+      "url": "http://localhost:3000/electricity-price-history/minnesota"
     },
     {
       "id": "state:minnesota:plan-types",
@@ -5322,7 +5427,7 @@
     {
       "id": "state:mississippi:history",
       "type": "state",
-      "url": "http://localhost:3000/mississippi/history"
+      "url": "http://localhost:3000/electricity-price-history/mississippi"
     },
     {
       "id": "state:mississippi:plan-types",
@@ -5347,7 +5452,7 @@
     {
       "id": "state:missouri:history",
       "type": "state",
-      "url": "http://localhost:3000/missouri/history"
+      "url": "http://localhost:3000/electricity-price-history/missouri"
     },
     {
       "id": "state:missouri:plan-types",
@@ -5372,7 +5477,7 @@
     {
       "id": "state:montana:history",
       "type": "state",
-      "url": "http://localhost:3000/montana/history"
+      "url": "http://localhost:3000/electricity-price-history/montana"
     },
     {
       "id": "state:montana:plan-types",
@@ -5397,7 +5502,7 @@
     {
       "id": "state:nebraska:history",
       "type": "state",
-      "url": "http://localhost:3000/nebraska/history"
+      "url": "http://localhost:3000/electricity-price-history/nebraska"
     },
     {
       "id": "state:nebraska:plan-types",
@@ -5422,7 +5527,7 @@
     {
       "id": "state:nevada:history",
       "type": "state",
-      "url": "http://localhost:3000/nevada/history"
+      "url": "http://localhost:3000/electricity-price-history/nevada"
     },
     {
       "id": "state:nevada:plan-types",
@@ -5447,7 +5552,7 @@
     {
       "id": "state:new-hampshire:history",
       "type": "state",
-      "url": "http://localhost:3000/new-hampshire/history"
+      "url": "http://localhost:3000/electricity-price-history/new-hampshire"
     },
     {
       "id": "state:new-hampshire:plan-types",
@@ -5472,7 +5577,7 @@
     {
       "id": "state:new-jersey:history",
       "type": "state",
-      "url": "http://localhost:3000/new-jersey/history"
+      "url": "http://localhost:3000/electricity-price-history/new-jersey"
     },
     {
       "id": "state:new-jersey:plan-types",
@@ -5497,7 +5602,7 @@
     {
       "id": "state:new-mexico:history",
       "type": "state",
-      "url": "http://localhost:3000/new-mexico/history"
+      "url": "http://localhost:3000/electricity-price-history/new-mexico"
     },
     {
       "id": "state:new-mexico:plan-types",
@@ -5522,7 +5627,7 @@
     {
       "id": "state:new-york:history",
       "type": "state",
-      "url": "http://localhost:3000/new-york/history"
+      "url": "http://localhost:3000/electricity-price-history/new-york"
     },
     {
       "id": "state:new-york:plan-types",
@@ -5547,7 +5652,7 @@
     {
       "id": "state:north-carolina:history",
       "type": "state",
-      "url": "http://localhost:3000/north-carolina/history"
+      "url": "http://localhost:3000/electricity-price-history/north-carolina"
     },
     {
       "id": "state:north-carolina:plan-types",
@@ -5572,7 +5677,7 @@
     {
       "id": "state:north-dakota:history",
       "type": "state",
-      "url": "http://localhost:3000/north-dakota/history"
+      "url": "http://localhost:3000/electricity-price-history/north-dakota"
     },
     {
       "id": "state:north-dakota:plan-types",
@@ -5597,7 +5702,7 @@
     {
       "id": "state:ohio:history",
       "type": "state",
-      "url": "http://localhost:3000/ohio/history"
+      "url": "http://localhost:3000/electricity-price-history/ohio"
     },
     {
       "id": "state:ohio:plan-types",
@@ -5622,7 +5727,7 @@
     {
       "id": "state:oklahoma:history",
       "type": "state",
-      "url": "http://localhost:3000/oklahoma/history"
+      "url": "http://localhost:3000/electricity-price-history/oklahoma"
     },
     {
       "id": "state:oklahoma:plan-types",
@@ -5647,7 +5752,7 @@
     {
       "id": "state:oregon:history",
       "type": "state",
-      "url": "http://localhost:3000/oregon/history"
+      "url": "http://localhost:3000/electricity-price-history/oregon"
     },
     {
       "id": "state:oregon:plan-types",
@@ -5672,7 +5777,7 @@
     {
       "id": "state:pennsylvania:history",
       "type": "state",
-      "url": "http://localhost:3000/pennsylvania/history"
+      "url": "http://localhost:3000/electricity-price-history/pennsylvania"
     },
     {
       "id": "state:pennsylvania:plan-types",
@@ -5697,7 +5802,7 @@
     {
       "id": "state:rhode-island:history",
       "type": "state",
-      "url": "http://localhost:3000/rhode-island/history"
+      "url": "http://localhost:3000/electricity-price-history/rhode-island"
     },
     {
       "id": "state:rhode-island:plan-types",
@@ -5722,7 +5827,7 @@
     {
       "id": "state:south-carolina:history",
       "type": "state",
-      "url": "http://localhost:3000/south-carolina/history"
+      "url": "http://localhost:3000/electricity-price-history/south-carolina"
     },
     {
       "id": "state:south-carolina:plan-types",
@@ -5747,7 +5852,7 @@
     {
       "id": "state:south-dakota:history",
       "type": "state",
-      "url": "http://localhost:3000/south-dakota/history"
+      "url": "http://localhost:3000/electricity-price-history/south-dakota"
     },
     {
       "id": "state:south-dakota:plan-types",
@@ -5772,7 +5877,7 @@
     {
       "id": "state:tennessee:history",
       "type": "state",
-      "url": "http://localhost:3000/tennessee/history"
+      "url": "http://localhost:3000/electricity-price-history/tennessee"
     },
     {
       "id": "state:tennessee:plan-types",
@@ -5797,7 +5902,7 @@
     {
       "id": "state:texas:history",
       "type": "state",
-      "url": "http://localhost:3000/texas/history"
+      "url": "http://localhost:3000/electricity-price-history/texas"
     },
     {
       "id": "state:texas:plan-types",
@@ -5822,7 +5927,7 @@
     {
       "id": "state:utah:history",
       "type": "state",
-      "url": "http://localhost:3000/utah/history"
+      "url": "http://localhost:3000/electricity-price-history/utah"
     },
     {
       "id": "state:utah:plan-types",
@@ -5847,7 +5952,7 @@
     {
       "id": "state:vermont:history",
       "type": "state",
-      "url": "http://localhost:3000/vermont/history"
+      "url": "http://localhost:3000/electricity-price-history/vermont"
     },
     {
       "id": "state:vermont:plan-types",
@@ -5872,7 +5977,7 @@
     {
       "id": "state:virginia:history",
       "type": "state",
-      "url": "http://localhost:3000/virginia/history"
+      "url": "http://localhost:3000/electricity-price-history/virginia"
     },
     {
       "id": "state:virginia:plan-types",
@@ -5897,7 +6002,7 @@
     {
       "id": "state:washington:history",
       "type": "state",
-      "url": "http://localhost:3000/washington/history"
+      "url": "http://localhost:3000/electricity-price-history/washington"
     },
     {
       "id": "state:washington:plan-types",
@@ -5922,7 +6027,7 @@
     {
       "id": "state:west-virginia:history",
       "type": "state",
-      "url": "http://localhost:3000/west-virginia/history"
+      "url": "http://localhost:3000/electricity-price-history/west-virginia"
     },
     {
       "id": "state:west-virginia:plan-types",
@@ -5947,7 +6052,7 @@
     {
       "id": "state:wisconsin:history",
       "type": "state",
-      "url": "http://localhost:3000/wisconsin/history"
+      "url": "http://localhost:3000/electricity-price-history/wisconsin"
     },
     {
       "id": "state:wisconsin:plan-types",
@@ -5972,7 +6077,7 @@
     {
       "id": "state:wyoming:history",
       "type": "state",
-      "url": "http://localhost:3000/wyoming/history"
+      "url": "http://localhost:3000/electricity-price-history/wyoming"
     },
     {
       "id": "state:wyoming:plan-types",
@@ -6273,6 +6378,11 @@
       "id": "utility:delaware:delmarva-power",
       "type": "utility",
       "url": "http://localhost:3000/delaware/utility/delmarva-power"
+    },
+    {
+      "id": "utility:district-of-columbia:pepco",
+      "type": "utility",
+      "url": "http://localhost:3000/district-of-columbia/utility/pepco"
     },
     {
       "id": "utility:florida:duke-energy-florida",
@@ -7022,6 +7132,11 @@
       "rel": "parent"
     },
     {
+      "from": "alerts:state:district-of-columbia",
+      "to": "state:district-of-columbia",
+      "rel": "parent"
+    },
+    {
       "from": "alerts:state:florida",
       "to": "state:florida",
       "rel": "parent"
@@ -7469,6 +7584,36 @@
     {
       "from": "bill:delaware:750",
       "to": "state:delaware",
+      "rel": "parent"
+    },
+    {
+      "from": "bill:district-of-columbia:1000",
+      "to": "state:district-of-columbia",
+      "rel": "parent"
+    },
+    {
+      "from": "bill:district-of-columbia:1250",
+      "to": "state:district-of-columbia",
+      "rel": "parent"
+    },
+    {
+      "from": "bill:district-of-columbia:1500",
+      "to": "state:district-of-columbia",
+      "rel": "parent"
+    },
+    {
+      "from": "bill:district-of-columbia:2000",
+      "to": "state:district-of-columbia",
+      "rel": "parent"
+    },
+    {
+      "from": "bill:district-of-columbia:500",
+      "to": "state:district-of-columbia",
+      "rel": "parent"
+    },
+    {
+      "from": "bill:district-of-columbia:750",
+      "to": "state:district-of-columbia",
       "rel": "parent"
     },
     {
@@ -9102,6 +9247,21 @@
       "rel": "parent"
     },
     {
+      "from": "drivers:district-of-columbia",
+      "to": "drivers:hub",
+      "rel": "related"
+    },
+    {
+      "from": "drivers:district-of-columbia",
+      "to": "regulatory:district-of-columbia",
+      "rel": "related"
+    },
+    {
+      "from": "drivers:district-of-columbia",
+      "to": "state:district-of-columbia",
+      "rel": "parent"
+    },
+    {
       "from": "drivers:florida",
       "to": "drivers:hub",
       "rel": "related"
@@ -9184,6 +9344,11 @@
     {
       "from": "drivers:hub",
       "to": "drivers:delaware",
+      "rel": "related"
+    },
+    {
+      "from": "drivers:hub",
+      "to": "drivers:district-of-columbia",
       "rel": "related"
     },
     {
@@ -10022,6 +10187,11 @@
       "rel": "parent"
     },
     {
+      "from": "generated:average-electric-bill-in-district-of-columbia",
+      "to": "state:district-of-columbia",
+      "rel": "parent"
+    },
+    {
       "from": "generated:average-electric-bill-in-florida",
       "to": "state:florida",
       "rel": "parent"
@@ -10272,6 +10442,11 @@
       "rel": "parent"
     },
     {
+      "from": "generated:is-electricity-expensive-in-district-of-columbia",
+      "to": "state:district-of-columbia",
+      "rel": "parent"
+    },
+    {
       "from": "generated:is-electricity-expensive-in-florida",
       "to": "state:florida",
       "rel": "parent"
@@ -10519,6 +10694,11 @@
     {
       "from": "generated:moving-to-delaware-electricity-cost-guide",
       "to": "state:delaware",
+      "rel": "parent"
+    },
+    {
+      "from": "generated:moving-to-district-of-columbia-electricity-cost-guide",
+      "to": "state:district-of-columbia",
       "rel": "parent"
     },
     {
@@ -10808,6 +10988,11 @@
     },
     {
       "from": "offer:delaware",
+      "to": "offer:hub",
+      "rel": "parent"
+    },
+    {
+      "from": "offer:district-of-columbia",
       "to": "offer:hub",
       "rel": "parent"
     },
@@ -11222,6 +11407,31 @@
       "rel": "related"
     },
     {
+      "from": "provider:district-of-columbia",
+      "to": "offer:district-of-columbia",
+      "rel": "related"
+    },
+    {
+      "from": "provider:district-of-columbia",
+      "to": "provider:hub",
+      "rel": "parent"
+    },
+    {
+      "from": "provider:district-of-columbia",
+      "to": "provider:hub",
+      "rel": "related"
+    },
+    {
+      "from": "provider:district-of-columbia",
+      "to": "state:district-of-columbia",
+      "rel": "related"
+    },
+    {
+      "from": "provider:district-of-columbia",
+      "to": "tool:compare",
+      "rel": "related"
+    },
+    {
       "from": "provider:florida",
       "to": "offer:florida",
       "rel": "related"
@@ -11339,6 +11549,11 @@
     {
       "from": "provider:hub",
       "to": "provider:delaware",
+      "rel": "related"
+    },
+    {
+      "from": "provider:hub",
+      "to": "provider:district-of-columbia",
       "rel": "related"
     },
     {
@@ -12577,6 +12792,11 @@
       "rel": "related"
     },
     {
+      "from": "question:average-electric-bill-in-district-of-columbia",
+      "to": "state:district-of-columbia",
+      "rel": "related"
+    },
+    {
       "from": "question:average-electric-bill-in-florida",
       "to": "state:florida",
       "rel": "related"
@@ -12802,11 +13022,6 @@
       "rel": "related"
     },
     {
-      "from": "question:why-electricity-cheaper-in-louisiana",
-      "to": "state:louisiana",
-      "rel": "related"
-    },
-    {
       "from": "question:why-electricity-cheaper-in-missouri",
       "to": "state:missouri",
       "rel": "related"
@@ -12832,6 +13047,11 @@
       "rel": "related"
     },
     {
+      "from": "question:why-electricity-cheaper-in-utah",
+      "to": "state:utah",
+      "rel": "related"
+    },
+    {
       "from": "question:why-electricity-cheaper-in-wyoming",
       "to": "state:wyoming",
       "rel": "related"
@@ -12849,6 +13069,11 @@
     {
       "from": "question:why-electricity-expensive-in-connecticut",
       "to": "state:connecticut",
+      "rel": "related"
+    },
+    {
+      "from": "question:why-electricity-expensive-in-district-of-columbia",
+      "to": "state:district-of-columbia",
       "rel": "related"
     },
     {
@@ -12879,11 +13104,6 @@
     {
       "from": "question:why-electricity-expensive-in-rhode-island",
       "to": "state:rhode-island",
-      "rel": "related"
-    },
-    {
-      "from": "question:why-electricity-expensive-in-vermont",
-      "to": "state:vermont",
       "rel": "related"
     },
     {
@@ -13087,6 +13307,31 @@
       "rel": "parent"
     },
     {
+      "from": "regulatory:district-of-columbia",
+      "to": "regulatory:district-of-columbia:rate-cases",
+      "rel": "related"
+    },
+    {
+      "from": "regulatory:district-of-columbia",
+      "to": "regulatory:district-of-columbia:timeline",
+      "rel": "related"
+    },
+    {
+      "from": "regulatory:district-of-columbia",
+      "to": "regulatory:hub",
+      "rel": "parent"
+    },
+    {
+      "from": "regulatory:district-of-columbia:rate-cases",
+      "to": "regulatory:district-of-columbia",
+      "rel": "parent"
+    },
+    {
+      "from": "regulatory:district-of-columbia:timeline",
+      "to": "regulatory:district-of-columbia",
+      "rel": "parent"
+    },
+    {
       "from": "regulatory:florida",
       "to": "regulatory:florida:rate-cases",
       "rel": "related"
@@ -13199,6 +13444,11 @@
     {
       "from": "regulatory:hub",
       "to": "regulatory:delaware",
+      "rel": "related"
+    },
+    {
+      "from": "regulatory:hub",
+      "to": "regulatory:district-of-columbia",
       "rel": "related"
     },
     {
@@ -14794,6 +15044,56 @@
     {
       "from": "state:delaware:utilities",
       "to": "state:delaware",
+      "rel": "parent"
+    },
+    {
+      "from": "state:district-of-columbia",
+      "to": "offer:district-of-columbia",
+      "rel": "related"
+    },
+    {
+      "from": "state:district-of-columbia",
+      "to": "provider:district-of-columbia",
+      "rel": "related"
+    },
+    {
+      "from": "state:district-of-columbia",
+      "to": "state:district-of-columbia:history",
+      "rel": "related"
+    },
+    {
+      "from": "state:district-of-columbia",
+      "to": "state:district-of-columbia:plan-types",
+      "rel": "related"
+    },
+    {
+      "from": "state:district-of-columbia",
+      "to": "state:district-of-columbia:plans",
+      "rel": "related"
+    },
+    {
+      "from": "state:district-of-columbia",
+      "to": "state:district-of-columbia:utilities",
+      "rel": "related"
+    },
+    {
+      "from": "state:district-of-columbia:history",
+      "to": "state:district-of-columbia",
+      "rel": "parent"
+    },
+    {
+      "from": "state:district-of-columbia:plan-types",
+      "to": "state:district-of-columbia",
+      "rel": "parent"
+    },
+    {
+      "from": "state:district-of-columbia:plans",
+      "to": "state:district-of-columbia",
+      "rel": "parent"
+    },
+    {
+      "from": "state:district-of-columbia:utilities",
+      "to": "state:district-of-columbia",
       "rel": "parent"
     },
     {
@@ -17012,6 +17312,11 @@
       "rel": "parent"
     },
     {
+      "from": "utility:district-of-columbia:pepco",
+      "to": "state:district-of-columbia",
+      "rel": "parent"
+    },
+    {
       "from": "utility:florida:duke-energy-florida",
       "to": "state:florida",
       "rel": "parent"
@@ -17750,6 +18055,11 @@
     },
     {
       "from": "knowledge:rankings:affordability",
+      "to": "knowledge:state:district-of-columbia",
+      "relation": "derived-from"
+    },
+    {
+      "from": "knowledge:rankings:affordability",
       "to": "knowledge:state:florida",
       "relation": "derived-from"
     },
@@ -18255,6 +18565,11 @@
     },
     {
       "from": "knowledge:rankings:electricity-affordability",
+      "to": "knowledge:state:district-of-columbia",
+      "relation": "derived-from"
+    },
+    {
+      "from": "knowledge:rankings:electricity-affordability",
       "to": "knowledge:state:florida",
       "relation": "derived-from"
     },
@@ -19270,6 +19585,11 @@
     },
     {
       "from": "knowledge:rankings:most-expensive-electricity",
+      "to": "knowledge:state:district-of-columbia",
+      "relation": "derived-from"
+    },
+    {
+      "from": "knowledge:rankings:most-expensive-electricity",
       "to": "knowledge:state:florida",
       "relation": "derived-from"
     },
@@ -19775,6 +20095,11 @@
     },
     {
       "from": "knowledge:rankings:rate-high-to-low",
+      "to": "knowledge:state:district-of-columbia",
+      "relation": "derived-from"
+    },
+    {
+      "from": "knowledge:rankings:rate-high-to-low",
       "to": "knowledge:state:florida",
       "relation": "derived-from"
     },
@@ -20025,6 +20350,11 @@
     },
     {
       "from": "knowledge:rankings:rate-low-to-high",
+      "to": "knowledge:state:district-of-columbia",
+      "relation": "derived-from"
+    },
+    {
+      "from": "knowledge:rankings:rate-low-to-high",
       "to": "knowledge:state:florida",
       "relation": "derived-from"
     },
@@ -20271,6 +20601,11 @@
     {
       "from": "knowledge:rankings:value-score",
       "to": "knowledge:state:delaware",
+      "relation": "derived-from"
+    },
+    {
+      "from": "knowledge:rankings:value-score",
+      "to": "knowledge:state:district-of-columbia",
       "relation": "derived-from"
     },
     {
@@ -22550,12 +22885,12 @@
     },
     {
       "from": "knowledge:vertical:ai-energy",
-      "to": "knowledge:state:hawaii",
+      "to": "knowledge:state:connecticut",
       "relation": "related-to"
     },
     {
       "from": "knowledge:vertical:ai-energy",
-      "to": "knowledge:state:maine",
+      "to": "knowledge:state:hawaii",
       "relation": "related-to"
     },
     {

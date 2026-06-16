@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Breadcrumbs, { breadcrumbsToJsonLd, type BreadcrumbItem } from "@/components/navigation/Breadcrumbs";
 import { loadEntityIndex } from "@/lib/knowledge/loadKnowledgePage";
 import { getRelease } from "@/lib/knowledge/fetch";
 import { buildMetadata } from "@/lib/seo/metadata";
-import { buildBreadcrumbListJsonLd } from "@/lib/seo/jsonld";
+
 import JsonLdScript from "@/app/components/seo/JsonLdScript";
 import StatusFooter from "@/components/common/StatusFooter";
 import Disclaimers from "@/app/components/policy/Disclaimers";
@@ -30,22 +31,18 @@ export default async function BatteryRechargeCostIndexPage() {
       ?.filter((e) => e.type === "state")
       .sort((a, b) => a.slug.localeCompare(b.slug)) ?? [];
 
-  const breadcrumbJsonLd = buildBreadcrumbListJsonLd([
+  const breadcrumbTrail: BreadcrumbItem[] = [
     { name: "Home", url: "/" },
-    { name: "Battery Recharge Cost", url: "/battery-recharge-cost" },
-  ]);
+    { name: "Data", url: "/data" },
+    { name: "Battery Recharge Cost" },
+  ];
+  const breadcrumbJsonLd = breadcrumbsToJsonLd(breadcrumbTrail);
 
   return (
     <>
       <JsonLdScript data={breadcrumbJsonLd} />
       <main className="container">
-        <nav aria-label="Breadcrumb" className="muted" style={{ marginBottom: 16, fontSize: 14 }}>
-          <Link href="/">Home</Link>
-          {" · "}
-          <Link href="/data">Data Hub</Link>
-          {" · "}
-          <span aria-current="page">Battery Recharge Cost</span>
-        </nav>
+        <Breadcrumbs trail={breadcrumbTrail} />
 
         <h1 style={{ fontSize: 32, marginBottom: 12 }}>Battery Recharge Cost by State</h1>
         <p style={{ marginTop: 0, marginBottom: 16, maxWidth: "65ch", fontSize: 16, lineHeight: 1.6 }}>
@@ -55,7 +52,7 @@ export default async function BatteryRechargeCostIndexPage() {
           <strong>Why it varies by state:</strong> A 13.5 kWh home battery costs about 3× more to recharge in Hawaii than in Idaho because electricity rates differ. Select a state to see estimates for portable, backup, and home battery sizes.
         </p>
         <p className="muted" style={{ margin: "0 0 24px 0", maxWidth: "65ch", fontSize: 14 }}>
-          Rates come from EIA data. All figures are build-generated and deterministic.
+          Rates come from EIA data. Figures are updated from the latest published series using consistent methodology.
         </p>
 
         {/* Battery size examples */}
@@ -106,7 +103,7 @@ export default async function BatteryRechargeCostIndexPage() {
           links={[
             { href: "/electricity-cost", label: "Electricity cost by state" },
             { href: "/generator-vs-battery-cost", label: "Generator vs battery cost" },
-            { href: "/knowledge", label: "Knowledge Hub" },
+            { href: "/knowledge", label: "Knowledge" },
             { href: "/methodology/battery-recharge-cost", label: "Battery methodology" },
             { href: "/methodology", label: "Methodology" },
           ]}

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Breadcrumbs, { breadcrumbsToJsonLd, type BreadcrumbItem } from "@/components/navigation/Breadcrumbs";
 import { notFound } from "next/navigation";
 import JsonLdScript from "@/app/components/seo/JsonLdScript";
 import Disclaimers from "@/app/components/policy/Disclaimers";
@@ -15,7 +16,7 @@ import {
 } from "@/lib/longtail/usageIntelligence";
 import { buildMetadata } from "@/lib/seo/metadata";
 import { formatRate, formatUsd } from "@/lib/longtail/stateLongtail";
-import { buildBreadcrumbListJsonLd, buildWebPageJsonLd } from "@/lib/seo/jsonld";
+import { buildWebPageJsonLd } from "@/lib/seo/jsonld";
 
 export const dynamic = "force-static";
 export const revalidate = 86400;
@@ -36,12 +37,13 @@ export default async function ElectricityUsageHubPage() {
   const representativeState = states.find((state) => state.nationalAverageCentsPerKwh != null) ?? states[0];
   const sourceState = states[0];
 
-  const breadcrumbJsonLd = buildBreadcrumbListJsonLd([
+  const breadcrumbTrail: BreadcrumbItem[] = [
     { name: "Home", url: "/" },
-    { name: "Electricity Usage", url: "/electricity-usage" },
-  ]);
+    { name: "Electricity Usage" },
+  ];
+  const breadcrumbJsonLd = breadcrumbsToJsonLd(breadcrumbTrail);
   const webPageJsonLd = buildWebPageJsonLd({
-    title: "Electricity Usage Intelligence Hub",
+    title: "Electricity usage guide",
     description: `National household electricity usage benchmark: ${formatKwh(
       NATIONAL_AVERAGE_HOUSEHOLD_USAGE_KWH,
     )} per month, with state usage pages, home-size scenarios, and appliance usage references.`,
@@ -58,21 +60,16 @@ export default async function ElectricityUsageHubPage() {
     <>
       <JsonLdScript data={[breadcrumbJsonLd, webPageJsonLd]} />
       <main className="container">
-        <nav aria-label="Breadcrumb" className="muted" style={{ marginBottom: 16, fontSize: 14 }}>
-          <Link href="/">Home</Link>
-          {" · "}
-          <span aria-current="page">Electricity Usage</span>
-        </nav>
+        <Breadcrumbs trail={breadcrumbTrail} />
 
-        <h1 style={{ fontSize: 32, marginBottom: 12 }}>Electricity Usage Intelligence</h1>
+        <h1 style={{ fontSize: 32, marginBottom: 12 }}>Household electricity usage</h1>
         <p style={{ marginTop: 0, marginBottom: 16, maxWidth: "70ch", lineHeight: 1.7 }}>
-          This usage hub explains household electricity consumption patterns and connects usage levels to real cost
-          outcomes. All usage and cost examples are deterministic and linked to canonical calculator and usage-cost
-          routes.
+          This hub explains typical household electricity consumption and links usage levels to cost examples on the
+          rest of the site—including calculators and fixed monthly kWh pages.
         </p>
         <p className="muted" style={{ margin: "0 0 32px 0", maxWidth: "70ch", lineHeight: 1.7 }}>
           National household benchmark usage is {formatKwh(NATIONAL_AVERAGE_HOUSEHOLD_USAGE_KWH)} per month
-          (10,788 kWh/year). State pages adjust this benchmark using deterministic rate-and-climate-informed modeling.
+          (10,788 kWh/year). State pages adjust this benchmark using simple rate- and climate-informed modeling rules.
         </p>
 
         <section style={{ marginBottom: 32 }}>
@@ -221,8 +218,8 @@ export default async function ElectricityUsageHubPage() {
             {sourceState.updatedLabel
               ? `Last dataset period: ${sourceState.updatedLabel}.`
               : "Data period label is currently unavailable."}{" "}
-            State usage values in this cluster use deterministic benchmark modeling and are designed for comparative
-            consumer usage intelligence, not utility billing settlement.
+            State usage values use benchmark modeling for side-by-side comparisons—they are not meant to match your exact
+            utility meter totals.
           </p>
         </section>
 

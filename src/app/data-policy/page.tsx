@@ -1,33 +1,18 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { SITE_URL } from "@/lib/site";
+import { buildMetadata } from "@/lib/seo/metadata";
 
 const BASE_URL = SITE_URL;
 export const dynamic = "force-static";
 export const revalidate = 2592000;
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetadata({
   title: "Data Policy | PriceOfElectricity.com",
   description:
     "How PriceOfElectricity.com sources, updates, and labels electricity data freshness.",
-  alternates: {
-    canonical: `${BASE_URL}/data-policy`,
-  },
-  openGraph: {
-    title: "Data Policy | PriceOfElectricity.com",
-    description:
-      "How PriceOfElectricity.com sources, updates, and labels electricity data freshness.",
-    url: `${BASE_URL}/data-policy`,
-    siteName: "PriceOfElectricity.com",
-    type: "website",
-  },
-  twitter: {
-    card: "summary",
-    title: "Data Policy | PriceOfElectricity.com",
-    description:
-      "How PriceOfElectricity.com sources, updates, and labels electricity data freshness.",
-  },
-};
+  canonicalPath: "/data-policy",
+});
 
 export default function DataPolicyPage() {
   const webPageStructuredData = {

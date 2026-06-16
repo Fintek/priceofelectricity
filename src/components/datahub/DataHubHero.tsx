@@ -1,5 +1,8 @@
 import Link from "next/link";
 import CopyButton from "@/components/common/CopyButton";
+import {
+  getCanonicalResidentialDataThroughMonthLabel,
+} from "@/lib/eiaReportingTrust";
 import { SITE_URL } from "@/lib/site";
 
 type Release = {
@@ -69,17 +72,22 @@ export default function DataHubHero({
       }}
     >
       <h1 id="datahub-hero-heading" style={{ fontSize: 28, margin: "0 0 12px 0", fontWeight: 600 }}>
-        Data Hub
+        Data
       </h1>
       <p className="muted" style={{ margin: "0 0 16px 0", fontSize: 15, maxWidth: "60ch" }}>
-        Central entry point for electricity data and knowledge surfaces. Datasets for analysis, knowledge pages for LLM ingestion.
+        Central entry point for electricity datasets and knowledge JSON. Datasets for analysis; knowledge pages for research tools and structured access.
       </p>
-      <p className="muted" style={{ margin: "0 0 16px 0", fontSize: 15 }}>
-        {release?.releaseId ?? "—"} · source {release?.sourceVersion ?? "—"} · contract {release?.contractVersion ?? "—"}
+      <p className="muted" style={{ margin: "0 0 8px 0", fontSize: 15 }}>
+        Release {release?.releaseId ?? "—"} · Data snapshot {release?.sourceVersion ?? "—"} · Format {release?.contractVersion ?? "—"}
+      </p>
+      <p className="muted" style={{ margin: "0 0 16px 0", fontSize: 14, maxWidth: "65ch" }}>
+        Latest complete EIA residential reporting month in bundled data: {" "}
+        <strong>{getCanonicalResidentialDataThroughMonthLabel()}</strong>. EIA publishes monthly state averages with an
+        official reporting lag. Release tags mark this site&apos;s dataset snapshot date, not a future month EIA has yet to publish.
       </p>
       {release?.integrity?.manifestHash && (
         <p style={{ margin: "0 0 16px 0", fontSize: 13 }}>
-          <strong>Integrity:</strong>{" "}
+          <strong>Verification hash:</strong>{" "}
           <code style={{ fontSize: 12, wordBreak: "break-all" }}>{release.integrity.manifestHash}</code>
         </p>
       )}
@@ -159,7 +167,7 @@ export default function DataHubHero({
             fontWeight: 500,
           }}
         >
-          Search Index (JSON)
+          Search index (JSON)
         </Link>
         <CopyButton
           value={`${SITE_URL}${searchIndexUrl.startsWith("/") ? searchIndexUrl : `/${searchIndexUrl}`}`}

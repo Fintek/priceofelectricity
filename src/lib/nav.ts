@@ -15,6 +15,24 @@ export function getStatesSortedByName<T extends StateLike>(states: StateMap<T>) 
     .sort((a, b) => a.name.localeCompare(b.name));
 }
 
+const DC_NEARBY_SLUGS = ["maryland", "virginia"] as const;
+
+export function getBrowseNearbyStates(
+  slug: string,
+  sortedList: Array<{ slug: string; name: string; avgRateCentsPerKwh: number }>,
+): { prev: { slug: string; name: string } | null; next: { slug: string; name: string } | null } {
+  if (slug === "district-of-columbia") {
+    const bySlug = new Map(sortedList.map((entry) => [entry.slug, entry]));
+    const maryland = bySlug.get(DC_NEARBY_SLUGS[0]);
+    const virginia = bySlug.get(DC_NEARBY_SLUGS[1]);
+    return {
+      prev: maryland ? { slug: maryland.slug, name: maryland.name } : null,
+      next: virginia ? { slug: virginia.slug, name: virginia.name } : null,
+    };
+  }
+  return getPrevNextByName(slug, sortedList);
+}
+
 export function getPrevNextByName(
   slug: string,
   sortedList: Array<{ slug: string; name: string; avgRateCentsPerKwh: number }>

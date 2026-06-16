@@ -5,8 +5,10 @@ import { notFound } from "next/navigation";
 import { REGION_BY_SLUG } from "@/data/regions";
 import { STATES } from "@/data/states";
 import { normalizeSlug } from "@/data/slug";
+import { SITE_URL } from "@/lib/site";
+import { buildMetadata } from "@/lib/seo/metadata";
 
-const BASE_URL = "https://priceofelectricity.com";
+const BASE_URL = SITE_URL;
 export const dynamicParams = true;
 export const revalidate = 2592000;
 
@@ -30,35 +32,22 @@ export async function generateMetadata({
   const resolved = resolveRegion(regionSlug);
 
   if (!resolved) {
-    return {
+    return buildMetadata({
       title: "Region not found | PriceOfElectricity.com",
       description: "Region page not found.",
-      alternates: { canonical: `${BASE_URL}/` },
-    };
+      canonicalPath: "/",
+    });
   }
 
   const { region, regionSlug: canonicalRegionSlug } = resolved;
   const title = `${region.name} Electricity Prices (¢/kWh)`;
   const description = `Compare average residential electricity prices across ${region.name} states and view energy-only bill examples.`;
-  const canonicalUrl = `${BASE_URL}/region/${canonicalRegionSlug}`;
 
-  return {
+  return buildMetadata({
     title,
     description,
-    alternates: { canonical: canonicalUrl },
-    openGraph: {
-      title,
-      description,
-      url: canonicalUrl,
-      siteName: "PriceOfElectricity.com",
-      type: "website",
-    },
-    twitter: {
-      card: "summary",
-      title,
-      description,
-    },
-  };
+    canonicalPath: `/region/${canonicalRegionSlug}`,
+  });
 }
 
 export default function RegionPage({

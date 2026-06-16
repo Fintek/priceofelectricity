@@ -75,6 +75,12 @@ export default async function ElectricityPricePerKwhStatePage({
     data.differencePercent != null
       ? `${data.differencePercent >= 0 ? "+" : ""}${data.differencePercent.toFixed(1)}%`
       : "N/A";
+  const rateComparison =
+    data.differencePercent == null
+      ? ""
+      : Math.abs(data.differencePercent) < 1
+        ? ` — right about the national average of ${formatRate(data.nationalAverageCentsPerKwh)}`
+        : ` — about ${Math.abs(data.differencePercent).toFixed(0)}% ${data.differencePercent >= 0 ? "above" : "below"} the national average of ${formatRate(data.nationalAverageCentsPerKwh)}`;
 
   const breadcrumbJsonLd = buildBreadcrumbListJsonLd([
     { name: "Home", url: "/" },
@@ -103,7 +109,9 @@ export default async function ElectricityPricePerKwhStatePage({
           { label: "Electricity Price per kWh" },
         ]}
         title={`Electricity Price per kWh in ${data.name}`}
-        intro={`This page shows the latest statewide residential electricity price per kWh for ${data.name}, along with usage-based cost estimates and national comparison context.`}
+        intro={data.avgRateCentsPerKwh != null
+          ? `In ${data.name}, residential electricity costs about ${formatRate(data.avgRateCentsPerKwh)}${rateComparison}. At a typical 900 kWh of monthly use, that comes to about ${formatUsd(cost900)} a month for the energy alone — before delivery charges and taxes.`
+          : `This page tracks the latest residential electricity price per kilowatt-hour in ${data.name}, with national comparison and usage-cost estimates.`}
         stats={[
           { label: "Current average rate", value: formatRate(data.avgRateCentsPerKwh) },
           { label: "Estimated 900 kWh cost", value: formatUsd(cost900) },
@@ -121,9 +129,11 @@ export default async function ElectricityPricePerKwhStatePage({
           { label: "Category", value: data.comparisonCategory ?? "N/A" },
         ]}
         comparisonSummary={
-          data.differenceCents != null
-            ? `${data.name} is ${data.differenceCents >= 0 ? "above" : "below"} the U.S. average by ${Math.abs(data.differenceCents).toFixed(2)}¢ per kWh.`
-            : undefined
+          data.differenceCents == null
+            ? undefined
+            : Math.abs(data.differenceCents) >= 0.5
+              ? `That's ${Math.abs(data.differenceCents).toFixed(2)}¢ ${data.differenceCents >= 0 ? "more" : "less"} on every kilowatt-hour than the U.S. average.`
+              : `That's within a fraction of a cent of the U.S. average.`
         }
         relatedLinks={[
           { href: `/electricity-price-trend/${state}`, label: `Electricity price trend in ${data.name}` },

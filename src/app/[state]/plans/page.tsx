@@ -8,6 +8,7 @@ import { isValidStateSlug } from "@/lib/slugGuard";
 import { getPlansByState } from "@/data/plans";
 import { createPartnerLink } from "@/lib/outbound";
 import { LAST_REVIEWED_DISPLAY, SITE_URL, UPDATE_CADENCE_TEXT } from "@/lib/site";
+import { buildMetadata } from "@/lib/seo/metadata";
 
 const BASE_URL = SITE_URL;
 export const dynamicParams = true;
@@ -43,35 +44,22 @@ export async function generateMetadata({
   const { state } = await params;
   const resolved = resolveState(state);
   if (!resolved) {
-    return {
+    return buildMetadata({
       title: "State not found | PriceOfElectricity.com",
       description: "State plans page not found.",
-      alternates: { canonical: `${BASE_URL}/` },
-    };
+      canonicalPath: "/",
+    });
   }
 
   const { stateSlug, stateInfo } = resolved;
   const title = `${stateInfo.name} Electricity Plans | PriceOfElectricity.com`;
   const description = `Compare electricity plan examples for ${stateInfo.name} (manual MVP).`;
-  const canonicalUrl = `${BASE_URL}/${stateSlug}/plans`;
 
-  return {
+  return buildMetadata({
     title,
     description,
-    alternates: { canonical: canonicalUrl },
-    openGraph: {
-      title,
-      description,
-      url: canonicalUrl,
-      siteName: "PriceOfElectricity.com",
-      type: "website",
-    },
-    twitter: {
-      card: "summary",
-      title,
-      description,
-    },
-  };
+    canonicalPath: `/${stateSlug}/plans`,
+  });
 }
 
 export default async function StatePlansPage({

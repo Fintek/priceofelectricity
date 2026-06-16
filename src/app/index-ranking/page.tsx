@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { SITE_URL } from "@/lib/site";
+import { buildMetadata } from "@/lib/seo/metadata";
 import {
   computeElectricityPriceIndex,
   getNationalAverageRate,
@@ -28,27 +29,14 @@ export async function generateMetadata({
   const { sort } = await searchParams;
   const isKnownSort = !sort || VALID_SORTS.has(sort);
 
-  return {
+  return buildMetadata({
     title: "Electricity Price Index™ by State | PriceOfElectricity.com",
     description:
       "Compare state electricity prices using the Electricity Price Index™. Base 100 = national average. See which states pay above or below average.",
-    alternates: { canonical: `${BASE_URL}/index-ranking` },
+    socialDescription: "Compare state electricity prices using the Electricity Price Index™.",
+    canonicalPath: "/index-ranking",
     ...(!isKnownSort && { robots: { index: false, follow: true } }),
-    openGraph: {
-      title: "Electricity Price Index™ by State | PriceOfElectricity.com",
-      description:
-        "Compare state electricity prices using the Electricity Price Index™.",
-      url: `${BASE_URL}/index-ranking`,
-      siteName: "PriceOfElectricity.com",
-      type: "website",
-    },
-    twitter: {
-      card: "summary",
-      title: "Electricity Price Index™ by State | PriceOfElectricity.com",
-      description:
-        "Compare state electricity prices using the Electricity Price Index™.",
-    },
-  };
+  });
 }
 
 export default async function IndexRankingPage({

@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Breadcrumbs, { breadcrumbsToJsonLd, type BreadcrumbItem } from "@/components/navigation/Breadcrumbs";
 import {
   loadKnowledgePage,
   loadEntityIndex,
   loadRankingsIndex,
 } from "@/lib/knowledge/loadKnowledgePage";
 import { buildMetadata } from "@/lib/seo/metadata";
-import { buildBreadcrumbListJsonLd, buildWebPageJsonLd } from "@/lib/seo/jsonld";
+import { buildWebPageJsonLd } from "@/lib/seo/jsonld";
 import JsonLdScript from "@/app/components/seo/JsonLdScript";
 import ExploreMore from "@/components/navigation/ExploreMore";
 import SectionNav from "@/components/navigation/SectionNav";
@@ -50,12 +51,14 @@ export default async function ElectricityInflationPage() {
   let increase5YearPercent: number | null = null;
   if (trendValues.length >= 2) {
     const current = trendValues[trendValues.length - 1];
-    const oneBack = trendValues[trendValues.length - 2];
+    const oneBack = trendValues.length >= 13
+      ? trendValues[trendValues.length - 13]
+      : trendValues[trendValues.length - 2];
     if (typeof current === "number" && typeof oneBack === "number" && oneBack > 0) {
       increase1YearPercent = ((current - oneBack) / oneBack) * 100;
     }
-    if (trendValues.length >= 6) {
-      const fiveBack = trendValues[trendValues.length - 6];
+    if (trendValues.length >= 61) {
+      const fiveBack = trendValues[trendValues.length - 61];
       if (typeof current === "number" && typeof fiveBack === "number" && fiveBack > 0) {
         increase5YearPercent = ((current - fiveBack) / fiveBack) * 100;
       }
@@ -70,10 +73,12 @@ export default async function ElectricityInflationPage() {
   const inflationRankings =
     rankingsIndex?.items?.filter((r) => INFLATION_RANKING_IDS.includes(r.id)) ?? [];
 
-  const breadcrumbJsonLd = buildBreadcrumbListJsonLd([
+  const breadcrumbTrail: BreadcrumbItem[] = [
     { name: "Home", url: "/" },
-    { name: "Electricity Inflation", url: "/electricity-inflation" },
-  ]);
+    { name: "Electricity Trends", url: "/electricity-trends" },
+    { name: "Electricity Inflation" },
+  ];
+  const breadcrumbJsonLd = breadcrumbsToJsonLd(breadcrumbTrail);
 
   const webPageJsonLd = buildWebPageJsonLd({
     title: "Electricity Inflation in the United States",
@@ -101,13 +106,7 @@ export default async function ElectricityInflationPage() {
       <JsonLdScript data={breadcrumbJsonLd} />
       <JsonLdScript data={webPageJsonLd} />
       <main className="container">
-        <nav aria-label="Breadcrumb" className="muted" style={{ marginBottom: 16, fontSize: 14 }}>
-          <Link href="/">Home</Link>
-          {" · "}
-          <Link href="/electricity-trends">Electricity Trends</Link>
-          {" · "}
-          <span aria-current="page">Electricity Inflation</span>
-        </nav>
+        <Breadcrumbs trail={breadcrumbTrail} />
 
         <SectionNav
           title="In this section"
@@ -284,7 +283,7 @@ export default async function ElectricityInflationPage() {
         </section>
 
         <TopicClusterNav
-          title="Related topic clusters"
+          title="Related topics"
           description="Affordability, volatility, cost-of-living, and data."
           links={[
             { href: "/electricity-affordability", label: "Electricity affordability" },
@@ -292,7 +291,7 @@ export default async function ElectricityInflationPage() {
             { href: "/electricity-cost-of-living", label: "Electricity cost of living" },
             { href: "/electricity-cost", label: "Electricity cost by state" },
             { href: "/electricity-data", label: "Electricity data" },
-            { href: "/electricity-topics", label: "Electricity topics hub" },
+            { href: "/electricity-topics", label: "Electricity topics" },
           ]}
         />
 
@@ -312,7 +311,7 @@ export default async function ElectricityInflationPage() {
         <p className="muted" style={{ marginTop: 32 }}>
           <Link href="/electricity-trends">Electricity Trends</Link> {" | "}
           <Link href="/electricity-insights">Electricity Insights</Link> {" | "}
-          <Link href="/knowledge">Knowledge Hub</Link> {" | "}
+          <Link href="/knowledge">Knowledge</Link> {" | "}
           <Link href="/datasets">Datasets</Link>
         </p>
       </main>

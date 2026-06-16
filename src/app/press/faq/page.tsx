@@ -1,29 +1,17 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { SITE_URL } from "@/lib/site";
+import { buildMetadata } from "@/lib/seo/metadata";
 
 const BASE_URL = SITE_URL;
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetadata({
   title: "How to Cite | Press FAQ | PriceOfElectricity.com",
   description:
     "How to cite PriceOfElectricity.com in APA, MLA, and web formats. Energy-only estimates, data sources, and update cadence.",
-  alternates: { canonical: `${BASE_URL}/press/faq` },
-  openGraph: {
-    title: "How to Cite | Press FAQ | PriceOfElectricity.com",
-    description:
-      "How to cite PriceOfElectricity.com in APA, MLA, and web formats.",
-    url: `${BASE_URL}/press/faq`,
-    siteName: "PriceOfElectricity.com",
-    type: "website",
-  },
-  twitter: {
-    card: "summary",
-    title: "How to Cite | Press FAQ | PriceOfElectricity.com",
-    description:
-      "How to cite PriceOfElectricity.com in APA, MLA, and web formats.",
-  },
-};
+  socialDescription: "How to cite PriceOfElectricity.com in APA, MLA, and web formats.",
+  canonicalPath: "/press/faq",
+});
 
 const FAQ_ITEMS = [
   {
@@ -48,7 +36,7 @@ const FAQ_ITEMS = [
   },
   {
     q: "Can I use the data in my publication or report?",
-    a: "Yes. We provide downloadable datasets (JSON and CSV) for all 50 states. Please attribute PriceOfElectricity.com and link to our site when possible. See our brand guidelines for attribution details.",
+    a: "Yes. We provide downloadable datasets (JSON and CSV) for all 50 states and Washington, D.C. Please attribute PriceOfElectricity.com and link to our site when possible. See our brand guidelines for attribution details.",
   },
 ];
 
@@ -137,7 +125,7 @@ export default function PressFaqPage() {
                 ) : item.q.includes("Can I use") ? (
                   <>
                     Yes. We provide downloadable datasets (JSON and CSV) for all
-                    50 states. Please attribute PriceOfElectricity.com and link
+                    50 states and Washington, D.C. Please attribute PriceOfElectricity.com and link
                     to our site when possible. See our{" "}
                     <Link href="/press/brand">brand guidelines</Link> for
                     attribution details.

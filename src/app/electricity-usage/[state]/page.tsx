@@ -10,6 +10,7 @@ import { getRelease } from "@/lib/knowledge/fetch";
 import { buildLongtailLinkSections } from "@/lib/longtail/internalLinks";
 import { formatRate, formatUsd } from "@/lib/longtail/stateLongtail";
 import {
+  buildUsageMetaDescriptionForState,
   buildUsageNarrativeForState,
   buildUsageTierCostRows,
   formatKwh,
@@ -36,9 +37,18 @@ export async function generateMetadata({
       canonicalPath: `/electricity-usage/${state}`,
     });
   }
+  const kwhDisplay = data.estimatedMonthlyUsageKwh.toLocaleString();
+  const monthlyUsageCost =
+    data.avgRateCentsPerKwh != null
+      ? Math.round((data.avgRateCentsPerKwh / 100) * data.estimatedMonthlyUsageKwh)
+      : null;
+  const title =
+    monthlyUsageCost != null
+      ? `Average Electricity Usage in ${data.name}: ${kwhDisplay} kWh, ~$${monthlyUsageCost}/mo`
+      : `Average Electricity Usage in ${data.name}: ${kwhDisplay} kWh/Month`;
   return buildMetadata({
-    title: `Electricity Usage in ${data.name} | PriceOfElectricity.com`,
-    description: buildUsageNarrativeForState(data),
+    title,
+    description: buildUsageMetaDescriptionForState(data),
     canonicalPath: `/electricity-usage/${state}`,
   });
 }
@@ -84,7 +94,9 @@ export default async function ElectricityUsageStatePage({
           { label: data.name },
         ]}
         title={`Household Electricity Usage in ${data.name}`}
-        intro={`This page estimates typical household electricity consumption in ${data.name} and maps usage levels directly to cost outcomes using the state's residential electricity rate.`}
+        intro={data.avgRateCentsPerKwh != null
+          ? `A typical home in ${data.name} uses about ${formatKwh(data.estimatedMonthlyUsageKwh)} of electricity a month. At the state's average rate of ${formatRate(data.avgRateCentsPerKwh)}, that's about ${formatUsd((data.avgRateCentsPerKwh / 100) * data.estimatedMonthlyUsageKwh)} a month.`
+          : `A typical home in ${data.name} uses about ${formatKwh(data.estimatedMonthlyUsageKwh)} of electricity a month.`}
         stats={[
           { label: `${data.name} modeled monthly usage`, value: formatKwh(data.estimatedMonthlyUsageKwh) },
           { label: `${data.name} modeled annual usage`, value: formatKwh(data.estimatedAnnualUsageKwh) },
@@ -127,7 +139,7 @@ export default async function ElectricityUsageStatePage({
                 <tr>
                   {["Monthly usage", "Estimated monthly cost", "Estimated annual cost", "Canonical cost page"].map(
                     (label) => (
-                      <th key={label}>{label}</th>
+                      <th scope="col" key={label}>{label}</th>
                     ),
                   )}
                 </tr>

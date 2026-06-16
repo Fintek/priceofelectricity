@@ -23,6 +23,31 @@ export const SITE_URL = resolveSiteUrl();
 export const LAUNCH_MODE = process.env.LAUNCH_MODE === "true";
 export const UPDATE_CADENCE_TEXT = "Updated monthly";
 
+export type SocialLink = {
+  /** Platform display name */
+  name: string;
+  /** Public profile URL */
+  url: string;
+  /** Public handle including the leading @ (when applicable) */
+  handle?: string;
+};
+
+/**
+ * Official POE social accounts. Add new platforms (YouTube, Instagram,
+ * Facebook, …) here and they automatically appear in the footer and in the
+ * Organization `sameAs` structured data.
+ */
+export const SOCIAL_LINKS: SocialLink[] = [
+  {
+    name: "X",
+    url: "https://x.com/priceofelectric",
+    handle: "@priceofelectric",
+  },
+];
+
+/** Primary X/Twitter handle used for the twitter card metadata. */
+export const SITE_TWITTER_HANDLE = "@priceofelectric";
+
 const snapshotReleasedAt = getCurrentSnapshot().releasedAt;
 /** ISO calendar date (YYYY-MM-DD) for structured data and machine use */
 export const LAST_REVIEWED = snapshotReleasedAt.includes("T")

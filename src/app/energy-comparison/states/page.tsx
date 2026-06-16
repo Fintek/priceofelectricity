@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Breadcrumbs, { breadcrumbsToJsonLd, type BreadcrumbItem } from "@/components/navigation/Breadcrumbs";
 import { getRelease } from "@/lib/knowledge/fetch";
 import JsonLdScript from "@/app/components/seo/JsonLdScript";
 import Disclaimers from "@/app/components/policy/Disclaimers";
 import StatusFooter from "@/components/common/StatusFooter";
 import { getEnergyComparisonPairs } from "@/lib/longtail/energyComparisonHub";
 import { buildMetadata } from "@/lib/seo/metadata";
-import { buildBreadcrumbListJsonLd, buildWebPageJsonLd } from "@/lib/seo/jsonld";
+import { buildWebPageJsonLd } from "@/lib/seo/jsonld";
 
 export const dynamic = "force-static";
 export const revalidate = 86400;
@@ -24,11 +25,12 @@ function toTitle(slug: string): string {
 
 export default async function EnergyComparisonStatesPage() {
   const pairs = await getEnergyComparisonPairs(30);
-  const breadcrumbJsonLd = buildBreadcrumbListJsonLd([
+  const breadcrumbTrail: BreadcrumbItem[] = [
     { name: "Home", url: "/" },
     { name: "Energy Comparison Hub", url: "/energy-comparison" },
-    { name: "State Comparisons", url: "/energy-comparison/states" },
-  ]);
+    { name: "State Comparisons" },
+  ];
+  const breadcrumbJsonLd = breadcrumbsToJsonLd(breadcrumbTrail);
   const webPageJsonLd = buildWebPageJsonLd({
     title: "State-vs-State Electricity Cost Comparisons",
     description: "Compare electricity rates and bills between U.S. states side by side.",
@@ -41,13 +43,7 @@ export default async function EnergyComparisonStatesPage() {
     <>
       <JsonLdScript data={[breadcrumbJsonLd, webPageJsonLd]} />
       <main className="container">
-        <nav aria-label="Breadcrumb" className="muted" style={{ marginBottom: 16, fontSize: 14 }}>
-          <Link href="/">Home</Link>
-          {" · "}
-          <Link href="/energy-comparison">Energy Comparison Hub</Link>
-          {" · "}
-          <span aria-current="page">State Comparisons</span>
-        </nav>
+        <Breadcrumbs trail={breadcrumbTrail} />
 
         <h1 style={{ fontSize: 32, marginBottom: 12 }}>State-vs-State Electricity Cost Comparisons</h1>
         <p style={{ marginTop: 0, marginBottom: 24, maxWidth: "75ch", lineHeight: 1.7 }}>
@@ -69,9 +65,9 @@ export default async function EnergyComparisonStatesPage() {
           <h2 style={{ fontSize: 20, marginBottom: 10 }}>Related comparison pathways</h2>
           <ul style={{ margin: 0, paddingLeft: 20, lineHeight: 1.8 }}>
             <li><Link href="/energy-comparison">Back to Energy Comparison Hub</Link></li>
-            <li><Link href="/energy-comparison/usage">Usage tier comparison slice</Link></li>
-            <li><Link href="/energy-comparison/appliances">Appliance comparison slice</Link></li>
-            <li><Link href="/electricity-cost-calculator">Electricity cost calculator cluster</Link></li>
+            <li><Link href="/energy-comparison/usage">Usage tier comparisons</Link></li>
+            <li><Link href="/energy-comparison/appliances">Appliance comparisons</Link></li>
+            <li><Link href="/electricity-cost-calculator">Electricity cost calculators</Link></li>
           </ul>
         </section>
 

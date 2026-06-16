@@ -8,8 +8,9 @@ import {
 } from "@/lib/knowledge/loadKnowledgePage";
 import { getRelease } from "@/lib/knowledge/fetch";
 import { buildMetadata } from "@/lib/seo/metadata";
-import { buildBreadcrumbListJsonLd, buildWebPageJsonLd } from "@/lib/seo/jsonld";
+import { buildWebPageJsonLd } from "@/lib/seo/jsonld";
 import JsonLdScript from "@/app/components/seo/JsonLdScript";
+import Breadcrumbs, { breadcrumbsToJsonLd, type BreadcrumbItem } from "@/components/navigation/Breadcrumbs";
 import StatusFooter from "@/components/common/StatusFooter";
 import ExploreMore from "@/components/navigation/ExploreMore";
 import SectionNav from "@/components/navigation/SectionNav";
@@ -99,10 +100,12 @@ export default async function ElectricityInsightsPage() {
   const chartRows = top5Highest.map((s) => ({ label: s.name, value: s.rate }));
   const hasChartData = chartRows.length >= 2;
 
-  const breadcrumbJsonLd = buildBreadcrumbListJsonLd([
+  const breadcrumbTrail: BreadcrumbItem[] = [
     { name: "Home", url: "/" },
-    { name: "National Electricity Insights", url: "/electricity-insights" },
-  ]);
+    { name: "Data", url: "/data" },
+    { name: "National Electricity Insights" },
+  ];
+  const breadcrumbJsonLd = breadcrumbsToJsonLd(breadcrumbTrail);
 
   const webPageJsonLd = buildWebPageJsonLd({
     title: "National Electricity Insights",
@@ -121,21 +124,21 @@ export default async function ElectricityInsightsPage() {
       answer:
         nationalAvgRate != null
           ? `The national average residential electricity rate is approximately ${nationalAvgRate.toFixed(2)} cents per kWh. At 900 kWh per month, that translates to an estimated bill of about $${estimatedNationalMonthlyBill.toFixed(2)}.`
-          : "The national average varies by data source. Check the Knowledge Hub for current figures.",
+          : "The national average varies by data source. See Knowledge for current figures.",
     },
     {
       question: "Which states have the most expensive electricity?",
       answer:
         highestState != null
           ? `${highestState.name ?? "Hawaii"} has the highest average rate at ${highestState.rate?.toFixed(2) ?? "—"}¢/kWh. California, Connecticut, Rhode Island, and Maine are also among the most expensive. See the most expensive electricity ranking for the full list.`
-          : "Hawaii, California, and several Northeast states typically have the highest rates. See the Knowledge Hub rankings.",
+          : "Hawaii, California, and several Northeast states typically have the highest rates. See the Knowledge rankings.",
     },
     {
       question: "Which states have the cheapest electricity?",
       answer:
         lowestState != null
           ? `${lowestState.name ?? "Idaho"} has the lowest average rate at ${lowestState.rate?.toFixed(2) ?? "—"}¢/kWh. North Dakota, Nebraska, Louisiana, and Arkansas are also among the most affordable. See the electricity affordability ranking for the full list.`
-          : "Idaho, North Dakota, and several Plains states typically have the lowest rates. See the Knowledge Hub rankings.",
+          : "Idaho, North Dakota, and several Plains states typically have the lowest rates. See the Knowledge rankings.",
     },
     {
       question: "Are electricity prices increasing?",
@@ -161,13 +164,7 @@ export default async function ElectricityInsightsPage() {
     <>
       <JsonLdScript data={[breadcrumbJsonLd, webPageJsonLd, faqJsonLd]} />
       <main className="container">
-        <nav aria-label="Breadcrumb" className="muted" style={{ marginBottom: 16, fontSize: 14 }}>
-          <Link href="/">Home</Link>
-          {" · "}
-          <Link href="/data">Data Hub</Link>
-          {" · "}
-          <span aria-current="page">National Electricity Insights</span>
-        </nav>
+        <Breadcrumbs trail={breadcrumbTrail} />
         <SectionNav
           title="In this section"
           description="Insights, trends, rankings, and state data."
@@ -176,7 +173,7 @@ export default async function ElectricityInsightsPage() {
             { href: "/electricity-inflation", label: "Electricity price growth" },
             { href: "/knowledge/rankings/most-expensive-electricity", label: "Most expensive states" },
             { href: "/knowledge/rankings/electricity-affordability", label: "Most affordable" },
-            { href: "/knowledge", label: "Knowledge Hub" },
+            { href: "/knowledge", label: "Knowledge" },
             { href: "/datasets", label: "Download datasets" },
             { href: "/methodology", label: "Methodology" },
           ]}
@@ -184,7 +181,7 @@ export default async function ElectricityInsightsPage() {
 
         <h1 style={{ fontSize: 32, marginBottom: 12 }}>National Electricity Insights</h1>
         <p style={{ marginTop: 0, marginBottom: 24, maxWidth: "65ch", fontSize: 16, lineHeight: 1.6 }}>
-          Most expensive and cheapest electricity states, affordability rankings, and inflation trends. All figures are derived from EIA residential data and are build-generated.
+          Most expensive and cheapest electricity states, affordability rankings, and inflation trends. Figures are derived from EIA residential data and refresh whenever we rebuild the public datasets.
         </p>
 
         {/* National summary cards */}
@@ -412,7 +409,7 @@ export default async function ElectricityInsightsPage() {
               Electricity prices and AI infrastructure
             </li>
             <li>
-              <Link href="/knowledge">Knowledge Hub</Link>
+              <Link href="/knowledge">Knowledge</Link>
               {" — "}
               National overview, rankings, methodology
             </li>
@@ -444,10 +441,10 @@ export default async function ElectricityInsightsPage() {
           links={[
             { href: "/electricity-trends", label: "Electricity trends" },
             { href: "/electricity-inflation", label: "Electricity inflation" },
-            { href: "/knowledge", label: "Knowledge Hub" },
+            { href: "/knowledge", label: "Knowledge" },
             { href: "/datasets", label: "Datasets" },
             { href: "/methodology", label: "Methodology" },
-            { href: "/page-index", label: "Page index" },
+            { href: "/site-map", label: "Site map" },
           ]}
         />
 

@@ -1,30 +1,17 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { SITE_URL } from "@/lib/site";
+import { buildMetadata } from "@/lib/seo/metadata";
 import CopyBlock from "@/app/components/CopyBlock";
 
 const BASE_URL = SITE_URL;
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetadata({
   title: "Press & Media Kit | PriceOfElectricity.com",
   description:
     "Press resources, citation guidelines, brand assets, and data downloads for journalists and researchers.",
-  alternates: { canonical: `${BASE_URL}/press` },
-  openGraph: {
-    title: "Press & Media Kit | PriceOfElectricity.com",
-    description:
-      "Press resources, citation guidelines, brand assets, and data downloads for journalists and researchers.",
-    url: `${BASE_URL}/press`,
-    siteName: "PriceOfElectricity.com",
-    type: "website",
-  },
-  twitter: {
-    card: "summary",
-    title: "Press & Media Kit | PriceOfElectricity.com",
-    description:
-      "Press resources, citation guidelines, brand assets, and data downloads for journalists and researchers.",
-  },
-};
+  canonicalPath: "/press",
+});
 
 const CITATION_TEMPLATE =
   "PriceOfElectricity.com. Average residential electricity prices by state (¢/kWh). Accessed {{DATE}}. https://priceofelectricity.com/";
@@ -52,8 +39,7 @@ export default function PressPage() {
 
       <p className="intro muted" style={{ marginTop: 0 }}>
         PriceOfElectricity.com provides state-level average residential
-        electricity prices in cents per kilowatt-hour (¢/kWh) for all 50 U.S.
-        states. The site offers comparison tools, bill estimators, downloadable
+        electricity prices in cents per kilowatt-hour (¢/kWh) for all 50 states and Washington, D.C. The site offers comparison tools, bill estimators, downloadable
         datasets, and transparent sourcing for journalists, researchers, and
         partners.
       </p>

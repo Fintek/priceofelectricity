@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Breadcrumbs, { breadcrumbsToJsonLd, type BreadcrumbItem } from "@/components/navigation/Breadcrumbs";
 import { getRelease } from "@/lib/knowledge/fetch";
 import { buildMetadata } from "@/lib/seo/metadata";
-import { buildBreadcrumbListJsonLd } from "@/lib/seo/jsonld";
+
 import JsonLdScript from "@/app/components/seo/JsonLdScript";
 import StatusFooter from "@/components/common/StatusFooter";
 
@@ -20,22 +21,18 @@ export const metadata: Metadata = buildMetadata({
 export default async function FutureExpansionHubPage() {
   const release = await getRelease();
 
-  const breadcrumbJsonLd = buildBreadcrumbListJsonLd([
+  const breadcrumbTrail: BreadcrumbItem[] = [
     { name: "Home", url: "/" },
-    { name: "Future Expansion Framework", url: "/future-expansion" },
-  ]);
+    { name: "Growth Roadmap", url: "/growth-roadmap" },
+    { name: "Future Expansion Framework" },
+  ];
+  const breadcrumbJsonLd = breadcrumbsToJsonLd(breadcrumbTrail);
 
   return (
     <>
       <JsonLdScript data={breadcrumbJsonLd} />
       <main className="container">
-        <nav aria-label="Breadcrumb" className="muted" style={{ marginBottom: 16, fontSize: 14 }}>
-          <Link href="/">Home</Link>
-          {" · "}
-          <Link href="/growth-roadmap">Growth Roadmap</Link>
-          {" · "}
-          <span aria-current="page">Future Expansion Framework</span>
-        </nav>
+        <Breadcrumbs trail={breadcrumbTrail} />
 
         <h1 style={{ fontSize: 32, marginBottom: 12 }}>Future Expansion Framework</h1>
 
@@ -64,8 +61,8 @@ export default async function FutureExpansionHubPage() {
         <section style={{ marginBottom: 32 }}>
           <h2 style={{ fontSize: 20, marginBottom: 12 }}>Topic Expansion</h2>
           <p style={{ marginTop: 0, marginBottom: 12, maxWidth: "65ch", fontSize: 16, lineHeight: 1.6 }}>
-            New topic clusters should connect to existing architecture rather than being added randomly. Each
-            cluster should have a clear hub, supporting pages, and links into adjacent clusters.
+            New topic areas should connect to the existing structure rather than being added randomly. Each
+            area should have a clear hub, supporting pages, and links to related sections.
           </p>
           <p style={{ margin: 0 }}>
             <Link href="/future-expansion/topic-expansion">Topic expansion framework</Link>

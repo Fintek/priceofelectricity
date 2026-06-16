@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { SITE_URL } from "@/lib/site";
+import { buildMetadata } from "@/lib/seo/metadata";
 import AdvertiserInquiryForm from "./AdvertiserInquiryForm";
 
 const BASE_URL = SITE_URL;
@@ -8,28 +9,12 @@ const BASE_URL = SITE_URL;
 export const dynamic = "force-static";
 export const revalidate = 2592000;
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetadata({
   title: "Advertise with Us | PriceOfElectricity.com",
   description:
     "Reach people comparing residential electricity prices and bills. Inquire about partnerships and advertising on PriceOfElectricity.com.",
-  alternates: {
-    canonical: `${BASE_URL}/advertise`,
-  },
-  openGraph: {
-    title: "Advertise with Us | PriceOfElectricity.com",
-    description:
-      "Reach people comparing residential electricity prices and bills. Inquire about partnerships and advertising on PriceOfElectricity.com.",
-    url: `${BASE_URL}/advertise`,
-    siteName: "PriceOfElectricity.com",
-    type: "website",
-  },
-  twitter: {
-    card: "summary",
-    title: "Advertise with Us | PriceOfElectricity.com",
-    description:
-      "Reach people comparing residential electricity prices and bills. Inquire about partnerships and advertising on PriceOfElectricity.com.",
-  },
-};
+  canonicalPath: "/advertise",
+});
 
 export default function AdvertisePage() {
   const webPageStructuredData = {
@@ -49,7 +34,7 @@ export default function AdvertisePage() {
       />
       <h1>Advertise with Us</h1>
       <p className="muted" style={{ marginTop: 0 }}>
-        Independent electricity price data and tools for all 50 states. We work with a small set of
+        Independent electricity price data and tools for all 50 states and Washington, D.C. We work with a small set of
         partners whose offers align with how people research rates, bills, and providers.
       </p>
 

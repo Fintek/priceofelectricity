@@ -88,28 +88,48 @@ export default async function ElectricityRankingsDatasetPage() {
         and momentum. Derived from the site&apos;s ranking pages.
       </p>
       <p className="muted" style={{ marginTop: 12, fontSize: "var(--font-size-sm)", maxWidth: 640 }}>
-        <strong>Sort order:</strong> Each ranking orders states by the metric from higher values to lower
-        ones, or the reverse. The dataset includes a plain-language label; <code>direction</code> keeps the
-        short machine values (<code>asc</code> / <code>desc</code>) for tools that already use them.
+        <strong>Sort order:</strong> Each ranking orders states high-to-low or low-to-high depending on the table. The
+        downloads include both a readable sort-order column and short spreadsheet codes (<code>asc</code> /{" "}
+        <code>desc</code>) stored under the technical column name <code>direction</code>.
       </p>
 
       <section style={{ marginTop: 24 }}>
         <h2 style={{ fontSize: 20, marginBottom: 8 }}>Columns</h2>
+        <p className="muted" style={{ marginTop: 0, marginBottom: 12, fontSize: "var(--font-size-sm)", maxWidth: 640 }}>
+          Download files use stable column names for compatibility.
+        </p>
         <ul style={{ paddingLeft: 20, lineHeight: 1.8 }}>
-          <li><code>rankingId</code> — Ranking identifier (e.g. rate-high-to-low)</li>
-          <li><code>rankingTitle</code> — Human-readable ranking title</li>
-          <li><code>state</code> — State name</li>
-          <li><code>value</code> — Metric value</li>
-          <li><code>displayValue</code> — Formatted display value (if present)</li>
           <li>
-            <code>direction</code> — Sort direction code: <code>asc</code> (ascending) or <code>desc</code>{" "}
-            (descending), for scripts and spreadsheets
+            <strong>Ranking</strong> — Shared label for rows from the same leaderboard (such as affordability or highest
+            average rate). In the downloadable files, this field is named <code>rankingId</code>.
           </li>
           <li>
-            <code>directionLabel</code> — Same sort order in plain language: &quot;Lowest to highest&quot; or
-            &quot;Highest to lowest&quot;
+            <strong>Ranking title</strong> — Full title shown on the site for that leaderboard. In the downloadable
+            files, this field is named <code>rankingTitle</code>.
           </li>
-          <li><code>metricId</code> — Metric field identifier</li>
+          <li>
+            <strong>State</strong> — State name. In the downloadable files, this field is named <code>state</code>.
+          </li>
+          <li>
+            <strong>Metric value</strong> — Numeric value used when ordering the ranking. In the downloadable files,
+            this field is named <code>value</code>.
+          </li>
+          <li>
+            <strong>Display value</strong> — Same number formatted for display when the site provides one. In the
+            downloadable files, this field is named <code>displayValue</code>.
+          </li>
+          <li>
+            <strong>Sort code</strong> — Short ascending/descending code for spreadsheets. In the downloadable files,
+            this field is named <code>direction</code> (values such as <code>asc</code> or <code>desc</code>).
+          </li>
+          <li>
+            <strong>Sort order</strong> — Plain-language ordering such as “Lowest to highest.” In the downloadable
+            files, this field is named <code>directionLabel</code>.
+          </li>
+          <li>
+            <strong>Metric key</strong> — Site&apos;s identifier for which metric this row uses. In the downloadable
+            files, this field is named <code>metricId</code>.
+          </li>
         </ul>
       </section>
 
@@ -139,10 +159,16 @@ export default async function ElectricityRankingsDatasetPage() {
             >
               <thead>
                 <tr>
-                  <th style={{ textAlign: "left", padding: "8px 12px", borderBottom: "1px solid var(--color-border)" }}>rankingId</th>
-                  <th style={{ textAlign: "left", padding: "8px 12px", borderBottom: "1px solid var(--color-border)" }}>state</th>
-                  <th style={{ textAlign: "right", padding: "8px 12px", borderBottom: "1px solid var(--color-border)" }}>value</th>
-                  <th style={{ textAlign: "left", padding: "8px 12px", borderBottom: "1px solid var(--color-border)" }}>
+                  <th scope="col" style={{ textAlign: "left", padding: "8px 12px", borderBottom: "1px solid var(--color-border)" }}>
+                    Ranking
+                  </th>
+                  <th scope="col" style={{ textAlign: "left", padding: "8px 12px", borderBottom: "1px solid var(--color-border)" }}>
+                    State
+                  </th>
+                  <th scope="col" style={{ textAlign: "right", padding: "8px 12px", borderBottom: "1px solid var(--color-border)" }}>
+                    Metric value
+                  </th>
+                  <th scope="col" style={{ textAlign: "left", padding: "8px 12px", borderBottom: "1px solid var(--color-border)" }}>
                     Sort order
                   </th>
                 </tr>
@@ -170,7 +196,7 @@ export default async function ElectricityRankingsDatasetPage() {
         <h2 style={{ fontSize: 20, marginBottom: 8 }}>Related</h2>
         <ul style={{ paddingLeft: 20, lineHeight: 2 }}>
           <li><Link href="/knowledge/rankings">Browse rankings</Link></li>
-          <li><Link href="/knowledge">Knowledge Hub</Link></li>
+          <li><Link href="/knowledge">Knowledge</Link></li>
           <li><Link href="/methodology">Methodology</Link></li>
         </ul>
       </section>

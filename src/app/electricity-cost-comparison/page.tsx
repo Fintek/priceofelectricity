@@ -1,12 +1,14 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Breadcrumbs, { breadcrumbsToJsonLd, type BreadcrumbItem } from "@/components/navigation/Breadcrumbs";
+import { EIA_STATE_RESIDENTIAL_DATA_URL } from "@/data/sources";
 import {
   loadComparePairs,
   loadElectricityComparisonPairs,
 } from "@/lib/knowledge/loadKnowledgePage";
 import { getRelease } from "@/lib/knowledge/fetch";
 import { buildMetadata } from "@/lib/seo/metadata";
-import { buildBreadcrumbListJsonLd, buildWebPageJsonLd } from "@/lib/seo/jsonld";
+import { buildWebPageJsonLd } from "@/lib/seo/jsonld";
 import JsonLdScript from "@/app/components/seo/JsonLdScript";
 import StatusFooter from "@/components/common/StatusFooter";
 import Disclaimers from "@/app/components/policy/Disclaimers";
@@ -73,20 +75,21 @@ export default async function ElectricityCostComparisonIndexPage() {
     }
   }
 
-  const breadcrumbJsonLd = buildBreadcrumbListJsonLd([
+  const breadcrumbTrail: BreadcrumbItem[] = [
     { name: "Home", url: "/" },
-    { name: "Electricity Cost Comparison", url: "/electricity-cost-comparison" },
-  ]);
+    { name: "Electricity Cost Comparison" },
+  ];
+  const breadcrumbJsonLd = breadcrumbsToJsonLd(breadcrumbTrail);
   const webPageJsonLd = buildWebPageJsonLd({
     title: "Electricity Cost Comparison by State",
     description:
-      "Canonical state-to-state electricity comparison index using deterministic pair data and fixed-usage methodology.",
+      "State-to-state electricity comparison index built from fixed pair lists and a standard monthly usage assumption.",
     url: "/electricity-cost-comparison",
     isPartOf: "/",
     about: [
       "state electricity comparison",
-      "deterministic rate comparison",
-      "electricity-cost-comparison canonical cluster",
+      "residential electricity rate comparison",
+      "electricity-cost-comparison index",
     ],
   });
 
@@ -94,11 +97,7 @@ export default async function ElectricityCostComparisonIndexPage() {
     <>
       <JsonLdScript data={[breadcrumbJsonLd, webPageJsonLd]} />
       <main className="container">
-        <nav aria-label="Breadcrumb" className="muted" style={{ marginBottom: 16, fontSize: 14 }}>
-          <Link href="/">Home</Link>
-          {" · "}
-          <span aria-current="page">Electricity Cost Comparison</span>
-        </nav>
+        <Breadcrumbs trail={breadcrumbTrail} />
 
         <h1 style={{ fontSize: 32, marginBottom: 12 }}>Compare Electricity Costs by State</h1>
 
@@ -108,7 +107,11 @@ export default async function ElectricityCostComparisonIndexPage() {
           dollars and percentage.
         </p>
         <p className="muted" style={{ marginTop: 0, marginBottom: 24, fontSize: 13 }}>
-          Rates from EIA data · <Link href="/methodology">Methodology</Link>
+          Rates from{" "}
+          <a href={EIA_STATE_RESIDENTIAL_DATA_URL} rel="noopener noreferrer" target="_blank">
+            EIA residential data
+          </a>{" "}
+          · <Link href="/methodology">Methodology</Link>
         </p>
 
         {/* ── FEATURED COMPARISONS ── */}

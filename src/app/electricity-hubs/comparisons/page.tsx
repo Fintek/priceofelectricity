@@ -20,7 +20,7 @@ export const revalidate = 86400;
 export const metadata: Metadata = buildMetadata({
   title: "Electricity Comparison Hub | PriceOfElectricity.com",
   description:
-    "Discover state-to-state electricity comparison pages, compare hub routes, and state electricity hubs from one structured comparison entry point.",
+    "Find state-to-state electricity comparisons, the main compare page, and state electricity hubs from one place.",
   canonicalPath: "/electricity-hubs/comparisons",
 });
 
@@ -39,7 +39,7 @@ export default async function ElectricityComparisonHubPage() {
   const webPageJsonLd = buildWebPageJsonLd({
     title: "Electricity Comparison Hub",
     description:
-      "Discover state-to-state electricity comparison pages, compare hub routes, and state electricity hubs from one structured comparison entry point.",
+      "Find state-to-state electricity comparisons, the main compare page, and state electricity hubs from one place.",
     url: "/electricity-hubs/comparisons",
     isPartOf: "/",
     about: ["electricity comparison hub", "state electricity comparison pages", "compare electricity by state"],
@@ -55,7 +55,7 @@ export default async function ElectricityComparisonHubPage() {
           { label: "Electricity Comparison Hub" },
         ]}
         title="Electricity Comparison Hub"
-        intro="This hub acts as the comparison gateway for the traffic engine. It connects the site's main compare authority page, pair-specific comparison pages, and state electricity hubs so users can move between broad ranking views and focused head-to-head comparisons."
+        intro="This page links the site’s main state comparison tools: the sortable compare page, head-to-head state pairs, and per-state hub directories."
         stats={[
           { label: "States covered", value: String(states.length) },
           { label: "Featured comparison pages", value: String(comparisonCards.length) },
@@ -75,27 +75,27 @@ export default async function ElectricityComparisonHubPage() {
               {
                 href: "/electricity-cost-comparison",
                 title: "Electricity cost comparison index",
-                description: "Landing page for the site's head-to-head state comparison family.",
+                description: "Introduces the site’s head-to-head state comparison pages.",
                 eyebrow: "Authority page",
               },
               {
                 href: "/electricity-hubs/states",
                 title: "State electricity hubs",
                 description: "Directory of state-specific electricity hubs for deeper comparison pathways.",
-                eyebrow: "Traffic hub",
+                eyebrow: "Browse",
               },
               {
                 href: "/electricity-providers",
-                title: "Provider marketplace discovery",
+                title: "Electricity providers overview",
                 description:
-                  "State-by-state provider context that supports comparison research without replacing canonical cost clusters.",
-                eyebrow: "Marketplace discovery",
+                  "State-by-state provider context to read alongside rate comparisons.",
+                eyebrow: "Plans & offers",
               },
             ],
           },
           {
             title: "Featured state-vs-state comparison pages",
-            intro: "These comparison pages route users directly into high-intent state-vs-state electricity cost queries.",
+            intro: "Hand-picked state pair pages you can open directly for a side-by-side view.",
             cards: comparisonCards,
           },
           {

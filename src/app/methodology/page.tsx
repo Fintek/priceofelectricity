@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { EIA_STATE_RESIDENTIAL_DATA_URL } from "@/data/sources";
 import { SITE_URL, LAST_REVIEWED } from "@/lib/site";
 import ExploreMore from "@/components/navigation/ExploreMore";
 import SectionNav from "@/components/navigation/SectionNav";
@@ -47,7 +48,7 @@ export default function MethodologyPage() {
           { href: "/methodology/electricity-affordability", label: "Affordability" },
           { href: "/methodology/battery-recharge-cost", label: "Battery recharge cost" },
           { href: "/methodology/generator-vs-battery-cost", label: "Generator vs battery" },
-          { href: "/knowledge", label: "Knowledge Hub" },
+          { href: "/knowledge", label: "Knowledge" },
         ]}
       />
 
@@ -61,7 +62,7 @@ export default function MethodologyPage() {
       <section style={{ marginTop: 24, padding: "14px 18px", border: "1px solid var(--color-border, #e5e7eb)", borderRadius: 8, backgroundColor: "var(--color-surface-alt, #f9fafb)" }}>
         <h2 style={{ fontSize: 18, fontWeight: 600, margin: "0 0 10px 0" }}>How to verify this site</h2>
         <p style={{ margin: 0, fontSize: 14, lineHeight: 1.5 }}>
-          Review the <Link href="/methodology">methodology</Link>, inspect <Link href="/datasets">downloadable datasets</Link>, browse <Link href="/electricity-topics">topic hubs</Link> and <Link href="/discovery-graph">discovery pages</Link>, and compare <Link href="/knowledge/rankings">state rankings</Link>.
+          Review the <Link href="/methodology">methodology</Link>, inspect <Link href="/datasets">downloadable datasets</Link>, browse <Link href="/electricity-topics">topic hubs</Link>, explore the <Link href="/site-map">site map</Link> and <Link href="/electricity-hubs">electricity hubs</Link>, and compare <Link href="/knowledge/rankings">state rankings</Link>.
         </p>
       </section>
 
@@ -125,7 +126,12 @@ export default function MethodologyPage() {
         <h2 style={{ fontSize: 22, marginBottom: 8 }}>Data foundation</h2>
         <p style={{ marginTop: 0 }}>
           All metrics use state-level average residential electricity prices
-          (¢/kWh) from our normalized data pipeline. See{" "}
+          (¢/kWh) from our normalized state dataset, grounded in the latest
+          available{" "}
+          <a href={EIA_STATE_RESIDENTIAL_DATA_URL} rel="noopener noreferrer" target="_blank">
+            U.S. Energy Information Administration
+          </a>{" "}
+          state electricity data. See{" "}
           <Link href="/electricity-data">electricity data</Link>,{" "}
           <Link href="/datasets">datasets</Link>,{" "}
           <Link href="/sources">sources</Link>,{" "}
@@ -139,7 +145,7 @@ export default function MethodologyPage() {
         <h2 style={{ fontSize: 22, marginBottom: 8 }}>Explore</h2>
         <ul style={{ paddingLeft: 20, lineHeight: 2 }}>
           <li>
-            <Link href="/knowledge">Knowledge Hub</Link> — National snapshot, state
+            <Link href="/knowledge">Knowledge</Link> — National snapshot, state
             rankings, and methodology
           </li>
           <li>
@@ -157,9 +163,7 @@ export default function MethodologyPage() {
           <li>
             <Link href="/site-map">View the site map</Link>
             {" · "}
-            <Link href="/data-registry">Browse the data registry</Link>
-            {" · "}
-            <Link href="/page-index">See the page index</Link>
+            <Link href="/electricity-data">Browse electricity data</Link>
             {" · "}
             <Link href="/launch-checklist">Review the launch checklist</Link>
           </li>
@@ -169,13 +173,11 @@ export default function MethodologyPage() {
       <ExploreMore
         title="Explore more"
         links={[
-          { href: "/knowledge", label: "Knowledge Hub" },
+          { href: "/knowledge", label: "Knowledge" },
           { href: "/datasets", label: "Datasets" },
           { href: "/electricity-trends", label: "Electricity trends" },
           { href: "/site-map", label: "Site map" },
-          { href: "/data-registry", label: "Data registry" },
-          { href: "/launch-checklist", label: "Launch checklist" },
-          { href: "/site-maintenance", label: "Site maintenance" },
+          { href: "/electricity-data", label: "Electricity data" },
         ]}
       />
 

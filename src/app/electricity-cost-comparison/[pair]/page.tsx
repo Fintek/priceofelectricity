@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Breadcrumbs, { breadcrumbsToJsonLd, type BreadcrumbItem } from "@/components/navigation/Breadcrumbs";
 import { notFound } from "next/navigation";
 import { loadComparePair } from "@/lib/knowledge/loadKnowledgePage";
 import { buildMetadata } from "@/lib/seo/metadata";
-import { buildBreadcrumbListJsonLd, buildWebPageJsonLd } from "@/lib/seo/jsonld";
+import { buildWebPageJsonLd } from "@/lib/seo/jsonld";
 import JsonLdScript from "@/app/components/seo/JsonLdScript";
 import StatusFooter from "@/components/common/StatusFooter";
 import Disclaimers from "@/app/components/policy/Disclaimers";
@@ -84,11 +85,12 @@ export default async function ElectricityCostComparisonPairPage({
 
   const canonicalPath = `/electricity-cost-comparison/${pair}`;
 
-  const breadcrumbJsonLd = buildBreadcrumbListJsonLd([
+  const breadcrumbTrail: BreadcrumbItem[] = [
     { name: "Home", url: "/" },
     { name: "Electricity Cost Comparison", url: "/electricity-cost-comparison" },
-    { name: `${nameA} vs ${nameB}`, url: canonicalPath },
-  ]);
+    { name: `${nameA} vs ${nameB}` },
+  ];
+  const breadcrumbJsonLd = breadcrumbsToJsonLd(breadcrumbTrail);
 
   const webPageJsonLd = buildWebPageJsonLd({
     title: `Electricity Cost: ${nameA} vs ${nameB}`,
@@ -142,31 +144,24 @@ export default async function ElectricityCostComparisonPairPage({
 
   const summaryText =
     Math.abs(differencePercent) < 0.5
-      ? `Electricity in ${nameA} and ${nameB} cost about the same based on typical household electricity use.`
-      : `Electricity in ${higherCostName} costs approximately ${Math.abs(differencePercent).toFixed(0)}% more than in ${lowerCostName} based on typical household electricity use.`;
+      ? `Electricity costs about the same in ${nameA} and ${nameB}.`
+      : `Electricity costs about ${Math.abs(differencePercent).toFixed(0)}% more in ${higherCostName} than in ${lowerCostName}.`;
 
   return (
     <>
       <JsonLdScript data={[breadcrumbJsonLd, webPageJsonLd, faqJsonLd]} />
       <main className="container">
-        <nav aria-label="Breadcrumb" className="muted" style={{ marginBottom: 16, fontSize: 14 }}>
-          <Link href="/">Home</Link>
-          {" · "}
-          <Link href="/electricity-cost-comparison">Electricity Cost Comparison</Link>
-          {" · "}
-          <span aria-current="page">{nameA} vs {nameB}</span>
-        </nav>
+        <Breadcrumbs trail={breadcrumbTrail} />
 
         <h1 style={{ fontSize: 32, marginBottom: 16 }}>
           Electricity Cost: {nameA} vs {nameB}
         </h1>
         <p style={{ marginTop: 0, marginBottom: 24, maxWidth: "65ch", fontSize: 16, lineHeight: 1.6 }}>
-          {summaryText}{" "}
-          {nameA} averages {data.rateA.toFixed(2)}¢/kWh and {nameB} averages {data.rateB.toFixed(2)}¢/kWh,
-          putting a typical 900 kWh monthly bill at ${monthlyCostA.toFixed(0)} vs ${monthlyCostB.toFixed(0)}.
+          {summaryText} A typical monthly bill runs about ${monthlyCostA.toFixed(0)} in {nameA} vs $
+          {monthlyCostB.toFixed(0)} in {nameB}.
         </p>
         <p className="muted" style={{ marginTop: -8, marginBottom: 24, maxWidth: "65ch" }}>
-          Based on average residential rates from EIA data · 900 kWh standard usage benchmark
+          Based on average residential rates from EIA data · 900 kWh of monthly use
         </p>
 
         {/* Summary cards */}
@@ -237,13 +232,13 @@ export default async function ElectricityCostComparisonPairPage({
             >
               <thead>
                 <tr>
-                  <th style={{ textAlign: "left", padding: "12px 16px", borderBottom: "2px solid var(--color-border, #e5e7eb)" }}>
+                  <th scope="col" style={{ textAlign: "left", padding: "12px 16px", borderBottom: "2px solid var(--color-border, #e5e7eb)" }}>
                     State
                   </th>
-                  <th style={{ textAlign: "right", padding: "12px 16px", borderBottom: "2px solid var(--color-border, #e5e7eb)" }}>
+                  <th scope="col" style={{ textAlign: "right", padding: "12px 16px", borderBottom: "2px solid var(--color-border, #e5e7eb)" }}>
                     Electricity rate
                   </th>
-                  <th style={{ textAlign: "right", padding: "12px 16px", borderBottom: "2px solid var(--color-border, #e5e7eb)" }}>
+                  <th scope="col" style={{ textAlign: "right", padding: "12px 16px", borderBottom: "2px solid var(--color-border, #e5e7eb)" }}>
                     Estimated monthly bill
                   </th>
                 </tr>
@@ -278,7 +273,7 @@ export default async function ElectricityCostComparisonPairPage({
 
         {/* Difference summary */}
         <section style={{ marginBottom: 32 }}>
-          <h2 style={{ fontSize: 20, marginBottom: 12 }}>Difference Summary</h2>
+          <h2 style={{ fontSize: 20, marginBottom: 12 }}>What the difference adds up to</h2>
           <div
             style={{
               padding: 20,
@@ -287,10 +282,16 @@ export default async function ElectricityCostComparisonPairPage({
               backgroundColor: "var(--color-surface-alt, #f9fafb)",
             }}
           >
-            <p style={{ margin: 0, fontSize: 16, lineHeight: 1.6 }}>{summaryText}</p>
-            <p className="muted" style={{ marginTop: 8, fontSize: 14 }}>
-              Difference: {differenceDollars >= 0 ? "+" : ""}${differenceDollars.toFixed(2)} (
-              {differencePercent >= 0 ? "+" : ""}{differencePercent.toFixed(1)}%) at 900 kWh/month
+            <p className="muted" style={{ margin: 0, fontSize: 14, lineHeight: 1.6 }}>
+              {Math.round(differenceDollars * 100) === 0 ? (
+                <>At a typical 900 kWh a month, the two states cost about the same.</>
+              ) : (
+                <>
+                  At a typical 900 kWh a month, a household in {higherCostName} pays about $
+                  {Math.abs(differenceDollars).toFixed(2)} more than one in {lowerCostName} — about{" "}
+                  {Math.abs(differencePercent).toFixed(0)}% higher, or roughly ${Math.abs(differenceDollars * 12).toFixed(0)} a year for the same electricity.
+                </>
+              )}
             </p>
           </div>
         </section>
@@ -316,7 +317,7 @@ export default async function ElectricityCostComparisonPairPage({
               <Link href="/energy-comparison">Energy comparison hub</Link>
             </li>
             <li>
-              <Link href="/energy-comparison/states">State comparison discovery slice</Link>
+              <Link href="/energy-comparison/states">Compare states</Link>
             </li>
             <li>
               <Link href={`/electricity-cost/${stateA}`}>Electricity cost in {nameA}</Link>

@@ -45,6 +45,48 @@ Runtime route latency and frontend quality are now complemented by a lightweight
 The script also prints top subfolders for `.next/server/app` and `public/knowledge` to make growth concentration visible during reviews.
 It now also prints explicit per-target headroom.
 
+### Change reporting ("how much did it weigh?")
+
+`payload:audit` can also report how each target changed versus a recorded
+baseline, so you can see the size impact of a change rather than just
+pass/fail:
+
+- Seed or refresh the baseline after a build: `npm run payload:baseline`.
+- Subsequent `npm run payload:audit` runs print a `change vs baseline` line
+  per target (delta MiB and percentage-points of budget, plus the prior
+  value).
+
+The baseline (`payload-baseline.json`) is **informational only** — it never
+gates the build; the absolute ceilings above remain the only hard gate. It is
+**environment-sensitive** (the `.next/*` targets include platform-specific
+binaries, so Windows and CI/Linux sizes differ) and is therefore gitignored
+as a per-machine reference rather than committed.
+
+Caveat when measuring `public/knowledge` locally: `knowledge:build` does not
+clean its output directory, so repeated local builds can leave stale files
+that inflate the measured size. For an accurate local reading, remove
+`public/knowledge` before rebuilding. CI/Vercel always build from a clean
+checkout, so production measurements are unaffected.
+
+### Quick readout (`payload:readout`)
+
+For a fast, human-friendly snapshot without the full audit's contributor
+diagnostics, run `npm run payload:readout`. It reads the **last build output**
+(it does not rebuild) and prints one compact table:
+
+```
+Payload readout (last build):
+  Target                       Size     Budget   Used   Headroom  Zone
+  .next/standalone total  68.68 MiB  85.00 MiB  80.8%  16.32 MiB  preferred
+  .next/server/app total  34.80 MiB  40.00 MiB  87.0%   5.20 MiB  preferred
+  public/knowledge total   4.39 MiB   6.00 MiB  73.2%   1.61 MiB  preferred
+```
+
+The `Zone` column applies the operating-margin policy below (preferred /
+caution / blocker). The readout is **purely informational** — it never gates
+and never exits non-zero; `payload:audit` remains the only hard gate. If no
+build output exists yet, it prints a hint to run `npm run build` first.
+
 ### Operating margin policy
 
 Passing the ceiling is necessary but not sufficient for expansion safety.
@@ -54,6 +96,31 @@ Passing the ceiling is necessary but not sufficient for expansion safety.
 - **Caution zone:** 90-97% (require explicit payload rationale and mitigation plan).
 - **Blocker zone:** >= 97% (run headroom recovery before additional inventory expansion).
 - Large route families should avoid full static fan-out by default unless payload headroom is clearly sufficient.
+
+### Headroom release valves (`.next/server/app`)
+
+Most route families render on demand (`ƒ`), so they add only a small compiled
+bundle and do **not** dominate `.next/server/app`. Growth there is distributed
+across many routes rather than driven by one runaway family.
+
+The exceptions are the multiplicative families that fully pre-render via
+`generateStaticParams`. As of the last measured build the two largest are:
+
+- `electricity-bill-estimator/[slug]/[profile]` (~2.3 MiB; states × profiles)
+- `average-electricity-bill/[slug]/[city]` (~2.3 MiB; states × cities)
+
+These are the designated **first release valves** if `.next/server/app`
+re-enters the caution zone (>= 90%). Highest-leverage mitigation, in order:
+
+1. Cap their `generateStaticParams` to high-value params (e.g. top-N states /
+   cities) and let the long tail render on demand via `dynamicParams = true`.
+2. If more headroom is needed, convert the family fully to on-demand ISR
+   (the same `dynamicParams = true` + `revalidate` pattern the newer families
+   already use). Pages still render and cache; SEO impact is negligible.
+
+Do not perform this surgery while comfortably under budget — converting pages
+that aren't causing pressure trades real SEO/latency benefit for headroom you
+don't need yet.
 
 ## How to run locally
 

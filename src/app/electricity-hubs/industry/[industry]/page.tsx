@@ -84,7 +84,7 @@ export default async function IndustryElectricityHubPage({
           { label: `${config.displayName} Hub` },
         ]}
         title={`${config.displayName} Hub`}
-        intro={`This hub organizes the site's ${config.shortLabel} scenario pages by state. It helps users compare how the same load assumption maps to different state electricity rates and funnels discovery into the underlying longtail scenario pages.`}
+        intro={`This hub organizes the site's ${config.shortLabel} scenario pages by state. It helps you see how the same usage assumption maps to different state electricity rates and links into the underlying state scenario pages.`}
         stats={[
           { label: "States covered", value: String(states.length) },
           { label: "Example monthly load", value: `${config.monthlyUsageKwh.toLocaleString()} kWh` },

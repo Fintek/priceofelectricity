@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Breadcrumbs, { breadcrumbsToJsonLd, type BreadcrumbItem } from "@/components/navigation/Breadcrumbs";
 import { loadKnowledgePage } from "@/lib/knowledge/loadKnowledgePage";
 import { getRelease } from "@/lib/knowledge/fetch";
 import { buildMetadata } from "@/lib/seo/metadata";
-import { buildBreadcrumbListJsonLd } from "@/lib/seo/jsonld";
+
 import JsonLdScript from "@/app/components/seo/JsonLdScript";
 import StatusFooter from "@/components/common/StatusFooter";
 import Disclaimers from "@/app/components/policy/Disclaimers";
@@ -39,22 +40,18 @@ export default async function AIEnergyDemandPage() {
   const chartRows = top5Highest.map((s) => ({ label: s.name, value: s.rate }));
   const hasChartData = chartRows.length >= 2;
 
-  const breadcrumbJsonLd = buildBreadcrumbListJsonLd([
+  const breadcrumbTrail: BreadcrumbItem[] = [
     { name: "Home", url: "/" },
-    { name: "AI Energy Demand", url: "/ai-energy-demand" },
-  ]);
+    { name: "Data", url: "/data" },
+    { name: "AI Energy Demand" },
+  ];
+  const breadcrumbJsonLd = breadcrumbsToJsonLd(breadcrumbTrail);
 
   return (
     <>
       <JsonLdScript data={breadcrumbJsonLd} />
       <main className="container">
-        <nav aria-label="Breadcrumb" className="muted" style={{ marginBottom: 16, fontSize: 14 }}>
-          <Link href="/">Home</Link>
-          {" · "}
-          <Link href="/data">Data Hub</Link>
-          {" · "}
-          <span aria-current="page">AI Energy Demand</span>
-        </nav>
+        <Breadcrumbs trail={breadcrumbTrail} />
 
         <h1 style={{ fontSize: 32, marginBottom: 24 }}>AI Energy Demand and Electricity Prices</h1>
 
@@ -187,7 +184,7 @@ export default async function AIEnergyDemandPage() {
         )}
 
         <TopicClusterNav
-          title="Related topic clusters"
+          title="Related topics"
           description="Data centers, grid capacity, electricity data, and trends."
           links={[
             { href: "/data-center-electricity-cost", label: "Data center electricity cost" },
@@ -195,7 +192,7 @@ export default async function AIEnergyDemandPage() {
             { href: "/electricity-data", label: "Electricity data" },
             { href: "/electricity-trends", label: "Electricity trends" },
             { href: "/electricity-cost", label: "Electricity cost by state" },
-            { href: "/electricity-topics", label: "Electricity topics hub" },
+            { href: "/electricity-topics", label: "Electricity topics" },
           ]}
         />
 
@@ -214,7 +211,7 @@ export default async function AIEnergyDemandPage() {
               Price conditions, affordability, inflation
             </li>
             <li>
-              <Link href="/knowledge">Knowledge Hub</Link>
+              <Link href="/knowledge">Knowledge</Link>
               {" — "}
               National overview, rankings, methodology
             </li>

@@ -30,7 +30,8 @@ function fail(label: string, detail?: string): void {
 const SITE_URL =
   process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/+$/, "") ||
   "https://priceofelectricity.com";
-const CANONICAL_SITE_URL = SITE_URL.replace("://www.", "://");
+/** Matches src/app/robots.ts — www avoids 308 from non-www sitemap URL. */
+const ROBOTS_SITEMAP_ORIGIN = "https://www.priceofelectricity.com";
 
 function extractSitemapPathnames(xml: string): string[] {
   const locPattern = /<loc>([^<]+)<\/loc>/g;
@@ -56,17 +57,13 @@ async function checkRobotsTxt(base: string): Promise<void> {
   pass("/robots.txt reachable");
 
   const body = await res.text();
-  const expectedSitemap = `Sitemap: ${CANONICAL_SITE_URL}/sitemap-index.xml`;
+  const expectedSitemap = `Sitemap: ${ROBOTS_SITEMAP_ORIGIN}/sitemap-index.xml`;
   if (body.includes(expectedSitemap)) {
-    pass(`/robots.txt sitemap directive uses canonical origin`);
+    pass(`/robots.txt sitemap directive uses www origin`);
   } else if (body.includes("Sitemap:") && body.includes("/sitemap-index.xml")) {
-    fail(`/robots.txt sitemap uses canonical origin`, `expected "${expectedSitemap}"`);
+    fail(`/robots.txt sitemap uses www origin`, `expected "${expectedSitemap}"`);
   } else {
     fail(`/robots.txt contains sitemap directive`, `expected "${expectedSitemap}"`);
-  }
-
-  if (body.includes("www.priceofelectricity.com")) {
-    fail("/robots.txt no www origin", "found www.priceofelectricity.com — canonical is non-www");
   }
 }
 

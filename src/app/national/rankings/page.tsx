@@ -80,22 +80,22 @@ export default function NationalRankingsPage() {
         >
           <thead>
             <tr style={{ borderBottom: "2px solid #ddd" }}>
-              <th style={{ textAlign: "left", padding: "8px 8px 8px 0", width: 40 }}>
+              <th scope="col" style={{ textAlign: "left", padding: "8px 8px 8px 0", width: 40 }}>
                 #
               </th>
-              <th style={{ textAlign: "left", padding: "8px 12px" }}>
+              <th scope="col" style={{ textAlign: "left", padding: "8px 12px" }}>
                 State
               </th>
-              <th style={{ textAlign: "right", padding: "8px 12px" }}>
+              <th scope="col" style={{ textAlign: "right", padding: "8px 12px" }}>
                 Rate (¢/kWh)
               </th>
-              <th style={{ textAlign: "right", padding: "8px 12px" }}>
+              <th scope="col" style={{ textAlign: "right", padding: "8px 12px" }}>
                 Index
               </th>
-              <th style={{ textAlign: "right", padding: "8px 12px" }}>
+              <th scope="col" style={{ textAlign: "right", padding: "8px 12px" }}>
                 Value Score
               </th>
-              <th style={{ textAlign: "left", padding: "8px 0 8px 12px" }}>
+              <th scope="col" style={{ textAlign: "left", padding: "8px 0 8px 12px" }}>
                 Tier
               </th>
             </tr>

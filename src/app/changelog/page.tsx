@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { SITE_URL } from "@/lib/site";
+import { buildMetadata } from "@/lib/seo/metadata";
 
 const BASE_URL = SITE_URL;
 const CHANGELOG_META_DESCRIPTION =
@@ -9,6 +10,13 @@ export const dynamic = "force-static";
 export const revalidate = 2592000;
 
 const CHANGELOG_ENTRIES = [
+  {
+    id: "district-of-columbia",
+    date: "2026-06-12",
+    title: "Added District of Columbia",
+    description:
+      "Expanded coverage to Washington, D.C. with a first-class jurisdiction page, EIA residential rates, bill estimator, and legacy URL redirects.",
+  },
   {
     id: "all-50-states",
     date: "2026-02-10",
@@ -42,8 +50,8 @@ const CHANGELOG_ENTRIES = [
   {
     id: "canonical-redirects",
     date: "2026-02-15",
-    title: "Added canonical redirects",
-    description: "Implemented middleware redirects to enforce canonical state URL slugs.",
+    title: "Added URL redirects for state slugs",
+    description: "Implemented middleware redirects to keep state URLs on consistent slug patterns.",
   },
   {
     id: "history-mvp",
@@ -59,25 +67,11 @@ const CHANGELOG_ENTRIES = [
   },
 ];
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetadata({
   title: "Changelog | PriceOfElectricity.com",
   description: CHANGELOG_META_DESCRIPTION,
-  alternates: {
-    canonical: `${BASE_URL}/changelog`,
-  },
-  openGraph: {
-    title: "Changelog | PriceOfElectricity.com",
-    description: CHANGELOG_META_DESCRIPTION,
-    url: `${BASE_URL}/changelog`,
-    siteName: "PriceOfElectricity.com",
-    type: "website",
-  },
-  twitter: {
-    card: "summary",
-    title: "Changelog | PriceOfElectricity.com",
-    description: CHANGELOG_META_DESCRIPTION,
-  },
-};
+  canonicalPath: "/changelog",
+});
 
 export default function ChangelogPage() {
   const webPageStructuredData = {

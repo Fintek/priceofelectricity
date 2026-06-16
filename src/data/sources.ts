@@ -24,14 +24,6 @@ export const SOURCES: Source[] = [
     publisher: "National Association of Regulatory Utility Commissioners",
   },
   {
-    slug: "manual-mvp",
-    name: "Manual MVP (Temporary)",
-    description:
-      "Placeholder for manually curated or aggregated data during initial development. Used when automated sources are not yet integrated.",
-    url: "https://priceofelectricity.com/about",
-    publisher: "PriceOfElectricity.com",
-  },
-  {
     slug: "poweroutage-us",
     name: "PowerOutage.us",
     description:
@@ -43,6 +35,10 @@ export const SOURCES: Source[] = [
 const SOURCES_BY_SLUG = Object.fromEntries(
   SOURCES.map((s) => [s.slug, s])
 ) as Record<string, Source>;
+
+/** Human-readable EIA page for state-level residential electricity data (shared outbound trust link). */
+export const EIA_STATE_RESIDENTIAL_DATA_URL =
+  SOURCES_BY_SLUG.eia?.url ?? "https://www.eia.gov/electricity/data/state/";
 
 /** Maps state sourceName to source slug for linking. */
 const SOURCE_NAME_TO_SLUG: Record<string, string> = {

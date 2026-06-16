@@ -329,7 +329,7 @@ export async function loadAllBillEstimatorStateSummaries(
 }
 
 export function buildBillEstimatorMethodologyNote(profile: BillEstimatorProfile): string {
-  return `This deterministic scenario applies ${profile.defaultMonthlyKwh.toLocaleString()} kWh/month for the ${profile.label.toLowerCase()} profile and excludes delivery fees, taxes, and fixed utility charges.`;
+  return `This scenario uses ${profile.defaultMonthlyKwh.toLocaleString()} kWh/month for the ${profile.label.toLowerCase()} profile and is computed from published EIA rate data; it excludes delivery fees, taxes, and fixed utility charges.`;
 }
 
 export function buildBillEstimatorDifferenceVsBenchmark(
@@ -338,6 +338,7 @@ export function buildBillEstimatorDifferenceVsBenchmark(
 ): string {
   if (profileMonthlyCost == null || benchmarkMonthlyCost == null) return "N/A";
   const diff = profileMonthlyCost - benchmarkMonthlyCost;
-  const direction = diff >= 0 ? "higher" : "lower";
+  if (Math.round(diff * 100) === 0) return "About the same";
+  const direction = diff > 0 ? "higher" : "lower";
   return `${formatUsd(Math.abs(diff))} ${direction}`;
 }

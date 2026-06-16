@@ -5,7 +5,12 @@ import { STATES } from "@/data/states";
 import { normalizeSlug } from "@/data/slug";
 import { isValidStateSlug } from "@/lib/slugGuard";
 import { HISTORY_BY_STATE } from "@/data/history";
-import { LAST_REVIEWED_DISPLAY, SITE_URL, UPDATE_CADENCE_TEXT } from "@/lib/site";
+import {
+  getCanonicalDatasetSynchronizedMediumDateUtc,
+  getCanonicalResidentialDataThroughMonthLabel,
+} from "@/lib/eiaReportingTrust";
+import { SITE_URL } from "@/lib/site";
+import { buildMetadata } from "@/lib/seo/metadata";
 
 const BASE_URL = SITE_URL;
 const FLAT_THRESHOLD_CENTS = 0.5;
@@ -88,35 +93,22 @@ export async function generateMetadata({
   const resolved = resolveState(state);
 
   if (!resolved) {
-    return {
+    return buildMetadata({
       title: "State not found | PriceOfElectricity.com",
       description: "State history page not found.",
-      alternates: { canonical: `${BASE_URL}/` },
-    };
+      canonicalPath: "/",
+    });
   }
 
   const { stateSlug, state: stateInfo } = resolved;
   const title = `${stateInfo.name} Electricity Price History | PriceOfElectricity.com`;
   const description = `Monthly average residential electricity price trend in ${stateInfo.name} (¢/kWh).`;
-  const canonicalUrl = `${BASE_URL}/${stateSlug}/history`;
 
-  return {
+  return buildMetadata({
     title,
     description,
-    alternates: { canonical: canonicalUrl },
-    openGraph: {
-      title,
-      description,
-      url: canonicalUrl,
-      siteName: "PriceOfElectricity.com",
-      type: "website",
-    },
-    twitter: {
-      card: "summary",
-      title,
-      description,
-    },
-  };
+    canonicalPath: `/electricity-price-history/${stateSlug}`,
+  });
 }
 
 export default async function StateHistoryPage({
@@ -135,6 +127,8 @@ export default async function StateHistoryPage({
   }
 
   const { stateSlug, state: stateInfo } = resolved;
+  const eiaReportingMonth = getCanonicalResidentialDataThroughMonthLabel();
+  const eiaDatasetSyncUtc = getCanonicalDatasetSynchronizedMediumDateUtc();
   const historyKey = buildHistoryKeyCandidates(stateParam).find(
     (key) => HISTORY_BY_STATE[key] !== undefined,
   );
@@ -144,7 +138,7 @@ export default async function StateHistoryPage({
     "@context": "https://schema.org",
     "@type": "WebPage",
     name: `${stateInfo.name} Electricity Price History`,
-    url: `${BASE_URL}/${stateSlug}/history`,
+    url: `${BASE_URL}/electricity-price-history/${stateSlug}`,
     description,
   };
 
@@ -157,7 +151,11 @@ export default async function StateHistoryPage({
         />
         <h1>{stateInfo.name} Electricity Price History</h1>
         <p className="muted" style={{ marginTop: 0, marginBottom: 8 }}>
-          {UPDATE_CADENCE_TEXT} {"•"} Last reviewed {LAST_REVIEWED_DISPLAY} {"•"}{" "}
+          {eiaDatasetSyncUtc !== null ? (
+            <>Dataset last updated {eiaDatasetSyncUtc} (UTC). </>
+          ) : null}
+          The U.S. Energy Information Administration (EIA) publishes monthly state data with a reporting lag, so the
+          series above reflects {eiaReportingMonth} activity. ·{" "}
           <Link href="/about">Methodology</Link>
         </p>
         <p className="muted">History coming soon.</p>
@@ -179,9 +177,6 @@ export default async function StateHistoryPage({
     range === "all"
       ? fullSeries
       : fullSeries.slice(-24);
-  if (range === "all" && displayedSeries.length < fullSeries.length) {
-    throw new Error(`History range bug: all=${displayedSeries.length} full=${fullSeries.length}`);
-  }
   const firstValue = displayedSeries[0].avgRateCentsPerKwh;
   const lastValue = displayedSeries[displayedSeries.length - 1].avgRateCentsPerKwh;
   const trend = getTrend(firstValue, lastValue);
@@ -196,7 +191,11 @@ export default async function StateHistoryPage({
       />
       <h1>{stateInfo.name} Electricity Price History</h1>
       <p className="muted" style={{ marginTop: 0, marginBottom: 8 }}>
-        {UPDATE_CADENCE_TEXT} {"•"} Last reviewed {LAST_REVIEWED_DISPLAY} {"•"}{" "}
+        {eiaDatasetSyncUtc !== null ? (
+          <>Dataset last updated {eiaDatasetSyncUtc} (UTC). </>
+        ) : null}
+        The U.S. Energy Information Administration (EIA) publishes monthly state data with a reporting lag, so the series
+        above reflects {eiaReportingMonth} activity. ·{" "}
         <Link href="/about">Methodology</Link>
       </p>
       <p className="muted intro" style={{ marginTop: 0 }}>
@@ -214,15 +213,15 @@ export default async function StateHistoryPage({
           <Link href={history.sourceUrl}>{history.sourceName ?? "History source"}</Link>
         ) : (
           history.sourceName ?? "History source unavailable"
-        )}{" "}
-        (updated {history.updated})
+        )}
+        .
       </p>
       <p className="muted" style={{ marginTop: 6 }}>
         Showing {displayedSeries.length} of {history.series.length} months.{" "}
         {range === "all" ? (
-          <Link href={`/${stateSlug}/history?range=24`}>Last {RECENT_MONTHS} months</Link>
+          <a href={`/${stateSlug}/history?range=24`}>Last {RECENT_MONTHS} months</a>
         ) : (
-          <Link href={`/${stateSlug}/history?range=all`}>All history</Link>
+          <a href={`/${stateSlug}/history?range=all`}>All history</a>
         )}
       </p>
 

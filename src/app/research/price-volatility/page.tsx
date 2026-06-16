@@ -1,31 +1,19 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { SITE_URL } from "@/lib/site";
+import { buildMetadata } from "@/lib/seo/metadata";
 import { HISTORY } from "@/data/history";
 import { buildNormalizedState } from "@/lib/stateBuilder";
 
 const BASE_URL = SITE_URL;
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetadata({
   title: "Electricity Price Volatility by State | PriceOfElectricity.com",
   description:
     "Which U.S. states have the most volatile electricity prices? Standard deviation analysis of monthly rate history.",
-  alternates: { canonical: `${BASE_URL}/research/price-volatility` },
-  openGraph: {
-    title: "Electricity Price Volatility by State | PriceOfElectricity.com",
-    description:
-      "Which U.S. states have the most volatile electricity prices?",
-    url: `${BASE_URL}/research/price-volatility`,
-    siteName: "PriceOfElectricity.com",
-    type: "website",
-  },
-  twitter: {
-    card: "summary",
-    title: "Electricity Price Volatility by State | PriceOfElectricity.com",
-    description:
-      "Which U.S. states have the most volatile electricity prices?",
-  },
-};
+  socialDescription: "Which U.S. states have the most volatile electricity prices?",
+  canonicalPath: "/research/price-volatility",
+});
 
 type VolatilityRow = {
   slug: string;
@@ -115,7 +103,7 @@ export default function PriceVolatilityPage() {
             <ul style={{ paddingLeft: 20, lineHeight: 1.8 }}>
               {mostVolatile.map((v) => (
                 <li key={v.slug}>
-                  <Link href={`/${v.slug}/history`} prefetch={false}>
+                  <Link href={`/electricity-price-history/${v.slug}`} prefetch={false}>
                     {v.name}
                   </Link>{" "}
                   — std dev: {v.stdDev.toFixed(3)}¢, range:{" "}
@@ -132,7 +120,7 @@ export default function PriceVolatilityPage() {
             <ul style={{ paddingLeft: 20, lineHeight: 1.8 }}>
               {mostStable.map((v) => (
                 <li key={v.slug}>
-                  <Link href={`/${v.slug}/history`} prefetch={false}>
+                  <Link href={`/electricity-price-history/${v.slug}`} prefetch={false}>
                     {v.name}
                   </Link>{" "}
                   — std dev: {v.stdDev.toFixed(3)}¢, range:{" "}
@@ -149,25 +137,25 @@ export default function PriceVolatilityPage() {
             <table style={{ width: "100%", borderCollapse: "collapse" }}>
               <thead>
                 <tr style={{ borderBottom: "2px solid var(--color-border)" }}>
-                  <th style={{ textAlign: "left", padding: "8px 4px" }}>
+                  <th scope="col" style={{ textAlign: "left", padding: "8px 4px" }}>
                     State
                   </th>
-                  <th style={{ textAlign: "right", padding: "8px 4px" }}>
+                  <th scope="col" style={{ textAlign: "right", padding: "8px 4px" }}>
                     Mean (¢)
                   </th>
-                  <th style={{ textAlign: "right", padding: "8px 4px" }}>
+                  <th scope="col" style={{ textAlign: "right", padding: "8px 4px" }}>
                     Std Dev (¢)
                   </th>
-                  <th style={{ textAlign: "right", padding: "8px 4px" }}>
+                  <th scope="col" style={{ textAlign: "right", padding: "8px 4px" }}>
                     Min (¢)
                   </th>
-                  <th style={{ textAlign: "right", padding: "8px 4px" }}>
+                  <th scope="col" style={{ textAlign: "right", padding: "8px 4px" }}>
                     Max (¢)
                   </th>
-                  <th style={{ textAlign: "right", padding: "8px 4px" }}>
+                  <th scope="col" style={{ textAlign: "right", padding: "8px 4px" }}>
                     Range (¢)
                   </th>
-                  <th style={{ textAlign: "right", padding: "8px 4px" }}>
+                  <th scope="col" style={{ textAlign: "right", padding: "8px 4px" }}>
                     Months
                   </th>
                 </tr>
@@ -181,7 +169,7 @@ export default function PriceVolatilityPage() {
                     }}
                   >
                     <td style={{ padding: "6px 4px" }}>
-                      <Link href={`/${v.slug}/history`} prefetch={false}>
+                      <Link href={`/electricity-price-history/${v.slug}`} prefetch={false}>
                         {v.name}
                       </Link>
                     </td>

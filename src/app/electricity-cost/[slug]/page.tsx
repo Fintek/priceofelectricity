@@ -6,13 +6,15 @@ import {
   loadInsights,
 } from "@/lib/knowledge/loadKnowledgePage";
 import { getActiveCitiesForState } from "@/lib/longtail/rollout";
+import { getCanonicalResidentialDataThroughMonthLabel } from "@/lib/eiaReportingTrust";
 import { buildMetadata } from "@/lib/seo/metadata";
-import { buildBreadcrumbListJsonLd, buildWebPageJsonLd } from "@/lib/seo/jsonld";
+import { buildWebPageJsonLd } from "@/lib/seo/jsonld";
 import JsonLdScript from "@/app/components/seo/JsonLdScript";
 import StatusFooter from "@/components/common/StatusFooter";
 import { getRelease } from "@/lib/knowledge/fetch";
 import Disclaimers from "@/app/components/policy/Disclaimers";
 import ExploreMore from "@/components/navigation/ExploreMore";
+import Breadcrumbs, { breadcrumbsToJsonLd, type BreadcrumbItem } from "@/components/navigation/Breadcrumbs";
 
 const MONTHLY_USAGE_KWH = 900;
 const ANNUAL_USAGE_KWH = 10800;
@@ -46,8 +48,19 @@ export async function generateMetadata({
     avgRate != null
       ? `Average electricity cost in ${stateName}: ${avgRate.toFixed(2)}¢/kWh. Estimated monthly cost for 900 kWh: $${monthlyCost.toFixed(2)}. Compare to national average.`
       : `${stateName} electricity cost and rate data. Residential average rate, estimated monthly and annual costs.`;
+
+  let title: string;
+  if (avgRate != null) {
+    const yearMatch = getCanonicalResidentialDataThroughMonthLabel().match(/\d{4}/);
+    const base = `Electricity Cost in ${stateName}: $${Math.round(monthlyCost)}/mo, ${avgRate.toFixed(2)}¢/kWh`;
+    const withYear = yearMatch ? `${base} (${yearMatch[0]})` : base;
+    title = withYear.length <= 60 ? withYear : base;
+  } else {
+    title = `Electricity Cost in ${stateName}`;
+  }
+
   return buildMetadata({
-    title: `Electricity Cost in ${stateName} | PriceOfElectricity.com`,
+    title,
     description,
     canonicalPath: `/electricity-cost/${slug}`,
   });
@@ -112,11 +125,12 @@ export default async function ElectricityCostStatePage({
 
   const canonicalPath = `/electricity-cost/${slug}`;
 
-  const breadcrumbJsonLd = buildBreadcrumbListJsonLd([
+  const breadcrumbTrail: BreadcrumbItem[] = [
     { name: "Home", url: "/" },
     { name: "Electricity Cost", url: "/electricity-cost" },
-    { name: stateName, url: canonicalPath },
-  ]);
+    { name: stateName },
+  ];
+  const breadcrumbJsonLd = breadcrumbsToJsonLd(breadcrumbTrail);
 
   const webPageJsonLd = buildWebPageJsonLd({
     title: `Electricity Cost in ${stateName}`,
@@ -172,13 +186,7 @@ export default async function ElectricityCostStatePage({
         data={[breadcrumbJsonLd, webPageJsonLd, ...(faqJsonLd ? [faqJsonLd] : [])]}
       />
       <main className="container">
-        <nav aria-label="Breadcrumb" className="muted" style={{ marginBottom: 16, fontSize: 14 }}>
-          <Link href="/">Home</Link>
-          {" · "}
-          <Link href="/electricity-cost">Electricity Cost</Link>
-          {" · "}
-          <span aria-current="page">{stateName}</span>
-        </nav>
+        <Breadcrumbs trail={breadcrumbTrail} />
 
         <h1 style={{ fontSize: 32, marginBottom: 16 }}>Electricity Cost in {stateName}</h1>
         <p style={{ marginTop: 0, marginBottom: 24, maxWidth: "65ch", fontSize: 16, lineHeight: 1.6 }}>

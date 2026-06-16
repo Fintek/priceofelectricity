@@ -28,7 +28,7 @@ export default function ProviderComparisonTable({
           <thead>
             <tr>
               {["Provider", "Type", "Services", "Lead model", "Sponsored"].map((label) => (
-                <th
+                <th scope="col"
                   key={label}
                   style={{
                     textAlign: "left",

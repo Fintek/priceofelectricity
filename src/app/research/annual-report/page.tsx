@@ -1,30 +1,18 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { SITE_URL, LAST_REVIEWED } from "@/lib/site";
+import { buildMetadata } from "@/lib/seo/metadata";
 import { buildAllNormalizedStates } from "@/lib/stateBuilder";
 
 const BASE_URL = SITE_URL;
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetadata({
   title: "Annual Electricity Price Report | PriceOfElectricity.com",
   description:
     "National electricity price summary: averages, highest and lowest states, affordability breakdown, and value score analysis.",
-  alternates: { canonical: `${BASE_URL}/research/annual-report` },
-  openGraph: {
-    title: "Annual Electricity Price Report | PriceOfElectricity.com",
-    description:
-      "National electricity price summary across all 50 U.S. states.",
-    url: `${BASE_URL}/research/annual-report`,
-    siteName: "PriceOfElectricity.com",
-    type: "website",
-  },
-  twitter: {
-    card: "summary",
-    title: "Annual Electricity Price Report | PriceOfElectricity.com",
-    description:
-      "National electricity price summary across all 50 U.S. states.",
-  },
-};
+  socialDescription: "National electricity price summary across all 50 states and Washington, D.C.",
+  canonicalPath: "/research/annual-report",
+});
 
 function computeReport() {
   const states = buildAllNormalizedStates();
@@ -71,7 +59,7 @@ export default function AnnualReportPage() {
     dateModified: LAST_REVIEWED,
     author: { "@type": "Organization", name: "PriceOfElectricity.com" },
     description:
-      "National electricity price summary across all 50 U.S. states.",
+      "National electricity price summary across all 50 states and Washington, D.C.",
   };
 
   return (
@@ -87,7 +75,7 @@ export default function AnnualReportPage() {
 
       <p className="intro muted" style={{ marginTop: 0 }}>
         A summary of residential electricity prices across {r.stateCount} U.S.
-        states, computed from the normalized data pipeline as of the latest
+        states, computed from the normalized site dataset as of the latest
         update.
       </p>
 
@@ -143,14 +131,14 @@ export default function AnnualReportPage() {
         <table style={{ width: "100%", borderCollapse: "collapse" }}>
           <thead>
             <tr style={{ borderBottom: "2px solid var(--color-border)" }}>
-              <th style={{ textAlign: "left", padding: "8px 4px" }}>State</th>
-              <th style={{ textAlign: "right", padding: "8px 4px" }}>
+              <th scope="col" style={{ textAlign: "left", padding: "8px 4px" }}>State</th>
+              <th scope="col" style={{ textAlign: "right", padding: "8px 4px" }}>
                 Rate (¢/kWh)
               </th>
-              <th style={{ textAlign: "right", padding: "8px 4px" }}>
+              <th scope="col" style={{ textAlign: "right", padding: "8px 4px" }}>
                 Value Score
               </th>
-              <th style={{ textAlign: "left", padding: "8px 4px" }}>
+              <th scope="col" style={{ textAlign: "left", padding: "8px 4px" }}>
                 Affordability
               </th>
             </tr>
@@ -188,14 +176,14 @@ export default function AnnualReportPage() {
         <table style={{ width: "100%", borderCollapse: "collapse" }}>
           <thead>
             <tr style={{ borderBottom: "2px solid var(--color-border)" }}>
-              <th style={{ textAlign: "left", padding: "8px 4px" }}>State</th>
-              <th style={{ textAlign: "right", padding: "8px 4px" }}>
+              <th scope="col" style={{ textAlign: "left", padding: "8px 4px" }}>State</th>
+              <th scope="col" style={{ textAlign: "right", padding: "8px 4px" }}>
                 Rate (¢/kWh)
               </th>
-              <th style={{ textAlign: "right", padding: "8px 4px" }}>
+              <th scope="col" style={{ textAlign: "right", padding: "8px 4px" }}>
                 Value Score
               </th>
-              <th style={{ textAlign: "left", padding: "8px 4px" }}>
+              <th scope="col" style={{ textAlign: "left", padding: "8px 4px" }}>
                 Affordability
               </th>
             </tr>
@@ -227,7 +215,7 @@ export default function AnnualReportPage() {
       </section>
 
       <p style={{ marginTop: 16 }}>
-        <Link href="/value-ranking">View full 50-state value ranking</Link>
+        <Link href="/value-ranking">View full 51-jurisdiction value ranking</Link>
       </p>
 
       <p className="muted" style={{ marginTop: 24 }}>

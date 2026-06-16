@@ -46,13 +46,13 @@ export default async function ElectricityUsageHubIndexPage() {
           { label: "Electricity Usage Hubs" },
         ]}
         title="Electricity Usage Hubs"
-        intro="These hubs organize usage-based electricity pages around common kWh tiers. They help users move from broad questions like 'how much does 1000 kWh cost?' into a state-by-state set of longtail pages."
+        intro="These hubs organize pages by common monthly kWh levels so you can jump from a question like ‘how much does 1,000 kWh cost?’ into state-by-state answers."
         stats={[{ label: "Active usage hubs", value: String(usageCards.length) }]}
         monetizationContext={{ pageType: "hub-usage-index" }}
         sections={[
           {
             title: "Browse by electricity usage tier",
-            intro: "Open a usage hub to compare a single kWh tier across multiple states and reach the state-level longtail pages.",
+            intro: "Open a usage hub to compare one monthly kWh level across states, then open any state’s detailed page.",
             cards: usageCards,
           },
         ]}

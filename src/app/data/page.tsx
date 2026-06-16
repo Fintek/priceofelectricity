@@ -20,9 +20,9 @@ export const dynamic = "force-static";
 
 export function generateMetadata(): Metadata {
   return buildMetadata({
-    title: "Data Hub | PriceOfElectricity.com",
+    title: "Data | PriceOfElectricity.com",
     description:
-      "Central entry point for electricity data and knowledge surfaces. Datasets for analysis, knowledge pages for LLM ingestion.",
+      "Central entry point for electricity datasets and knowledge JSON. Datasets for analysis; knowledge pages for research tools and structured access.",
     canonicalPath: "/data",
   });
 }
@@ -37,9 +37,9 @@ export default async function DataHubPage() {
   const endpoints = getKnowledgeDataEndpoints();
 
   const webPageJsonLd = buildWebPageJsonLd({
-    title: "Data Hub | PriceOfElectricity.com",
+    title: "Data | PriceOfElectricity.com",
     description:
-      "Central entry point for electricity data and knowledge surfaces. Datasets for analysis, knowledge pages for LLM ingestion.",
+      "Central entry point for electricity datasets and knowledge JSON. Datasets for analysis; knowledge pages for research tools and structured access.",
     url: "/data",
     isPartOf: "/",
     about: ["datasets", "electricity rates data", "knowledge JSON"],
@@ -47,7 +47,7 @@ export default async function DataHubPage() {
 
   const datasetJsonLd = buildDatasetJsonLd({
     name: "Knowledge Search Index",
-    description: "Searchable entity index for LLM retrieval and knowledge discovery.",
+    description: "Searchable entity index for research tools and knowledge discovery.",
     url: "/data",
     distribution: [{ contentUrl: "/knowledge/search-index.json", encodingFormat: "application/json" }],
     publisher: "PriceOfElectricity.com",
@@ -64,7 +64,7 @@ export default async function DataHubPage() {
     <>
       <JsonLdScript data={[webPageJsonLd, datasetJsonLd]} />
       <main className="container">
-      <nav aria-label="Data hub navigation" className="muted" style={{ marginBottom: 16, fontSize: 14 }}>
+      <nav aria-label="Data navigation" className="muted" style={{ marginBottom: 16, fontSize: 14 }}>
         <Link href="/knowledge">Knowledge</Link>
         {" · "}
         <Link href="/knowledge/pages">States directory</Link>
@@ -79,8 +79,8 @@ export default async function DataHubPage() {
       <section style={{ marginBottom: 32 }}>
         <h2 style={{ fontSize: 22, marginBottom: 12 }}>Public endpoints</h2>
         <p style={{ fontSize: 14, color: "#666", margin: "0 0 16px 0" }}>
-          Build-generated JSON entry points for discovery and LLM ingestion. See{" "}
-          <Link href="/knowledge/public-endpoints.json">public-endpoints.json</Link> for the canonical list.
+          JSON entry points published with the site for search, research tools, and automated updates. See{" "}
+          <Link href="/knowledge/public-endpoints.json">public-endpoints.json</Link> for the full list.
         </p>
         <EndpointGroupCards groups={publicEndpoints?.groups ?? []} />
       </section>
@@ -88,7 +88,7 @@ export default async function DataHubPage() {
       <section style={{ marginBottom: 24 }}>
         <h2 style={{ fontSize: 18, marginBottom: 8 }}>Crawling & Indexing</h2>
         <p style={{ fontSize: 14, color: "#666", margin: 0 }}>
-          The JSON entry points (search-index, index, contract) are intended for discovery and LLM ingestion.
+          The JSON entry points (search-index, index, contract) support discovery and structured research workflows.
           Individual entity JSON pages exist under /knowledge/state/ and elsewhere, but the index is the preferred entry point for crawlers.
         </p>
       </section>

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Breadcrumbs, { breadcrumbsToJsonLd, type BreadcrumbItem } from "@/components/navigation/Breadcrumbs";
 import { notFound } from "next/navigation";
 import JsonLdScript from "@/app/components/seo/JsonLdScript";
 import Disclaimers from "@/app/components/policy/Disclaimers";
@@ -12,7 +13,7 @@ import {
 } from "@/lib/longtail/usageIntelligence";
 import { getRelease } from "@/lib/knowledge/fetch";
 import { buildMetadata } from "@/lib/seo/metadata";
-import { buildBreadcrumbListJsonLd, buildWebPageJsonLd } from "@/lib/seo/jsonld";
+import { buildWebPageJsonLd } from "@/lib/seo/jsonld";
 
 export const dynamicParams = true;
 export const revalidate = 86400;
@@ -53,15 +54,15 @@ export default async function HomeSizeUsagePage({
   if (!representativeState) notFound();
 
   const costRows = buildHomeSizeCostRows(scenario, representativeState.nationalAverageCentsPerKwh);
-  const breadcrumbJsonLd = buildBreadcrumbListJsonLd([
+  const breadcrumbTrail: BreadcrumbItem[] = [
     { name: "Home", url: "/" },
     { name: "Electricity Usage", url: "/electricity-usage" },
-    { name: "Home Size", url: "/electricity-usage/home-size/1500-sqft" },
-    { name: scenario.label, url: `/electricity-usage/home-size/${scenario.slug}` },
-  ]);
+    { name: "scenario.label" },
+  ];
+  const breadcrumbJsonLd = breadcrumbsToJsonLd(breadcrumbTrail);
   const webPageJsonLd = buildWebPageJsonLd({
     title: scenario.label,
-    description: `Electricity usage range estimates for a ${scenario.squareFeet.toLocaleString()} sq ft home with links to canonical cost pages and calculator routes.`,
+    description: `Electricity usage range estimates for a ${scenario.squareFeet.toLocaleString()} sq ft home with links to related cost pages and calculators.`,
     url: `/electricity-usage/home-size/${scenario.slug}`,
     isPartOf: "/",
     about: ["kwh usage for home sizes", "average kwh per month by home size", "household electricity usage"],
@@ -71,13 +72,7 @@ export default async function HomeSizeUsagePage({
     <>
       <JsonLdScript data={[breadcrumbJsonLd, webPageJsonLd]} />
       <main className="container">
-        <nav aria-label="Breadcrumb" className="muted" style={{ marginBottom: 16, fontSize: 14 }}>
-          <Link href="/">Home</Link>
-          {" · "}
-          <Link href="/electricity-usage">Electricity Usage</Link>
-          {" · "}
-          <span aria-current="page">{scenario.label}</span>
-        </nav>
+        <Breadcrumbs trail={breadcrumbTrail} />
 
         <h1 style={{ fontSize: 32, marginBottom: 12 }}>{scenario.label}</h1>
         <p style={{ marginTop: 0, marginBottom: 20, maxWidth: "70ch", lineHeight: 1.7 }}>
@@ -123,7 +118,7 @@ export default async function HomeSizeUsagePage({
               <thead>
                 <tr>
                   {["Profile", "Monthly usage", "Estimated monthly cost", "Estimated annual cost"].map((label) => (
-                    <th key={label} style={{ textAlign: "left", padding: 10, borderBottom: "1px solid var(--color-border, #e5e7eb)", backgroundColor: "var(--color-surface-alt, #f9fafb)" }}>
+                    <th scope="col" key={label} style={{ textAlign: "left", padding: 10, borderBottom: "1px solid var(--color-border, #e5e7eb)", backgroundColor: "var(--color-surface-alt, #f9fafb)" }}>
                       {label}
                     </th>
                   ))}
@@ -169,8 +164,8 @@ export default async function HomeSizeUsagePage({
             {representativeState.updatedLabel
               ? `Last dataset period: ${representativeState.updatedLabel}.`
               : "Data period label is currently unavailable."}{" "}
-            Home-size usage ranges are deterministic planning assumptions tied to appliance/HVAC profiles and intended
-            for comparative usage intelligence.
+            Home-size usage ranges are fixed planning inputs tied to appliance/HVAC profiles and intended
+            for side-by-side comparisons across home sizes.
           </p>
         </section>
 

@@ -377,7 +377,10 @@ export function sortAverageBillStates(
 
 export function buildAverageBillComparisonSummary(state: AverageBillStateSummary): string | undefined {
   if (state.monthlyDifference == null || state.monthlyDifferencePercent == null) return undefined;
-  const direction = state.monthlyDifference >= 0 ? "higher" : "lower";
+  if (Math.round(state.monthlyDifference * 100) === 0) {
+    return `${state.name}'s typical residential bill estimate is about the same as the U.S. average on this benchmark.`;
+  }
+  const direction = state.monthlyDifference > 0 ? "higher" : "lower";
   return `${state.name}'s typical residential bill estimate is ${direction} than the U.S. average by ${formatUsd(
     Math.abs(state.monthlyDifference),
   )} per month (${Math.abs(state.monthlyDifferencePercent).toFixed(1)}%).`;

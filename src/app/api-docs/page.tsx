@@ -1,32 +1,19 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { SITE_URL } from "@/lib/site";
+import { buildMetadata } from "@/lib/seo/metadata";
 
 const BASE_URL = SITE_URL;
 
 export const dynamic = "force-static";
 export const revalidate = 2592000;
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetadata({
   title: "API Documentation | PriceOfElectricity.com",
   description:
     "Public API documentation for PriceOfElectricity.com, including versioned v1 endpoints and legacy JSON feeds.",
-  alternates: { canonical: `${BASE_URL}/api-docs` },
-  openGraph: {
-    title: "API Documentation | PriceOfElectricity.com",
-    description:
-      "Public API documentation for PriceOfElectricity.com, including versioned v1 endpoints and legacy JSON feeds.",
-    url: `${BASE_URL}/api-docs`,
-    siteName: "PriceOfElectricity.com",
-    type: "website",
-  },
-  twitter: {
-    card: "summary",
-    title: "API Documentation | PriceOfElectricity.com",
-    description:
-      "Public API documentation for PriceOfElectricity.com, including versioned v1 endpoints and legacy JSON feeds.",
-  },
-};
+  canonicalPath: "/api-docs",
+});
 
 export default function ApiDocsPage() {
   const webPageStructuredData = {
@@ -61,8 +48,7 @@ export default function ApiDocsPage() {
           v1 Public Data Contract
         </h2>
         <p style={{ marginTop: 0 }}>
-          The v1 endpoints return structured, deterministic JSON with a stable
-          schema. Fields may be added over time but existing fields will not be
+          The v1 endpoints return structured JSON with a stable schema. Fields may be added over time but existing fields will not be
           removed or renamed within the same version.
         </p>
 
@@ -70,7 +56,7 @@ export default function ApiDocsPage() {
           GET /api/v1/states
         </h3>
         <p className="muted" style={{ margin: "4px 0 8px" }}>
-          Returns all 50 states with summary metrics.
+          Returns all 50 states and Washington, D.C. with summary metrics.
         </p>
         <pre
           style={{

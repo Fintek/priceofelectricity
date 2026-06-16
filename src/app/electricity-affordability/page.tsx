@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Breadcrumbs, { breadcrumbsToJsonLd, type BreadcrumbItem } from "@/components/navigation/Breadcrumbs";
 import {
   loadKnowledgePage,
   loadEntityIndex,
   loadRankingsIndex,
 } from "@/lib/knowledge/loadKnowledgePage";
 import { buildMetadata } from "@/lib/seo/metadata";
-import { buildBreadcrumbListJsonLd, buildWebPageJsonLd } from "@/lib/seo/jsonld";
+import { buildWebPageJsonLd } from "@/lib/seo/jsonld";
 import JsonLdScript from "@/app/components/seo/JsonLdScript";
 import ExploreMore from "@/components/navigation/ExploreMore";
 import SectionNav from "@/components/navigation/SectionNav";
@@ -58,10 +59,12 @@ export default async function ElectricityAffordabilityPage() {
   const affordabilityRankings =
     rankingsIndex?.items?.filter((r) => AFFORDABILITY_RANKING_IDS.includes(r.id)) ?? [];
 
-  const breadcrumbJsonLd = buildBreadcrumbListJsonLd([
+  const breadcrumbTrail: BreadcrumbItem[] = [
     { name: "Home", url: "/" },
-    { name: "Electricity Affordability", url: "/electricity-affordability" },
-  ]);
+    { name: "Electricity Trends", url: "/electricity-trends" },
+    { name: "Electricity Affordability" },
+  ];
+  const breadcrumbJsonLd = breadcrumbsToJsonLd(breadcrumbTrail);
 
   const webPageJsonLd = buildWebPageJsonLd({
     title: "Electricity Affordability in the United States",
@@ -77,13 +80,7 @@ export default async function ElectricityAffordabilityPage() {
       <JsonLdScript data={breadcrumbJsonLd} />
       <JsonLdScript data={webPageJsonLd} />
       <main className="container">
-        <nav aria-label="Breadcrumb" className="muted" style={{ marginBottom: 16, fontSize: 14 }}>
-          <Link href="/">Home</Link>
-          {" · "}
-          <Link href="/electricity-trends">Electricity Trends</Link>
-          {" · "}
-          <span aria-current="page">Electricity Affordability</span>
-        </nav>
+        <Breadcrumbs trail={breadcrumbTrail} />
 
         <SectionNav
           title="In this section"
@@ -213,7 +210,7 @@ export default async function ElectricityAffordabilityPage() {
           {" · "}
           <Link href="/electricity-price-volatility">Electricity price volatility</Link>
           {" · "}
-          <Link href="/electricity-topics">Electricity topics hub</Link>
+          <Link href="/electricity-topics">Electricity topics</Link>
           {" · "}
           <Link href="/electricity-data">Electricity data</Link>
         </p>
@@ -232,7 +229,7 @@ export default async function ElectricityAffordabilityPage() {
         <p className="muted" style={{ marginTop: 32 }}>
           <Link href="/electricity-trends">Electricity Trends</Link> {" | "}
           <Link href="/electricity-insights">Electricity Insights</Link> {" | "}
-          <Link href="/knowledge">Knowledge Hub</Link> {" | "}
+          <Link href="/knowledge">Knowledge</Link> {" | "}
           <Link href="/datasets">Datasets</Link>
         </p>
       </main>

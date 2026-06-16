@@ -1,11 +1,12 @@
 // ARCHITECTURE:
 // RAW → VALIDATED → TRANSFORMED → NORMALIZED → RENDERED
 // This separation prepares the system for future automated ingestion.
-import { getSourceSlugForState } from "@/data/sources";
+import { EIA_STATE_RESIDENTIAL_DATA_URL, getSourceSlugForState } from "@/data/sources";
 import { computeAffordability, type AffordabilityRecord } from "@/lib/affordability";
 import { computeValueScores, type ValueScore } from "@/lib/valueScore";
 import { computeFreshness } from "@/lib/freshness";
 import { getRateTier, getRateTierLabel } from "@/lib/insights";
+import { EIA_RESIDENTIAL_RETAIL_PRICE_DATA_META } from "@/data/raw/states.raw";
 import {
   getAllTransformedStates,
   transformRawState,
@@ -16,6 +17,7 @@ export type NormalizedState = {
   name: string;
   avgRateCentsPerKwh: number;
   updated: string;
+  datasetSynchronizedDisplayUtc: string | null;
   methodology: string;
   disclaimer: string;
   affordabilityIndex: number;
@@ -39,7 +41,7 @@ const EXAMPLE_KWH = [500, 900, 1000, 1500] as const;
 // monthly refresh pipeline (scripts/eia/*) is the canonical ingestion path;
 // `src/data/raw/states.raw.ts` is regenerated from that CSV on each refresh.
 const DEFAULT_SOURCE_NAME = "U.S. Energy Information Administration (EIA)";
-const DEFAULT_SOURCE_URL = "https://www.eia.gov/electricity/data/state/";
+const DEFAULT_SOURCE_URL = EIA_STATE_RESIDENTIAL_DATA_URL;
 const DEFAULT_METHODOLOGY =
   "Average residential electricity price in cents per kWh from the published state-level dataset. Values are used as a reference benchmark for comparison and estimation.";
 const DEFAULT_DISCLAIMER =
@@ -97,15 +99,27 @@ export function buildNormalizedState(slug: string): NormalizedState {
   const sourceSlug = getSourceSlugForState(DEFAULT_SOURCE_NAME);
   const affordability = getAffordabilityMap().get(slug);
   const vs = getValueScoreMap().get(slug);
-  const freshness = computeFreshness(updated);
+  const syncIso =
+    typeof EIA_RESIDENTIAL_RETAIL_PRICE_DATA_META.pipelineSynchronizedAtIso === "string"
+      ? EIA_RESIDENTIAL_RETAIL_PRICE_DATA_META.pipelineSynchronizedAtIso
+      : undefined;
+  const datasetSynchronizedDisplayUtc =
+    syncIso !== undefined && Number.isFinite(Date.parse(syncIso))
+      ? new Date(syncIso).toLocaleDateString("en-US", {
+          dateStyle: "medium",
+          timeZone: "UTC",
+        })
+      : null;
+  const freshness = computeFreshness(updated, syncIso);
   const rateTierLabel = getRateTierLabel(getRateTier(rate));
-  const shortSummary = `${transformed.name}'s average residential electricity price is ${rate}¢/kWh as of ${updated}. This places ${transformed.name} in the ${rateTierLabel.toLowerCase()} rate tier based on the same threshold model used across all states. At 900 kWh of monthly usage, the estimated energy-only charge is about $${((900 * rate) / 100).toFixed(2)}.`;
+  const shortSummary = `${transformed.name}'s average residential electricity price is ${rate}¢/kWh for the latest complete EIA reporting month (${updated}). This places ${transformed.name} in the ${rateTierLabel.toLowerCase()} rate tier compared with other states. At 900 kWh of monthly usage, the estimated energy-only charge is about $${((900 * rate) / 100).toFixed(2)}.`;
 
   return {
     slug,
     name: transformed.name,
     avgRateCentsPerKwh: rate,
     updated,
+    datasetSynchronizedDisplayUtc,
     methodology: DEFAULT_METHODOLOGY,
     disclaimer: DEFAULT_DISCLAIMER,
     affordabilityIndex: affordability?.indexScore ?? 0,

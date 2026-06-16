@@ -8,7 +8,7 @@ export const revalidate = 2592000;
 
 const TITLE = "Press Kit";
 const DESCRIPTION =
-  "Media resources for PriceOfElectricity.com: site overview, dataset description, machine-readable endpoints, and media inquiry contact.";
+  "Media resources for PriceOfElectricity.com: site overview, dataset description, structured JSON endpoints, and media inquiry contact.";
 
 export const metadata: Metadata = {
   title: `${TITLE} | PriceOfElectricity.com`,
@@ -62,7 +62,7 @@ export default function PressKitPage() {
           affordability indices, a proprietary Electricity Price Index™,
           Value Score™ rankings, and historical snapshots. All data is sourced
           from publicly available utility and government datasets and processed
-          through a documented normalization pipeline.
+          through a documented normalization process.
         </p>
       </section>
 
@@ -73,7 +73,7 @@ export default function PressKitPage() {
         <ul style={{ paddingLeft: 20, lineHeight: 2.2 }}>
           <li>
             <b>State-by-state comparability</b> — Normalized average rates
-            across all 50 states using a consistent methodology.
+            across all 50 states and Washington, D.C. using a consistent methodology.
           </li>
           <li>
             <b>Proprietary benchmarking</b> — The Electricity Price Index™
@@ -85,9 +85,9 @@ export default function PressKitPage() {
             trend analysis over time.
           </li>
           <li>
-            <b>Machine-readable</b> — Structured JSON and CSV exports,
-            content registry, and graph endpoints make it easy to ingest
-            programmatically.
+            <b>Structured exports</b> — JSON and CSV exports,
+            content registry, and graph endpoints support
+            programmatic use.
           </li>
           <li>
             <b>Transparent methodology</b> — All scoring formulas are

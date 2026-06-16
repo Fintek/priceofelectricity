@@ -2,7 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { STATE_LIST } from "@/data/states";
 import { computeFreshness } from "@/lib/freshness";
-import { LAST_REVIEWED_DISPLAY, SITE_URL, UPDATE_CADENCE_TEXT } from "@/lib/site";
+import EiaHomeTrustLine from "@/components/common/EiaHomeTrustLine";
+import { SITE_URL } from "@/lib/site";
+import { buildMetadata } from "@/lib/seo/metadata";
 import { getRelatedForTool } from "@/lib/related";
 import RelatedLinks from "@/app/components/RelatedLinks";
 
@@ -29,27 +31,13 @@ export async function generateMetadata({
   const { sort } = await searchParams;
   const isKnownSort = !sort || VALID_SORTS.has(sort);
 
-  return {
+  return buildMetadata({
     title: "Compare Electricity Prices by State (¢/kWh) | PriceOfElectricity.com",
     description:
       "Compare average residential electricity prices by state and estimate energy-only monthly bills.",
-    alternates: { canonical: `${BASE_URL}/compare` },
+    canonicalPath: "/compare",
     ...(!isKnownSort && { robots: { index: false, follow: true } }),
-    openGraph: {
-      title: "Compare Electricity Prices by State (¢/kWh) | PriceOfElectricity.com",
-      description:
-        "Compare average residential electricity prices by state and estimate energy-only monthly bills.",
-      url: `${BASE_URL}/compare`,
-      siteName: "PriceOfElectricity.com",
-      type: "website",
-    },
-    twitter: {
-      card: "summary",
-      title: "Compare Electricity Prices by State (¢/kWh) | PriceOfElectricity.com",
-      description:
-        "Compare average residential electricity prices by state and estimate energy-only monthly bills.",
-    },
-  };
+  });
 }
 
 export default async function ComparePage({
@@ -88,10 +76,7 @@ export default async function ComparePage({
       <h1>
         Compare Electricity Prices by State
       </h1>
-      <p className="muted" style={{ marginTop: 0, marginBottom: 8 }}>
-        {UPDATE_CADENCE_TEXT} {"•"} Last reviewed {LAST_REVIEWED_DISPLAY} {"•"}{" "}
-        <Link href="/about">Methodology</Link>
-      </p>
+      <EiaHomeTrustLine />
       <p className="intro muted" style={{ marginTop: 0 }}>
         Compare average residential electricity prices (¢/kWh) and see example
         energy-only monthly costs at 900 kWh.
@@ -114,7 +99,7 @@ export default async function ComparePage({
         <Link href="/index-ranking">Electricity Price Index™</Link>.
       </p>
       <p className="muted" style={{ marginTop: 6 }}>
-        Explore the cluster: <Link href="/topics/electricity-prices">Electricity Prices</Link>.
+        Explore the topic area: <Link href="/topics/electricity-prices">Electricity Prices</Link>.
       </p>
       <p className="muted" style={{ marginTop: 6 }}>
         Get monthly updates - <Link href="/newsletter">join the newsletter</Link>.

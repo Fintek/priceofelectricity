@@ -21,6 +21,7 @@ export const metadata: Metadata = buildMetadata({
   description:
     "Human-readable directory of all Knowledge JSON pages: states, national, methodologies, rankings, and verticals.",
   canonicalPath: "/knowledge/pages",
+  robots: { index: false, follow: true },
 });
 
 export default async function KnowledgePagesDirectoryPage() {
@@ -86,7 +87,7 @@ export default async function KnowledgePagesDirectoryPage() {
         ))}
       </div>
       <p className="muted" style={{ marginTop: 0 }}>
-        Human-readable directory of build-generated Knowledge JSON pages.
+        Human-readable directory of Knowledge JSON pages produced by the site build.
         Each entity links to its canonical page and JSON file.
       </p>
 

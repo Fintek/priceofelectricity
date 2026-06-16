@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Breadcrumbs, { breadcrumbsToJsonLd, type BreadcrumbItem } from "@/components/navigation/Breadcrumbs";
 import { buildMetadata } from "@/lib/seo/metadata";
-import { buildBreadcrumbListJsonLd } from "@/lib/seo/jsonld";
+
 import JsonLdScript from "@/app/components/seo/JsonLdScript";
 import StatusFooter from "@/components/common/StatusFooter";
 import { getRelease } from "@/lib/knowledge/fetch";
@@ -10,47 +11,44 @@ export const dynamic = "force-static";
 export const revalidate = 86400;
 
 export const metadata: Metadata = buildMetadata({
-  title: "Discovery Graph – Topic & Data Relationships | PriceOfElectricity.com",
+  title: "Site Discovery Map – Topic Relationships | PriceOfElectricity.com",
   description:
-    "Curated relationship map of major topics, datasets, and methodology. Machine-readable JSON for crawlers.",
+    "Curated relationship map of major topics, datasets, and methodology. Structured JSON for research tools.",
   canonicalPath: "/discovery-graph",
+  robots: { index: false, follow: true },
 });
 
 export default async function DiscoveryGraphPage() {
   const release = await getRelease();
 
-  const breadcrumbJsonLd = buildBreadcrumbListJsonLd([
+  const breadcrumbTrail: BreadcrumbItem[] = [
     { name: "Home", url: "/" },
-    { name: "Discovery Graph", url: "/discovery-graph" },
-  ]);
+    { name: "Electricity Trends", url: "/electricity-trends" },
+    { name: "Site Discovery Map" },
+  ];
+  const breadcrumbJsonLd = breadcrumbsToJsonLd(breadcrumbTrail);
 
   return (
     <>
       <JsonLdScript data={breadcrumbJsonLd} />
       <main className="container">
-        <nav aria-label="Breadcrumb" className="muted" style={{ marginBottom: 16, fontSize: 14 }}>
-          <Link href="/">Home</Link>
-          {" · "}
-          <Link href="/electricity-trends">Electricity Trends</Link>
-          {" · "}
-          <span aria-current="page">Discovery Graph</span>
-        </nav>
+        <Breadcrumbs trail={breadcrumbTrail} />
 
-        <h1 style={{ fontSize: 32, marginBottom: 24 }}>Discovery Graph</h1>
+        <h1 style={{ fontSize: 32, marginBottom: 24 }}>Site Discovery Map</h1>
 
         {/* A) Intro */}
         <section style={{ marginBottom: 32 }}>
           <p style={{ marginTop: 0, marginBottom: 12, maxWidth: "65ch", fontSize: 16, lineHeight: 1.6 }}>
-            Curated relationship map of major topics, datasets, and methodology. It shows representative connections across the site rather than an exhaustive graph of every page and edge. Machine-readable JSON is available for crawlers and programmatic discovery.
+            Curated relationship map of major topics, datasets, and methodology. It shows representative connections across the site rather than an exhaustive map of every page and edge. Structured JSON is available for crawlers and research tools.
           </p>
           <p className="muted" style={{ margin: "0 0 24px 0", fontSize: 14, maxWidth: "50ch" }}>
-            <strong>Best for:</strong> Understanding site structure and the machine-readable topic map.
+            <strong>Best for:</strong> Understanding site structure and the JSON topic map.
           </p>
         </section>
 
-        {/* B) Major Topic Clusters */}
+        {/* B) Major topics */}
         <section style={{ marginBottom: 32 }}>
-          <h2 style={{ fontSize: 20, marginBottom: 12 }}>Major Topic Clusters</h2>
+          <h2 style={{ fontSize: 20, marginBottom: 12 }}>Major topics</h2>
           <ul style={{ margin: 0, paddingLeft: 20, lineHeight: 2.2 }}>
             <li>
               <strong>Consumer electricity economics</strong> —{" "}
@@ -85,13 +83,12 @@ export default async function DiscoveryGraphPage() {
               <Link href="/electricity-generation-cost-drivers">Electricity generation cost drivers</Link>
             </li>
             <li>
-              <strong>Data / methodology / discovery</strong> —{" "}
-              <Link href="/future-expansion">Future expansion framework</Link>,{" "}
+              <strong>Data / methodology / navigation</strong> —{" "}
               <Link href="/electricity-data">Electricity data</Link>,{" "}
               <Link href="/datasets">Datasets</Link>,{" "}
               <Link href="/methodology">Methodology</Link>,{" "}
               <Link href="/electricity-topics">Electricity topics</Link>,{" "}
-              <Link href="/entity-registry">Entity registry</Link>
+              <Link href="/entity-registry">Electricity reference index</Link>
             </li>
           </ul>
         </section>
@@ -110,11 +107,11 @@ export default async function DiscoveryGraphPage() {
           </ul>
         </section>
 
-        {/* D) Machine-Readable Graph */}
+        {/* D) Structured JSON */}
         <section style={{ marginBottom: 32 }}>
-          <h2 style={{ fontSize: 20, marginBottom: 12 }}>Machine-Readable Graph</h2>
+          <h2 style={{ fontSize: 20, marginBottom: 12 }}>Structured JSON</h2>
           <p style={{ marginTop: 0, marginBottom: 12, maxWidth: "65ch", fontSize: 16, lineHeight: 1.6 }}>
-            A lightweight, curated JSON subset of major nodes and relationships is available for programmatic discovery and LLM crawlers:
+            A lightweight, curated JSON subset of major topics and relationships is available for developers and research tools:
           </p>
           <p style={{ margin: 0 }}>
             <Link href="/discovery-graph.json">/discovery-graph.json</Link>
@@ -125,14 +122,14 @@ export default async function DiscoveryGraphPage() {
 
         {/* E) Related Discovery Pages */}
         <section style={{ marginBottom: 32 }}>
-          <h2 style={{ fontSize: 20, marginBottom: 12 }}>Related Discovery Pages</h2>
+          <h2 style={{ fontSize: 20, marginBottom: 12 }}>Related navigation pages</h2>
           <ul style={{ margin: 0, paddingLeft: 20, lineHeight: 2.2 }}>
-            <li><Link href="/electricity-topics">Browse the major electricity economics topic clusters</Link></li>
+            <li><Link href="/electricity-topics">Browse major electricity economics topics</Link></li>
             <li><Link href="/electricity-data">See the datasets and data-driven analysis foundation</Link></li>
             <li><Link href="/page-index">Browse all major pages by category</Link></li>
             <li><Link href="/site-map">See the high-level site structure</Link></li>
             <li><Link href="/entity-registry">Explore the site&apos;s core electricity entities</Link></li>
-            <li><Link href="/data-registry">Data registry</Link></li>
+            <li><Link href="/data-registry">Electricity data reference</Link></li>
           </ul>
         </section>
 

@@ -1,3 +1,4 @@
+import { STATES } from "@/data/states";
 import type { NormalizedState } from "@/lib/stateBuilder";
 import { SITE_URL } from "@/lib/site";
 import { getElectricityPriceIndexForState } from "@/lib/priceIndex";
@@ -18,24 +19,70 @@ function buildFAQSchema(items: FAQItem[]) {
   };
 }
 
-export function buildStateSchema(ns: NormalizedState) {
-  const description = `${ns.name} average residential electricity rate is ${ns.avgRateCentsPerKwh}¢/kWh (updated ${ns.updated}). Estimate your monthly bill with our quick calculator.`;
+function buildDcFaqItems(ns: NormalizedState): FAQItem[] {
+  const mdRate = STATES.maryland?.avgRateCentsPerKwh;
+  const vaRate = STATES.virginia?.avgRateCentsPerKwh;
+  const dcRate = ns.avgRateCentsPerKwh;
 
-  const faqItems: FAQItem[] = [
+  let mdVaComparison =
+    "Compare live rates on this page and our Maryland and Virginia state pages.";
+  if (mdRate != null && vaRate != null) {
+    const cheaperThanMd = dcRate < mdRate;
+    const cheaperThanVa = dcRate < vaRate;
+    if (cheaperThanMd && cheaperThanVa) {
+      mdVaComparison = `At ${dcRate}¢/kWh, DC is cheaper than both Maryland (${mdRate}¢/kWh) and Virginia (${vaRate}¢/kWh).`;
+    } else if (!cheaperThanMd && !cheaperThanVa) {
+      mdVaComparison = `At ${dcRate}¢/kWh, DC is more expensive than both Maryland (${mdRate}¢/kWh) and Virginia (${vaRate}¢/kWh).`;
+    } else if (cheaperThanMd) {
+      mdVaComparison = `At ${dcRate}¢/kWh, DC is cheaper than Maryland (${mdRate}¢/kWh) but more expensive than Virginia (${vaRate}¢/kWh).`;
+    } else {
+      mdVaComparison = `At ${dcRate}¢/kWh, DC is more expensive than Maryland (${mdRate}¢/kWh) but cheaper than Virginia (${vaRate}¢/kWh).`;
+    }
+  }
+
+  return [
     {
-      question: `What is the average residential electricity price in ${ns.name}?`,
-      answer: `${ns.name}'s average residential electricity rate is ${ns.avgRateCentsPerKwh}¢/kWh (updated ${ns.updated}).`,
+      question: "What is the average electricity rate in Washington DC?",
+      answer: `Washington DC's average residential electricity rate is ${dcRate}¢/kWh (updated ${ns.updated}).`,
     },
     {
-      question: "How is the bill estimate calculated?",
-      answer: `The estimate uses: kWh * (${ns.avgRateCentsPerKwh}¢/kWh) / 100. It is an energy-only estimate.`,
-    },
-    {
-      question: "Does the estimate include delivery fees and taxes?",
+      question: "Who is the electric utility in DC?",
       answer:
-        "No. It excludes delivery fees, taxes, fixed charges, and other utility fees.",
+        "Pepco (Potomac Electric Power Company) is DC's sole regulated distribution utility; customers can choose a retail electricity supplier for generation supply.",
+    },
+    {
+      question: "Is electricity cheaper in DC than Maryland or Virginia?",
+      answer: mdVaComparison,
+    },
+    {
+      question: "Why is DC listed separately from the 50 states?",
+      answer:
+        "The District of Columbia is a federal district, not a state, but EIA reports residential electricity prices for DC on the same monthly schedule as the 50 states.",
     },
   ];
+}
+
+export function buildStateSchema(ns: NormalizedState) {
+  const description = `${ns.name} average residential electricity rate is ${ns.avgRateCentsPerKwh}¢/kWh (updated ${ns.updated}). Estimate your monthly bill.`;
+
+  const faqItems: FAQItem[] =
+    ns.slug === "district-of-columbia"
+      ? buildDcFaqItems(ns)
+      : [
+          {
+            question: `What is the average residential electricity price in ${ns.name}?`,
+            answer: `${ns.name}'s average residential electricity rate is ${ns.avgRateCentsPerKwh}¢/kWh (updated ${ns.updated}).`,
+          },
+          {
+            question: "How is the bill estimate calculated?",
+            answer: `The estimate uses: kWh * (${ns.avgRateCentsPerKwh}¢/kWh) / 100. It is an energy-only estimate.`,
+          },
+          {
+            question: "Does the estimate include delivery fees and taxes?",
+            answer:
+              "No. It excludes delivery fees, taxes, fixed charges, and other utility fees.",
+          },
+        ];
 
   const webPage = {
     "@context": "https://schema.org",

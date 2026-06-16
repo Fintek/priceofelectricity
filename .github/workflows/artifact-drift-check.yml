@@ -1,0 +1,55 @@
+name: Artifact Drift Check
+
+# Fails if the committed public data artifacts are stale relative to a fresh
+# knowledge:build. These artifacts are regenerated on every Vercel deploy, so
+# this never blocks production — it only keeps the committed copies in sync to
+# prevent local "dirty working tree" churn between monthly EIA refreshes.
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+concurrency:
+  group: artifact-drift-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  drift-check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v5
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Regenerate release + knowledge artifacts
+        run: |
+          npm run release:gen
+          npm run knowledge:build
+
+      - name: Check committed artifacts for drift
+        run: |
+          set -e
+          ARTIFACTS=(
+            public/datasets/electricity-prices-by-state.json
+            public/datasets/electricity-prices-by-state.csv
+            public/datasets/electricity-rankings.json
+            public/datasets/electricity-rankings.csv
+            public/discovery-graph.json
+            public/electricity-comparison-pairs.json
+            public/graph.json
+          )
+          if ! git diff --quiet -- "${ARTIFACTS[@]}"; then
+            echo "::error::Committed public artifacts are stale. Run 'npm run knowledge:build' and commit the changes."
+            git --no-pager diff --stat -- "${ARTIFACTS[@]}"
+            exit 1
+          fi
+          echo "Public artifacts are in sync."

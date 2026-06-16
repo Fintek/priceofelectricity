@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Breadcrumbs, { breadcrumbsToJsonLd, type BreadcrumbItem } from "@/components/navigation/Breadcrumbs";
 import { notFound } from "next/navigation";
 import { FEATURED_APPLIANCE_SLUGS, getApplianceConfig } from "@/lib/longtail/applianceConfig";
 import {
@@ -8,11 +9,13 @@ import {
   sortAverageBillStates,
 } from "@/lib/longtail/averageBill";
 import { CALCULATOR_USAGE_TIERS } from "@/lib/longtail/calculatorCluster";
+import { EIA_STATE_RESIDENTIAL_DATA_URL } from "@/data/sources";
 import { getRelease } from "@/lib/knowledge/fetch";
 import { buildMetadata } from "@/lib/seo/metadata";
 import { formatRate, formatUsd } from "@/lib/longtail/stateLongtail";
-import { buildBreadcrumbListJsonLd, buildWebPageJsonLd } from "@/lib/seo/jsonld";
+import { buildWebPageJsonLd } from "@/lib/seo/jsonld";
 import JsonLdScript from "@/app/components/seo/JsonLdScript";
+import ElectricityCostNationalCalculator from "@/app/components/ElectricityCostNationalCalculator";
 import StatusFooter from "@/components/common/StatusFooter";
 import Disclaimers from "@/app/components/policy/Disclaimers";
 import PageMonetization from "@/components/monetization/PageMonetization";
@@ -21,7 +24,7 @@ export const dynamic = "force-static";
 export const revalidate = 86400;
 
 export const metadata: Metadata = buildMetadata({
-  title: "Electricity Cost Calculator by State – Bill Estimator | PriceOfElectricity.com",
+  title: "Electricity Cost Calculator by State | PriceOfElectricity.com",
   description:
     "Electricity cost calculator hub for national and state bill estimates. Compare 500, 1000, 1500, and 2000 kWh scenarios, appliance calculator pages, and average bill context.",
   canonicalPath: "/electricity-cost-calculator",
@@ -36,17 +39,29 @@ export default async function ElectricityCostCalculatorIndexPage() {
   if (!highestBillState || !lowestBillState) notFound();
   const nationalRate = representativeState.nationalAverageCentsPerKwh;
 
-  const breadcrumbJsonLd = buildBreadcrumbListJsonLd([
+  const calculatorStates = [...states]
+    .sort((a, b) => a.name.localeCompare(b.name))
+    .map((s) => ({
+      slug: s.slug,
+      name: s.name,
+      rateCentsPerKwh: s.avgRateCentsPerKwh,
+      updatedLabel: s.updatedLabel,
+      sourceName: s.sourceName,
+      sourceUrl: s.sourceUrl,
+    }));
+
+  const breadcrumbTrail: BreadcrumbItem[] = [
     { name: "Home", url: "/" },
-    { name: "Electricity Cost Calculator", url: "/electricity-cost-calculator" },
-  ]);
+    { name: "Electricity Cost Calculator" },
+  ];
+  const breadcrumbJsonLd = breadcrumbsToJsonLd(breadcrumbTrail);
   const webPageJsonLd = buildWebPageJsonLd({
     title: "Electricity Cost Calculator",
     description:
       nationalRate != null
         ? `Estimate monthly electric bills using the U.S. benchmark rate of ${formatRate(
             nationalRate,
-          )} and state-specific rates across the calculator cluster.`
+          )} and state-specific residential rates, plus links to deeper calculators.`
         : "Electricity bill and kWh cost calculator hub.",
     url: "/electricity-cost-calculator",
     isPartOf: "/",
@@ -57,22 +72,24 @@ export default async function ElectricityCostCalculatorIndexPage() {
     <>
       <JsonLdScript data={[breadcrumbJsonLd, webPageJsonLd]} />
       <main className="container">
-        <nav aria-label="Breadcrumb" className="muted" style={{ marginBottom: 16, fontSize: 14 }}>
-          <Link href="/">Home</Link>
-          {" · "}
-          <span aria-current="page">Electricity Cost Calculator</span>
-        </nav>
+        <Breadcrumbs trail={breadcrumbTrail} />
 
         <h1 style={{ fontSize: 32, marginBottom: 12 }}>Electricity Cost Calculator by State</h1>
         <p style={{ marginTop: 0, marginBottom: 16, maxWidth: "65ch", fontSize: 16, lineHeight: 1.6 }}>
-          Estimate your electric bill with deterministic state-level pricing. This calculator cluster uses the core
-          formula <strong>cost = kWh × electricity rate</strong> and then links into state, usage-tier, bill, and
-          appliance pages so you can move from quick estimates to deeper scenario analysis.
+          Use the calculator below for a quick monthly energy charge estimate from{" "}
+          <strong>kWh × residential electricity rate</strong>. Further down you&apos;ll find links to state
+          calculators, fixed usage examples, appliance tools, and related guides.
         </p>
         <p className="muted" style={{ margin: "0 0 24px 0", maxWidth: "65ch", fontSize: 14 }}>
-          Rates come from the same EIA-backed dataset used across the longtail, average-bill, usage-cost, and
-          appliance clusters.
+          Rates come from the same{" "}
+          <a href={EIA_STATE_RESIDENTIAL_DATA_URL} rel="noopener noreferrer" target="_blank">
+            U.S. Energy Information Administration
+          </a>{" "}
+          residential dataset used across this site&apos;s state pages, average bill comparisons, usage-cost examples,
+          and appliance calculators.
         </p>
+
+        <ElectricityCostNationalCalculator states={calculatorStates} />
 
         <section style={{ marginBottom: 32 }}>
           <div
@@ -140,8 +157,8 @@ export default async function ElectricityCostCalculatorIndexPage() {
             means the same home usage can produce very different bill outcomes as you move between states.
           </p>
           <p style={{ marginBottom: 12, lineHeight: 1.7 }}>
-            To support common consumer search intent, this cluster provides fixed usage examples and state-specific
-            calculator pages that all map into the canonical `electricity-usage-cost` route family.
+            For common search scenarios, we also publish fixed usage examples (by kWh tier) and state-specific pages;
+            those deeper pages live under the electricity usage cost section.
           </p>
           <ul style={{ margin: 0, paddingLeft: 20, lineHeight: 1.8 }}>
             {CALCULATOR_USAGE_TIERS.map((kwh) => (
@@ -158,7 +175,7 @@ export default async function ElectricityCostCalculatorIndexPage() {
           <h2 style={{ fontSize: 20, marginBottom: 12 }}>State calculator pages</h2>
           <p className="muted" style={{ margin: "0 0 12px 0", fontSize: 14 }}>
             Each state calculator links to average bill pages, price-per-kWh pages, usage-tier pages, trend pages,
-            appliance calculators, and canonical appliance cost-to-run pages.
+            appliance calculators, and appliance cost-to-run pages.
           </p>
           <div
             style={{
@@ -249,10 +266,9 @@ export default async function ElectricityCostCalculatorIndexPage() {
             )}
             .{" "}
             {representativeState.updatedLabel
-              ? `Last dataset period: ${representativeState.updatedLabel}.`
+              ? `Example dataset period (${representativeState.name}): ${representativeState.updatedLabel}.`
               : "Data period label is currently unavailable."}{" "}
-            Calculator outputs are deterministic, energy-only estimates and exclude fixed fees, delivery charges, and
-            taxes.
+            Calculator outputs are energy-charge estimates only and exclude fixed fees, delivery charges, and taxes.
           </p>
         </section>
 

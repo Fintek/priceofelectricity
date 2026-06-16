@@ -14,9 +14,14 @@ import { isValidStateSlug } from "@/lib/slugGuard";
 import { buildNormalizedState } from "@/lib/stateBuilder";
 import { buildStateSchema } from "@/lib/schema";
 import { getElectricityPriceIndexForState } from "@/lib/priceIndex";
-import { SITE_URL } from "@/lib/site";
 import {
-  getPrevNextByName,
+  getCanonicalDatasetSynchronizedMediumDateUtc,
+  getCanonicalResidentialDataThroughMonthLabel,
+} from "@/lib/eiaReportingTrust";
+import { SITE_URL } from "@/lib/site";
+import { buildMetadata } from "@/lib/seo/metadata";
+import {
+  getBrowseNearbyStates,
   getRelatedByRate,
   getStatesSortedByName,
 } from "@/lib/nav";
@@ -26,6 +31,7 @@ import CommercialPlacement from "@/components/monetization/CommercialPlacement";
 import { getRateCasesForState, getTimelineForState } from "@/content/regulatory";
 import { getTopDriversForState, DRIVER_CATEGORY_LABELS } from "@/content/drivers";
 import { getActiveCitiesForState } from "@/lib/longtail/rollout";
+import { getRateTier } from "@/lib/insights";
 
 const BASE_URL = SITE_URL;
 export const dynamicParams = true;
@@ -47,47 +53,32 @@ export async function generateMetadata({
   const slug = resolveSlug(state);
 
   if (!slug) {
-    return {
+    return buildMetadata({
       title: "State not found | PriceOfElectricity.com",
       description: "State page not found.",
-      alternates: { canonical: `${BASE_URL}/` },
-      openGraph: {
-        title: "State not found | PriceOfElectricity.com",
-        description: "State page not found.",
-        url: `${BASE_URL}/`,
-        siteName: "PriceOfElectricity.com",
-        type: "website",
-      },
-      twitter: {
-        card: "summary",
-        title: "State not found | PriceOfElectricity.com",
-        description: "State page not found.",
-      },
-    };
+      canonicalPath: "/",
+    });
   }
 
   const ns = buildNormalizedState(slug);
-  const title = `${ns.name} Electricity Price (¢/kWh) + Bill Estimator | PriceOfElectricity.com`;
-  const description = `${ns.name} average residential electricity rate is ${ns.avgRateCentsPerKwh}¢/kWh (updated ${ns.updated}). Estimate your monthly bill with our quick calculator.`;
-  const canonicalUrl = `${BASE_URL}/${slug}`;
+  const isDc = slug === "district-of-columbia";
+  const displayName = isDc ? "Washington DC" : ns.name;
+  const monthlyBill900 = Math.round((ns.avgRateCentsPerKwh / 100) * 900);
+  const titleWithHooks = `${displayName} Electricity Rates: $${monthlyBill900}/mo, ${ns.avgRateCentsPerKwh}¢/kWh`;
+  const title =
+    titleWithHooks.length <= 60
+      ? titleWithHooks
+      : `${displayName} Electricity Rates: $${monthlyBill900}/mo`;
+  const eiaMonth = getCanonicalResidentialDataThroughMonthLabel();
+  const description = isDc
+    ? `Washington, D.C. average residential electricity rate is ${ns.avgRateCentsPerKwh}¢/kWh (latest EIA reporting month ${eiaMonth}). Estimate your monthly bill.`
+    : `${ns.name} average residential electricity rate is ${ns.avgRateCentsPerKwh}¢/kWh (latest EIA reporting month ${eiaMonth}). Estimate your monthly bill.`;
 
-  return {
+  return buildMetadata({
     title,
     description,
-    alternates: { canonical: canonicalUrl },
-    openGraph: {
-      title,
-      description,
-      url: canonicalUrl,
-      siteName: "PriceOfElectricity.com",
-      type: "website",
-    },
-    twitter: {
-      card: "summary",
-      title,
-      description,
-    },
-  };
+    canonicalPath: `/${slug}`,
+  });
 }
 
 function PriceDriversPanel({ slug, stateName }: { slug: string; stateName: string }) {
@@ -168,6 +159,8 @@ export default function StatePage({
   }
 
   const ns = buildNormalizedState(slug);
+  const eiaReportingMonth = getCanonicalResidentialDataThroughMonthLabel();
+  const eiaDatasetSyncUtc = getCanonicalDatasetSynchronizedMediumDateUtc();
   const history = HISTORY_BY_STATE[slug];
   const latestSeries = history?.series.at(-1);
   const previousSeries = history && history.series.length >= 2 ? history.series.at(-2) : undefined;
@@ -195,7 +188,8 @@ export default function StatePage({
         : "#b00020";
 
   const sortedStates = getStatesSortedByName(STATES);
-  const { prev, next } = getPrevNextByName(slug, sortedStates);
+  const { prev, next } = getBrowseNearbyStates(slug, sortedStates);
+  const isDc = slug === "district-of-columbia";
   const relatedStates = getRelatedByRate(slug, STATES, 5);
   const majorCities = getActiveCitiesForState(slug);
   const majorUtilities = getUtilitiesByState(slug);
@@ -219,6 +213,8 @@ export default function StatePage({
     momDeltaCents !== null && momDeltaPct !== null
       ? `${momDeltaCents >= 0 ? "+" : ""}${momDeltaCents.toFixed(2)}¢ (${momDeltaPct >= 0 ? "+" : ""}${momDeltaPct.toFixed(2)}%)`
       : null;
+
+  const rateTier = getRateTier(ns.avgRateCentsPerKwh);
 
   return (
     <main className="container">
@@ -272,6 +268,22 @@ export default function StatePage({
         <SetPreferredStateButton stateSlug={slug} />
       </div>
 
+      {isDc && (
+        <p
+          style={{
+            marginTop: "var(--space-3)",
+            marginBottom: 0,
+            maxWidth: "65ch",
+            lineHeight: 1.6,
+          }}
+        >
+          The District of Columbia is a federal district, not a state, but EIA reports residential
+          electricity prices for DC on the same monthly schedule as the 50 states. Pepco (Potomac
+          Electric Power Company) is DC&apos;s sole regulated distribution utility; residents can
+          choose a retail electricity supplier for generation supply.
+        </p>
+      )}
+
       {/* ── ANSWER BLOCK ── */}
       <div
         className="stat-panel"
@@ -285,7 +297,9 @@ export default function StatePage({
           <div className="stat-card-value">${billByKwh[900].toFixed(0)}</div>
           <div className="stat-card-label">est. monthly bill at 900 kWh</div>
         </div>
-        <div className="stat-card stat-card--secondary">
+        <div
+          className={`stat-card stat-card--secondary stat-card--rate-tier stat-card--tier-${rateTier}`}
+        >
           <div className="stat-card-value">{ns.rateTierLabel}</div>
           <div className="stat-card-label">rate tier</div>
         </div>
@@ -322,8 +336,24 @@ export default function StatePage({
           }}
         />
         <span className="sr-only">Data status: {ns.freshnessStatus}</span>
-        Updated {ns.updated} · Source:{" "}
-        {ns.source.slug ? (
+        {eiaDatasetSyncUtc !== null ? (
+          <>Dataset last updated {eiaDatasetSyncUtc} (UTC). </>
+        ) : ns.datasetSynchronizedDisplayUtc !== null ? (
+          <>Dataset last updated {ns.datasetSynchronizedDisplayUtc} (UTC). </>
+        ) : null}
+        The U.S. Energy Information Administration (EIA) publishes monthly state data with a reporting lag, so the rates
+        above reflect {eiaReportingMonth} activity.
+        {" · "}
+        Source:{" "}
+        {ns.source.slug === "eia" ? (
+          <TrackedOutboundLink
+            href={ns.source.url}
+            eventName="SourceLinkClick"
+            props={{ state: slug }}
+          >
+            {ns.source.name}
+          </TrackedOutboundLink>
+        ) : ns.source.slug ? (
           <Link href={`/sources/${ns.source.slug}`}>{ns.source.name}</Link>
         ) : (
           <TrackedOutboundLink
@@ -382,7 +412,7 @@ export default function StatePage({
             <p style={{ margin: "0 0 8px", fontWeight: 600, fontSize: 15 }}>Explore data</p>
             <ul style={{ margin: 0, paddingLeft: 18, lineHeight: 1.8, fontSize: 14 }}>
               <li><Link href={`/electricity-cost/${slug}`}>{ns.name} cost details</Link></li>
-              <li><Link href={`/${slug}/history`}>Price history</Link></li>
+              <li><Link href={`/electricity-price-history/${slug}`}>Price history</Link></li>
               <li><Link href={`/drivers/${slug}`}>Price drivers</Link></li>
             </ul>
           </div>

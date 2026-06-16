@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Breadcrumbs, { breadcrumbsToJsonLd, type BreadcrumbItem } from "@/components/navigation/Breadcrumbs";
 import { notFound } from "next/navigation";
 import JsonLdScript from "@/app/components/seo/JsonLdScript";
 import Disclaimers from "@/app/components/policy/Disclaimers";
@@ -18,7 +19,7 @@ import {
   parseUsageApplianceSlug,
 } from "@/lib/longtail/usageIntelligence";
 import { buildMetadata } from "@/lib/seo/metadata";
-import { buildBreadcrumbListJsonLd, buildWebPageJsonLd } from "@/lib/seo/jsonld";
+import { buildWebPageJsonLd } from "@/lib/seo/jsonld";
 
 export const dynamicParams = true;
 export const revalidate = 86400;
@@ -60,15 +61,15 @@ export default async function ApplianceUsageReferencePage({
   const representativeState = await loadLongtailStateData("texas");
   if (!representativeState) notFound();
 
-  const breadcrumbJsonLd = buildBreadcrumbListJsonLd([
+  const breadcrumbTrail: BreadcrumbItem[] = [
     { name: "Home", url: "/" },
     { name: "Electricity Usage", url: "/electricity-usage" },
-    { name: "Appliances", url: "/electricity-usage/appliances/refrigerator" },
-    { name: applianceConfig.displayName, url: `/electricity-usage/appliances/${applianceSlug}` },
-  ]);
+    { name: "applianceConfig.displayName" },
+  ];
+  const breadcrumbJsonLd = breadcrumbsToJsonLd(breadcrumbTrail);
   const webPageJsonLd = buildWebPageJsonLd({
     title: `${applianceConfig.displayName} electricity usage`,
-    description: `${applianceConfig.displayName} usage reference page with kWh/hour, daily and monthly usage assumptions and links to canonical cost routes.`,
+    description: `${applianceConfig.displayName} usage reference page with kWh/hour, daily and monthly usage assumptions and links to related cost pages.`,
     url: `/electricity-usage/appliances/${applianceSlug}`,
     isPartOf: "/",
     about: ["electricity usage by appliance", `${applianceConfig.displayName} kwh usage`, "appliance energy usage"],
@@ -78,19 +79,12 @@ export default async function ApplianceUsageReferencePage({
     <>
       <JsonLdScript data={[breadcrumbJsonLd, webPageJsonLd]} />
       <main className="container">
-        <nav aria-label="Breadcrumb" className="muted" style={{ marginBottom: 16, fontSize: 14 }}>
-          <Link href="/">Home</Link>
-          {" · "}
-          <Link href="/electricity-usage">Electricity Usage</Link>
-          {" · "}
-          <span aria-current="page">{applianceConfig.displayName}</span>
-        </nav>
+        <Breadcrumbs trail={breadcrumbTrail} />
 
         <h1 style={{ fontSize: 32, marginBottom: 12 }}>{applianceConfig.displayName} Electricity Usage</h1>
         <p style={{ marginTop: 0, marginBottom: 24, maxWidth: "70ch", lineHeight: 1.7 }}>
-          This page focuses on kWh usage behavior for {applianceConfig.displayName.toLowerCase()} scenarios. It keeps
-          intent centered on consumption modeling and then links into the canonical appliance cost route and calculator
-          cluster for price-specific outcomes.
+          This page focuses on kWh usage patterns for {applianceConfig.displayName.toLowerCase()}. From here you can open
+          the matching cost-to-run pages and state calculators when you want estimated dollars, not just usage.
         </p>
 
         <section style={{ marginBottom: 32 }}>
@@ -121,7 +115,7 @@ export default async function ApplianceUsageReferencePage({
               <thead>
                 <tr>
                   {["Metric", "Value"].map((label) => (
-                    <th key={label} style={{ textAlign: "left", padding: 10, borderBottom: "1px solid var(--color-border, #e5e7eb)", backgroundColor: "var(--color-surface-alt, #f9fafb)" }}>
+                    <th scope="col" key={label} style={{ textAlign: "left", padding: 10, borderBottom: "1px solid var(--color-border, #e5e7eb)", backgroundColor: "var(--color-surface-alt, #f9fafb)" }}>
                       {label}
                     </th>
                   ))}
@@ -196,7 +190,7 @@ export default async function ApplianceUsageReferencePage({
             {representativeState.updatedLabel
               ? `Last dataset period: ${representativeState.updatedLabel}.`
               : "Data period label is currently unavailable."}{" "}
-            Usage calculations are deterministic and based on appliance wattage and runtime assumptions.
+            Usage calculations use fixed appliance wattage and runtime assumptions so results stay comparable across pages.
           </p>
         </section>
 

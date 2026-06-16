@@ -1,6 +1,6 @@
 {
   "source_url": "https://api.eia.gov/v2/electricity/retail-sales/data/",
-  "fetched_at": "2026-04-28T11:48:55.834Z",
+  "fetched_at": "2026-05-28T13:54:57.371Z",
   "request": {
     "frequency": "monthly",
     "data": [
@@ -11,8 +11,8 @@
         "RES"
       ]
     },
-    "start": "2025-10",
-    "end": "2026-04",
+    "start": "2025-11",
+    "end": "2026-05",
     "length": 5000
   },
   "totals": {
@@ -21,12 +21,508 @@
   },
   "data": [
     {
+      "period": "2026-03",
+      "stateid": "AK",
+      "sectorid": "RES",
+      "price": 27.17,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-05-28T13:54:57.371Z"
+    },
+    {
+      "period": "2026-03",
+      "stateid": "AL",
+      "sectorid": "RES",
+      "price": 17.15,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-05-28T13:54:57.371Z"
+    },
+    {
+      "period": "2026-03",
+      "stateid": "AR",
+      "sectorid": "RES",
+      "price": 13.63,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-05-28T13:54:57.371Z"
+    },
+    {
+      "period": "2026-03",
+      "stateid": "AZ",
+      "sectorid": "RES",
+      "price": 15.59,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-05-28T13:54:57.371Z"
+    },
+    {
+      "period": "2026-03",
+      "stateid": "CA",
+      "sectorid": "RES",
+      "price": 33.35,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-05-28T13:54:57.371Z"
+    },
+    {
+      "period": "2026-03",
+      "stateid": "CO",
+      "sectorid": "RES",
+      "price": 16.74,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-05-28T13:54:57.371Z"
+    },
+    {
+      "period": "2026-03",
+      "stateid": "CT",
+      "sectorid": "RES",
+      "price": 30.47,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-05-28T13:54:57.371Z"
+    },
+    {
+      "period": "2026-03",
+      "stateid": "DC",
+      "sectorid": "RES",
+      "price": 25,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-05-28T13:54:57.371Z"
+    },
+    {
+      "period": "2026-03",
+      "stateid": "DE",
+      "sectorid": "RES",
+      "price": 17.64,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-05-28T13:54:57.371Z"
+    },
+    {
+      "period": "2026-03",
+      "stateid": "ENC",
+      "sectorid": "RES",
+      "price": 19.09,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-05-28T13:54:57.371Z"
+    },
+    {
+      "period": "2026-03",
+      "stateid": "ESC",
+      "sectorid": "RES",
+      "price": 15.74,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-05-28T13:54:57.371Z"
+    },
+    {
+      "period": "2026-03",
+      "stateid": "FL",
+      "sectorid": "RES",
+      "price": 14.86,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-05-28T13:54:57.371Z"
+    },
+    {
+      "period": "2026-03",
+      "stateid": "GA",
+      "sectorid": "RES",
+      "price": 15.01,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-05-28T13:54:57.371Z"
+    },
+    {
+      "period": "2026-03",
+      "stateid": "HI",
+      "sectorid": "RES",
+      "price": 42.23,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-05-28T13:54:57.371Z"
+    },
+    {
+      "period": "2026-03",
+      "stateid": "IA",
+      "sectorid": "RES",
+      "price": 13.42,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-05-28T13:54:57.371Z"
+    },
+    {
+      "period": "2026-03",
+      "stateid": "ID",
+      "sectorid": "RES",
+      "price": 13.01,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-05-28T13:54:57.371Z"
+    },
+    {
+      "period": "2026-03",
+      "stateid": "IL",
+      "sectorid": "RES",
+      "price": 18.86,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-05-28T13:54:57.371Z"
+    },
+    {
+      "period": "2026-03",
+      "stateid": "IN",
+      "sectorid": "RES",
+      "price": 17.85,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-05-28T13:54:57.371Z"
+    },
+    {
+      "period": "2026-03",
+      "stateid": "KS",
+      "sectorid": "RES",
+      "price": 15.34,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-05-28T13:54:57.371Z"
+    },
+    {
+      "period": "2026-03",
+      "stateid": "KY",
+      "sectorid": "RES",
+      "price": 14.88,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-05-28T13:54:57.371Z"
+    },
+    {
+      "period": "2026-03",
+      "stateid": "LA",
+      "sectorid": "RES",
+      "price": 14.16,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-05-28T13:54:57.371Z"
+    },
+    {
+      "period": "2026-03",
+      "stateid": "MA",
+      "sectorid": "RES",
+      "price": 30.21,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-05-28T13:54:57.371Z"
+    },
+    {
+      "period": "2026-03",
+      "stateid": "MAT",
+      "sectorid": "RES",
+      "price": 24.35,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-05-28T13:54:57.371Z"
+    },
+    {
+      "period": "2026-03",
+      "stateid": "MD",
+      "sectorid": "RES",
+      "price": 35.85,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-05-28T13:54:57.371Z"
+    },
+    {
+      "period": "2026-03",
+      "stateid": "ME",
+      "sectorid": "RES",
+      "price": 28.32,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-05-28T13:54:57.371Z"
+    },
+    {
+      "period": "2026-03",
+      "stateid": "MI",
+      "sectorid": "RES",
+      "price": 21.2,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-05-28T13:54:57.371Z"
+    },
+    {
+      "period": "2026-03",
+      "stateid": "MN",
+      "sectorid": "RES",
+      "price": 15.08,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-05-28T13:54:57.371Z"
+    },
+    {
+      "period": "2026-03",
+      "stateid": "MO",
+      "sectorid": "RES",
+      "price": 13.44,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-05-28T13:54:57.371Z"
+    },
+    {
+      "period": "2026-03",
+      "stateid": "MS",
+      "sectorid": "RES",
+      "price": 16.3,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-05-28T13:54:57.371Z"
+    },
+    {
+      "period": "2026-03",
+      "stateid": "MT",
+      "sectorid": "RES",
+      "price": 13.48,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-05-28T13:54:57.371Z"
+    },
+    {
+      "period": "2026-03",
+      "stateid": "MTN",
+      "sectorid": "RES",
+      "price": 14.9,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-05-28T13:54:57.371Z"
+    },
+    {
+      "period": "2026-03",
+      "stateid": "NC",
+      "sectorid": "RES",
+      "price": 16,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-05-28T13:54:57.371Z"
+    },
+    {
+      "period": "2026-03",
+      "stateid": "ND",
+      "sectorid": "RES",
+      "price": 11.95,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-05-28T13:54:57.371Z"
+    },
+    {
+      "period": "2026-03",
+      "stateid": "NE",
+      "sectorid": "RES",
+      "price": 13.1,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-05-28T13:54:57.371Z"
+    },
+    {
+      "period": "2026-03",
+      "stateid": "NEW",
+      "sectorid": "RES",
+      "price": 29.42,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-05-28T13:54:57.371Z"
+    },
+    {
+      "period": "2026-03",
+      "stateid": "NH",
+      "sectorid": "RES",
+      "price": 26.92,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-05-28T13:54:57.371Z"
+    },
+    {
+      "period": "2026-03",
+      "stateid": "NJ",
+      "sectorid": "RES",
+      "price": 23.49,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-05-28T13:54:57.371Z"
+    },
+    {
+      "period": "2026-03",
+      "stateid": "NM",
+      "sectorid": "RES",
+      "price": 14.81,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-05-28T13:54:57.371Z"
+    },
+    {
+      "period": "2026-03",
+      "stateid": "NV",
+      "sectorid": "RES",
+      "price": 14.17,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-05-28T13:54:57.371Z"
+    },
+    {
+      "period": "2026-03",
+      "stateid": "NY",
+      "sectorid": "RES",
+      "price": 28.55,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-05-28T13:54:57.371Z"
+    },
+    {
+      "period": "2026-03",
+      "stateid": "OH",
+      "sectorid": "RES",
+      "price": 18.78,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-05-28T13:54:57.371Z"
+    },
+    {
+      "period": "2026-03",
+      "stateid": "OK",
+      "sectorid": "RES",
+      "price": 13.56,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-05-28T13:54:57.371Z"
+    },
+    {
+      "period": "2026-03",
+      "stateid": "OR",
+      "sectorid": "RES",
+      "price": 14.89,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-05-28T13:54:57.371Z"
+    },
+    {
+      "period": "2026-03",
+      "stateid": "PA",
+      "sectorid": "RES",
+      "price": 20.92,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-05-28T13:54:57.371Z"
+    },
+    {
+      "period": "2026-03",
+      "stateid": "PACC",
+      "sectorid": "RES",
+      "price": 24.96,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-05-28T13:54:57.371Z"
+    },
+    {
+      "period": "2026-03",
+      "stateid": "PACN",
+      "sectorid": "RES",
+      "price": 34.73,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-05-28T13:54:57.371Z"
+    },
+    {
+      "period": "2026-03",
+      "stateid": "RI",
+      "sectorid": "RES",
+      "price": 29.91,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-05-28T13:54:57.371Z"
+    },
+    {
+      "period": "2026-03",
+      "stateid": "SAT",
+      "sectorid": "RES",
+      "price": 17.29,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-05-28T13:54:57.371Z"
+    },
+    {
+      "period": "2026-03",
+      "stateid": "SC",
+      "sectorid": "RES",
+      "price": 16.45,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-05-28T13:54:57.371Z"
+    },
+    {
+      "period": "2026-03",
+      "stateid": "SD",
+      "sectorid": "RES",
+      "price": 14.29,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-05-28T13:54:57.371Z"
+    },
+    {
+      "period": "2026-03",
+      "stateid": "TN",
+      "sectorid": "RES",
+      "price": 15.08,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-05-28T13:54:57.371Z"
+    },
+    {
+      "period": "2026-03",
+      "stateid": "TX",
+      "sectorid": "RES",
+      "price": 16.39,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-05-28T13:54:57.371Z"
+    },
+    {
+      "period": "2026-03",
+      "stateid": "US",
+      "sectorid": "RES",
+      "price": 18.83,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-05-28T13:54:57.371Z"
+    },
+    {
+      "period": "2026-03",
+      "stateid": "UT",
+      "sectorid": "RES",
+      "price": 13.17,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-05-28T13:54:57.371Z"
+    },
+    {
+      "period": "2026-03",
+      "stateid": "VA",
+      "sectorid": "RES",
+      "price": 17.05,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-05-28T13:54:57.371Z"
+    },
+    {
+      "period": "2026-03",
+      "stateid": "VT",
+      "sectorid": "RES",
+      "price": 24.11,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-05-28T13:54:57.371Z"
+    },
+    {
+      "period": "2026-03",
+      "stateid": "WA",
+      "sectorid": "RES",
+      "price": 14.4,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-05-28T13:54:57.371Z"
+    },
+    {
+      "period": "2026-03",
+      "stateid": "WI",
+      "sectorid": "RES",
+      "price": 18.8,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-05-28T13:54:57.371Z"
+    },
+    {
+      "period": "2026-03",
+      "stateid": "WNC",
+      "sectorid": "RES",
+      "price": 13.95,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-05-28T13:54:57.371Z"
+    },
+    {
+      "period": "2026-03",
+      "stateid": "WSC",
+      "sectorid": "RES",
+      "price": 15.6,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-05-28T13:54:57.371Z"
+    },
+    {
+      "period": "2026-03",
+      "stateid": "WV",
+      "sectorid": "RES",
+      "price": 16.37,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-05-28T13:54:57.371Z"
+    },
+    {
+      "period": "2026-03",
+      "stateid": "WY",
+      "sectorid": "RES",
+      "price": 13.59,
+      "source": "eia_v2_retail_sales",
+      "fetched_at": "2026-05-28T13:54:57.371Z"
+    },
+    {
       "period": "2026-02",
       "stateid": "AK",
       "sectorid": "RES",
       "price": 25.79,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2026-02",
@@ -34,7 +530,7 @@
       "sectorid": "RES",
       "price": 16.18,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2026-02",
@@ -42,7 +538,7 @@
       "sectorid": "RES",
       "price": 12.73,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2026-02",
@@ -50,7 +546,7 @@
       "sectorid": "RES",
       "price": 16.03,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2026-02",
@@ -58,7 +554,7 @@
       "sectorid": "RES",
       "price": 33.22,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2026-02",
@@ -66,7 +562,7 @@
       "sectorid": "RES",
       "price": 16.79,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2026-02",
@@ -74,7 +570,7 @@
       "sectorid": "RES",
       "price": 30.77,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2026-02",
@@ -82,7 +578,7 @@
       "sectorid": "RES",
       "price": 23.97,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2026-02",
@@ -90,7 +586,7 @@
       "sectorid": "RES",
       "price": 16.27,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2026-02",
@@ -98,7 +594,7 @@
       "sectorid": "RES",
       "price": 17.84,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2026-02",
@@ -106,7 +602,7 @@
       "sectorid": "RES",
       "price": 13.99,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2026-02",
@@ -114,7 +610,7 @@
       "sectorid": "RES",
       "price": 15.8,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2026-02",
@@ -122,7 +618,7 @@
       "sectorid": "RES",
       "price": 14.13,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2026-02",
@@ -130,7 +626,7 @@
       "sectorid": "RES",
       "price": 43,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2026-02",
@@ -138,7 +634,7 @@
       "sectorid": "RES",
       "price": 12.74,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2026-02",
@@ -146,7 +642,7 @@
       "sectorid": "RES",
       "price": 12.63,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2026-02",
@@ -154,7 +650,7 @@
       "sectorid": "RES",
       "price": 17.83,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2026-02",
@@ -162,7 +658,7 @@
       "sectorid": "RES",
       "price": 16.06,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2026-02",
@@ -170,7 +666,7 @@
       "sectorid": "RES",
       "price": 15.11,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2026-02",
@@ -178,7 +674,7 @@
       "sectorid": "RES",
       "price": 13.42,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2026-02",
@@ -186,7 +682,7 @@
       "sectorid": "RES",
       "price": 12.87,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2026-02",
@@ -194,7 +690,7 @@
       "sectorid": "RES",
       "price": 30.46,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2026-02",
@@ -202,7 +698,7 @@
       "sectorid": "RES",
       "price": 24.47,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2026-02",
@@ -210,7 +706,7 @@
       "sectorid": "RES",
       "price": 20.08,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2026-02",
@@ -218,7 +714,7 @@
       "sectorid": "RES",
       "price": 32.17,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2026-02",
@@ -226,7 +722,7 @@
       "sectorid": "RES",
       "price": 20,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2026-02",
@@ -234,7 +730,7 @@
       "sectorid": "RES",
       "price": 15.39,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2026-02",
@@ -242,7 +738,7 @@
       "sectorid": "RES",
       "price": 12.17,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2026-02",
@@ -250,7 +746,7 @@
       "sectorid": "RES",
       "price": 14.72,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2026-02",
@@ -258,7 +754,7 @@
       "sectorid": "RES",
       "price": 13.33,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2026-02",
@@ -266,7 +762,7 @@
       "sectorid": "RES",
       "price": 14.92,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2026-02",
@@ -274,7 +770,7 @@
       "sectorid": "RES",
       "price": 14.64,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2026-02",
@@ -282,7 +778,7 @@
       "sectorid": "RES",
       "price": 11.64,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2026-02",
@@ -290,7 +786,7 @@
       "sectorid": "RES",
       "price": 11.79,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2026-02",
@@ -298,7 +794,7 @@
       "sectorid": "RES",
       "price": 29.91,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2026-02",
@@ -306,7 +802,7 @@
       "sectorid": "RES",
       "price": 26.52,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2026-02",
@@ -314,7 +810,7 @@
       "sectorid": "RES",
       "price": 23.12,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2026-02",
@@ -322,7 +818,7 @@
       "sectorid": "RES",
       "price": 15.07,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2026-02",
@@ -330,7 +826,7 @@
       "sectorid": "RES",
       "price": 14.38,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2026-02",
@@ -338,7 +834,7 @@
       "sectorid": "RES",
       "price": 29.99,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2026-02",
@@ -346,7 +842,7 @@
       "sectorid": "RES",
       "price": 17.52,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2026-02",
@@ -354,7 +850,7 @@
       "sectorid": "RES",
       "price": 12.89,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2026-02",
@@ -362,7 +858,7 @@
       "sectorid": "RES",
       "price": 14.64,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2026-02",
@@ -370,7 +866,7 @@
       "sectorid": "RES",
       "price": 20.3,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2026-02",
@@ -378,7 +874,7 @@
       "sectorid": "RES",
       "price": 23.99,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2026-02",
@@ -386,7 +882,7 @@
       "sectorid": "RES",
       "price": 34.24,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2026-02",
@@ -394,7 +890,7 @@
       "sectorid": "RES",
       "price": 29.45,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2026-02",
@@ -402,7 +898,7 @@
       "sectorid": "RES",
       "price": 15.76,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2026-02",
@@ -410,7 +906,7 @@
       "sectorid": "RES",
       "price": 16.15,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2026-02",
@@ -418,7 +914,7 @@
       "sectorid": "RES",
       "price": 13.24,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2026-02",
@@ -426,7 +922,7 @@
       "sectorid": "RES",
       "price": 12.82,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2026-02",
@@ -434,7 +930,7 @@
       "sectorid": "RES",
       "price": 15.41,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2026-02",
@@ -442,7 +938,7 @@
       "sectorid": "RES",
       "price": 17.65,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2026-02",
@@ -450,7 +946,7 @@
       "sectorid": "RES",
       "price": 13.33,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2026-02",
@@ -458,7 +954,7 @@
       "sectorid": "RES",
       "price": 15.96,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2026-02",
@@ -466,7 +962,7 @@
       "sectorid": "RES",
       "price": 23.27,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2026-02",
@@ -474,7 +970,7 @@
       "sectorid": "RES",
       "price": 14.11,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2026-02",
@@ -482,7 +978,7 @@
       "sectorid": "RES",
       "price": 18.74,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2026-02",
@@ -490,7 +986,7 @@
       "sectorid": "RES",
       "price": 13.23,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2026-02",
@@ -498,7 +994,7 @@
       "sectorid": "RES",
       "price": 14.53,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2026-02",
@@ -506,7 +1002,7 @@
       "sectorid": "RES",
       "price": 14.41,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2026-02",
@@ -514,7 +1010,7 @@
       "sectorid": "RES",
       "price": 13.04,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2026-01",
@@ -522,7 +1018,7 @@
       "sectorid": "RES",
       "price": 25.52,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2026-01",
@@ -530,7 +1026,7 @@
       "sectorid": "RES",
       "price": 16.06,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2026-01",
@@ -538,7 +1034,7 @@
       "sectorid": "RES",
       "price": 12.35,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2026-01",
@@ -546,7 +1042,7 @@
       "sectorid": "RES",
       "price": 15.61,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2026-01",
@@ -554,7 +1050,7 @@
       "sectorid": "RES",
       "price": 30.29,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2026-01",
@@ -562,7 +1058,7 @@
       "sectorid": "RES",
       "price": 16.44,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2026-01",
@@ -570,7 +1066,7 @@
       "sectorid": "RES",
       "price": 28.3,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2026-01",
@@ -578,7 +1074,7 @@
       "sectorid": "RES",
       "price": 23.72,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2026-01",
@@ -586,7 +1082,7 @@
       "sectorid": "RES",
       "price": 16.51,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2026-01",
@@ -594,7 +1090,7 @@
       "sectorid": "RES",
       "price": 17.45,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2026-01",
@@ -602,7 +1098,7 @@
       "sectorid": "RES",
       "price": 14.34,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2026-01",
@@ -610,7 +1106,7 @@
       "sectorid": "RES",
       "price": 15.92,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2026-01",
@@ -618,7 +1114,7 @@
       "sectorid": "RES",
       "price": 14.46,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2026-01",
@@ -626,7 +1122,7 @@
       "sectorid": "RES",
       "price": 39.79,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2026-01",
@@ -634,7 +1130,7 @@
       "sectorid": "RES",
       "price": 12.83,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2026-01",
@@ -642,7 +1138,7 @@
       "sectorid": "RES",
       "price": 12.07,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2026-01",
@@ -650,7 +1146,7 @@
       "sectorid": "RES",
       "price": 16.36,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2026-01",
@@ -658,7 +1154,7 @@
       "sectorid": "RES",
       "price": 16.19,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2026-01",
@@ -666,7 +1162,7 @@
       "sectorid": "RES",
       "price": 14.29,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2026-01",
@@ -674,7 +1170,7 @@
       "sectorid": "RES",
       "price": 14.27,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2026-01",
@@ -682,7 +1178,7 @@
       "sectorid": "RES",
       "price": 12.46,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2026-01",
@@ -690,7 +1186,7 @@
       "sectorid": "RES",
       "price": 31.16,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2026-01",
@@ -698,7 +1194,7 @@
       "sectorid": "RES",
       "price": 23.68,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2026-01",
@@ -706,7 +1202,7 @@
       "sectorid": "RES",
       "price": 20.61,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2026-01",
@@ -714,7 +1210,7 @@
       "sectorid": "RES",
       "price": 30.73,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2026-01",
@@ -722,7 +1218,7 @@
       "sectorid": "RES",
       "price": 19.52,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2026-01",
@@ -730,7 +1226,7 @@
       "sectorid": "RES",
       "price": 14.98,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2026-01",
@@ -738,7 +1234,7 @@
       "sectorid": "RES",
       "price": 11.8,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2026-01",
@@ -746,7 +1242,7 @@
       "sectorid": "RES",
       "price": 14.24,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2026-01",
@@ -754,7 +1250,7 @@
       "sectorid": "RES",
       "price": 12.86,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2026-01",
@@ -762,7 +1258,7 @@
       "sectorid": "RES",
       "price": 14.5,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2026-01",
@@ -770,7 +1266,7 @@
       "sectorid": "RES",
       "price": 13.68,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2026-01",
@@ -778,7 +1274,7 @@
       "sectorid": "RES",
       "price": 10.92,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2026-01",
@@ -786,7 +1282,7 @@
       "sectorid": "RES",
       "price": 11.76,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2026-01",
@@ -794,7 +1290,7 @@
       "sectorid": "RES",
       "price": 29.36,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2026-01",
@@ -802,7 +1298,7 @@
       "sectorid": "RES",
       "price": 26.32,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2026-01",
@@ -810,7 +1306,7 @@
       "sectorid": "RES",
       "price": 23.13,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2026-01",
@@ -818,7 +1314,7 @@
       "sectorid": "RES",
       "price": 14.7,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2026-01",
@@ -826,7 +1322,7 @@
       "sectorid": "RES",
       "price": 13.98,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2026-01",
@@ -834,7 +1330,7 @@
       "sectorid": "RES",
       "price": 28.37,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2026-01",
@@ -842,7 +1338,7 @@
       "sectorid": "RES",
       "price": 17.59,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2026-01",
@@ -850,7 +1346,7 @@
       "sectorid": "RES",
       "price": 12.62,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2026-01",
@@ -858,7 +1354,7 @@
       "sectorid": "RES",
       "price": 14.66,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2026-01",
@@ -866,7 +1362,7 @@
       "sectorid": "RES",
       "price": 20.19,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2026-01",
@@ -874,7 +1370,7 @@
       "sectorid": "RES",
       "price": 23.27,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2026-01",
@@ -882,7 +1378,7 @@
       "sectorid": "RES",
       "price": 32.66,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2026-01",
@@ -890,7 +1386,7 @@
       "sectorid": "RES",
       "price": 30.14,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2026-01",
@@ -898,7 +1394,7 @@
       "sectorid": "RES",
       "price": 15.64,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2026-01",
@@ -906,7 +1402,7 @@
       "sectorid": "RES",
       "price": 15.41,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2026-01",
@@ -914,7 +1410,7 @@
       "sectorid": "RES",
       "price": 13.6,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2026-01",
@@ -922,7 +1418,7 @@
       "sectorid": "RES",
       "price": 13.1,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2026-01",
@@ -930,7 +1426,7 @@
       "sectorid": "RES",
       "price": 15.69,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2026-01",
@@ -938,7 +1434,7 @@
       "sectorid": "RES",
       "price": 17.45,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2026-01",
@@ -946,7 +1442,7 @@
       "sectorid": "RES",
       "price": 12.88,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2026-01",
@@ -954,7 +1450,7 @@
       "sectorid": "RES",
       "price": 15.87,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2026-01",
@@ -962,7 +1458,7 @@
       "sectorid": "RES",
       "price": 23.29,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2026-01",
@@ -970,7 +1466,7 @@
       "sectorid": "RES",
       "price": 13.81,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2026-01",
@@ -978,7 +1474,7 @@
       "sectorid": "RES",
       "price": 18.2,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2026-01",
@@ -986,7 +1482,7 @@
       "sectorid": "RES",
       "price": 12.92,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2026-01",
@@ -994,7 +1490,7 @@
       "sectorid": "RES",
       "price": 14.64,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2026-01",
@@ -1002,7 +1498,7 @@
       "sectorid": "RES",
       "price": 14.77,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2026-01",
@@ -1010,7 +1506,7 @@
       "sectorid": "RES",
       "price": 12.85,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2025-12",
@@ -1018,7 +1514,7 @@
       "sectorid": "RES",
       "price": 25.54,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2025-12",
@@ -1026,7 +1522,7 @@
       "sectorid": "RES",
       "price": 16.01,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2025-12",
@@ -1034,7 +1530,7 @@
       "sectorid": "RES",
       "price": 12.33,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2025-12",
@@ -1042,7 +1538,7 @@
       "sectorid": "RES",
       "price": 15.46,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2025-12",
@@ -1050,7 +1546,7 @@
       "sectorid": "RES",
       "price": 34.71,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2025-12",
@@ -1058,7 +1554,7 @@
       "sectorid": "RES",
       "price": 16.12,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2025-12",
@@ -1066,7 +1562,7 @@
       "sectorid": "RES",
       "price": 25.3,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2025-12",
@@ -1074,7 +1570,7 @@
       "sectorid": "RES",
       "price": 23.9,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2025-12",
@@ -1082,7 +1578,7 @@
       "sectorid": "RES",
       "price": 17.12,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2025-12",
@@ -1090,7 +1586,7 @@
       "sectorid": "RES",
       "price": 17.45,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2025-12",
@@ -1098,7 +1594,7 @@
       "sectorid": "RES",
       "price": 13.95,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2025-12",
@@ -1106,7 +1602,7 @@
       "sectorid": "RES",
       "price": 15.02,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2025-12",
@@ -1114,7 +1610,7 @@
       "sectorid": "RES",
       "price": 13.67,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2025-12",
@@ -1122,7 +1618,7 @@
       "sectorid": "RES",
       "price": 41.62,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2025-12",
@@ -1130,7 +1626,7 @@
       "sectorid": "RES",
       "price": 12.6,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2025-12",
@@ -1138,7 +1634,7 @@
       "sectorid": "RES",
       "price": 11.87,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2025-12",
@@ -1146,7 +1642,7 @@
       "sectorid": "RES",
       "price": 17.07,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2025-12",
@@ -1154,7 +1650,7 @@
       "sectorid": "RES",
       "price": 15.91,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2025-12",
@@ -1162,7 +1658,7 @@
       "sectorid": "RES",
       "price": 14.43,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2025-12",
@@ -1170,7 +1666,7 @@
       "sectorid": "RES",
       "price": 13.22,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2025-12",
@@ -1178,7 +1674,7 @@
       "sectorid": "RES",
       "price": 12.56,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2025-12",
@@ -1186,7 +1682,7 @@
       "sectorid": "RES",
       "price": 30.88,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2025-12",
@@ -1194,7 +1690,7 @@
       "sectorid": "RES",
       "price": 23.25,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2025-12",
@@ -1202,7 +1698,7 @@
       "sectorid": "RES",
       "price": 19.57,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2025-12",
@@ -1210,7 +1706,7 @@
       "sectorid": "RES",
       "price": 30.39,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2025-12",
@@ -1218,7 +1714,7 @@
       "sectorid": "RES",
       "price": 19.53,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2025-12",
@@ -1226,7 +1722,7 @@
       "sectorid": "RES",
       "price": 14.96,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2025-12",
@@ -1234,7 +1730,7 @@
       "sectorid": "RES",
       "price": 11.91,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2025-12",
@@ -1242,7 +1738,7 @@
       "sectorid": "RES",
       "price": 14.16,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2025-12",
@@ -1250,7 +1746,7 @@
       "sectorid": "RES",
       "price": 12.77,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2025-12",
@@ -1258,7 +1754,7 @@
       "sectorid": "RES",
       "price": 14.28,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2025-12",
@@ -1266,7 +1762,7 @@
       "sectorid": "RES",
       "price": 13.47,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2025-12",
@@ -1274,7 +1770,7 @@
       "sectorid": "RES",
       "price": 11.02,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2025-12",
@@ -1282,7 +1778,7 @@
       "sectorid": "RES",
       "price": 11.57,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2025-12",
@@ -1290,7 +1786,7 @@
       "sectorid": "RES",
       "price": 28.37,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2025-12",
@@ -1298,7 +1794,7 @@
       "sectorid": "RES",
       "price": 26.28,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2025-12",
@@ -1306,7 +1802,7 @@
       "sectorid": "RES",
       "price": 22.98,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2025-12",
@@ -1314,7 +1810,7 @@
       "sectorid": "RES",
       "price": 14.66,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2025-12",
@@ -1322,7 +1818,7 @@
       "sectorid": "RES",
       "price": 12.83,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2025-12",
@@ -1330,7 +1826,7 @@
       "sectorid": "RES",
       "price": 27.39,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2025-12",
@@ -1338,7 +1834,7 @@
       "sectorid": "RES",
       "price": 17.31,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2025-12",
@@ -1346,7 +1842,7 @@
       "sectorid": "RES",
       "price": 12.25,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2025-12",
@@ -1354,7 +1850,7 @@
       "sectorid": "RES",
       "price": 14.94,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2025-12",
@@ -1362,7 +1858,7 @@
       "sectorid": "RES",
       "price": 20.08,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2025-12",
@@ -1370,7 +1866,7 @@
       "sectorid": "RES",
       "price": 24.2,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2025-12",
@@ -1378,7 +1874,7 @@
       "sectorid": "RES",
       "price": 33.72,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2025-12",
@@ -1386,7 +1882,7 @@
       "sectorid": "RES",
       "price": 31.15,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2025-12",
@@ -1394,7 +1890,7 @@
       "sectorid": "RES",
       "price": 15.03,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2025-12",
@@ -1402,7 +1898,7 @@
       "sectorid": "RES",
       "price": 14.82,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2025-12",
@@ -1410,7 +1906,7 @@
       "sectorid": "RES",
       "price": 12.51,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2025-12",
@@ -1418,7 +1914,7 @@
       "sectorid": "RES",
       "price": 12.87,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2025-12",
@@ -1426,7 +1922,7 @@
       "sectorid": "RES",
       "price": 15.87,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2025-12",
@@ -1434,7 +1930,7 @@
       "sectorid": "RES",
       "price": 17.24,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2025-12",
@@ -1442,7 +1938,7 @@
       "sectorid": "RES",
       "price": 12.99,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2025-12",
@@ -1450,7 +1946,7 @@
       "sectorid": "RES",
       "price": 15.27,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2025-12",
@@ -1458,7 +1954,7 @@
       "sectorid": "RES",
       "price": 23.22,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2025-12",
@@ -1466,7 +1962,7 @@
       "sectorid": "RES",
       "price": 13.33,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2025-12",
@@ -1474,7 +1970,7 @@
       "sectorid": "RES",
       "price": 17.84,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2025-12",
@@ -1482,7 +1978,7 @@
       "sectorid": "RES",
       "price": 12.89,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2025-12",
@@ -1490,7 +1986,7 @@
       "sectorid": "RES",
       "price": 14.74,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2025-12",
@@ -1498,7 +1994,7 @@
       "sectorid": "RES",
       "price": 14.61,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2025-12",
@@ -1506,7 +2002,7 @@
       "sectorid": "RES",
       "price": 12.83,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2025-11",
@@ -1514,7 +2010,7 @@
       "sectorid": "RES",
       "price": 26.18,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2025-11",
@@ -1522,7 +2018,7 @@
       "sectorid": "RES",
       "price": 16.08,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2025-11",
@@ -1530,7 +2026,7 @@
       "sectorid": "RES",
       "price": 13.22,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2025-11",
@@ -1538,7 +2034,7 @@
       "sectorid": "RES",
       "price": 15.66,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2025-11",
@@ -1546,7 +2042,7 @@
       "sectorid": "RES",
       "price": 31.89,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2025-11",
@@ -1554,7 +2050,7 @@
       "sectorid": "RES",
       "price": 16.35,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2025-11",
@@ -1562,7 +2058,7 @@
       "sectorid": "RES",
       "price": 27.02,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2025-11",
@@ -1570,7 +2066,7 @@
       "sectorid": "RES",
       "price": 22.72,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2025-11",
@@ -1578,7 +2074,7 @@
       "sectorid": "RES",
       "price": 18.81,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2025-11",
@@ -1586,7 +2082,7 @@
       "sectorid": "RES",
       "price": 18.28,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2025-11",
@@ -1594,7 +2090,7 @@
       "sectorid": "RES",
       "price": 14.51,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2025-11",
@@ -1602,7 +2098,7 @@
       "sectorid": "RES",
       "price": 15.78,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2025-11",
@@ -1610,7 +2106,7 @@
       "sectorid": "RES",
       "price": 14.42,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2025-11",
@@ -1618,7 +2114,7 @@
       "sectorid": "RES",
       "price": 40.2,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2025-11",
@@ -1626,7 +2122,7 @@
       "sectorid": "RES",
       "price": 13.55,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2025-11",
@@ -1634,7 +2130,7 @@
       "sectorid": "RES",
       "price": 12.25,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2025-11",
@@ -1642,7 +2138,7 @@
       "sectorid": "RES",
       "price": 18.31,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2025-11",
@@ -1650,7 +2146,7 @@
       "sectorid": "RES",
       "price": 17.41,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2025-11",
@@ -1658,7 +2154,7 @@
       "sectorid": "RES",
       "price": 15.1,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2025-11",
@@ -1666,7 +2162,7 @@
       "sectorid": "RES",
       "price": 13.7,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2025-11",
@@ -1674,7 +2170,7 @@
       "sectorid": "RES",
       "price": 12.74,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2025-11",
@@ -1682,7 +2178,7 @@
       "sectorid": "RES",
       "price": 31.22,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2025-11",
@@ -1690,7 +2186,7 @@
       "sectorid": "RES",
       "price": 23.03,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2025-11",
@@ -1698,7 +2194,7 @@
       "sectorid": "RES",
       "price": 21.34,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2025-11",
@@ -1706,7 +2202,7 @@
       "sectorid": "RES",
       "price": 27.85,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2025-11",
@@ -1714,7 +2210,7 @@
       "sectorid": "RES",
       "price": 19.94,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2025-11",
@@ -1722,7 +2218,7 @@
       "sectorid": "RES",
       "price": 15.67,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2025-11",
@@ -1730,7 +2226,7 @@
       "sectorid": "RES",
       "price": 13.12,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2025-11",
@@ -1738,7 +2234,7 @@
       "sectorid": "RES",
       "price": 15.33,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2025-11",
@@ -1746,7 +2242,7 @@
       "sectorid": "RES",
       "price": 12.82,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2025-11",
@@ -1754,7 +2250,7 @@
       "sectorid": "RES",
       "price": 14.74,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2025-11",
@@ -1762,7 +2258,7 @@
       "sectorid": "RES",
       "price": 14.64,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2025-11",
@@ -1770,7 +2266,7 @@
       "sectorid": "RES",
       "price": 11.93,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2025-11",
@@ -1778,7 +2274,7 @@
       "sectorid": "RES",
       "price": 12.52,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2025-11",
@@ -1786,7 +2282,7 @@
       "sectorid": "RES",
       "price": 28.86,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2025-11",
@@ -1794,7 +2290,7 @@
       "sectorid": "RES",
       "price": 27.37,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2025-11",
@@ -1802,7 +2298,7 @@
       "sectorid": "RES",
       "price": 22.73,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2025-11",
@@ -1810,7 +2306,7 @@
       "sectorid": "RES",
       "price": 15.61,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2025-11",
@@ -1818,7 +2314,7 @@
       "sectorid": "RES",
       "price": 14.2,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2025-11",
@@ -1826,7 +2322,7 @@
       "sectorid": "RES",
       "price": 26.42,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2025-11",
@@ -1834,7 +2330,7 @@
       "sectorid": "RES",
       "price": 17.66,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2025-11",
@@ -1842,7 +2338,7 @@
       "sectorid": "RES",
       "price": 13.34,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2025-11",
@@ -1850,7 +2346,7 @@
       "sectorid": "RES",
       "price": 15.59,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2025-11",
@@ -1858,7 +2354,7 @@
       "sectorid": "RES",
       "price": 20.16,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2025-11",
@@ -1866,7 +2362,7 @@
       "sectorid": "RES",
       "price": 24.07,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2025-11",
@@ -1874,7 +2370,7 @@
       "sectorid": "RES",
       "price": 34.08,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2025-11",
@@ -1882,7 +2378,7 @@
       "sectorid": "RES",
       "price": 30.82,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2025-11",
@@ -1890,7 +2386,7 @@
       "sectorid": "RES",
       "price": 15.86,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2025-11",
@@ -1898,7 +2394,7 @@
       "sectorid": "RES",
       "price": 15.53,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2025-11",
@@ -1906,7 +2402,7 @@
       "sectorid": "RES",
       "price": 13.81,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2025-11",
@@ -1914,7 +2410,7 @@
       "sectorid": "RES",
       "price": 13.47,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2025-11",
@@ -1922,7 +2418,7 @@
       "sectorid": "RES",
       "price": 16.04,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2025-11",
@@ -1930,7 +2426,7 @@
       "sectorid": "RES",
       "price": 17.78,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2025-11",
@@ -1938,7 +2434,7 @@
       "sectorid": "RES",
       "price": 13.07,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2025-11",
@@ -1946,7 +2442,7 @@
       "sectorid": "RES",
       "price": 15.94,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2025-11",
@@ -1954,7 +2450,7 @@
       "sectorid": "RES",
       "price": 24.17,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2025-11",
@@ -1962,7 +2458,7 @@
       "sectorid": "RES",
       "price": 13.85,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2025-11",
@@ -1970,7 +2466,7 @@
       "sectorid": "RES",
       "price": 18.39,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2025-11",
@@ -1978,7 +2474,7 @@
       "sectorid": "RES",
       "price": 13.89,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2025-11",
@@ -1986,7 +2482,7 @@
       "sectorid": "RES",
       "price": 15.13,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2025-11",
@@ -1994,7 +2490,7 @@
       "sectorid": "RES",
       "price": 15.65,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     },
     {
       "period": "2025-11",
@@ -2002,503 +2498,7 @@
       "sectorid": "RES",
       "price": 13.91,
       "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
-    },
-    {
-      "period": "2025-10",
-      "stateid": "AK",
-      "sectorid": "RES",
-      "price": 26.46,
-      "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
-    },
-    {
-      "period": "2025-10",
-      "stateid": "AL",
-      "sectorid": "RES",
-      "price": 16.72,
-      "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
-    },
-    {
-      "period": "2025-10",
-      "stateid": "AR",
-      "sectorid": "RES",
-      "price": 13.26,
-      "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
-    },
-    {
-      "period": "2025-10",
-      "stateid": "AZ",
-      "sectorid": "RES",
-      "price": 15.55,
-      "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
-    },
-    {
-      "period": "2025-10",
-      "stateid": "CA",
-      "sectorid": "RES",
-      "price": 33.6,
-      "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
-    },
-    {
-      "period": "2025-10",
-      "stateid": "CO",
-      "sectorid": "RES",
-      "price": 16.26,
-      "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
-    },
-    {
-      "period": "2025-10",
-      "stateid": "CT",
-      "sectorid": "RES",
-      "price": 27.72,
-      "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
-    },
-    {
-      "period": "2025-10",
-      "stateid": "DC",
-      "sectorid": "RES",
-      "price": 23.92,
-      "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
-    },
-    {
-      "period": "2025-10",
-      "stateid": "DE",
-      "sectorid": "RES",
-      "price": 18.31,
-      "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
-    },
-    {
-      "period": "2025-10",
-      "stateid": "ENC",
-      "sectorid": "RES",
-      "price": 18.53,
-      "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
-    },
-    {
-      "period": "2025-10",
-      "stateid": "ESC",
-      "sectorid": "RES",
-      "price": 14.39,
-      "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
-    },
-    {
-      "period": "2025-10",
-      "stateid": "FL",
-      "sectorid": "RES",
-      "price": 15.7,
-      "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
-    },
-    {
-      "period": "2025-10",
-      "stateid": "GA",
-      "sectorid": "RES",
-      "price": 14.53,
-      "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
-    },
-    {
-      "period": "2025-10",
-      "stateid": "HI",
-      "sectorid": "RES",
-      "price": 39.74,
-      "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
-    },
-    {
-      "period": "2025-10",
-      "stateid": "IA",
-      "sectorid": "RES",
-      "price": 13.48,
-      "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
-    },
-    {
-      "period": "2025-10",
-      "stateid": "ID",
-      "sectorid": "RES",
-      "price": 12.46,
-      "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
-    },
-    {
-      "period": "2025-10",
-      "stateid": "IL",
-      "sectorid": "RES",
-      "price": 18.74,
-      "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
-    },
-    {
-      "period": "2025-10",
-      "stateid": "IN",
-      "sectorid": "RES",
-      "price": 17.34,
-      "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
-    },
-    {
-      "period": "2025-10",
-      "stateid": "KS",
-      "sectorid": "RES",
-      "price": 15.17,
-      "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
-    },
-    {
-      "period": "2025-10",
-      "stateid": "KY",
-      "sectorid": "RES",
-      "price": 13.62,
-      "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
-    },
-    {
-      "period": "2025-10",
-      "stateid": "LA",
-      "sectorid": "RES",
-      "price": 12.39,
-      "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
-    },
-    {
-      "period": "2025-10",
-      "stateid": "MA",
-      "sectorid": "RES",
-      "price": 31.37,
-      "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
-    },
-    {
-      "period": "2025-10",
-      "stateid": "MAT",
-      "sectorid": "RES",
-      "price": 23.47,
-      "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
-    },
-    {
-      "period": "2025-10",
-      "stateid": "MD",
-      "sectorid": "RES",
-      "price": 22.3,
-      "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
-    },
-    {
-      "period": "2025-10",
-      "stateid": "ME",
-      "sectorid": "RES",
-      "price": 26.63,
-      "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
-    },
-    {
-      "period": "2025-10",
-      "stateid": "MI",
-      "sectorid": "RES",
-      "price": 20.46,
-      "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
-    },
-    {
-      "period": "2025-10",
-      "stateid": "MN",
-      "sectorid": "RES",
-      "price": 16.37,
-      "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
-    },
-    {
-      "period": "2025-10",
-      "stateid": "MO",
-      "sectorid": "RES",
-      "price": 12.95,
-      "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
-    },
-    {
-      "period": "2025-10",
-      "stateid": "MS",
-      "sectorid": "RES",
-      "price": 14.47,
-      "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
-    },
-    {
-      "period": "2025-10",
-      "stateid": "MT",
-      "sectorid": "RES",
-      "price": 14.27,
-      "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
-    },
-    {
-      "period": "2025-10",
-      "stateid": "MTN",
-      "sectorid": "RES",
-      "price": 14.91,
-      "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
-    },
-    {
-      "period": "2025-10",
-      "stateid": "NC",
-      "sectorid": "RES",
-      "price": 15.05,
-      "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
-    },
-    {
-      "period": "2025-10",
-      "stateid": "ND",
-      "sectorid": "RES",
-      "price": 12.82,
-      "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
-    },
-    {
-      "period": "2025-10",
-      "stateid": "NE",
-      "sectorid": "RES",
-      "price": 13.13,
-      "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
-    },
-    {
-      "period": "2025-10",
-      "stateid": "NEW",
-      "sectorid": "RES",
-      "price": 29.22,
-      "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
-    },
-    {
-      "period": "2025-10",
-      "stateid": "NH",
-      "sectorid": "RES",
-      "price": 27.27,
-      "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
-    },
-    {
-      "period": "2025-10",
-      "stateid": "NJ",
-      "sectorid": "RES",
-      "price": 22.55,
-      "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
-    },
-    {
-      "period": "2025-10",
-      "stateid": "NM",
-      "sectorid": "RES",
-      "price": 14.95,
-      "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
-    },
-    {
-      "period": "2025-10",
-      "stateid": "NV",
-      "sectorid": "RES",
-      "price": 13.77,
-      "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
-    },
-    {
-      "period": "2025-10",
-      "stateid": "NY",
-      "sectorid": "RES",
-      "price": 26.95,
-      "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
-    },
-    {
-      "period": "2025-10",
-      "stateid": "OH",
-      "sectorid": "RES",
-      "price": 17.85,
-      "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
-    },
-    {
-      "period": "2025-10",
-      "stateid": "OK",
-      "sectorid": "RES",
-      "price": 14.42,
-      "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
-    },
-    {
-      "period": "2025-10",
-      "stateid": "OR",
-      "sectorid": "RES",
-      "price": 16.16,
-      "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
-    },
-    {
-      "period": "2025-10",
-      "stateid": "PA",
-      "sectorid": "RES",
-      "price": 20.49,
-      "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
-    },
-    {
-      "period": "2025-10",
-      "stateid": "PACC",
-      "sectorid": "RES",
-      "price": 26.38,
-      "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
-    },
-    {
-      "period": "2025-10",
-      "stateid": "PACN",
-      "sectorid": "RES",
-      "price": 34.56,
-      "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
-    },
-    {
-      "period": "2025-10",
-      "stateid": "RI",
-      "sectorid": "RES",
-      "price": 31.16,
-      "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
-    },
-    {
-      "period": "2025-10",
-      "stateid": "SAT",
-      "sectorid": "RES",
-      "price": 15.96,
-      "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
-    },
-    {
-      "period": "2025-10",
-      "stateid": "SC",
-      "sectorid": "RES",
-      "price": 15.65,
-      "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
-    },
-    {
-      "period": "2025-10",
-      "stateid": "SD",
-      "sectorid": "RES",
-      "price": 14.09,
-      "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
-    },
-    {
-      "period": "2025-10",
-      "stateid": "TN",
-      "sectorid": "RES",
-      "price": 13.06,
-      "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
-    },
-    {
-      "period": "2025-10",
-      "stateid": "TX",
-      "sectorid": "RES",
-      "price": 16.1,
-      "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
-    },
-    {
-      "period": "2025-10",
-      "stateid": "US",
-      "sectorid": "RES",
-      "price": 17.97,
-      "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
-    },
-    {
-      "period": "2025-10",
-      "stateid": "UT",
-      "sectorid": "RES",
-      "price": 13.69,
-      "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
-    },
-    {
-      "period": "2025-10",
-      "stateid": "VA",
-      "sectorid": "RES",
-      "price": 16.36,
-      "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
-    },
-    {
-      "period": "2025-10",
-      "stateid": "VT",
-      "sectorid": "RES",
-      "price": 24.78,
-      "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
-    },
-    {
-      "period": "2025-10",
-      "stateid": "WA",
-      "sectorid": "RES",
-      "price": 14.06,
-      "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
-    },
-    {
-      "period": "2025-10",
-      "stateid": "WI",
-      "sectorid": "RES",
-      "price": 18.37,
-      "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
-    },
-    {
-      "period": "2025-10",
-      "stateid": "WNC",
-      "sectorid": "RES",
-      "price": 14.15,
-      "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
-    },
-    {
-      "period": "2025-10",
-      "stateid": "WSC",
-      "sectorid": "RES",
-      "price": 15.28,
-      "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
-    },
-    {
-      "period": "2025-10",
-      "stateid": "WV",
-      "sectorid": "RES",
-      "price": 16.19,
-      "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
-    },
-    {
-      "period": "2025-10",
-      "stateid": "WY",
-      "sectorid": "RES",
-      "price": 15.11,
-      "source": "eia_v2_retail_sales",
-      "fetched_at": "2026-04-28T11:48:55.834Z"
+      "fetched_at": "2026-05-28T13:54:57.371Z"
     }
   ]
 }

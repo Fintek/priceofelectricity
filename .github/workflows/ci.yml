@@ -23,6 +23,9 @@ jobs:
       - name: Verify
         run: npm run verify
 
+      - name: Payload readout (job summary)
+        run: npm run payload:audit -- --github-summary
+
       - name: Upload Lighthouse CI reports
         if: always()
         uses: actions/upload-artifact@v4

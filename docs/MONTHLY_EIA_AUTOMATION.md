@@ -50,7 +50,25 @@ If no new data is available, the workflow exits cleanly without committing.
 
 After the workflow pushes a commit to `main`, Vercel automatically detects the push and triggers a production deployment. No additional deploy step is needed.
 
+## Safety layers: corrections override + anomaly guard
+
+Between the fetch and snapshot-build steps the workflow runs two safety layers:
+
+1. **Apply corrections** (`npm run data:apply:corrections`) re-pins known-bad
+   EIA source values (e.g. the corrected Maryland 2026-03 price) over the
+   freshly-fetched CSV. It is a fixer and always exits 0.
+2. **MoM anomaly guard** (`npm run data:check:mom`) fails the job if any
+   state's residential price moved more than the threshold (default 25%)
+   within the trailing 6-month window and is not allowlisted. A failed guard
+   stops the refresh before any commit, preserving the last-good data, and
+   opens an `eia-refresh` tracking issue.
+
+See `docs/EIA_REFRESH_RUNBOOK.md` for how to respond to a flag (corrections vs
+allowlist) and how correction staleness is surfaced.
+
 ## Related Scripts
 
 - `npm run data:backfill:eia:res` — full historical backfill (2000–present); use only for initial setup or recovery
 - `npm run data:build:snapshots:eia` — regenerate snapshots/history from existing CSV without fetching
+- `npm run data:apply:corrections` — re-pin known-bad EIA values from `data/eia/corrections.json` (refresh pipeline only)
+- `npm run data:check:mom` — month-over-month anomaly guard over the normalized CSV

@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-01-15T00:00:00.000Z",
-  "sourceVersion": "v20260115",
+  "generatedAt": "2026-05-28T13:54:57.371Z",
+  "sourceVersion": "v20260315",
   "rowCount": 51,
   "columns": [
     "slug",
@@ -17,512 +17,512 @@
     {
       "slug": "alabama",
       "state": "Alabama",
-      "avgRateCentsPerKwh": 16.06,
-      "nationalAverage": 17.86,
-      "differencePercent": -10.1,
+      "avgRateCentsPerKwh": 17.15,
+      "nationalAverage": 18.89,
+      "differencePercent": -9.2,
       "momentumSignal": "rising",
-      "generatedAt": "2026-01-15T00:00:00.000Z",
-      "sourceVersion": "v20260115"
+      "generatedAt": "2026-05-28T13:54:57.371Z",
+      "sourceVersion": "v20260315"
     },
     {
       "slug": "alaska",
       "state": "Alaska",
-      "avgRateCentsPerKwh": 25.52,
-      "nationalAverage": 17.86,
-      "differencePercent": 42.9,
+      "avgRateCentsPerKwh": 27.17,
+      "nationalAverage": 18.89,
+      "differencePercent": 43.8,
       "momentumSignal": "rising",
-      "generatedAt": "2026-01-15T00:00:00.000Z",
-      "sourceVersion": "v20260115"
+      "generatedAt": "2026-05-28T13:54:57.371Z",
+      "sourceVersion": "v20260315"
     },
     {
       "slug": "arizona",
       "state": "Arizona",
-      "avgRateCentsPerKwh": 15.61,
-      "nationalAverage": 17.86,
-      "differencePercent": -12.6,
+      "avgRateCentsPerKwh": 15.59,
+      "nationalAverage": 18.89,
+      "differencePercent": -17.5,
       "momentumSignal": "rising",
-      "generatedAt": "2026-01-15T00:00:00.000Z",
-      "sourceVersion": "v20260115"
+      "generatedAt": "2026-05-28T13:54:57.371Z",
+      "sourceVersion": "v20260315"
     },
     {
       "slug": "arkansas",
       "state": "Arkansas",
-      "avgRateCentsPerKwh": 12.35,
-      "nationalAverage": 17.86,
-      "differencePercent": -30.9,
+      "avgRateCentsPerKwh": 13.63,
+      "nationalAverage": 18.89,
+      "differencePercent": -27.8,
       "momentumSignal": "accelerating",
-      "generatedAt": "2026-01-15T00:00:00.000Z",
-      "sourceVersion": "v20260115"
+      "generatedAt": "2026-05-28T13:54:57.371Z",
+      "sourceVersion": "v20260315"
     },
     {
       "slug": "california",
       "state": "California",
-      "avgRateCentsPerKwh": 30.29,
-      "nationalAverage": 17.86,
-      "differencePercent": 69.6,
-      "momentumSignal": "stable",
-      "generatedAt": "2026-01-15T00:00:00.000Z",
-      "sourceVersion": "v20260115"
+      "avgRateCentsPerKwh": 33.35,
+      "nationalAverage": 18.89,
+      "differencePercent": 76.5,
+      "momentumSignal": "rising",
+      "generatedAt": "2026-05-28T13:54:57.371Z",
+      "sourceVersion": "v20260315"
     },
     {
       "slug": "colorado",
       "state": "Colorado",
-      "avgRateCentsPerKwh": 16.44,
-      "nationalAverage": 17.86,
-      "differencePercent": -8,
+      "avgRateCentsPerKwh": 16.74,
+      "nationalAverage": 18.89,
+      "differencePercent": -11.4,
       "momentumSignal": "accelerating",
-      "generatedAt": "2026-01-15T00:00:00.000Z",
-      "sourceVersion": "v20260115"
+      "generatedAt": "2026-05-28T13:54:57.371Z",
+      "sourceVersion": "v20260315"
     },
     {
       "slug": "connecticut",
       "state": "Connecticut",
-      "avgRateCentsPerKwh": 28.3,
-      "nationalAverage": 17.86,
-      "differencePercent": 58.5,
+      "avgRateCentsPerKwh": 30.47,
+      "nationalAverage": 18.89,
+      "differencePercent": 61.3,
       "momentumSignal": "falling",
-      "generatedAt": "2026-01-15T00:00:00.000Z",
-      "sourceVersion": "v20260115"
+      "generatedAt": "2026-05-28T13:54:57.371Z",
+      "sourceVersion": "v20260315"
     },
     {
       "slug": "delaware",
       "state": "Delaware",
-      "avgRateCentsPerKwh": 16.51,
-      "nationalAverage": 17.86,
-      "differencePercent": -7.6,
+      "avgRateCentsPerKwh": 17.64,
+      "nationalAverage": 18.89,
+      "differencePercent": -6.6,
       "momentumSignal": "accelerating",
-      "generatedAt": "2026-01-15T00:00:00.000Z",
-      "sourceVersion": "v20260115"
-    },
-    {
-      "slug": "florida",
-      "state": "Florida",
-      "avgRateCentsPerKwh": 15.92,
-      "nationalAverage": 17.86,
-      "differencePercent": -10.9,
-      "momentumSignal": "accelerating",
-      "generatedAt": "2026-01-15T00:00:00.000Z",
-      "sourceVersion": "v20260115"
-    },
-    {
-      "slug": "georgia",
-      "state": "Georgia",
-      "avgRateCentsPerKwh": 14.46,
-      "nationalAverage": 17.86,
-      "differencePercent": -19,
-      "momentumSignal": "rising",
-      "generatedAt": "2026-01-15T00:00:00.000Z",
-      "sourceVersion": "v20260115"
-    },
-    {
-      "slug": "hawaii",
-      "state": "Hawaii",
-      "avgRateCentsPerKwh": 39.79,
-      "nationalAverage": 17.86,
-      "differencePercent": 122.8,
-      "momentumSignal": "falling",
-      "generatedAt": "2026-01-15T00:00:00.000Z",
-      "sourceVersion": "v20260115"
-    },
-    {
-      "slug": "idaho",
-      "state": "Idaho",
-      "avgRateCentsPerKwh": 12.07,
-      "nationalAverage": 17.86,
-      "differencePercent": -32.4,
-      "momentumSignal": "accelerating",
-      "generatedAt": "2026-01-15T00:00:00.000Z",
-      "sourceVersion": "v20260115"
-    },
-    {
-      "slug": "illinois",
-      "state": "Illinois",
-      "avgRateCentsPerKwh": 16.36,
-      "nationalAverage": 17.86,
-      "differencePercent": -8.4,
-      "momentumSignal": "rising",
-      "generatedAt": "2026-01-15T00:00:00.000Z",
-      "sourceVersion": "v20260115"
-    },
-    {
-      "slug": "indiana",
-      "state": "Indiana",
-      "avgRateCentsPerKwh": 16.19,
-      "nationalAverage": 17.86,
-      "differencePercent": -9.4,
-      "momentumSignal": "accelerating",
-      "generatedAt": "2026-01-15T00:00:00.000Z",
-      "sourceVersion": "v20260115"
-    },
-    {
-      "slug": "iowa",
-      "state": "Iowa",
-      "avgRateCentsPerKwh": 12.83,
-      "nationalAverage": 17.86,
-      "differencePercent": -28.2,
-      "momentumSignal": "accelerating",
-      "generatedAt": "2026-01-15T00:00:00.000Z",
-      "sourceVersion": "v20260115"
-    },
-    {
-      "slug": "kansas",
-      "state": "Kansas",
-      "avgRateCentsPerKwh": 14.29,
-      "nationalAverage": 17.86,
-      "differencePercent": -20,
-      "momentumSignal": "accelerating",
-      "generatedAt": "2026-01-15T00:00:00.000Z",
-      "sourceVersion": "v20260115"
-    },
-    {
-      "slug": "kentucky",
-      "state": "Kentucky",
-      "avgRateCentsPerKwh": 14.27,
-      "nationalAverage": 17.86,
-      "differencePercent": -20.1,
-      "momentumSignal": "accelerating",
-      "generatedAt": "2026-01-15T00:00:00.000Z",
-      "sourceVersion": "v20260115"
-    },
-    {
-      "slug": "louisiana",
-      "state": "Louisiana",
-      "avgRateCentsPerKwh": 12.46,
-      "nationalAverage": 17.86,
-      "differencePercent": -30.2,
-      "momentumSignal": "accelerating",
-      "generatedAt": "2026-01-15T00:00:00.000Z",
-      "sourceVersion": "v20260115"
-    },
-    {
-      "slug": "maine",
-      "state": "Maine",
-      "avgRateCentsPerKwh": 30.73,
-      "nationalAverage": 17.86,
-      "differencePercent": 72.1,
-      "momentumSignal": "accelerating",
-      "generatedAt": "2026-01-15T00:00:00.000Z",
-      "sourceVersion": "v20260115"
-    },
-    {
-      "slug": "maryland",
-      "state": "Maryland",
-      "avgRateCentsPerKwh": 20.61,
-      "nationalAverage": 17.86,
-      "differencePercent": 15.4,
-      "momentumSignal": "accelerating",
-      "generatedAt": "2026-01-15T00:00:00.000Z",
-      "sourceVersion": "v20260115"
-    },
-    {
-      "slug": "massachusetts",
-      "state": "Massachusetts",
-      "avgRateCentsPerKwh": 31.16,
-      "nationalAverage": 17.86,
-      "differencePercent": 74.5,
-      "momentumSignal": "rising",
-      "generatedAt": "2026-01-15T00:00:00.000Z",
-      "sourceVersion": "v20260115"
-    },
-    {
-      "slug": "michigan",
-      "state": "Michigan",
-      "avgRateCentsPerKwh": 19.52,
-      "nationalAverage": 17.86,
-      "differencePercent": 9.3,
-      "momentumSignal": "accelerating",
-      "generatedAt": "2026-01-15T00:00:00.000Z",
-      "sourceVersion": "v20260115"
-    },
-    {
-      "slug": "minnesota",
-      "state": "Minnesota",
-      "avgRateCentsPerKwh": 14.98,
-      "nationalAverage": 17.86,
-      "differencePercent": -16.1,
-      "momentumSignal": "rising",
-      "generatedAt": "2026-01-15T00:00:00.000Z",
-      "sourceVersion": "v20260115"
-    },
-    {
-      "slug": "mississippi",
-      "state": "Mississippi",
-      "avgRateCentsPerKwh": 14.24,
-      "nationalAverage": 17.86,
-      "differencePercent": -20.3,
-      "momentumSignal": "accelerating",
-      "generatedAt": "2026-01-15T00:00:00.000Z",
-      "sourceVersion": "v20260115"
-    },
-    {
-      "slug": "missouri",
-      "state": "Missouri",
-      "avgRateCentsPerKwh": 11.8,
-      "nationalAverage": 17.86,
-      "differencePercent": -33.9,
-      "momentumSignal": "rising",
-      "generatedAt": "2026-01-15T00:00:00.000Z",
-      "sourceVersion": "v20260115"
-    },
-    {
-      "slug": "montana",
-      "state": "Montana",
-      "avgRateCentsPerKwh": 12.86,
-      "nationalAverage": 17.86,
-      "differencePercent": -28,
-      "momentumSignal": "accelerating",
-      "generatedAt": "2026-01-15T00:00:00.000Z",
-      "sourceVersion": "v20260115"
-    },
-    {
-      "slug": "nebraska",
-      "state": "Nebraska",
-      "avgRateCentsPerKwh": 11.76,
-      "nationalAverage": 17.86,
-      "differencePercent": -34.2,
-      "momentumSignal": "rising",
-      "generatedAt": "2026-01-15T00:00:00.000Z",
-      "sourceVersion": "v20260115"
-    },
-    {
-      "slug": "nevada",
-      "state": "Nevada",
-      "avgRateCentsPerKwh": 13.98,
-      "nationalAverage": 17.86,
-      "differencePercent": -21.7,
-      "momentumSignal": "stable",
-      "generatedAt": "2026-01-15T00:00:00.000Z",
-      "sourceVersion": "v20260115"
-    },
-    {
-      "slug": "new-hampshire",
-      "state": "New Hampshire",
-      "avgRateCentsPerKwh": 26.32,
-      "nationalAverage": 17.86,
-      "differencePercent": 47.4,
-      "momentumSignal": "accelerating",
-      "generatedAt": "2026-01-15T00:00:00.000Z",
-      "sourceVersion": "v20260115"
-    },
-    {
-      "slug": "new-jersey",
-      "state": "New Jersey",
-      "avgRateCentsPerKwh": 23.13,
-      "nationalAverage": 17.86,
-      "differencePercent": 29.5,
-      "momentumSignal": "accelerating",
-      "generatedAt": "2026-01-15T00:00:00.000Z",
-      "sourceVersion": "v20260115"
-    },
-    {
-      "slug": "new-mexico",
-      "state": "New Mexico",
-      "avgRateCentsPerKwh": 14.7,
-      "nationalAverage": 17.86,
-      "differencePercent": -17.7,
-      "momentumSignal": "accelerating",
-      "generatedAt": "2026-01-15T00:00:00.000Z",
-      "sourceVersion": "v20260115"
-    },
-    {
-      "slug": "new-york",
-      "state": "New York",
-      "avgRateCentsPerKwh": 28.37,
-      "nationalAverage": 17.86,
-      "differencePercent": 58.8,
-      "momentumSignal": "accelerating",
-      "generatedAt": "2026-01-15T00:00:00.000Z",
-      "sourceVersion": "v20260115"
-    },
-    {
-      "slug": "north-carolina",
-      "state": "North Carolina",
-      "avgRateCentsPerKwh": 13.68,
-      "nationalAverage": 17.86,
-      "differencePercent": -23.4,
-      "momentumSignal": "accelerating",
-      "generatedAt": "2026-01-15T00:00:00.000Z",
-      "sourceVersion": "v20260115"
-    },
-    {
-      "slug": "north-dakota",
-      "state": "North Dakota",
-      "avgRateCentsPerKwh": 10.92,
-      "nationalAverage": 17.86,
-      "differencePercent": -38.9,
-      "momentumSignal": "accelerating",
-      "generatedAt": "2026-01-15T00:00:00.000Z",
-      "sourceVersion": "v20260115"
-    },
-    {
-      "slug": "ohio",
-      "state": "Ohio",
-      "avgRateCentsPerKwh": 17.59,
-      "nationalAverage": 17.86,
-      "differencePercent": -1.5,
-      "momentumSignal": "accelerating",
-      "generatedAt": "2026-01-15T00:00:00.000Z",
-      "sourceVersion": "v20260115"
-    },
-    {
-      "slug": "oklahoma",
-      "state": "Oklahoma",
-      "avgRateCentsPerKwh": 12.62,
-      "nationalAverage": 17.86,
-      "differencePercent": -29.3,
-      "momentumSignal": "accelerating",
-      "generatedAt": "2026-01-15T00:00:00.000Z",
-      "sourceVersion": "v20260115"
-    },
-    {
-      "slug": "oregon",
-      "state": "Oregon",
-      "avgRateCentsPerKwh": 14.66,
-      "nationalAverage": 17.86,
-      "differencePercent": -17.9,
-      "momentumSignal": "rising",
-      "generatedAt": "2026-01-15T00:00:00.000Z",
-      "sourceVersion": "v20260115"
-    },
-    {
-      "slug": "pennsylvania",
-      "state": "Pennsylvania",
-      "avgRateCentsPerKwh": 20.19,
-      "nationalAverage": 17.86,
-      "differencePercent": 13,
-      "momentumSignal": "accelerating",
-      "generatedAt": "2026-01-15T00:00:00.000Z",
-      "sourceVersion": "v20260115"
-    },
-    {
-      "slug": "rhode-island",
-      "state": "Rhode Island",
-      "avgRateCentsPerKwh": 30.14,
-      "nationalAverage": 17.86,
-      "differencePercent": 68.8,
-      "momentumSignal": "falling",
-      "generatedAt": "2026-01-15T00:00:00.000Z",
-      "sourceVersion": "v20260115"
-    },
-    {
-      "slug": "south-carolina",
-      "state": "South Carolina",
-      "avgRateCentsPerKwh": 15.41,
-      "nationalAverage": 17.86,
-      "differencePercent": -13.7,
-      "momentumSignal": "accelerating",
-      "generatedAt": "2026-01-15T00:00:00.000Z",
-      "sourceVersion": "v20260115"
-    },
-    {
-      "slug": "south-dakota",
-      "state": "South Dakota",
-      "avgRateCentsPerKwh": 13.6,
-      "nationalAverage": 17.86,
-      "differencePercent": -23.9,
-      "momentumSignal": "accelerating",
-      "generatedAt": "2026-01-15T00:00:00.000Z",
-      "sourceVersion": "v20260115"
-    },
-    {
-      "slug": "tennessee",
-      "state": "Tennessee",
-      "avgRateCentsPerKwh": 13.1,
-      "nationalAverage": 17.86,
-      "differencePercent": -26.7,
-      "momentumSignal": "rising",
-      "generatedAt": "2026-01-15T00:00:00.000Z",
-      "sourceVersion": "v20260115"
-    },
-    {
-      "slug": "texas",
-      "state": "Texas",
-      "avgRateCentsPerKwh": 15.69,
-      "nationalAverage": 17.86,
-      "differencePercent": -12.2,
-      "momentumSignal": "accelerating",
-      "generatedAt": "2026-01-15T00:00:00.000Z",
-      "sourceVersion": "v20260115"
-    },
-    {
-      "slug": "utah",
-      "state": "Utah",
-      "avgRateCentsPerKwh": 12.88,
-      "nationalAverage": 17.86,
-      "differencePercent": -27.9,
-      "momentumSignal": "rising",
-      "generatedAt": "2026-01-15T00:00:00.000Z",
-      "sourceVersion": "v20260115"
-    },
-    {
-      "slug": "vermont",
-      "state": "Vermont",
-      "avgRateCentsPerKwh": 23.29,
-      "nationalAverage": 17.86,
-      "differencePercent": 30.4,
-      "momentumSignal": "accelerating",
-      "generatedAt": "2026-01-15T00:00:00.000Z",
-      "sourceVersion": "v20260115"
-    },
-    {
-      "slug": "virginia",
-      "state": "Virginia",
-      "avgRateCentsPerKwh": 15.87,
-      "nationalAverage": 17.86,
-      "differencePercent": -11.1,
-      "momentumSignal": "accelerating",
-      "generatedAt": "2026-01-15T00:00:00.000Z",
-      "sourceVersion": "v20260115"
-    },
-    {
-      "slug": "washington",
-      "state": "Washington",
-      "avgRateCentsPerKwh": 13.81,
-      "nationalAverage": 17.86,
-      "differencePercent": -22.7,
-      "momentumSignal": "accelerating",
-      "generatedAt": "2026-01-15T00:00:00.000Z",
-      "sourceVersion": "v20260115"
-    },
-    {
-      "slug": "west-virginia",
-      "state": "West Virginia",
-      "avgRateCentsPerKwh": 14.77,
-      "nationalAverage": 17.86,
-      "differencePercent": -17.3,
-      "momentumSignal": "rising",
-      "generatedAt": "2026-01-15T00:00:00.000Z",
-      "sourceVersion": "v20260115"
-    },
-    {
-      "slug": "wisconsin",
-      "state": "Wisconsin",
-      "avgRateCentsPerKwh": 18.2,
-      "nationalAverage": 17.86,
-      "differencePercent": 1.9,
-      "momentumSignal": "rising",
-      "generatedAt": "2026-01-15T00:00:00.000Z",
-      "sourceVersion": "v20260115"
-    },
-    {
-      "slug": "wyoming",
-      "state": "Wyoming",
-      "avgRateCentsPerKwh": 12.85,
-      "nationalAverage": 17.86,
-      "differencePercent": -28.1,
-      "momentumSignal": "accelerating",
-      "generatedAt": "2026-01-15T00:00:00.000Z",
-      "sourceVersion": "v20260115"
+      "generatedAt": "2026-05-28T13:54:57.371Z",
+      "sourceVersion": "v20260315"
     },
     {
       "slug": "district-of-columbia",
       "state": "District of Columbia",
-      "avgRateCentsPerKwh": null,
-      "nationalAverage": 17.86,
-      "differencePercent": 0,
+      "avgRateCentsPerKwh": 25,
+      "nationalAverage": 18.89,
+      "differencePercent": 32.3,
       "momentumSignal": "accelerating",
-      "generatedAt": "2026-01-15T00:00:00.000Z",
-      "sourceVersion": "v20260115"
+      "generatedAt": "2026-05-28T13:54:57.371Z",
+      "sourceVersion": "v20260315"
+    },
+    {
+      "slug": "florida",
+      "state": "Florida",
+      "avgRateCentsPerKwh": 14.86,
+      "nationalAverage": 18.89,
+      "differencePercent": -21.3,
+      "momentumSignal": "falling",
+      "generatedAt": "2026-05-28T13:54:57.371Z",
+      "sourceVersion": "v20260315"
+    },
+    {
+      "slug": "georgia",
+      "state": "Georgia",
+      "avgRateCentsPerKwh": 15.01,
+      "nationalAverage": 18.89,
+      "differencePercent": -20.5,
+      "momentumSignal": "rising",
+      "generatedAt": "2026-05-28T13:54:57.371Z",
+      "sourceVersion": "v20260315"
+    },
+    {
+      "slug": "hawaii",
+      "state": "Hawaii",
+      "avgRateCentsPerKwh": 42.23,
+      "nationalAverage": 18.89,
+      "differencePercent": 123.6,
+      "momentumSignal": "rising",
+      "generatedAt": "2026-05-28T13:54:57.371Z",
+      "sourceVersion": "v20260315"
+    },
+    {
+      "slug": "idaho",
+      "state": "Idaho",
+      "avgRateCentsPerKwh": 13.01,
+      "nationalAverage": 18.89,
+      "differencePercent": -31.1,
+      "momentumSignal": "accelerating",
+      "generatedAt": "2026-05-28T13:54:57.371Z",
+      "sourceVersion": "v20260315"
+    },
+    {
+      "slug": "illinois",
+      "state": "Illinois",
+      "avgRateCentsPerKwh": 18.86,
+      "nationalAverage": 18.89,
+      "differencePercent": -0.2,
+      "momentumSignal": "rising",
+      "generatedAt": "2026-05-28T13:54:57.371Z",
+      "sourceVersion": "v20260315"
+    },
+    {
+      "slug": "indiana",
+      "state": "Indiana",
+      "avgRateCentsPerKwh": 17.85,
+      "nationalAverage": 18.89,
+      "differencePercent": -5.5,
+      "momentumSignal": "rising",
+      "generatedAt": "2026-05-28T13:54:57.371Z",
+      "sourceVersion": "v20260315"
+    },
+    {
+      "slug": "iowa",
+      "state": "Iowa",
+      "avgRateCentsPerKwh": 13.42,
+      "nationalAverage": 18.89,
+      "differencePercent": -29,
+      "momentumSignal": "accelerating",
+      "generatedAt": "2026-05-28T13:54:57.371Z",
+      "sourceVersion": "v20260315"
+    },
+    {
+      "slug": "kansas",
+      "state": "Kansas",
+      "avgRateCentsPerKwh": 15.34,
+      "nationalAverage": 18.89,
+      "differencePercent": -18.8,
+      "momentumSignal": "accelerating",
+      "generatedAt": "2026-05-28T13:54:57.371Z",
+      "sourceVersion": "v20260315"
+    },
+    {
+      "slug": "kentucky",
+      "state": "Kentucky",
+      "avgRateCentsPerKwh": 14.88,
+      "nationalAverage": 18.89,
+      "differencePercent": -21.2,
+      "momentumSignal": "accelerating",
+      "generatedAt": "2026-05-28T13:54:57.371Z",
+      "sourceVersion": "v20260315"
+    },
+    {
+      "slug": "louisiana",
+      "state": "Louisiana",
+      "avgRateCentsPerKwh": 14.16,
+      "nationalAverage": 18.89,
+      "differencePercent": -25,
+      "momentumSignal": "accelerating",
+      "generatedAt": "2026-05-28T13:54:57.371Z",
+      "sourceVersion": "v20260315"
+    },
+    {
+      "slug": "maine",
+      "state": "Maine",
+      "avgRateCentsPerKwh": 28.32,
+      "nationalAverage": 18.89,
+      "differencePercent": 49.9,
+      "momentumSignal": "stable",
+      "generatedAt": "2026-05-28T13:54:57.371Z",
+      "sourceVersion": "v20260315"
+    },
+    {
+      "slug": "maryland",
+      "state": "Maryland",
+      "avgRateCentsPerKwh": 22.2,
+      "nationalAverage": 18.89,
+      "differencePercent": 17.5,
+      "momentumSignal": "accelerating",
+      "generatedAt": "2026-05-28T13:54:57.371Z",
+      "sourceVersion": "v20260315"
+    },
+    {
+      "slug": "massachusetts",
+      "state": "Massachusetts",
+      "avgRateCentsPerKwh": 30.21,
+      "nationalAverage": 18.89,
+      "differencePercent": 59.9,
+      "momentumSignal": "stable",
+      "generatedAt": "2026-05-28T13:54:57.371Z",
+      "sourceVersion": "v20260315"
+    },
+    {
+      "slug": "michigan",
+      "state": "Michigan",
+      "avgRateCentsPerKwh": 21.2,
+      "nationalAverage": 18.89,
+      "differencePercent": 12.2,
+      "momentumSignal": "accelerating",
+      "generatedAt": "2026-05-28T13:54:57.371Z",
+      "sourceVersion": "v20260315"
+    },
+    {
+      "slug": "minnesota",
+      "state": "Minnesota",
+      "avgRateCentsPerKwh": 15.08,
+      "nationalAverage": 18.89,
+      "differencePercent": -20.2,
+      "momentumSignal": "stable",
+      "generatedAt": "2026-05-28T13:54:57.371Z",
+      "sourceVersion": "v20260315"
+    },
+    {
+      "slug": "mississippi",
+      "state": "Mississippi",
+      "avgRateCentsPerKwh": 16.3,
+      "nationalAverage": 18.89,
+      "differencePercent": -13.7,
+      "momentumSignal": "accelerating",
+      "generatedAt": "2026-05-28T13:54:57.371Z",
+      "sourceVersion": "v20260315"
+    },
+    {
+      "slug": "missouri",
+      "state": "Missouri",
+      "avgRateCentsPerKwh": 13.44,
+      "nationalAverage": 18.89,
+      "differencePercent": -28.9,
+      "momentumSignal": "accelerating",
+      "generatedAt": "2026-05-28T13:54:57.371Z",
+      "sourceVersion": "v20260315"
+    },
+    {
+      "slug": "montana",
+      "state": "Montana",
+      "avgRateCentsPerKwh": 13.48,
+      "nationalAverage": 18.89,
+      "differencePercent": -28.6,
+      "momentumSignal": "accelerating",
+      "generatedAt": "2026-05-28T13:54:57.371Z",
+      "sourceVersion": "v20260315"
+    },
+    {
+      "slug": "nebraska",
+      "state": "Nebraska",
+      "avgRateCentsPerKwh": 13.1,
+      "nationalAverage": 18.89,
+      "differencePercent": -30.7,
+      "momentumSignal": "accelerating",
+      "generatedAt": "2026-05-28T13:54:57.371Z",
+      "sourceVersion": "v20260315"
+    },
+    {
+      "slug": "nevada",
+      "state": "Nevada",
+      "avgRateCentsPerKwh": 14.17,
+      "nationalAverage": 18.89,
+      "differencePercent": -25,
+      "momentumSignal": "falling",
+      "generatedAt": "2026-05-28T13:54:57.371Z",
+      "sourceVersion": "v20260315"
+    },
+    {
+      "slug": "new-hampshire",
+      "state": "New Hampshire",
+      "avgRateCentsPerKwh": 26.92,
+      "nationalAverage": 18.89,
+      "differencePercent": 42.5,
+      "momentumSignal": "accelerating",
+      "generatedAt": "2026-05-28T13:54:57.371Z",
+      "sourceVersion": "v20260315"
+    },
+    {
+      "slug": "new-jersey",
+      "state": "New Jersey",
+      "avgRateCentsPerKwh": 23.49,
+      "nationalAverage": 18.89,
+      "differencePercent": 24.4,
+      "momentumSignal": "accelerating",
+      "generatedAt": "2026-05-28T13:54:57.371Z",
+      "sourceVersion": "v20260315"
+    },
+    {
+      "slug": "new-mexico",
+      "state": "New Mexico",
+      "avgRateCentsPerKwh": 14.81,
+      "nationalAverage": 18.89,
+      "differencePercent": -21.6,
+      "momentumSignal": "stable",
+      "generatedAt": "2026-05-28T13:54:57.371Z",
+      "sourceVersion": "v20260315"
+    },
+    {
+      "slug": "new-york",
+      "state": "New York",
+      "avgRateCentsPerKwh": 28.55,
+      "nationalAverage": 18.89,
+      "differencePercent": 51.1,
+      "momentumSignal": "accelerating",
+      "generatedAt": "2026-05-28T13:54:57.371Z",
+      "sourceVersion": "v20260315"
+    },
+    {
+      "slug": "north-carolina",
+      "state": "North Carolina",
+      "avgRateCentsPerKwh": 16,
+      "nationalAverage": 18.89,
+      "differencePercent": -15.3,
+      "momentumSignal": "accelerating",
+      "generatedAt": "2026-05-28T13:54:57.371Z",
+      "sourceVersion": "v20260315"
+    },
+    {
+      "slug": "north-dakota",
+      "state": "North Dakota",
+      "avgRateCentsPerKwh": 11.95,
+      "nationalAverage": 18.89,
+      "differencePercent": -36.7,
+      "momentumSignal": "rising",
+      "generatedAt": "2026-05-28T13:54:57.371Z",
+      "sourceVersion": "v20260315"
+    },
+    {
+      "slug": "ohio",
+      "state": "Ohio",
+      "avgRateCentsPerKwh": 18.78,
+      "nationalAverage": 18.89,
+      "differencePercent": -0.6,
+      "momentumSignal": "accelerating",
+      "generatedAt": "2026-05-28T13:54:57.371Z",
+      "sourceVersion": "v20260315"
+    },
+    {
+      "slug": "oklahoma",
+      "state": "Oklahoma",
+      "avgRateCentsPerKwh": 13.56,
+      "nationalAverage": 18.89,
+      "differencePercent": -28.2,
+      "momentumSignal": "accelerating",
+      "generatedAt": "2026-05-28T13:54:57.371Z",
+      "sourceVersion": "v20260315"
+    },
+    {
+      "slug": "oregon",
+      "state": "Oregon",
+      "avgRateCentsPerKwh": 14.89,
+      "nationalAverage": 18.89,
+      "differencePercent": -21.2,
+      "momentumSignal": "falling",
+      "generatedAt": "2026-05-28T13:54:57.371Z",
+      "sourceVersion": "v20260315"
+    },
+    {
+      "slug": "pennsylvania",
+      "state": "Pennsylvania",
+      "avgRateCentsPerKwh": 20.92,
+      "nationalAverage": 18.89,
+      "differencePercent": 10.7,
+      "momentumSignal": "accelerating",
+      "generatedAt": "2026-05-28T13:54:57.371Z",
+      "sourceVersion": "v20260315"
+    },
+    {
+      "slug": "rhode-island",
+      "state": "Rhode Island",
+      "avgRateCentsPerKwh": 29.91,
+      "nationalAverage": 18.89,
+      "differencePercent": 58.3,
+      "momentumSignal": "falling",
+      "generatedAt": "2026-05-28T13:54:57.371Z",
+      "sourceVersion": "v20260315"
+    },
+    {
+      "slug": "south-carolina",
+      "state": "South Carolina",
+      "avgRateCentsPerKwh": 16.45,
+      "nationalAverage": 18.89,
+      "differencePercent": -12.9,
+      "momentumSignal": "accelerating",
+      "generatedAt": "2026-05-28T13:54:57.371Z",
+      "sourceVersion": "v20260315"
+    },
+    {
+      "slug": "south-dakota",
+      "state": "South Dakota",
+      "avgRateCentsPerKwh": 14.29,
+      "nationalAverage": 18.89,
+      "differencePercent": -24.4,
+      "momentumSignal": "accelerating",
+      "generatedAt": "2026-05-28T13:54:57.371Z",
+      "sourceVersion": "v20260315"
+    },
+    {
+      "slug": "tennessee",
+      "state": "Tennessee",
+      "avgRateCentsPerKwh": 15.08,
+      "nationalAverage": 18.89,
+      "differencePercent": -20.2,
+      "momentumSignal": "accelerating",
+      "generatedAt": "2026-05-28T13:54:57.371Z",
+      "sourceVersion": "v20260315"
+    },
+    {
+      "slug": "texas",
+      "state": "Texas",
+      "avgRateCentsPerKwh": 16.39,
+      "nationalAverage": 18.89,
+      "differencePercent": -13.2,
+      "momentumSignal": "accelerating",
+      "generatedAt": "2026-05-28T13:54:57.371Z",
+      "sourceVersion": "v20260315"
+    },
+    {
+      "slug": "utah",
+      "state": "Utah",
+      "avgRateCentsPerKwh": 13.17,
+      "nationalAverage": 18.89,
+      "differencePercent": -30.3,
+      "momentumSignal": "rising",
+      "generatedAt": "2026-05-28T13:54:57.371Z",
+      "sourceVersion": "v20260315"
+    },
+    {
+      "slug": "vermont",
+      "state": "Vermont",
+      "avgRateCentsPerKwh": 24.11,
+      "nationalAverage": 18.89,
+      "differencePercent": 27.6,
+      "momentumSignal": "accelerating",
+      "generatedAt": "2026-05-28T13:54:57.371Z",
+      "sourceVersion": "v20260315"
+    },
+    {
+      "slug": "virginia",
+      "state": "Virginia",
+      "avgRateCentsPerKwh": 17.05,
+      "nationalAverage": 18.89,
+      "differencePercent": -9.7,
+      "momentumSignal": "accelerating",
+      "generatedAt": "2026-05-28T13:54:57.371Z",
+      "sourceVersion": "v20260315"
+    },
+    {
+      "slug": "washington",
+      "state": "Washington",
+      "avgRateCentsPerKwh": 14.4,
+      "nationalAverage": 18.89,
+      "differencePercent": -23.8,
+      "momentumSignal": "accelerating",
+      "generatedAt": "2026-05-28T13:54:57.371Z",
+      "sourceVersion": "v20260315"
+    },
+    {
+      "slug": "west-virginia",
+      "state": "West Virginia",
+      "avgRateCentsPerKwh": 16.37,
+      "nationalAverage": 18.89,
+      "differencePercent": -13.3,
+      "momentumSignal": "rising",
+      "generatedAt": "2026-05-28T13:54:57.371Z",
+      "sourceVersion": "v20260315"
+    },
+    {
+      "slug": "wisconsin",
+      "state": "Wisconsin",
+      "avgRateCentsPerKwh": 18.8,
+      "nationalAverage": 18.89,
+      "differencePercent": -0.5,
+      "momentumSignal": "rising",
+      "generatedAt": "2026-05-28T13:54:57.371Z",
+      "sourceVersion": "v20260315"
+    },
+    {
+      "slug": "wyoming",
+      "state": "Wyoming",
+      "avgRateCentsPerKwh": 13.59,
+      "nationalAverage": 18.89,
+      "differencePercent": -28.1,
+      "momentumSignal": "accelerating",
+      "generatedAt": "2026-05-28T13:54:57.371Z",
+      "sourceVersion": "v20260315"
     }
   ]
 }

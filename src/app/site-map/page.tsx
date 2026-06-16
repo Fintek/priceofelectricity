@@ -11,15 +11,15 @@ export const revalidate = 86400;
 export const metadata: Metadata = buildMetadata({
   title: "Site Map | PriceOfElectricity.com",
   description:
-    "High-level site structure and navigation. Topic clusters, electricity data, knowledge, datasets, methodology, and discovery pages.",
+    "High-level site structure and navigation. Topics, electricity data, knowledge, datasets, methodology, and discovery pages.",
   canonicalPath: "/site-map",
 });
 
 const SECTIONS: Array<{ title: string; links: Array<{ href: string; label: string }> }> = [
   {
-    title: "Topic Clusters",
+    title: "Topics",
     links: [
-      { href: "/electricity-topics", label: "Electricity topics hub" },
+      { href: "/electricity-topics", label: "Electricity topics" },
       { href: "/electricity-data", label: "Electricity data" },
       { href: "/electricity-inflation", label: "Electricity inflation" },
       { href: "/electricity-affordability", label: "Electricity affordability" },
@@ -44,7 +44,7 @@ const SECTIONS: Array<{ title: string; links: Array<{ href: string; label: strin
   {
     title: "Knowledge",
     links: [
-      { href: "/knowledge", label: "Knowledge Hub" },
+      { href: "/knowledge", label: "Knowledge" },
       { href: "/knowledge/rankings", label: "Rankings" },
       { href: "/knowledge/pages", label: "State pages" },
     ],
@@ -91,13 +91,10 @@ const SECTIONS: Array<{ title: string; links: Array<{ href: string; label: strin
   {
     title: "Discovery",
     links: [
-      { href: "/discovery-graph", label: "Discovery graph" },
-      { href: "/entity-registry", label: "Entity registry" },
-      { href: "/page-index", label: "Page index" },
-      { href: "/data-registry", label: "Data registry" },
-      { href: "/launch-checklist", label: "Launch checklist" },
-      { href: "/growth-roadmap", label: "Electricity content growth roadmap" },
-      { href: "/site-maintenance", label: "Site maintenance" },
+      { href: "/discovery-graph", label: "Site discovery map" },
+      { href: "/entity-registry", label: "Electricity reference index" },
+      { href: "/page-index", label: "Page directory" },
+      { href: "/data-registry", label: "Electricity data reference" },
     ],
   },
 ];
@@ -123,7 +120,7 @@ export default function SiteMapPage() {
       <h1>Site Map</h1>
 
       <p className="intro muted" style={{ marginTop: 0, marginBottom: 8 }}>
-        A transparency and discovery asset. Shows the high-level site structure so visitors and crawlers can understand scope. Navigate by section: topic clusters, electricity data, insights, knowledge, datasets, methodology, and discovery.
+        A site-map style view of major sections: topics, electricity data, insights, knowledge, datasets, methodology, and discovery pages.
       </p>
       <p className="muted" style={{ margin: "0 0 24px 0", fontSize: 14, maxWidth: "50ch" }}>
         <strong>Best for:</strong> Seeing the overall site structure at a glance.
@@ -147,20 +144,19 @@ export default function SiteMapPage() {
       <ExploreMore
         title="Related discovery pages"
         links={[
-          { href: "/electricity-topics", label: "Electricity topics hub" },
-          { href: "/page-index", label: "Page index" },
-          { href: "/entity-registry", label: "Entity registry" },
-          { href: "/discovery-graph", label: "Discovery graph" },
+          { href: "/electricity-topics", label: "Electricity topics" },
+          { href: "/page-index", label: "Page directory" },
+          { href: "/entity-registry", label: "Electricity reference index" },
+          { href: "/discovery-graph", label: "Site discovery map" },
           { href: "/electricity-data", label: "Electricity data" },
-          { href: "/knowledge", label: "Knowledge Hub" },
+          { href: "/knowledge", label: "Knowledge" },
         ]}
       />
 
       <p className="muted" style={{ marginTop: 32 }}>
         <Link href="/">Home</Link> {" | "}
-        <Link href="/data-registry">Data Registry</Link> {" | "}
-        <Link href="/page-index">Page Index</Link> {" | "}
-        <Link href="/launch-checklist">Launch checklist</Link>
+        <Link href="/data-registry">Electricity data reference</Link> {" | "}
+        <Link href="/page-index">Page directory</Link>
       </p>
     </main>
   );

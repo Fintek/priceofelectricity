@@ -239,24 +239,44 @@ export function getApplianceUsageReference(applianceSlug: ApplianceSlug): Applia
   const kwhPerDay = kwhPerHour * appliance.typicalUsageHoursPerDay;
   const kwhPerMonth = kwhPerDay * 30;
   const kwhPerYear = kwhPerDay * 365;
+  const isAlwaysOn = appliance.typicalUsageHoursPerDay >= 24;
   return {
     appliance: applianceSlug,
     kwhPerHour,
     kwhPerDay,
     kwhPerMonth,
     kwhPerYear,
-    lowRuntimeHoursPerDay: Math.max(0.5, appliance.typicalUsageHoursPerDay * 0.5),
-    highRuntimeHoursPerDay: Math.min(24, Math.max(appliance.typicalUsageHoursPerDay + 2, appliance.typicalUsageHoursPerDay * 1.5)),
+    lowRuntimeHoursPerDay: isAlwaysOn ? 24 : Math.max(0.5, appliance.typicalUsageHoursPerDay * 0.5),
+    highRuntimeHoursPerDay: isAlwaysOn
+      ? 24
+      : Math.min(24, Math.max(appliance.typicalUsageHoursPerDay + 2, appliance.typicalUsageHoursPerDay * 1.5)),
   };
 }
 
 export function buildUsageNarrativeForState(state: UsageStateSummary): string {
   const direction = state.usageVsNationalPercent >= 0 ? "above" : "below";
-  return `${state.name} is modeled at ${formatKwh(
+  return `A typical home in ${state.name} uses about ${formatKwh(
     state.estimatedMonthlyUsageKwh,
-  )} per month, about ${Math.abs(state.usageVsNationalPercent).toFixed(1)}% ${direction} the U.S. household benchmark of ${formatKwh(
+  )} a month, about ${Math.abs(state.usageVsNationalPercent).toFixed(1)}% ${direction} the typical U.S. home of ${formatKwh(
     NATIONAL_AVERAGE_HOUSEHOLD_USAGE_KWH,
-  )}. At ${state.avgRateCentsPerKwh != null ? `${state.avgRateCentsPerKwh.toFixed(2)} ¢/kWh` : "the available state rate"}, that usage translates to roughly ${formatUsd(
+  )}. At ${state.avgRateCentsPerKwh != null ? `${state.avgRateCentsPerKwh.toFixed(2)} ¢/kWh` : "the available state rate"}, that works out to about ${formatUsd(
     calculateUsageCost(state.avgRateCentsPerKwh, state.estimatedMonthlyUsageKwh),
-  )} per month.`;
+  )} a month.`;
+}
+
+const USAGE_META_VS_NATIONAL_NEUTRAL_EPSILON_PERCENT = 0.05;
+
+export function buildUsageMetaDescriptionForState(state: UsageStateSummary): string {
+  const kwhDisplay = state.estimatedMonthlyUsageKwh.toLocaleString();
+  const nationalDisplay = NATIONAL_AVERAGE_HOUSEHOLD_USAGE_KWH.toLocaleString();
+  const pctAbs = Math.abs(state.usageVsNationalPercent);
+  const comparisonClause =
+    pctAbs < USAGE_META_VS_NATIONAL_NEUTRAL_EPSILON_PERCENT
+      ? `about the same as the U.S. average of ${nationalDisplay}`
+      : `${pctAbs.toFixed(1)}% ${state.usageVsNationalPercent > 0 ? "above" : "below"} the U.S. average of ${nationalDisplay}`;
+  const ratePhrase =
+    state.avgRateCentsPerKwh != null ? `${state.avgRateCentsPerKwh.toFixed(2)}¢/kWh` : "the available state rate";
+  const monthlyCost = calculateUsageCost(state.avgRateCentsPerKwh, state.estimatedMonthlyUsageKwh);
+  const costPhrase = monthlyCost != null ? `$${Math.round(monthlyCost)}/mo` : "N/A";
+  return `Households in ${state.name} use about ${kwhDisplay} kWh per month — ${comparisonClause}. At ${ratePhrase}, that's roughly ${costPhrase}.`;
 }

@@ -9,6 +9,7 @@ import {
   parseQuestionSlug,
 } from "@/lib/questions";
 import { SITE_URL } from "@/lib/site";
+import { buildMetadata } from "@/lib/seo/metadata";
 import { getRelatedForQuestion } from "@/lib/related";
 import RelatedLinks from "@/app/components/RelatedLinks";
 
@@ -26,43 +27,35 @@ export async function generateMetadata({
   const { slug } = await params;
   const parsed = parseQuestionSlug(slug);
   if (!parsed) {
-    return {
+    return buildMetadata({
       title: "Question not found | PriceOfElectricity.com",
       description: "Question page not found.",
-      alternates: { canonical: `${BASE_URL}/compare` },
-    };
+      canonicalPath: "/compare",
+    });
   }
 
   const state = STATES[parsed.stateSlug];
   if (!state) {
-    return {
+    return buildMetadata({
       title: "Question not found | PriceOfElectricity.com",
       description: "Question page not found.",
-      alternates: { canonical: `${BASE_URL}/compare` },
-    };
+      canonicalPath: "/compare",
+    });
   }
 
   const title = `${parsed.template.titleTemplate(state.name)} | PriceOfElectricity.com`;
   const description = parsed.template.descriptionTemplate(state.name);
-  const canonicalUrl = `${BASE_URL}/questions/${slug}`;
+  const canonicalPath =
+    parsed.template.slugPrefix === "average-electric-bill-in"
+      ? `/average-electricity-bill/${parsed.stateSlug}`
+      : `/questions/${slug}`;
 
-  return {
+  return buildMetadata({
     title,
     description,
-    alternates: { canonical: canonicalUrl },
-    openGraph: {
-      title,
-      description,
-      url: canonicalUrl,
-      siteName: "PriceOfElectricity.com",
-      type: "article",
-    },
-    twitter: {
-      card: "summary",
-      title,
-      description,
-    },
-  };
+    canonicalPath,
+    ogType: "article",
+  });
 }
 
 export default async function QuestionPage({

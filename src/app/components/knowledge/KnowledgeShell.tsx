@@ -11,7 +11,7 @@ export default function KnowledgeShell({ children, title }: KnowledgeShellProps)
   return (
     <main className="container">
       <nav aria-label="Knowledge navigation" className="muted" style={{ marginBottom: 16, fontSize: 14 }}>
-        <Link href="/data">Back to Data Hub</Link>
+        <Link href="/data">Back to Data</Link>
         {" · "}
         <Link href="/knowledge/pages">Back to Knowledge Directory</Link>
       </nav>

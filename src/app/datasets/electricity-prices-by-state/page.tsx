@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { EIA_STATE_RESIDENTIAL_DATA_URL } from "@/data/sources";
 import { SITE_URL } from "@/lib/site";
 import { buildMetadata } from "@/lib/seo/metadata";
 
@@ -78,20 +79,51 @@ export default async function ElectricityPricesByStateDatasetPage() {
 
       <p className="intro muted" style={{ marginTop: 0 }}>
         State-level average residential electricity rates (¢/kWh) with national
-        comparison and momentum signal. Derived from the site&apos;s normalized
-        data pipeline.
+        comparison and a plain-language trend label. Derived from the site&apos;s
+        normalized site dataset, based on the latest available{" "}
+        <a href={EIA_STATE_RESIDENTIAL_DATA_URL} rel="noopener noreferrer" target="_blank">
+          U.S. Energy Information Administration
+        </a>{" "}
+        residential data.
       </p>
 
       <section style={{ marginTop: 24 }}>
         <h2 style={{ fontSize: 20, marginBottom: 8 }}>Columns</h2>
+        <p className="muted" style={{ marginTop: 0, marginBottom: 12, fontSize: "var(--font-size-sm)", maxWidth: 640 }}>
+          Download files use stable column names for compatibility.
+        </p>
         <ul style={{ paddingLeft: 20, lineHeight: 1.8 }}>
-          <li><code>slug</code> — State slug (e.g. california)</li>
-          <li><code>state</code> — State name</li>
-          <li><code>avgRateCentsPerKwh</code> — Average residential rate (¢/kWh)</li>
-          <li><code>nationalAverage</code> — National average rate (¢/kWh)</li>
-          <li><code>differencePercent</code> — State vs national (% difference)</li>
-          <li><code>momentumSignal</code> — Price momentum (accelerating, decelerating, etc.)</li>
-          <li><code>generatedAt</code>, <code>sourceVersion</code> — Build metadata</li>
+          <li>
+            <strong>State page path</strong> — URL-friendly state name used in site links, such as{" "}
+            <code>california</code>. In the downloadable files, this field is named <code>slug</code>.
+          </li>
+          <li>
+            <strong>State</strong> — Full state name
+          </li>
+          <li>
+            <strong>Average rate</strong> — Residential electricity price in cents per kilowatt-hour. In the downloadable
+            files, this field is named <code>avgRateCentsPerKwh</code>.
+          </li>
+          <li>
+            <strong>National average</strong> — US average residential rate for the same period (same units as average
+            rate). In the downloadable files, this field is named <code>nationalAverage</code>.
+          </li>
+          <li>
+            <strong>Difference from US average</strong> — Percent difference from the US average (positive means higher
+            than average). In the downloadable files, this field is named <code>differencePercent</code>.
+          </li>
+          <li>
+            <strong>Trend label</strong> — Short plain-language label for recent price movement. In the downloadable
+            files, this field is named <code>momentumSignal</code>.
+          </li>
+          <li>
+            <strong>Dataset produced</strong> — When this dataset snapshot was produced. In the downloadable files, this
+            field is named <code>generatedAt</code>.
+          </li>
+          <li>
+            <strong>Source snapshot</strong> — Snapshot label for the upstream data used in the build. In the
+            downloadable files, this field is named <code>sourceVersion</code>.
+          </li>
         </ul>
       </section>
 
@@ -121,11 +153,21 @@ export default async function ElectricityPricesByStateDatasetPage() {
             >
               <thead>
                 <tr>
-                  <th style={{ textAlign: "left", padding: "8px 12px", borderBottom: "1px solid var(--color-border)" }}>slug</th>
-                  <th style={{ textAlign: "left", padding: "8px 12px", borderBottom: "1px solid var(--color-border)" }}>state</th>
-                  <th style={{ textAlign: "right", padding: "8px 12px", borderBottom: "1px solid var(--color-border)" }}>avgRateCentsPerKwh</th>
-                  <th style={{ textAlign: "right", padding: "8px 12px", borderBottom: "1px solid var(--color-border)" }}>differencePercent</th>
-                  <th style={{ textAlign: "left", padding: "8px 12px", borderBottom: "1px solid var(--color-border)" }}>momentumSignal</th>
+                  <th scope="col" style={{ textAlign: "left", padding: "8px 12px", borderBottom: "1px solid var(--color-border)" }}>
+                    State page path
+                  </th>
+                  <th scope="col" style={{ textAlign: "left", padding: "8px 12px", borderBottom: "1px solid var(--color-border)" }}>
+                    State
+                  </th>
+                  <th scope="col" style={{ textAlign: "right", padding: "8px 12px", borderBottom: "1px solid var(--color-border)" }}>
+                    Avg rate (¢/kWh)
+                  </th>
+                  <th scope="col" style={{ textAlign: "right", padding: "8px 12px", borderBottom: "1px solid var(--color-border)" }}>
+                    Difference from US avg
+                  </th>
+                  <th scope="col" style={{ textAlign: "left", padding: "8px 12px", borderBottom: "1px solid var(--color-border)" }}>
+                    Trend label
+                  </th>
                 </tr>
               </thead>
               <tbody>
@@ -152,7 +194,7 @@ export default async function ElectricityPricesByStateDatasetPage() {
         <h2 style={{ fontSize: 20, marginBottom: 8 }}>Related</h2>
         <ul style={{ paddingLeft: 20, lineHeight: 2 }}>
           <li><Link href="/electricity-cost">Electricity cost by state</Link></li>
-          <li><Link href="/knowledge">Knowledge Hub</Link></li>
+          <li><Link href="/knowledge">Knowledge</Link></li>
           <li><Link href="/methodology/electricity-rates">How electricity rates are presented</Link></li>
         </ul>
       </section>

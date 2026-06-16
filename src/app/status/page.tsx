@@ -4,6 +4,7 @@ import { readFile } from "node:fs/promises";
 import { join } from "node:path";
 import { computeFreshness } from "@/lib/freshness";
 import { LAST_REVIEWED_DISPLAY, SITE_URL } from "@/lib/site";
+import { buildMetadata } from "@/lib/seo/metadata";
 import { buildAllNormalizedStates } from "@/lib/stateBuilder";
 
 const BASE_URL = SITE_URL;
@@ -11,26 +12,12 @@ const BASE_URL = SITE_URL;
 export const dynamic = "force-static";
 export const revalidate = 86400;
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetadata({
   title: "Status | PriceOfElectricity.com",
   description:
     "Operational status for PriceOfElectricity.com, including release metadata, data version, state coverage, and freshness summary.",
-  alternates: { canonical: `${BASE_URL}/status` },
-  openGraph: {
-    title: "Status | PriceOfElectricity.com",
-    description:
-      "Operational status for PriceOfElectricity.com, including release metadata, data version, state coverage, and freshness summary.",
-    url: `${BASE_URL}/status`,
-    siteName: "PriceOfElectricity.com",
-    type: "website",
-  },
-  twitter: {
-    card: "summary",
-    title: "Status | PriceOfElectricity.com",
-    description:
-      "Operational status for PriceOfElectricity.com, including release metadata, data version, state coverage, and freshness summary.",
-  },
-};
+  canonicalPath: "/status",
+});
 
 type ReleaseMetadata = {
   commit: string;

@@ -116,12 +116,12 @@ export default function RateCasesPage({
           <table style={{ width: "100%", borderCollapse: "collapse" }}>
             <thead>
               <tr style={{ borderBottom: "2px solid #ddd", textAlign: "left" }}>
-                <th style={{ padding: "8px 12px" }}>Utility</th>
-                <th style={{ padding: "8px 12px" }}>Docket</th>
-                <th style={{ padding: "8px 12px" }}>Filed</th>
-                <th style={{ padding: "8px 12px" }}>Status</th>
-                <th style={{ padding: "8px 12px" }}>Confidence</th>
-                <th style={{ padding: "8px 12px" }}>Reviewed</th>
+                <th scope="col" style={{ padding: "8px 12px" }}>Utility</th>
+                <th scope="col" style={{ padding: "8px 12px" }}>Docket</th>
+                <th scope="col" style={{ padding: "8px 12px" }}>Filed</th>
+                <th scope="col" style={{ padding: "8px 12px" }}>Status</th>
+                <th scope="col" style={{ padding: "8px 12px" }}>Confidence</th>
+                <th scope="col" style={{ padding: "8px 12px" }}>Reviewed</th>
               </tr>
             </thead>
             <tbody>

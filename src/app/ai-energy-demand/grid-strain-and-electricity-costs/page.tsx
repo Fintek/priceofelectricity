@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Breadcrumbs, { breadcrumbsToJsonLd, type BreadcrumbItem } from "@/components/navigation/Breadcrumbs";
 import { loadKnowledgePage } from "@/lib/knowledge/loadKnowledgePage";
 import { getRelease } from "@/lib/knowledge/fetch";
 import { buildMetadata } from "@/lib/seo/metadata";
-import { buildBreadcrumbListJsonLd } from "@/lib/seo/jsonld";
+
 import JsonLdScript from "@/app/components/seo/JsonLdScript";
 import StatusFooter from "@/components/common/StatusFooter";
 import Disclaimers from "@/app/components/policy/Disclaimers";
@@ -34,23 +35,18 @@ export default async function GridStrainAndElectricityCostsPage() {
   const estimatedMonthlyBill = rateDollarsPerKwh * 900;
   const top5Highest = derived?.top5Highest ?? [];
 
-  const breadcrumbJsonLd = buildBreadcrumbListJsonLd([
+  const breadcrumbTrail: BreadcrumbItem[] = [
     { name: "Home", url: "/" },
     { name: "AI Energy Demand", url: "/ai-energy-demand" },
-    { name: "Grid Strain and Electricity Costs", url: "/ai-energy-demand/grid-strain-and-electricity-costs" },
-  ]);
+    { name: "Grid Strain and Electricity Costs" },
+  ];
+  const breadcrumbJsonLd = breadcrumbsToJsonLd(breadcrumbTrail);
 
   return (
     <>
       <JsonLdScript data={breadcrumbJsonLd} />
       <main className="container">
-        <nav aria-label="Breadcrumb" className="muted" style={{ marginBottom: 16, fontSize: 14 }}>
-          <Link href="/">Home</Link>
-          {" · "}
-          <Link href="/ai-energy-demand">AI Energy Demand</Link>
-          {" · "}
-          <span aria-current="page">Grid Strain and Electricity Costs</span>
-        </nav>
+        <Breadcrumbs trail={breadcrumbTrail} />
 
         <h1 style={{ fontSize: 32, marginBottom: 24 }}>Grid Strain and Electricity Costs</h1>
 
@@ -130,7 +126,7 @@ export default async function GridStrainAndElectricityCostsPage() {
         <section style={{ marginBottom: 32 }}>
           <h2 style={{ fontSize: 20, marginBottom: 12 }}>Methodology / Limits</h2>
           <p style={{ marginTop: 0, marginBottom: 16, maxWidth: "65ch", fontSize: 16, lineHeight: 1.6 }}>
-            This site provides electricity-cost context based on EIA residential retail data. We do not provide live grid monitoring, real-time congestion data, or operational grid status. Our figures are build-generated and deterministic. For real-time grid conditions, consult your utility or regional grid operator.
+            This site provides electricity-cost context based on EIA residential retail data. We do not provide live grid monitoring, real-time congestion data, or operational grid status. Our planning figures are updated from published EIA data using fixed formulas. For real-time grid conditions, consult your utility or regional grid operator.
           </p>
         </section>
 

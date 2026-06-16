@@ -9,10 +9,11 @@ export const dynamic = "force-static";
 export const revalidate = 86400;
 
 export const metadata: Metadata = buildMetadata({
-  title: "Data Registry – Electricity Datasets & Sources | PriceOfElectricity.com",
+  title: "Electricity Data Reference – Datasets & Sources | PriceOfElectricity.com",
   description:
-    "Registry of electricity datasets used by the site: rate data, rankings, and downloadable exports. Links to methodology and dataset pages.",
+    "Reference list of electricity datasets used by the site: rate data, rankings, and downloadable exports. Links to methodology and dataset pages.",
   canonicalPath: "/data-registry",
+  robots: { index: false, follow: true },
 });
 
 const REGISTRY_ITEMS: Array<{
@@ -88,8 +89,8 @@ export default function DataRegistryPage() {
   const webPageStructuredData = {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    name: "Data Registry",
-    description: "Registry of datasets used by PriceOfElectricity.com.",
+    name: "Electricity Data Reference",
+    description: "Reference list of datasets used by PriceOfElectricity.com.",
     url: `${BASE_URL}/data-registry`,
   };
 
@@ -102,18 +103,18 @@ export default function DataRegistryPage() {
         }}
       />
 
-      <h1>Data Registry</h1>
+      <h1>Electricity Data Reference</h1>
 
       <p className="intro muted" style={{ marginTop: 0 }}>
-        A transparency and discovery asset. Registry of electricity datasets used by the site. Each entry links to dataset pages, methodology, and knowledge pages for verification and discoverability.
+        A transparency reference. List of electricity datasets used by the site. Each entry links to dataset pages, methodology, and knowledge pages so anyone can verify the data behind the analysis.
       </p>
 
       <section style={{ marginTop: 24, marginBottom: 24 }}>
-        <h2 style={{ fontSize: 20, marginBottom: 12 }}>Topic Clusters</h2>
+        <h2 style={{ fontSize: 20, marginBottom: 12 }}>Browse by topic</h2>
         <p className="muted" style={{ margin: "0 0 8px 0", fontSize: 14 }}>
-          <Link href="/discovery-graph">Explore the site&apos;s discovery graph</Link>
+          <Link href="/discovery-graph">Browse topic relationships</Link>
           {" · "}
-          <Link href="/electricity-topics">Electricity topics hub</Link>
+          <Link href="/electricity-topics">Electricity topics</Link>
           {" · "}
           <Link href="/electricity-data">Electricity data</Link>
           {" · "}
@@ -164,7 +165,7 @@ export default function DataRegistryPage() {
           { href: "/datasets", label: "Datasets" },
           { href: "/site-map", label: "Site map" },
           { href: "/page-index", label: "Page index" },
-          { href: "/knowledge", label: "Knowledge Hub" },
+          { href: "/knowledge", label: "Knowledge" },
           { href: "/methodology", label: "Methodology" },
           { href: "/launch-checklist", label: "Launch checklist" },
         ]}

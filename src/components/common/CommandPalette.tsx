@@ -32,7 +32,7 @@ const STATIC_ENTRIES: SearchEntity[] = [
     id: "data:hub",
     type: "hub",
     slug: "data",
-    title: "Data Hub",
+    title: "Data",
     canonicalUrl: "/data",
     excerpt: "Human entry point for data surfaces and datasets.",
     tokens: ["data", "hub", "datasets"],
@@ -180,7 +180,13 @@ export default function CommandPalette() {
         onClick={() => setIsOpen(true)}
         aria-label="Open search (Ctrl+K)"
         className="chip"
-        style={{ marginLeft: 0, fontSize: 12 }}
+        style={{
+          marginLeft: 0,
+          fontSize: 12,
+          minHeight: 32,
+          display: "inline-flex",
+          alignItems: "center",
+        }}
       >
         Search (Ctrl+K)
       </button>
@@ -232,7 +238,7 @@ export default function CommandPalette() {
               padding: "14px 18px",
               fontSize: 16,
               border: "none",
-              borderBottom: "1px solid var(--color-border)",
+              borderBottom: "1px solid var(--color-border-input)",
               outline: "none",
             }}
           />

@@ -16,6 +16,7 @@ import {
 } from "@/lib/longtail/billEstimator";
 import { AVERAGE_ELECTRICITY_BILL_USAGE_KWH, buildAverageBillComparisonSummary } from "@/lib/longtail/averageBill";
 import { buildLongtailLinkSections } from "@/lib/longtail/internalLinks";
+import { formatApplianceSlugForDisplay } from "@/lib/longtail/applianceConfig";
 import { getActiveApplianceSlugs } from "@/lib/longtail/rollout";
 import { buildMetadata } from "@/lib/seo/metadata";
 import {
@@ -44,9 +45,15 @@ export async function generateMetadata({
       canonicalPath: `/electricity-bill-estimator/${slug}`,
     });
   }
+  const ratePhrase =
+    state.avgRateCentsPerKwh != null ? `${state.avgRateCentsPerKwh.toFixed(2)}¢/kWh` : null;
+  const description =
+    ratePhrase != null
+      ? `Estimate your monthly electricity bill in ${state.name} for an apartment, small, medium, or large home. Built from ${state.name}'s ${ratePhrase} average rate.`
+      : `Estimate your monthly electricity bill in ${state.name} for an apartment, small, medium, or large home.`;
   return buildMetadata({
-    title: `Electricity Bill Estimator in ${state.name} | PriceOfElectricity.com`,
-    description: `Household-profile electricity bill estimator for ${state.name} using deterministic usage scenarios and statewide residential rate context.`,
+    title: `${state.name} Electricity Bill Estimator: Apartment to Large Home`,
+    description,
     canonicalPath: `/electricity-bill-estimator/${slug}`,
   });
 }
@@ -72,6 +79,8 @@ export default async function ElectricityBillEstimatorStatePage({
     maxLinksPerSection: 2,
   });
   const canonicalPath = `/electricity-bill-estimator/${slug}`;
+  const missingResidentialRate =
+    state.avgRateCentsPerKwh == null || Number.isNaN(state.avgRateCentsPerKwh);
 
   const breadcrumbJsonLd = buildBreadcrumbListJsonLd([
     { name: "Home", url: "/" },
@@ -80,7 +89,7 @@ export default async function ElectricityBillEstimatorStatePage({
   ]);
   const webPageJsonLd = buildWebPageJsonLd({
     title: `Electricity Bill Estimator in ${state.name}`,
-    description: `Deterministic household-profile bill scenarios for ${state.name}.`,
+    description: `Household profile bill scenarios for ${state.name} using fixed monthly kWh assumptions.`,
     url: canonicalPath,
     isPartOf: "/",
     about: [`electric bill estimator ${state.name}`, "household profile electricity bill scenarios"],
@@ -88,7 +97,7 @@ export default async function ElectricityBillEstimatorStatePage({
   const datasetJsonLd = buildDatasetJsonLd({
     name: `${state.name} Electricity Bill Estimator Scenario Inputs`,
     description:
-      "Deterministic state rate and household-profile usage assumptions used by the electricity bill estimator family.",
+      "State average residential rate and fixed household-profile kWh assumptions used by the electricity bill estimator pages.",
     url: canonicalPath,
     publisher: "PriceOfElectricity.com",
     sameAs: state.sourceUrl ? [state.sourceUrl] : undefined,
@@ -101,16 +110,16 @@ export default async function ElectricityBillEstimatorStatePage({
     {
       question: `How does the electricity bill estimator work for ${state.name}?`,
       answer:
-        "The estimator multiplies deterministic household-profile monthly kWh assumptions by the state average residential electricity rate and outputs energy-only monthly and annual scenarios.",
+        "The estimator multiplies each profile's monthly kWh assumption by the state average residential electricity rate and shows energy-only monthly and annual amounts.",
     },
     {
       question: `Is this the same as the average bill page for ${state.name}?`,
       answer:
-        "No. This route covers profile-based scenarios, while the average bill page provides a fixed benchmark intent using a standard household usage baseline.",
+        "No. This section covers profile-based scenarios, while the average bill page uses one standard household usage baseline for a quick benchmark.",
     },
     {
       question: "Where can I compare appliance-specific operating cost estimates?",
-      answer: `Use /cost-to-run/refrigerator/${slug} (and related appliance routes) for canonical appliance operating-cost intent.`,
+      answer: `Use /cost-to-run/refrigerator/${slug} and related appliance pages for appliance operating-cost estimates.`,
     },
   ]);
   return (
@@ -125,7 +134,7 @@ export default async function ElectricityBillEstimatorStatePage({
           { label: state.name },
         ]}
         title={`Electricity Bill Estimator in ${state.name}`}
-        intro={`Estimate household-profile electricity bills in ${state.name} using deterministic monthly usage assumptions and the statewide residential rate. This family is scenario-focused and complements benchmark and calculator routes.`}
+        intro={`Estimate household-profile electricity bills in ${state.name} using fixed monthly kWh assumptions and the statewide residential rate. These pages are for scenario planning and complement the benchmark average-bill and calculator pages.`}
         stats={[
           { label: `${state.name} average rate`, value: formatRate(state.avgRateCentsPerKwh) },
           { label: "Benchmark monthly bill (900 kWh)", value: formatUsd(state.monthlyBill) },
@@ -153,20 +162,29 @@ export default async function ElectricityBillEstimatorStatePage({
           sourceUrl: state.sourceUrl,
           updatedLabel: state.updatedLabel,
         }}
+        contentBelowStatCards={
+          missingResidentialRate ? (
+            <p className="muted" style={{ margin: 0, maxWidth: "75ch" }}>
+              We do not currently have a normalized statewide residential average rate for {state.name} in this tool,
+              so energy-only estimates and some benchmark differences show as unavailable (N/A) rather than implying a
+              precision we do not have.
+            </p>
+          ) : null
+        }
       >
         <section style={{ marginBottom: "var(--space-7)" }}>
           <h2 className="heading-section">Household profile scenarios</h2>
           <p className="muted" style={{ marginTop: 0, marginBottom: 12, maxWidth: "75ch" }}>
-            Rollout note: this state page is the canonical estimator owner for {state.name}. Profile scenario pages are
-            linked only when explicitly allowlisted ({activeProfileCount} active in this state).
+            This state page is the main bill estimator entry for {state.name}. Linked profile pages are available only
+            where we currently publish them ({activeProfileCount} active for this state).
           </p>
           <p className="muted" style={{ marginTop: 0, marginBottom: 12, maxWidth: "75ch" }}>
-            Family scope: active profile pilot coverage is currently {profileRollout.activeKeyCount} routes across{" "}
-            {profileRollout.activeStateCount} states, with all non-allowlisted state-profile routes deferred.
+            Across the site we currently publish {profileRollout.activeKeyCount} profile scenario pages in{" "}
+            {profileRollout.activeStateCount} states; other combinations are not linked yet.
           </p>
           {activeProfiles.length > 0 && (
             <p style={{ marginTop: 0, marginBottom: 12, lineHeight: 1.7 }}>
-              Active profile pilot routes for {state.name}:{" "}
+              Profile pages for {state.name}:{" "}
               {activeProfiles.map((profile, index) => (
                 <span key={profile.slug}>
                   {index > 0 ? " · " : ""}
@@ -181,7 +199,7 @@ export default async function ElectricityBillEstimatorStatePage({
               <thead>
                 <tr>
                   {["Profile", "Monthly usage", "Monthly estimate", "Annual estimate", "Profile scenario"].map((label) => (
-                    <th key={label}>{label}</th>
+                    <th scope="col" key={label}>{label}</th>
                   ))}
                 </tr>
               </thead>
@@ -196,7 +214,7 @@ export default async function ElectricityBillEstimatorStatePage({
                       {isActiveBillEstimatorProfilePage(slug, row.profile.slug) ? (
                         <Link href={row.href}>{row.profile.label} scenario page</Link>
                       ) : (
-                        <span className="muted">{row.profile.label} (rollout-deferred)</span>
+                        <span className="muted">{row.profile.label} (not linked yet)</span>
                       )}
                     </td>
                   </tr>
@@ -207,59 +225,59 @@ export default async function ElectricityBillEstimatorStatePage({
         </section>
 
         <section style={{ marginBottom: "var(--space-7)" }}>
-          <h2 className="heading-section">Intent separation and related canonical routes</h2>
+          <h2 className="heading-section">Related tools and pages</h2>
           <ul style={{ margin: 0, paddingLeft: 20, lineHeight: 1.8 }}>
             <li>
               <Link href={`/average-electricity-bill/${slug}`}>
                 Average bill benchmark in {state.name}
               </Link>{" "}
-              (fixed benchmark intent).
+              (single standard usage baseline).
             </li>
             <li>
               <Link href={`/electricity-cost-calculator/${slug}`}>
                 Electricity cost calculator in {state.name}
               </Link>{" "}
-              (calculator/scenario intent).
+              (custom kWh and bill math).
             </li>
             <li>
               <Link href={`/electricity-usage-cost/1000/${slug}`}>
                 1,000 kWh fixed usage cost in {state.name}
               </Link>{" "}
-              (fixed-kWh intent).
+              (fixed monthly kWh example).
             </li>
             <li>
               <Link href={`/cost-to-run/refrigerator/${slug}`}>Appliance operating cost pages in {state.name}</Link>{" "}
-              (canonical appliance-cost intent).
+              (hourly and monthly appliance examples).
             </li>
             <li>
-              <Link href="/energy-comparison">Energy comparison hub</Link> (curated discovery across canonical clusters).
+              <Link href="/energy-comparison">Energy comparison hub</Link> (organized comparison entry points).
             </li>
             <li>
-              <Link href={`/offers/${slug}`}>Offers and savings in {state.name}</Link> (supplemental marketplace pathway).
+              <Link href={`/offers/${slug}`}>Offers and savings in {state.name}</Link> (shopping and promotions).
             </li>
             <li>
-              <Link href={`/electricity-providers/${slug}`}>Electricity providers in {state.name}</Link> (provider
-              discovery pathway).
+              <Link href={`/electricity-providers/${slug}`}>Electricity providers in {state.name}</Link> (who sells power
+              in your area).
             </li>
           </ul>
         </section>
 
         <section style={{ marginBottom: "var(--space-7)" }}>
-          <h2 className="heading-section">Appliance and comparison discovery pathways</h2>
+          <h2 className="heading-section">Appliances and comparisons</h2>
           <ul style={{ margin: 0, paddingLeft: 20, lineHeight: 1.8 }}>
             {featuredApplianceSlugs.map((applianceSlug) => (
               <li key={applianceSlug}>
                 <Link href={`/cost-to-run/${applianceSlug}/${slug}`}>
-                  {applianceSlug.replace(/-/g, " ")} cost to run in {state.name}
+                  {formatApplianceSlugForDisplay(applianceSlug)} cost to run in {state.name}
                 </Link>
                 {" · "}
                 <Link href={`/electricity-cost-calculator/${slug}/${applianceSlug}`}>
-                  {applianceSlug.replace(/-/g, " ")} calculator scenario
+                  {formatApplianceSlugForDisplay(applianceSlug)} calculator scenario
                 </Link>
               </li>
             ))}
             <li>
-              <Link href="/energy-comparison/appliances">Appliance comparison discovery slice</Link>
+              <Link href="/energy-comparison/appliances">Compare appliance electricity costs</Link>
             </li>
           </ul>
         </section>

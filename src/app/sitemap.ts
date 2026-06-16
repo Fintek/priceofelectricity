@@ -27,7 +27,12 @@ import { HOME_SIZE_SCENARIOS } from "@/lib/longtail/usageIntelligence";
 import {
   assertNoDuplicateSegmentUrls,
   SITEMAP_SEGMENT_IDS,
+  getPathSegments,
+  getScopedStateSlug,
   groupSitemapEntriesBySegment,
+  isApplianceScopedPath,
+  isCityScopedPath,
+  isStateScopedPath,
   type SitemapSegmentId,
 } from "@/lib/seo/sitemapSegments";
 
@@ -75,9 +80,30 @@ function hasDeterministicStateLastModified(url: string): boolean {
   return false;
 }
 
+function hasDeterministicLastModScope(url: string): boolean {
+  const segments = getPathSegments(url);
+  return (
+    hasDeterministicStateLastModified(url) ||
+    isStateScopedPath(segments) ||
+    isCityScopedPath(segments) ||
+    isApplianceScopedPath(segments)
+  );
+}
+
 function stripVolatileLastModified(entries: MetadataRoute.Sitemap): MetadataRoute.Sitemap {
   return entries.map((entry) => {
-    if (!entry.lastModified || hasDeterministicStateLastModified(entry.url)) {
+    const segments = getPathSegments(entry.url);
+    const stateSlug = getScopedStateSlug(segments);
+    const deterministicDate =
+      stateSlug != null ? parseUpdatedDate(STATES[stateSlug]?.updated ?? "") : undefined;
+
+    if (deterministicDate && hasDeterministicLastModScope(entry.url)) {
+      return { ...entry, lastModified: deterministicDate };
+    }
+    if (hasDeterministicStateLastModified(entry.url) && entry.lastModified) {
+      return entry;
+    }
+    if (!entry.lastModified) {
       return entry;
     }
     const stableEntry = { ...entry };
@@ -205,15 +231,6 @@ export function getSegmentedSitemapEntries() {
       priority: 0.58,
     };
   });
-  const stateHistoryEntries: MetadataRoute.Sitemap = Object.keys(STATES).map((slug) => {
-    const info = STATES[slug];
-    return {
-      url: `${BASE_URL}/${slug}/history`,
-      lastModified: parseUpdatedDate(info.updated),
-      changeFrequency: "monthly",
-      priority: 0.6,
-    };
-  });
   const BILL_KWH_VALUES = [500, 750, 1000, 1250, 1500, 2000];
   const billEntries: MetadataRoute.Sitemap = [];
   for (const slug of Object.keys(STATES)) {
@@ -257,12 +274,14 @@ export function getSegmentedSitemapEntries() {
     changeFrequency: "monthly",
     priority: 0.7,
   }));
-  const questionEntries: MetadataRoute.Sitemap = getQuestionSlugs(STATES).map((slug) => ({
-    url: `${BASE_URL}/questions/${slug}`,
-    lastModified: new Date(),
-    changeFrequency: "monthly",
-    priority: 0.6,
-  }));
+  const questionEntries: MetadataRoute.Sitemap = getQuestionSlugs(STATES)
+    .filter((slug) => !slug.startsWith("average-electric-bill-in-"))
+    .map((slug) => ({
+      url: `${BASE_URL}/questions/${slug}`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.6,
+    }));
   const topicEntries: MetadataRoute.Sitemap = TOPICS.map((topic) => ({
     url: `${BASE_URL}/topics/${topic.slug}`,
     lastModified: new Date(),
@@ -377,30 +396,6 @@ export function getSegmentedSitemapEntries() {
     },
     {
       url: `${BASE_URL}/site-map`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.55,
-    },
-    {
-      url: `${BASE_URL}/data-registry`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.55,
-    },
-    {
-      url: `${BASE_URL}/discovery-graph`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.55,
-    },
-    {
-      url: `${BASE_URL}/entity-registry`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.55,
-    },
-    {
-      url: `${BASE_URL}/page-index`,
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.55,
@@ -572,7 +567,6 @@ export function getSegmentedSitemapEntries() {
     ...utilityRouteEntries,
     ...statePlansEntries,
     ...statePlanTypesEntries,
-    ...stateHistoryEntries,
     ...billEntries,
     ...regionEntries,
     ...cityEntries,
@@ -1517,12 +1511,14 @@ export function getSegmentedSitemapEntries() {
       changeFrequency: "monthly" as const,
       priority: 0.55,
     })),
-    ...generateTemplatePages().map((gp) => ({
-      url: `${BASE_URL}/generated/${gp.slug}`,
-      lastModified: new Date(),
-      changeFrequency: "monthly" as const,
-      priority: 0.55,
-    })),
+    ...generateTemplatePages()
+      .filter((gp) => gp.templateId !== "average-electric-bill")
+      .map((gp) => ({
+        url: `${BASE_URL}/generated/${gp.slug}`,
+        lastModified: new Date(),
+        changeFrequency: "monthly" as const,
+        priority: 0.55,
+      })),
     ...VERTICALS.map((v) => ({
       url: `${BASE_URL}/v/${v.slug}`,
       lastModified: new Date(),

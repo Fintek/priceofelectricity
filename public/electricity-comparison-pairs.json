@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-01-15T00:00:00.000Z",
-  "sourceVersion": "v20260115",
+  "generatedAt": "2026-05-28T13:54:57.371Z",
+  "sourceVersion": "v20260315",
   "pairs": [
     {
       "pair": "alabama-vs-california",
@@ -137,6 +137,11 @@
       "pair": "california-vs-delaware",
       "stateA": "california",
       "stateB": "delaware"
+    },
+    {
+      "pair": "california-vs-district-of-columbia",
+      "stateA": "california",
+      "stateB": "district-of-columbia"
     },
     {
       "pair": "california-vs-florida",
@@ -421,6 +426,31 @@
     {
       "pair": "delaware-vs-texas",
       "stateA": "delaware",
+      "stateB": "texas"
+    },
+    {
+      "pair": "district-of-columbia-vs-florida",
+      "stateA": "district-of-columbia",
+      "stateB": "florida"
+    },
+    {
+      "pair": "district-of-columbia-vs-new-york",
+      "stateA": "district-of-columbia",
+      "stateB": "new-york"
+    },
+    {
+      "pair": "district-of-columbia-vs-ohio",
+      "stateA": "district-of-columbia",
+      "stateB": "ohio"
+    },
+    {
+      "pair": "district-of-columbia-vs-pennsylvania",
+      "stateA": "district-of-columbia",
+      "stateB": "pennsylvania"
+    },
+    {
+      "pair": "district-of-columbia-vs-texas",
+      "stateA": "district-of-columbia",
       "stateB": "texas"
     },
     {

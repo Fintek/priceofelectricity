@@ -47,7 +47,7 @@ export default async function ElectricityScenarioHubPage() {
           { label: "Electricity Cost Scenario Hub" },
         ]}
         title="Electricity Cost Scenario Hub"
-        intro="This hub organizes the site's scenario-style electricity pages. It connects common household usage tiers with higher-load industry scenarios so users can move from general discovery into specific cost pages that match their use case."
+        intro="This hub lists scenario-style electricity pages: common residential monthly kWh levels and higher-load industry examples, each linked to underlying state pages."
         stats={[
           { label: "Residential usage hubs", value: String(usageCards.length) },
           { label: "Industry scenario hubs", value: String(industryCards.length) },
@@ -57,13 +57,13 @@ export default async function ElectricityScenarioHubPage() {
           {
             title: "Residential usage scenarios",
             intro:
-              "These hub pages group longtail electricity pages by common household usage tiers such as 500, 1000, and 2000 kWh.",
+              "These index pages group electricity cost examples by common monthly kWh levels such as 500, 1,000, and 2,000 kWh.",
             cards: usageCards,
           },
           {
             title: "Industry electricity scenarios",
             intro:
-              "These hub pages organize active industry scenario pages for EV charging, mining, and data center electricity cost discovery.",
+              "Hub pages for higher-load industry examples such as EV charging, mining, and data center electricity costs.",
             cards: industryCards,
           },
         ].filter((section) => section.cards.length > 0)}

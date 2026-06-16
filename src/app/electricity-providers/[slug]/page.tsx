@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Breadcrumbs, { breadcrumbsToJsonLd, type BreadcrumbItem } from "@/components/navigation/Breadcrumbs";
 import { notFound } from "next/navigation";
 import { loadKnowledgePage } from "@/lib/knowledge/loadKnowledgePage";
 import { buildMetadata } from "@/lib/seo/metadata";
-import { buildBreadcrumbListJsonLd, buildItemListJsonLd, buildWebPageJsonLd } from "@/lib/seo/jsonld";
+import { buildItemListJsonLd, buildWebPageJsonLd } from "@/lib/seo/jsonld";
 import JsonLdScript from "@/app/components/seo/JsonLdScript";
 import StatusFooter from "@/components/common/StatusFooter";
 import Disclaimers from "@/app/components/policy/Disclaimers";
@@ -80,20 +81,21 @@ export default async function ElectricityProvidersStatePage({
   const rateDollarsPerKwh = avgRate != null ? avgRate / 100 : 0;
   const estimatedMonthlyCost = rateDollarsPerKwh * MONTHLY_USAGE_KWH;
 
-  const breadcrumbJsonLd = buildBreadcrumbListJsonLd([
+  const breadcrumbTrail: BreadcrumbItem[] = [
     { name: "Home", url: "/" },
     { name: "Electricity Providers", url: "/electricity-providers" },
-    { name: stateName, url: `/electricity-providers/${slug}` },
-  ]);
+    { name: stateName },
+  ];
+  const breadcrumbJsonLd = breadcrumbsToJsonLd(breadcrumbTrail);
   const webPageJsonLd = buildWebPageJsonLd({
     title: `Electricity providers in ${stateName}`,
-    description: `State-level provider marketplace context for ${stateName}, linked to canonical electricity cost, bill, and comparison clusters.`,
+    description: `State-level electricity provider context for ${stateName}, with links to cost, bill, and comparison tools on this site.`,
     url: `/electricity-providers/${slug}`,
     isPartOf: "/",
     about: [`electricity providers ${stateName}`, "state provider marketplace context"],
   });
   const providerItemListJsonLd = buildItemListJsonLd(
-    `${stateName} provider discovery pathways`,
+    `${stateName} electricity provider resources`,
     [
       ...buildProviderDiscoveryItemListEntries([{ slug, name: stateName }], 1),
       { name: `${stateName} electricity cost authority`, url: `/electricity-cost/${slug}` },
@@ -134,13 +136,7 @@ export default async function ElectricityProvidersStatePage({
         ]}
       />
       <main className="container">
-        <nav aria-label="Breadcrumb" className="muted" style={{ marginBottom: 16, fontSize: 14 }}>
-          <Link href="/">Home</Link>
-          {" · "}
-          <Link href="/electricity-providers">Electricity Providers</Link>
-          {" · "}
-          <span aria-current="page">{stateName}</span>
-        </nav>
+        <Breadcrumbs trail={breadcrumbTrail} />
 
         <h1 style={{ fontSize: 32, marginBottom: 12 }}>
           Electricity Providers in {stateName}
@@ -240,8 +236,8 @@ export default async function ElectricityProvidersStatePage({
             are informational and do not represent live utility enrollment, guaranteed rates, or official tariff quotes.
           </p>
           <ul style={{ margin: 0, paddingLeft: 20, lineHeight: 1.8 }}>
-            <li>Coverage and offer type context are deterministic and policy-scoped.</li>
-            <li>Provider ranking remains stable through deterministic resolver logic.</li>
+            <li>Coverage and offer labels follow our editorial policy.</li>
+            <li>Provider order stays consistent between builds for the same catalog version.</li>
             <li>Commercial placements remain rollout-guarded and disclosure-first.</li>
           </ul>
         </section>
@@ -285,8 +281,8 @@ export default async function ElectricityProvidersStatePage({
         <section style={{ marginBottom: 32 }}>
           <h2 style={{ fontSize: 20, marginBottom: 12 }}>Provider onboarding coverage in {stateName}</h2>
           <p style={{ marginTop: 0, marginBottom: 12, maxWidth: "70ch", lineHeight: 1.6 }}>
-            This deterministic onboarding view shows configured provider entries for {stateName}. Listing coverage does
-            not override rollout guardrails for where commercial modules render.
+            This overview lists configured provider entries for {stateName}. Placement on other pages still follows the
+            site&rsquo;s standard commercial placement rules.
           </p>
           <p className="muted" style={{ marginTop: 0, marginBottom: 8, fontSize: 14 }}>
             Enabled provider entries configured for this state: {catalogEntries.length}
@@ -309,7 +305,7 @@ export default async function ElectricityProvidersStatePage({
             <li><Link href={`/offers/${slug}`}>Offers in {stateName}</Link></li>
             <li><Link href={`/${slug}/plans`}>Plans in {stateName}</Link></li>
             <li><Link href={`/electricity-cost-calculator/${slug}`}>Electricity calculator in {stateName}</Link></li>
-            <li><Link href="/energy-comparison">Energy comparison discovery hub</Link></li>
+            <li><Link href="/energy-comparison">Energy comparison hub</Link></li>
           </ul>
         </section>
 
@@ -330,8 +326,8 @@ export default async function ElectricityProvidersStatePage({
             <li><Link href={`/average-electricity-bill/${slug}`}>Average electricity bill in {stateName}</Link></li>
             <li><Link href={`/electricity-affordability/${slug}`}>Electricity affordability in {stateName}</Link></li>
             <li><Link href="/electricity-cost-comparison">Compare electricity prices between states</Link></li>
-            <li><Link href="/energy-comparison">Energy comparison discovery hub</Link></li>
-            <li><Link href="/electricity-hubs">Electricity hubs discovery index</Link></li>
+            <li><Link href="/energy-comparison">Energy comparison hub</Link></li>
+            <li><Link href="/electricity-hubs">Electricity cost hubs</Link></li>
             <li><Link href="/electricity-markets">Explore electricity market structures</Link></li>
             <li><Link href="/regional-electricity-markets">Explore regional electricity markets</Link></li>
             <li><Link href="/electricity-providers">Electricity providers by state</Link></li>

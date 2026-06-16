@@ -1,31 +1,19 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { SITE_URL } from "@/lib/site";
+import { buildMetadata } from "@/lib/seo/metadata";
 import { HISTORY } from "@/data/history";
 import { buildNormalizedState } from "@/lib/stateBuilder";
 
 const BASE_URL = SITE_URL;
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetadata({
   title: "State Electricity Price Trends | PriceOfElectricity.com",
   description:
     "Which U.S. states have rising or falling electricity prices? Trend analysis based on monthly rate history.",
-  alternates: { canonical: `${BASE_URL}/research/state-trends` },
-  openGraph: {
-    title: "State Electricity Price Trends | PriceOfElectricity.com",
-    description:
-      "Which U.S. states have rising or falling electricity prices?",
-    url: `${BASE_URL}/research/state-trends`,
-    siteName: "PriceOfElectricity.com",
-    type: "website",
-  },
-  twitter: {
-    card: "summary",
-    title: "State Electricity Price Trends | PriceOfElectricity.com",
-    description:
-      "Which U.S. states have rising or falling electricity prices?",
-  },
-};
+  socialDescription: "Which U.S. states have rising or falling electricity prices?",
+  canonicalPath: "/research/state-trends",
+});
 
 type TrendRow = {
   slug: string;
@@ -130,22 +118,22 @@ export default function StateTrendsPage() {
             <table style={{ width: "100%", borderCollapse: "collapse" }}>
               <thead>
                 <tr style={{ borderBottom: "2px solid var(--color-border)" }}>
-                  <th style={{ textAlign: "left", padding: "8px 4px" }}>
+                  <th scope="col" style={{ textAlign: "left", padding: "8px 4px" }}>
                     State
                   </th>
-                  <th style={{ textAlign: "right", padding: "8px 4px" }}>
+                  <th scope="col" style={{ textAlign: "right", padding: "8px 4px" }}>
                     First (¢)
                   </th>
-                  <th style={{ textAlign: "right", padding: "8px 4px" }}>
+                  <th scope="col" style={{ textAlign: "right", padding: "8px 4px" }}>
                     Latest (¢)
                   </th>
-                  <th style={{ textAlign: "right", padding: "8px 4px" }}>
+                  <th scope="col" style={{ textAlign: "right", padding: "8px 4px" }}>
                     Change (¢)
                   </th>
-                  <th style={{ textAlign: "right", padding: "8px 4px" }}>
+                  <th scope="col" style={{ textAlign: "right", padding: "8px 4px" }}>
                     Change %
                   </th>
-                  <th style={{ textAlign: "center", padding: "8px 4px" }}>
+                  <th scope="col" style={{ textAlign: "center", padding: "8px 4px" }}>
                     Trend
                   </th>
                 </tr>
@@ -159,7 +147,7 @@ export default function StateTrendsPage() {
                     }}
                   >
                     <td style={{ padding: "6px 4px" }}>
-                      <Link href={`/${t.slug}/history`} prefetch={false}>
+                      <Link href={`/electricity-price-history/${t.slug}`} prefetch={false}>
                         {t.name}
                       </Link>
                     </td>

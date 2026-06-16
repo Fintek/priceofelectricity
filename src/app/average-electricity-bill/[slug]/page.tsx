@@ -43,8 +43,13 @@ export async function generateMetadata({
         )} using a ${AVERAGE_ELECTRICITY_BILL_USAGE_KWH.toLocaleString()} kWh benchmark.`
       : `${state.name} average electricity bill. Residential rate, estimated monthly and annual bills.`;
 
+  const title =
+    state.monthlyBill != null
+      ? `Average Electricity Bill in ${state.name}: $${Math.round(state.monthlyBill)}/Month`
+      : `Average Electricity Bill in ${state.name}`;
+
   return buildMetadata({
-    title: `Average Electricity Bill in ${state.name} | PriceOfElectricity.com`,
+    title,
     description,
     canonicalPath: `/average-electricity-bill/${slug}`,
   });
@@ -67,6 +72,11 @@ export default async function AverageElectricityBillStatePage({
   });
   const usageExamples = buildAverageBillUsageExamples(state);
   const applianceLinks = buildAverageBillApplianceLinks(state);
+  const annualBillDifference = state.monthlyDifference != null ? state.monthlyDifference * 12 : null;
+  const billComparison =
+    annualBillDifference != null && Math.abs(annualBillDifference) >= 25
+      ? ` That's about ${formatUsd(Math.abs(annualBillDifference))} a year ${annualBillDifference >= 0 ? "more" : "less"} than the typical U.S. household pays.`
+      : "";
 
   const breadcrumbJsonLd = buildBreadcrumbListJsonLd([
     { name: "Home", url: "/" },
@@ -96,8 +106,8 @@ export default async function AverageElectricityBillStatePage({
         ]}
         title={`Average Electricity Bill in ${state.name}`}
         intro={state.monthlyBill != null
-          ? `A typical household in ${state.name} pays about ${formatUsd(state.monthlyBill)} per month for electricity, based on the state average rate of ${formatRate(state.avgRateCentsPerKwh)} and a ${AVERAGE_ELECTRICITY_BILL_USAGE_KWH.toLocaleString()} kWh monthly usage benchmark.`
-          : `Estimated monthly and annual electricity bills for ${state.name}, based on the state average residential rate and a ${AVERAGE_ELECTRICITY_BILL_USAGE_KWH.toLocaleString()} kWh monthly usage benchmark.`}
+          ? `A typical household in ${state.name} pays about ${formatUsd(state.monthlyBill)} a month for electricity — roughly ${formatUsd(state.annualBill)} a year — at the state average rate of ${formatRate(state.avgRateCentsPerKwh)}.${billComparison} That's based on ${AVERAGE_ELECTRICITY_BILL_USAGE_KWH.toLocaleString()} kWh of monthly use, before delivery charges and taxes.`
+          : `Estimated monthly and annual electricity bills for ${state.name}, based on the state average residential rate and ${AVERAGE_ELECTRICITY_BILL_USAGE_KWH.toLocaleString()} kWh of monthly use.`}
         stats={[
           { label: `${state.name} average rate`, value: formatRate(state.avgRateCentsPerKwh) },
           { label: "Estimated monthly bill", value: formatUsd(state.monthlyBill) },
@@ -142,15 +152,16 @@ export default async function AverageElectricityBillStatePage({
         }}
       >
         <section style={{ marginBottom: "var(--space-7)" }}>
-          <h2 className="heading-section">How to interpret this bill estimate</h2>
+          <h2 className="heading-section">Is this what you&apos;ll actually pay?</h2>
           <p style={{ marginTop: 0, lineHeight: 1.7 }}>
-            The statewide residential rate in {state.name} is {formatRate(state.avgRateCentsPerKwh)}. Applying that
-            rate to {AVERAGE_ELECTRICITY_BILL_USAGE_KWH.toLocaleString()} kWh of monthly use produces an estimated bill
-            of {formatUsd(state.monthlyBill)} before delivery charges, taxes, and fixed utility fees.
+            It&apos;s a fair benchmark, not a forecast. We take {state.name}&apos;s average rate of{" "}
+            {formatRate(state.avgRateCentsPerKwh)} and apply it to {AVERAGE_ELECTRICITY_BILL_USAGE_KWH.toLocaleString()}{" "}
+            kWh a month — the energy itself — which comes to {formatUsd(state.monthlyBill)} before delivery charges,
+            taxes, and fixed fees.
           </p>
           <p style={{ marginBottom: 0, lineHeight: 1.7 }}>
-            That benchmark is useful for comparing states, but real households can land above or below it depending on
-            cooling load, heating type, home size, appliance intensity, and local utility rate design.
+            Your own bill can land well above or below that, depending on how much you run the air conditioning, how
+            you heat your home and water, your home&apos;s size, and how your utility designs its rates.
           </p>
         </section>
 
@@ -161,7 +172,7 @@ export default async function AverageElectricityBillStatePage({
               <thead>
                 <tr>
                   {["Monthly usage", "Estimated cost", "Canonical page"].map((label) => (
-                    <th key={label}>{label}</th>
+                    <th scope="col" key={label}>{label}</th>
                   ))}
                 </tr>
               </thead>
@@ -179,8 +190,7 @@ export default async function AverageElectricityBillStatePage({
             </table>
           </div>
           <p style={{ marginBottom: 0, marginTop: 12, lineHeight: 1.7 }}>
-            These usage pages are the canonical route family for fixed-kWh consumer electricity searches. The bill page
-            uses them as supporting examples rather than duplicating the same intent under another URL.
+            These pages answer fixed-usage questions like &quot;how much does 1,000 kWh cost?&quot;
           </p>
         </section>
 
@@ -191,8 +201,8 @@ export default async function AverageElectricityBillStatePage({
             EV charging, and the length of time high-wattage appliances run each month.
           </p>
           <p style={{ marginBottom: 0, lineHeight: 1.7 }}>
-            That is why this page links to both usage-cost routes and appliance operating-cost pages: one shows what a
-            whole-home kWh pattern looks like, and the other shows how specific devices contribute to the final bill.
+            Want to see where your money actually goes? The usage-cost pages show what a whole-home kWh pattern costs,
+            and the appliance pages break down how individual devices add up.
           </p>
         </section>
       </LongtailStateTemplate>

@@ -1,33 +1,18 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { SITE_URL } from "@/lib/site";
+import { buildMetadata } from "@/lib/seo/metadata";
 
 const BASE_URL = SITE_URL;
 export const dynamic = "force-static";
 export const revalidate = 2592000;
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetadata({
   title: "Contact | PriceOfElectricity.com",
   description:
     "Contact PriceOfElectricity.com for partnerships, advertising, and data corrections.",
-  alternates: {
-    canonical: `${BASE_URL}/contact`,
-  },
-  openGraph: {
-    title: "Contact | PriceOfElectricity.com",
-    description:
-      "Contact PriceOfElectricity.com for partnerships, advertising, and data corrections.",
-    url: `${BASE_URL}/contact`,
-    siteName: "PriceOfElectricity.com",
-    type: "website",
-  },
-  twitter: {
-    card: "summary",
-    title: "Contact | PriceOfElectricity.com",
-    description:
-      "Contact PriceOfElectricity.com for partnerships, advertising, and data corrections.",
-  },
-};
+  canonicalPath: "/contact",
+});
 
 export default function ContactPage() {
   const webPageStructuredData = {

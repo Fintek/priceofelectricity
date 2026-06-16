@@ -192,7 +192,7 @@ export default function MonitoringPage() {
           >
             <thead>
               <tr style={{ borderBottom: "2px solid #ddd" }}>
-                <th
+                <th scope="col"
                   style={{
                     textAlign: "left",
                     padding: "8px 12px 8px 0",
@@ -202,7 +202,7 @@ export default function MonitoringPage() {
                 >
                   Source
                 </th>
-                <th
+                <th scope="col"
                   style={{
                     textAlign: "left",
                     padding: "8px 12px",
@@ -212,7 +212,7 @@ export default function MonitoringPage() {
                 >
                   Cadence
                 </th>
-                <th
+                <th scope="col"
                   style={{
                     textAlign: "left",
                     padding: "8px 0 8px 12px",
@@ -370,7 +370,7 @@ export default function MonitoringPage() {
           </li>
           <li>
             <Link href="/compare">Compare current state electricity rates</Link>{" "}
-            — Baseline rate data for all 50 states
+            — Baseline rate data for all 50 states and Washington, D.C.
           </li>
           <li>
             <Link href="/v/ai-energy">

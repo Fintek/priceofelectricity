@@ -322,18 +322,18 @@ export default function CompareStatesClient({
                 <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 14 }}>
                   <thead>
                     <tr>
-                      <th style={{ textAlign: "left", padding: "8px 12px", borderBottom: "2px solid var(--color-border)" }}>
+                      <th scope="col" style={{ textAlign: "left", padding: "8px 12px", borderBottom: "2px solid var(--color-border)" }}>
                         State
                       </th>
                       {data.fields.map((f) => (
-                        <th
+                        <th scope="col"
                           key={f}
                           style={{ textAlign: "right", padding: "8px 12px", borderBottom: "2px solid var(--color-border)" }}
                         >
                           {getLabel(f, glossaryMap)}
                         </th>
                       ))}
-                      <th style={{ textAlign: "left", padding: "8px 12px", borderBottom: "2px solid var(--color-border)" }}>
+                      <th scope="col" style={{ textAlign: "left", padding: "8px 12px", borderBottom: "2px solid var(--color-border)" }}>
                         Links
                       </th>
                     </tr>

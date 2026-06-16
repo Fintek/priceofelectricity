@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Breadcrumbs, { breadcrumbsToJsonLd, type BreadcrumbItem } from "@/components/navigation/Breadcrumbs";
 import { getRelease } from "@/lib/knowledge/fetch";
 import { buildMetadata } from "@/lib/seo/metadata";
-import { buildBreadcrumbListJsonLd } from "@/lib/seo/jsonld";
+
 import JsonLdScript from "@/app/components/seo/JsonLdScript";
 import StatusFooter from "@/components/common/StatusFooter";
 
@@ -20,22 +21,18 @@ export const metadata: Metadata = buildMetadata({
 export default async function SiteMaintenancePage() {
   const release = await getRelease();
 
-  const breadcrumbJsonLd = buildBreadcrumbListJsonLd([
+  const breadcrumbTrail: BreadcrumbItem[] = [
     { name: "Home", url: "/" },
-    { name: "Site Maintenance", url: "/site-maintenance" },
-  ]);
+    { name: "Launch Checklist", url: "/launch-checklist" },
+    { name: "Site Maintenance" },
+  ];
+  const breadcrumbJsonLd = breadcrumbsToJsonLd(breadcrumbTrail);
 
   return (
     <>
       <JsonLdScript data={breadcrumbJsonLd} />
       <main className="container">
-        <nav aria-label="Breadcrumb" className="muted" style={{ marginBottom: 16, fontSize: 14 }}>
-          <Link href="/">Home</Link>
-          {" · "}
-          <Link href="/launch-checklist">Launch Checklist</Link>
-          {" · "}
-          <span aria-current="page">Site Maintenance</span>
-        </nav>
+        <Breadcrumbs trail={breadcrumbTrail} />
 
         <h1 style={{ fontSize: 32, marginBottom: 12 }}>Site Maintenance and Updates</h1>
 
@@ -72,7 +69,7 @@ export default async function SiteMaintenancePage() {
         <section style={{ marginBottom: 32 }}>
           <h2 style={{ fontSize: 20, marginBottom: 12 }}>Content Expansion</h2>
           <p style={{ marginTop: 0, marginBottom: 12, maxWidth: "65ch", fontSize: 16, lineHeight: 1.6 }}>
-            Topic clusters and programmatic pages can expand while preserving structure. New content should fit into existing topic hubs, route families, or data and discovery layers.
+            Topic areas and templated pages can expand while preserving structure. New content should fit into existing topic hubs, familiar page patterns, or the data and methodology sections.
           </p>
           <p style={{ margin: 0 }}>
             <Link href="/site-maintenance/content-expansion">Expanding electricity content over time</Link>

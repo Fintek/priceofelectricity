@@ -1,4 +1,8 @@
 import Link from "next/link";
+import {
+  getCanonicalDatasetSynchronizedMediumDateUtc,
+  getCanonicalResidentialDataThroughMonthLabel,
+} from "@/lib/eiaReportingTrust";
 
 type Release = {
   releaseId?: string;
@@ -14,13 +18,14 @@ type BuildStampProps = {
 export default function BuildStamp({ release }: BuildStampProps) {
   if (!release?.releaseId) return null;
 
+  const reportingMonth = getCanonicalResidentialDataThroughMonthLabel();
+  const syncLabel = getCanonicalDatasetSynchronizedMediumDateUtc();
+
   const generatedAt = release.generatedAt
-    ? new Date(release.generatedAt).toLocaleDateString(undefined, {
-        year: "numeric",
-        month: "short",
-        day: "numeric",
-        hour: "2-digit",
-        minute: "2-digit",
+    ? new Date(release.generatedAt).toLocaleString("en-US", {
+        dateStyle: "medium",
+        timeStyle: "short",
+        timeZone: "UTC",
       })
     : "—";
 
@@ -28,17 +33,22 @@ export default function BuildStamp({ release }: BuildStampProps) {
     <div
       className="muted"
       role="contentinfo"
-      aria-label="Build stamp"
+      aria-label="Release stamp"
       style={{
         fontSize: 12,
         lineHeight: 1.6,
       }}
     >
       <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", gap: "8px 16px", marginBottom: 4 }}>
-        <span>Build: {release.releaseId}</span>
+        <span>Release: {release.releaseId}</span>
         <span>Data: {release.sourceVersion ?? "—"}</span>
         <span>Contract: {release.contractVersion ?? "—"}</span>
-        <span>Generated: {generatedAt}</span>
+        <span>Dataset packaged (UTC): {generatedAt}</span>
+      </div>
+      <div style={{ marginTop: 6, marginBottom: 4, maxWidth: "72ch", fontSize: 11, lineHeight: 1.55 }}>
+        {syncLabel !== null ? <>Dataset last updated {syncLabel} (UTC). </> : null}
+        The U.S. Energy Information Administration (EIA) publishes monthly state data with a reporting lag, so the
+        figures on this site reflect {reportingMonth} activity.
       </div>
       <div style={{ display: "flex", flexWrap: "wrap", gap: 8, marginTop: 4 }}>
         <Link href="/knowledge/release.json">release.json</Link>
