@@ -3,7 +3,6 @@ import { SITE_URL } from "@/lib/site";
 import { buildAllNormalizedStates } from "@/lib/stateBuilder";
 
 const BASE_URL = SITE_URL;
-const PROD_URL = "https://priceofelectricity.com";
 
 export const dynamic = "force-static";
 export const revalidate = 86400;
@@ -22,17 +21,17 @@ export default function SubmitUrlsPage() {
     .slice(0, 10);
 
   const priorityUrls = [
-    `${PROD_URL}/`,
-    `${PROD_URL}/national`,
-    `${PROD_URL}/compare`,
-    `${PROD_URL}/drivers`,
-    `${PROD_URL}/regulatory`,
-    `${PROD_URL}/offers`,
-    `${PROD_URL}/alerts`,
-    `${PROD_URL}/affordability`,
-    `${PROD_URL}/calculator`,
-    `${PROD_URL}/value-ranking`,
-    ...states.map((s) => `${PROD_URL}/${s.slug}`),
+    `${BASE_URL}/`,
+    `${BASE_URL}/national`,
+    `${BASE_URL}/compare`,
+    `${BASE_URL}/drivers`,
+    `${BASE_URL}/regulatory`,
+    `${BASE_URL}/offers`,
+    `${BASE_URL}/alerts`,
+    `${BASE_URL}/affordability`,
+    `${BASE_URL}/calculator`,
+    `${BASE_URL}/value-ranking`,
+    ...states.map((s) => `${BASE_URL}/${s.slug}`),
   ];
 
   const urlBlock = priorityUrls.join("\n");
@@ -93,7 +92,7 @@ export default function SubmitUrlsPage() {
           <li>Paste each URL and click &quot;Request Indexing&quot;</li>
           <li>
             Also submit the sitemap:{" "}
-            <code>{PROD_URL}/sitemap.xml</code>
+            <code>{BASE_URL}/sitemap.xml</code>
           </li>
         </ol>
       </section>
@@ -118,7 +117,7 @@ export default function SubmitUrlsPage() {
             wordBreak: "break-all",
           }}
         >
-{`curl -X POST ${PROD_URL}/api/indexnow \\
+{`curl -X POST ${BASE_URL}/api/indexnow \\
   -H "Content-Type: application/json" \\
   -H "x-indexnow-key: YOUR_KEY" \\
   -d '{"urls": [${priorityUrls
@@ -145,7 +144,7 @@ export default function SubmitUrlsPage() {
           </li>
           <li>Add and verify the site</li>
           <li>
-            Submit the sitemap: <code>{PROD_URL}/sitemap.xml</code>
+            Submit the sitemap: <code>{BASE_URL}/sitemap.xml</code>
           </li>
         </ol>
       </section>

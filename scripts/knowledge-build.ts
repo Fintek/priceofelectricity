@@ -1025,7 +1025,7 @@ const PROVENANCE_SOURCES: Readonly<Record<string, Omit<ProvenanceRef, "retrieved
  * production canonical origin regardless of the build environment.
  * Policy ref: docs/CANONICAL_ARCHITECTURE_POLICY.md Â§ B.2
  */
-const ARTIFACT_ORIGIN = "https://priceofelectricity.com";
+const ARTIFACT_ORIGIN = "https://www.priceofelectricity.com";
 
 function ensureAbsoluteUrl(relativeOrAbsoluteUrl: string): string {
   if (relativeOrAbsoluteUrl.startsWith("http://") || relativeOrAbsoluteUrl.startsWith("https://")) {
