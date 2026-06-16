@@ -52,7 +52,7 @@ export const APPLIANCE_CONFIGS = [
     averageWattage: 900,
     typicalUsageHoursPerDay: 8,
     introFragment: "a standard window air conditioner",
-    usageNote: "Window AC units cycle based on thermostat demand, so real-world daily cost depends heavily on weather and setpoint.",
+    usageNote: "A window unit clicks on and off with the thermostat, so what it actually costs you rises and falls with the weather and where you set the dial. Nudging it up a couple degrees on a hot afternoon is the easiest way to spend less.",
     variabilityFactors: ["BTU size", "climate", "thermostat setting"],
   },
   {
@@ -63,7 +63,7 @@ export const APPLIANCE_CONFIGS = [
     averageWattage: 1100,
     typicalUsageHoursPerDay: 6,
     introFragment: "a portable air conditioner",
-    usageNote: "Portable AC units often consume more electricity per room cooled than window units, especially in hotter climates.",
+    usageNote: "A portable unit is convenient, but it's usually the least efficient way to cool a room — it tends to use more electricity per degree than a window unit, and the gap widens the hotter it gets outside.",
     variabilityFactors: ["hose configuration", "room size", "daily runtime"],
   },
   {
@@ -74,7 +74,7 @@ export const APPLIANCE_CONFIGS = [
     averageWattage: 3500,
     typicalUsageHoursPerDay: 8,
     introFragment: "a central air conditioning system",
-    usageNote: "Central AC cost depends on home size, system efficiency, and climate, but the statewide electricity rate still strongly affects total operating cost.",
+    usageNote: "Central air is usually the single biggest line on a summer electric bill. What you pay comes down to your home's size, the system's efficiency, and how hot your climate runs — but your state's rate sets the price of every hour it's blowing cold.",
     variabilityFactors: ["home square footage", "SEER rating", "humidity and summer temperatures"],
   },
   {
@@ -96,7 +96,7 @@ export const APPLIANCE_CONFIGS = [
     averageWattage: 700,
     typicalUsageHoursPerDay: 0.5,
     introFragment: "a typical household washing machine",
-    usageNote: "Washing machines generally use less electricity than dryers, but hot-water wash cycles can raise total energy cost indirectly.",
+    usageNote: "The machine's motor sips power; it's the hot water that costs you. Wash in cold and a load is nearly free to run — switch to warm or hot and most of the energy goes straight into heating the water.",
     variabilityFactors: ["wash temperature", "load frequency", "machine efficiency"],
   },
   {
@@ -107,7 +107,7 @@ export const APPLIANCE_CONFIGS = [
     averageWattage: 1500,
     typicalUsageHoursPerDay: 1,
     introFragment: "a standard dishwasher",
-    usageNote: "Dishwasher energy use depends on cycle length and whether the unit heats water internally.",
+    usageNote: "Most of a dishwasher's electricity goes to heating water, not spinning the spray arms — so a hot 'sanitize' or 'heated dry' cycle costs noticeably more than a quick eco wash.",
     variabilityFactors: ["heated dry setting", "eco mode", "number of cycles per week"],
   },
   {
@@ -261,7 +261,7 @@ export const APPLIANCE_CONFIGS = [
     averageWattage: 1800,
     typicalUsageHoursPerDay: 0.25,
     introFragment: "a typical hair dryer",
-    usageNote: "Hair dryers use high wattage for short periods. Cost depends on daily use frequency and heat setting.",
+    usageNote: "A hair dryer is a genuine power hog for the few minutes it runs — but a few minutes is all it is, so even daily use barely moves your monthly bill.",
     variabilityFactors: ["heat setting", "daily use frequency", "hair length and thickness"],
   },
   {
@@ -360,7 +360,7 @@ export const APPLIANCE_CONFIGS = [
     averageWattage: 1000,
     typicalUsageHoursPerDay: 0.5,
     introFragment: "a corded upright or canister vacuum cleaner",
-    usageNote: "Vacuum cleaners draw moderate to high wattage but are used for short sessions. Corded models use more power than cordless battery-powered units.",
+    usageNote: "A vacuum pulls solid wattage, but you only run it for a few minutes at a time, so it costs next to nothing over a month. Corded models draw more than cordless ones running off a battery.",
     variabilityFactors: ["motor power", "cleaning frequency", "floor type"],
   },
   {
@@ -371,7 +371,7 @@ export const APPLIANCE_CONFIGS = [
     averageWattage: 250,
     typicalUsageHoursPerDay: 6,
     introFragment: "a standard desktop computer for home or office use",
-    usageNote: "Desktop computers draw more power than laptops but less than gaming PCs. Actual consumption depends on workload, monitor configuration, and whether peripherals are included.",
+    usageNote: "A desktop uses more than a laptop but less than a gaming rig — and what it costs you depends on whether it's idling on email or pushing through heavy work, plus the monitors and gear plugged in around it.",
     variabilityFactors: ["CPU/GPU workload", "monitor count", "sleep vs active time"],
   },
   {
@@ -437,7 +437,7 @@ export const APPLIANCE_CONFIGS = [
     averageWattage: 700,
     typicalUsageHoursPerDay: 0.5,
     introFragment: "a countertop electric rice cooker",
-    usageNote: "Rice cookers use moderate power during heat-up and low power during keep-warm. Monthly cost depends more on usage frequency than on peak wattage.",
+    usageNote: "A rice cooker works hard for a few minutes to come up to heat, then barely sips power on 'keep warm.' Leaving it warming for hours adds up faster than the cooking itself.",
     variabilityFactors: ["cook cycle frequency", "keep-warm duration", "cooker capacity"],
   },
   {
@@ -459,7 +459,7 @@ export const APPLIANCE_CONFIGS = [
     averageWattage: 250,
     typicalUsageHoursPerDay: 4,
     introFragment: "a countertop slow cooker",
-    usageNote: "Slow cookers run for longer sessions at lower wattage. Monthly cost remains moderate for most homes and depends primarily on cooking-session hours.",
+    usageNote: "A slow cooker trades speed for a gentle, low-wattage simmer — so even an all-day braise uses surprisingly little electricity compared with running the oven for hours.",
     variabilityFactors: ["heat setting", "batch size", "session length"],
   },
   {
@@ -470,7 +470,7 @@ export const APPLIANCE_CONFIGS = [
     averageWattage: 700,
     typicalUsageHoursPerDay: 0.2,
     introFragment: "a household countertop blender",
-    usageNote: "Blenders draw moderate-to-high wattage during short blending cycles. Monthly electricity cost is usually driven by usage frequency rather than long runtime.",
+    usageNote: "A blender pulls real power, but only for the few seconds it's running — so even a daily smoothie habit barely registers on your bill.",
     variabilityFactors: ["motor size", "blending duration per use", "daily use frequency"],
   },
   {
@@ -481,7 +481,7 @@ export const APPLIANCE_CONFIGS = [
     averageWattage: 1200,
     typicalUsageHoursPerDay: 0.75,
     introFragment: "a residential electric treadmill",
-    usageNote: "Treadmills use meaningful power during workouts, especially at higher speeds and incline settings. Total monthly cost depends primarily on workout duration and frequency.",
+    usageNote: "A treadmill draws the most when you're sprinting or climbing a steep incline. Still, unless you're logging marathon hours, the motor runs too briefly each day to make a real dent in your bill.",
     variabilityFactors: ["speed and incline level", "motor efficiency", "workout frequency"],
   },
   {
@@ -492,7 +492,7 @@ export const APPLIANCE_CONFIGS = [
     averageWattage: 140,
     typicalUsageHoursPerDay: 2.5,
     introFragment: "a modern home gaming console",
-    usageNote: "Gaming consoles use moderate electricity during active play and much less in standby. Monthly cost depends mostly on active gaming hours and power mode settings.",
+    usageNote: "A console sips power in standby and draws far more mid-game, so your cost tracks your play hours. The sneaky part is 'instant-on' standby modes, which keep it quietly drawing power even when you're not playing.",
     variabilityFactors: ["active play time", "graphics intensity", "standby power settings"],
   },
   {
