@@ -273,7 +273,7 @@ export default async function ElectricityCostComparisonPairPage({
 
         {/* Difference summary */}
         <section style={{ marginBottom: 32 }}>
-          <h2 style={{ fontSize: 20, marginBottom: 12 }}>Difference Summary</h2>
+          <h2 style={{ fontSize: 20, marginBottom: 12 }}>What the difference adds up to</h2>
           <div
             style={{
               padding: 20,
@@ -284,12 +284,12 @@ export default async function ElectricityCostComparisonPairPage({
           >
             <p className="muted" style={{ margin: 0, fontSize: 14, lineHeight: 1.6 }}>
               {Math.round(differenceDollars * 100) === 0 ? (
-                <>About the same at 900 kWh/month.</>
+                <>At a typical 900 kWh a month, the two states cost about the same.</>
               ) : (
                 <>
-                  Difference: {differenceDollars >= 0 ? "+" : ""}${differenceDollars.toFixed(2)} (
-                  {differencePercent >= 0 ? "+" : ""}
-                  {differencePercent.toFixed(1)}%) at 900 kWh/month
+                  At a typical 900 kWh a month, a household in {higherCostName} pays about $
+                  {Math.abs(differenceDollars).toFixed(2)} more than one in {lowerCostName} — about{" "}
+                  {Math.abs(differencePercent).toFixed(0)}% higher, or roughly ${Math.abs(differenceDollars * 12).toFixed(0)} a year for the same electricity.
                 </>
               )}
             </p>
