@@ -11,7 +11,9 @@ import { getUtilitiesByState } from "@/data/utilities";
 import { getRegionByStateSlug } from "@/data/regions";
 import { normalizeSlug } from "@/data/slug";
 import { isValidStateSlug } from "@/lib/slugGuard";
-import { buildNormalizedState } from "@/lib/stateBuilder";
+import { buildNormalizedState, buildAllNormalizedStates } from "@/lib/stateBuilder";
+import { getNationalAverage } from "@/lib/nationalStats";
+import StateRateMap from "@/components/charts/StateRateMap";
 import { buildStateSchema } from "@/lib/schema";
 import { getElectricityPriceIndexForState } from "@/lib/priceIndex";
 import {
@@ -216,6 +218,21 @@ export default function StatePage({
 
   const rateTier = getRateTier(ns.avgRateCentsPerKwh);
 
+  const mapStates = buildAllNormalizedStates().map((s) => ({
+    slug: s.slug,
+    name: s.name,
+    avgRateCentsPerKwh: s.avgRateCentsPerKwh,
+  }));
+  const mapNationalAverage = getNationalAverage();
+  const mapDiffPercent =
+    mapNationalAverage > 0
+      ? Math.round(((ns.avgRateCentsPerKwh - mapNationalAverage) / mapNationalAverage) * 100)
+      : 0;
+  const mapCaption =
+    Math.abs(mapDiffPercent) < 1
+      ? `${ns.name} sits right about the national average of ${mapNationalAverage.toFixed(2)}¢/kWh. Green is cheaper, red is costlier — hover any state to compare.`
+      : `At ${ns.avgRateCentsPerKwh}¢/kWh, ${ns.name} is about ${Math.abs(mapDiffPercent)}% ${mapDiffPercent >= 0 ? "above" : "below"} the national average. Green is cheaper, red is costlier — hover any state to compare.`;
+
   return (
     <main className="container">
       <script
@@ -379,6 +396,20 @@ export default function StatePage({
       >
         {ns.shortSummary}
       </p>
+
+      {/* ── NATIONAL MAP ── */}
+      <section style={{ marginTop: "var(--space-7)", marginBottom: "var(--space-8)" }}>
+        <h2 className="heading-section" style={{ marginBottom: "var(--space-3)" }}>
+          How {ns.name} compares nationally
+        </h2>
+        <StateRateMap
+          states={mapStates}
+          nationalAverage={mapNationalAverage}
+          highlightSlug={slug}
+          caption={mapCaption}
+          linkStates
+        />
+      </section>
 
       {/* ── NEXT STEPS ── */}
       <section className="section-gap">
