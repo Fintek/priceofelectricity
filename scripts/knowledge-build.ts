@@ -9333,6 +9333,7 @@ export function t(key: string): string {
     nodes: [
       { id: "electricity-cost", type: "topic" as const, title: "Electricity Cost", url: "/electricity-cost", keywords: ["electricity cost", "rates", "state"] },
       { id: "average-electricity-bill", type: "topic" as const, title: "Average Electricity Bill", url: "/average-electricity-bill", keywords: ["electricity bill", "monthly", "estimated"] },
+      { id: "hidden-electricity-fees", type: "topic" as const, title: "Hidden Electricity Fees & Taxes", url: "/hidden-electricity-fees", keywords: ["hidden fees", "electricity taxes", "non-energy charges", "all-in cost"] },
       { id: "electricity-affordability", type: "topic" as const, title: "Electricity Affordability", url: "/electricity-affordability", keywords: ["affordability", "cost burden"] },
       { id: "electricity-cost-of-living", type: "topic" as const, title: "Electricity Cost of Living", url: "/electricity-cost-of-living", keywords: ["cost of living", "household"] },
       { id: "electricity-inflation", type: "topic" as const, title: "Electricity Inflation", url: "/electricity-inflation", keywords: ["inflation", "price trends"] },
@@ -9395,6 +9396,10 @@ export function t(key: string): string {
       { from: "city-electricity-context", to: "appliance-cost", relationship: "city_to_appliance_pathway" },
       { from: "average-electricity-bill", to: "electricity-bill-estimator", relationship: "estimator_pathway" },
       { from: "average-electricity-bill", to: "appliance-cost", relationship: "bill_to_appliance_pathway" },
+      { from: "hidden-electricity-fees", to: "electricity-cost", relationship: "related_topic" },
+      { from: "hidden-electricity-fees", to: "average-electricity-bill", relationship: "related_topic" },
+      { from: "hidden-electricity-fees", to: "methodology", relationship: "explained_by_methodology" },
+      { from: "electricity-topics", to: "hidden-electricity-fees", relationship: "grouped_in_discovery" },
       { from: "electricity-bill-estimator", to: "electricity-cost-calculator", relationship: "estimator_to_calculator_pathway" },
       { from: "electricity-usage", to: "electricity-usage-cost", relationship: "usage_pathway" },
       { from: "energy-comparison", to: "electricity-cost-comparison", relationship: "comparison_pathway" },

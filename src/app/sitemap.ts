@@ -605,6 +605,12 @@ export function getSegmentedSitemapEntries() {
       changeFrequency: "monthly",
       priority: 0.65,
     },
+    {
+      url: `${BASE_URL}/hidden-electricity-fees`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.65,
+    },
     ...getKnowledgeStateSlugs().map((slug) => ({
       url: `${BASE_URL}/average-electricity-bill/${slug}`,
       lastModified: new Date(),

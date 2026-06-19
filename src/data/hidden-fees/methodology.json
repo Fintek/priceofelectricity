@@ -1,0 +1,37 @@
+{
+  "datasetLastUpdated": "2026-06-18",
+  "usageBasisKwh": 900,
+  "reconciliationTolerancePercent": 20,
+  "sources": [
+    {
+      "name": "Utility tariff filings and rate sheets",
+      "role": "Primary itemized source for fixed charges, delivery/distribution, transmission, riders, and taxes. Captured directly from each utility's published residential tariff PDF or rate sheet.",
+      "url": "https://www.pge.com/tariffs/assets/pdf/tariffbook/ELEC_SCHEDS_E-1.pdf"
+    },
+    {
+      "name": "OpenEI U.S. Utility Rate Database (URDB)",
+      "role": "Independent bundled all-in cross-check, modeled at 900 kWh. Used to validate the all-in cents/kWh figure for each utility and to provide the all-in number where a full tariff breakdown was not available.",
+      "url": "https://apps.openei.org/USURDB/"
+    },
+    {
+      "name": "U.S. Energy Information Administration (EIA)",
+      "role": "State residential average price reference. Each modeled all-in rate is reconciled against the EIA state average so the figure stays within a defensible band.",
+      "url": "https://www.eia.gov/electricity/data/state/"
+    }
+  ],
+  "nonEnergyDefinition": "Everything on a residential electricity bill except the supply (generation) energy commodity rate: the fixed customer charge, delivery/distribution, transmission, riders (efficiency, renewable, storm, wildfire, recovery, etc.), and taxes/franchise fees. One-time fees and minimum-bill floors are excluded from the recurring monthly add-on.",
+  "confidenceDefinitions": {
+    "high": "The all-in rate is corroborated by both the utility tariff and OpenEI URDB, with both within +/-20% of the EIA state average.",
+    "medium": "The all-in rate comes from a single validated source (either the utility tariff or URDB) that reconciles with the EIA state average.",
+    "low": "An individual line item flagged during QA (for example a stale effective date or a value outside the expected sanity band). Low-confidence line items are documented but excluded from headline totals where noted."
+  },
+  "coverageNote": "Coverage is intentionally honest about its limits: 6 states have a complete itemized non-energy breakdown (California, Delaware, Florida, Nevada, Oregon, Wisconsin), Texas is shown as delivery-only because it is deregulated, and 26 states have a single validated all-in rate. This set is expanding over time as more tariffs are itemized.",
+  "caBaseChargeCallout": {
+    "tier1CareFeraUsd": 6.0,
+    "tier2Usd": 12.08,
+    "tier3StandardUsd": 24.15,
+    "modeledTier": "Tier 3 (standard / default income)",
+    "note": "PG&E's Base Services Charge is income-graduated. We model the standard Tier 3 customer ($24.15/mo) for the headline figure. Lower-income customers pay less: Tier 1 (CARE/FERA) is $6.00/mo and Tier 2 is $12.08/mo. The range is stated so the headline is not read as cherry-picking the highest tier."
+  },
+  "excludedStatesNote": "States with only a fixed charge captured, a broken parse, or stale sources are not shown as itemized breakdowns: Wyoming, New Hampshire, Alaska, Idaho, and South Carolina. New Hampshire has no validated all-in rate and is excluded entirely; Alaska, Idaho, South Carolina, and Wyoming retain a single validated all-in rate but no breakdown."
+}

@@ -26,6 +26,18 @@
       ]
     },
     {
+      "id": "hidden-electricity-fees",
+      "type": "topic",
+      "title": "Hidden Electricity Fees & Taxes",
+      "url": "/hidden-electricity-fees",
+      "keywords": [
+        "hidden fees",
+        "electricity taxes",
+        "non-energy charges",
+        "all-in cost"
+      ]
+    },
+    {
       "id": "electricity-affordability",
       "type": "topic",
       "title": "Electricity Affordability",
@@ -575,6 +587,26 @@
       "from": "average-electricity-bill",
       "to": "appliance-cost",
       "relationship": "bill_to_appliance_pathway"
+    },
+    {
+      "from": "hidden-electricity-fees",
+      "to": "electricity-cost",
+      "relationship": "related_topic"
+    },
+    {
+      "from": "hidden-electricity-fees",
+      "to": "average-electricity-bill",
+      "relationship": "related_topic"
+    },
+    {
+      "from": "hidden-electricity-fees",
+      "to": "methodology",
+      "relationship": "explained_by_methodology"
+    },
+    {
+      "from": "electricity-topics",
+      "to": "hidden-electricity-fees",
+      "relationship": "grouped_in_discovery"
     },
     {
       "from": "electricity-bill-estimator",
