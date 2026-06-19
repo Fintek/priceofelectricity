@@ -2,12 +2,14 @@ import { GUIDES } from "@/data/guides";
 import { STATES } from "@/data/states";
 import { TOPICS } from "@/data/topics";
 import { UTILITIES } from "@/data/utilities";
+import { buildContentRegistry, type ContentNode } from "@/lib/contentRegistry";
 import { getQuestionSlugs, parseQuestionSlug } from "@/lib/questions";
+import { SITE_URL } from "@/lib/site";
 
 export type SearchResult = {
   title: string;
   href: string;
-  type: "state" | "utility" | "guide" | "question" | "topic" | "tool";
+  type: "state" | "utility" | "guide" | "question" | "topic" | "tool" | "resource";
   /** Extra searchable text (e.g. description, alternate names) — not displayed. */
   keywords?: string;
 };
@@ -34,6 +36,7 @@ const SYNONYM_GROUPS: string[][] = [
   ["hvac", "heating", "cooling"],
   ["fridge", "refrigerator"],
   ["solar", "photovoltaic", "pv"],
+  ["fee", "fees", "surcharge", "surcharges"],
 ];
 
 const SYNONYM_MAP: Map<string, string[]> = (() => {
@@ -56,6 +59,74 @@ function tokenize(value: string): string[] {
   const normalized = normalize(value);
   if (!normalized) return [];
   return normalized.split(/\s+/).filter(Boolean);
+}
+
+const EXCLUDED_REGISTRY_TYPES = new Set<ContentNode["type"]>([
+  "state",
+  "utility",
+  "city",
+  "bill",
+  "guide",
+  "question",
+  "generated",
+  "tool",
+]);
+
+/** Registry nodes that are ops/dev/legal/press/meta — not content search destinations. */
+const EXCLUDED_REGISTRY_IDS = new Set([
+  "regulatory:queue",
+  "vertical:electricity",
+  "static:knowledge",
+  "static:api-docs",
+  "static:about",
+  "static:contact",
+  "static:licensing",
+  "static:disclosures",
+  "static:data-policy",
+  "static:attribution",
+  "static:citations",
+  "static:press",
+  "static:press/faq",
+  "static:press/brand",
+  "static:press/press-release",
+  "static:press-kit",
+  "static:status",
+  "static:performance",
+  "static:changelog",
+  "static:newsletter",
+  "static:index",
+  "static:search",
+]);
+
+const STATE_SLUGS = new Set(Object.keys(STATES));
+
+function registryIdHasStateSlug(id: string): boolean {
+  return id.split(":").some((segment) => STATE_SLUGS.has(segment));
+}
+
+function registryUrlToHref(url: string): string {
+  if (url.startsWith(SITE_URL)) {
+    const path = url.slice(SITE_URL.length);
+    return path || "/";
+  }
+  return url.startsWith("/") ? url : `/${url}`;
+}
+
+function buildResourceResults(): SearchResult[] {
+  return buildContentRegistry()
+    .filter((node) => {
+      if (EXCLUDED_REGISTRY_TYPES.has(node.type)) return false;
+      if (EXCLUDED_REGISTRY_IDS.has(node.id)) return false;
+      if (node.id.startsWith("topic:") || node.id.startsWith("source:")) return false;
+      if (registryIdHasStateSlug(node.id)) return false;
+      return true;
+    })
+    .map((node) => ({
+      title: node.title,
+      href: registryUrlToHref(node.url),
+      type: "resource" as const,
+      keywords: node.keywords,
+    }));
 }
 
 export function buildSearchIndex(): SearchResult[] {
@@ -139,9 +210,21 @@ export function buildSearchIndex(): SearchResult[] {
       type: "tool",
       keywords: "trends inflation history price change",
     },
+    {
+      title: "Electricity Value Ranking by State",
+      href: "/value-ranking",
+      type: "tool",
+      keywords: "value ranking best worst electricity value by state",
+    },
+    {
+      title: "Electricity Price Index™ by State",
+      href: "/index-ranking",
+      type: "tool",
+      keywords: "affordability index ranking states",
+    },
   ];
 
-  return [
+  const curated = [
     ...stateResults,
     ...utilityResults,
     ...guideResults,
@@ -149,6 +232,12 @@ export function buildSearchIndex(): SearchResult[] {
     ...questionResults,
     ...toolResults,
   ];
+  const curatedHrefs = new Set(curated.map((result) => result.href));
+  const resourceResults = buildResourceResults().filter(
+    (result) => !curatedHrefs.has(result.href),
+  );
+
+  return [...curated, ...resourceResults];
 }
 
 const SEARCH_INDEX = buildSearchIndex();
@@ -194,6 +283,7 @@ export function search(query: string): SearchResult[] {
       score += 200;
     }
     if (result.type === "tool" || result.type === "topic") score += 50;
+    if (result.type === "resource") score += 40;
     if (result.type === "state") score += 30;
     score -= titleNormalized.length;
     return { result, score };

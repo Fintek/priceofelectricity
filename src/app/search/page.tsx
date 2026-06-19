@@ -9,12 +9,12 @@ export const revalidate = 2592000;
 
 export const metadata: Metadata = buildMetadata({
   title: "Search | PriceOfElectricity.com",
-  description: "Search states, utilities, guides, topics, and tools.",
+  description: "Search states, utilities, guides, topics, tools, and resources.",
   canonicalPath: "/search",
 });
 
 const TYPE_LABELS: Record<
-  "state" | "utility" | "guide" | "question" | "topic" | "tool",
+  "state" | "utility" | "guide" | "question" | "topic" | "tool" | "resource",
   string
 > = {
   state: "States",
@@ -23,15 +23,19 @@ const TYPE_LABELS: Record<
   question: "Questions",
   topic: "Topics",
   tool: "Tools",
+  resource: "Resources",
 };
 
-const TYPE_ORDER: Array<"state" | "utility" | "guide" | "question" | "topic" | "tool"> = [
+const TYPE_ORDER: Array<
+  "state" | "utility" | "guide" | "question" | "topic" | "tool" | "resource"
+> = [
   "state",
   "utility",
   "guide",
   "question",
   "topic",
   "tool",
+  "resource",
 ];
 
 export default async function SearchPage({
@@ -52,7 +56,7 @@ export default async function SearchPage({
     "@type": "WebPage",
     name: "Search",
     url: `${BASE_URL}/search`,
-    description: "Search states, utilities, guides, topics, and tools.",
+    description: "Search states, utilities, guides, topics, tools, and resources.",
   };
 
   return (
@@ -82,7 +86,7 @@ export default async function SearchPage({
 
       {!query ? (
         <p className="muted" style={{ marginTop: 14 }}>
-          Enter a query to find states, utilities, guides, topics, questions, and tools.
+          Enter a query to find states, utilities, guides, topics, questions, tools, and resources.
         </p>
       ) : results.length === 0 ? (
         <p className="muted" style={{ marginTop: 14 }}>No results found.</p>

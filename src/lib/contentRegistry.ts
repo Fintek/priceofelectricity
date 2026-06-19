@@ -29,6 +29,8 @@ export type ContentNode = {
   url: string;
   parent?: string;
   related?: string[];
+  /** Extra searchable text for site search — not displayed. */
+  keywords?: string;
 };
 
 const BASE = SITE_URL;
@@ -472,6 +474,153 @@ export function buildContentRegistry(): ContentNode[] {
       parent: `state:${slug}`,
     });
   }
+
+  // ── Resource hubs (search-indexed landing pages) ──────────
+  const HIDDEN_FEES_ID = "hidden-electricity-fees";
+  const AI_ENERGY_DEMAND_ID = "ai-energy-demand";
+  const ELECTRICITY_MARKETS_ID = "electricity-markets:hub";
+  const POWER_GENERATION_MIX_ID = "power-generation-mix:hub";
+  const GRID_CAPACITY_ID = "grid-capacity-and-electricity-demand:hub";
+
+  nodes.push({
+    id: HIDDEN_FEES_ID,
+    type: "static",
+    title: "Hidden Electricity Fees & Taxes by State",
+    url: `${BASE}/hidden-electricity-fees`,
+    keywords:
+      "fees taxes delivery charges fixed charges surcharges hidden non-energy riders",
+    related: ["average-electricity-bill", "static:datasets", "electricity-topics"],
+  });
+
+  nodes.push({
+    id: "data:hub",
+    type: "static",
+    title: "Data",
+    url: `${BASE}/data`,
+    keywords: "data datasets knowledge API downloads research",
+    related: ["static:datasets", "static:sources"],
+  });
+
+  nodes.push({
+    id: "electricity-topics",
+    type: "static",
+    title: "Electricity Economics Topics",
+    url: `${BASE}/electricity-topics`,
+    keywords: "topics economics themes navigation hub consumer costs trends markets",
+    related: [HIDDEN_FEES_ID, AI_ENERGY_DEMAND_ID, "research:research"],
+  });
+
+  nodes.push({
+    id: AI_ENERGY_DEMAND_ID,
+    type: "static",
+    title: "AI Energy Demand and Electricity Prices",
+    url: `${BASE}/ai-energy-demand`,
+    keywords: "ai data centers infrastructure electricity demand prices",
+    related: ["vertical:ai-energy", "alerts:ai-energy", GRID_CAPACITY_ID],
+  });
+
+  const aiEnergyDemandChildren: {
+    slug: string;
+    title: string;
+    keywords: string;
+  }[] = [
+    {
+      slug: "data-centers-electricity",
+      title: "Data Centers and Electricity Demand",
+      keywords: "data centers electricity demand ai infrastructure load",
+    },
+    {
+      slug: "ai-power-consumption",
+      title: "AI Power Consumption and Electricity Costs",
+      keywords: "ai power consumption electricity costs training inference",
+    },
+    {
+      slug: "electricity-prices-and-ai",
+      title: "Electricity Prices and AI Infrastructure",
+      keywords: "electricity prices ai infrastructure data centers rates",
+    },
+    {
+      slug: "grid-strain-and-electricity-costs",
+      title: "Grid Strain and Electricity Costs",
+      keywords: "grid strain electricity costs capacity demand ai",
+    },
+  ];
+  for (const child of aiEnergyDemandChildren) {
+    nodes.push({
+      id: `ai-energy-demand:${child.slug}`,
+      type: "static",
+      title: child.title,
+      url: `${BASE}/ai-energy-demand/${child.slug}`,
+      parent: AI_ENERGY_DEMAND_ID,
+      keywords: child.keywords,
+    });
+  }
+
+  nodes.push({
+    id: "average-electricity-bill",
+    type: "static",
+    title: "Average Electricity Bill by State",
+    url: `${BASE}/average-electricity-bill`,
+    keywords: "average electricity bill monthly annual estimates by state",
+    related: [HIDDEN_FEES_ID, "electricity-topics"],
+  });
+
+  nodes.push({
+    id: ELECTRICITY_MARKETS_ID,
+    type: "static",
+    title: "Electricity Market Structures and Prices",
+    url: `${BASE}/electricity-markets`,
+    keywords: "electricity markets structure pricing wholesale regulated",
+  });
+  nodes.push({
+    id: "electricity-markets:iso-rto-markets",
+    type: "static",
+    title: "ISO and RTO Electricity Markets",
+    url: `${BASE}/electricity-markets/iso-rto-markets`,
+    parent: ELECTRICITY_MARKETS_ID,
+    keywords: "iso rto wholesale electricity markets pricing",
+  });
+
+  nodes.push({
+    id: POWER_GENERATION_MIX_ID,
+    type: "static",
+    title: "Power Generation Mix and Electricity Prices",
+    url: `${BASE}/power-generation-mix`,
+    keywords: "power generation mix fuel electricity prices renewables",
+  });
+  nodes.push({
+    id: "power-generation-mix:fuel-costs",
+    type: "static",
+    title: "Fuel Costs and Electricity Prices",
+    url: `${BASE}/power-generation-mix/fuel-costs-and-electricity-prices`,
+    parent: POWER_GENERATION_MIX_ID,
+    keywords: "fuel costs natural gas coal electricity prices generation",
+  });
+
+  nodes.push({
+    id: GRID_CAPACITY_ID,
+    type: "static",
+    title: "Grid Capacity and Electricity Demand",
+    url: `${BASE}/grid-capacity-and-electricity-demand`,
+    keywords: "grid capacity electricity demand infrastructure constraints",
+    related: [AI_ENERGY_DEMAND_ID],
+  });
+  nodes.push({
+    id: "grid-capacity-and-electricity-demand:power-demand-growth",
+    type: "static",
+    title: "Power Demand Growth and Electricity Prices",
+    url: `${BASE}/grid-capacity-and-electricity-demand/power-demand-growth`,
+    parent: GRID_CAPACITY_ID,
+    keywords: "power demand growth electricity prices load forecast",
+  });
+  nodes.push({
+    id: "grid-capacity-and-electricity-demand:grid-capacity-constraints",
+    type: "static",
+    title: "Grid Capacity Constraints and Electricity Costs",
+    url: `${BASE}/grid-capacity-and-electricity-demand/grid-capacity-constraints`,
+    parent: GRID_CAPACITY_ID,
+    keywords: "grid capacity constraints transmission electricity costs",
+  });
 
   // ── Static pages ──────────────────────────────────────────
   const staticPages: { slug: string; title: string }[] = [
