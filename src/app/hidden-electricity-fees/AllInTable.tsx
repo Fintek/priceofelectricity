@@ -78,9 +78,9 @@ export default function AllInTable({ rows }: { rows: AllInStateFee[] }) {
       <table className="data-table">
         <caption className="muted" style={{ textAlign: "left", padding: "0 0 10px 0", fontSize: 13 }}>
           Validated all-in residential electricity cost (energy plus fees and taxes) at 900 kWh per month for 26
-          states. Sortable; click a column header to re-sort. A check mark in &ldquo;Breakdown&rdquo; means a full
-          itemized fee breakdown is available above; &ldquo;pending&rdquo; means only the all-in total is published
-          so far.
+          states, sorted by cost. Sortable; click a column header to re-sort. A check mark in
+          &ldquo;Breakdown&rdquo; means a full itemized fee breakdown is shown above; &ldquo;Total only&rdquo; means
+          only the all-in total is published so far.
         </caption>
         <thead>
           <tr>
@@ -145,7 +145,7 @@ export default function AllInTable({ rows }: { rows: AllInStateFee[] }) {
                 {row.breakdownAvailable ? (
                   <span aria-label="Itemized breakdown available">&#10003; Available</span>
                 ) : (
-                  <span className="muted" aria-label="Itemized breakdown pending">Pending</span>
+                  <span className="muted" aria-label="All-in total only">Total only</span>
                 )}
               </td>
               <td style={{ ...cellStyle, fontSize: 12 }}>
