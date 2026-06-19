@@ -100,6 +100,7 @@ export default async function ElectricityTopicsPage() {
             <li><Link href="/how-much-does-2000-kwh-cost">How much does 2000 kWh cost?</Link></li>
             <li><Link href="/electricity-cost-comparison">Compare electricity prices between states</Link></li>
             <li><Link href="/average-electricity-bill">Average electricity bill</Link></li>
+            <li><Link href="/hidden-electricity-fees">Hidden electricity fees &amp; taxes by state</Link></li>
             <li><Link href="/electricity-cost-of-living">Electricity cost of living</Link></li>
             <li><Link href="/electricity-affordability">Electricity affordability</Link></li>
             <li><Link href="/shop-electricity">Shop for electricity by state</Link></li>
