@@ -45,12 +45,8 @@ export async function GET() {
   } catch {
     // public-endpoints.json unavailable at build time; lead bullet above still references /data
   }
-  dataSection += `- [Discovery index](${BASE_URL}/knowledge/public-endpoints.json): Canonical discovery index (must match this file).
-- index.json includes integritySignature for system-level verification.
-- ${BASE_URL}/knowledge.json
-- All knowledge pages include meta.freshness (datasetUpdatedAt, status, ageDays, methodology).
-- All knowledge pages include meta.qualityScore (0-100 integer).
-- Changelog includes metric-level deltas (changelog.json metricChanges).
+  dataSection += `- [knowledge.json](${BASE_URL}/knowledge.json): Top-level knowledge payload.
+- [Discovery index](${BASE_URL}/knowledge/public-endpoints.json): Canonical discovery index (must match this file).
 `;
 
   const content = `# PriceOfElectricity.com
@@ -58,6 +54,8 @@ export async function GET() {
 > State-level average residential electricity prices and a simple bill estimator for all 50 US states and DC.
 
 Each state page reports an average residential electricity price in cents per kilowatt-hour (¢/kWh). Bill estimates are energy-only: they exclude delivery fees, taxes, fixed charges, and other utility fees.
+
+Knowledge endpoints expose machine-readable data: index.json includes an integritySignature for system-level verification, every knowledge page carries meta.freshness (datasetUpdatedAt, status, ageDays, methodology) and an integer meta.qualityScore (0–100), and changelog.json records metric-level deltas (metricChanges).
 
 ## Core pages
 
