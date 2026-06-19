@@ -15,7 +15,7 @@ import {
   computeBundledFindingRange,
   getLeadState,
 } from "@/data/hidden-fees";
-import FeeBreakdownTable from "./FeeBreakdownTable";
+import StateBreakdown from "./StateBreakdown";
 import AllInTable from "./AllInTable";
 
 export const dynamic = "force-static";
@@ -162,12 +162,15 @@ export default async function HiddenElectricityFeesPage() {
         </section>
 
         <section style={{ marginBottom: 40 }}>
-          <h2 style={{ fontSize: 22, marginBottom: 8 }}>Itemized fee breakdown</h2>
-          <p className="muted" style={{ margin: "0 0 16px 0", fontSize: 14, maxWidth: "65ch" }}>
-            For these states we read each charge straight from the utility&apos;s tariff or rate sheet. Every row links
-            to its source. Click any column heading to sort.
+          <h2 style={{ fontSize: 22, marginBottom: 8 }}>How the bill adds up, state by state</h2>
+          <p className="muted" style={{ margin: "0 0 20px 0", fontSize: 14, maxWidth: "65ch", lineHeight: 1.6 }}>
+            For these states we read each charge straight from the utility&apos;s tariff or rate sheet. Each table
+            shows the cost per kilowatt-hour, so you can see the energy itself plus every fee and tax add up to the
+            all-in rate. Open &ldquo;See every line item&rdquo; for the named charges.
           </p>
-          <FeeBreakdownTable rows={ITEMIZED_STATES} />
+          {ITEMIZED_STATES.map((row) => (
+            <StateBreakdown key={row.slug} state={row} />
+          ))}
         </section>
 
         <section style={{ marginBottom: 40 }}>
