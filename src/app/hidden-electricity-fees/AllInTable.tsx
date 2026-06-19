@@ -152,7 +152,7 @@ export default function AllInTable({ rows }: { rows: AllInStateFee[] }) {
                 <a href={row.sourceUrl} rel="noopener noreferrer" target="_blank">
                   {row.source === "urdb" ? "OpenEI URDB" : "Utility tariff"}
                 </a>
-                <div className="muted">{row.asOf ?? "date not stated"}</div>
+                {row.asOf ? <div className="muted">{row.asOf}</div> : null}
                 {row.note ? (
                   <div className="muted" style={{ marginTop: 4, fontStyle: "italic" }}>{row.note}</div>
                 ) : null}
