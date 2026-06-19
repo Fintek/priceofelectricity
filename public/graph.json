@@ -1,9 +1,34 @@
 {
   "version": "1.0",
   "generatedAt": "2026-05-28T13:54:57.371Z",
-  "totalNodes": 1413,
-  "totalEdges": 2188,
+  "totalNodes": 1429,
+  "totalEdges": 2210,
   "nodes": [
+    {
+      "id": "ai-energy-demand",
+      "type": "static",
+      "url": "http://localhost:3000/ai-energy-demand"
+    },
+    {
+      "id": "ai-energy-demand:ai-power-consumption",
+      "type": "static",
+      "url": "http://localhost:3000/ai-energy-demand/ai-power-consumption"
+    },
+    {
+      "id": "ai-energy-demand:data-centers-electricity",
+      "type": "static",
+      "url": "http://localhost:3000/ai-energy-demand/data-centers-electricity"
+    },
+    {
+      "id": "ai-energy-demand:electricity-prices-and-ai",
+      "type": "static",
+      "url": "http://localhost:3000/ai-energy-demand/electricity-prices-and-ai"
+    },
+    {
+      "id": "ai-energy-demand:grid-strain-and-electricity-costs",
+      "type": "static",
+      "url": "http://localhost:3000/ai-energy-demand/grid-strain-and-electricity-costs"
+    },
     {
       "id": "alerts:ai-energy",
       "type": "static",
@@ -273,6 +298,11 @@
       "id": "alerts:state:wyoming",
       "type": "static",
       "url": "http://localhost:3000/alerts/wyoming"
+    },
+    {
+      "id": "average-electricity-bill",
+      "type": "static",
+      "url": "http://localhost:3000/average-electricity-bill"
     },
     {
       "id": "bill:alabama:1000",
@@ -2055,6 +2085,11 @@
       "url": "http://localhost:3000/electricity-cost/wisconsin/milwaukee"
     },
     {
+      "id": "data:hub",
+      "type": "static",
+      "url": "http://localhost:3000/data"
+    },
+    {
       "id": "drivers:alabama",
       "type": "research",
       "url": "http://localhost:3000/drivers/alabama"
@@ -2313,6 +2348,21 @@
       "id": "drivers:wyoming",
       "type": "research",
       "url": "http://localhost:3000/drivers/wyoming"
+    },
+    {
+      "id": "electricity-markets:hub",
+      "type": "static",
+      "url": "http://localhost:3000/electricity-markets"
+    },
+    {
+      "id": "electricity-markets:iso-rto-markets",
+      "type": "static",
+      "url": "http://localhost:3000/electricity-markets/iso-rto-markets"
+    },
+    {
+      "id": "electricity-topics",
+      "type": "static",
+      "url": "http://localhost:3000/electricity-topics"
     },
     {
       "id": "generated:average-electric-bill-in-alabama",
@@ -3080,6 +3130,21 @@
       "url": "http://localhost:3000/generated/moving-to-wyoming-electricity-cost-guide"
     },
     {
+      "id": "grid-capacity-and-electricity-demand:grid-capacity-constraints",
+      "type": "static",
+      "url": "http://localhost:3000/grid-capacity-and-electricity-demand/grid-capacity-constraints"
+    },
+    {
+      "id": "grid-capacity-and-electricity-demand:hub",
+      "type": "static",
+      "url": "http://localhost:3000/grid-capacity-and-electricity-demand"
+    },
+    {
+      "id": "grid-capacity-and-electricity-demand:power-demand-growth",
+      "type": "static",
+      "url": "http://localhost:3000/grid-capacity-and-electricity-demand/power-demand-growth"
+    },
+    {
       "id": "guide:fixed-vs-variable-electricity-rates",
       "type": "guide",
       "url": "http://localhost:3000/guides/fixed-vs-variable-electricity-rates"
@@ -3108,6 +3173,11 @@
       "id": "guide:why-electricity-prices-vary-by-state",
       "type": "guide",
       "url": "http://localhost:3000/guides/why-electricity-prices-vary-by-state"
+    },
+    {
+      "id": "hidden-electricity-fees",
+      "type": "static",
+      "url": "http://localhost:3000/hidden-electricity-fees"
     },
     {
       "id": "national:affordability",
@@ -3393,6 +3463,16 @@
       "id": "offer:wyoming",
       "type": "offer",
       "url": "http://localhost:3000/offers/wyoming"
+    },
+    {
+      "id": "power-generation-mix:fuel-costs",
+      "type": "static",
+      "url": "http://localhost:3000/power-generation-mix/fuel-costs-and-electricity-prices"
+    },
+    {
+      "id": "power-generation-mix:hub",
+      "type": "static",
+      "url": "http://localhost:3000/power-generation-mix"
     },
     {
       "id": "provider:alabama",
@@ -7072,6 +7152,41 @@
   ],
   "edges": [
     {
+      "from": "ai-energy-demand",
+      "to": "alerts:ai-energy",
+      "rel": "related"
+    },
+    {
+      "from": "ai-energy-demand",
+      "to": "grid-capacity-and-electricity-demand:hub",
+      "rel": "related"
+    },
+    {
+      "from": "ai-energy-demand",
+      "to": "vertical:ai-energy",
+      "rel": "related"
+    },
+    {
+      "from": "ai-energy-demand:ai-power-consumption",
+      "to": "ai-energy-demand",
+      "rel": "parent"
+    },
+    {
+      "from": "ai-energy-demand:data-centers-electricity",
+      "to": "ai-energy-demand",
+      "rel": "parent"
+    },
+    {
+      "from": "ai-energy-demand:electricity-prices-and-ai",
+      "to": "ai-energy-demand",
+      "rel": "parent"
+    },
+    {
+      "from": "ai-energy-demand:grid-strain-and-electricity-costs",
+      "to": "ai-energy-demand",
+      "rel": "parent"
+    },
+    {
       "from": "alerts:ai-energy",
       "to": "alerts:hub",
       "rel": "parent"
@@ -7345,6 +7460,16 @@
       "from": "alerts:state:wyoming",
       "to": "state:wyoming",
       "rel": "parent"
+    },
+    {
+      "from": "average-electricity-bill",
+      "to": "electricity-topics",
+      "rel": "related"
+    },
+    {
+      "from": "average-electricity-bill",
+      "to": "hidden-electricity-fees",
+      "rel": "related"
     },
     {
       "from": "bill:alabama:1000",
@@ -9127,6 +9252,16 @@
       "rel": "parent"
     },
     {
+      "from": "data:hub",
+      "to": "static:datasets",
+      "rel": "related"
+    },
+    {
+      "from": "data:hub",
+      "to": "static:sources",
+      "rel": "related"
+    },
+    {
       "from": "drivers:alabama",
       "to": "drivers:hub",
       "rel": "related"
@@ -10147,6 +10282,26 @@
       "rel": "parent"
     },
     {
+      "from": "electricity-markets:iso-rto-markets",
+      "to": "electricity-markets:hub",
+      "rel": "parent"
+    },
+    {
+      "from": "electricity-topics",
+      "to": "ai-energy-demand",
+      "rel": "related"
+    },
+    {
+      "from": "electricity-topics",
+      "to": "hidden-electricity-fees",
+      "rel": "related"
+    },
+    {
+      "from": "electricity-topics",
+      "to": "research:research",
+      "rel": "related"
+    },
+    {
       "from": "generated:average-electric-bill-in-alabama",
       "to": "state:alabama",
       "rel": "parent"
@@ -10912,6 +11067,36 @@
       "rel": "parent"
     },
     {
+      "from": "grid-capacity-and-electricity-demand:grid-capacity-constraints",
+      "to": "grid-capacity-and-electricity-demand:hub",
+      "rel": "parent"
+    },
+    {
+      "from": "grid-capacity-and-electricity-demand:hub",
+      "to": "ai-energy-demand",
+      "rel": "related"
+    },
+    {
+      "from": "grid-capacity-and-electricity-demand:power-demand-growth",
+      "to": "grid-capacity-and-electricity-demand:hub",
+      "rel": "parent"
+    },
+    {
+      "from": "hidden-electricity-fees",
+      "to": "average-electricity-bill",
+      "rel": "related"
+    },
+    {
+      "from": "hidden-electricity-fees",
+      "to": "electricity-topics",
+      "rel": "related"
+    },
+    {
+      "from": "hidden-electricity-fees",
+      "to": "static:datasets",
+      "rel": "related"
+    },
+    {
       "from": "national:affordability",
       "to": "national:hub",
       "rel": "parent"
@@ -11204,6 +11389,11 @@
     {
       "from": "offer:wyoming",
       "to": "offer:hub",
+      "rel": "parent"
+    },
+    {
+      "from": "power-generation-mix:fuel-costs",
+      "to": "power-generation-mix:hub",
       "rel": "parent"
     },
     {
