@@ -3,8 +3,8 @@
   "schemaVersion": "1.0",
   "datasetLastUpdated": "2026-06-18",
   "usageBasisKwh": 900,
-  "itemizedStateCount": 7,
-  "bundledItemizedStateCount": 6,
+  "itemizedStateCount": 4,
+  "bundledItemizedStateCount": 3,
   "allInStateCount": 26,
   "methodology": {
     "datasetLastUpdated": "2026-06-18",
@@ -33,7 +33,7 @@
       "medium": "The all-in rate comes from a single validated source (either the utility tariff or URDB) that reconciles with the EIA state average.",
       "low": "An individual line item flagged during QA (for example a stale effective date or a value outside the expected sanity band). Low-confidence line items are documented but excluded from headline totals where noted."
     },
-    "coverageNote": "Coverage is intentionally honest about its limits: 6 states have a complete itemized non-energy breakdown (California, Delaware, Florida, Nevada, Oregon, Wisconsin), Texas is shown as delivery-only because it is deregulated, and 26 states have a single validated all-in rate. This set is expanding over time as more tariffs are itemized.",
+    "coverageNote": "Coverage is intentionally honest about its limits: 3 states have a complete itemized non-energy breakdown (California, Florida, Nevada), Texas is shown as delivery-only because it is deregulated, and 26 states have a single validated all-in rate. Delaware, Oregon, and Wisconsin were pulled from the itemized breakdowns pending a fix to their energy-versus-delivery split, though their all-in rates remain in the table. This set is expanding over time as more tariffs are itemized.",
     "caBaseChargeCallout": {
       "tier1CareFeraUsd": 6,
       "tier2Usd": 12.08,
@@ -181,146 +181,6 @@
           "confidence": "high",
           "includedInAddon": false,
           "note": "Credit that offsets the Recovery Bond Charge."
-        }
-      ]
-    },
-    {
-      "postal": "DE",
-      "state": "Delaware",
-      "slug": "delaware",
-      "utility": "Delmarva Power",
-      "market": "regulated",
-      "usageKwh": 900,
-      "energyRateCentsPerKwh": 4.872,
-      "fixedUsdPerMonth": 15.04,
-      "ridersCentsPerKwh": 8.727,
-      "taxPercent": 3.5,
-      "taxNote": "2% City of Wilmington franchise tax + 1.5% Delaware state utility tax. Delaware has no state sales tax. A duplicated 2% Wilmington franchise line was removed in QA.",
-      "nonEnergyAddonUsd": 98.39,
-      "nonEnergySharePercent": 69.17,
-      "allInCentsPerKwh": 15.8,
-      "eiaReferenceCentsPerKwh": 17.64,
-      "reconciliationDeltaPercent": -10.4,
-      "asOf": "2024-01-01",
-      "confidence": "medium",
-      "breakdownStatus": "corrected",
-      "sourceUrls": [
-        "https://www.delmarva.com/MyAccount/MyService/Pages/DE/PricetoCompare.aspx",
-        "https://spotlightdelaware.org/2026/01/15/delmarva-power-seeks-third-rate-increase-in-five-years/"
-      ],
-      "charges": [
-        {
-          "name": "Customer Charge",
-          "category": "fixed_customer_charge",
-          "amount": 15.04,
-          "unit": "usd_per_month",
-          "sourceUrl": "https://azure-na-assets.contentstack.com/v3/assets/blt47b6e332b18fb457/blt62f3e22e86bbad0a/659d6d3dd6c1e3000a41ac9e/2024.01.09_filing_DPL_DE_Electric_Primary_tariff_eff_01-10-2024_EDIT.pdf?branch=prod_alias",
-          "asOf": "2024-01-10",
-          "confidence": "high",
-          "includedInAddon": true
-        },
-        {
-          "name": "Delivery Charge",
-          "category": "delivery_distribution",
-          "amount": 4.7893,
-          "unit": "cents_per_kwh",
-          "sourceUrl": "https://azure-na-assets.contentstack.com/v3/assets/blt47b6e332b18fb457/blt62f3e22e86bbad0a/659d6d3dd6c1e3000a41ac9e/2024.01.09_filing_DPL_DE_Electric_Primary_tariff_eff_01-10-2024_EDIT.pdf?branch=prod_alias",
-          "asOf": "2024-01-10",
-          "confidence": "high",
-          "includedInAddon": true
-        },
-        {
-          "name": "Energy Cost Adjustment",
-          "category": "fuel_adjustment",
-          "amount": 3.88,
-          "unit": "cents_per_kwh",
-          "sourceUrl": "https://spotlightdelaware.org/2026/01/15/delmarva-power-seeks-third-rate-increase-in-five-years/",
-          "asOf": "2026-01-15",
-          "confidence": "high",
-          "includedInAddon": true
-        },
-        {
-          "name": "Renewable Portfolio Standard Charge",
-          "category": "other_rider",
-          "amount": 0.0356,
-          "unit": "cents_per_kwh",
-          "sourceUrl": "https://azure-na-assets.contentstack.com/v3/assets/blt47b6e332b18fb457/blt62f3e22e86bbad0a/659d6d3dd6c1e3000a41ac9e/2024.01.09_filing_DPL_DE_Electric_Primary_tariff_eff_01-10-2024_EDIT.pdf?branch=prod_alias",
-          "asOf": "2024-01-10",
-          "confidence": "high",
-          "includedInAddon": true
-        },
-        {
-          "name": "Green Energy Fund",
-          "category": "other_rider",
-          "amount": 0.0095,
-          "unit": "cents_per_kwh",
-          "sourceUrl": "https://azure-na-assets.contentstack.com/v3/assets/blt47b6e332b18fb457/blt62f3e22e86bbad0a/659d6d3dd6c1e3000a41ac9e/2024.01.09_filing_DPL_DE_Electric_Primary_tariff_eff_01-10-2024_EDIT.pdf?branch=prod_alias",
-          "asOf": "2024-01-10",
-          "confidence": "high",
-          "includedInAddon": true
-        },
-        {
-          "name": "Low-Income Charge",
-          "category": "other_rider",
-          "amount": 0.0095,
-          "unit": "cents_per_kwh",
-          "sourceUrl": "https://azure-na-assets.contentstack.com/v3/assets/blt47b6e332b18fb457/blt62f3e22e86bbad0a/659d6d3dd6c1e3000a41ac9e/2024.01.09_filing_DPL_DE_Electric_Primary_tariff_eff_01-10-2024_EDIT.pdf?branch=prod_alias",
-          "asOf": "2024-01-10",
-          "confidence": "high",
-          "includedInAddon": true
-        },
-        {
-          "name": "Procurement Cost Adjustment",
-          "category": "other",
-          "amount": 0.003082,
-          "unit": "cents_per_kwh",
-          "sourceUrl": "https://azure-na-assets.contentstack.com/v3/assets/blt47b6e332b18fb457/blt62f3e22e86bbad0a/659d6d3dd6c1e3000a41ac9e/2024.01.09_filing_DPL_DE_Electric_Primary_tariff_eff_01-10-2024_EDIT.pdf?branch=prod_alias",
-          "asOf": "2024-01-10",
-          "confidence": "high",
-          "includedInAddon": true
-        },
-        {
-          "name": "City of Wilmington Local Franchise Tax",
-          "category": "state_local_tax",
-          "amount": 2,
-          "unit": "percent",
-          "sourceUrl": "https://azure-na-assets.contentstack.com/v3/assets/blt47b6e332b18fb457/blt62f3e22e86bbad0a/659d6d3dd6c1e3000a41ac9e/2024.01.09_filing_DPL_DE_Electric_Primary_tariff_eff_01-10-2024_EDIT.pdf?branch=prod_alias",
-          "asOf": "2024-01-10",
-          "confidence": "low",
-          "includedInAddon": true,
-          "note": "Charged on all delivery and supply services in the City of Wilmington; varies by municipality."
-        },
-        {
-          "name": "State Utility Tax",
-          "category": "state_local_tax",
-          "amount": 1.5,
-          "unit": "percent",
-          "sourceUrl": "https://spotlightdelaware.org/2026/01/15/delmarva-power-seeks-third-rate-increase-in-five-years/",
-          "asOf": "2026-01-15",
-          "confidence": "low",
-          "includedInAddon": true
-        },
-        {
-          "name": "Franchise Tax (City of Wilmington, duplicate)",
-          "category": "state_local_tax",
-          "amount": 2,
-          "unit": "percent",
-          "sourceUrl": "https://www.delmarva.com/cdn/assets/v3/assets/blt47b6e332b18fb457/blt62f3e22e86bbad0a/67850d0ad19b5232ade02b59/2024.01.10_filing_DPL_DE_Electric_Primary_tar.pdf?branch=prod_alias",
-          "asOf": "2024-01-01",
-          "confidence": "low",
-          "includedInAddon": false,
-          "note": "Duplicate of the Wilmington franchise tax; removed in QA to avoid double-counting."
-        },
-        {
-          "name": "Renewable Portfolio Standard Charge (flat)",
-          "category": "other_rider",
-          "amount": 5.16,
-          "unit": "usd_flat",
-          "sourceUrl": "https://publicadvocate.delaware.gov/why-is-my-dpl-bill-so-high/",
-          "asOf": null,
-          "confidence": "high",
-          "includedInAddon": false,
-          "note": "One-time flat charge; excluded from the monthly add-on."
         }
       ]
     },
@@ -615,151 +475,6 @@
       ]
     },
     {
-      "postal": "OR",
-      "state": "Oregon",
-      "slug": "oregon",
-      "utility": "Portland General Electric",
-      "market": "regulated",
-      "usageKwh": 900,
-      "energyRateCentsPerKwh": 3.54,
-      "fixedUsdPerMonth": 13,
-      "ridersCentsPerKwh": 7.871,
-      "taxPercent": 0,
-      "nonEnergyAddonUsd": 83.84,
-      "nonEnergySharePercent": 72.46,
-      "allInCentsPerKwh": 12.86,
-      "eiaReferenceCentsPerKwh": 14.89,
-      "reconciliationDeltaPercent": -13.7,
-      "asOf": "2026-04-01",
-      "confidence": "medium",
-      "sourceUrls": [
-        "https://portlandgeneral.com/about/info/rates-and-regulatory/tariff",
-        "https://assets.ctfassets.net/416ywc1laqmd/5dwmGyRIAextaJClWmn80k/c0e3dae29b0f163e2227e0125a03d4fe/Update_04_01_26.pdf"
-      ],
-      "charges": [
-        {
-          "name": "Basic Charge",
-          "category": "fixed_customer_charge",
-          "amount": 13,
-          "unit": "usd_per_month",
-          "sourceUrl": "https://assets.ctfassets.net/416ywc1laqmd/5dwmGyRIAextaJClWmn80k/c0e3dae29b0f163e2227e0125a03d4fe/Update_04_01_26.pdf",
-          "asOf": "2026-04-01",
-          "confidence": "high",
-          "includedInAddon": true
-        },
-        {
-          "name": "Distribution Charge",
-          "category": "delivery_distribution",
-          "amount": 7.009,
-          "unit": "cents_per_kwh",
-          "sourceUrl": "https://assets.ctfassets.net/416ywc1laqmd/5dwmGyRIAextaJClWmn80k/c0e3dae29b0f163e2227e0125a03d4fe/Update_04_01_26.pdf",
-          "asOf": "2026-04-01",
-          "confidence": "high",
-          "includedInAddon": true
-        },
-        {
-          "name": "Transmission and Related Services Charge",
-          "category": "transmission",
-          "amount": 0.862,
-          "unit": "cents_per_kwh",
-          "sourceUrl": "https://assets.ctfassets.net/416ywc1laqmd/5dwmGyRIAextaJClWmn80k/c0e3dae29b0f163e2227e0125a03d4fe/Update_04_01_26.pdf",
-          "asOf": "2026-04-01",
-          "confidence": "high",
-          "includedInAddon": true
-        },
-        {
-          "name": "Low Income Assistance",
-          "category": "other_rider",
-          "amount": 1.24,
-          "unit": "usd_flat",
-          "sourceUrl": "https://assets.ctfassets.net/416ywc1laqmd/5dwmGyRIAextaJClWmn80k/c0e3dae29b0f163e2227e0125a03d4fe/Update_04_01_26.pdf",
-          "asOf": "2026-04-01",
-          "confidence": "high",
-          "includedInAddon": false,
-          "note": "$1.24/month assistance charge; excluded from the modeled fixed sum per source classification."
-        }
-      ]
-    },
-    {
-      "postal": "WI",
-      "state": "Wisconsin",
-      "slug": "wisconsin",
-      "utility": "We Energies",
-      "market": "regulated",
-      "usageKwh": 900,
-      "energyRateCentsPerKwh": 19.342,
-      "fixedUsdPerMonth": 15.01,
-      "ridersCentsPerKwh": 0.251,
-      "taxPercent": 0,
-      "nonEnergyAddonUsd": 17.27,
-      "nonEnergySharePercent": 9.02,
-      "allInCentsPerKwh": 21.26,
-      "eiaReferenceCentsPerKwh": 18.8,
-      "reconciliationDeltaPercent": 13.1,
-      "asOf": "2026-01-01",
-      "confidence": "high",
-      "breakdownStatus": "corrected",
-      "note": "We Energies pairs a high energy charge with very low fixed and rider charges, so non-energy is only ~9% of the bill. The customer charge was QA-corrected from a per-month misread to $0.49315/day x 30.44 = $15.01/mo.",
-      "sourceUrls": [
-        "https://www.we-energies.com/olb/26/2026-01-we-electric-rates.pdf"
-      ],
-      "charges": [
-        {
-          "name": "Customer Charge",
-          "category": "fixed_customer_charge",
-          "amount": 15.01,
-          "unit": "usd_per_month",
-          "sourceUrl": "https://www.we-energies.com/olb/26/2026-01-we-electric-rates.pdf",
-          "asOf": "2026-01-01",
-          "confidence": "high",
-          "includedInAddon": true,
-          "note": "Rg-1 customer charge $0.49315/day x 30.44 = $15.01/mo (QA-corrected from a per-month misread)."
-        },
-        {
-          "name": "Fuel Cost Adjustment",
-          "category": "fuel_adjustment",
-          "amount": 0.199,
-          "unit": "cents_per_kwh",
-          "sourceUrl": "https://www.we-energies.com/olb/26/2026-01-we-electric-rates.pdf",
-          "asOf": "2026-01-01",
-          "confidence": "high",
-          "includedInAddon": true
-        },
-        {
-          "name": "Environmental Control Charge",
-          "category": "fuel_adjustment",
-          "amount": 0.052,
-          "unit": "cents_per_kwh",
-          "sourceUrl": "https://www.we-energies.com/olb/26/2026-01-we-electric-rates.pdf",
-          "asOf": "2026-01-01",
-          "confidence": "high",
-          "includedInAddon": true
-        },
-        {
-          "name": "Late Payment Charge",
-          "category": "other",
-          "amount": 1,
-          "unit": "percent",
-          "sourceUrl": "https://www.we-energies.com/olb/26/2026-01-we-electric-rates.pdf",
-          "asOf": "2026-01-01",
-          "confidence": "high",
-          "includedInAddon": false,
-          "note": "Penalty for late payment; not a recurring bill component."
-        },
-        {
-          "name": "Returned Check Fee",
-          "category": "other",
-          "amount": 7.24,
-          "unit": "usd_flat",
-          "sourceUrl": "https://www.we-energies.com/olb/26/2026-01-we-electric-rates.pdf",
-          "asOf": "2026-01-01",
-          "confidence": "high",
-          "includedInAddon": false,
-          "note": "One-time fee; excluded."
-        }
-      ]
-    },
-    {
       "postal": "TX",
       "state": "Texas",
       "slug": "texas",
@@ -939,11 +654,12 @@
       "utility": "Delmarva Power",
       "allInCentsPerKwh": 15.8,
       "source": "firecrawl",
-      "confidence": "medium",
+      "confidence": "low",
       "asOf": "2024-01-01",
       "sourceUrl": "https://www.delmarva.com/MyAccount/MyService/Pages/DE/PricetoCompare.aspx",
       "urdbUri": "https://apps.openei.org/IURDB/rate/view/68dd267ad6235566870f169b",
-      "breakdownAvailable": true
+      "note": "~10% below current; energy/delivery split under review.",
+      "breakdownAvailable": false
     },
     {
       "postal": "FL",
@@ -1093,25 +809,27 @@
       "state": "Oregon",
       "slug": "oregon",
       "utility": "Portland General Electric",
-      "allInCentsPerKwh": 12.86,
+      "allInCentsPerKwh": 20,
       "source": "firecrawl",
       "confidence": "medium",
       "asOf": "2026-04-01",
       "sourceUrl": "https://portlandgeneral.com/about/info/pricing-plans",
       "urdbUri": "https://apps.openei.org/IURDB/rate/view/69794de1f58f7f565a0c8cf8",
-      "breakdownAvailable": true
+      "note": "Corrected to ~20¢/kWh all-in (PGE 2026; cross-checked opb.org / powernw.com). Prior 12.86¢ understated delivery.",
+      "breakdownAvailable": false
     },
     {
       "postal": "SC",
       "state": "South Carolina",
       "slug": "south-carolina",
       "utility": "Dominion Energy South Carolina",
-      "allInCentsPerKwh": 16.39,
+      "allInCentsPerKwh": 14.66,
       "source": "firecrawl",
-      "confidence": "high",
+      "confidence": "medium",
       "asOf": null,
       "sourceUrl": "http://www.dominionenergy.com/en/South-Carolina/Rates-and-Tariffs",
       "urdbUri": "https://apps.openei.org/IURDB/rate/view/67d1acd2afd8b668700d5ff1",
+      "note": "Dominion Energy SC current all-in (cross-checked wattbuy / findenergy); rate increase pending July 2026.",
       "breakdownAvailable": false
     },
     {
@@ -1171,13 +889,14 @@
       "state": "Wisconsin",
       "slug": "wisconsin",
       "utility": "We Energies",
-      "allInCentsPerKwh": 21.26,
+      "allInCentsPerKwh": 19.5,
       "source": "firecrawl",
-      "confidence": "high",
+      "confidence": "low",
       "asOf": "2026-01-01",
       "sourceUrl": "https://www.we-energies.com/olb/26/2026-01-we-electric-rates.pdf",
       "urdbUri": "https://apps.openei.org/IURDB/rate/view/6859a625ee417fe3fa0cb0df",
-      "breakdownAvailable": true
+      "note": "We Energies @900 kWh, 2026; energy/delivery split under review.",
+      "breakdownAvailable": false
     },
     {
       "postal": "WV",

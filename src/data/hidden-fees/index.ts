@@ -24,17 +24,14 @@ export type {
 /** Slugs of the states with a complete itemized non-energy breakdown, in display order. */
 export const ITEMIZED_ORDER = [
   "california",
-  "delaware",
   "florida",
   "nevada",
-  "oregon",
-  "wisconsin",
   "texas",
 ] as const;
 
 const itemizedRecord = itemizedData as Record<string, ItemizedStateFee>;
 
-/** All itemized states (6 bundled + Texas delivery-only), in a stable display order. */
+/** All itemized states (3 bundled + Texas delivery-only), in a stable display order. */
 export const ITEMIZED_STATES: ItemizedStateFee[] = ITEMIZED_ORDER.map((slug) => {
   const row = itemizedRecord[slug];
   if (!row) {

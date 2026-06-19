@@ -25,7 +25,7 @@
     "medium": "The all-in rate comes from a single validated source (either the utility tariff or URDB) that reconciles with the EIA state average.",
     "low": "An individual line item flagged during QA (for example a stale effective date or a value outside the expected sanity band). Low-confidence line items are documented but excluded from headline totals where noted."
   },
-  "coverageNote": "Coverage is intentionally honest about its limits: 6 states have a complete itemized non-energy breakdown (California, Delaware, Florida, Nevada, Oregon, Wisconsin), Texas is shown as delivery-only because it is deregulated, and 26 states have a single validated all-in rate. This set is expanding over time as more tariffs are itemized.",
+  "coverageNote": "Coverage is intentionally honest about its limits: 3 states have a complete itemized non-energy breakdown (California, Florida, Nevada), Texas is shown as delivery-only because it is deregulated, and 26 states have a single validated all-in rate. Delaware, Oregon, and Wisconsin were pulled from the itemized breakdowns pending a fix to their energy-versus-delivery split, though their all-in rates remain in the table. This set is expanding over time as more tariffs are itemized.",
   "caBaseChargeCallout": {
     "tier1CareFeraUsd": 6.0,
     "tier2Usd": 12.08,

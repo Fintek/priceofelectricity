@@ -153,6 +153,9 @@ export default function AllInTable({ rows }: { rows: AllInStateFee[] }) {
                   {row.source === "urdb" ? "OpenEI URDB" : "Utility tariff"}
                 </a>
                 <div className="muted">{row.asOf ?? "date not stated"}</div>
+                {row.note ? (
+                  <div className="muted" style={{ marginTop: 4, fontStyle: "italic" }}>{row.note}</div>
+                ) : null}
               </td>
             </tr>
           ))}

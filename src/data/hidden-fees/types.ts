@@ -91,6 +91,8 @@ export type AllInStateFee = {
   asOf: string | null;
   sourceUrl: string;
   urdbUri?: string;
+  /** Optional provenance/correction note (e.g. independent re-verification, pending rate change). */
+  note?: string;
   /** True when this state also appears in the itemized breakdown table. */
   breakdownAvailable: boolean;
 };
