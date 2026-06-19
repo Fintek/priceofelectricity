@@ -45,6 +45,11 @@ export default async function HiddenElectricityFeesPage() {
   const method = HIDDEN_FEES_METHODOLOGY;
   const bundledCount = BUNDLED_ITEMIZED_STATES.length;
   const allInCount = ALL_IN_STATES.length;
+  const featuredNames = BUNDLED_ITEMIZED_STATES.map((s) => s.state);
+  const featuredList =
+    featuredNames.length <= 1
+      ? featuredNames.join("")
+      : `${featuredNames.slice(0, -1).join(", ")}, and ${featuredNames[featuredNames.length - 1]}`;
 
   const faqItems = [
     {
@@ -149,20 +154,22 @@ export default async function HiddenElectricityFeesPage() {
 
         <section style={{ marginBottom: 32 }}>
           <p style={{ marginTop: 0, lineHeight: 1.7, maxWidth: "65ch" }}>
-            When people compare electricity prices, they look at the energy rate — the cents per kWh for the power
-            itself. But that is only part of the bill. Utilities also charge a fixed monthly fee, delivery and
-            transmission charges, a stack of riders, and taxes. We pulled these apart from the published tariffs.
-            Across the {bundledCount} states where we itemized every charge, the non-energy part of a 900 kWh bill
-            runs from about {roundUsd(range.minAddonUsd)} a month ({roundShare(range.minSharePercent)} of the bill in{" "}
-            {range.minShareState}) to about {roundUsd(range.maxAddonUsd)} a month, and from roughly{" "}
-            {roundShare(range.minSharePercent)} up to {roundShare(range.maxSharePercent)} of the total bill in{" "}
-            {range.maxShareState}. In other words, two homes using the same power can pay very different amounts once
-            fees and taxes are counted.
+            When people compare electricity prices they look at the energy rate — the cents per kWh for the power
+            itself. But that&apos;s only part of the bill: utilities also add a fixed monthly fee, delivery and
+            transmission, a stack of riders, and taxes. So far we&apos;ve pulled apart every charge for{" "}
+            {bundledCount} states — {featuredList} — and validated the all-in cost across {allInCount} states in
+            total. Where we&apos;ve itemized, non-energy charges run from about {roundUsd(range.minAddonUsd)}/mo (
+            {roundShare(range.minSharePercent)} of the bill in {range.minShareState}) to {roundUsd(range.maxAddonUsd)}
+            /mo ({roundShare(range.maxSharePercent)} in {range.maxShareState}): two homes using the same power can pay
+            very differently once fees and taxes are counted. We&apos;re adding states one at a time.
           </p>
         </section>
 
         <section style={{ marginBottom: 40 }}>
           <h2 style={{ fontSize: 22, marginBottom: 8 }}>How the bill adds up, state by state</h2>
+          <p style={{ margin: "0 0 8px 0", maxWidth: "65ch", lineHeight: 1.6 }}>
+            These are the states we&apos;ve fully itemized so far — more are on the way.
+          </p>
           <p className="muted" style={{ margin: "0 0 20px 0", fontSize: 14, maxWidth: "65ch", lineHeight: 1.6 }}>
             For these states we read each charge straight from the utility&apos;s tariff or rate sheet. Each table
             shows the cost per kilowatt-hour, so you can see the energy itself plus every fee and tax add up to the
@@ -177,8 +184,9 @@ export default async function HiddenElectricityFeesPage() {
           <h2 style={{ fontSize: 22, marginBottom: 8 }}>The real all-in cost of electricity, by state</h2>
           <p style={{ margin: "0 0 12px 0", lineHeight: 1.7, maxWidth: "65ch" }}>
             This is the cost of a kilowatt-hour including fees and taxes — not just the energy rate — for{" "}
-            {allInCount} states we have validated so far. For the deeper question of how a state&apos;s rate is set and
-            tracked over time, each state name links to its full electricity page.
+            {allInCount} states we have validated so far. A ✓ marks the states with a full breakdown above; we&apos;re
+            itemizing more of them over time. For the deeper question of how a state&apos;s rate is set and tracked
+            over time, each state name links to its full electricity page.
           </p>
           <AllInTable rows={ALL_IN_STATES} />
           <p className="muted" style={{ margin: "12px 0 0 0", fontSize: 13, maxWidth: "65ch" }}>
