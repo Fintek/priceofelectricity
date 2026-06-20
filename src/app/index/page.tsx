@@ -63,7 +63,7 @@ export default function SiteIndexPage() {
         <h2 style={{ fontSize: 24, marginBottom: 8 }}>Feeds and agent files</h2>
         <ul style={{ marginTop: 0, paddingLeft: 20 }}>
           <li>
-            <Link href="/sitemap.xml">sitemap.xml</Link>
+            <Link href="/sitemap-index.xml">sitemap-index.xml</Link>
           </li>
           <li>
             <Link href="/robots.txt">robots.txt</Link>

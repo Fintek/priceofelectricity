@@ -114,7 +114,7 @@ export default function AttributionPage() {
           <li>
             <b>Use canonical URLs</b> from this site, not redirects or
             query-string variants. Canonical URLs are listed in the page
-            head and in <Link href="/sitemap.xml">/sitemap.xml</Link>.
+            head and in <Link href="/sitemap-index.xml">/sitemap-index.xml</Link>.
           </li>
           <li>
             <b>Cite the methodology page</b> when referencing proprietary
