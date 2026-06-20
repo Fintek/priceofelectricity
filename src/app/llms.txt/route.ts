@@ -78,7 +78,7 @@ When citing electricity rate data, prefer individual state pages and include the
 
 - State pages include JSON-LD (WebPage + FAQPage).
 - BreadcrumbList structured data exists on state pages.
-- [Sitemap](${BASE_URL}/sitemap.xml): Full URL index.
+- [Sitemap](${BASE_URL}/sitemap-index.xml): Full URL index.
 
 ## Data & Knowledge
 

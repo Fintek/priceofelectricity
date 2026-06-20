@@ -92,7 +92,7 @@ export default function SubmitUrlsPage() {
           <li>Paste each URL and click &quot;Request Indexing&quot;</li>
           <li>
             Also submit the sitemap:{" "}
-            <code>{BASE_URL}/sitemap.xml</code>
+            <code>{BASE_URL}/sitemap-index.xml</code>
           </li>
         </ol>
       </section>
@@ -144,7 +144,7 @@ export default function SubmitUrlsPage() {
           </li>
           <li>Add and verify the site</li>
           <li>
-            Submit the sitemap: <code>{BASE_URL}/sitemap.xml</code>
+            Submit the sitemap: <code>{BASE_URL}/sitemap-index.xml</code>
           </li>
         </ol>
       </section>
