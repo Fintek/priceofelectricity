@@ -4536,6 +4536,34 @@ async function main(): Promise<void> {
     ],
   };
 
+  const hiddenElectricityFeesLandingEntity = {
+    id: "hidden-electricity-fees:index",
+    type: "landing" as const,
+    slug: "hidden-electricity-fees",
+    title: "Hidden Electricity Fees & Taxes by State",
+    canonicalUrl: ensureAbsoluteUrl("/hidden-electricity-fees"),
+    excerpt:
+      "Non-energy fees, taxes, delivery charges, and fixed surcharges on residential electricity bills — plus the real all-in cost per kWh by state.",
+    qualityScore: 85,
+    freshnessStatus: "aging" as const,
+    tokens: [
+      "fees",
+      "taxes",
+      "delivery",
+      "charges",
+      "fixed",
+      "surcharges",
+      "hidden",
+      "non-energy",
+      "riders",
+      "electricity",
+      "bill",
+      "state",
+      "quality-85",
+      "aging",
+    ],
+  };
+
   const averageElectricityBillStateEntities = normalizedStates.map((s) => {
     const name = s.name ?? s.slug.replace(/-/g, " ").replace(/\b\w/g, (c) => c.toUpperCase());
     const excerpt = `Average electricity bill in ${name}. Estimated monthly and annual bills for 900 kWh.`;
@@ -7225,6 +7253,30 @@ async function main(): Promise<void> {
     ],
   };
 
+  const dataHubEntity = {
+    id: "data:index",
+    type: "landing" as const,
+    slug: "data",
+    title: "Data",
+    canonicalUrl: ensureAbsoluteUrl("/data"),
+    excerpt:
+      "Central entry point for electricity datasets and knowledge JSON. Datasets for analysis; knowledge pages for research tools and structured access.",
+    qualityScore: 90,
+    freshnessStatus: "aging" as const,
+    tokens: [
+      "data",
+      "datasets",
+      "knowledge",
+      "api",
+      "downloads",
+      "research",
+      "electricity",
+      "json",
+      "quality-90",
+      "aging",
+    ],
+  };
+
   const electricityDataEntity = {
     id: "electricity-data:index",
     type: "landing" as const,
@@ -7680,6 +7732,7 @@ async function main(): Promise<void> {
     ...electricityCostStateEntities,
     averageElectricityBillLandingEntity,
     ...averageElectricityBillStateEntities,
+    hiddenElectricityFeesLandingEntity,
     movingToElectricityCostLandingEntity,
     ...movingToElectricityCostStateEntities,
     electricityCostCalculatorLandingEntity,
@@ -7765,6 +7818,7 @@ async function main(): Promise<void> {
     datasetsHubEntity,
     datasetsPricesByStateEntity,
     datasetsRankingsEntity,
+    dataHubEntity,
     electricityDataEntity,
     entityRegistryEntity,
     businessElectricityCostDecisionsEntity,
