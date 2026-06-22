@@ -24,9 +24,9 @@ export const dynamic = "force-static";
 export const revalidate = 86400;
 
 export const metadata: Metadata = buildMetadata({
-  title: "Electricity Cost Calculator by State | PriceOfElectricity.com",
+  title: "Electricity Bill Calculator by State | PriceOfElectricity.com",
   description:
-    "Electricity cost calculator hub for national and state bill estimates. Compare 500, 1000, 1500, and 2000 kWh scenarios, appliance calculator pages, and average bill context.",
+    "Electricity bill calculator for monthly estimates by state. Compare 500, 1000, 1500, and 2000 kWh bill scenarios, appliance calculators, and average bill benchmarks.",
   canonicalPath: "/electricity-cost-calculator",
 });
 
@@ -52,20 +52,20 @@ export default async function ElectricityCostCalculatorIndexPage() {
 
   const breadcrumbTrail: BreadcrumbItem[] = [
     { name: "Home", url: "/" },
-    { name: "Electricity Cost Calculator" },
+    { name: "Electricity Bill Calculator" },
   ];
   const breadcrumbJsonLd = breadcrumbsToJsonLd(breadcrumbTrail);
   const webPageJsonLd = buildWebPageJsonLd({
-    title: "Electricity Cost Calculator",
+    title: "Electricity Bill Calculator by State",
     description:
       nationalRate != null
         ? `Estimate monthly electric bills using the U.S. benchmark rate of ${formatRate(
             nationalRate,
-          )} and state-specific residential rates, plus links to deeper calculators.`
-        : "Electricity bill and kWh cost calculator hub.",
+          )} and state-specific residential rates, plus links to state bill tools.`
+        : "Electricity bill calculator hub for monthly estimates by state.",
     url: "/electricity-cost-calculator",
     isPartOf: "/",
-    about: ["electricity cost calculator", "electric bill calculator", "kwh cost calculator"],
+    about: ["electricity bill calculator", "monthly electric bill calculator", "electric bill by state"],
   });
 
   return (
@@ -74,10 +74,12 @@ export default async function ElectricityCostCalculatorIndexPage() {
       <main className="container">
         <Breadcrumbs trail={breadcrumbTrail} />
 
-        <h1 style={{ fontSize: 32, marginBottom: 12 }}>Electricity Cost Calculator by State</h1>
+        <h1 style={{ fontSize: 32, marginBottom: 12 }}>Electricity Bill Calculator by State</h1>
         <p style={{ marginTop: 0, marginBottom: 16, maxWidth: "65ch", fontSize: 16, lineHeight: 1.6 }}>
           Use the calculator below for a quick monthly energy charge estimate from{" "}
-          <strong>kWh × residential electricity rate</strong>. Further down you&apos;ll find links to state
+          <strong>kWh × residential electricity rate</strong>. For a specific kWh amount (any number, not just common
+          tiers), use the{" "}
+          <Link href="/electricity-hubs/usage">kWh cost calculator</Link>. Further down you&apos;ll find links to state
           calculators, fixed usage examples, appliance tools, and related guides.
         </p>
         <p className="muted" style={{ margin: "0 0 24px 0", maxWidth: "65ch", fontSize: 14 }}>
@@ -245,7 +247,7 @@ export default async function ElectricityCostCalculatorIndexPage() {
               </Link>
             </li>
             <li>
-              <Link href="/electricity-hubs/usage">Electricity usage hubs</Link>
+              <Link href="/electricity-hubs/usage">kWh cost calculator (any usage amount)</Link>
             </li>
             <li>
               <Link href="/electricity-cost-comparison">State comparison hub</Link>

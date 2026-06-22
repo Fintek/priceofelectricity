@@ -113,6 +113,33 @@ export type ItemListEntry = {
   description?: string;
 };
 
+export type WebApplicationJsonLdParams = {
+  name: string;
+  description: string;
+  url: string;
+};
+
+/**
+ * Build schema.org WebApplication JSON-LD for an on-page calculator tool.
+ */
+export function buildWebApplicationJsonLd(params: WebApplicationJsonLdParams): Record<string, unknown> {
+  const url = ensureAbsoluteUrl(params.url);
+  return {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    name: params.name,
+    description: params.description,
+    url,
+    applicationCategory: "UtilitiesApplication",
+    operatingSystem: "Any",
+    offers: {
+      "@type": "Offer",
+      price: "0",
+      priceCurrency: "USD",
+    },
+  };
+}
+
 export type CommercialPathwayItemEntry = {
   name: string;
   url: string;

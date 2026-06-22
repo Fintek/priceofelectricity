@@ -71,7 +71,7 @@ export const ACTIVE_LONGTAIL_FAMILIES: ReadonlySet<LongtailFamily> = new Set([
   "usage-cost",
 ]);
 
-export const ACTIVE_USAGE_KWH_TIERS: readonly number[] = [500, 1000, 1500, 2000];
+export const ACTIVE_USAGE_KWH_TIERS: readonly number[] = [100, 300, 500, 600, 900, 1000, 1500, 2000];
 
 export const ACTIVE_INDUSTRY_SLUGS: readonly string[] = [];
 

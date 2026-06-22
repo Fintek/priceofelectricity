@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import JsonLdScript from "@/app/components/seo/JsonLdScript";
+import KwhCostCalculator from "@/app/components/KwhCostCalculator";
 import Disclaimers from "@/app/components/policy/Disclaimers";
 import StatusFooter from "@/components/common/StatusFooter";
 import LongtailStateTemplate from "@/components/longtail/LongtailStateTemplate";
@@ -19,6 +20,10 @@ import {
   isActiveUsageKwhTier,
   isLongtailFamilyActive,
 } from "@/lib/longtail/rollout";
+import {
+  loadAllTrafficHubStates,
+  sortStatesByRate,
+} from "@/lib/longtail/trafficHubs";
 
 export const dynamicParams = true;
 export const revalidate = 86400;
@@ -89,6 +94,18 @@ export default async function ElectricityUsageCostPage({
 
   const data = await loadLongtailStateData(state);
   if (!data) notFound();
+
+  const allStates = await loadAllTrafficHubStates();
+  const cheapestState = sortStatesByRate(allStates, "asc")[0];
+  const priciestState = sortStatesByRate(allStates, "desc")[0];
+  const calculatorStates = allStates.map((s) => ({
+    slug: s.slug,
+    name: s.name,
+    rateCentsPerKwh: s.avgRateCentsPerKwh,
+    updatedLabel: s.updatedLabel,
+    sourceName: s.sourceName,
+    sourceUrl: s.sourceUrl,
+  }));
 
   const canonicalPath = `/electricity-usage-cost/${parsedKwh}/${state}`;
   const relatedLinkSections = await buildLongtailLinkSections({
@@ -171,7 +188,26 @@ export default async function ElectricityUsageCostPage({
           sourceUrl: data.sourceUrl,
           updatedLabel: data.updatedLabel,
         }}
-      />
+      >
+        <KwhCostCalculator
+          states={calculatorStates}
+          nationalRateCentsPerKwh={data.nationalAverageCentsPerKwh}
+          nationalUpdatedLabel={data.updatedLabel}
+          nationalSourceName={data.sourceName}
+          nationalSourceUrl={data.sourceUrl}
+          cheapest={{
+            name: cheapestState?.name ?? "—",
+            rateCentsPerKwh: cheapestState?.avgRateCentsPerKwh ?? null,
+          }}
+          mostExpensive={{
+            name: priciestState?.name ?? "—",
+            rateCentsPerKwh: priciestState?.avgRateCentsPerKwh ?? null,
+          }}
+          initialKwh={parsedKwh}
+          initialStateSlug={state}
+          hideInlineDisclaimer
+        />
+      </LongtailStateTemplate>
       <div className="container">
         <Disclaimers disclaimerRefs={["general-site"]} />
         <StatusFooter release={await getRelease()} />

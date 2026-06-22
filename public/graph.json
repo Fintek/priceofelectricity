@@ -1,8 +1,8 @@
 {
   "version": "1.0",
   "generatedAt": "2026-05-28T13:54:57.371Z",
-  "totalNodes": 1429,
-  "totalEdges": 2210,
+  "totalNodes": 1430,
+  "totalEdges": 2213,
   "nodes": [
     {
       "id": "ai-energy-demand",
@@ -6313,6 +6313,11 @@
       "id": "tool:index-ranking",
       "type": "tool",
       "url": "http://localhost:3000/index-ranking"
+    },
+    {
+      "id": "tool:kwh-cost-calculator",
+      "type": "tool",
+      "url": "http://localhost:3000/electricity-hubs/usage"
     },
     {
       "id": "tool:value-ranking",
@@ -17385,6 +17390,21 @@
       "from": "state:wyoming:utilities",
       "to": "state:wyoming",
       "rel": "parent"
+    },
+    {
+      "from": "tool:kwh-cost-calculator",
+      "to": "average-electricity-bill",
+      "rel": "related"
+    },
+    {
+      "from": "tool:kwh-cost-calculator",
+      "to": "electricity-topics",
+      "rel": "related"
+    },
+    {
+      "from": "tool:kwh-cost-calculator",
+      "to": "tool:calculator",
+      "rel": "related"
     },
     {
       "from": "utility:alabama:alabama-power",
