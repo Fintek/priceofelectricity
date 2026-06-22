@@ -25,7 +25,10 @@ export type KwhCostCalculatorRateEndpoint = {
   rateCentsPerKwh: number | null;
 };
 
-const US_AVERAGE_SLUG = "";
+/** Placeholder — no state selected yet (not U.S. average). */
+const UNSELECTED_SLUG = "";
+/** Explicit select value for national average rate. */
+const US_AVERAGE_SLUG = "us-average";
 
 type KwhCostCalculatorProps = {
   states: KwhCostCalculatorState[];
@@ -49,6 +52,10 @@ function parseKwhInput(value: string): number | null {
   return kwh;
 }
 
+function isValidSelection(slug: string, stateSlugs: Set<string>): boolean {
+  return slug === US_AVERAGE_SLUG || stateSlugs.has(slug);
+}
+
 function readUrlParams(): { kwh: string | null; state: string | null } {
   const params = new URLSearchParams(window.location.search);
   return {
@@ -69,7 +76,7 @@ export default function KwhCostCalculator({
   cheapest,
   mostExpensive,
   initialKwh = 1000,
-  initialStateSlug = US_AVERAGE_SLUG,
+  initialStateSlug = UNSELECTED_SLUG,
   hideInlineDisclaimer = false,
 }: KwhCostCalculatorProps) {
   const [slug, setSlug] = useState(initialStateSlug);
@@ -77,9 +84,9 @@ export default function KwhCostCalculator({
 
   useEffect(() => {
     const slugs = new Set(states.map((s) => s.slug));
-    const { kwh, state } = readUrlParams();
-    if (state != null && slugs.has(state)) {
-      setSlug(state);
+    const { kwh, state: urlState } = readUrlParams();
+    if (urlState != null && isValidSelection(urlState, slugs)) {
+      setSlug(urlState);
     } else if (!initialStateSlug) {
       const preferred = getPreferredState();
       if (preferred && slugs.has(preferred)) {
@@ -98,15 +105,22 @@ export default function KwhCostCalculator({
     const params = new URLSearchParams();
     const parsed = parseKwhInput(nextKwh);
     if (parsed != null) params.set("kwh", String(parsed));
-    if (nextSlug) params.set("state", nextSlug);
+    if (nextSlug && isValidSelection(nextSlug, new Set(states.map((s) => s.slug)))) {
+      params.set("state", nextSlug);
+    }
     const query = params.toString();
     const nextUrl = query ? `${window.location.pathname}?${query}` : window.location.pathname;
     window.history.replaceState(null, "", nextUrl);
-  }, []);
+  }, [states]);
 
-  const selected = slug ? states.find((s) => s.slug === slug) : undefined;
-  const isUsAverage = !slug;
-  const rate = isUsAverage ? nationalRateCentsPerKwh : (selected?.rateCentsPerKwh ?? null);
+  const isUnselected = slug === UNSELECTED_SLUG;
+  const isUsAverage = slug === US_AVERAGE_SLUG;
+  const selected = !isUnselected && !isUsAverage ? states.find((s) => s.slug === slug) : undefined;
+  const rate = isUnselected
+    ? null
+    : isUsAverage
+      ? nationalRateCentsPerKwh
+      : (selected?.rateCentsPerKwh ?? null);
   const locationLabel = isUsAverage ? "U.S. average" : (selected?.name ?? "selected state");
 
   const kwh = useMemo(() => parseKwhInput(kwhInput), [kwhInput]);
@@ -129,12 +143,15 @@ export default function KwhCostCalculator({
   );
 
   const statusText = useMemo(() => {
+    if (isUnselected) {
+      return "Pick your state to estimate electricity cost.";
+    }
     if (kwh == null || rate == null) {
       return `Enter kWh usage to estimate electricity cost for ${locationLabel}.`;
     }
     if (totalCost == null) return "Enter valid kWh usage to estimate cost.";
     return `${kwh.toLocaleString()} kWh in ${locationLabel} costs about ${formatUsd(totalCost)} at ${formatRate(rate)}.`;
-  }, [kwh, rate, locationLabel, totalCost]);
+  }, [isUnselected, kwh, rate, locationLabel, totalCost]);
 
   const announced = useDebouncedAnnounce(statusText);
 
@@ -155,6 +172,8 @@ export default function KwhCostCalculator({
   const sourceUrl = isUsAverage ? nationalSourceUrl : (selected?.sourceUrl ?? nationalSourceUrl);
   const updatedLabel = isUsAverage ? nationalUpdatedLabel : (selected?.updatedLabel ?? null);
 
+  const showEstimate = !isUnselected && kwh != null && rate != null && totalCost != null;
+
   return (
     <section
       aria-labelledby="kwh-cost-calculator-heading"
@@ -170,7 +189,7 @@ export default function KwhCostCalculator({
         kWh cost calculator
       </h2>
       <p className="muted" style={{ marginTop: 0, marginBottom: "var(--space-4)", fontSize: 14, lineHeight: 1.6 }}>
-        Enter any kWh amount and pick a state (or U.S. average) to see estimated electricity cost using published
+        Enter any kWh amount and pick your state (or U.S. average) to see estimated electricity cost using published
         residential average rates.
       </p>
 
@@ -199,7 +218,7 @@ export default function KwhCostCalculator({
 
         <div>
           <label htmlFor={selectId} style={{ display: "block", marginBottom: "var(--space-2)", fontWeight: 500 }}>
-            State or U.S. average
+            Your state
           </label>
           <select
             id={selectId}
@@ -215,6 +234,9 @@ export default function KwhCostCalculator({
               backgroundColor: "var(--color-surface, #fff)",
             }}
           >
+            <option value={UNSELECTED_SLUG} disabled>
+              Select your state
+            </option>
             <option value={US_AVERAGE_SLUG}>U.S. average</option>
             {states.map((s) => (
               <option key={s.slug} value={s.slug}>
@@ -229,7 +251,7 @@ export default function KwhCostCalculator({
         {announced}
       </span>
 
-      {kwh != null && rate != null && totalCost != null ? (
+      {showEstimate ? (
         <>
           <p style={{ marginTop: "var(--space-4)", marginBottom: "var(--space-2)", fontSize: "var(--font-size-lg)" }}>
             Estimated cost: <strong>{formatUsd(totalCost)}</strong>
@@ -303,6 +325,10 @@ export default function KwhCostCalculator({
             </p>
           ) : null}
         </>
+      ) : isUnselected ? (
+        <p className="muted" style={{ marginTop: "var(--space-4)", marginBottom: 0, fontSize: 15, lineHeight: 1.6 }}>
+          Pick your state above to see your estimated cost.
+        </p>
       ) : (
         <p className="muted" style={{ marginTop: "var(--space-4)", marginBottom: 0, fontSize: 15, lineHeight: 1.6 }}>
           Enter kWh usage to calculate estimated electricity cost.
