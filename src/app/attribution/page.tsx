@@ -122,8 +122,8 @@ export default function AttributionPage() {
             can understand how the figures were derived.
           </li>
           <li>
-            <b>Note that rates are energy-only estimates.</b> Bills include
-            additional delivery charges, taxes, and fees not reflected here.
+            <b>Note that rates use the EIA all-in average residential retail rate (delivery included).</b>{" "}
+            Estimates don&apos;t add separately billed taxes, fixed charges, or other utility fees.
           </li>
         </ul>
       </section>

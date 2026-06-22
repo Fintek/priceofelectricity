@@ -108,8 +108,8 @@ export default async function AverageElectricityBillIndexPage() {
       question: "What is the average electricity bill in the US?",
       answer:
         nationalMonthlyBill != null && nationalAnnualBill != null && nationalAvgRate != null
-          ? `The U.S. benchmark is about ${formatUsd(nationalMonthlyBill)} a month, or roughly ${formatUsd(nationalAnnualBill)} a year, using a ${AVERAGE_ELECTRICITY_BILL_USAGE_KWH.toLocaleString()} kWh energy-only basis at the ${nationalAvgRate}¢/kWh national average rate.`
-          : `Bill benchmarks on this page use a ${AVERAGE_ELECTRICITY_BILL_USAGE_KWH.toLocaleString()} kWh energy-only basis from the latest statewide residential rate data.`,
+          ? `The U.S. benchmark is about ${formatUsd(nationalMonthlyBill)} a month, or roughly ${formatUsd(nationalAnnualBill)} a year, using a ${AVERAGE_ELECTRICITY_BILL_USAGE_KWH.toLocaleString()} kWh all-in-rate basis at the ${nationalAvgRate}¢/kWh national average rate.`
+          : `Bill benchmarks on this page use a ${AVERAGE_ELECTRICITY_BILL_USAGE_KWH.toLocaleString()} kWh all-in-rate basis from the latest statewide residential rate data.`,
     },
     {
       question: "Which state has the highest average electricity bill?",
@@ -124,11 +124,11 @@ export default async function AverageElectricityBillIndexPage() {
     },
     {
       question: "Why is my bill higher than my state average?",
-      answer: `These estimates are energy-only and assume ${AVERAGE_ELECTRICITY_BILL_USAGE_KWH.toLocaleString()} kWh of monthly use. Your bill rises above the benchmark with more cooling, heating, or appliance use, and with delivery charges, taxes, and fixed fees not included here.`,
+      answer: `These estimates use the all-in average rate and assume ${AVERAGE_ELECTRICITY_BILL_USAGE_KWH.toLocaleString()} kWh of monthly use. Your bill rises above the benchmark with more cooling, heating, or appliance use, and with separately billed taxes and fixed fees not included here.`,
     },
     {
       question: "How is the average bill calculated?",
-      answer: `Average residential rate × ${AVERAGE_ELECTRICITY_BILL_USAGE_KWH.toLocaleString()} kWh ÷ 100, energy-only. It excludes delivery fees, taxes, and fixed charges.`,
+      answer: `Average residential rate × ${AVERAGE_ELECTRICITY_BILL_USAGE_KWH.toLocaleString()} kWh ÷ 100 at the all-in average rate (delivery included). Separately billed taxes and fixed charges are not added.`,
     },
   ];
   const faqPageJsonLd = buildFaqPageJsonLd(faqItems);
@@ -270,7 +270,7 @@ export default async function AverageElectricityBillIndexPage() {
             household happens to draw.
           </p>
           <p style={{ marginBottom: 0, lineHeight: 1.7 }}>
-            These are energy-only estimates and exclude delivery fees, taxes, fixed charges, and other utility fees. Real
+            These estimates use the EIA all-in average residential rate (delivery included); separately billed taxes, fixed charges, and other utility fees are not added. Real
             bills also move with home size, heating and cooling load, and local rate design. See our{" "}
             <Link href="/methodology/electricity-rates">methodology</Link> for how rates are sourced and presented.
           </p>
@@ -285,7 +285,7 @@ export default async function AverageElectricityBillIndexPage() {
           </p>
           <p style={{ marginBottom: 0, lineHeight: 1.7 }}>
             Real bills move above or below this benchmark when homes use more cooling or heating, have different
-            appliance loads, or face utility delivery charges and taxes. That is why each bill page links onward to
+            appliance loads, or face separately billed taxes and fixed fees. That is why each bill page links onward to
             usage-specific cost pages, calculators, and appliance operating-cost examples.
           </p>
         </section>

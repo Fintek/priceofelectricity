@@ -32,7 +32,7 @@ export const GUIDES: Guide[] = [
       "Your electricity meter tracks cumulative kWh usage. Utilities bill you for the amount used during each billing cycle, not for instantaneous power demand in most residential settings.",
       "Power is measured in watts or kilowatts, while energy is measured in watt-hours or kilowatt-hours. Power tells you how fast energy is being used; energy tells you how much was used over time.",
       "To estimate appliance consumption, multiply power by time. For example, a 1,500-watt space heater running for two hours uses roughly 3 kWh.",
-      "You can estimate energy-only cost with a simple formula: kWh multiplied by cents per kWh, then divided by 100 to convert cents to dollars.",
+      "You can estimate electricity cost at the all-in average rate with a simple formula: kWh multiplied by cents per kWh, then divided by 100 to convert cents to dollars.",
       "Understanding kWh helps you compare plans, interpret your bill, and evaluate efficiency upgrades such as insulation, smart thermostats, and high-efficiency appliances.",
     ],
     relatedStates: ["new-york", "illinois", "arizona"],

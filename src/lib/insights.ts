@@ -35,5 +35,5 @@ export function getExampleBills(avgRateCentsPerKwh: number): {
 export function getShortSummary(state: StateRecord): string {
   const tier = getRateTierLabel(getRateTier(state.avgRateCentsPerKwh)).toLowerCase();
   const billAt900 = (900 * state.avgRateCentsPerKwh) / 100;
-  return `${state.name}'s average residential electricity price is ${state.avgRateCentsPerKwh}¢/kWh as of ${state.updated}. This places ${state.name} in the ${tier} rate tier compared with other states. At 900 kWh of monthly usage, the estimated energy-only charge is about $${billAt900.toFixed(2)}.`;
+  return `${state.name}'s average residential electricity price is ${state.avgRateCentsPerKwh}¢/kWh as of ${state.updated}. This places ${state.name} in the ${tier} rate tier compared with other states. At 900 kWh of monthly usage, the estimated electricity bill is about $${billAt900.toFixed(2)} at the all-in average rate.`;
 }

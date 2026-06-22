@@ -10,7 +10,7 @@ const COMMON_STATE_METADATA = {
   methodology:
     "Average residential electricity price in cents per kWh from the U.S. Energy Information Administration (EIA) Form EIA-861M retail sales dataset. Values are used as a reference benchmark for comparison and estimation.",
   disclaimer:
-    "Estimates are energy-only and exclude delivery fees, taxes, fixed charges, and other utility fees.",
+    "Estimates use the EIA average all-in residential rate (delivery included); they don't add separately billed taxes, fixed charges, or other utility fees, which vary by utility.",
 } as const;
 
 export const RAW_STATES: Record<string, StateRecord> = {

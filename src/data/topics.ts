@@ -58,7 +58,7 @@ export const TOPICS: Topic[] = [
     slug: "electricity-calculators",
     name: "Electricity Calculators",
     description:
-      "Calculation-focused resources for kWh, energy-only bill estimates, and usage-based planning.",
+      "Calculation-focused resources for kWh, all-in-rate bill estimates, and usage-based planning.",
     matchPrefixes: ["what-is-kwh", "average-electric-bill-in", "how-to-lower-your-electric-bill"],
     staticRoutes: ["/calculator", "/affordability"],
   },

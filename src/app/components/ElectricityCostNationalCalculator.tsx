@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
-import { calculateUsageCost } from "@/lib/usageCost";
+import { calculateUsageCost, USAGE_COST_ESTIMATE_DISCLAIMER_SHORT } from "@/lib/usageCost";
 
 export type ElectricityCostNationalCalculatorState = {
   slug: string;
@@ -18,7 +18,7 @@ function formatRateCents(value: number | null): string {
 }
 
 /**
- * Interactive monthly energy-charge estimate using residential average rates by state (national hub).
+ * Interactive monthly electricity-cost estimate using residential average rates by state (national hub).
  */
 export default function ElectricityCostNationalCalculator({
   states,
@@ -44,12 +44,12 @@ export default function ElectricityCostNationalCalculator({
 
   const statusText = useMemo(() => {
     if (!hasState) {
-      return "Choose a state and enter monthly kWh to estimate your energy charge.";
+      return "Choose a state and enter monthly kWh to estimate your electricity cost.";
     }
     if (estimateDollars == null) {
-      return `Enter monthly usage for ${selected?.name ?? "selected state"} to estimate energy charge.`;
+      return `Enter monthly usage for ${selected?.name ?? "selected state"} to estimate electricity cost.`;
     }
-    return `Estimated monthly energy charge for ${selected?.name ?? "selected state"}: $${estimateDollars.toFixed(2)}. Rate applied: ${formatRateCents(rate)}.`;
+    return `Estimated monthly electricity cost for ${selected?.name ?? "selected state"}: $${estimateDollars.toFixed(2)}. Rate applied: ${formatRateCents(rate)}.`;
   }, [estimateDollars, hasState, rate, selected?.name]);
 
   useEffect(() => {
@@ -72,11 +72,11 @@ export default function ElectricityCostNationalCalculator({
       }}
     >
       <h2 id="electricity-cost-national-calculator-heading" style={{ marginTop: 0, marginBottom: "var(--space-3)", fontSize: 22 }}>
-        Monthly energy charge calculator
+        Monthly electricity cost calculator
       </h2>
       <p className="muted" style={{ marginTop: 0, marginBottom: "var(--space-4)", fontSize: 14, lineHeight: 1.6 }}>
-        Pick your state, enter monthly kWh usage, and see an estimated energy charge using each state&apos;s residential
-        average electricity rate.
+        Pick your state, enter monthly kWh usage, and see an estimated electricity cost using each state&apos;s residential
+        all-in average electricity rate.
       </p>
 
       <div style={{ display: "grid", gap: "var(--space-4)", maxWidth: 420 }}>
@@ -136,12 +136,12 @@ export default function ElectricityCostNationalCalculator({
 
       {!hasState ? (
         <p className="muted" style={{ marginTop: "var(--space-4)", marginBottom: 0, fontSize: 15, lineHeight: 1.6 }}>
-          Choose a state and enter monthly kWh to estimate your energy charge.
+          Choose a state and enter monthly kWh to estimate your electricity cost.
         </p>
       ) : selected ? (
         <>
           <p style={{ marginTop: "var(--space-4)", marginBottom: "var(--space-2)", fontSize: "var(--font-size-lg)" }}>
-            Estimated monthly energy charge:{" "}
+            Estimated monthly electricity cost:{" "}
             <strong>{estimateDollars == null ? "—" : `$${estimateDollars.toFixed(2)}`}</strong>
           </p>
 
@@ -165,8 +165,7 @@ export default function ElectricityCostNationalCalculator({
           </p>
 
           <p className="muted" style={{ marginTop: 0, marginBottom: 0, fontSize: 13, lineHeight: 1.6 }}>
-            Energy charge estimate only. Your actual bill may also include delivery charges, fixed fees, taxes, and local
-            adjustments.
+            {USAGE_COST_ESTIMATE_DISCLAIMER_SHORT}
           </p>
         </>
       ) : null}

@@ -199,7 +199,7 @@ export async function buildStateHubSections(stateData: LongtailStateData): Promi
     {
       href: `/electricity-cost-calculator/${stateData.slug}`,
       title: `${stateData.name} electricity cost calculator`,
-      description: `Calculator for custom electricity usage and energy-only cost estimates in ${stateData.name}.`,
+      description: `Calculator for custom electricity usage and all-in-rate cost estimates in ${stateData.name}.`,
       eyebrow: "Tool",
     },
     {
@@ -240,7 +240,7 @@ export async function buildStateHubSections(stateData: LongtailStateData): Promi
   if (isLongtailFamilyActive("usage-cost") && usageTiers.length > 0) {
     sections.push({
       title: `${stateData.name} usage cost scenarios`,
-      intro: `These pages estimate energy-only costs in ${stateData.name} for common monthly usage tiers.`,
+      intro: `These pages estimate electricity costs in ${stateData.name} for common monthly usage tiers at the all-in average rate.`,
       cards: usageTiers.map((kwh) => ({
         href: `/electricity-usage-cost/${kwh}/${stateData.slug}`,
         title: `${kwh.toLocaleString()} kWh cost in ${stateData.name}`,

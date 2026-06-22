@@ -34,7 +34,7 @@ export async function generateMetadata({
   return buildMetadata({
     title: "Compare Electricity Prices by State (¢/kWh) | PriceOfElectricity.com",
     description:
-      "Compare average residential electricity prices by state and estimate energy-only monthly bills.",
+      "Compare average residential electricity prices by state and estimate all-in-rate monthly bills.",
     canonicalPath: "/compare",
     ...(!isKnownSort && { robots: { index: false, follow: true } }),
   });
@@ -63,7 +63,7 @@ export default async function ComparePage({
     name: "Compare Electricity Prices by State",
     url: `${BASE_URL}/compare`,
     description:
-      "Compare average residential electricity prices by state and estimate energy-only monthly bills.",
+      "Compare average residential electricity prices by state and estimate all-in-rate monthly bills.",
   };
 
   return (
@@ -79,7 +79,7 @@ export default async function ComparePage({
       <EiaHomeTrustLine />
       <p className="intro muted" style={{ marginTop: 0 }}>
         Compare average residential electricity prices (¢/kWh) and see example
-        energy-only monthly costs at 900 kWh.
+        all-in-rate monthly costs at 900 kWh.
       </p>
 
       <p style={{ marginBottom: 12 }}>
@@ -111,7 +111,7 @@ export default async function ComparePage({
             <tr>
               <th scope="col">State</th>
               <th scope="col">Avg rate (¢/kWh)</th>
-              <th scope="col">Example bill @ 900 kWh (energy-only)</th>
+              <th scope="col">Example bill @ 900 kWh (all-in rate)</th>
               <th scope="col">Freshness</th>
             </tr>
           </thead>

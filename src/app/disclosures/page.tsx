@@ -58,9 +58,9 @@ export default function DisclosuresPage() {
       <section style={{ marginTop: 16 }}>
         <h2 style={{ fontSize: 20, marginBottom: 8 }}>Data / methodology disclosure</h2>
         <p style={{ marginTop: 0 }}>
-          Electricity rates on this site are energy-only estimates and may not
-          equal full bills, which can include delivery charges, taxes, fixed
-          fees, and other utility line items. See our{" "}
+          Electricity rates on this site use the EIA all-in average residential retail rate
+          (delivery included). Estimates don&apos;t add separately billed taxes, fixed fees, or
+          other utility line items. See our{" "}
           <Link href="/methodology">methodology</Link> for how rates are
           calculated.
         </p>

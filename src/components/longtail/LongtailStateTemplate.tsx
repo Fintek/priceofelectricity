@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
 import Link from "next/link";
+import { USAGE_COST_ESTIMATE_DISCLAIMER } from "@/lib/usageCost";
 import Sparkline from "@/components/charts/Sparkline";
 import LongtailRelatedLinks from "@/components/longtail/LongtailRelatedLinks";
 import PageMonetization from "@/components/monetization/PageMonetization";
@@ -246,7 +247,7 @@ export default function LongtailStateTemplate({
           ) : (
             <>No dataset update label is available for this page.</>
           )}{" "}
-          Estimates are energy-only and exclude delivery charges, taxes, and fixed utility fees. For how rates and
+          {USAGE_COST_ESTIMATE_DISCLAIMER} For how rates and
           estimates are defined, see the <Link href="/methodology">methodology</Link> hub.
         </p>
       </section>

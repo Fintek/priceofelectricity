@@ -90,8 +90,7 @@ export default async function ElectricityBillEstimatorHubPage() {
         <section style={{ marginBottom: 28 }}>
           <h2 style={{ fontSize: 20, marginBottom: 12 }}>Household profiles</h2>
           <p style={{ marginTop: 0, marginBottom: 12, maxWidth: "65ch", lineHeight: 1.6 }}>
-            Each profile uses a typical monthly usage based on household size. Estimates are energy-only
-            and exclude delivery fees, taxes, and fixed charges.
+            Each profile uses a typical monthly usage based on household size. Estimates use the EIA all-in average residential rate (delivery included); separately billed taxes and fixed charges are not added.
           </p>
           <div className="stat-panel">
             {BILL_ESTIMATOR_PROFILES.map((profile) => (

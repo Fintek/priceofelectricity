@@ -105,10 +105,10 @@ export default async function QuestionPage({
       },
       {
         "@type": "Question",
-        name: `What is an example monthly energy-only bill in ${state.name}?`,
+        name: `What is an example monthly electricity bill in ${state.name}?`,
         acceptedAnswer: {
           "@type": "Answer",
-          text: `At 900 kWh, the energy-only benchmark is about $${context.billAt900Kwh.toFixed(2)} in ${state.name}.`,
+          text: `At 900 kWh, the all-in-rate benchmark is about $${context.billAt900Kwh.toFixed(2)} in ${state.name}.`,
         },
       },
       {
@@ -116,7 +116,7 @@ export default async function QuestionPage({
         name: "Does this estimate include delivery charges and taxes?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "No. It is an energy-only estimate and excludes delivery fees, taxes, fixed charges, and other utility line items.",
+          text: "The rate already includes delivery (T&D). The estimate doesn't add separately billed taxes, fixed charges, or other utility line items.",
         },
       },
     ],

@@ -178,12 +178,12 @@ export default async function ApplianceCostToRunPage({
       answer:
         stateEstimate.costPerMonth != null
           ? `At ${formatHoursPerDay(applianceConfig.typicalUsageHoursPerDay)} and the state average rate of ${formatRate(stateData.avgRateCentsPerKwh)}, you'd pay about ${formatUsd(stateEstimate.costPerMonth)} a month.`
-          : "We use a fixed wattage and runtime to estimate the electricity-only cost.",
+          : "We use a fixed wattage and runtime to estimate the electricity cost at the all-in average rate.",
     },
     {
       question: "Does this estimate include delivery fees and taxes?",
       answer:
-        "No. This estimate covers electricity only. It leaves out delivery charges, taxes, fixed monthly fees, and plan-specific adjustments.",
+        "The rate already includes delivery (T&D). The estimate doesn't add separately billed taxes, fixed monthly fees, or plan-specific adjustments.",
     },
     {
       question: `Where else can I compare this appliance?`,
@@ -203,8 +203,8 @@ export default async function ApplianceCostToRunPage({
         ]}
         title={`What Does It Cost to Run ${article} ${applianceConfig.displayName} in ${stateData.name}?`}
         intro={stateEstimate.costPerMonth != null
-          ? `Running ${article} ${applianceConfig.displayName.toLowerCase()} in ${stateData.name} costs about ${formatUsd(stateEstimate.costPerMonth)} a month — ${formatUsd(stateEstimate.costPerYear)} a year — at the state's average rate of ${formatRate(stateData.avgRateCentsPerKwh)}.${introComparison} The estimate assumes a typical ${applianceConfig.averageWattage.toLocaleString()}-watt ${applianceConfig.displayName.toLowerCase()} running ${formatHoursPerDay(applianceConfig.typicalUsageHoursPerDay)}, and covers electricity only (before delivery fees and taxes).`
-          : `This is an estimate of the electricity-only cost to run ${article} ${applianceConfig.displayName.toLowerCase()} in ${stateData.name}, based on a typical ${applianceConfig.averageWattage.toLocaleString()}-watt load running ${formatHoursPerDay(applianceConfig.typicalUsageHoursPerDay)}.`}
+          ? `Running ${article} ${applianceConfig.displayName.toLowerCase()} in ${stateData.name} costs about ${formatUsd(stateEstimate.costPerMonth)} a month — ${formatUsd(stateEstimate.costPerYear)} a year — at the state's average rate of ${formatRate(stateData.avgRateCentsPerKwh)}.${introComparison} The estimate assumes a typical ${applianceConfig.averageWattage.toLocaleString()}-watt ${applianceConfig.displayName.toLowerCase()} running ${formatHoursPerDay(applianceConfig.typicalUsageHoursPerDay)}, at the all-in average rate (before separately billed taxes and fixed fees).`
+          : `This is an estimate of the electricity cost to run ${article} ${applianceConfig.displayName.toLowerCase()} in ${stateData.name}, based on a typical ${applianceConfig.averageWattage.toLocaleString()}-watt load running ${formatHoursPerDay(applianceConfig.typicalUsageHoursPerDay)} at the all-in average rate.`}
         stats={[
           { label: "Average wattage assumption", value: `${applianceConfig.averageWattage.toLocaleString()} W` },
           { label: "Typical usage assumption", value: formatHoursPerDay(applianceConfig.typicalUsageHoursPerDay) },
@@ -288,8 +288,8 @@ export default async function ApplianceCostToRunPage({
             </table>
           </div>
           <p style={{ marginBottom: 0, marginTop: 12, lineHeight: 1.7 }}>
-            These figures are electricity only. Your actual bill can run higher — delivery charges, taxes,
-            seasonal pricing, and fixed monthly fees aren't part of this estimate.
+            These figures use the all-in average rate. Your actual bill can run higher when separately billed taxes,
+            seasonal pricing, and fixed monthly fees apply.
           </p>
         </section>
 

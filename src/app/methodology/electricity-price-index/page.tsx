@@ -108,8 +108,9 @@ export default function ElectricityPriceIndexMethodologyPage() {
         <p style={{ marginTop: 0 }}>
           The EPI uses state-level averages only. It does not account for
           within-state variation, time-of-use rates, or customer class
-          differences. Rates are energy-only and exclude delivery, taxes, and
-          fixed fees.
+          differences. Rates use the EIA all-in average residential retail rate
+          (delivery included); separately billed taxes and fixed fees are not
+          added to estimates.
         </p>
       </section>
 

@@ -45,7 +45,7 @@ export default function PressReleasePage() {
           PriceOfElectricity.com displays state-level average residential
           electricity prices in cents per kilowatt-hour (¢/kWh) for all 50 states and Washington, D.C. The site helps consumers, researchers, and journalists
           compare rates, estimate bills, and access structured data. All
-          estimates are energy-only and exclude delivery fees, taxes, and other
+          estimates use the EIA all-in average residential rate (delivery included) and don&apos;t add separately billed taxes, fixed fees, or other
           utility charges. Data is sourced from authoritative public sources and
           updated monthly.
         </p>

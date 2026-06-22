@@ -92,7 +92,7 @@ const RAW_STATES_SOURCE_URL = "https://www.eia.gov/electricity/data/state/";
 const RAW_STATES_METHODOLOGY =
   "Average residential electricity price in cents per kWh from the U.S. Energy Information Administration (EIA) Form EIA-861M retail sales dataset. Values are used as a reference benchmark for comparison and estimation.";
 const RAW_STATES_DISCLAIMER =
-  "Estimates are energy-only and exclude delivery fees, taxes, fixed charges, and other utility fees.";
+  "Estimates use the EIA average all-in residential rate (delivery included); they don't add separately billed taxes, fixed charges, or other utility fees, which vary by utility.";
 
 // Display names used when regenerating `src/data/raw/states.raw.ts` so the
 // generator does not need to import the file it is rewriting.

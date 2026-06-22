@@ -76,7 +76,7 @@ export default async function ElectricityCostCalculatorIndexPage() {
 
         <h1 style={{ fontSize: 32, marginBottom: 12 }}>Electricity Bill Calculator by State</h1>
         <p style={{ marginTop: 0, marginBottom: 16, maxWidth: "65ch", fontSize: 16, lineHeight: 1.6 }}>
-          Use the calculator below for a quick monthly energy charge estimate from{" "}
+          Use the calculator below for a quick monthly electricity cost estimate from{" "}
           <strong>kWh × residential electricity rate</strong>. For a specific kWh amount (any number, not just common
           tiers), use the{" "}
           <Link href="/electricity-hubs/usage">kWh cost calculator</Link>. Further down you&apos;ll find links to state
@@ -270,7 +270,7 @@ export default async function ElectricityCostCalculatorIndexPage() {
             {representativeState.updatedLabel
               ? `Example dataset period (${representativeState.name}): ${representativeState.updatedLabel}.`
               : "Data period label is currently unavailable."}{" "}
-            Calculator outputs are energy-charge estimates only and exclude fixed fees, delivery charges, and taxes.
+            Calculator outputs use the all-in average rate (delivery included); separately billed fixed fees and taxes are not added.
           </p>
         </section>
 

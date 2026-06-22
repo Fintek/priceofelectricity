@@ -57,7 +57,7 @@ export function buildKnowledgePack(): KnowledgePack {
     methodologies,
     national,
     notes: [
-      "Rates are energy-only estimates.",
+      "Rates use the EIA all-in average residential retail rate (delivery included).",
       "See sources and methodology.",
       "Use canonical URLs.",
     ],

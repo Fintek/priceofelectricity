@@ -110,7 +110,7 @@ export default async function ElectricityPricePerKwhStatePage({
         ]}
         title={`Electricity Price per kWh in ${data.name}`}
         intro={data.avgRateCentsPerKwh != null
-          ? `In ${data.name}, residential electricity costs about ${formatRate(data.avgRateCentsPerKwh)}${rateComparison}. At a typical 900 kWh of monthly use, that comes to about ${formatUsd(cost900)} a month for the energy alone — before delivery charges and taxes.`
+          ? `In ${data.name}, residential electricity costs about ${formatRate(data.avgRateCentsPerKwh)}${rateComparison}. At a typical 900 kWh of monthly use, that comes to about ${formatUsd(cost900)} a month at the all-in average rate — before separately billed taxes and fixed fees.`
           : `This page tracks the latest residential electricity price per kilowatt-hour in ${data.name}, with national comparison and usage-cost estimates.`}
         stats={[
           { label: "Current average rate", value: formatRate(data.avgRateCentsPerKwh) },
