@@ -8,7 +8,7 @@ const BASE_URL = SITE_URL;
 export const metadata: Metadata = buildMetadata({
   title: "How to Cite | Press FAQ | PriceOfElectricity.com",
   description:
-    "How to cite PriceOfElectricity.com in APA, MLA, and web formats. Energy-only estimates, data sources, and update cadence.",
+    "How to cite PriceOfElectricity.com in APA, MLA, and web formats. All-in EIA retail rate basis, data sources, and update cadence.",
   socialDescription: "How to cite PriceOfElectricity.com in APA, MLA, and web formats.",
   canonicalPath: "/press/faq",
 });
@@ -23,8 +23,8 @@ const FAQ_ITEMS = [
     a: '"Average Residential Electricity Prices by State." PriceOfElectricity.com, [date], https://priceofelectricity.com/.',
   },
   {
-    q: "What does 'energy-only estimates' mean?",
-    a: "Our bill estimates use the energy charge (¢/kWh × usage) only. They exclude delivery fees, taxes, fixed customer charges, demand charges, and other utility fees that appear on real bills. Actual bills vary by utility and customer class.",
+    q: "What does the all-in rate basis mean?",
+    a: "Our bill estimates multiply usage by the EIA average residential retail rate (total revenue ÷ kWh), which already includes delivery (transmission and distribution) charges. Estimates don't add separately billed taxes, fixed customer charges, demand charges, or other utility fees that appear on real bills. Actual bills vary by utility and customer class.",
   },
   {
     q: "Where does the data come from?",

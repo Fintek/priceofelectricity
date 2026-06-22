@@ -52,14 +52,14 @@ export const CONTENT_TEMPLATES: ContentTemplate[] = [
         contentBlocks: [
           {
             heading: `What is the average electric bill in ${name}?`,
-            body: `The average residential electricity rate in ${name} is ${s.avgRateCentsPerKwh.toFixed(2)}¢/kWh as of ${s.updated}. At a typical usage of 900 kWh per month, the estimated energy-only charge is about ${monthly}.`,
+            body: `The average residential electricity rate in ${name} is ${s.avgRateCentsPerKwh.toFixed(2)}¢/kWh as of ${s.updated}. At a typical usage of 900 kWh per month, the estimated electricity bill is about ${monthly} at the all-in average rate.`,
           },
           {
             heading: "Example bills by usage",
             body: s.exampleBills
               .map(
                 (b) =>
-                  `${b.kwh.toLocaleString()} kWh → $${b.estimated.toFixed(2)}/month (energy only)`
+                  `${b.kwh.toLocaleString()} kWh → $${b.estimated.toFixed(2)}/month (all-in rate)`
               )
               .join("\n"),
           },
@@ -120,7 +120,7 @@ export const CONTENT_TEMPLATES: ContentTemplate[] = [
             body: s.exampleBills
               .map(
                 (b) =>
-                  `At ${b.kwh.toLocaleString()} kWh/month: ~$${b.estimated.toFixed(2)} (energy only)`
+                  `At ${b.kwh.toLocaleString()} kWh/month: ~$${b.estimated.toFixed(2)} (all-in rate)`
               )
               .join("\n"),
           },
@@ -154,7 +154,7 @@ export const CONTENT_TEMPLATES: ContentTemplate[] = [
         contentBlocks: [
           {
             heading: `Electricity rates in ${name}`,
-            body: `The current average residential electricity rate in ${name} is ${s.avgRateCentsPerKwh.toFixed(2)}¢/kWh. For a household using 900 kWh per month, this translates to roughly ${monthly} in energy-only charges.`,
+            body: `The current average residential electricity rate in ${name} is ${s.avgRateCentsPerKwh.toFixed(2)}¢/kWh. For a household using 900 kWh per month, this translates to roughly ${monthly} at the all-in average rate.`,
           },
           {
             heading: "How it compares nationally",

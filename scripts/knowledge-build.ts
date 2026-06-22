@@ -2618,7 +2618,7 @@ async function main(): Promise<void> {
           "Round and categorize relative position.",
         ],
         limitations: [
-          "Energy-only rates do not include fees and taxes.",
+          "Rates are EIA all-in residential averages (delivery included); the index doesn't break out taxes or fixed fees.",
           "Comparative index does not model utility plan mix.",
         ],
         relatedInternalUrls: [

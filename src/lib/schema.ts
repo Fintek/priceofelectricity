@@ -75,12 +75,12 @@ export function buildStateSchema(ns: NormalizedState) {
           },
           {
             question: "How is the bill estimate calculated?",
-            answer: `The estimate uses: kWh * (${ns.avgRateCentsPerKwh}¢/kWh) / 100. It is an energy-only estimate.`,
+            answer: `The estimate uses: kWh * (${ns.avgRateCentsPerKwh}¢/kWh) / 100 at the EIA all-in average residential rate (delivery included).`,
           },
           {
             question: "Does the estimate include delivery fees and taxes?",
             answer:
-              "No. It excludes delivery fees, taxes, fixed charges, and other utility fees.",
+              "The rate already includes delivery (T&D). The estimate doesn't add separately billed taxes, fixed charges, or other utility fees, which vary by utility.",
           },
         ];
 
@@ -156,12 +156,12 @@ export function buildBillSchema(ns: NormalizedState, kwh: number) {
   const faqItems: FAQItem[] = [
     {
       question: `How much is a ${kwh} kWh electric bill in ${ns.name}?`,
-      answer: `At ${ns.name}'s average rate of ${ns.avgRateCentsPerKwh}¢/kWh, a ${kwh} kWh electric bill is approximately $${estimatedBill.toFixed(2)} for energy only. This excludes delivery fees, taxes, and fixed charges.`,
+      answer: `At ${ns.name}'s average rate of ${ns.avgRateCentsPerKwh}¢/kWh, a ${kwh} kWh electric bill is approximately $${estimatedBill.toFixed(2)} at the all-in average rate. Separately billed taxes and fixed fees are not included.`,
     },
     {
       question: "Does this include delivery and taxes?",
       answer:
-        "No. This is an energy-only estimate. Actual bills include delivery fees, taxes, fixed charges, and other utility fees.",
+        "The rate already includes delivery (T&D). The estimate doesn't add separately billed taxes, fixed charges, or other utility fees, which vary by utility.",
     },
   ];
 
@@ -170,7 +170,7 @@ export function buildBillSchema(ns: NormalizedState, kwh: number) {
     "@type": "WebPage",
     name: `${kwh} kWh Electric Bill in ${ns.name}`,
     url: `${BASE_URL}/${ns.slug}/bill/${kwh}`,
-    description: `Energy-only estimate for ${kwh} kWh electric bill in ${ns.name} at ${ns.avgRateCentsPerKwh}¢/kWh.`,
+    description: `All-in rate estimate for ${kwh} kWh electric bill in ${ns.name} at ${ns.avgRateCentsPerKwh}¢/kWh.`,
     additionalProperty: [
       {
         "@type": "PropertyValue",

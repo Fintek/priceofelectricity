@@ -45,7 +45,7 @@ export async function generateMetadata({
   const ns = buildNormalizedState(slug);
   const estimatedBill = (kwhNum * ns.avgRateCentsPerKwh) / 100;
   const title = `${kwhNum} kWh Electric Bill in ${ns.name} (Energy Estimate)`;
-  const description = `Estimate ${kwhNum} kWh electric bill in ${ns.name}: ~$${estimatedBill.toFixed(2)} energy-only at ${ns.avgRateCentsPerKwh}¢/kWh. Excludes delivery fees and taxes.`;
+  const description = `Estimate ${kwhNum} kWh electric bill in ${ns.name}: ~$${estimatedBill.toFixed(2)} at ${ns.avgRateCentsPerKwh}¢/kWh all-in average rate. Separately billed taxes and fixed fees not included.`;
 
   return buildMetadata({
     title: `${title} | PriceOfElectricity.com`,
@@ -102,8 +102,8 @@ export default async function BillPage({
       <h1>{kwhNum} kWh Electric Bill in {ns.name}</h1>
 
       <p className="intro muted" style={{ marginTop: 0 }}>
-        Energy-only estimate for {kwhNum} kWh at {ns.name}&apos;s average
-        residential rate.
+        All-in rate estimate for {kwhNum} kWh at {ns.name}&apos;s average
+        residential rate (delivery included).
       </p>
 
       <section style={{ marginTop: 16 }}>
@@ -111,7 +111,7 @@ export default async function BillPage({
           <b>Rate:</b> {ns.avgRateCentsPerKwh}¢/kWh
         </p>
         <p style={{ marginTop: 0, marginBottom: 4 }}>
-          <b>Estimated energy-only bill:</b> ${estimatedBill.toFixed(2)}
+          <b>Estimated electricity bill:</b> ${estimatedBill.toFixed(2)}
         </p>
         <p style={{ marginTop: 0, marginBottom: 4 }}>
           <b>Affordability index:</b> {ns.affordabilityIndex}/100 (
@@ -133,8 +133,7 @@ export default async function BillPage({
       </section>
 
       <p className="muted" style={{ marginTop: 12, fontSize: 14 }}>
-        This is an energy-only estimate. Actual bills include delivery fees,
-        taxes, fixed charges, and other utility fees. See{" "}
+        {ns.disclaimer} See{" "}
         <Link href="/about">methodology</Link> for details.
       </p>
 

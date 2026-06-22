@@ -41,7 +41,7 @@ export async function generateMetadata({
 
   const { region, regionSlug: canonicalRegionSlug } = resolved;
   const title = `${region.name} Electricity Prices (¢/kWh)`;
-  const description = `Compare average residential electricity prices across ${region.name} states and view energy-only bill examples.`;
+  const description = `Compare average residential electricity prices across ${region.name} states and view all-in-rate bill examples.`;
 
   return buildMetadata({
     title,
@@ -78,7 +78,7 @@ export default function RegionPage({
     .filter((item): item is NonNullable<typeof item> => Boolean(item))
     .sort((a, b) => a.name.localeCompare(b.name));
 
-  const description = `Compare average residential electricity prices across ${region.name} states and view energy-only bill examples.`;
+  const description = `Compare average residential electricity prices across ${region.name} states and view all-in-rate bill examples.`;
   const webPageStructuredData = {
     "@context": "https://schema.org",
     "@type": "WebPage",
@@ -96,7 +96,7 @@ export default function RegionPage({
       <h1>{region.name} Electricity Prices</h1>
       <p className="muted intro" style={{ marginTop: 0 }}>
         Compare state-level average residential rates within the {region.name} and
-        review energy-only example monthly costs at 900 kWh.
+        review all-in-rate example monthly costs at 900 kWh.
       </p>
 
       <div className="data-table-wrap">

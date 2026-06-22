@@ -65,7 +65,7 @@ Response fields:
 - `disclaimer`
 - `sourceName`
 - `sourceUrl`
-- `examples` (energy-only bill examples for 500, 1000, 1500 kWh)
+- `examples` (all-in-rate bill examples for 500, 1000, 1500 kWh)
 
 Example:
 

@@ -64,7 +64,7 @@ export default function PressBrandPage() {
           credit line such as: &quot;Source: PriceOfElectricity.com&quot; or
           &quot;Data: PriceOfElectricity.com.&quot; Link to our{" "}
           <Link href="/datasets">data downloads</Link> page when sharing
-          datasets. Our rates are energy-only estimates; see our{" "}
+          datasets. Our rates use the EIA all-in average residential retail rate (delivery included); see our{" "}
           <Link href="/about">methodology</Link> for details.
         </p>
       </section>

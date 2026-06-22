@@ -110,7 +110,7 @@ export default async function ElectricityBillEstimatorStatePage({
     {
       question: `How does the electricity bill estimator work for ${state.name}?`,
       answer:
-        "The estimator multiplies each profile's monthly kWh assumption by the state average residential electricity rate and shows energy-only monthly and annual amounts.",
+        "The estimator multiplies each profile's monthly kWh assumption by the state average residential electricity rate and shows all-in-rate monthly and annual amounts.",
     },
     {
       question: `Is this the same as the average bill page for ${state.name}?`,
@@ -166,7 +166,7 @@ export default async function ElectricityBillEstimatorStatePage({
           missingResidentialRate ? (
             <p className="muted" style={{ margin: 0, maxWidth: "75ch" }}>
               We do not currently have a normalized statewide residential average rate for {state.name} in this tool,
-              so energy-only estimates and some benchmark differences show as unavailable (N/A) rather than implying a
+              so all-in-rate estimates and some benchmark differences show as unavailable (N/A) rather than implying a
               precision we do not have.
             </p>
           ) : null

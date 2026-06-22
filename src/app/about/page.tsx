@@ -49,16 +49,16 @@ export default function AboutPage() {
         What the estimator includes/excludes
       </h2>
       <p>
-        The Quick bill estimator is energy-only. It excludes delivery fees,
-        taxes, fixed customer charges, and other utility charges that may
-        appear on a real bill.
+        The Quick bill estimator uses the EIA average all-in residential rate
+        (delivery included). It doesn&apos;t add separately billed taxes, fixed
+        customer charges, or other utility fees that may appear on a real bill.
       </p>
 
       <h2 style={{ fontSize: 24, marginTop: 24, marginBottom: 8 }}>
         Calculation used
       </h2>
       <p>
-        Estimated energy charge = <code>kWh * (¢/kWh) / 100</code>.
+        Estimated electricity cost = <code>kWh * (¢/kWh) / 100</code>.
       </p>
 
       <h2 style={{ fontSize: 24, marginTop: 24, marginBottom: 8 }}>

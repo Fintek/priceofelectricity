@@ -96,7 +96,7 @@ export default async function ApplianceCityCostPage({
           { label: summary.citySummary.city.name },
         ]}
         title={`What Does It Cost to Run ${article} ${summary.applianceConfig.displayName} in ${summary.citySummary.city.name}, ${summary.citySummary.state.name}?`}
-        intro={`This page estimates the energy-only cost to run ${article} ${summary.applianceConfig.displayName.toLowerCase()} in ${summary.citySummary.city.name} using city-level rate assumptions from our methodology and the same appliance runtime assumptions as the statewide pages.`}
+        intro={`This page estimates the electricity cost to run ${article} ${summary.applianceConfig.displayName.toLowerCase()} in ${summary.citySummary.city.name} using city-level rate assumptions from our methodology and the same appliance runtime assumptions as the statewide pages.`}
         stats={[
           {
             label: "City estimate basis",

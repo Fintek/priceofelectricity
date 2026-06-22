@@ -46,7 +46,7 @@ export default function DataPolicyPage() {
       <h2>Data source</h2>
       <p>
         Source information is shown on state pages, including source name and source URL. Current
-        values are benchmark averages used for comparisons and energy-only bill estimates.
+        values are benchmark averages used for comparisons and all-in-rate bill estimates.
       </p>
 
       <h2>Freshness scoring</h2>
@@ -71,8 +71,8 @@ export default function DataPolicyPage() {
 
       <h2>Interpretation notes</h2>
       <p>
-        Bill examples on this site are energy-only. They do not include delivery charges, taxes,
-        fixed customer charges, or other local utility line items.
+        Bill examples use the EIA all-in average residential rate (delivery included).
+        They don&apos;t add separately billed taxes, fixed customer charges, or other local utility line items.
       </p>
       <p>
         For methodological details, see <Link href="/about">About / Methodology</Link>.

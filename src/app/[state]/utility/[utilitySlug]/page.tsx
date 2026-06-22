@@ -46,7 +46,7 @@ export async function generateMetadata({
   }
 
   const title = `${utility.name} Electricity Rates | ${stateInfo.name}`;
-  const description = `Average electricity rate context for ${utility.name} in ${stateInfo.name}, with a 900 kWh energy-only bill example.`;
+  const description = `Average electricity rate context for ${utility.name} in ${stateInfo.name}, with a 900 kWh all-in-rate bill example.`;
 
   return buildMetadata({
     title,
@@ -117,7 +117,7 @@ export default async function UtilityPage({
         Rate: <b>{rateCentsPerKwh.toFixed(2)}¢/kWh</b>
       </p>
       <p>
-        Example bill at 900 kWh (energy-only): <b>${billAt900Kwh.toFixed(2)}</b>
+        Example bill at 900 kWh (all-in rate): <b>${billAt900Kwh.toFixed(2)}</b>
       </p>
       <p className="muted" style={{ marginTop: 6, display: "flex", alignItems: "center", gap: 8 }}>
         <span

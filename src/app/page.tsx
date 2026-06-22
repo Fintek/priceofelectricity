@@ -115,19 +115,19 @@ export default function HomePage() {
       question: "Which state has the cheapest electricity?",
       answer: `${lowest.name} has the cheapest electricity in the United States, at an average residential rate of ${lowest.avgRateCentsPerKwh}¢/kWh. That is about ${pctLowestBelowAvg}% below the ${nationalAvg}¢/kWh state average. The next-lowest rates are in ${joinWithAnd(
         nextLowest.map((s) => `${s.name} at ${s.avgRateCentsPerKwh}¢`),
-      )}. At ${STANDARD_USAGE_KWH} kWh a month, a typical energy-only bill in ${lowest.name} is about ${formatUsd(lowestBill)}.`,
+      )}. At ${STANDARD_USAGE_KWH} kWh a month, a typical estimated electricity bill in ${lowest.name} is about ${formatUsd(lowestBill)} at the all-in average rate.`,
       link: { href: "/compare", label: "Compare any two states" },
     },
     {
       question: "Which state has the most expensive electricity?",
       answer: `${highest.name} has the most expensive electricity, at an average residential rate of ${highest.avgRateCentsPerKwh}¢/kWh — about ${pctAboveAvg}% above the ${nationalAvg}¢/kWh state average. Other high-cost states include ${joinWithAnd(
         nextHighest.map((s) => `${s.name} at ${s.avgRateCentsPerKwh}¢`),
-      )}. At ${STANDARD_USAGE_KWH} kWh a month, a typical energy-only bill in ${highest.name} is about ${formatUsd(highestBill)}.`,
+      )}. At ${STANDARD_USAGE_KWH} kWh a month, a typical estimated electricity bill in ${highest.name} is about ${formatUsd(highestBill)} at the all-in average rate.`,
       link: { href: "/why-electricity-is-expensive", label: "Why electricity is expensive" },
     },
     {
       question: "What is the average electricity rate in the US?",
-      answer: `The average state rate is ${nationalAvg}¢/kWh, and the median is ${median}¢/kWh across ${stateCount} jurisdictions. This is an unweighted average of state-level rates, not a consumption-weighted national figure. At ${STANDARD_USAGE_KWH} kWh a month, that average works out to about ${formatUsd(avgBill)} in energy-only cost.`,
+      answer: `The average state rate is ${nationalAvg}¢/kWh, and the median is ${median}¢/kWh across ${stateCount} jurisdictions. This is an unweighted average of state-level rates, not a consumption-weighted national figure. At ${STANDARD_USAGE_KWH} kWh a month, that average works out to about ${formatUsd(avgBill)} at the all-in average rate.`,
       link: { href: "/methodology/electricity-rates", label: "How rates are presented" },
     },
     {
@@ -245,7 +245,7 @@ export default function HomePage() {
           </table>
         </div>
         <p className="muted" style={{ marginTop: 8, fontSize: "var(--font-size-sm)" }}>
-          Monthly bill is an energy-only estimate at {STANDARD_USAGE_KWH} kWh per month and excludes delivery fees, taxes, and fixed charges.
+          Monthly bill uses the all-in average rate at {STANDARD_USAGE_KWH} kWh per month; separately billed taxes and fixed charges are not included.
         </p>
       </section>
 
@@ -253,7 +253,7 @@ export default function HomePage() {
       <section style={{ marginTop: 40 }}>
         <h2 style={{ fontSize: 20, marginBottom: 12 }}>Cheapest states for electricity</h2>
         <p style={{ maxWidth: "70ch", lineHeight: 1.6 }}>
-          {lowest.name} has the cheapest electricity in the country. Its average residential rate is {lowest.avgRateCentsPerKwh}¢/kWh. That sits about {pctLowestBelowAvg}% below the {nationalAvg}¢/kWh state average. At {STANDARD_USAGE_KWH} kWh a month, a typical energy-only bill there is about {formatUsd(lowestBill)}. Over a year, that is roughly {formatUsd(lowestAnnual)}. The next-lowest rates are in {joinWithAnd(nextLowest.map((s) => `${s.name} at ${s.avgRateCentsPerKwh}¢`))}. These states cluster near low-cost power. Many lean on hydro, natural gas, or local coal. Right now, {atOrBelowAvgCount} of {stateCount} jurisdictions sit at or below the {nationalAvg}¢/kWh average. The {stateCount}-jurisdiction median rate is {median}¢/kWh. The spread is wide: rates run from {lowest.avgRateCentsPerKwh}¢ up to {highest.avgRateCentsPerKwh}¢, a range of {spread}¢. On a {STANDARD_USAGE_KWH} kWh bill, that gap is about {formatUsd(billGap)} a month between {lowest.name} and {highest.name}. Lower rates leave more room for electric heat, water heating, and EV charging. Open any state page for its local rate, bill math, and trend. Use the{" "}
+          {lowest.name} has the cheapest electricity in the country. Its average residential rate is {lowest.avgRateCentsPerKwh}¢/kWh. That sits about {pctLowestBelowAvg}% below the {nationalAvg}¢/kWh state average. At {STANDARD_USAGE_KWH} kWh a month, a typical estimated electricity bill there is about {formatUsd(lowestBill)}. Over a year, that is roughly {formatUsd(lowestAnnual)}. The next-lowest rates are in {joinWithAnd(nextLowest.map((s) => `${s.name} at ${s.avgRateCentsPerKwh}¢`))}. These states cluster near low-cost power. Many lean on hydro, natural gas, or local coal. Right now, {atOrBelowAvgCount} of {stateCount} jurisdictions sit at or below the {nationalAvg}¢/kWh average. The {stateCount}-jurisdiction median rate is {median}¢/kWh. The spread is wide: rates run from {lowest.avgRateCentsPerKwh}¢ up to {highest.avgRateCentsPerKwh}¢, a range of {spread}¢. On a {STANDARD_USAGE_KWH} kWh bill, that gap is about {formatUsd(billGap)} a month between {lowest.name} and {highest.name}. Lower rates leave more room for electric heat, water heating, and EV charging. Open any state page for its local rate, bill math, and trend. Use the{" "}
           <Link href="/compare">comparison tool</Link> to line up two states side by side. For the full state-by-state breakdown, see{" "}
           <Link href="/electricity-cost">electricity cost by state</Link>. To download the raw rates, visit the{" "}
           <Link href="/datasets/electricity-prices-by-state">dataset page</Link>.
@@ -264,7 +264,7 @@ export default function HomePage() {
       <section style={{ marginTop: 40 }}>
         <h2 style={{ fontSize: 20, marginBottom: 12 }}>Most expensive states</h2>
         <p style={{ maxWidth: "70ch", lineHeight: 1.6 }}>
-          {highest.name} has the most expensive electricity. Its average residential rate is {highest.avgRateCentsPerKwh}¢/kWh. That is about {pctAboveAvg}% above the {nationalAvg}¢/kWh state average. At {STANDARD_USAGE_KWH} kWh a month, a typical energy-only bill there costs about {formatUsd(highestBill)}. Over a year, that is roughly {formatUsd(highestAnnual)}. That is about {formatUsd(billGap)} more than {lowest.name}, the cheapest state, for the same use. In percentage terms, the {highest.name} bill is about {pctBillHigherVsLow}% higher than {lowest.name}&apos;s. Other high-cost states include {joinWithAnd(nextHighest.map((s) => `${s.name} at ${s.avgRateCentsPerKwh}¢`))}. Right now, {aboveAvgCount} of {stateCount} jurisdictions price above the {nationalAvg}¢/kWh average. High rates often track imported fuel and long delivery distances. Island and remote grids cost more to build and run. Storm recovery and state policy can add to bills too. The {stateCount}-jurisdiction median rate is {median}¢/kWh, far below the top. On a yearly basis, a {STANDARD_USAGE_KWH} kWh home in {highest.name} pays about {formatUsd(annualGap)} more than one in {lowest.name}. At the median rate, that same month costs about {formatUsd(medianBill)}. Read{" "}
+          {highest.name} has the most expensive electricity. Its average residential rate is {highest.avgRateCentsPerKwh}¢/kWh. That is about {pctAboveAvg}% above the {nationalAvg}¢/kWh state average. At {STANDARD_USAGE_KWH} kWh a month, a typical estimated electricity bill there costs about {formatUsd(highestBill)}. Over a year, that is roughly {formatUsd(highestAnnual)}. That is about {formatUsd(billGap)} more than {lowest.name}, the cheapest state, for the same use. In percentage terms, the {highest.name} bill is about {pctBillHigherVsLow}% higher than {lowest.name}&apos;s. Other high-cost states include {joinWithAnd(nextHighest.map((s) => `${s.name} at ${s.avgRateCentsPerKwh}¢`))}. Right now, {aboveAvgCount} of {stateCount} jurisdictions price above the {nationalAvg}¢/kWh average. High rates often track imported fuel and long delivery distances. Island and remote grids cost more to build and run. Storm recovery and state policy can add to bills too. The {stateCount}-jurisdiction median rate is {median}¢/kWh, far below the top. On a yearly basis, a {STANDARD_USAGE_KWH} kWh home in {highest.name} pays about {formatUsd(annualGap)} more than one in {lowest.name}. At the median rate, that same month costs about {formatUsd(medianBill)}. Read{" "}
           <Link href="/why-electricity-is-expensive">why electricity is expensive</Link> for the main drivers. See the drivers in {highest.name} on its{" "}
           <Link href={`/drivers/${highest.slug}`}>drivers page</Link>. The full ranking, highest to lowest, is on the{" "}
           <Link href="/compare">compare page</Link>.

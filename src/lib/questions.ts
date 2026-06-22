@@ -1,5 +1,6 @@
 import type { StateRecord } from "@/data/types";
 import { computeAffordability } from "@/lib/affordability";
+import { USAGE_COST_ESTIMATE_DISCLAIMER } from "@/lib/usageCost";
 
 export type QuestionTemplate = {
   slugPrefix: string;
@@ -18,47 +19,46 @@ type QuestionStateContext = {
   billAt900Kwh: number;
 };
 
-const ENERGY_ONLY_DISCLAIMER =
-  "These estimates cover electricity only. They leave out delivery charges, fixed fees, taxes, and other utility line items.";
+const ESTIMATE_DISCLAIMER = USAGE_COST_ESTIMATE_DISCLAIMER;
 
 export const QUESTION_TEMPLATES: Record<string, QuestionTemplate> = {
   "why-electricity-expensive-in": {
     slugPrefix: "why-electricity-expensive-in",
     titleTemplate: (stateName) => `Why Is Electricity Expensive in ${stateName}?`,
     descriptionTemplate: (stateName) =>
-      `Key reasons electricity prices can be high in ${stateName}, with a practical energy-only bill example.`,
+      `Key reasons electricity prices can be high in ${stateName}, with a practical all-in-rate bill example.`,
     bodyBuilder: (state) => [
       `${state.name}'s average residential electricity rate is ${state.avgRateCentsPerKwh.toFixed(2)}¢/kWh, which places it in the "${state.affordabilityCategory}" affordability tier compared with other states.`,
-      `At that average rate, 900 kWh of monthly usage works out to about $${state.billAt900Kwh.toFixed(2)} in energy charges before delivery and taxes.`,
+      `At that average rate, 900 kWh of monthly usage works out to about $${state.billAt900Kwh.toFixed(2)} at the all-in average rate, before separately billed taxes and fixed fees.`,
       "Higher electricity prices are usually driven by a mix of generation costs, grid investment needs, local market structure, and costs utilities are allowed to pass on to customers.",
       "Geography and reliability requirements can also raise costs, especially where weather hardening, wildfire mitigation, or fuel transport constraints increase utility spending.",
-      ENERGY_ONLY_DISCLAIMER,
+      ESTIMATE_DISCLAIMER,
     ],
   },
   "why-electricity-cheaper-in": {
     slugPrefix: "why-electricity-cheaper-in",
     titleTemplate: (stateName) => `Why Is Electricity Cheaper in ${stateName}?`,
     descriptionTemplate: (stateName) =>
-      `Why electricity costs can be relatively lower in ${stateName}, including an energy-only bill benchmark.`,
+      `Why electricity costs can be relatively lower in ${stateName}, including an all-in-rate bill benchmark.`,
     bodyBuilder: (state) => [
       `${state.name}'s average residential electricity rate is ${state.avgRateCentsPerKwh.toFixed(2)}¢/kWh, and its affordability classification is "${state.affordabilityCategory}" relative to other states.`,
-      `Using that average rate, 900 kWh corresponds to about $${state.billAt900Kwh.toFixed(2)} in monthly energy charges.`,
+      `Using that average rate, 900 kWh corresponds to about $${state.billAt900Kwh.toFixed(2)} per month at the all-in average rate.`,
       "Lower electricity prices are often linked to lower-cost generation mix, efficient infrastructure utilization, and favorable local supply conditions.",
       "State policy design and utility cost structure can also influence affordability when fixed system costs are spread across more stable demand.",
-      ENERGY_ONLY_DISCLAIMER,
+      ESTIMATE_DISCLAIMER,
     ],
   },
   "average-electric-bill-in": {
     slugPrefix: "average-electric-bill-in",
     titleTemplate: (stateName) => `How Much Is the Average Electric Bill in ${stateName}?`,
     descriptionTemplate: (stateName) =>
-      `Estimated energy-only electric bill benchmark for ${stateName} using current average residential rates.`,
+      `Estimated electricity bill benchmark for ${stateName} using current average residential rates.`,
     bodyBuilder: (state) => [
       `${state.name}'s average residential electricity rate is ${state.avgRateCentsPerKwh.toFixed(2)}¢/kWh.`,
-      `A simple benchmark at 900 kWh is about $${state.billAt900Kwh.toFixed(2)} per month for energy charges.`,
+      `A simple benchmark at 900 kWh is about $${state.billAt900Kwh.toFixed(2)} per month at the all-in average rate.`,
       `In relative terms, ${state.name} currently falls into the "${state.affordabilityCategory}" affordability category compared with other states.`,
       "Actual household bills can vary significantly based on monthly usage, seasonality, home efficiency, and local utility pricing structure.",
-      ENERGY_ONLY_DISCLAIMER,
+      ESTIMATE_DISCLAIMER,
     ],
   },
 };

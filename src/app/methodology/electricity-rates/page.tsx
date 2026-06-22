@@ -54,8 +54,10 @@ export default function ElectricityRatesMethodologyPage() {
         <p style={{ marginTop: 0 }}>
           The site uses state-level average residential electricity rates. These
           are blended averages across customer classes and utilities within each
-          state. They represent energy-only prices and typically exclude
-          delivery charges, taxes, and fixed fees that vary by utility.
+          state. They are EIA all-in average residential retail rates (total
+          revenue ÷ kWh), which already include delivery (transmission and
+          distribution) charges. Estimates don&apos;t add separately billed taxes,
+          fixed fees, or other utility charges that vary by utility.
         </p>
       </section>
 

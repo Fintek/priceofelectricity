@@ -62,7 +62,7 @@ export default function NationalPage() {
       <p className="intro muted" style={{ marginTop: 0 }}>
         A snapshot of U.S. residential electricity pricing across all {count}{" "}
         states, derived from the same normalized dataset used across
-        PriceOfElectricity.com. All figures are energy-only estimates.
+        PriceOfElectricity.com. All figures use the EIA all-in average residential rate (delivery included).
       </p>
 
       <section style={{ marginTop: 24 }}>

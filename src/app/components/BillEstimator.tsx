@@ -1,5 +1,6 @@
 "use client";
 
+import { USAGE_COST_ESTIMATE_DISCLAIMER_SHORT } from "@/lib/usageCost";
 import { useEffect, useMemo, useRef, useState } from "react";
 
 export default function BillEstimator({
@@ -25,8 +26,8 @@ export default function BillEstimator({
 
   const statusText =
     estimateDollars == null
-      ? "Enter monthly usage to estimate energy charge."
-      : `Estimated energy charge: $${estimateDollars.toFixed(2)}.`;
+      ? "Enter monthly usage to estimate electricity cost."
+      : `Estimated electricity cost: $${estimateDollars.toFixed(2)}.`;
 
   useEffect(() => {
     const timer = window.setTimeout(() => setAnnounced(statusText), 500);
@@ -79,7 +80,7 @@ export default function BillEstimator({
       />
 
       <p style={{ marginTop: "var(--space-3)", fontSize: "var(--font-size-lg)" }}>
-        Est. energy charge:{" "}
+        Est. electricity cost:{" "}
         <b>{estimateDollars == null ? "—" : `$${estimateDollars.toFixed(2)}`}</b>
       </p>
 
@@ -88,7 +89,7 @@ export default function BillEstimator({
       </span>
 
       <p className="muted" style={{ marginTop: "var(--space-2)" }}>
-        Note: this is energy-only (doesn’t include delivery fees, taxes, etc.).
+        Note: {USAGE_COST_ESTIMATE_DISCLAIMER_SHORT}
       </p>
     </section>
   );

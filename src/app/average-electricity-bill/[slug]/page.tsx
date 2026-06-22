@@ -106,7 +106,7 @@ export default async function AverageElectricityBillStatePage({
         ]}
         title={`Average Electricity Bill in ${state.name}`}
         intro={state.monthlyBill != null
-          ? `A typical household in ${state.name} pays about ${formatUsd(state.monthlyBill)} a month for electricity — roughly ${formatUsd(state.annualBill)} a year — at the state average rate of ${formatRate(state.avgRateCentsPerKwh)}.${billComparison} That's based on ${AVERAGE_ELECTRICITY_BILL_USAGE_KWH.toLocaleString()} kWh of monthly use, before delivery charges and taxes.`
+          ? `A typical household in ${state.name} pays about ${formatUsd(state.monthlyBill)} a month for electricity — roughly ${formatUsd(state.annualBill)} a year — at the state average rate of ${formatRate(state.avgRateCentsPerKwh)}.${billComparison} That's based on ${AVERAGE_ELECTRICITY_BILL_USAGE_KWH.toLocaleString()} kWh of monthly use at the all-in average rate, before separately billed taxes and fixed fees.`
           : `Estimated monthly and annual electricity bills for ${state.name}, based on the state average residential rate and ${AVERAGE_ELECTRICITY_BILL_USAGE_KWH.toLocaleString()} kWh of monthly use.`}
         stats={[
           { label: `${state.name} average rate`, value: formatRate(state.avgRateCentsPerKwh) },
@@ -156,8 +156,8 @@ export default async function AverageElectricityBillStatePage({
           <p style={{ marginTop: 0, lineHeight: 1.7 }}>
             It&apos;s a fair benchmark, not a forecast. We take {state.name}&apos;s average rate of{" "}
             {formatRate(state.avgRateCentsPerKwh)} and apply it to {AVERAGE_ELECTRICITY_BILL_USAGE_KWH.toLocaleString()}{" "}
-            kWh a month — the energy itself — which comes to {formatUsd(state.monthlyBill)} before delivery charges,
-            taxes, and fixed fees.
+            kWh a month at the all-in average rate, which comes to {formatUsd(state.monthlyBill)} before separately billed taxes
+            and fixed fees.
           </p>
           <p style={{ marginBottom: 0, lineHeight: 1.7 }}>
             Your own bill can land well above or below that, depending on how much you run the air conditioning, how

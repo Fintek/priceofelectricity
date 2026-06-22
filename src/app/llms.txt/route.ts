@@ -53,7 +53,7 @@ export async function GET() {
 
 > State-level average residential electricity prices and a simple bill estimator for all 50 US states and DC.
 
-Each state page reports an average residential electricity price in cents per kilowatt-hour (¢/kWh). Bill estimates are energy-only: they exclude delivery fees, taxes, fixed charges, and other utility fees.
+Each state page reports an average residential electricity price in cents per kilowatt-hour (¢/kWh). Bill estimates use the EIA all-in average residential rate (delivery included); separately billed taxes, fixed charges, and other utility fees are not added.
 
 Knowledge endpoints expose machine-readable data: index.json includes an integritySignature for system-level verification, every knowledge page carries meta.freshness (datasetUpdatedAt, status, ageDays, methodology) and an integer meta.qualityScore (0–100), and changelog.json records metric-level deltas (metricChanges).
 
@@ -62,7 +62,7 @@ Knowledge endpoints expose machine-readable data: index.json includes an integri
 - [Home](${BASE_URL}/): Site overview and entry point.
 - [About](${BASE_URL}/about): Methodology and data sourcing.
 - [Compare](${BASE_URL}/compare): Compare electricity prices across states.
-- [Calculator](${BASE_URL}/calculator): Estimate an energy-only bill.
+- [Calculator](${BASE_URL}/calculator): Estimate a bill at the all-in average rate.
 
 ## State pages
 

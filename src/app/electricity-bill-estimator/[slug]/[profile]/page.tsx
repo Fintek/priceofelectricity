@@ -146,7 +146,7 @@ export default async function ElectricityBillEstimatorProfilePage({
     {
       question: `Are these ${state.name} bill estimates utility quotes?`,
       answer:
-        "No. These are scenario estimates for planning and do not include delivery charges, taxes, or fixed fees.",
+        "No. These are scenario estimates for planning. The rate already includes delivery (T&D); separately billed taxes and fixed fees are not added.",
     },
   ]);
 
@@ -232,8 +232,7 @@ export default async function ElectricityBillEstimatorProfilePage({
             profile pages across {profileRollout.activeStateCount} states.
           </p>
           <p style={{ marginTop: 0, lineHeight: 1.7 }}>
-            Estimates here are planning scenarios, not utility quotes. Calculations are energy-only and exclude
-            delivery charges, taxes, and fixed monthly fees.
+            Estimates here are planning scenarios, not utility quotes. Calculations use the EIA all-in average residential rate (delivery included); separately billed taxes and fixed monthly fees are not added.
           </p>
           <p style={{ marginBottom: 0, lineHeight: 1.7 }}>
             For benchmark intent, use <Link href={`/average-electricity-bill/${slug}`}>average bill pages</Link>. For

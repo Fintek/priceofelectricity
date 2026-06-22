@@ -11,6 +11,7 @@ import {
   getAllTransformedStates,
   transformRawState,
 } from "@/lib/transformers/stateTransformer";
+import { USAGE_COST_ESTIMATE_DISCLAIMER } from "@/lib/usageCost";
 
 export type NormalizedState = {
   slug: string;
@@ -44,8 +45,7 @@ const DEFAULT_SOURCE_NAME = "U.S. Energy Information Administration (EIA)";
 const DEFAULT_SOURCE_URL = EIA_STATE_RESIDENTIAL_DATA_URL;
 const DEFAULT_METHODOLOGY =
   "Average residential electricity price in cents per kWh from the published state-level dataset. Values are used as a reference benchmark for comparison and estimation.";
-const DEFAULT_DISCLAIMER =
-  "Estimates are energy-only and exclude delivery fees, taxes, fixed charges, and other utility fees.";
+const DEFAULT_DISCLAIMER = USAGE_COST_ESTIMATE_DISCLAIMER;
 
 function formatUpdatedMonthYear(updatedISO: string): string {
   const date = new Date(updatedISO);
@@ -112,7 +112,7 @@ export function buildNormalizedState(slug: string): NormalizedState {
       : null;
   const freshness = computeFreshness(updated, syncIso);
   const rateTierLabel = getRateTierLabel(getRateTier(rate));
-  const shortSummary = `${transformed.name}'s average residential electricity price is ${rate}¢/kWh for the latest complete EIA reporting month (${updated}). This places ${transformed.name} in the ${rateTierLabel.toLowerCase()} rate tier compared with other states. At 900 kWh of monthly usage, the estimated energy-only charge is about $${((900 * rate) / 100).toFixed(2)}.`;
+  const shortSummary = `${transformed.name}'s average residential electricity price is ${rate}¢/kWh for the latest complete EIA reporting month (${updated}). This places ${transformed.name} in the ${rateTierLabel.toLowerCase()} rate tier compared with other states. At 900 kWh of monthly usage, the estimated electricity bill is about $${((900 * rate) / 100).toFixed(2)} at the all-in average rate.`;
 
   return {
     slug,
