@@ -64,7 +64,7 @@ export default async function ElectricityUsageHubIndexPage() {
       ? `As of ${nationalUpdatedLabel}, ${DEFAULT_KWH.toLocaleString()} kWh costs about ${formatUsd(nationalDefaultCost)} at the U.S. average residential rate of ${formatRate(nationalRate)} (EIA).`
       : nationalRate != null && nationalDefaultCost != null
         ? `${DEFAULT_KWH.toLocaleString()} kWh costs about ${formatUsd(nationalDefaultCost)} at the U.S. average residential rate of ${formatRate(nationalRate)} (EIA).`
-        : `Enter ${DEFAULT_KWH.toLocaleString()} kWh in the calculator below to estimate electricity cost using published state average rates.`;
+        : `Enter ${DEFAULT_KWH.toLocaleString()} kWh in the calculator above to estimate electricity cost using published state average rates.`;
 
   const breadcrumbJsonLd = buildBreadcrumbListJsonLd([
     { name: "Home", url: "/" },
@@ -105,6 +105,38 @@ export default async function ElectricityUsageHubIndexPage() {
           { label: "U.S. average rate", value: formatRate(nationalRate) },
         ]}
         monetizationContext={{ pageType: "hub-usage-index" }}
+        lead={
+          <>
+            <KwhCostCalculator
+              states={calculatorStates}
+              nationalRateCentsPerKwh={nationalRate}
+              nationalUpdatedLabel={nationalUpdatedLabel}
+              nationalSourceName={nationalSourceName}
+              nationalSourceUrl={nationalSourceUrl}
+              cheapest={{
+                name: cheapestState?.name ?? "—",
+                rateCentsPerKwh: cheapestState?.avgRateCentsPerKwh ?? null,
+              }}
+              mostExpensive={{
+                name: priciestState?.name ?? "—",
+                rateCentsPerKwh: priciestState?.avgRateCentsPerKwh ?? null,
+              }}
+              initialKwh={DEFAULT_KWH}
+            />
+
+            <p
+              style={{
+                marginTop: 0,
+                marginBottom: "var(--space-4)",
+                maxWidth: "65ch",
+                fontSize: 16,
+                lineHeight: 1.6,
+              }}
+            >
+              {defaultAnswerSentence}
+            </p>
+          </>
+        }
         sections={[
           {
             title: "Browse by electricity usage tier",
@@ -132,35 +164,6 @@ export default async function ElectricityUsageHubIndexPage() {
           },
         ]}
       >
-        <p
-          style={{
-            marginTop: 0,
-            marginBottom: "var(--space-4)",
-            maxWidth: "65ch",
-            fontSize: 16,
-            lineHeight: 1.6,
-          }}
-        >
-          {defaultAnswerSentence}
-        </p>
-
-        <KwhCostCalculator
-          states={calculatorStates}
-          nationalRateCentsPerKwh={nationalRate}
-          nationalUpdatedLabel={nationalUpdatedLabel}
-          nationalSourceName={nationalSourceName}
-          nationalSourceUrl={nationalSourceUrl}
-          cheapest={{
-            name: cheapestState?.name ?? "—",
-            rateCentsPerKwh: cheapestState?.avgRateCentsPerKwh ?? null,
-          }}
-          mostExpensive={{
-            name: priciestState?.name ?? "—",
-            rateCentsPerKwh: priciestState?.avgRateCentsPerKwh ?? null,
-          }}
-          initialKwh={DEFAULT_KWH}
-        />
-
         {cheapestState && priciestState && cheapestDefaultCost != null && priciestDefaultCost != null ? (
           <section style={{ marginBottom: "var(--space-7)" }}>
             <h2 className="heading-section">
