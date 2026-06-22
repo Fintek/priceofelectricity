@@ -13,6 +13,7 @@ type TrafficHubTemplateProps = {
   breadcrumbs: TrafficHubBreadcrumb[];
   title: string;
   intro: string;
+  lead?: ReactNode;
   stats?: TrafficHubMetric[];
   sections: TrafficHubSection[];
   monetizationContext?: MonetizationContext;
@@ -23,6 +24,7 @@ export default function TrafficHubTemplate({
   breadcrumbs,
   title,
   intro,
+  lead,
   stats = [],
   sections,
   monetizationContext,
@@ -54,6 +56,8 @@ export default function TrafficHubTemplate({
       <p style={{ marginTop: 0, marginBottom: "var(--space-5)", maxWidth: "65ch", fontSize: 16, lineHeight: 1.6 }}>
         {intro}
       </p>
+
+      {lead}
 
       {stats.length > 0 ? (
         <section style={{ marginBottom: "var(--space-7)" }}>
