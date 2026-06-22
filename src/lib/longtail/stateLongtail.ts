@@ -49,7 +49,7 @@ export type LongtailStateData = {
   sourceUrl: string | null;
 };
 
-export const LONGTAIL_USAGE_KWH_VALUES = [500, 750, 1000, 1500, 2000, 3000] as const;
+export const LONGTAIL_USAGE_KWH_VALUES = [100, 300, 500, 600, 750, 900, 1000, 1500, 2000, 3000] as const;
 
 type LongtailTelemetryOptions = {
   contextLabel?: string;
@@ -234,20 +234,7 @@ export function slugToName(slug: string): string {
   return slug.replace(/-/g, " ").replace(/\b\w/g, (char) => char.toUpperCase());
 }
 
-export function formatRate(value: number | null): string {
-  if (value == null || Number.isNaN(value)) return "N/A";
-  return `${value.toFixed(2)} ¢/kWh`;
-}
-
-export function formatUsd(value: number | null): string {
-  if (value == null || Number.isNaN(value)) return "N/A";
-  return `$${value.toFixed(2)}`;
-}
-
-export function calculateUsageCost(avgRateCentsPerKwh: number | null, kwh: number): number | null {
-  if (avgRateCentsPerKwh == null || Number.isNaN(avgRateCentsPerKwh)) return null;
-  return (avgRateCentsPerKwh / 100) * kwh;
-}
+export { calculateUsageCost, formatRate, formatUsd } from "@/lib/usageCost";
 
 export async function getLongtailStateStaticParams(
   options?: LongtailTelemetryOptions,

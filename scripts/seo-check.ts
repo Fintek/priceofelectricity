@@ -19,15 +19,29 @@ const TEST_PATHS = [
   "/electricity-cost/california",
   "/electricity-cost-comparison/california-vs-texas",
   "/energy-comparison/states",
+  "/electricity-hubs/usage",
+  "/electricity-cost-calculator",
 ];
 
 const MIN_DESCRIPTION_LENGTH = 50;
+const HUB_PATH = "/electricity-hubs/usage";
+const BILL_CALCULATOR_PATH = "/electricity-cost-calculator";
+const KWH_COST_CALCULATOR_TITLE_PATTERN = /kwh\s*cost\s*calculator/i;
 
 type CheckResult = {
   path: string;
   passed: boolean;
   failures: string[];
 };
+
+function canonicalPathname(canonical: string): string {
+  try {
+    const pathname = new URL(canonical).pathname;
+    return pathname.endsWith("/") && pathname.length > 1 ? pathname.slice(0, -1) : pathname;
+  } catch {
+    return canonical;
+  }
+}
 
 function checkHtml(path: string, html: string): CheckResult {
   const failures: string[] = [];
@@ -89,7 +103,52 @@ function checkHtml(path: string, html: string): CheckResult {
     }
   }
 
+  if (path === HUB_PATH) {
+    const title = titleMatch?.[1]?.trim() ?? "";
+    if (!KWH_COST_CALCULATOR_TITLE_PATTERN.test(title)) {
+      failures.push("Hub title should target kWh cost calculator head terms");
+    }
+    const canonical = canonicalMatch?.[1]?.trim() ?? "";
+    if (canonicalPathname(canonical) !== HUB_PATH) {
+      failures.push(`Hub canonical pathname should be ${HUB_PATH} (got ${canonical || "missing"})`);
+    }
+  }
+
+  if (path === BILL_CALCULATOR_PATH) {
+    const title = titleMatch?.[1]?.trim() ?? "";
+    if (KWH_COST_CALCULATOR_TITLE_PATTERN.test(title)) {
+      failures.push("Bill calculator page title should not target kWh cost calculator head terms");
+    }
+  }
+
   return { path, passed: failures.length === 0, failures };
+}
+
+function checkCalculatorTitleDifferentiation(
+  hubHtml: string,
+  billCalculatorHtml: string,
+): CheckResult {
+  const failures: string[] = [];
+  const hubTitle = hubHtml.match(/<title[^>]*>([^<]*)<\/title>/i)?.[1]?.trim() ?? "";
+  const billTitle =
+    billCalculatorHtml.match(/<title[^>]*>([^<]*)<\/title>/i)?.[1]?.trim() ?? "";
+
+  if (!hubTitle || !billTitle) {
+    failures.push("Missing title on hub or bill calculator page for differentiation check");
+  } else if (hubTitle.toLowerCase() === billTitle.toLowerCase()) {
+    failures.push("Hub and bill calculator pages share the same <title>");
+  } else if (
+    KWH_COST_CALCULATOR_TITLE_PATTERN.test(billTitle) &&
+    KWH_COST_CALCULATOR_TITLE_PATTERN.test(hubTitle)
+  ) {
+    failures.push("Hub and bill calculator both lead with kWh cost calculator in <title>");
+  }
+
+  return {
+    path: `${HUB_PATH} vs ${BILL_CALCULATOR_PATH}`,
+    passed: failures.length === 0,
+    failures,
+  };
 }
 
 async function main() {
@@ -105,6 +164,7 @@ async function main() {
 
     let passed = 0;
     let failed = 0;
+    const htmlByPath = new Map<string, string>();
 
     for (const path of TEST_PATHS) {
       const url = `${baseUrl}${path}`;
@@ -116,6 +176,7 @@ async function main() {
       }
 
       const html = await res.text();
+      htmlByPath.set(path, html);
       const result = checkHtml(path, html);
 
       if (result.passed) {
@@ -124,6 +185,22 @@ async function main() {
       } else {
         console.log(`FAIL ${path}`);
         for (const f of result.failures) {
+          console.log(`  - ${f}`);
+        }
+        failed++;
+      }
+    }
+
+    const hubHtml = htmlByPath.get(HUB_PATH);
+    const billHtml = htmlByPath.get(BILL_CALCULATOR_PATH);
+    if (hubHtml && billHtml) {
+      const diffResult = checkCalculatorTitleDifferentiation(hubHtml, billHtml);
+      if (diffResult.passed) {
+        console.log(`PASS ${diffResult.path}`);
+        passed++;
+      } else {
+        console.log(`FAIL ${diffResult.path}`);
+        for (const f of diffResult.failures) {
           console.log(`  - ${f}`);
         }
         failed++;

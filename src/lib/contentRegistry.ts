@@ -566,6 +566,16 @@ export function buildContentRegistry(): ContentNode[] {
   });
 
   nodes.push({
+    id: "tool:kwh-cost-calculator",
+    type: "tool",
+    title: "kWh Cost Calculator",
+    url: `${BASE}/electricity-hubs/usage`,
+    keywords:
+      "kwh cost calculator cost per kwh calculator kwh price calculator how much does kwh cost electricity usage cost",
+    related: ["tool:calculator", "average-electricity-bill", "electricity-topics"],
+  });
+
+  nodes.push({
     id: ELECTRICITY_MARKETS_ID,
     type: "static",
     title: "Electricity Market Structures and Prices",

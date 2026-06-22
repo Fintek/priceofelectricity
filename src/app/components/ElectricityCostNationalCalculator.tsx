@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
+import { calculateUsageCost } from "@/lib/usageCost";
 
 export type ElectricityCostNationalCalculatorState = {
   slug: string;
@@ -38,7 +39,7 @@ export default function ElectricityCostNationalCalculator({
     if (trimmed === "" || rate == null) return null;
     const kwh = Number(trimmed);
     if (!Number.isFinite(kwh) || kwh < 0) return null;
-    return (kwh * rate) / 100;
+    return calculateUsageCost(rate, kwh);
   }, [kwhInput, rate, hasState]);
 
   const statusText = useMemo(() => {
