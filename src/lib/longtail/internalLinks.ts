@@ -117,8 +117,8 @@ function buildStateCoreSection(stateData: LongtailStateData, pageType: LongtailP
     links.push({
       href: `/${state}`,
       label: selectVariant(`${state}-${pageType}-home`, [
-        `${stateName} electricity overview`,
-        `State electricity snapshot: ${stateName}`,
+        `${stateName} electricity rates`,
+        `${stateName} electricity rates & prices`,
       ]),
       description: "Core authority page with statewide pricing context",
     });

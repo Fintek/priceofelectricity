@@ -190,6 +190,10 @@ export default async function ElectricityCostCalculatorStatePage({
             This calculator page focuses on usage-based scenarios. The average-bill page for {state.name} keeps usage
             fixed at 900 kWh to help compare states cleanly, while usage pages let you change the load profile.
           </p>
+          <p style={{ marginTop: 0, lineHeight: 1.7 }}>
+            For statewide rates and the full breakdown, see{" "}
+            <Link href={`/${slug}`}>{state.name} electricity rates</Link>.
+          </p>
           <ul style={{ margin: 0, paddingLeft: 20, lineHeight: 1.8 }}>
             <li>
               <Link href={`/average-electricity-bill/${slug}`}>Average electricity bill in {state.name}</Link>

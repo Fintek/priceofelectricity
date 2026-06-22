@@ -46,6 +46,21 @@ function resolveSlug(rawState: string): string | null {
   return isValidStateSlug(slug) ? slug : null;
 }
 
+function pickStatePageTitle(
+  displayName: string,
+  cents: number,
+  monthlyBill900: number,
+): string {
+  const candidates = [
+    `${displayName} Electricity Rates & Prices: ${cents}¢/kWh, $${monthlyBill900}/mo`,
+    `${displayName} Electricity Rates: ${cents}¢/kWh, $${monthlyBill900}/mo`,
+    `${displayName} Electricity Rates: ${cents}¢/kWh`,
+    `${displayName} Electricity Rates & Prices`,
+    `${displayName} Electricity Rates`,
+  ];
+  return candidates.find((candidate) => candidate.length <= 60) ?? candidates[candidates.length - 1]!;
+}
+
 export async function generateMetadata({
   params,
 }: {
@@ -66,15 +81,9 @@ export async function generateMetadata({
   const isDc = slug === "district-of-columbia";
   const displayName = isDc ? "Washington DC" : ns.name;
   const monthlyBill900 = Math.round((ns.avgRateCentsPerKwh / 100) * 900);
-  const titleWithHooks = `${displayName} Electricity Rates: $${monthlyBill900}/mo, ${ns.avgRateCentsPerKwh}¢/kWh`;
-  const title =
-    titleWithHooks.length <= 60
-      ? titleWithHooks
-      : `${displayName} Electricity Rates: $${monthlyBill900}/mo`;
+  const title = pickStatePageTitle(displayName, ns.avgRateCentsPerKwh, monthlyBill900);
   const eiaMonth = getCanonicalResidentialDataThroughMonthLabel();
-  const description = isDc
-    ? `Washington, D.C. average residential electricity rate is ${ns.avgRateCentsPerKwh}¢/kWh (latest EIA reporting month ${eiaMonth}). Estimate your monthly bill.`
-    : `${ns.name} average residential electricity rate is ${ns.avgRateCentsPerKwh}¢/kWh (latest EIA reporting month ${eiaMonth}). Estimate your monthly bill.`;
+  const description = `${displayName}'s average residential electricity rate is ${ns.avgRateCentsPerKwh}¢/kWh (latest EIA reporting month ${eiaMonth}). See how ${displayName} prices rank nationally and what drives them.`;
 
   return buildMetadata({
     title,
@@ -281,7 +290,7 @@ export default function StatePage({
           marginBottom: "var(--space-1)",
         }}
       >
-        <h1 style={{ margin: 0 }}>{ns.name} Electricity Rates</h1>
+        <h1 style={{ margin: 0 }}>{ns.name} Electricity Rates &amp; Prices</h1>
         <SetPreferredStateButton stateSlug={slug} />
       </div>
 
@@ -327,6 +336,20 @@ export default function StatePage({
           </div>
         )}
       </div>
+
+      <p
+        style={{
+          marginTop: 0,
+          marginBottom: "var(--space-5)",
+          maxWidth: "65ch",
+          lineHeight: 1.6,
+        }}
+      >
+        The typical {ns.name} home pays about {ns.avgRateCentsPerKwh}¢ per kilowatt-hour — roughly $
+        {billByKwh[900].toFixed(0)} a month at average usage. The figures here reflect the latest EIA reporting
+        and show how {ns.name} electricity prices compare to the national average, plus what&apos;s pushing
+        them up or down.
+      </p>
 
       {/* Source / freshness line */}
       <p
@@ -427,7 +450,11 @@ export default function StatePage({
             <p style={{ margin: "0 0 8px", fontWeight: 600, fontSize: 15 }}>Compare costs</p>
             <ul style={{ margin: 0, paddingLeft: 18, lineHeight: 1.8, fontSize: 14 }}>
               <li><Link href="/compare">Compare all states</Link></li>
-              <li><Link href={`/electricity-bill-estimator/${slug}`}>Estimate your {ns.name} bill</Link></li>
+              <li>
+                <Link href={`/electricity-cost-calculator/${slug}`}>
+                  {ns.name} electricity cost calculator
+                </Link>
+              </li>
               <li><Link href="/affordability">Affordability rankings</Link></li>
             </ul>
           </div>
